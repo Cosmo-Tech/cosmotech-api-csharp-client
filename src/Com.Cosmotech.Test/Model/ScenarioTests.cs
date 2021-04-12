@@ -121,12 +121,20 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'SimulatorId'
         }
         /// <summary>
-        /// Test the property 'Analysis'
+        /// Test the property 'Analyses'
         /// </summary>
         [Fact]
-        public void AnalysisTest()
+        public void AnalysesTest()
         {
-            // TODO unit test for the property 'Analysis'
+            // TODO unit test for the property 'Analyses'
+        }
+        /// <summary>
+        /// Test the property 'LastAnalyses'
+        /// </summary>
+        [Fact]
+        public void LastAnalysesTest()
+        {
+            // TODO unit test for the property 'LastAnalyses'
         }
 
     }

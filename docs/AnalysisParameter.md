@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the Parameter id | 
 **Labels** | **Dictionary&lt;string, Object&gt;** | a translated label with key as ISO 639-1 code | 
-**VarType** | **string** | the variable type for the parameter | 
+**VarType** | **string** | the variable type for the parameter. Basic types or special type $DATASETID, $DATAPATH | 
 **Order** | **int** | the Parameter Group order | [optional] 
 **Options** | **Dictionary&lt;string, Object&gt;** | freeform options | [optional] 
 

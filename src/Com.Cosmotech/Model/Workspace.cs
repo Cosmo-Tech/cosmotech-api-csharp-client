@@ -46,7 +46,8 @@ namespace Com.Cosmotech.Model
         /// <param name="simulator">simulator (required).</param>
         /// <param name="userList">the list of users Id with their role.</param>
         /// <param name="webApp">webApp.</param>
-        public Workspace(string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSimulator simulator = default(WorkspaceSimulator), List<WorkspaceUser> userList = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp))
+        /// <param name="services">services.</param>
+        public Workspace(string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSimulator simulator = default(WorkspaceSimulator), List<WorkspaceUser> userList = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp), WorkspaceServices services = default(WorkspaceServices))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Workspace and cannot be null");
@@ -57,6 +58,7 @@ namespace Com.Cosmotech.Model
             this.Tags = tags;
             this.UserList = userList;
             this.WebApp = webApp;
+            this.Services = services;
         }
 
         /// <summary>
@@ -139,20 +141,10 @@ namespace Com.Cosmotech.Model
         public WorkspaceWebApp WebApp { get; set; }
 
         /// <summary>
-        /// a list of resources for the Workspace with resourceName/resourceUrl
+        /// Gets or Sets Services
         /// </summary>
-        /// <value>a list of resources for the Workspace with resourceName/resourceUrl</value>
-        [DataMember(Name = "resources", EmitDefaultValue = false)]
-        public Dictionary<string, Object> Resources { get; private set; }
-
-        /// <summary>
-        /// Returns false as Resources should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeResources()
-        {
-            return false;
-        }
+        [DataMember(Name = "services", EmitDefaultValue = false)]
+        public WorkspaceServices Services { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -171,7 +163,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Simulator: ").Append(Simulator).Append("\n");
             sb.Append("  UserList: ").Append(UserList).Append("\n");
             sb.Append("  WebApp: ").Append(WebApp).Append("\n");
-            sb.Append("  Resources: ").Append(Resources).Append("\n");
+            sb.Append("  Services: ").Append(Services).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -254,10 +246,9 @@ namespace Com.Cosmotech.Model
                     this.WebApp.Equals(input.WebApp))
                 ) && 
                 (
-                    this.Resources == input.Resources ||
-                    this.Resources != null &&
-                    input.Resources != null &&
-                    this.Resources.SequenceEqual(input.Resources)
+                    this.Services == input.Services ||
+                    (this.Services != null &&
+                    this.Services.Equals(input.Services))
                 );
         }
 
@@ -288,8 +279,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.UserList.GetHashCode();
                 if (this.WebApp != null)
                     hashCode = hashCode * 59 + this.WebApp.GetHashCode();
-                if (this.Resources != null)
-                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                if (this.Services != null)
+                    hashCode = hashCode * 59 + this.Services.GetHashCode();
                 return hashCode;
             }
         }

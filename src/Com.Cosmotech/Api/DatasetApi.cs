@@ -27,6 +27,26 @@ namespace Com.Cosmotech.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector.
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
+        /// <returns>DatasetCopyParameters</returns>
+        DatasetCopyParameters CopyDataset(string organizationId, DatasetCopyParameters datasetCopyParameters);
+
+        /// <summary>
+        /// Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
+        /// <returns>ApiResponse of DatasetCopyParameters</returns>
+        ApiResponse<DatasetCopyParameters> CopyDatasetWithHttpInfo(string organizationId, DatasetCopyParameters datasetCopyParameters);
+        /// <summary>
         /// Register a new dataset
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -135,6 +155,31 @@ namespace Com.Cosmotech.Api
     public interface IDatasetApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DatasetCopyParameters</returns>
+        System.Threading.Tasks.Task<DatasetCopyParameters> CopyDatasetAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DatasetCopyParameters)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DatasetCopyParameters>> CopyDatasetWithHttpInfoAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Register a new dataset
         /// </summary>
@@ -378,6 +423,159 @@ namespace Com.Cosmotech.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector. 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
+        /// <returns>DatasetCopyParameters</returns>
+        public DatasetCopyParameters CopyDataset(string organizationId, DatasetCopyParameters datasetCopyParameters)
+        {
+            Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters> localVarResponse = CopyDatasetWithHttpInfo(organizationId, datasetCopyParameters);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector. 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
+        /// <returns>ApiResponse of DatasetCopyParameters</returns>
+        public Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters> CopyDatasetWithHttpInfo(string organizationId, DatasetCopyParameters datasetCopyParameters)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling DatasetApi->CopyDataset");
+
+            // verify the required parameter 'datasetCopyParameters' is set
+            if (datasetCopyParameters == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetCopyParameters' when calling DatasetApi->CopyDataset");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = datasetCopyParameters;
+
+            // authentication (AADOAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+            // authentication (ApiKeyAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DatasetCopyParameters>("/organizations/{organization_id}/datasets/copy", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CopyDataset", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector. 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DatasetCopyParameters</returns>
+        public async System.Threading.Tasks.Task<DatasetCopyParameters> CopyDatasetAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters> localVarResponse = await CopyDatasetWithHttpInfoAsync(organizationId, datasetCopyParameters, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector. 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DatasetCopyParameters)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters>> CopyDatasetWithHttpInfoAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling DatasetApi->CopyDataset");
+
+            // verify the required parameter 'datasetCopyParameters' is set
+            if (datasetCopyParameters == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetCopyParameters' when calling DatasetApi->CopyDataset");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = datasetCopyParameters;
+
+            // authentication (AADOAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+            // authentication (ApiKeyAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DatasetCopyParameters>("/organizations/{organization_id}/datasets/copy", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CopyDataset", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

@@ -129,12 +129,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'WebApp'
         }
         /// <summary>
-        /// Test the property 'Resources'
+        /// Test the property 'Services'
         /// </summary>
         [Fact]
-        public void ResourcesTest()
+        public void ServicesTest()
         {
-            // TODO unit test for the property 'Resources'
+            // TODO unit test for the property 'Services'
         }
 
     }

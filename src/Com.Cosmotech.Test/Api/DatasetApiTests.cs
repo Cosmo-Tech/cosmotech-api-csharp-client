@@ -55,6 +55,19 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test CopyDataset
+        /// </summary>
+        [Fact]
+        public void CopyDatasetTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //DatasetCopyParameters datasetCopyParameters = null;
+            //var response = instance.CopyDataset(organizationId, datasetCopyParameters);
+            //Assert.IsType<DatasetCopyParameters>(response);
+        }
+
+        /// <summary>
         /// Test CreateDataset
         /// </summary>
         [Fact]

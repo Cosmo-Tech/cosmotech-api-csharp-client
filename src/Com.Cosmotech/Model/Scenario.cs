@@ -44,8 +44,8 @@ namespace Com.Cosmotech.Model
         /// <param name="tags">the list of tags.</param>
         /// <param name="parentId">the Scenario parent id.</param>
         /// <param name="userList">the list of users Id with their role.</param>
-        /// <param name="analysis">the configuration for Analysis.</param>
-        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), List<ScenarioUser> userList = default(List<ScenarioUser>), List<ScenarioAnalysis> analysis = default(List<ScenarioAnalysis>))
+        /// <param name="analyses">the configuration for next Analysis.</param>
+        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), List<ScenarioUser> userList = default(List<ScenarioUser>), List<ScenarioAnalysis> analyses = default(List<ScenarioAnalysis>))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Scenario and cannot be null");
@@ -53,7 +53,7 @@ namespace Com.Cosmotech.Model
             this.Tags = tags;
             this.ParentId = parentId;
             this.UserList = userList;
-            this.Analysis = analysis;
+            this.Analyses = analyses;
         }
 
         /// <summary>
@@ -140,11 +140,59 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the configuration for Analysis
+        /// the configuration for next Analysis
         /// </summary>
-        /// <value>the configuration for Analysis</value>
-        [DataMember(Name = "analysis", EmitDefaultValue = false)]
-        public List<ScenarioAnalysis> Analysis { get; set; }
+        /// <value>the configuration for next Analysis</value>
+        [DataMember(Name = "analyses", EmitDefaultValue = false)]
+        public List<ScenarioAnalysis> Analyses { get; set; }
+
+        /// <summary>
+        /// the configuration and information for last successful Analyses Runs
+        /// </summary>
+        /// <value>the configuration and information for last successful Analyses Runs</value>
+        [DataMember(Name = "successfulAnalyses", EmitDefaultValue = false)]
+        public List<ScenarioSuccessfulAnalysis> SuccessfulAnalyses { get; private set; }
+
+        /// <summary>
+        /// Returns false as SuccessfulAnalyses should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeSuccessfulAnalyses()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// the configuration and information for last failed Analyses Runs
+        /// </summary>
+        /// <value>the configuration and information for last failed Analyses Runs</value>
+        [DataMember(Name = "failedAnalyses", EmitDefaultValue = false)]
+        public List<ScenarioFailedAnalysis> FailedAnalyses { get; private set; }
+
+        /// <summary>
+        /// Returns false as FailedAnalyses should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeFailedAnalyses()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// the configuration and information for currently running Analyses Runs
+        /// </summary>
+        /// <value>the configuration and information for currently running Analyses Runs</value>
+        [DataMember(Name = "runningAnalyses", EmitDefaultValue = false)]
+        public List<ScenarioRunningAnalysis> RunningAnalyses { get; private set; }
+
+        /// <summary>
+        /// Returns false as RunningAnalyses should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeRunningAnalyses()
+        {
+            return false;
+        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -162,7 +210,10 @@ namespace Com.Cosmotech.Model
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  UserList: ").Append(UserList).Append("\n");
             sb.Append("  SimulatorId: ").Append(SimulatorId).Append("\n");
-            sb.Append("  Analysis: ").Append(Analysis).Append("\n");
+            sb.Append("  Analyses: ").Append(Analyses).Append("\n");
+            sb.Append("  SuccessfulAnalyses: ").Append(SuccessfulAnalyses).Append("\n");
+            sb.Append("  FailedAnalyses: ").Append(FailedAnalyses).Append("\n");
+            sb.Append("  RunningAnalyses: ").Append(RunningAnalyses).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -240,10 +291,28 @@ namespace Com.Cosmotech.Model
                     this.SimulatorId.Equals(input.SimulatorId))
                 ) && 
                 (
-                    this.Analysis == input.Analysis ||
-                    this.Analysis != null &&
-                    input.Analysis != null &&
-                    this.Analysis.SequenceEqual(input.Analysis)
+                    this.Analyses == input.Analyses ||
+                    this.Analyses != null &&
+                    input.Analyses != null &&
+                    this.Analyses.SequenceEqual(input.Analyses)
+                ) && 
+                (
+                    this.SuccessfulAnalyses == input.SuccessfulAnalyses ||
+                    this.SuccessfulAnalyses != null &&
+                    input.SuccessfulAnalyses != null &&
+                    this.SuccessfulAnalyses.SequenceEqual(input.SuccessfulAnalyses)
+                ) && 
+                (
+                    this.FailedAnalyses == input.FailedAnalyses ||
+                    this.FailedAnalyses != null &&
+                    input.FailedAnalyses != null &&
+                    this.FailedAnalyses.SequenceEqual(input.FailedAnalyses)
+                ) && 
+                (
+                    this.RunningAnalyses == input.RunningAnalyses ||
+                    this.RunningAnalyses != null &&
+                    input.RunningAnalyses != null &&
+                    this.RunningAnalyses.SequenceEqual(input.RunningAnalyses)
                 );
         }
 
@@ -272,8 +341,14 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.UserList.GetHashCode();
                 if (this.SimulatorId != null)
                     hashCode = hashCode * 59 + this.SimulatorId.GetHashCode();
-                if (this.Analysis != null)
-                    hashCode = hashCode * 59 + this.Analysis.GetHashCode();
+                if (this.Analyses != null)
+                    hashCode = hashCode * 59 + this.Analyses.GetHashCode();
+                if (this.SuccessfulAnalyses != null)
+                    hashCode = hashCode * 59 + this.SuccessfulAnalyses.GetHashCode();
+                if (this.FailedAnalyses != null)
+                    hashCode = hashCode * 59 + this.FailedAnalyses.GetHashCode();
+                if (this.RunningAnalyses != null)
+                    hashCode = hashCode * 59 + this.RunningAnalyses.GetHashCode();
                 return hashCode;
             }
         }

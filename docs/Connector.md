@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Tags** | **List&lt;string&gt;** | the list of tags | [optional] 
 **OwnerId** | **string** | the user id which own this connector version | [optional] [readonly] 
 **Url** | **string** | an optional URL link to connector page | [optional] 
-**IoTypes** | **List&lt;string&gt;** | The read and write capabilities of connector | 
+**IoTypes** | **List&lt;string&gt;** |  | 
 **ParameterGroups** | [**List&lt;ConnectorParameterGroup&gt;**](ConnectorParameterGroup.md) | the list of connector parameters groups | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

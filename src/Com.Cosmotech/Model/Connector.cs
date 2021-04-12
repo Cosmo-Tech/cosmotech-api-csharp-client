@@ -32,8 +32,9 @@ namespace Com.Cosmotech.Model
     public partial class Connector : IEquatable<Connector>, IValidatableObject
     {
         /// <summary>
-        /// Defines IoTypes
+        /// The read and write capabilities of connector
         /// </summary>
+        /// <value>The read and write capabilities of connector</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum IoTypesEnum
         {
@@ -53,9 +54,8 @@ namespace Com.Cosmotech.Model
 
 
         /// <summary>
-        /// The read and write capabilities of connector
+        /// Gets or Sets IoTypes
         /// </summary>
-        /// <value>The read and write capabilities of connector</value>
         [DataMember(Name = "ioTypes", IsRequired = true, EmitDefaultValue = false)]
         public List<IoTypesEnum> IoTypes { get; set; }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Com.Cosmotech.Model
         /// <param name="version">the Connector version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag (required).</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="url">an optional URL link to connector page.</param>
-        /// <param name="ioTypes">The read and write capabilities of connector (required).</param>
+        /// <param name="ioTypes">ioTypes (required).</param>
         /// <param name="parameterGroups">the list of connector parameters groups.</param>
         public Connector(string connectorKey = default(string), string name = default(string), string description = default(string), string repository = default(string), string version = default(string), List<string> tags = default(List<string>), string url = default(string), List<IoTypesEnum> ioTypes = default(List<IoTypesEnum>), List<ConnectorParameterGroup> parameterGroups = default(List<ConnectorParameterGroup>))
         {
