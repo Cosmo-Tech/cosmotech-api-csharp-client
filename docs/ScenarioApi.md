@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**FindAllScenarios**](ScenarioApi.md#findallscenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | List all Scenarios
 [**FindScenarioById**](ScenarioApi.md#findscenariobyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Get the details of an scenario
 [**GetScenariosTree**](ScenarioApi.md#getscenariostree) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree | Get the Scenarios Tree
-[**QueryDataWarehouse**](ScenarioApi.md#querydatawarehouse) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/queryDataWarehouse | Get the result of a query on the DatawareHouse
 [**UpdateScenario**](ScenarioApi.md#updatescenario) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Update a scenario
 
 
@@ -36,12 +35,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new ScenarioApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -81,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -119,12 +114,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new ScenarioApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -162,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -200,12 +191,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new ScenarioApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -243,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -282,12 +269,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new ScenarioApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -323,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -360,12 +343,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new ScenarioApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -403,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -441,12 +420,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new ScenarioApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -482,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -494,89 +469,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | the scenario tree |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="querydatawarehouse"></a>
-# **QueryDataWarehouse**
-> ScenarioDataWarehouseQueryResult QueryDataWarehouse (string organizationId, string workspaceId, string scenarioId, ScenarioDataWarehouseQuery scenarioDataWarehouseQuery)
-
-Get the result of a query on the DatawareHouse
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class QueryDataWarehouseExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
-
-            var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
-            var scenarioDataWarehouseQuery = new ScenarioDataWarehouseQuery(); // ScenarioDataWarehouseQuery | the DatawareHouse query
-
-            try
-            {
-                // Get the result of a query on the DatawareHouse
-                ScenarioDataWarehouseQueryResult result = apiInstance.QueryDataWarehouse(organizationId, workspaceId, scenarioId, scenarioDataWarehouseQuery);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ScenarioApi.QueryDataWarehouse: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **scenarioDataWarehouseQuery** | [**ScenarioDataWarehouseQuery**](ScenarioDataWarehouseQuery.md)| the DatawareHouse query | 
-
-### Return type
-
-[**ScenarioDataWarehouseQueryResult**](ScenarioDataWarehouseQueryResult.md)
-
-### Authorization
-
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | the query result |  -  |
-| **404** | the Scenario specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -602,12 +494,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new ScenarioApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -647,7 +535,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 

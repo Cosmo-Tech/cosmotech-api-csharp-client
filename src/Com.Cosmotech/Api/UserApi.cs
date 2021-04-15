@@ -395,16 +395,11 @@ namespace Com.Cosmotech.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -458,16 +453,11 @@ namespace Com.Cosmotech.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -525,16 +515,11 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -595,16 +580,11 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -663,16 +643,11 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.Data = user;
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -734,16 +709,11 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.Data = user;
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -801,16 +771,11 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -871,16 +836,11 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -946,16 +906,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
             localVarRequestOptions.Data = user;
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1024,16 +979,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
             localVarRequestOptions.Data = user;
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request

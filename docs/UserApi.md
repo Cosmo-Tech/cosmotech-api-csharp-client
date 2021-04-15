@@ -33,12 +33,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new UserApi(config);
 
@@ -68,7 +64,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -105,12 +101,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new UserApi(config);
             var userId = userId_example;  // string | the User identifier
@@ -144,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -182,12 +174,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new UserApi(config);
             var user = new User(); // User | the User to register
@@ -221,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -259,12 +247,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new UserApi(config);
             var userId = userId_example;  // string | the User identifier
@@ -298,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -337,12 +321,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new UserApi(config);
             var userId = userId_example;  // string | the User identifier
@@ -378,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 

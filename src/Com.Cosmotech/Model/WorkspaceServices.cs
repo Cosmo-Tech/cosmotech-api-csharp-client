@@ -34,12 +34,14 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspaceServices" /> class.
         /// </summary>
-        /// <param name="resultsEventBus">the event bus which receive Workspace Simulation results messages.</param>
-        /// <param name="simulationEventBus">the event bus which receive Workspace Simulation events messages.</param>
-        /// <param name="dataWarehouse">the Workspace DataWarehouse specific informations.</param>
-        /// <param name="storage">ths Workspace file storage specific informations.</param>
-        public WorkspaceServices(string resultsEventBus = default(string), string simulationEventBus = default(string), string dataWarehouse = default(string), string storage = default(string))
+        /// <param name="tenantCredentials">a freeform credentials object for the tenant. Structure depends on cloud provider.</param>
+        /// <param name="resultsEventBus">resultsEventBus.</param>
+        /// <param name="simulationEventBus">simulationEventBus.</param>
+        /// <param name="dataWarehouse">dataWarehouse.</param>
+        /// <param name="storage">storage.</param>
+        public WorkspaceServices(Dictionary<string, Object> tenantCredentials = default(Dictionary<string, Object>), WorkspaceService resultsEventBus = default(WorkspaceService), WorkspaceService simulationEventBus = default(WorkspaceService), WorkspaceService dataWarehouse = default(WorkspaceService), WorkspaceService storage = default(WorkspaceService))
         {
+            this.TenantCredentials = tenantCredentials;
             this.ResultsEventBus = resultsEventBus;
             this.SimulationEventBus = simulationEventBus;
             this.DataWarehouse = dataWarehouse;
@@ -47,32 +49,35 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the event bus which receive Workspace Simulation results messages
+        /// a freeform credentials object for the tenant. Structure depends on cloud provider
         /// </summary>
-        /// <value>the event bus which receive Workspace Simulation results messages</value>
+        /// <value>a freeform credentials object for the tenant. Structure depends on cloud provider</value>
+        [DataMember(Name = "tenantCredentials", EmitDefaultValue = false)]
+        public Dictionary<string, Object> TenantCredentials { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ResultsEventBus
+        /// </summary>
         [DataMember(Name = "resultsEventBus", EmitDefaultValue = false)]
-        public string ResultsEventBus { get; set; }
+        public WorkspaceService ResultsEventBus { get; set; }
 
         /// <summary>
-        /// the event bus which receive Workspace Simulation events messages
+        /// Gets or Sets SimulationEventBus
         /// </summary>
-        /// <value>the event bus which receive Workspace Simulation events messages</value>
         [DataMember(Name = "simulationEventBus", EmitDefaultValue = false)]
-        public string SimulationEventBus { get; set; }
+        public WorkspaceService SimulationEventBus { get; set; }
 
         /// <summary>
-        /// the Workspace DataWarehouse specific informations
+        /// Gets or Sets DataWarehouse
         /// </summary>
-        /// <value>the Workspace DataWarehouse specific informations</value>
         [DataMember(Name = "dataWarehouse", EmitDefaultValue = false)]
-        public string DataWarehouse { get; set; }
+        public WorkspaceService DataWarehouse { get; set; }
 
         /// <summary>
-        /// ths Workspace file storage specific informations
+        /// Gets or Sets Storage
         /// </summary>
-        /// <value>ths Workspace file storage specific informations</value>
         [DataMember(Name = "storage", EmitDefaultValue = false)]
-        public string Storage { get; set; }
+        public WorkspaceService Storage { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -82,6 +87,7 @@ namespace Com.Cosmotech.Model
         {
             var sb = new StringBuilder();
             sb.Append("class WorkspaceServices {\n");
+            sb.Append("  TenantCredentials: ").Append(TenantCredentials).Append("\n");
             sb.Append("  ResultsEventBus: ").Append(ResultsEventBus).Append("\n");
             sb.Append("  SimulationEventBus: ").Append(SimulationEventBus).Append("\n");
             sb.Append("  DataWarehouse: ").Append(DataWarehouse).Append("\n");
@@ -121,6 +127,12 @@ namespace Com.Cosmotech.Model
 
             return 
                 (
+                    this.TenantCredentials == input.TenantCredentials ||
+                    this.TenantCredentials != null &&
+                    input.TenantCredentials != null &&
+                    this.TenantCredentials.SequenceEqual(input.TenantCredentials)
+                ) && 
+                (
                     this.ResultsEventBus == input.ResultsEventBus ||
                     (this.ResultsEventBus != null &&
                     this.ResultsEventBus.Equals(input.ResultsEventBus))
@@ -151,6 +163,8 @@ namespace Com.Cosmotech.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.TenantCredentials != null)
+                    hashCode = hashCode * 59 + this.TenantCredentials.GetHashCode();
                 if (this.ResultsEventBus != null)
                     hashCode = hashCode * 59 + this.ResultsEventBus.GetHashCode();
                 if (this.SimulationEventBus != null)

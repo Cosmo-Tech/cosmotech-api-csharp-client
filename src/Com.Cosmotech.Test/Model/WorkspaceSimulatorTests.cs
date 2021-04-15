@@ -65,12 +65,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'SimulatorId'
         }
         /// <summary>
-        /// Test the property 'SimulatorAnalysisFilter'
+        /// Test the property 'AnalysisFilter'
         /// </summary>
         [Fact]
-        public void SimulatorAnalysisFilterTest()
+        public void AnalysisFilterTest()
         {
-            // TODO unit test for the property 'SimulatorAnalysisFilter'
+            // TODO unit test for the property 'AnalysisFilter'
         }
         /// <summary>
         /// Test the property 'DefaultAnalysisDataset'

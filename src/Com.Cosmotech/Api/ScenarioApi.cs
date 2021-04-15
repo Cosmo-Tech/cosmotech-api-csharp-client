@@ -157,30 +157,6 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of List&lt;ScenarioBase&gt;</returns>
         ApiResponse<List<ScenarioBase>> GetScenariosTreeWithHttpInfo(string organizationId, string workspaceId);
         /// <summary>
-        /// Get the result of a query on the DatawareHouse
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioDataWarehouseQuery">the DatawareHouse query</param>
-        /// <returns>ScenarioDataWarehouseQueryResult</returns>
-        ScenarioDataWarehouseQueryResult QueryDataWarehouse(string organizationId, string workspaceId, string scenarioId, ScenarioDataWarehouseQuery scenarioDataWarehouseQuery);
-
-        /// <summary>
-        /// Get the result of a query on the DatawareHouse
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioDataWarehouseQuery">the DatawareHouse query</param>
-        /// <returns>ApiResponse of ScenarioDataWarehouseQueryResult</returns>
-        ApiResponse<ScenarioDataWarehouseQueryResult> QueryDataWarehouseWithHttpInfo(string organizationId, string workspaceId, string scenarioId, ScenarioDataWarehouseQuery scenarioDataWarehouseQuery);
-        /// <summary>
         /// Update a scenario
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -373,35 +349,6 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ScenarioBase&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ScenarioBase>>> GetScenariosTreeWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Get the result of a query on the DatawareHouse
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioDataWarehouseQuery">the DatawareHouse query</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ScenarioDataWarehouseQueryResult</returns>
-        System.Threading.Tasks.Task<ScenarioDataWarehouseQueryResult> QueryDataWarehouseAsync(string organizationId, string workspaceId, string scenarioId, ScenarioDataWarehouseQuery scenarioDataWarehouseQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Get the result of a query on the DatawareHouse
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioDataWarehouseQuery">the DatawareHouse query</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ScenarioDataWarehouseQueryResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ScenarioDataWarehouseQueryResult>> QueryDataWarehouseWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, ScenarioDataWarehouseQuery scenarioDataWarehouseQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a scenario
         /// </summary>
@@ -614,16 +561,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
             localVarRequestOptions.PathParameters.Add("compared_scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(comparedScenarioId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -705,16 +647,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
             localVarRequestOptions.PathParameters.Add("compared_scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(comparedScenarioId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -787,16 +724,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.Data = scenario;
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -872,16 +804,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.Data = scenario;
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -953,16 +880,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1037,16 +959,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1111,16 +1028,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1188,16 +1100,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1269,16 +1176,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1353,16 +1255,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1427,16 +1324,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1504,16 +1396,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1523,187 +1410,6 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetScenariosTree", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get the result of a query on the DatawareHouse 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioDataWarehouseQuery">the DatawareHouse query</param>
-        /// <returns>ScenarioDataWarehouseQueryResult</returns>
-        public ScenarioDataWarehouseQueryResult QueryDataWarehouse(string organizationId, string workspaceId, string scenarioId, ScenarioDataWarehouseQuery scenarioDataWarehouseQuery)
-        {
-            Com.Cosmotech.Client.ApiResponse<ScenarioDataWarehouseQueryResult> localVarResponse = QueryDataWarehouseWithHttpInfo(organizationId, workspaceId, scenarioId, scenarioDataWarehouseQuery);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the result of a query on the DatawareHouse 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioDataWarehouseQuery">the DatawareHouse query</param>
-        /// <returns>ApiResponse of ScenarioDataWarehouseQueryResult</returns>
-        public Com.Cosmotech.Client.ApiResponse<ScenarioDataWarehouseQueryResult> QueryDataWarehouseWithHttpInfo(string organizationId, string workspaceId, string scenarioId, ScenarioDataWarehouseQuery scenarioDataWarehouseQuery)
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->QueryDataWarehouse");
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->QueryDataWarehouse");
-
-            // verify the required parameter 'scenarioId' is set
-            if (scenarioId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->QueryDataWarehouse");
-
-            // verify the required parameter 'scenarioDataWarehouseQuery' is set
-            if (scenarioDataWarehouseQuery == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioDataWarehouseQuery' when calling ScenarioApi->QueryDataWarehouse");
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
-            localVarRequestOptions.Data = scenarioDataWarehouseQuery;
-
-            // authentication (AADOAuth2AuthCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<ScenarioDataWarehouseQueryResult>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/queryDataWarehouse", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("QueryDataWarehouse", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get the result of a query on the DatawareHouse 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioDataWarehouseQuery">the DatawareHouse query</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ScenarioDataWarehouseQueryResult</returns>
-        public async System.Threading.Tasks.Task<ScenarioDataWarehouseQueryResult> QueryDataWarehouseAsync(string organizationId, string workspaceId, string scenarioId, ScenarioDataWarehouseQuery scenarioDataWarehouseQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Com.Cosmotech.Client.ApiResponse<ScenarioDataWarehouseQueryResult> localVarResponse = await QueryDataWarehouseWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenarioDataWarehouseQuery, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the result of a query on the DatawareHouse 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioDataWarehouseQuery">the DatawareHouse query</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ScenarioDataWarehouseQueryResult)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioDataWarehouseQueryResult>> QueryDataWarehouseWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, ScenarioDataWarehouseQuery scenarioDataWarehouseQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->QueryDataWarehouse");
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->QueryDataWarehouse");
-
-            // verify the required parameter 'scenarioId' is set
-            if (scenarioId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->QueryDataWarehouse");
-
-            // verify the required parameter 'scenarioDataWarehouseQuery' is set
-            if (scenarioDataWarehouseQuery == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioDataWarehouseQuery' when calling ScenarioApi->QueryDataWarehouse");
-
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
-            localVarRequestOptions.Data = scenarioDataWarehouseQuery;
-
-            // authentication (AADOAuth2AuthCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ScenarioDataWarehouseQueryResult>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/queryDataWarehouse", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("QueryDataWarehouse", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1774,16 +1480,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
             localVarRequestOptions.Data = scenario;
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
@@ -1866,16 +1567,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
             localVarRequestOptions.Data = scenario;
 
-            // authentication (AADOAuth2AuthCode) required
+            // authentication (oAuth2AuthCode) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-            // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
-            {
-                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request

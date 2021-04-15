@@ -72,12 +72,8 @@ namespace Example
 
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.ApiKey.Add("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.ApiKeyPrefix.Add("key", "Bearer");
 
             var apiInstance = new ConnectorApi(config);
 
@@ -112,13 +108,14 @@ Class | Method | HTTP request | Description
 *ConnectorApi* | [**UnregisterConnector**](docs/ConnectorApi.md#unregisterconnector) | **DELETE** /connectors/{connector_id} | Unregister an connector
 *ConnectorApi* | [**UploadConnector**](docs/ConnectorApi.md#uploadconnector) | **POST** /connectors/upload | Upload and register a new connector
 *DatasetApi* | [**CopyDataset**](docs/DatasetApi.md#copydataset) | **POST** /organizations/{organization_id}/datasets/copy | Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector.
-*DatasetApi* | [**CreateDataset**](docs/DatasetApi.md#createdataset) | **POST** /organizations/{organization_id}/datasets | Register a new dataset
+*DatasetApi* | [**CreateDataset**](docs/DatasetApi.md#createdataset) | **POST** /organizations/{organization_id}/datasets | Create a new dataset
 *DatasetApi* | [**DeleteDataset**](docs/DatasetApi.md#deletedataset) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id} | Delete a dataset
 *DatasetApi* | [**FindAllDatasets**](docs/DatasetApi.md#findalldatasets) | **GET** /organizations/{organization_id}/datasets | List all Datasets
 *DatasetApi* | [**FindDatasetById**](docs/DatasetApi.md#finddatasetbyid) | **GET** /organizations/{organization_id}/datasets/{dataset_id} | Get the details of a dataset
 *DatasetApi* | [**UpdateDataset**](docs/DatasetApi.md#updatedataset) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id} | Update a dataset
 *OrganizationApi* | [**FindAllOrganizations**](docs/OrganizationApi.md#findallorganizations) | **GET** /organizations | List all Organizations
 *OrganizationApi* | [**FindOrganizationById**](docs/OrganizationApi.md#findorganizationbyid) | **GET** /organizations/{organization_id} | Get the details of an organization
+*OrganizationApi* | [**GetCurrentOrganizationUser**](docs/OrganizationApi.md#getcurrentorganizationuser) | **GET** /organizations/{organization_id}/me | Get the current User information for the Organization
 *OrganizationApi* | [**RegisterOrganization**](docs/OrganizationApi.md#registerorganization) | **POST** /organizations | Register a new organization
 *OrganizationApi* | [**UnregisterOrganization**](docs/OrganizationApi.md#unregisterorganization) | **DELETE** /organizations/{organization_id} | Unregister an organization
 *OrganizationApi* | [**UpdateOrganization**](docs/OrganizationApi.md#updateorganization) | **PATCH** /organizations/{organization_id} | Update an organization
@@ -128,8 +125,19 @@ Class | Method | HTTP request | Description
 *ScenarioApi* | [**FindAllScenarios**](docs/ScenarioApi.md#findallscenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | List all Scenarios
 *ScenarioApi* | [**FindScenarioById**](docs/ScenarioApi.md#findscenariobyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Get the details of an scenario
 *ScenarioApi* | [**GetScenariosTree**](docs/ScenarioApi.md#getscenariostree) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree | Get the Scenarios Tree
-*ScenarioApi* | [**QueryDataWarehouse**](docs/ScenarioApi.md#querydatawarehouse) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/queryDataWarehouse | Get the result of a query on the DatawareHouse
 *ScenarioApi* | [**UpdateScenario**](docs/ScenarioApi.md#updatescenario) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Update a scenario
+*SimulationApi* | [**DeleteSimulation**](docs/SimulationApi.md#deletesimulation) | **DELETE** /organizations/{organization_id}/simulations/{simulation_id} | Delete a simulation
+*SimulationApi* | [**FindSimulationById**](docs/SimulationApi.md#findsimulationbyid) | **GET** /organizations/{organization_id}/simulations/{simulation_id} | Get the details of a simulation
+*SimulationApi* | [**GetScenarioSimulation**](docs/SimulationApi.md#getscenariosimulation) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/simulations/{simulation_id} | get the Simulation for the Scenario
+*SimulationApi* | [**GetScenarioSimulationLogs**](docs/SimulationApi.md#getscenariosimulationlogs) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/simulations/{simulation_id}/logs | get the logs for the Simulation
+*SimulationApi* | [**GetScenarioSimulations**](docs/SimulationApi.md#getscenariosimulations) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/simulations | get the list of Simulations for the Scenario
+*SimulationApi* | [**GetWorkspaceSimulations**](docs/SimulationApi.md#getworkspacesimulations) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/simulations | get the list of Simulations for the Workspace
+*SimulationApi* | [**RunScenario**](docs/SimulationApi.md#runscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/run | run a Simulation for the Scenario
+*SimulationApi* | [**SearchSimulationLogs**](docs/SimulationApi.md#searchsimulationlogs) | **POST** /organizations/{organization_id}/simulations/{simulation_id}/logs/search | Search the logs of a simulation
+*SimulationApi* | [**SearchSimulations**](docs/SimulationApi.md#searchsimulations) | **POST** /organizations/{organization_id}/simulations/search | Search Simulations
+*SimulationApi* | [**StartSimulationContainers**](docs/SimulationApi.md#startsimulationcontainers) | **POST** /organizations/{organization_id}/simulations/startcontainers | Start a new simulation with raw containers definition
+*SimulationApi* | [**StartSimulationScenario**](docs/SimulationApi.md#startsimulationscenario) | **POST** /organizations/{organization_id}/simulations/start | Start a new simulation for a Scenario
+*SimulationApi* | [**StartSimulationSimulator**](docs/SimulationApi.md#startsimulationsimulator) | **POST** /organizations/{organization_id}/simulations/startsimulator | Start a new simulation for a Simulator Analysis
 *SimulatorApi* | [**CreateSimulator**](docs/SimulatorApi.md#createsimulator) | **POST** /organizations/{organization_id}/simulators | Register a new simulator
 *SimulatorApi* | [**DeleteSimulator**](docs/SimulatorApi.md#deletesimulator) | **DELETE** /organizations/{organization_id}/simulators/{simulator_id} | Delete a simulator
 *SimulatorApi* | [**FindAllSimulators**](docs/SimulatorApi.md#findallsimulators) | **GET** /organizations/{organization_id}/simulators | List all Simulators
@@ -154,6 +162,7 @@ Class | Method | HTTP request | Description
 *WorkspaceApi* | [**DeleteWorkspace**](docs/WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace
 *WorkspaceApi* | [**FindAllWorkspaces**](docs/WorkspaceApi.md#findallworkspaces) | **GET** /organizations/{organization_id}/workspaces | List all Workspaces
 *WorkspaceApi* | [**FindWorkspaceById**](docs/WorkspaceApi.md#findworkspacebyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id} | Get the details of an workspace
+*WorkspaceApi* | [**GetCurrentWorkspaceUser**](docs/WorkspaceApi.md#getcurrentworkspaceuser) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/me | Get the current User information for the Workspace
 *WorkspaceApi* | [**UpdateWorkspace**](docs/WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
 
 
@@ -179,15 +188,20 @@ Class | Method | HTTP request | Description
  - [Model.ScenarioBase](docs/ScenarioBase.md)
  - [Model.ScenarioChangedParameterValue](docs/ScenarioChangedParameterValue.md)
  - [Model.ScenarioComparisonResult](docs/ScenarioComparisonResult.md)
- - [Model.ScenarioDataWarehouseQuery](docs/ScenarioDataWarehouseQuery.md)
- - [Model.ScenarioDataWarehouseQueryResult](docs/ScenarioDataWarehouseQueryResult.md)
- - [Model.ScenarioFailedAnalysis](docs/ScenarioFailedAnalysis.md)
- - [Model.ScenarioFailedAnalysisAllOf](docs/ScenarioFailedAnalysisAllOf.md)
- - [Model.ScenarioRunningAnalysis](docs/ScenarioRunningAnalysis.md)
- - [Model.ScenarioRunningAnalysisAllOf](docs/ScenarioRunningAnalysisAllOf.md)
- - [Model.ScenarioSuccessfulAnalysis](docs/ScenarioSuccessfulAnalysis.md)
- - [Model.ScenarioSuccessfulAnalysisAllOf](docs/ScenarioSuccessfulAnalysisAllOf.md)
  - [Model.ScenarioUser](docs/ScenarioUser.md)
+ - [Model.Simulation](docs/Simulation.md)
+ - [Model.SimulationAllOf](docs/SimulationAllOf.md)
+ - [Model.SimulationAnalysisParameterValue](docs/SimulationAnalysisParameterValue.md)
+ - [Model.SimulationBase](docs/SimulationBase.md)
+ - [Model.SimulationContainerLog](docs/SimulationContainerLog.md)
+ - [Model.SimulationContainerLogs](docs/SimulationContainerLogs.md)
+ - [Model.SimulationContainers](docs/SimulationContainers.md)
+ - [Model.SimulationLogs](docs/SimulationLogs.md)
+ - [Model.SimulationLogsOptions](docs/SimulationLogsOptions.md)
+ - [Model.SimulationSearch](docs/SimulationSearch.md)
+ - [Model.SimulationStartContainers](docs/SimulationStartContainers.md)
+ - [Model.SimulationStartScenario](docs/SimulationStartScenario.md)
+ - [Model.SimulationStartSimulator](docs/SimulationStartSimulator.md)
  - [Model.Simulator](docs/Simulator.md)
  - [Model.SimulatorAnalysis](docs/SimulatorAnalysis.md)
  - [Model.User](docs/User.md)
@@ -197,28 +211,23 @@ Class | Method | HTTP request | Description
  - [Model.Validator](docs/Validator.md)
  - [Model.ValidatorRun](docs/ValidatorRun.md)
  - [Model.Workspace](docs/Workspace.md)
+ - [Model.WorkspaceService](docs/WorkspaceService.md)
  - [Model.WorkspaceServices](docs/WorkspaceServices.md)
  - [Model.WorkspaceSimulator](docs/WorkspaceSimulator.md)
  - [Model.WorkspaceUser](docs/WorkspaceUser.md)
+ - [Model.WorkspaceUserDetails](docs/WorkspaceUserDetails.md)
+ - [Model.WorkspaceUserDetailsAllOf](docs/WorkspaceUserDetailsAllOf.md)
  - [Model.WorkspaceWebApp](docs/WorkspaceWebApp.md)
 
 
 <a name="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
-<a name="AADOAuth2AuthCode"></a>
-### AADOAuth2AuthCode
+<a name="oAuth2AuthCode"></a>
+### oAuth2AuthCode
 
 - **Type**: OAuth
 - **Flow**: implicit
-- **Authorization URL**: https://login.microsoftonline.com/e9641c78-d0d6-4d09-af63-168922724e7f/oauth2/v2.0/authorize
-- **Scopes**: 
-  - http://sample.azure.cosmo-platform.com/user_impersonation: User Impersonation
-
-<a name="ApiKeyAuth"></a>
-### ApiKeyAuth
-
-- **Type**: API key
-- **API key parameter name**: key
-- **Location**: URL query string
+- **Authorization URL**: oauth2/authorize
+- **Scopes**: N/A
 

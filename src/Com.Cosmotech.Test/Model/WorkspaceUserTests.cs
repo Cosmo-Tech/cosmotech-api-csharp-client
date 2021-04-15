@@ -73,12 +73,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Name'
         }
         /// <summary>
-        /// Test the property 'Roles'
+        /// Test the property 'Role'
         /// </summary>
         [Fact]
-        public void RolesTest()
+        public void RoleTest()
         {
-            // TODO unit test for the property 'Roles'
+            // TODO unit test for the property 'Role'
         }
 
     }

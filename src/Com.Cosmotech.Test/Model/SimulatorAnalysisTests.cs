@@ -129,6 +129,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'CustomDriverResource'
         }
         /// <summary>
+        /// Test the property 'DatasetSchemaResource'
+        /// </summary>
+        [Fact]
+        public void DatasetSchemaResourceTest()
+        {
+            // TODO unit test for the property 'DatasetSchemaResource'
+        }
+        /// <summary>
         /// Test the property 'ParameterGroups'
         /// </summary>
         [Fact]

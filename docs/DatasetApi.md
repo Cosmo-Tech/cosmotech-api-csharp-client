@@ -5,7 +5,7 @@ All URIs are relative to *https://api.azure.cosmo-platform.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CopyDataset**](DatasetApi.md#copydataset) | **POST** /organizations/{organization_id}/datasets/copy | Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector.
-[**CreateDataset**](DatasetApi.md#createdataset) | **POST** /organizations/{organization_id}/datasets | Register a new dataset
+[**CreateDataset**](DatasetApi.md#createdataset) | **POST** /organizations/{organization_id}/datasets | Create a new dataset
 [**DeleteDataset**](DatasetApi.md#deletedataset) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id} | Delete a dataset
 [**FindAllDatasets**](DatasetApi.md#findalldatasets) | **GET** /organizations/{organization_id}/datasets | List all Datasets
 [**FindDatasetById**](DatasetApi.md#finddatasetbyid) | **GET** /organizations/{organization_id}/datasets/{dataset_id} | Get the details of a dataset
@@ -34,12 +34,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new DatasetApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -75,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -96,7 +92,7 @@ Name | Type | Description  | Notes
 # **CreateDataset**
 > Dataset CreateDataset (string organizationId, Dataset dataset)
 
-Register a new dataset
+Create a new dataset
 
 ### Example
 ```csharp
@@ -114,12 +110,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new DatasetApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -127,7 +119,7 @@ namespace Example
 
             try
             {
-                // Register a new dataset
+                // Create a new dataset
                 Dataset result = apiInstance.CreateDataset(organizationId, dataset);
                 Debug.WriteLine(result);
             }
@@ -155,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -193,12 +185,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new DatasetApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -234,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -273,12 +261,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new DatasetApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -312,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -349,12 +333,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new DatasetApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -390,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 
@@ -428,12 +408,8 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: AADOAuth2AuthCode
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure API key authorization: ApiKeyAuth
-            config.AddApiKey("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new DatasetApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
@@ -471,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[AADOAuth2AuthCode](../README.md#AADOAuth2AuthCode), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
 
 ### HTTP request headers
 

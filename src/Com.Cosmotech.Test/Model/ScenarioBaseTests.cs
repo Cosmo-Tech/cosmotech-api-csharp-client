@@ -105,12 +105,20 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'OwnerId'
         }
         /// <summary>
-        /// Test the property 'UserList'
+        /// Test the property 'SimulatorId'
         /// </summary>
         [Fact]
-        public void UserListTest()
+        public void SimulatorIdTest()
         {
-            // TODO unit test for the property 'UserList'
+            // TODO unit test for the property 'SimulatorId'
+        }
+        /// <summary>
+        /// Test the property 'Users'
+        /// </summary>
+        [Fact]
+        public void UsersTest()
+        {
+            // TODO unit test for the property 'Users'
         }
 
     }

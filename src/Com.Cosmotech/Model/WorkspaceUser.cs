@@ -36,19 +36,25 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <value>the User role</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum RolesEnum
+        public enum RoleEnum
         {
+            /// <summary>
+            /// Enum Admin for value: Admin
+            /// </summary>
+            [EnumMember(Value = "Admin")]
+            Admin = 1,
+
+            /// <summary>
+            /// Enum User for value: User
+            /// </summary>
+            [EnumMember(Value = "User")]
+            User = 2,
+
             /// <summary>
             /// Enum Viewer for value: Viewer
             /// </summary>
             [EnumMember(Value = "Viewer")]
-            Viewer = 1,
-
-            /// <summary>
-            /// Enum Advanced for value: Advanced
-            /// </summary>
-            [EnumMember(Value = "Advanced")]
-            Advanced = 2
+            Viewer = 3
 
         }
 
@@ -56,8 +62,8 @@ namespace Com.Cosmotech.Model
         /// the User role
         /// </summary>
         /// <value>the User role</value>
-        [DataMember(Name = "roles", IsRequired = true, EmitDefaultValue = false)]
-        public RolesEnum Roles { get; set; }
+        [DataMember(Name = "role", IsRequired = true, EmitDefaultValue = false)]
+        public RoleEnum Role { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspaceUser" /> class.
         /// </summary>
@@ -67,12 +73,12 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="WorkspaceUser" /> class.
         /// </summary>
         /// <param name="id">the User id (required).</param>
-        /// <param name="roles">the User role (required).</param>
-        public WorkspaceUser(string id = default(string), RolesEnum roles = default(RolesEnum))
+        /// <param name="role">the User role (required).</param>
+        public WorkspaceUser(string id = default(string), RoleEnum role = default(RoleEnum))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for WorkspaceUser and cannot be null");
-            this.Roles = roles;
+            this.Role = role;
         }
 
         /// <summary>
@@ -108,7 +114,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class WorkspaceUser {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Roles: ").Append(Roles).Append("\n");
+            sb.Append("  Role: ").Append(Role).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -154,8 +160,8 @@ namespace Com.Cosmotech.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Roles == input.Roles ||
-                    this.Roles.Equals(input.Roles)
+                    this.Role == input.Role ||
+                    this.Role.Equals(input.Role)
                 );
         }
 
@@ -172,7 +178,7 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                hashCode = hashCode * 59 + this.Roles.GetHashCode();
+                hashCode = hashCode * 59 + this.Role.GetHashCode();
                 return hashCode;
             }
         }

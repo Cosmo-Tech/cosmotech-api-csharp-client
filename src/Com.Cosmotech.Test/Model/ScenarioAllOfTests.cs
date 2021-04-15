@@ -57,28 +57,36 @@ namespace Com.Cosmotech.Test.Model
 
 
         /// <summary>
-        /// Test the property 'SimulatorId'
+        /// Test the property 'SimulatorName'
         /// </summary>
         [Fact]
-        public void SimulatorIdTest()
+        public void SimulatorNameTest()
         {
-            // TODO unit test for the property 'SimulatorId'
+            // TODO unit test for the property 'SimulatorName'
         }
         /// <summary>
-        /// Test the property 'Analyses'
+        /// Test the property 'SimulatorAnalysisName'
         /// </summary>
         [Fact]
-        public void AnalysesTest()
+        public void SimulatorAnalysisNameTest()
         {
-            // TODO unit test for the property 'Analyses'
+            // TODO unit test for the property 'SimulatorAnalysisName'
         }
         /// <summary>
-        /// Test the property 'LastAnalyses'
+        /// Test the property 'Analysis'
         /// </summary>
         [Fact]
-        public void LastAnalysesTest()
+        public void AnalysisTest()
         {
-            // TODO unit test for the property 'LastAnalyses'
+            // TODO unit test for the property 'Analysis'
+        }
+        /// <summary>
+        /// Test the property 'SendInputToDataWarehouse'
+        /// </summary>
+        [Fact]
+        public void SendInputToDataWarehouseTest()
+        {
+            // TODO unit test for the property 'SendInputToDataWarehouse'
         }
 
     }

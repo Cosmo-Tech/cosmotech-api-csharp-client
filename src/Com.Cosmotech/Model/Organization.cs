@@ -72,6 +72,22 @@ namespace Com.Cosmotech.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// the Owner User Id
+        /// </summary>
+        /// <value>the Owner User Id</value>
+        [DataMember(Name = "ownerId", EmitDefaultValue = false)]
+        public string OwnerId { get; private set; }
+
+        /// <summary>
+        /// Returns false as OwnerId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeOwnerId()
+        {
+            return false;
+        }
+
+        /// <summary>
         /// Gets or Sets Users
         /// </summary>
         [DataMember(Name = "users", EmitDefaultValue = false)]
@@ -87,6 +103,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class Organization {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -133,6 +150,11 @@ namespace Com.Cosmotech.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.OwnerId == input.OwnerId ||
+                    (this.OwnerId != null &&
+                    this.OwnerId.Equals(input.OwnerId))
+                ) && 
+                (
                     this.Users == input.Users ||
                     this.Users != null &&
                     input.Users != null &&
@@ -153,6 +175,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.OwnerId != null)
+                    hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
                 if (this.Users != null)
                     hashCode = hashCode * 59 + this.Users.GetHashCode();
                 return hashCode;

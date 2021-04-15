@@ -42,27 +42,28 @@ namespace Com.Cosmotech.Model
         /// <param name="id">the Simulator Analysis id (required).</param>
         /// <param name="name">the Simulator Analysis name (required).</param>
         /// <param name="description">the Simulator Analysis description.</param>
-        /// <param name="simulation">the simulation name (required).</param>
+        /// <param name="simulation">the simulation name.</param>
         /// <param name="tags">the list of Simulator Analysis tags.</param>
         /// <param name="computeSize">the compute size needed for this Analysis. Standard sizes are basic and highcpu. Default is basic.</param>
         /// <param name="parametersHandlerResource">parametersHandlerResource.</param>
         /// <param name="datasetValidatorResource">datasetValidatorResource.</param>
         /// <param name="customDriverResource">customDriverResource.</param>
+        /// <param name="datasetSchemaResource">datasetSchemaResource.</param>
         /// <param name="parameterGroups">the list of parameters groups for the Analysis.</param>
-        public SimulatorAnalysis(string id = default(string), string name = default(string), string description = default(string), string simulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), AnalysisResourceStorage parametersHandlerResource = default(AnalysisResourceStorage), AnalysisResourceStorage datasetValidatorResource = default(AnalysisResourceStorage), AnalysisResourceStorage customDriverResource = default(AnalysisResourceStorage), List<AnalysisParameterGroup> parameterGroups = default(List<AnalysisParameterGroup>))
+        public SimulatorAnalysis(string id = default(string), string name = default(string), string description = default(string), string simulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), AnalysisResourceStorage parametersHandlerResource = default(AnalysisResourceStorage), AnalysisResourceStorage datasetValidatorResource = default(AnalysisResourceStorage), AnalysisResourceStorage customDriverResource = default(AnalysisResourceStorage), AnalysisResourceStorage datasetSchemaResource = default(AnalysisResourceStorage), List<AnalysisParameterGroup> parameterGroups = default(List<AnalysisParameterGroup>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for SimulatorAnalysis and cannot be null");
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for SimulatorAnalysis and cannot be null");
-            // to ensure "simulation" is required (not null)
-            this.Simulation = simulation ?? throw new ArgumentNullException("simulation is a required property for SimulatorAnalysis and cannot be null");
             this.Description = description;
+            this.Simulation = simulation;
             this.Tags = tags;
             this.ComputeSize = computeSize;
             this.ParametersHandlerResource = parametersHandlerResource;
             this.DatasetValidatorResource = datasetValidatorResource;
             this.CustomDriverResource = customDriverResource;
+            this.DatasetSchemaResource = datasetSchemaResource;
             this.ParameterGroups = parameterGroups;
         }
 
@@ -91,7 +92,7 @@ namespace Com.Cosmotech.Model
         /// the simulation name
         /// </summary>
         /// <value>the simulation name</value>
-        [DataMember(Name = "simulation", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "simulation", EmitDefaultValue = false)]
         public string Simulation { get; set; }
 
         /// <summary>
@@ -127,6 +128,12 @@ namespace Com.Cosmotech.Model
         public AnalysisResourceStorage CustomDriverResource { get; set; }
 
         /// <summary>
+        /// Gets or Sets DatasetSchemaResource
+        /// </summary>
+        [DataMember(Name = "datasetSchemaResource", EmitDefaultValue = false)]
+        public AnalysisResourceStorage DatasetSchemaResource { get; set; }
+
+        /// <summary>
         /// the list of parameters groups for the Analysis
         /// </summary>
         /// <value>the list of parameters groups for the Analysis</value>
@@ -150,6 +157,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  ParametersHandlerResource: ").Append(ParametersHandlerResource).Append("\n");
             sb.Append("  DatasetValidatorResource: ").Append(DatasetValidatorResource).Append("\n");
             sb.Append("  CustomDriverResource: ").Append(CustomDriverResource).Append("\n");
+            sb.Append("  DatasetSchemaResource: ").Append(DatasetSchemaResource).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -232,6 +240,11 @@ namespace Com.Cosmotech.Model
                     this.CustomDriverResource.Equals(input.CustomDriverResource))
                 ) && 
                 (
+                    this.DatasetSchemaResource == input.DatasetSchemaResource ||
+                    (this.DatasetSchemaResource != null &&
+                    this.DatasetSchemaResource.Equals(input.DatasetSchemaResource))
+                ) && 
+                (
                     this.ParameterGroups == input.ParameterGroups ||
                     this.ParameterGroups != null &&
                     input.ParameterGroups != null &&
@@ -266,6 +279,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.DatasetValidatorResource.GetHashCode();
                 if (this.CustomDriverResource != null)
                     hashCode = hashCode * 59 + this.CustomDriverResource.GetHashCode();
+                if (this.DatasetSchemaResource != null)
+                    hashCode = hashCode * 59 + this.DatasetSchemaResource.GetHashCode();
                 if (this.ParameterGroups != null)
                     hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();
                 return hashCode;

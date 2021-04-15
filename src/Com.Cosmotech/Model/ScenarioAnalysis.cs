@@ -34,27 +34,23 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioAnalysis" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ScenarioAnalysis() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioAnalysis" /> class.
-        /// </summary>
-        /// <param name="analysisId">the Simulator Analysis Id (required).</param>
+        /// <param name="analysisId">the Simulator Analysis Id associated with this Scenario.</param>
         /// <param name="datasetList">the list of Dataset Id associated to this Scenario Analysis.</param>
         /// <param name="parametersValues">the list of Simulator Analysis parameters values.</param>
-        public ScenarioAnalysis(string analysisId = default(string), List<string> datasetList = default(List<string>), List<ScenarioAnalysisParameterValue> parametersValues = default(List<ScenarioAnalysisParameterValue>))
+        /// <param name="sendInputToDataWarehouse">whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run.</param>
+        public ScenarioAnalysis(string analysisId = default(string), List<string> datasetList = default(List<string>), List<ScenarioAnalysisParameterValue> parametersValues = default(List<ScenarioAnalysisParameterValue>), bool sendInputToDataWarehouse = default(bool))
         {
-            // to ensure "analysisId" is required (not null)
-            this.AnalysisId = analysisId ?? throw new ArgumentNullException("analysisId is a required property for ScenarioAnalysis and cannot be null");
+            this.AnalysisId = analysisId;
             this.DatasetList = datasetList;
             this.ParametersValues = parametersValues;
+            this.SendInputToDataWarehouse = sendInputToDataWarehouse;
         }
 
         /// <summary>
-        /// the Simulator Analysis Id
+        /// the Simulator Analysis Id associated with this Scenario
         /// </summary>
-        /// <value>the Simulator Analysis Id</value>
-        [DataMember(Name = "analysisId", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>the Simulator Analysis Id associated with this Scenario</value>
+        [DataMember(Name = "analysisId", EmitDefaultValue = false)]
         public string AnalysisId { get; set; }
 
         /// <summary>
@@ -72,6 +68,13 @@ namespace Com.Cosmotech.Model
         public List<ScenarioAnalysisParameterValue> ParametersValues { get; set; }
 
         /// <summary>
+        /// whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
+        /// </summary>
+        /// <value>whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
+        [DataMember(Name = "sendInputToDataWarehouse", EmitDefaultValue = false)]
+        public bool SendInputToDataWarehouse { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -82,6 +85,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  AnalysisId: ").Append(AnalysisId).Append("\n");
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
             sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
+            sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -132,6 +136,10 @@ namespace Com.Cosmotech.Model
                     this.ParametersValues != null &&
                     input.ParametersValues != null &&
                     this.ParametersValues.SequenceEqual(input.ParametersValues)
+                ) && 
+                (
+                    this.SendInputToDataWarehouse == input.SendInputToDataWarehouse ||
+                    this.SendInputToDataWarehouse.Equals(input.SendInputToDataWarehouse)
                 );
         }
 
@@ -150,6 +158,7 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.DatasetList.GetHashCode();
                 if (this.ParametersValues != null)
                     hashCode = hashCode * 59 + this.ParametersValues.GetHashCode();
+                hashCode = hashCode * 59 + this.SendInputToDataWarehouse.GetHashCode();
                 return hashCode;
             }
         }

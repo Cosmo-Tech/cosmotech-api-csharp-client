@@ -44,10 +44,12 @@ namespace Com.Cosmotech.Model
         /// <param name="version">the Workspace version MAJOR.MINOR.PATCH..</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="simulator">simulator (required).</param>
-        /// <param name="userList">the list of users Id with their role.</param>
+        /// <param name="simulatorAnalysisFilter">a filter list of available Simulator Analysis.</param>
+        /// <param name="users">the list of users Id with their role.</param>
         /// <param name="webApp">webApp.</param>
         /// <param name="services">services.</param>
-        public Workspace(string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSimulator simulator = default(WorkspaceSimulator), List<WorkspaceUser> userList = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp), WorkspaceServices services = default(WorkspaceServices))
+        /// <param name="sendInputToDataWarehouse">default setting for all Scenarios and Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run (default to true).</param>
+        public Workspace(string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSimulator simulator = default(WorkspaceSimulator), List<string> simulatorAnalysisFilter = default(List<string>), List<WorkspaceUser> users = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp), WorkspaceServices services = default(WorkspaceServices), bool sendInputToDataWarehouse = true)
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Workspace and cannot be null");
@@ -56,9 +58,11 @@ namespace Com.Cosmotech.Model
             this.Description = description;
             this.Version = version;
             this.Tags = tags;
-            this.UserList = userList;
+            this.SimulatorAnalysisFilter = simulatorAnalysisFilter;
+            this.Users = users;
             this.WebApp = webApp;
             this.Services = services;
+            this.SendInputToDataWarehouse = sendInputToDataWarehouse;
         }
 
         /// <summary>
@@ -128,11 +132,18 @@ namespace Com.Cosmotech.Model
         public WorkspaceSimulator Simulator { get; set; }
 
         /// <summary>
+        /// a filter list of available Simulator Analysis
+        /// </summary>
+        /// <value>a filter list of available Simulator Analysis</value>
+        [DataMember(Name = "simulatorAnalysisFilter", EmitDefaultValue = false)]
+        public List<string> SimulatorAnalysisFilter { get; set; }
+
+        /// <summary>
         /// the list of users Id with their role
         /// </summary>
         /// <value>the list of users Id with their role</value>
-        [DataMember(Name = "userList", EmitDefaultValue = false)]
-        public List<WorkspaceUser> UserList { get; set; }
+        [DataMember(Name = "users", EmitDefaultValue = false)]
+        public List<WorkspaceUser> Users { get; set; }
 
         /// <summary>
         /// Gets or Sets WebApp
@@ -145,6 +156,13 @@ namespace Com.Cosmotech.Model
         /// </summary>
         [DataMember(Name = "services", EmitDefaultValue = false)]
         public WorkspaceServices Services { get; set; }
+
+        /// <summary>
+        /// default setting for all Scenarios and Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
+        /// </summary>
+        /// <value>default setting for all Scenarios and Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
+        [DataMember(Name = "sendInputToDataWarehouse", EmitDefaultValue = false)]
+        public bool SendInputToDataWarehouse { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -161,9 +179,11 @@ namespace Com.Cosmotech.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Simulator: ").Append(Simulator).Append("\n");
-            sb.Append("  UserList: ").Append(UserList).Append("\n");
+            sb.Append("  SimulatorAnalysisFilter: ").Append(SimulatorAnalysisFilter).Append("\n");
+            sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("  WebApp: ").Append(WebApp).Append("\n");
             sb.Append("  Services: ").Append(Services).Append("\n");
+            sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,10 +255,16 @@ namespace Com.Cosmotech.Model
                     this.Simulator.Equals(input.Simulator))
                 ) && 
                 (
-                    this.UserList == input.UserList ||
-                    this.UserList != null &&
-                    input.UserList != null &&
-                    this.UserList.SequenceEqual(input.UserList)
+                    this.SimulatorAnalysisFilter == input.SimulatorAnalysisFilter ||
+                    this.SimulatorAnalysisFilter != null &&
+                    input.SimulatorAnalysisFilter != null &&
+                    this.SimulatorAnalysisFilter.SequenceEqual(input.SimulatorAnalysisFilter)
+                ) && 
+                (
+                    this.Users == input.Users ||
+                    this.Users != null &&
+                    input.Users != null &&
+                    this.Users.SequenceEqual(input.Users)
                 ) && 
                 (
                     this.WebApp == input.WebApp ||
@@ -249,6 +275,10 @@ namespace Com.Cosmotech.Model
                     this.Services == input.Services ||
                     (this.Services != null &&
                     this.Services.Equals(input.Services))
+                ) && 
+                (
+                    this.SendInputToDataWarehouse == input.SendInputToDataWarehouse ||
+                    this.SendInputToDataWarehouse.Equals(input.SendInputToDataWarehouse)
                 );
         }
 
@@ -275,12 +305,15 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
                 if (this.Simulator != null)
                     hashCode = hashCode * 59 + this.Simulator.GetHashCode();
-                if (this.UserList != null)
-                    hashCode = hashCode * 59 + this.UserList.GetHashCode();
+                if (this.SimulatorAnalysisFilter != null)
+                    hashCode = hashCode * 59 + this.SimulatorAnalysisFilter.GetHashCode();
+                if (this.Users != null)
+                    hashCode = hashCode * 59 + this.Users.GetHashCode();
                 if (this.WebApp != null)
                     hashCode = hashCode * 59 + this.WebApp.GetHashCode();
                 if (this.Services != null)
                     hashCode = hashCode * 59 + this.Services.GetHashCode();
+                hashCode = hashCode * 59 + this.SendInputToDataWarehouse.GetHashCode();
                 return hashCode;
             }
         }

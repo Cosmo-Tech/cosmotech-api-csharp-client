@@ -57,6 +57,14 @@ namespace Com.Cosmotech.Test.Model
 
 
         /// <summary>
+        /// Test the property 'TenantCredentials'
+        /// </summary>
+        [Fact]
+        public void TenantCredentialsTest()
+        {
+            // TODO unit test for the property 'TenantCredentials'
+        }
+        /// <summary>
         /// Test the property 'ResultsEventBus'
         /// </summary>
         [Fact]

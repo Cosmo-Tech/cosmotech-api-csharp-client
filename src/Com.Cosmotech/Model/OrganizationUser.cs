@@ -32,14 +32,60 @@ namespace Com.Cosmotech.Model
     public partial class OrganizationUser : IEquatable<OrganizationUser>, IValidatableObject
     {
         /// <summary>
+        /// Defines Roles
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RolesEnum
+        {
+            /// <summary>
+            /// Enum Admin for value: Admin
+            /// </summary>
+            [EnumMember(Value = "Admin")]
+            Admin = 1,
+
+            /// <summary>
+            /// Enum User for value: User
+            /// </summary>
+            [EnumMember(Value = "User")]
+            User = 2,
+
+            /// <summary>
+            /// Enum Viewer for value: Viewer
+            /// </summary>
+            [EnumMember(Value = "Viewer")]
+            Viewer = 3,
+
+            /// <summary>
+            /// Enum Developer for value: Developer
+            /// </summary>
+            [EnumMember(Value = "Developer")]
+            Developer = 4
+
+        }
+
+
+        /// <summary>
+        /// the User&#39;s roles for the Organization
+        /// </summary>
+        /// <value>the User&#39;s roles for the Organization</value>
+        [DataMember(Name = "roles", IsRequired = true, EmitDefaultValue = false)]
+        public List<RolesEnum> Roles { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationUser" /> class.
         /// </summary>
-        /// <param name="id">the User unique identifier, in response.</param>
-        /// <param name="name">the User name.</param>
-        public OrganizationUser(string id = default(string), string name = default(string))
+        [JsonConstructorAttribute]
+        protected OrganizationUser() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationUser" /> class.
+        /// </summary>
+        /// <param name="name">the User name (required).</param>
+        /// <param name="roles">the User&#39;s roles for the Organization (required).</param>
+        public OrganizationUser(string name = default(string), List<RolesEnum> roles = default(List<RolesEnum>))
         {
-            this.Id = id;
-            this.Name = name;
+            // to ensure "name" is required (not null)
+            this.Name = name ?? throw new ArgumentNullException("name is a required property for OrganizationUser and cannot be null");
+            // to ensure "roles" is required (not null)
+            this.Roles = roles ?? throw new ArgumentNullException("roles is a required property for OrganizationUser and cannot be null");
         }
 
         /// <summary>
@@ -47,14 +93,39 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <value>the User unique identifier, in response</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
+        public string Id { get; private set; }
+
+        /// <summary>
+        /// Returns false as Id should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeId()
+        {
+            return false;
+        }
 
         /// <summary>
         /// the User name
         /// </summary>
         /// <value>the User name</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// the Organization Id context
+        /// </summary>
+        /// <value>the Organization Id context</value>
+        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+        public string OrganizationId { get; private set; }
+
+        /// <summary>
+        /// Returns false as OrganizationId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeOrganizationId()
+        {
+            return false;
+        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,6 +137,8 @@ namespace Com.Cosmotech.Model
             sb.Append("class OrganizationUser {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
+            sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,6 +182,15 @@ namespace Com.Cosmotech.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
+                ) && 
+                (
+                    this.Roles == input.Roles ||
+                    this.Roles.SequenceEqual(input.Roles)
                 );
         }
 
@@ -125,6 +207,9 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.OrganizationId != null)
+                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
+                hashCode = hashCode * 59 + this.Roles.GetHashCode();
                 return hashCode;
             }
         }

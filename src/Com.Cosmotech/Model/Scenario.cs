@@ -43,17 +43,23 @@ namespace Com.Cosmotech.Model
         /// <param name="description">the Scenario description.</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="parentId">the Scenario parent id.</param>
-        /// <param name="userList">the list of users Id with their role.</param>
-        /// <param name="analyses">the configuration for next Analysis.</param>
-        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), List<ScenarioUser> userList = default(List<ScenarioUser>), List<ScenarioAnalysis> analyses = default(List<ScenarioAnalysis>))
+        /// <param name="users">the list of users Id with their role.</param>
+        /// <param name="simulatorName">simulatorName.</param>
+        /// <param name="simulatorAnalysisName">simulatorAnalysisName.</param>
+        /// <param name="analysis">analysis.</param>
+        /// <param name="sendInputToDataWarehouse">default setting for all Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run.</param>
+        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), string simulatorName = default(string), string simulatorAnalysisName = default(string), ScenarioAnalysis analysis = default(ScenarioAnalysis), bool sendInputToDataWarehouse = default(bool))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Scenario and cannot be null");
             this.Description = description;
             this.Tags = tags;
             this.ParentId = parentId;
-            this.UserList = userList;
-            this.Analyses = analyses;
+            this.Users = users;
+            this.SimulatorName = simulatorName;
+            this.SimulatorAnalysisName = simulatorAnalysisName;
+            this.Analysis = analysis;
+            this.SendInputToDataWarehouse = sendInputToDataWarehouse;
         }
 
         /// <summary>
@@ -117,13 +123,6 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the list of users Id with their role
-        /// </summary>
-        /// <value>the list of users Id with their role</value>
-        [DataMember(Name = "userList", EmitDefaultValue = false)]
-        public List<ScenarioUser> UserList { get; set; }
-
-        /// <summary>
         /// the Simulator Id associated with this Scenario
         /// </summary>
         /// <value>the Simulator Id associated with this Scenario</value>
@@ -140,59 +139,36 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the configuration for next Analysis
+        /// the list of users Id with their role
         /// </summary>
-        /// <value>the configuration for next Analysis</value>
-        [DataMember(Name = "analyses", EmitDefaultValue = false)]
-        public List<ScenarioAnalysis> Analyses { get; set; }
+        /// <value>the list of users Id with their role</value>
+        [DataMember(Name = "users", EmitDefaultValue = false)]
+        public List<ScenarioUser> Users { get; set; }
 
         /// <summary>
-        /// the configuration and information for last successful Analyses Runs
+        /// Gets or Sets SimulatorName
         /// </summary>
-        /// <value>the configuration and information for last successful Analyses Runs</value>
-        [DataMember(Name = "successfulAnalyses", EmitDefaultValue = false)]
-        public List<ScenarioSuccessfulAnalysis> SuccessfulAnalyses { get; private set; }
+        [DataMember(Name = "simulatorName", EmitDefaultValue = false)]
+        public string SimulatorName { get; set; }
 
         /// <summary>
-        /// Returns false as SuccessfulAnalyses should not be serialized given that it's read-only.
+        /// Gets or Sets SimulatorAnalysisName
         /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSuccessfulAnalyses()
-        {
-            return false;
-        }
+        [DataMember(Name = "simulatorAnalysisName", EmitDefaultValue = false)]
+        public string SimulatorAnalysisName { get; set; }
 
         /// <summary>
-        /// the configuration and information for last failed Analyses Runs
+        /// Gets or Sets Analysis
         /// </summary>
-        /// <value>the configuration and information for last failed Analyses Runs</value>
-        [DataMember(Name = "failedAnalyses", EmitDefaultValue = false)]
-        public List<ScenarioFailedAnalysis> FailedAnalyses { get; private set; }
+        [DataMember(Name = "analysis", EmitDefaultValue = false)]
+        public ScenarioAnalysis Analysis { get; set; }
 
         /// <summary>
-        /// Returns false as FailedAnalyses should not be serialized given that it's read-only.
+        /// default setting for all Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
         /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeFailedAnalyses()
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// the configuration and information for currently running Analyses Runs
-        /// </summary>
-        /// <value>the configuration and information for currently running Analyses Runs</value>
-        [DataMember(Name = "runningAnalyses", EmitDefaultValue = false)]
-        public List<ScenarioRunningAnalysis> RunningAnalyses { get; private set; }
-
-        /// <summary>
-        /// Returns false as RunningAnalyses should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeRunningAnalyses()
-        {
-            return false;
-        }
+        /// <value>default setting for all Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
+        [DataMember(Name = "sendInputToDataWarehouse", EmitDefaultValue = false)]
+        public bool SendInputToDataWarehouse { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -208,12 +184,12 @@ namespace Com.Cosmotech.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
-            sb.Append("  UserList: ").Append(UserList).Append("\n");
             sb.Append("  SimulatorId: ").Append(SimulatorId).Append("\n");
-            sb.Append("  Analyses: ").Append(Analyses).Append("\n");
-            sb.Append("  SuccessfulAnalyses: ").Append(SuccessfulAnalyses).Append("\n");
-            sb.Append("  FailedAnalyses: ").Append(FailedAnalyses).Append("\n");
-            sb.Append("  RunningAnalyses: ").Append(RunningAnalyses).Append("\n");
+            sb.Append("  Users: ").Append(Users).Append("\n");
+            sb.Append("  SimulatorName: ").Append(SimulatorName).Append("\n");
+            sb.Append("  SimulatorAnalysisName: ").Append(SimulatorAnalysisName).Append("\n");
+            sb.Append("  Analysis: ").Append(Analysis).Append("\n");
+            sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -280,39 +256,34 @@ namespace Com.Cosmotech.Model
                     this.OwnerId.Equals(input.OwnerId))
                 ) && 
                 (
-                    this.UserList == input.UserList ||
-                    this.UserList != null &&
-                    input.UserList != null &&
-                    this.UserList.SequenceEqual(input.UserList)
-                ) && 
-                (
                     this.SimulatorId == input.SimulatorId ||
                     (this.SimulatorId != null &&
                     this.SimulatorId.Equals(input.SimulatorId))
                 ) && 
                 (
-                    this.Analyses == input.Analyses ||
-                    this.Analyses != null &&
-                    input.Analyses != null &&
-                    this.Analyses.SequenceEqual(input.Analyses)
+                    this.Users == input.Users ||
+                    this.Users != null &&
+                    input.Users != null &&
+                    this.Users.SequenceEqual(input.Users)
                 ) && 
                 (
-                    this.SuccessfulAnalyses == input.SuccessfulAnalyses ||
-                    this.SuccessfulAnalyses != null &&
-                    input.SuccessfulAnalyses != null &&
-                    this.SuccessfulAnalyses.SequenceEqual(input.SuccessfulAnalyses)
+                    this.SimulatorName == input.SimulatorName ||
+                    (this.SimulatorName != null &&
+                    this.SimulatorName.Equals(input.SimulatorName))
                 ) && 
                 (
-                    this.FailedAnalyses == input.FailedAnalyses ||
-                    this.FailedAnalyses != null &&
-                    input.FailedAnalyses != null &&
-                    this.FailedAnalyses.SequenceEqual(input.FailedAnalyses)
+                    this.SimulatorAnalysisName == input.SimulatorAnalysisName ||
+                    (this.SimulatorAnalysisName != null &&
+                    this.SimulatorAnalysisName.Equals(input.SimulatorAnalysisName))
                 ) && 
                 (
-                    this.RunningAnalyses == input.RunningAnalyses ||
-                    this.RunningAnalyses != null &&
-                    input.RunningAnalyses != null &&
-                    this.RunningAnalyses.SequenceEqual(input.RunningAnalyses)
+                    this.Analysis == input.Analysis ||
+                    (this.Analysis != null &&
+                    this.Analysis.Equals(input.Analysis))
+                ) && 
+                (
+                    this.SendInputToDataWarehouse == input.SendInputToDataWarehouse ||
+                    this.SendInputToDataWarehouse.Equals(input.SendInputToDataWarehouse)
                 );
         }
 
@@ -337,18 +308,17 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.OwnerId != null)
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
-                if (this.UserList != null)
-                    hashCode = hashCode * 59 + this.UserList.GetHashCode();
                 if (this.SimulatorId != null)
                     hashCode = hashCode * 59 + this.SimulatorId.GetHashCode();
-                if (this.Analyses != null)
-                    hashCode = hashCode * 59 + this.Analyses.GetHashCode();
-                if (this.SuccessfulAnalyses != null)
-                    hashCode = hashCode * 59 + this.SuccessfulAnalyses.GetHashCode();
-                if (this.FailedAnalyses != null)
-                    hashCode = hashCode * 59 + this.FailedAnalyses.GetHashCode();
-                if (this.RunningAnalyses != null)
-                    hashCode = hashCode * 59 + this.RunningAnalyses.GetHashCode();
+                if (this.Users != null)
+                    hashCode = hashCode * 59 + this.Users.GetHashCode();
+                if (this.SimulatorName != null)
+                    hashCode = hashCode * 59 + this.SimulatorName.GetHashCode();
+                if (this.SimulatorAnalysisName != null)
+                    hashCode = hashCode * 59 + this.SimulatorAnalysisName.GetHashCode();
+                if (this.Analysis != null)
+                    hashCode = hashCode * 59 + this.Analysis.GetHashCode();
+                hashCode = hashCode * 59 + this.SendInputToDataWarehouse.GetHashCode();
                 return hashCode;
             }
         }

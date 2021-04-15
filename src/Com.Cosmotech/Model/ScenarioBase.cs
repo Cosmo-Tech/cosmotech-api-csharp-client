@@ -43,15 +43,15 @@ namespace Com.Cosmotech.Model
         /// <param name="description">the Scenario description.</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="parentId">the Scenario parent id.</param>
-        /// <param name="userList">the list of users Id with their role.</param>
-        public ScenarioBase(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), List<ScenarioUser> userList = default(List<ScenarioUser>))
+        /// <param name="users">the list of users Id with their role.</param>
+        public ScenarioBase(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for ScenarioBase and cannot be null");
             this.Description = description;
             this.Tags = tags;
             this.ParentId = parentId;
-            this.UserList = userList;
+            this.Users = users;
         }
 
         /// <summary>
@@ -115,11 +115,27 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
+        /// the Simulator Id associated with this Scenario
+        /// </summary>
+        /// <value>the Simulator Id associated with this Scenario</value>
+        [DataMember(Name = "simulatorId", EmitDefaultValue = false)]
+        public string SimulatorId { get; private set; }
+
+        /// <summary>
+        /// Returns false as SimulatorId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeSimulatorId()
+        {
+            return false;
+        }
+
+        /// <summary>
         /// the list of users Id with their role
         /// </summary>
         /// <value>the list of users Id with their role</value>
-        [DataMember(Name = "userList", EmitDefaultValue = false)]
-        public List<ScenarioUser> UserList { get; set; }
+        [DataMember(Name = "users", EmitDefaultValue = false)]
+        public List<ScenarioUser> Users { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -135,7 +151,8 @@ namespace Com.Cosmotech.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
-            sb.Append("  UserList: ").Append(UserList).Append("\n");
+            sb.Append("  SimulatorId: ").Append(SimulatorId).Append("\n");
+            sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -202,10 +219,15 @@ namespace Com.Cosmotech.Model
                     this.OwnerId.Equals(input.OwnerId))
                 ) && 
                 (
-                    this.UserList == input.UserList ||
-                    this.UserList != null &&
-                    input.UserList != null &&
-                    this.UserList.SequenceEqual(input.UserList)
+                    this.SimulatorId == input.SimulatorId ||
+                    (this.SimulatorId != null &&
+                    this.SimulatorId.Equals(input.SimulatorId))
+                ) && 
+                (
+                    this.Users == input.Users ||
+                    this.Users != null &&
+                    input.Users != null &&
+                    this.Users.SequenceEqual(input.Users)
                 );
         }
 
@@ -230,8 +252,10 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.OwnerId != null)
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
-                if (this.UserList != null)
-                    hashCode = hashCode * 59 + this.UserList.GetHashCode();
+                if (this.SimulatorId != null)
+                    hashCode = hashCode * 59 + this.SimulatorId.GetHashCode();
+                if (this.Users != null)
+                    hashCode = hashCode * 59 + this.Users.GetHashCode();
                 return hashCode;
             }
         }

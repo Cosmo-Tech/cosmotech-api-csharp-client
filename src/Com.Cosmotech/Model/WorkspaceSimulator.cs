@@ -40,13 +40,13 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="WorkspaceSimulator" /> class.
         /// </summary>
         /// <param name="simulatorId">the Simulator Id attached to this workspace (required).</param>
-        /// <param name="simulatorAnalysisFilter">the list of Simulator Analysis Id to filter.</param>
+        /// <param name="analysisFilter">the list of Simulator Analysis Id to filter.</param>
         /// <param name="defaultAnalysisDataset">a map of AnalysisId/DatasetId to set a default dataset for an analysis.</param>
-        public WorkspaceSimulator(string simulatorId = default(string), List<string> simulatorAnalysisFilter = default(List<string>), Dictionary<string, Object> defaultAnalysisDataset = default(Dictionary<string, Object>))
+        public WorkspaceSimulator(string simulatorId = default(string), List<string> analysisFilter = default(List<string>), Dictionary<string, Object> defaultAnalysisDataset = default(Dictionary<string, Object>))
         {
             // to ensure "simulatorId" is required (not null)
             this.SimulatorId = simulatorId ?? throw new ArgumentNullException("simulatorId is a required property for WorkspaceSimulator and cannot be null");
-            this.SimulatorAnalysisFilter = simulatorAnalysisFilter;
+            this.AnalysisFilter = analysisFilter;
             this.DefaultAnalysisDataset = defaultAnalysisDataset;
         }
 
@@ -61,8 +61,8 @@ namespace Com.Cosmotech.Model
         /// the list of Simulator Analysis Id to filter
         /// </summary>
         /// <value>the list of Simulator Analysis Id to filter</value>
-        [DataMember(Name = "simulatorAnalysisFilter", EmitDefaultValue = false)]
-        public List<string> SimulatorAnalysisFilter { get; set; }
+        [DataMember(Name = "analysisFilter", EmitDefaultValue = false)]
+        public List<string> AnalysisFilter { get; set; }
 
         /// <summary>
         /// a map of AnalysisId/DatasetId to set a default dataset for an analysis
@@ -80,7 +80,7 @@ namespace Com.Cosmotech.Model
             var sb = new StringBuilder();
             sb.Append("class WorkspaceSimulator {\n");
             sb.Append("  SimulatorId: ").Append(SimulatorId).Append("\n");
-            sb.Append("  SimulatorAnalysisFilter: ").Append(SimulatorAnalysisFilter).Append("\n");
+            sb.Append("  AnalysisFilter: ").Append(AnalysisFilter).Append("\n");
             sb.Append("  DefaultAnalysisDataset: ").Append(DefaultAnalysisDataset).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -122,10 +122,10 @@ namespace Com.Cosmotech.Model
                     this.SimulatorId.Equals(input.SimulatorId))
                 ) && 
                 (
-                    this.SimulatorAnalysisFilter == input.SimulatorAnalysisFilter ||
-                    this.SimulatorAnalysisFilter != null &&
-                    input.SimulatorAnalysisFilter != null &&
-                    this.SimulatorAnalysisFilter.SequenceEqual(input.SimulatorAnalysisFilter)
+                    this.AnalysisFilter == input.AnalysisFilter ||
+                    this.AnalysisFilter != null &&
+                    input.AnalysisFilter != null &&
+                    this.AnalysisFilter.SequenceEqual(input.AnalysisFilter)
                 ) && 
                 (
                     this.DefaultAnalysisDataset == input.DefaultAnalysisDataset ||
@@ -146,8 +146,8 @@ namespace Com.Cosmotech.Model
                 int hashCode = 41;
                 if (this.SimulatorId != null)
                     hashCode = hashCode * 59 + this.SimulatorId.GetHashCode();
-                if (this.SimulatorAnalysisFilter != null)
-                    hashCode = hashCode * 59 + this.SimulatorAnalysisFilter.GetHashCode();
+                if (this.AnalysisFilter != null)
+                    hashCode = hashCode * 59 + this.AnalysisFilter.GetHashCode();
                 if (this.DefaultAnalysisDataset != null)
                     hashCode = hashCode * 59 + this.DefaultAnalysisDataset.GetHashCode();
                 return hashCode;

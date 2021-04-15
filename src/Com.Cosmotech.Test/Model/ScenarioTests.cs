@@ -105,14 +105,6 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'OwnerId'
         }
         /// <summary>
-        /// Test the property 'UserList'
-        /// </summary>
-        [Fact]
-        public void UserListTest()
-        {
-            // TODO unit test for the property 'UserList'
-        }
-        /// <summary>
         /// Test the property 'SimulatorId'
         /// </summary>
         [Fact]
@@ -121,20 +113,44 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'SimulatorId'
         }
         /// <summary>
-        /// Test the property 'Analyses'
+        /// Test the property 'Users'
         /// </summary>
         [Fact]
-        public void AnalysesTest()
+        public void UsersTest()
         {
-            // TODO unit test for the property 'Analyses'
+            // TODO unit test for the property 'Users'
         }
         /// <summary>
-        /// Test the property 'LastAnalyses'
+        /// Test the property 'SimulatorName'
         /// </summary>
         [Fact]
-        public void LastAnalysesTest()
+        public void SimulatorNameTest()
         {
-            // TODO unit test for the property 'LastAnalyses'
+            // TODO unit test for the property 'SimulatorName'
+        }
+        /// <summary>
+        /// Test the property 'SimulatorAnalysisName'
+        /// </summary>
+        [Fact]
+        public void SimulatorAnalysisNameTest()
+        {
+            // TODO unit test for the property 'SimulatorAnalysisName'
+        }
+        /// <summary>
+        /// Test the property 'Analysis'
+        /// </summary>
+        [Fact]
+        public void AnalysisTest()
+        {
+            // TODO unit test for the property 'Analysis'
+        }
+        /// <summary>
+        /// Test the property 'SendInputToDataWarehouse'
+        /// </summary>
+        [Fact]
+        public void SendInputToDataWarehouseTest()
+        {
+            // TODO unit test for the property 'SendInputToDataWarehouse'
         }
 
     }
