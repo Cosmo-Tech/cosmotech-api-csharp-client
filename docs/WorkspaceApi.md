@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**DeleteWorkspace**](WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace
 [**FindAllWorkspaces**](WorkspaceApi.md#findallworkspaces) | **GET** /organizations/{organization_id}/workspaces | List all Workspaces
 [**FindWorkspaceById**](WorkspaceApi.md#findworkspacebyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id} | Get the details of an workspace
-[**GetCurrentWorkspaceUser**](WorkspaceApi.md#getcurrentworkspaceuser) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/me | Get the current User information for the Workspace
 [**UpdateWorkspace**](WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
 
 
@@ -307,81 +306,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | the Workspace details |  -  |
 | **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getcurrentworkspaceuser"></a>
-# **GetCurrentWorkspaceUser**
-> WorkspaceUserDetails GetCurrentWorkspaceUser (string organizationId, string workspaceId)
-
-Get the current User information for the Workspace
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class GetCurrentWorkspaceUserExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.azure.cosmo-platform.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-
-            try
-            {
-                // Get the current User information for the Workspace
-                WorkspaceUserDetails result = apiInstance.GetCurrentWorkspaceUser(organizationId, workspaceId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WorkspaceApi.GetCurrentWorkspaceUser: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
-
-### Return type
-
-[**WorkspaceUserDetails**](WorkspaceUserDetails.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | the User details |  -  |
-| **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

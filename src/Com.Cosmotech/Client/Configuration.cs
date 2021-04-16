@@ -116,13 +116,7 @@ namespace Com.Cosmotech.Client
                 },
                 {
                     new Dictionary<string, object> {
-                        {"url", "https://gateway.api.cosmo-platform.com"},
-                        {"description", "No description provided"},
-                    }
-                },
-                {
-                    new Dictionary<string, object> {
-                        {"url", "http://localhost:8080"},
+                        {"url", "http://localhost:4010"},
                         {"description", "No description provided"},
                     }
                 }

@@ -32,11 +32,10 @@ namespace Com.Cosmotech.Model
     public partial class WorkspaceUser : IEquatable<WorkspaceUser>, IValidatableObject
     {
         /// <summary>
-        /// the User role
+        /// Defines Roles
         /// </summary>
-        /// <value>the User role</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum RoleEnum
+        public enum RolesEnum
         {
             /// <summary>
             /// Enum Admin for value: Admin
@@ -58,12 +57,13 @@ namespace Com.Cosmotech.Model
 
         }
 
+
         /// <summary>
-        /// the User role
+        /// the User roles
         /// </summary>
-        /// <value>the User role</value>
-        [DataMember(Name = "role", IsRequired = true, EmitDefaultValue = false)]
-        public RoleEnum Role { get; set; }
+        /// <value>the User roles</value>
+        [DataMember(Name = "roles", IsRequired = true, EmitDefaultValue = false)]
+        public List<RolesEnum> Roles { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspaceUser" /> class.
         /// </summary>
@@ -73,12 +73,13 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="WorkspaceUser" /> class.
         /// </summary>
         /// <param name="id">the User id (required).</param>
-        /// <param name="role">the User role (required).</param>
-        public WorkspaceUser(string id = default(string), RoleEnum role = default(RoleEnum))
+        /// <param name="roles">the User roles (required).</param>
+        public WorkspaceUser(string id = default(string), List<RolesEnum> roles = default(List<RolesEnum>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for WorkspaceUser and cannot be null");
-            this.Role = role;
+            // to ensure "roles" is required (not null)
+            this.Roles = roles ?? throw new ArgumentNullException("roles is a required property for WorkspaceUser and cannot be null");
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class WorkspaceUser {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Role: ").Append(Role).Append("\n");
+            sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -160,8 +161,8 @@ namespace Com.Cosmotech.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Role == input.Role ||
-                    this.Role.Equals(input.Role)
+                    this.Roles == input.Roles ||
+                    this.Roles.SequenceEqual(input.Roles)
                 );
         }
 
@@ -178,7 +179,7 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                hashCode = hashCode * 59 + this.Role.GetHashCode();
+                hashCode = hashCode * 59 + this.Roles.GetHashCode();
                 return hashCode;
             }
         }

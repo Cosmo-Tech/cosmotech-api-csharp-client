@@ -26,60 +26,58 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// The organization of the user
+    /// the list of User roles for a Workspace
     /// </summary>
-    [DataContract(Name = "UserOrganization")]
-    public partial class UserOrganization : IEquatable<UserOrganization>, IValidatableObject
+    [DataContract(Name = "UserWorkspace")]
+    public partial class UserWorkspace : IEquatable<UserWorkspace>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserOrganization" /> class.
+        /// Initializes a new instance of the <see cref="UserWorkspace" /> class.
         /// </summary>
-        /// <param name="id">the Organization id.</param>
-        /// <param name="name">the Organization name.</param>
-        /// <param name="roles">the roles of the User in the Organization.</param>
-        public UserOrganization(string id = default(string), string name = default(string), List<string> roles = default(List<string>))
+        /// <param name="roles">the roles of the User in the Workspace.</param>
+        public UserWorkspace(List<string> roles = default(List<string>))
         {
-            this.Id = id;
-            this.Name = name;
             this.Roles = roles;
         }
 
         /// <summary>
-        /// the Organization id
+        /// the Workspace Id
         /// </summary>
-        /// <value>the Organization id</value>
+        /// <value>the Workspace Id</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
+        public string Id { get; private set; }
 
         /// <summary>
-        /// the Organization name
-        /// </summary>
-        /// <value>the Organization name</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// the roles of the User in the Organization
-        /// </summary>
-        /// <value>the roles of the User in the Organization</value>
-        [DataMember(Name = "roles", EmitDefaultValue = false)]
-        public List<string> Roles { get; set; }
-
-        /// <summary>
-        /// the list of Workspaces roles
-        /// </summary>
-        /// <value>the list of Workspaces roles</value>
-        [DataMember(Name = "workspaces", EmitDefaultValue = false)]
-        public List<UserWorkspace> Workspaces { get; private set; }
-
-        /// <summary>
-        /// Returns false as Workspaces should not be serialized given that it's read-only.
+        /// Returns false as Id should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeWorkspaces()
+        public bool ShouldSerializeId()
         {
             return false;
         }
+
+        /// <summary>
+        /// the Workspace name
+        /// </summary>
+        /// <value>the Workspace name</value>
+        [DataMember(Name = "name", EmitDefaultValue = false)]
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// Returns false as Name should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeName()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// the roles of the User in the Workspace
+        /// </summary>
+        /// <value>the roles of the User in the Workspace</value>
+        [DataMember(Name = "roles", EmitDefaultValue = false)]
+        public List<string> Roles { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -88,11 +86,10 @@ namespace Com.Cosmotech.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UserOrganization {\n");
+            sb.Append("class UserWorkspace {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Roles: ").Append(Roles).Append("\n");
-            sb.Append("  Workspaces: ").Append(Workspaces).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,15 +110,15 @@ namespace Com.Cosmotech.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UserOrganization);
+            return this.Equals(input as UserWorkspace);
         }
 
         /// <summary>
-        /// Returns true if UserOrganization instances are equal
+        /// Returns true if UserWorkspace instances are equal
         /// </summary>
-        /// <param name="input">Instance of UserOrganization to be compared</param>
+        /// <param name="input">Instance of UserWorkspace to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserOrganization input)
+        public bool Equals(UserWorkspace input)
         {
             if (input == null)
                 return false;
@@ -142,12 +139,6 @@ namespace Com.Cosmotech.Model
                     this.Roles != null &&
                     input.Roles != null &&
                     this.Roles.SequenceEqual(input.Roles)
-                ) && 
-                (
-                    this.Workspaces == input.Workspaces ||
-                    this.Workspaces != null &&
-                    input.Workspaces != null &&
-                    this.Workspaces.SequenceEqual(input.Workspaces)
                 );
         }
 
@@ -166,8 +157,6 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Roles != null)
                     hashCode = hashCode * 59 + this.Roles.GetHashCode();
-                if (this.Workspaces != null)
-                    hashCode = hashCode * 59 + this.Workspaces.GetHashCode();
                 return hashCode;
             }
         }

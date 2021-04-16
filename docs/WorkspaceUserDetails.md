@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the User id | 
 **Name** | **string** | the User name | [optional] [readonly] 
-**Role** | **string** | the User role | 
+**Roles** | **List&lt;string&gt;** | the User roles | 
 **OrganizationId** | **string** | the Organization Id context | [optional] [readonly] 
 **OrganizationRoles** | **List&lt;string&gt;** | the Organizations roles for the User | [optional] [readonly] 
 **WorkspaceId** | **string** | the Workspace Id context | [optional] [readonly] 

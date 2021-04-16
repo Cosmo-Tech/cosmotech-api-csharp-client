@@ -32,6 +32,39 @@ namespace Com.Cosmotech.Model
     public partial class UserDetails : IEquatable<UserDetails>, IValidatableObject
     {
         /// <summary>
+        /// Defines PlatformRoles
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PlatformRolesEnum
+        {
+            /// <summary>
+            /// Enum Admin for value: Admin
+            /// </summary>
+            [EnumMember(Value = "Admin")]
+            Admin = 1,
+
+            /// <summary>
+            /// Enum User for value: User
+            /// </summary>
+            [EnumMember(Value = "User")]
+            User = 2,
+
+            /// <summary>
+            /// Enum ConnectorDeveloper for value: ConnectorDeveloper
+            /// </summary>
+            [EnumMember(Value = "ConnectorDeveloper")]
+            ConnectorDeveloper = 3
+
+        }
+
+
+        /// <summary>
+        /// the list of Platform roles
+        /// </summary>
+        /// <value>the list of Platform roles</value>
+        [DataMember(Name = "platformRoles", IsRequired = true, EmitDefaultValue = false)]
+        public List<PlatformRolesEnum> PlatformRoles { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="UserDetails" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -40,10 +73,13 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="UserDetails" /> class.
         /// </summary>
         /// <param name="name">the User name (required).</param>
-        public UserDetails(string name = default(string))
+        /// <param name="platformRoles">the list of Platform roles (required).</param>
+        public UserDetails(string name = default(string), List<PlatformRolesEnum> platformRoles = default(List<PlatformRolesEnum>))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for UserDetails and cannot be null");
+            // to ensure "platformRoles" is required (not null)
+            this.PlatformRoles = platformRoles ?? throw new ArgumentNullException("platformRoles is a required property for UserDetails and cannot be null");
         }
 
         /// <summary>
@@ -94,6 +130,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class UserDetails {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  PlatformRoles: ").Append(PlatformRoles).Append("\n");
             sb.Append("  Organizations: ").Append(Organizations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -140,6 +177,10 @@ namespace Com.Cosmotech.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.PlatformRoles == input.PlatformRoles ||
+                    this.PlatformRoles.SequenceEqual(input.PlatformRoles)
+                ) && 
+                (
                     this.Organizations == input.Organizations ||
                     this.Organizations != null &&
                     input.Organizations != null &&
@@ -160,6 +201,7 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.PlatformRoles.GetHashCode();
                 if (this.Organizations != null)
                     hashCode = hashCode * 59 + this.Organizations.GetHashCode();
                 return hashCode;

@@ -72,6 +72,22 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Name'
         }
+        /// <summary>
+        /// Test the property 'Roles'
+        /// </summary>
+        [Fact]
+        public void RolesTest()
+        {
+            // TODO unit test for the property 'Roles'
+        }
+        /// <summary>
+        /// Test the property 'Workspaces'
+        /// </summary>
+        [Fact]
+        public void WorkspacesTest()
+        {
+            // TODO unit test for the property 'Workspaces'
+        }
 
     }
 

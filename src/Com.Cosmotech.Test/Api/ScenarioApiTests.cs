@@ -138,21 +138,6 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
-        /// Test QueryDataWarehouse
-        /// </summary>
-        [Fact]
-        public void QueryDataWarehouseTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string organizationId = null;
-            //string workspaceId = null;
-            //string scenarioId = null;
-            //ScenarioDataWarehouseQuery scenarioDataWarehouseQuery = null;
-            //var response = instance.QueryDataWarehouse(organizationId, workspaceId, scenarioId, scenarioDataWarehouseQuery);
-            //Assert.IsType<ScenarioDataWarehouseQueryResult>(response);
-        }
-
-        /// <summary>
         /// Test UpdateScenario
         /// </summary>
         [Fact]

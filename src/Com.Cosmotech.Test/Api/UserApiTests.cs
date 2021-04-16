@@ -62,7 +62,7 @@ namespace Com.Cosmotech.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.FindAllUsers();
-            //Assert.IsType<List<UserDetails>>(response);
+            //Assert.IsType<List<User>>(response);
         }
 
         /// <summary>
@@ -78,6 +78,42 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test GetCurrentUser
+        /// </summary>
+        [Fact]
+        public void GetCurrentUserTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetCurrentUser();
+            //Assert.IsType<UserDetails>(response);
+        }
+
+        /// <summary>
+        /// Test GetOrganizationCurrentUser
+        /// </summary>
+        [Fact]
+        public void GetOrganizationCurrentUserTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //var response = instance.GetOrganizationCurrentUser(organizationId);
+            //Assert.IsType<UserDetails>(response);
+        }
+
+        /// <summary>
+        /// Test GetWorkspaceCurrentUser
+        /// </summary>
+        [Fact]
+        public void GetWorkspaceCurrentUserTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //var response = instance.GetWorkspaceCurrentUser(organizationId, workspaceId);
+            //Assert.IsType<UserDetails>(response);
+        }
+
+        /// <summary>
         /// Test RegisterUser
         /// </summary>
         [Fact]
@@ -86,7 +122,7 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //User user = null;
             //var response = instance.RegisterUser(user);
-            //Assert.IsType<UserDetails>(response);
+            //Assert.IsType<User>(response);
         }
 
         /// <summary>
@@ -98,7 +134,7 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string userId = null;
             //var response = instance.UnregisterUser(userId);
-            //Assert.IsType<UserDetails>(response);
+            //Assert.IsType<User>(response);
         }
 
         /// <summary>
@@ -111,7 +147,7 @@ namespace Com.Cosmotech.Test.Api
             //string userId = null;
             //User user = null;
             //var response = instance.UpdateUser(userId, user);
-            //Assert.IsType<UserDetails>(response);
+            //Assert.IsType<User>(response);
         }
     }
 }

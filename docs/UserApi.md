@@ -6,6 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**FindAllUsers**](UserApi.md#findallusers) | **GET** /users | List all Users
 [**FindUserById**](UserApi.md#finduserbyid) | **GET** /users/{user_id} | Get the details of an user
+[**GetCurrentUser**](UserApi.md#getcurrentuser) | **GET** /users/me | Get the details of an user
+[**GetOrganizationCurrentUser**](UserApi.md#getorganizationcurrentuser) | **GET** /organizations/{organization_id}/me | Get the details of an user with roles for an Organization
+[**GetWorkspaceCurrentUser**](UserApi.md#getworkspacecurrentuser) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/me | Get the details of an user with roles for a Workspace
 [**RegisterUser**](UserApi.md#registeruser) | **POST** /users | Register a new user
 [**UnregisterUser**](UserApi.md#unregisteruser) | **DELETE** /users/{user_id} | Unregister an user
 [**UpdateUser**](UserApi.md#updateuser) | **PATCH** /users/{user_id} | Update an user
@@ -13,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="findallusers"></a>
 # **FindAllUsers**
-> List&lt;UserDetails&gt; FindAllUsers ()
+> List&lt;User&gt; FindAllUsers ()
 
 List all Users
 
@@ -41,7 +44,7 @@ namespace Example
             try
             {
                 // List all Users
-                List<UserDetails> result = apiInstance.FindAllUsers();
+                List<User> result = apiInstance.FindAllUsers();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;UserDetails&gt;**](UserDetails.md)
+[**List&lt;User&gt;**](User.md)
 
 ### Authorization
 
@@ -152,9 +155,226 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getcurrentuser"></a>
+# **GetCurrentUser**
+> UserDetails GetCurrentUser ()
+
+Get the details of an user
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetCurrentUserExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new UserApi(config);
+
+            try
+            {
+                // Get the details of an user
+                UserDetails result = apiInstance.GetCurrentUser();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.GetCurrentUser: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserDetails**](UserDetails.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | the User details |  -  |
+| **404** | the User specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getorganizationcurrentuser"></a>
+# **GetOrganizationCurrentUser**
+> UserDetails GetOrganizationCurrentUser (string organizationId)
+
+Get the details of an user with roles for an Organization
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetOrganizationCurrentUserExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new UserApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+
+            try
+            {
+                // Get the details of an user with roles for an Organization
+                UserDetails result = apiInstance.GetOrganizationCurrentUser(organizationId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.GetOrganizationCurrentUser: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+
+### Return type
+
+[**UserDetails**](UserDetails.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | the User details |  -  |
+| **404** | the User specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getworkspacecurrentuser"></a>
+# **GetWorkspaceCurrentUser**
+> UserDetails GetWorkspaceCurrentUser (string organizationId, string workspaceId)
+
+Get the details of an user with roles for a Workspace
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetWorkspaceCurrentUserExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new UserApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+
+            try
+            {
+                // Get the details of an user with roles for a Workspace
+                UserDetails result = apiInstance.GetWorkspaceCurrentUser(organizationId, workspaceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.GetWorkspaceCurrentUser: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+
+### Return type
+
+[**UserDetails**](UserDetails.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | the User details |  -  |
+| **404** | the User specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="registeruser"></a>
 # **RegisterUser**
-> UserDetails RegisterUser (User user)
+> User RegisterUser (User user)
 
 Register a new user
 
@@ -183,7 +403,7 @@ namespace Example
             try
             {
                 // Register a new user
-                UserDetails result = apiInstance.RegisterUser(user);
+                User result = apiInstance.RegisterUser(user);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -205,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserDetails**](UserDetails.md)
+[**User**](User.md)
 
 ### Authorization
 
@@ -227,7 +447,7 @@ Name | Type | Description  | Notes
 
 <a name="unregisteruser"></a>
 # **UnregisterUser**
-> UserDetails UnregisterUser (string userId)
+> User UnregisterUser (string userId)
 
 Unregister an user
 
@@ -256,7 +476,7 @@ namespace Example
             try
             {
                 // Unregister an user
-                UserDetails result = apiInstance.UnregisterUser(userId);
+                User result = apiInstance.UnregisterUser(userId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -278,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserDetails**](UserDetails.md)
+[**User**](User.md)
 
 ### Authorization
 
@@ -301,7 +521,7 @@ Name | Type | Description  | Notes
 
 <a name="updateuser"></a>
 # **UpdateUser**
-> UserDetails UpdateUser (string userId, User user)
+> User UpdateUser (string userId, User user)
 
 Update an user
 
@@ -331,7 +551,7 @@ namespace Example
             try
             {
                 // Update an user
-                UserDetails result = apiInstance.UpdateUser(userId, user);
+                User result = apiInstance.UpdateUser(userId, user);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -354,7 +574,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserDetails**](UserDetails.md)
+[**User**](User.md)
 
 ### Authorization
 

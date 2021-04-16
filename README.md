@@ -115,7 +115,6 @@ Class | Method | HTTP request | Description
 *DatasetApi* | [**UpdateDataset**](docs/DatasetApi.md#updatedataset) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id} | Update a dataset
 *OrganizationApi* | [**FindAllOrganizations**](docs/OrganizationApi.md#findallorganizations) | **GET** /organizations | List all Organizations
 *OrganizationApi* | [**FindOrganizationById**](docs/OrganizationApi.md#findorganizationbyid) | **GET** /organizations/{organization_id} | Get the details of an organization
-*OrganizationApi* | [**GetCurrentOrganizationUser**](docs/OrganizationApi.md#getcurrentorganizationuser) | **GET** /organizations/{organization_id}/me | Get the current User information for the Organization
 *OrganizationApi* | [**RegisterOrganization**](docs/OrganizationApi.md#registerorganization) | **POST** /organizations | Register a new organization
 *OrganizationApi* | [**UnregisterOrganization**](docs/OrganizationApi.md#unregisterorganization) | **DELETE** /organizations/{organization_id} | Unregister an organization
 *OrganizationApi* | [**UpdateOrganization**](docs/OrganizationApi.md#updateorganization) | **PATCH** /organizations/{organization_id} | Update an organization
@@ -146,6 +145,9 @@ Class | Method | HTTP request | Description
 *SimulatorApi* | [**Upload**](docs/SimulatorApi.md#upload) | **POST** /organizations/{organization_id}/simulators/upload | Upload and register a new simulator
 *UserApi* | [**FindAllUsers**](docs/UserApi.md#findallusers) | **GET** /users | List all Users
 *UserApi* | [**FindUserById**](docs/UserApi.md#finduserbyid) | **GET** /users/{user_id} | Get the details of an user
+*UserApi* | [**GetCurrentUser**](docs/UserApi.md#getcurrentuser) | **GET** /users/me | Get the details of an user
+*UserApi* | [**GetOrganizationCurrentUser**](docs/UserApi.md#getorganizationcurrentuser) | **GET** /organizations/{organization_id}/me | Get the details of an user with roles for an Organization
+*UserApi* | [**GetWorkspaceCurrentUser**](docs/UserApi.md#getworkspacecurrentuser) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/me | Get the details of an user with roles for a Workspace
 *UserApi* | [**RegisterUser**](docs/UserApi.md#registeruser) | **POST** /users | Register a new user
 *UserApi* | [**UnregisterUser**](docs/UserApi.md#unregisteruser) | **DELETE** /users/{user_id} | Unregister an user
 *UserApi* | [**UpdateUser**](docs/UserApi.md#updateuser) | **PATCH** /users/{user_id} | Update an user
@@ -162,7 +164,6 @@ Class | Method | HTTP request | Description
 *WorkspaceApi* | [**DeleteWorkspace**](docs/WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace
 *WorkspaceApi* | [**FindAllWorkspaces**](docs/WorkspaceApi.md#findallworkspaces) | **GET** /organizations/{organization_id}/workspaces | List all Workspaces
 *WorkspaceApi* | [**FindWorkspaceById**](docs/WorkspaceApi.md#findworkspacebyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id} | Get the details of an workspace
-*WorkspaceApi* | [**GetCurrentWorkspaceUser**](docs/WorkspaceApi.md#getcurrentworkspaceuser) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/me | Get the current User information for the Workspace
 *WorkspaceApi* | [**UpdateWorkspace**](docs/WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
 
 
@@ -208,6 +209,7 @@ Class | Method | HTTP request | Description
  - [Model.UserDetails](docs/UserDetails.md)
  - [Model.UserDetailsAllOf](docs/UserDetailsAllOf.md)
  - [Model.UserOrganization](docs/UserOrganization.md)
+ - [Model.UserWorkspace](docs/UserWorkspace.md)
  - [Model.Validator](docs/Validator.md)
  - [Model.ValidatorRun](docs/ValidatorRun.md)
  - [Model.Workspace](docs/Workspace.md)
