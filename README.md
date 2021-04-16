@@ -118,6 +118,9 @@ Class | Method | HTTP request | Description
 *OrganizationApi* | [**RegisterOrganization**](docs/OrganizationApi.md#registerorganization) | **POST** /organizations | Register a new organization
 *OrganizationApi* | [**UnregisterOrganization**](docs/OrganizationApi.md#unregisterorganization) | **DELETE** /organizations/{organization_id} | Unregister an organization
 *OrganizationApi* | [**UpdateOrganization**](docs/OrganizationApi.md#updateorganization) | **PATCH** /organizations/{organization_id} | Update an organization
+*PlatformApi* | [**CreatePlatform**](docs/PlatformApi.md#createplatform) | **POST** /platform | Create a new platform
+*PlatformApi* | [**GetPlatform**](docs/PlatformApi.md#getplatform) | **GET** /platform | Get the details of the platform
+*PlatformApi* | [**UpdatePlatform**](docs/PlatformApi.md#updateplatform) | **PATCH** /platform | Update a platform
 *ScenarioApi* | [**CompareScenarios**](docs/ScenarioApi.md#comparescenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/compare/{compared_scenario_id} | Compare the Scenario with another one and returns the difference for parameters values
 *ScenarioApi* | [**CreateScenario**](docs/ScenarioApi.md#createscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Create a new scenario
 *ScenarioApi* | [**DeleteScenario**](docs/ScenarioApi.md#deletescenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Delete a scenario
@@ -143,6 +146,7 @@ Class | Method | HTTP request | Description
 *SimulatorApi* | [**FindSimulatorById**](docs/SimulatorApi.md#findsimulatorbyid) | **GET** /organizations/{organization_id}/simulators/{simulator_id} | Get the details of a simulator
 *SimulatorApi* | [**UpdateSimulator**](docs/SimulatorApi.md#updatesimulator) | **PATCH** /organizations/{organization_id}/simulators/{simulator_id} | Update a simulator
 *SimulatorApi* | [**Upload**](docs/SimulatorApi.md#upload) | **POST** /organizations/{organization_id}/simulators/upload | Upload and register a new simulator
+*UserApi* | [**AuthorizeUser**](docs/UserApi.md#authorizeuser) | **GET** /oauth2/authorize | Authorize an User with OAuth2. Delegated to configured OAuth2 service
 *UserApi* | [**FindAllUsers**](docs/UserApi.md#findallusers) | **GET** /users | List all Users
 *UserApi* | [**FindUserById**](docs/UserApi.md#finduserbyid) | **GET** /users/{user_id} | Get the details of an user
 *UserApi* | [**GetCurrentUser**](docs/UserApi.md#getcurrentuser) | **GET** /users/me | Get the details of an user
@@ -181,7 +185,12 @@ Class | Method | HTTP request | Description
  - [Model.DatasetConnector](docs/DatasetConnector.md)
  - [Model.DatasetCopyParameters](docs/DatasetCopyParameters.md)
  - [Model.Organization](docs/Organization.md)
+ - [Model.OrganizationService](docs/OrganizationService.md)
+ - [Model.OrganizationServices](docs/OrganizationServices.md)
  - [Model.OrganizationUser](docs/OrganizationUser.md)
+ - [Model.Platform](docs/Platform.md)
+ - [Model.PlatformService](docs/PlatformService.md)
+ - [Model.PlatformServices](docs/PlatformServices.md)
  - [Model.Scenario](docs/Scenario.md)
  - [Model.ScenarioAllOf](docs/ScenarioAllOf.md)
  - [Model.ScenarioAnalysis](docs/ScenarioAnalysis.md)
@@ -217,8 +226,6 @@ Class | Method | HTTP request | Description
  - [Model.WorkspaceServices](docs/WorkspaceServices.md)
  - [Model.WorkspaceSimulator](docs/WorkspaceSimulator.md)
  - [Model.WorkspaceUser](docs/WorkspaceUser.md)
- - [Model.WorkspaceUserDetails](docs/WorkspaceUserDetails.md)
- - [Model.WorkspaceUserDetailsAllOf](docs/WorkspaceUserDetailsAllOf.md)
  - [Model.WorkspaceWebApp](docs/WorkspaceWebApp.md)
 
 

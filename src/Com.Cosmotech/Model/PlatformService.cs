@@ -26,22 +26,22 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// a cloud service resource
+    /// a Cloud Service resource
     /// </summary>
-    [DataContract(Name = "WorkspaceService")]
-    public partial class WorkspaceService : IEquatable<WorkspaceService>, IValidatableObject
+    [DataContract(Name = "PlatformService")]
+    public partial class PlatformService : IEquatable<PlatformService>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkspaceService" /> class.
+        /// Initializes a new instance of the <see cref="PlatformService" /> class.
         /// </summary>
-        /// <param name="platformService">the Platform service associated to the resource.</param>
         /// <param name="resourceUri">the workspace specific uri for this service resource.</param>
         /// <param name="credentials">a freeform credentials object. Structure depends on service.</param>
-        public WorkspaceService(string platformService = default(string), string resourceUri = default(string), Dictionary<string, Object> credentials = default(Dictionary<string, Object>))
+        /// <param name="options">the service specific options.</param>
+        public PlatformService(string resourceUri = default(string), Dictionary<string, Object> credentials = default(Dictionary<string, Object>), Dictionary<string, Object> options = default(Dictionary<string, Object>))
         {
-            this.PlatformService = platformService;
             this.ResourceUri = resourceUri;
             this.Credentials = credentials;
+            this.Options = options;
         }
 
         /// <summary>
@@ -77,13 +77,6 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the Platform service associated to the resource
-        /// </summary>
-        /// <value>the Platform service associated to the resource</value>
-        [DataMember(Name = "platformService", EmitDefaultValue = false)]
-        public string PlatformService { get; set; }
-
-        /// <summary>
         /// the workspace specific uri for this service resource
         /// </summary>
         /// <value>the workspace specific uri for this service resource</value>
@@ -98,18 +91,25 @@ namespace Com.Cosmotech.Model
         public Dictionary<string, Object> Credentials { get; set; }
 
         /// <summary>
+        /// the service specific options
+        /// </summary>
+        /// <value>the service specific options</value>
+        [DataMember(Name = "options", EmitDefaultValue = false)]
+        public Dictionary<string, Object> Options { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WorkspaceService {\n");
+            sb.Append("class PlatformService {\n");
             sb.Append("  CloudService: ").Append(CloudService).Append("\n");
             sb.Append("  BaseUri: ").Append(BaseUri).Append("\n");
-            sb.Append("  PlatformService: ").Append(PlatformService).Append("\n");
             sb.Append("  ResourceUri: ").Append(ResourceUri).Append("\n");
             sb.Append("  Credentials: ").Append(Credentials).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -130,15 +130,15 @@ namespace Com.Cosmotech.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WorkspaceService);
+            return this.Equals(input as PlatformService);
         }
 
         /// <summary>
-        /// Returns true if WorkspaceService instances are equal
+        /// Returns true if PlatformService instances are equal
         /// </summary>
-        /// <param name="input">Instance of WorkspaceService to be compared</param>
+        /// <param name="input">Instance of PlatformService to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WorkspaceService input)
+        public bool Equals(PlatformService input)
         {
             if (input == null)
                 return false;
@@ -155,11 +155,6 @@ namespace Com.Cosmotech.Model
                     this.BaseUri.Equals(input.BaseUri))
                 ) && 
                 (
-                    this.PlatformService == input.PlatformService ||
-                    (this.PlatformService != null &&
-                    this.PlatformService.Equals(input.PlatformService))
-                ) && 
-                (
                     this.ResourceUri == input.ResourceUri ||
                     (this.ResourceUri != null &&
                     this.ResourceUri.Equals(input.ResourceUri))
@@ -169,6 +164,12 @@ namespace Com.Cosmotech.Model
                     this.Credentials != null &&
                     input.Credentials != null &&
                     this.Credentials.SequenceEqual(input.Credentials)
+                ) && 
+                (
+                    this.Options == input.Options ||
+                    this.Options != null &&
+                    input.Options != null &&
+                    this.Options.SequenceEqual(input.Options)
                 );
         }
 
@@ -185,12 +186,12 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.CloudService.GetHashCode();
                 if (this.BaseUri != null)
                     hashCode = hashCode * 59 + this.BaseUri.GetHashCode();
-                if (this.PlatformService != null)
-                    hashCode = hashCode * 59 + this.PlatformService.GetHashCode();
                 if (this.ResourceUri != null)
                     hashCode = hashCode * 59 + this.ResourceUri.GetHashCode();
                 if (this.Credentials != null)
                     hashCode = hashCode * 59 + this.Credentials.GetHashCode();
+                if (this.Options != null)
+                    hashCode = hashCode * 59 + this.Options.GetHashCode();
                 return hashCode;
             }
         }

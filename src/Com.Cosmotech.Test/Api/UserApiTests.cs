@@ -55,6 +55,16 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test AuthorizeUser
+        /// </summary>
+        [Fact]
+        public void AuthorizeUserTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //instance.AuthorizeUser();
+        }
+
+        /// <summary>
         /// Test FindAllUsers
         /// </summary>
         [Fact]

@@ -4,6 +4,7 @@ All URIs are relative to *https://api.azure.cosmo-platform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AuthorizeUser**](UserApi.md#authorizeuser) | **GET** /oauth2/authorize | Authorize an User with OAuth2. Delegated to configured OAuth2 service
 [**FindAllUsers**](UserApi.md#findallusers) | **GET** /users | List all Users
 [**FindUserById**](UserApi.md#finduserbyid) | **GET** /users/{user_id} | Get the details of an user
 [**GetCurrentUser**](UserApi.md#getcurrentuser) | **GET** /users/me | Get the details of an user
@@ -13,6 +14,73 @@ Method | HTTP request | Description
 [**UnregisterUser**](UserApi.md#unregisteruser) | **DELETE** /users/{user_id} | Unregister an user
 [**UpdateUser**](UserApi.md#updateuser) | **PATCH** /users/{user_id} | Update an user
 
+
+<a name="authorizeuser"></a>
+# **AuthorizeUser**
+> void AuthorizeUser ()
+
+Authorize an User with OAuth2. Delegated to configured OAuth2 service
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class AuthorizeUserExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new UserApi(config);
+
+            try
+            {
+                // Authorize an User with OAuth2. Delegated to configured OAuth2 service
+                apiInstance.AuthorizeUser();
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.AuthorizeUser: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **302** | Redirection response |  * Location -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="findallusers"></a>
 # **FindAllUsers**

@@ -26,24 +26,22 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// the cloud service resources of the Workspace
+    /// the cloud service resources of the Organization
     /// </summary>
-    [DataContract(Name = "WorkspaceServices")]
-    public partial class WorkspaceServices : IEquatable<WorkspaceServices>, IValidatableObject
+    [DataContract(Name = "OrganizationServices")]
+    public partial class OrganizationServices : IEquatable<OrganizationServices>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkspaceServices" /> class.
+        /// Initializes a new instance of the <see cref="OrganizationServices" /> class.
         /// </summary>
-        /// <param name="resultsEventBus">resultsEventBus.</param>
-        /// <param name="simulationEventBus">simulationEventBus.</param>
-        /// <param name="dataWarehouse">dataWarehouse.</param>
+        /// <param name="tenantCredentials">a freeform credentials object for the Organization tenant. Structure depends on cloud provider.</param>
         /// <param name="storage">storage.</param>
-        public WorkspaceServices(WorkspaceService resultsEventBus = default(WorkspaceService), WorkspaceService simulationEventBus = default(WorkspaceService), WorkspaceService dataWarehouse = default(WorkspaceService), WorkspaceService storage = default(WorkspaceService))
+        /// <param name="simulatorsContainerRegistry">simulatorsContainerRegistry.</param>
+        public OrganizationServices(Dictionary<string, Object> tenantCredentials = default(Dictionary<string, Object>), OrganizationService storage = default(OrganizationService), OrganizationService simulatorsContainerRegistry = default(OrganizationService))
         {
-            this.ResultsEventBus = resultsEventBus;
-            this.SimulationEventBus = simulationEventBus;
-            this.DataWarehouse = dataWarehouse;
+            this.TenantCredentials = tenantCredentials;
             this.Storage = storage;
+            this.SimulatorsContainerRegistry = simulatorsContainerRegistry;
         }
 
         /// <summary>
@@ -51,40 +49,19 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <value>a freeform credentials object for the Organization tenant. Structure depends on cloud provider</value>
         [DataMember(Name = "tenantCredentials", EmitDefaultValue = false)]
-        public Dictionary<string, Object> TenantCredentials { get; private set; }
-
-        /// <summary>
-        /// Returns false as TenantCredentials should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeTenantCredentials()
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// Gets or Sets ResultsEventBus
-        /// </summary>
-        [DataMember(Name = "resultsEventBus", EmitDefaultValue = false)]
-        public WorkspaceService ResultsEventBus { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SimulationEventBus
-        /// </summary>
-        [DataMember(Name = "simulationEventBus", EmitDefaultValue = false)]
-        public WorkspaceService SimulationEventBus { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DataWarehouse
-        /// </summary>
-        [DataMember(Name = "dataWarehouse", EmitDefaultValue = false)]
-        public WorkspaceService DataWarehouse { get; set; }
+        public Dictionary<string, Object> TenantCredentials { get; set; }
 
         /// <summary>
         /// Gets or Sets Storage
         /// </summary>
         [DataMember(Name = "storage", EmitDefaultValue = false)]
-        public WorkspaceService Storage { get; set; }
+        public OrganizationService Storage { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SimulatorsContainerRegistry
+        /// </summary>
+        [DataMember(Name = "simulatorsContainerRegistry", EmitDefaultValue = false)]
+        public OrganizationService SimulatorsContainerRegistry { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -93,12 +70,10 @@ namespace Com.Cosmotech.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WorkspaceServices {\n");
+            sb.Append("class OrganizationServices {\n");
             sb.Append("  TenantCredentials: ").Append(TenantCredentials).Append("\n");
-            sb.Append("  ResultsEventBus: ").Append(ResultsEventBus).Append("\n");
-            sb.Append("  SimulationEventBus: ").Append(SimulationEventBus).Append("\n");
-            sb.Append("  DataWarehouse: ").Append(DataWarehouse).Append("\n");
             sb.Append("  Storage: ").Append(Storage).Append("\n");
+            sb.Append("  SimulatorsContainerRegistry: ").Append(SimulatorsContainerRegistry).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -119,15 +94,15 @@ namespace Com.Cosmotech.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WorkspaceServices);
+            return this.Equals(input as OrganizationServices);
         }
 
         /// <summary>
-        /// Returns true if WorkspaceServices instances are equal
+        /// Returns true if OrganizationServices instances are equal
         /// </summary>
-        /// <param name="input">Instance of WorkspaceServices to be compared</param>
+        /// <param name="input">Instance of OrganizationServices to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WorkspaceServices input)
+        public bool Equals(OrganizationServices input)
         {
             if (input == null)
                 return false;
@@ -140,24 +115,14 @@ namespace Com.Cosmotech.Model
                     this.TenantCredentials.SequenceEqual(input.TenantCredentials)
                 ) && 
                 (
-                    this.ResultsEventBus == input.ResultsEventBus ||
-                    (this.ResultsEventBus != null &&
-                    this.ResultsEventBus.Equals(input.ResultsEventBus))
-                ) && 
-                (
-                    this.SimulationEventBus == input.SimulationEventBus ||
-                    (this.SimulationEventBus != null &&
-                    this.SimulationEventBus.Equals(input.SimulationEventBus))
-                ) && 
-                (
-                    this.DataWarehouse == input.DataWarehouse ||
-                    (this.DataWarehouse != null &&
-                    this.DataWarehouse.Equals(input.DataWarehouse))
-                ) && 
-                (
                     this.Storage == input.Storage ||
                     (this.Storage != null &&
                     this.Storage.Equals(input.Storage))
+                ) && 
+                (
+                    this.SimulatorsContainerRegistry == input.SimulatorsContainerRegistry ||
+                    (this.SimulatorsContainerRegistry != null &&
+                    this.SimulatorsContainerRegistry.Equals(input.SimulatorsContainerRegistry))
                 );
         }
 
@@ -172,14 +137,10 @@ namespace Com.Cosmotech.Model
                 int hashCode = 41;
                 if (this.TenantCredentials != null)
                     hashCode = hashCode * 59 + this.TenantCredentials.GetHashCode();
-                if (this.ResultsEventBus != null)
-                    hashCode = hashCode * 59 + this.ResultsEventBus.GetHashCode();
-                if (this.SimulationEventBus != null)
-                    hashCode = hashCode * 59 + this.SimulationEventBus.GetHashCode();
-                if (this.DataWarehouse != null)
-                    hashCode = hashCode * 59 + this.DataWarehouse.GetHashCode();
                 if (this.Storage != null)
                     hashCode = hashCode * 59 + this.Storage.GetHashCode();
+                if (this.SimulatorsContainerRegistry != null)
+                    hashCode = hashCode * 59 + this.SimulatorsContainerRegistry.GetHashCode();
                 return hashCode;
             }
         }

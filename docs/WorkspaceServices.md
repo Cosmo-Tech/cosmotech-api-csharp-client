@@ -5,7 +5,7 @@ the cloud service resources of the Workspace
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TenantCredentials** | **Dictionary&lt;string, Object&gt;** | a freeform credentials object for the tenant. Structure depends on cloud provider | [optional] 
+**TenantCredentials** | **Dictionary&lt;string, Object&gt;** | a freeform credentials object for the Organization tenant. Structure depends on cloud provider | [optional] [readonly] 
 **ResultsEventBus** | [**WorkspaceService**](WorkspaceService.md) |  | [optional] 
 **SimulationEventBus** | [**WorkspaceService**](WorkspaceService.md) |  | [optional] 
 **DataWarehouse** | [**WorkspaceService**](WorkspaceService.md) |  | [optional] 

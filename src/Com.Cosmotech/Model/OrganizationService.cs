@@ -28,17 +28,21 @@ namespace Com.Cosmotech.Model
     /// <summary>
     /// a cloud service resource
     /// </summary>
-    [DataContract(Name = "WorkspaceService")]
-    public partial class WorkspaceService : IEquatable<WorkspaceService>, IValidatableObject
+    [DataContract(Name = "OrganizationService")]
+    public partial class OrganizationService : IEquatable<OrganizationService>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkspaceService" /> class.
+        /// Initializes a new instance of the <see cref="OrganizationService" /> class.
         /// </summary>
+        /// <param name="cloudService">the cloud service name.</param>
+        /// <param name="baseUri">the platform base uri for this service.</param>
         /// <param name="platformService">the Platform service associated to the resource.</param>
-        /// <param name="resourceUri">the workspace specific uri for this service resource.</param>
+        /// <param name="resourceUri">the Organization specific uri for this service resource.</param>
         /// <param name="credentials">a freeform credentials object. Structure depends on service.</param>
-        public WorkspaceService(string platformService = default(string), string resourceUri = default(string), Dictionary<string, Object> credentials = default(Dictionary<string, Object>))
+        public OrganizationService(string cloudService = default(string), string baseUri = default(string), string platformService = default(string), string resourceUri = default(string), Dictionary<string, Object> credentials = default(Dictionary<string, Object>))
         {
+            this.CloudService = cloudService;
+            this.BaseUri = baseUri;
             this.PlatformService = platformService;
             this.ResourceUri = resourceUri;
             this.Credentials = credentials;
@@ -49,32 +53,14 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <value>the cloud service name</value>
         [DataMember(Name = "cloudService", EmitDefaultValue = false)]
-        public string CloudService { get; private set; }
-
-        /// <summary>
-        /// Returns false as CloudService should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCloudService()
-        {
-            return false;
-        }
+        public string CloudService { get; set; }
 
         /// <summary>
         /// the platform base uri for this service
         /// </summary>
         /// <value>the platform base uri for this service</value>
         [DataMember(Name = "baseUri", EmitDefaultValue = false)]
-        public string BaseUri { get; private set; }
-
-        /// <summary>
-        /// Returns false as BaseUri should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeBaseUri()
-        {
-            return false;
-        }
+        public string BaseUri { get; set; }
 
         /// <summary>
         /// the Platform service associated to the resource
@@ -84,9 +70,9 @@ namespace Com.Cosmotech.Model
         public string PlatformService { get; set; }
 
         /// <summary>
-        /// the workspace specific uri for this service resource
+        /// the Organization specific uri for this service resource
         /// </summary>
-        /// <value>the workspace specific uri for this service resource</value>
+        /// <value>the Organization specific uri for this service resource</value>
         [DataMember(Name = "resourceUri", EmitDefaultValue = false)]
         public string ResourceUri { get; set; }
 
@@ -104,7 +90,7 @@ namespace Com.Cosmotech.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WorkspaceService {\n");
+            sb.Append("class OrganizationService {\n");
             sb.Append("  CloudService: ").Append(CloudService).Append("\n");
             sb.Append("  BaseUri: ").Append(BaseUri).Append("\n");
             sb.Append("  PlatformService: ").Append(PlatformService).Append("\n");
@@ -130,15 +116,15 @@ namespace Com.Cosmotech.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WorkspaceService);
+            return this.Equals(input as OrganizationService);
         }
 
         /// <summary>
-        /// Returns true if WorkspaceService instances are equal
+        /// Returns true if OrganizationService instances are equal
         /// </summary>
-        /// <param name="input">Instance of WorkspaceService to be compared</param>
+        /// <param name="input">Instance of OrganizationService to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WorkspaceService input)
+        public bool Equals(OrganizationService input)
         {
             if (input == null)
                 return false;

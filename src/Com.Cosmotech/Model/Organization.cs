@@ -41,11 +41,13 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="name">the Organization name (required).</param>
         /// <param name="users">users.</param>
-        public Organization(string name = default(string), List<OrganizationUser> users = default(List<OrganizationUser>))
+        /// <param name="services">services.</param>
+        public Organization(string name = default(string), List<OrganizationUser> users = default(List<OrganizationUser>), OrganizationServices services = default(OrganizationServices))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Organization and cannot be null");
             this.Users = users;
+            this.Services = services;
         }
 
         /// <summary>
@@ -94,6 +96,12 @@ namespace Com.Cosmotech.Model
         public List<OrganizationUser> Users { get; set; }
 
         /// <summary>
+        /// Gets or Sets Services
+        /// </summary>
+        [DataMember(Name = "services", EmitDefaultValue = false)]
+        public OrganizationServices Services { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -105,6 +113,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Users: ").Append(Users).Append("\n");
+            sb.Append("  Services: ").Append(Services).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -159,6 +168,11 @@ namespace Com.Cosmotech.Model
                     this.Users != null &&
                     input.Users != null &&
                     this.Users.SequenceEqual(input.Users)
+                ) && 
+                (
+                    this.Services == input.Services ||
+                    (this.Services != null &&
+                    this.Services.Equals(input.Services))
                 );
         }
 
@@ -179,6 +193,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
                 if (this.Users != null)
                     hashCode = hashCode * 59 + this.Users.GetHashCode();
+                if (this.Services != null)
+                    hashCode = hashCode * 59 + this.Services.GetHashCode();
                 return hashCode;
             }
         }
