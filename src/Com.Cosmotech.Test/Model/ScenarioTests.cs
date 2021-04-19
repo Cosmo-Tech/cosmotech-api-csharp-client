@@ -129,6 +129,30 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Users'
         }
         /// <summary>
+        /// Test the property 'State'
+        /// </summary>
+        [Fact]
+        public void StateTest()
+        {
+            // TODO unit test for the property 'State'
+        }
+        /// <summary>
+        /// Test the property 'CreationDate'
+        /// </summary>
+        [Fact]
+        public void CreationDateTest()
+        {
+            // TODO unit test for the property 'CreationDate'
+        }
+        /// <summary>
+        /// Test the property 'OwnerName'
+        /// </summary>
+        [Fact]
+        public void OwnerNameTest()
+        {
+            // TODO unit test for the property 'OwnerName'
+        }
+        /// <summary>
         /// Test the property 'SolutionName'
         /// </summary>
         [Fact]

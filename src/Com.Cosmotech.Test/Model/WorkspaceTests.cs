@@ -144,14 +144,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'SendInputToDataWarehouse'
         }
-        /// <summary>
-        /// Test the property 'Files'
-        /// </summary>
-        [Fact]
-        public void FilesTest()
-        {
-            // TODO unit test for the property 'Files'
-        }
 
     }
 

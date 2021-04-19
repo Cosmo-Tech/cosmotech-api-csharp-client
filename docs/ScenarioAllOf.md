@@ -5,6 +5,7 @@ a Scenario with detailed information
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**OwnerName** | **string** | the name of the owner | [optional] [readonly] 
 **SolutionName** | **string** | the Solution name | [optional] [readonly] 
 **RunTemplateName** | **string** | the Solution Run Template name associated with this Scenario | [optional] [readonly] 
 **DatasetList** | **List&lt;string&gt;** | the list of Dataset Id associated to this Scenario Run Template | [optional] 

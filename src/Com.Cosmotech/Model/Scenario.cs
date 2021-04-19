@@ -32,6 +32,54 @@ namespace Com.Cosmotech.Model
     public partial class Scenario : IEquatable<Scenario>, IValidatableObject
     {
         /// <summary>
+        /// the Scenario state
+        /// </summary>
+        /// <value>the Scenario state</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StateEnum
+        {
+            /// <summary>
+            /// Enum Created for value: Created
+            /// </summary>
+            [EnumMember(Value = "Created")]
+            Created = 1,
+
+            /// <summary>
+            /// Enum Running for value: Running
+            /// </summary>
+            [EnumMember(Value = "Running")]
+            Running = 2,
+
+            /// <summary>
+            /// Enum Successful for value: Successful
+            /// </summary>
+            [EnumMember(Value = "Successful")]
+            Successful = 3,
+
+            /// <summary>
+            /// Enum Failed for value: Failed
+            /// </summary>
+            [EnumMember(Value = "Failed")]
+            Failed = 4
+
+        }
+
+        /// <summary>
+        /// the Scenario state
+        /// </summary>
+        /// <value>the Scenario state</value>
+        [DataMember(Name = "state", EmitDefaultValue = false)]
+        public StateEnum? State { get; set; }
+
+        /// <summary>
+        /// Returns false as State should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeState()
+        {
+            return false;
+        }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Scenario" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -153,6 +201,38 @@ namespace Com.Cosmotech.Model
         public List<ScenarioUser> Users { get; set; }
 
         /// <summary>
+        /// the Scenario creation date
+        /// </summary>
+        /// <value>the Scenario creation date</value>
+        [DataMember(Name = "creationDate", EmitDefaultValue = false)]
+        public string CreationDate { get; private set; }
+
+        /// <summary>
+        /// Returns false as CreationDate should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCreationDate()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// the name of the owner
+        /// </summary>
+        /// <value>the name of the owner</value>
+        [DataMember(Name = "ownerName", EmitDefaultValue = false)]
+        public string OwnerName { get; private set; }
+
+        /// <summary>
+        /// Returns false as OwnerName should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeOwnerName()
+        {
+            return false;
+        }
+
+        /// <summary>
         /// the Solution name
         /// </summary>
         /// <value>the Solution name</value>
@@ -222,6 +302,9 @@ namespace Com.Cosmotech.Model
             sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
             sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
             sb.Append("  Users: ").Append(Users).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
+            sb.Append("  OwnerName: ").Append(OwnerName).Append("\n");
             sb.Append("  SolutionName: ").Append(SolutionName).Append("\n");
             sb.Append("  RunTemplateName: ").Append(RunTemplateName).Append("\n");
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
@@ -309,6 +392,20 @@ namespace Com.Cosmotech.Model
                     this.Users.SequenceEqual(input.Users)
                 ) && 
                 (
+                    this.State == input.State ||
+                    this.State.Equals(input.State)
+                ) && 
+                (
+                    this.CreationDate == input.CreationDate ||
+                    (this.CreationDate != null &&
+                    this.CreationDate.Equals(input.CreationDate))
+                ) && 
+                (
+                    this.OwnerName == input.OwnerName ||
+                    (this.OwnerName != null &&
+                    this.OwnerName.Equals(input.OwnerName))
+                ) && 
+                (
                     this.SolutionName == input.SolutionName ||
                     (this.SolutionName != null &&
                     this.SolutionName.Equals(input.SolutionName))
@@ -363,6 +460,11 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.RunTemplateId.GetHashCode();
                 if (this.Users != null)
                     hashCode = hashCode * 59 + this.Users.GetHashCode();
+                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.CreationDate != null)
+                    hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
+                if (this.OwnerName != null)
+                    hashCode = hashCode * 59 + this.OwnerName.GetHashCode();
                 if (this.SolutionName != null)
                     hashCode = hashCode * 59 + this.SolutionName.GetHashCode();
                 if (this.RunTemplateName != null)

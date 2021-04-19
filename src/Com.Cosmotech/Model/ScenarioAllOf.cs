@@ -45,6 +45,22 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
+        /// the name of the owner
+        /// </summary>
+        /// <value>the name of the owner</value>
+        [DataMember(Name = "ownerName", EmitDefaultValue = false)]
+        public string OwnerName { get; private set; }
+
+        /// <summary>
+        /// Returns false as OwnerName should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeOwnerName()
+        {
+            return false;
+        }
+
+        /// <summary>
         /// the Solution name
         /// </summary>
         /// <value>the Solution name</value>
@@ -105,6 +121,7 @@ namespace Com.Cosmotech.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ScenarioAllOf {\n");
+            sb.Append("  OwnerName: ").Append(OwnerName).Append("\n");
             sb.Append("  SolutionName: ").Append(SolutionName).Append("\n");
             sb.Append("  RunTemplateName: ").Append(RunTemplateName).Append("\n");
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
@@ -145,6 +162,11 @@ namespace Com.Cosmotech.Model
 
             return 
                 (
+                    this.OwnerName == input.OwnerName ||
+                    (this.OwnerName != null &&
+                    this.OwnerName.Equals(input.OwnerName))
+                ) && 
+                (
                     this.SolutionName == input.SolutionName ||
                     (this.SolutionName != null &&
                     this.SolutionName.Equals(input.SolutionName))
@@ -181,6 +203,8 @@ namespace Com.Cosmotech.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.OwnerName != null)
+                    hashCode = hashCode * 59 + this.OwnerName.GetHashCode();
                 if (this.SolutionName != null)
                     hashCode = hashCode * 59 + this.SolutionName.GetHashCode();
                 if (this.RunTemplateName != null)
