@@ -63,11 +63,11 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the list of Simulator Analysis parameters values
+        /// the list of Run Template parameters values
         /// </summary>
-        /// <value>the list of Simulator Analysis parameters values</value>
+        /// <value>the list of Run Template parameters values</value>
         [DataMember(Name = "parametersValues", EmitDefaultValue = false)]
-        public List<SimulationAnalysisParameterValue> ParametersValues { get; private set; }
+        public List<RunTemplateParameterValue> ParametersValues { get; private set; }
 
         /// <summary>
         /// Returns false as ParametersValues should not be serialized given that it's read-only.

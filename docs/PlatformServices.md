@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Credentials** | **Dictionary&lt;string, Object&gt;** | a freeform credentials object for the Platform. Structure depends on cloud provider | [optional] 
 **Storage** | [**PlatformService**](PlatformService.md) |  | [optional] 
 **CoreContainerRegistry** | [**PlatformService**](PlatformService.md) |  | [optional] 
-**SimulatorsContainerRegistry** | [**PlatformService**](PlatformService.md) |  | [optional] 
+**SolutionsContainerRegistry** | [**PlatformService**](PlatformService.md) |  | [optional] 
 **EventBusCluster** | [**PlatformService**](PlatformService.md) |  | [optional] 
 **DataWarehouseCluster** | [**PlatformService**](PlatformService.md) |  | [optional] 
 **DatabaseCluster** | [**PlatformService**](PlatformService.md) |  | [optional] 

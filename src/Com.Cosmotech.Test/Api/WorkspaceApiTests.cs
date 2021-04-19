@@ -118,5 +118,19 @@ namespace Com.Cosmotech.Test.Api
             //var response = instance.UpdateWorkspace(organizationId, workspaceId, workspace);
             //Assert.IsType<Workspace>(response);
         }
+
+        /// <summary>
+        /// Test UploadWorkspaceFile
+        /// </summary>
+        [Fact]
+        public void UploadWorkspaceFileTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //System.IO.Stream fileName = null;
+            //var response = instance.UploadWorkspaceFile(organizationId, workspaceId, fileName);
+            //Assert.IsType<WorkspaceFile>(response);
+        }
     }
 }

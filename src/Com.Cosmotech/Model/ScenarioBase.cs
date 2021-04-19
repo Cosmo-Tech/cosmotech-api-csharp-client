@@ -43,14 +43,16 @@ namespace Com.Cosmotech.Model
         /// <param name="description">the Scenario description.</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="parentId">the Scenario parent id.</param>
+        /// <param name="runTemplateId">the Solution Run Template Id associated with this Scenario.</param>
         /// <param name="users">the list of users Id with their role.</param>
-        public ScenarioBase(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>))
+        public ScenarioBase(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for ScenarioBase and cannot be null");
             this.Description = description;
             this.Tags = tags;
             this.ParentId = parentId;
+            this.RunTemplateId = runTemplateId;
             this.Users = users;
         }
 
@@ -115,20 +117,27 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the Simulator Id associated with this Scenario
+        /// the Solution Id associated with this Scenario
         /// </summary>
-        /// <value>the Simulator Id associated with this Scenario</value>
-        [DataMember(Name = "simulatorId", EmitDefaultValue = false)]
-        public string SimulatorId { get; private set; }
+        /// <value>the Solution Id associated with this Scenario</value>
+        [DataMember(Name = "solutionId", EmitDefaultValue = false)]
+        public string SolutionId { get; private set; }
 
         /// <summary>
-        /// Returns false as SimulatorId should not be serialized given that it's read-only.
+        /// Returns false as SolutionId should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSimulatorId()
+        public bool ShouldSerializeSolutionId()
         {
             return false;
         }
+
+        /// <summary>
+        /// the Solution Run Template Id associated with this Scenario
+        /// </summary>
+        /// <value>the Solution Run Template Id associated with this Scenario</value>
+        [DataMember(Name = "runTemplateId", EmitDefaultValue = false)]
+        public string RunTemplateId { get; set; }
 
         /// <summary>
         /// the list of users Id with their role
@@ -151,7 +160,8 @@ namespace Com.Cosmotech.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
-            sb.Append("  SimulatorId: ").Append(SimulatorId).Append("\n");
+            sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
+            sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
             sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -219,9 +229,14 @@ namespace Com.Cosmotech.Model
                     this.OwnerId.Equals(input.OwnerId))
                 ) && 
                 (
-                    this.SimulatorId == input.SimulatorId ||
-                    (this.SimulatorId != null &&
-                    this.SimulatorId.Equals(input.SimulatorId))
+                    this.SolutionId == input.SolutionId ||
+                    (this.SolutionId != null &&
+                    this.SolutionId.Equals(input.SolutionId))
+                ) && 
+                (
+                    this.RunTemplateId == input.RunTemplateId ||
+                    (this.RunTemplateId != null &&
+                    this.RunTemplateId.Equals(input.RunTemplateId))
                 ) && 
                 (
                     this.Users == input.Users ||
@@ -252,8 +267,10 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.OwnerId != null)
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
-                if (this.SimulatorId != null)
-                    hashCode = hashCode * 59 + this.SimulatorId.GetHashCode();
+                if (this.SolutionId != null)
+                    hashCode = hashCode * 59 + this.SolutionId.GetHashCode();
+                if (this.RunTemplateId != null)
+                    hashCode = hashCode * 59 + this.RunTemplateId.GetHashCode();
                 if (this.Users != null)
                     hashCode = hashCode * 59 + this.Users.GetHashCode();
                 return hashCode;

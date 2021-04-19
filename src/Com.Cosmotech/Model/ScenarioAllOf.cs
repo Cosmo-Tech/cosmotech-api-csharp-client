@@ -34,40 +34,66 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioAllOf" /> class.
         /// </summary>
-        /// <param name="simulatorName">simulatorName.</param>
-        /// <param name="simulatorAnalysisName">simulatorAnalysisName.</param>
-        /// <param name="analysis">analysis.</param>
-        /// <param name="sendInputToDataWarehouse">default setting for all Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run.</param>
-        public ScenarioAllOf(string simulatorName = default(string), string simulatorAnalysisName = default(string), ScenarioAnalysis analysis = default(ScenarioAnalysis), bool sendInputToDataWarehouse = default(bool))
+        /// <param name="datasetList">the list of Dataset Id associated to this Scenario Run Template.</param>
+        /// <param name="parametersValues">the list of Solution Run Template parameters values.</param>
+        /// <param name="sendInputToDataWarehouse">whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run.</param>
+        public ScenarioAllOf(List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), bool sendInputToDataWarehouse = default(bool))
         {
-            this.SimulatorName = simulatorName;
-            this.SimulatorAnalysisName = simulatorAnalysisName;
-            this.Analysis = analysis;
+            this.DatasetList = datasetList;
+            this.ParametersValues = parametersValues;
             this.SendInputToDataWarehouse = sendInputToDataWarehouse;
         }
 
         /// <summary>
-        /// Gets or Sets SimulatorName
+        /// the Solution name
         /// </summary>
-        [DataMember(Name = "simulatorName", EmitDefaultValue = false)]
-        public string SimulatorName { get; set; }
+        /// <value>the Solution name</value>
+        [DataMember(Name = "solutionName", EmitDefaultValue = false)]
+        public string SolutionName { get; private set; }
 
         /// <summary>
-        /// Gets or Sets SimulatorAnalysisName
+        /// Returns false as SolutionName should not be serialized given that it's read-only.
         /// </summary>
-        [DataMember(Name = "simulatorAnalysisName", EmitDefaultValue = false)]
-        public string SimulatorAnalysisName { get; set; }
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeSolutionName()
+        {
+            return false;
+        }
 
         /// <summary>
-        /// Gets or Sets Analysis
+        /// the Solution Run Template name associated with this Scenario
         /// </summary>
-        [DataMember(Name = "analysis", EmitDefaultValue = false)]
-        public ScenarioAnalysis Analysis { get; set; }
+        /// <value>the Solution Run Template name associated with this Scenario</value>
+        [DataMember(Name = "runTemplateName", EmitDefaultValue = false)]
+        public string RunTemplateName { get; private set; }
 
         /// <summary>
-        /// default setting for all Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
+        /// Returns false as RunTemplateName should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>default setting for all Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeRunTemplateName()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// the list of Dataset Id associated to this Scenario Run Template
+        /// </summary>
+        /// <value>the list of Dataset Id associated to this Scenario Run Template</value>
+        [DataMember(Name = "datasetList", EmitDefaultValue = false)]
+        public List<string> DatasetList { get; set; }
+
+        /// <summary>
+        /// the list of Solution Run Template parameters values
+        /// </summary>
+        /// <value>the list of Solution Run Template parameters values</value>
+        [DataMember(Name = "parametersValues", EmitDefaultValue = false)]
+        public List<ScenarioRunTemplateParameterValue> ParametersValues { get; set; }
+
+        /// <summary>
+        /// whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
+        /// </summary>
+        /// <value>whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
         [DataMember(Name = "sendInputToDataWarehouse", EmitDefaultValue = false)]
         public bool SendInputToDataWarehouse { get; set; }
 
@@ -79,9 +105,10 @@ namespace Com.Cosmotech.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ScenarioAllOf {\n");
-            sb.Append("  SimulatorName: ").Append(SimulatorName).Append("\n");
-            sb.Append("  SimulatorAnalysisName: ").Append(SimulatorAnalysisName).Append("\n");
-            sb.Append("  Analysis: ").Append(Analysis).Append("\n");
+            sb.Append("  SolutionName: ").Append(SolutionName).Append("\n");
+            sb.Append("  RunTemplateName: ").Append(RunTemplateName).Append("\n");
+            sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
+            sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
             sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -118,19 +145,26 @@ namespace Com.Cosmotech.Model
 
             return 
                 (
-                    this.SimulatorName == input.SimulatorName ||
-                    (this.SimulatorName != null &&
-                    this.SimulatorName.Equals(input.SimulatorName))
+                    this.SolutionName == input.SolutionName ||
+                    (this.SolutionName != null &&
+                    this.SolutionName.Equals(input.SolutionName))
                 ) && 
                 (
-                    this.SimulatorAnalysisName == input.SimulatorAnalysisName ||
-                    (this.SimulatorAnalysisName != null &&
-                    this.SimulatorAnalysisName.Equals(input.SimulatorAnalysisName))
+                    this.RunTemplateName == input.RunTemplateName ||
+                    (this.RunTemplateName != null &&
+                    this.RunTemplateName.Equals(input.RunTemplateName))
                 ) && 
                 (
-                    this.Analysis == input.Analysis ||
-                    (this.Analysis != null &&
-                    this.Analysis.Equals(input.Analysis))
+                    this.DatasetList == input.DatasetList ||
+                    this.DatasetList != null &&
+                    input.DatasetList != null &&
+                    this.DatasetList.SequenceEqual(input.DatasetList)
+                ) && 
+                (
+                    this.ParametersValues == input.ParametersValues ||
+                    this.ParametersValues != null &&
+                    input.ParametersValues != null &&
+                    this.ParametersValues.SequenceEqual(input.ParametersValues)
                 ) && 
                 (
                     this.SendInputToDataWarehouse == input.SendInputToDataWarehouse ||
@@ -147,12 +181,14 @@ namespace Com.Cosmotech.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SimulatorName != null)
-                    hashCode = hashCode * 59 + this.SimulatorName.GetHashCode();
-                if (this.SimulatorAnalysisName != null)
-                    hashCode = hashCode * 59 + this.SimulatorAnalysisName.GetHashCode();
-                if (this.Analysis != null)
-                    hashCode = hashCode * 59 + this.Analysis.GetHashCode();
+                if (this.SolutionName != null)
+                    hashCode = hashCode * 59 + this.SolutionName.GetHashCode();
+                if (this.RunTemplateName != null)
+                    hashCode = hashCode * 59 + this.RunTemplateName.GetHashCode();
+                if (this.DatasetList != null)
+                    hashCode = hashCode * 59 + this.DatasetList.GetHashCode();
+                if (this.ParametersValues != null)
+                    hashCode = hashCode * 59 + this.ParametersValues.GetHashCode();
                 hashCode = hashCode * 59 + this.SendInputToDataWarehouse.GetHashCode();
                 return hashCode;
             }

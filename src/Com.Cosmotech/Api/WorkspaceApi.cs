@@ -67,6 +67,48 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Workspace</returns>
         ApiResponse<Workspace> DeleteWorkspaceWithHttpInfo(string organizationId, string workspaceId);
         /// <summary>
+        /// Delete a workspace file
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="workspaceFile">the file to upload</param>
+        /// <returns>WorkspaceFile</returns>
+        WorkspaceFile DeleteWorkspaceFile(string organizationId, string workspaceId, WorkspaceFile workspaceFile);
+
+        /// <summary>
+        /// Delete a workspace file
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="workspaceFile">the file to upload</param>
+        /// <returns>ApiResponse of WorkspaceFile</returns>
+        ApiResponse<WorkspaceFile> DeleteWorkspaceFileWithHttpInfo(string organizationId, string workspaceId, WorkspaceFile workspaceFile);
+        /// <summary>
+        /// List all Workspace files
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <returns>List&lt;WorkspaceFile&gt;</returns>
+        List<WorkspaceFile> FindAllWorkspaceFiles(string organizationId, string workspaceId);
+
+        /// <summary>
+        /// List all Workspace files
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <returns>ApiResponse of List&lt;WorkspaceFile&gt;</returns>
+        ApiResponse<List<WorkspaceFile>> FindAllWorkspaceFilesWithHttpInfo(string organizationId, string workspaceId);
+        /// <summary>
         /// List all Workspaces
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -126,6 +168,28 @@ namespace Com.Cosmotech.Api
         /// <param name="workspace">the new Workspace details.</param>
         /// <returns>ApiResponse of Workspace</returns>
         ApiResponse<Workspace> UpdateWorkspaceWithHttpInfo(string organizationId, string workspaceId, Workspace workspace);
+        /// <summary>
+        /// Upload a file for the Workspace
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="fileName"> (optional)</param>
+        /// <returns>WorkspaceFile</returns>
+        WorkspaceFile UploadWorkspaceFile(string organizationId, string workspaceId, System.IO.Stream fileName = default(System.IO.Stream));
+
+        /// <summary>
+        /// Upload a file for the Workspace
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="fileName"> (optional)</param>
+        /// <returns>ApiResponse of WorkspaceFile</returns>
+        ApiResponse<WorkspaceFile> UploadWorkspaceFileWithHttpInfo(string organizationId, string workspaceId, System.IO.Stream fileName = default(System.IO.Stream));
         #endregion Synchronous Operations
     }
 
@@ -185,6 +249,58 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
         System.Threading.Tasks.Task<ApiResponse<Workspace>> DeleteWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete a workspace file
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="workspaceFile">the file to upload</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WorkspaceFile</returns>
+        System.Threading.Tasks.Task<WorkspaceFile> DeleteWorkspaceFileAsync(string organizationId, string workspaceId, WorkspaceFile workspaceFile, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete a workspace file
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="workspaceFile">the file to upload</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WorkspaceFile)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WorkspaceFile>> DeleteWorkspaceFileWithHttpInfoAsync(string organizationId, string workspaceId, WorkspaceFile workspaceFile, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// List all Workspace files
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WorkspaceFile&gt;</returns>
+        System.Threading.Tasks.Task<List<WorkspaceFile>> FindAllWorkspaceFilesAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List all Workspace files
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WorkspaceFile&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WorkspaceFile>>> FindAllWorkspaceFilesWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Workspaces
         /// </summary>
@@ -260,6 +376,33 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Workspace)</returns>
         System.Threading.Tasks.Task<ApiResponse<Workspace>> UpdateWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, Workspace workspace, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Upload a file for the Workspace
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="fileName"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WorkspaceFile</returns>
+        System.Threading.Tasks.Task<WorkspaceFile> UploadWorkspaceFileAsync(string organizationId, string workspaceId, System.IO.Stream fileName = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Upload a file for the Workspace
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="fileName"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WorkspaceFile)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WorkspaceFile>> UploadWorkspaceFileWithHttpInfoAsync(string organizationId, string workspaceId, System.IO.Stream fileName = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -658,6 +801,304 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteWorkspace", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a workspace file 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="workspaceFile">the file to upload</param>
+        /// <returns>WorkspaceFile</returns>
+        public WorkspaceFile DeleteWorkspaceFile(string organizationId, string workspaceId, WorkspaceFile workspaceFile)
+        {
+            Com.Cosmotech.Client.ApiResponse<WorkspaceFile> localVarResponse = DeleteWorkspaceFileWithHttpInfo(organizationId, workspaceId, workspaceFile);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete a workspace file 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="workspaceFile">the file to upload</param>
+        /// <returns>ApiResponse of WorkspaceFile</returns>
+        public Com.Cosmotech.Client.ApiResponse<WorkspaceFile> DeleteWorkspaceFileWithHttpInfo(string organizationId, string workspaceId, WorkspaceFile workspaceFile)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DeleteWorkspaceFile");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DeleteWorkspaceFile");
+
+            // verify the required parameter 'workspaceFile' is set
+            if (workspaceFile == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceFile' when calling WorkspaceApi->DeleteWorkspaceFile");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.Data = workspaceFile;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<WorkspaceFile>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteWorkspaceFile", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a workspace file 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="workspaceFile">the file to upload</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WorkspaceFile</returns>
+        public async System.Threading.Tasks.Task<WorkspaceFile> DeleteWorkspaceFileAsync(string organizationId, string workspaceId, WorkspaceFile workspaceFile, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<WorkspaceFile> localVarResponse = await DeleteWorkspaceFileWithHttpInfoAsync(organizationId, workspaceId, workspaceFile, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete a workspace file 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="workspaceFile">the file to upload</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WorkspaceFile)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<WorkspaceFile>> DeleteWorkspaceFileWithHttpInfoAsync(string organizationId, string workspaceId, WorkspaceFile workspaceFile, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DeleteWorkspaceFile");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DeleteWorkspaceFile");
+
+            // verify the required parameter 'workspaceFile' is set
+            if (workspaceFile == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceFile' when calling WorkspaceApi->DeleteWorkspaceFile");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.Data = workspaceFile;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<WorkspaceFile>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteWorkspaceFile", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List all Workspace files 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <returns>List&lt;WorkspaceFile&gt;</returns>
+        public List<WorkspaceFile> FindAllWorkspaceFiles(string organizationId, string workspaceId)
+        {
+            Com.Cosmotech.Client.ApiResponse<List<WorkspaceFile>> localVarResponse = FindAllWorkspaceFilesWithHttpInfo(organizationId, workspaceId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List all Workspace files 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <returns>ApiResponse of List&lt;WorkspaceFile&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<WorkspaceFile>> FindAllWorkspaceFilesWithHttpInfo(string organizationId, string workspaceId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->FindAllWorkspaceFiles");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->FindAllWorkspaceFiles");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<WorkspaceFile>>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FindAllWorkspaceFiles", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List all Workspace files 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;WorkspaceFile&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WorkspaceFile>> FindAllWorkspaceFilesAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<List<WorkspaceFile>> localVarResponse = await FindAllWorkspaceFilesWithHttpInfoAsync(organizationId, workspaceId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List all Workspace files 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;WorkspaceFile&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<WorkspaceFile>>> FindAllWorkspaceFilesWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->FindAllWorkspaceFiles");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->FindAllWorkspaceFiles");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<WorkspaceFile>>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("FindAllWorkspaceFiles", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1083,6 +1524,161 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateWorkspace", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Upload a file for the Workspace 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="fileName"> (optional)</param>
+        /// <returns>WorkspaceFile</returns>
+        public WorkspaceFile UploadWorkspaceFile(string organizationId, string workspaceId, System.IO.Stream fileName = default(System.IO.Stream))
+        {
+            Com.Cosmotech.Client.ApiResponse<WorkspaceFile> localVarResponse = UploadWorkspaceFileWithHttpInfo(organizationId, workspaceId, fileName);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload a file for the Workspace 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="fileName"> (optional)</param>
+        /// <returns>ApiResponse of WorkspaceFile</returns>
+        public Com.Cosmotech.Client.ApiResponse<WorkspaceFile> UploadWorkspaceFileWithHttpInfo(string organizationId, string workspaceId, System.IO.Stream fileName = default(System.IO.Stream))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->UploadWorkspaceFile");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->UploadWorkspaceFile");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            if (fileName != null)
+            {
+                localVarRequestOptions.FileParameters.Add("fileName", fileName);
+            }
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<WorkspaceFile>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadWorkspaceFile", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Upload a file for the Workspace 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="fileName"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of WorkspaceFile</returns>
+        public async System.Threading.Tasks.Task<WorkspaceFile> UploadWorkspaceFileAsync(string organizationId, string workspaceId, System.IO.Stream fileName = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<WorkspaceFile> localVarResponse = await UploadWorkspaceFileWithHttpInfoAsync(organizationId, workspaceId, fileName, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Upload a file for the Workspace 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="fileName"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (WorkspaceFile)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<WorkspaceFile>> UploadWorkspaceFileWithHttpInfoAsync(string organizationId, string workspaceId, System.IO.Stream fileName = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->UploadWorkspaceFile");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->UploadWorkspaceFile");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            if (fileName != null)
+            {
+                localVarRequestOptions.FileParameters.Add("fileName", fileName);
+            }
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkspaceFile>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UploadWorkspaceFile", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

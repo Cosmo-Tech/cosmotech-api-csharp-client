@@ -5,8 +5,8 @@ the search options
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SimulatorId** | **string** | the Simulator Id to search | [optional] 
-**SimulatorAnalysisId** | **string** | the Simulator Analysis Id to search | [optional] 
+**SolutionId** | **string** | the Solution Id to search | [optional] 
+**RunTemplateId** | **string** | the Solution Analysis Id to search | [optional] 
 **WorkspaceId** | **string** | the Workspace Id to search | [optional] 
 **ScenarioId** | **string** | the Scenario Id to search | [optional] 
 **State** | **string** | the state to search | [optional] 

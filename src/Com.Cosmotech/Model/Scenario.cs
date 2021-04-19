@@ -43,22 +43,22 @@ namespace Com.Cosmotech.Model
         /// <param name="description">the Scenario description.</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="parentId">the Scenario parent id.</param>
+        /// <param name="runTemplateId">the Solution Run Template Id associated with this Scenario.</param>
         /// <param name="users">the list of users Id with their role.</param>
-        /// <param name="simulatorName">simulatorName.</param>
-        /// <param name="simulatorAnalysisName">simulatorAnalysisName.</param>
-        /// <param name="analysis">analysis.</param>
-        /// <param name="sendInputToDataWarehouse">default setting for all Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run.</param>
-        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), string simulatorName = default(string), string simulatorAnalysisName = default(string), ScenarioAnalysis analysis = default(ScenarioAnalysis), bool sendInputToDataWarehouse = default(bool))
+        /// <param name="datasetList">the list of Dataset Id associated to this Scenario Run Template.</param>
+        /// <param name="parametersValues">the list of Solution Run Template parameters values.</param>
+        /// <param name="sendInputToDataWarehouse">whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run.</param>
+        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), bool sendInputToDataWarehouse = default(bool))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Scenario and cannot be null");
             this.Description = description;
             this.Tags = tags;
             this.ParentId = parentId;
+            this.RunTemplateId = runTemplateId;
             this.Users = users;
-            this.SimulatorName = simulatorName;
-            this.SimulatorAnalysisName = simulatorAnalysisName;
-            this.Analysis = analysis;
+            this.DatasetList = datasetList;
+            this.ParametersValues = parametersValues;
             this.SendInputToDataWarehouse = sendInputToDataWarehouse;
         }
 
@@ -123,20 +123,27 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the Simulator Id associated with this Scenario
+        /// the Solution Id associated with this Scenario
         /// </summary>
-        /// <value>the Simulator Id associated with this Scenario</value>
-        [DataMember(Name = "simulatorId", EmitDefaultValue = false)]
-        public string SimulatorId { get; private set; }
+        /// <value>the Solution Id associated with this Scenario</value>
+        [DataMember(Name = "solutionId", EmitDefaultValue = false)]
+        public string SolutionId { get; private set; }
 
         /// <summary>
-        /// Returns false as SimulatorId should not be serialized given that it's read-only.
+        /// Returns false as SolutionId should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSimulatorId()
+        public bool ShouldSerializeSolutionId()
         {
             return false;
         }
+
+        /// <summary>
+        /// the Solution Run Template Id associated with this Scenario
+        /// </summary>
+        /// <value>the Solution Run Template Id associated with this Scenario</value>
+        [DataMember(Name = "runTemplateId", EmitDefaultValue = false)]
+        public string RunTemplateId { get; set; }
 
         /// <summary>
         /// the list of users Id with their role
@@ -146,27 +153,55 @@ namespace Com.Cosmotech.Model
         public List<ScenarioUser> Users { get; set; }
 
         /// <summary>
-        /// Gets or Sets SimulatorName
+        /// the Solution name
         /// </summary>
-        [DataMember(Name = "simulatorName", EmitDefaultValue = false)]
-        public string SimulatorName { get; set; }
+        /// <value>the Solution name</value>
+        [DataMember(Name = "solutionName", EmitDefaultValue = false)]
+        public string SolutionName { get; private set; }
 
         /// <summary>
-        /// Gets or Sets SimulatorAnalysisName
+        /// Returns false as SolutionName should not be serialized given that it's read-only.
         /// </summary>
-        [DataMember(Name = "simulatorAnalysisName", EmitDefaultValue = false)]
-        public string SimulatorAnalysisName { get; set; }
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeSolutionName()
+        {
+            return false;
+        }
 
         /// <summary>
-        /// Gets or Sets Analysis
+        /// the Solution Run Template name associated with this Scenario
         /// </summary>
-        [DataMember(Name = "analysis", EmitDefaultValue = false)]
-        public ScenarioAnalysis Analysis { get; set; }
+        /// <value>the Solution Run Template name associated with this Scenario</value>
+        [DataMember(Name = "runTemplateName", EmitDefaultValue = false)]
+        public string RunTemplateName { get; private set; }
 
         /// <summary>
-        /// default setting for all Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
+        /// Returns false as RunTemplateName should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>default setting for all Analysis to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeRunTemplateName()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// the list of Dataset Id associated to this Scenario Run Template
+        /// </summary>
+        /// <value>the list of Dataset Id associated to this Scenario Run Template</value>
+        [DataMember(Name = "datasetList", EmitDefaultValue = false)]
+        public List<string> DatasetList { get; set; }
+
+        /// <summary>
+        /// the list of Solution Run Template parameters values
+        /// </summary>
+        /// <value>the list of Solution Run Template parameters values</value>
+        [DataMember(Name = "parametersValues", EmitDefaultValue = false)]
+        public List<ScenarioRunTemplateParameterValue> ParametersValues { get; set; }
+
+        /// <summary>
+        /// whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
+        /// </summary>
+        /// <value>whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
         [DataMember(Name = "sendInputToDataWarehouse", EmitDefaultValue = false)]
         public bool SendInputToDataWarehouse { get; set; }
 
@@ -184,11 +219,13 @@ namespace Com.Cosmotech.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
-            sb.Append("  SimulatorId: ").Append(SimulatorId).Append("\n");
+            sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
+            sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
             sb.Append("  Users: ").Append(Users).Append("\n");
-            sb.Append("  SimulatorName: ").Append(SimulatorName).Append("\n");
-            sb.Append("  SimulatorAnalysisName: ").Append(SimulatorAnalysisName).Append("\n");
-            sb.Append("  Analysis: ").Append(Analysis).Append("\n");
+            sb.Append("  SolutionName: ").Append(SolutionName).Append("\n");
+            sb.Append("  RunTemplateName: ").Append(RunTemplateName).Append("\n");
+            sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
+            sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
             sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -256,9 +293,14 @@ namespace Com.Cosmotech.Model
                     this.OwnerId.Equals(input.OwnerId))
                 ) && 
                 (
-                    this.SimulatorId == input.SimulatorId ||
-                    (this.SimulatorId != null &&
-                    this.SimulatorId.Equals(input.SimulatorId))
+                    this.SolutionId == input.SolutionId ||
+                    (this.SolutionId != null &&
+                    this.SolutionId.Equals(input.SolutionId))
+                ) && 
+                (
+                    this.RunTemplateId == input.RunTemplateId ||
+                    (this.RunTemplateId != null &&
+                    this.RunTemplateId.Equals(input.RunTemplateId))
                 ) && 
                 (
                     this.Users == input.Users ||
@@ -267,19 +309,26 @@ namespace Com.Cosmotech.Model
                     this.Users.SequenceEqual(input.Users)
                 ) && 
                 (
-                    this.SimulatorName == input.SimulatorName ||
-                    (this.SimulatorName != null &&
-                    this.SimulatorName.Equals(input.SimulatorName))
+                    this.SolutionName == input.SolutionName ||
+                    (this.SolutionName != null &&
+                    this.SolutionName.Equals(input.SolutionName))
                 ) && 
                 (
-                    this.SimulatorAnalysisName == input.SimulatorAnalysisName ||
-                    (this.SimulatorAnalysisName != null &&
-                    this.SimulatorAnalysisName.Equals(input.SimulatorAnalysisName))
+                    this.RunTemplateName == input.RunTemplateName ||
+                    (this.RunTemplateName != null &&
+                    this.RunTemplateName.Equals(input.RunTemplateName))
                 ) && 
                 (
-                    this.Analysis == input.Analysis ||
-                    (this.Analysis != null &&
-                    this.Analysis.Equals(input.Analysis))
+                    this.DatasetList == input.DatasetList ||
+                    this.DatasetList != null &&
+                    input.DatasetList != null &&
+                    this.DatasetList.SequenceEqual(input.DatasetList)
+                ) && 
+                (
+                    this.ParametersValues == input.ParametersValues ||
+                    this.ParametersValues != null &&
+                    input.ParametersValues != null &&
+                    this.ParametersValues.SequenceEqual(input.ParametersValues)
                 ) && 
                 (
                     this.SendInputToDataWarehouse == input.SendInputToDataWarehouse ||
@@ -308,16 +357,20 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.OwnerId != null)
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
-                if (this.SimulatorId != null)
-                    hashCode = hashCode * 59 + this.SimulatorId.GetHashCode();
+                if (this.SolutionId != null)
+                    hashCode = hashCode * 59 + this.SolutionId.GetHashCode();
+                if (this.RunTemplateId != null)
+                    hashCode = hashCode * 59 + this.RunTemplateId.GetHashCode();
                 if (this.Users != null)
                     hashCode = hashCode * 59 + this.Users.GetHashCode();
-                if (this.SimulatorName != null)
-                    hashCode = hashCode * 59 + this.SimulatorName.GetHashCode();
-                if (this.SimulatorAnalysisName != null)
-                    hashCode = hashCode * 59 + this.SimulatorAnalysisName.GetHashCode();
-                if (this.Analysis != null)
-                    hashCode = hashCode * 59 + this.Analysis.GetHashCode();
+                if (this.SolutionName != null)
+                    hashCode = hashCode * 59 + this.SolutionName.GetHashCode();
+                if (this.RunTemplateName != null)
+                    hashCode = hashCode * 59 + this.RunTemplateName.GetHashCode();
+                if (this.DatasetList != null)
+                    hashCode = hashCode * 59 + this.DatasetList.GetHashCode();
+                if (this.ParametersValues != null)
+                    hashCode = hashCode * 59 + this.ParametersValues.GetHashCode();
                 hashCode = hashCode * 59 + this.SendInputToDataWarehouse.GetHashCode();
                 return hashCode;
             }

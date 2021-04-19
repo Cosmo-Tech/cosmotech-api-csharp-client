@@ -34,17 +34,17 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SimulationSearch" /> class.
         /// </summary>
-        /// <param name="simulatorId">the Simulator Id to search.</param>
-        /// <param name="simulatorAnalysisId">the Simulator Analysis Id to search.</param>
+        /// <param name="solutionId">the Solution Id to search.</param>
+        /// <param name="runTemplateId">the Solution Analysis Id to search.</param>
         /// <param name="workspaceId">the Workspace Id to search.</param>
         /// <param name="scenarioId">the Scenario Id to search.</param>
         /// <param name="state">the state to search.</param>
         /// <param name="jobId">the Cosmo Tech compute cluster Job Id to search.</param>
         /// <param name="ownerId">the owner Id to search.</param>
-        public SimulationSearch(string simulatorId = default(string), string simulatorAnalysisId = default(string), string workspaceId = default(string), string scenarioId = default(string), string state = default(string), string jobId = default(string), string ownerId = default(string))
+        public SimulationSearch(string solutionId = default(string), string runTemplateId = default(string), string workspaceId = default(string), string scenarioId = default(string), string state = default(string), string jobId = default(string), string ownerId = default(string))
         {
-            this.SimulatorId = simulatorId;
-            this.SimulatorAnalysisId = simulatorAnalysisId;
+            this.SolutionId = solutionId;
+            this.RunTemplateId = runTemplateId;
             this.WorkspaceId = workspaceId;
             this.ScenarioId = scenarioId;
             this.State = state;
@@ -53,18 +53,18 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the Simulator Id to search
+        /// the Solution Id to search
         /// </summary>
-        /// <value>the Simulator Id to search</value>
-        [DataMember(Name = "simulatorId", EmitDefaultValue = false)]
-        public string SimulatorId { get; set; }
+        /// <value>the Solution Id to search</value>
+        [DataMember(Name = "solutionId", EmitDefaultValue = false)]
+        public string SolutionId { get; set; }
 
         /// <summary>
-        /// the Simulator Analysis Id to search
+        /// the Solution Analysis Id to search
         /// </summary>
-        /// <value>the Simulator Analysis Id to search</value>
-        [DataMember(Name = "simulatorAnalysisId", EmitDefaultValue = false)]
-        public string SimulatorAnalysisId { get; set; }
+        /// <value>the Solution Analysis Id to search</value>
+        [DataMember(Name = "runTemplateId", EmitDefaultValue = false)]
+        public string RunTemplateId { get; set; }
 
         /// <summary>
         /// the Workspace Id to search
@@ -109,8 +109,8 @@ namespace Com.Cosmotech.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SimulationSearch {\n");
-            sb.Append("  SimulatorId: ").Append(SimulatorId).Append("\n");
-            sb.Append("  SimulatorAnalysisId: ").Append(SimulatorAnalysisId).Append("\n");
+            sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
+            sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
             sb.Append("  WorkspaceId: ").Append(WorkspaceId).Append("\n");
             sb.Append("  ScenarioId: ").Append(ScenarioId).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
@@ -151,14 +151,14 @@ namespace Com.Cosmotech.Model
 
             return 
                 (
-                    this.SimulatorId == input.SimulatorId ||
-                    (this.SimulatorId != null &&
-                    this.SimulatorId.Equals(input.SimulatorId))
+                    this.SolutionId == input.SolutionId ||
+                    (this.SolutionId != null &&
+                    this.SolutionId.Equals(input.SolutionId))
                 ) && 
                 (
-                    this.SimulatorAnalysisId == input.SimulatorAnalysisId ||
-                    (this.SimulatorAnalysisId != null &&
-                    this.SimulatorAnalysisId.Equals(input.SimulatorAnalysisId))
+                    this.RunTemplateId == input.RunTemplateId ||
+                    (this.RunTemplateId != null &&
+                    this.RunTemplateId.Equals(input.RunTemplateId))
                 ) && 
                 (
                     this.WorkspaceId == input.WorkspaceId ||
@@ -196,10 +196,10 @@ namespace Com.Cosmotech.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SimulatorId != null)
-                    hashCode = hashCode * 59 + this.SimulatorId.GetHashCode();
-                if (this.SimulatorAnalysisId != null)
-                    hashCode = hashCode * 59 + this.SimulatorAnalysisId.GetHashCode();
+                if (this.SolutionId != null)
+                    hashCode = hashCode * 59 + this.SolutionId.GetHashCode();
+                if (this.RunTemplateId != null)
+                    hashCode = hashCode * 59 + this.RunTemplateId.GetHashCode();
                 if (this.WorkspaceId != null)
                     hashCode = hashCode * 59 + this.WorkspaceId.GetHashCode();
                 if (this.ScenarioId != null)

@@ -105,20 +105,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'OwnerId'
         }
         /// <summary>
-        /// Test the property 'Simulator'
+        /// Test the property 'Solution'
         /// </summary>
         [Fact]
-        public void SimulatorTest()
+        public void SolutionTest()
         {
-            // TODO unit test for the property 'Simulator'
-        }
-        /// <summary>
-        /// Test the property 'SimulatorAnalysisFilter'
-        /// </summary>
-        [Fact]
-        public void SimulatorAnalysisFilterTest()
-        {
-            // TODO unit test for the property 'SimulatorAnalysisFilter'
+            // TODO unit test for the property 'Solution'
         }
         /// <summary>
         /// Test the property 'Users'
@@ -151,6 +143,14 @@ namespace Com.Cosmotech.Test.Model
         public void SendInputToDataWarehouseTest()
         {
             // TODO unit test for the property 'SendInputToDataWarehouse'
+        }
+        /// <summary>
+        /// Test the property 'Files'
+        /// </summary>
+        [Fact]
+        public void FilesTest()
+        {
+            // TODO unit test for the property 'Files'
         }
 
     }

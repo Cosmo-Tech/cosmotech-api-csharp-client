@@ -105,12 +105,20 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'OwnerId'
         }
         /// <summary>
-        /// Test the property 'SimulatorId'
+        /// Test the property 'SolutionId'
         /// </summary>
         [Fact]
-        public void SimulatorIdTest()
+        public void SolutionIdTest()
         {
-            // TODO unit test for the property 'SimulatorId'
+            // TODO unit test for the property 'SolutionId'
+        }
+        /// <summary>
+        /// Test the property 'RunTemplateId'
+        /// </summary>
+        [Fact]
+        public void RunTemplateIdTest()
+        {
+            // TODO unit test for the property 'RunTemplateId'
         }
         /// <summary>
         /// Test the property 'Users'
@@ -121,28 +129,36 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Users'
         }
         /// <summary>
-        /// Test the property 'SimulatorName'
+        /// Test the property 'SolutionName'
         /// </summary>
         [Fact]
-        public void SimulatorNameTest()
+        public void SolutionNameTest()
         {
-            // TODO unit test for the property 'SimulatorName'
+            // TODO unit test for the property 'SolutionName'
         }
         /// <summary>
-        /// Test the property 'SimulatorAnalysisName'
+        /// Test the property 'RunTemplateName'
         /// </summary>
         [Fact]
-        public void SimulatorAnalysisNameTest()
+        public void RunTemplateNameTest()
         {
-            // TODO unit test for the property 'SimulatorAnalysisName'
+            // TODO unit test for the property 'RunTemplateName'
         }
         /// <summary>
-        /// Test the property 'Analysis'
+        /// Test the property 'DatasetList'
         /// </summary>
         [Fact]
-        public void AnalysisTest()
+        public void DatasetListTest()
         {
-            // TODO unit test for the property 'Analysis'
+            // TODO unit test for the property 'DatasetList'
+        }
+        /// <summary>
+        /// Test the property 'ParametersValues'
+        /// </summary>
+        [Fact]
+        public void ParametersValuesTest()
+        {
+            // TODO unit test for the property 'ParametersValues'
         }
         /// <summary>
         /// Test the property 'SendInputToDataWarehouse'

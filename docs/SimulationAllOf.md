@@ -6,7 +6,7 @@ a Simulation
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DatasetList** | **List&lt;string&gt;** | the list of Dataset Id associated to this Analysis | [optional] [readonly] 
-**ParametersValues** | [**List&lt;SimulationAnalysisParameterValue&gt;**](SimulationAnalysisParameterValue.md) | the list of Simulator Analysis parameters values | [optional] [readonly] 
+**ParametersValues** | [**List&lt;RunTemplateParameterValue&gt;**](RunTemplateParameterValue.md) | the list of Run Template parameters values | [optional] [readonly] 
 **SendInputToDataWarehouse** | **bool** | whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run | [optional] [readonly] 
 **DataWarehouseDB** | **string** | the DataWarehouse database name to send data if sendInputToDataWarehouse is set | [optional] 
 **ResultsEventBusResourceUri** | **string** | the event bus which receive Workspace Simulation results messages. Message won&#39;t be send if this is not set | [optional] 

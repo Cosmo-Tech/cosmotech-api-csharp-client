@@ -73,12 +73,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Storage'
         }
         /// <summary>
-        /// Test the property 'SimulatorsContainerRegistry'
+        /// Test the property 'SolutionsContainerRegistry'
         /// </summary>
         [Fact]
-        public void SimulatorsContainerRegistryTest()
+        public void SolutionsContainerRegistryTest()
         {
-            // TODO unit test for the property 'SimulatorsContainerRegistry'
+            // TODO unit test for the property 'SolutionsContainerRegistry'
         }
 
     }

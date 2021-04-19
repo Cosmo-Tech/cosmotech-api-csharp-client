@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**SearchSimulations**](SimulationApi.md#searchsimulations) | **POST** /organizations/{organization_id}/simulations/search | Search Simulations
 [**StartSimulationContainers**](SimulationApi.md#startsimulationcontainers) | **POST** /organizations/{organization_id}/simulations/startcontainers | Start a new simulation with raw containers definition
 [**StartSimulationScenario**](SimulationApi.md#startsimulationscenario) | **POST** /organizations/{organization_id}/simulations/start | Start a new simulation for a Scenario
-[**StartSimulationSimulator**](SimulationApi.md#startsimulationsimulator) | **POST** /organizations/{organization_id}/simulations/startsimulator | Start a new simulation for a Simulator Analysis
+[**StartSimulationSolution**](SimulationApi.md#startsimulationsolution) | **POST** /organizations/{organization_id}/simulations/startsolution | Start a new simulation for a Solution Run Template
 
 
 <a name="deletesimulation"></a>
@@ -855,11 +855,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="startsimulationsimulator"></a>
-# **StartSimulationSimulator**
-> Simulation StartSimulationSimulator (string organizationId, SimulationStartSimulator simulationStartSimulator)
+<a name="startsimulationsolution"></a>
+# **StartSimulationSolution**
+> Simulation StartSimulationSolution (string organizationId, SimulationStartSolution simulationStartSolution)
 
-Start a new simulation for a Simulator Analysis
+Start a new simulation for a Solution Run Template
 
 ### Example
 ```csharp
@@ -871,7 +871,7 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class StartSimulationSimulatorExample
+    public class StartSimulationSolutionExample
     {
         public static void Main()
         {
@@ -882,17 +882,17 @@ namespace Example
 
             var apiInstance = new SimulationApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
-            var simulationStartSimulator = new SimulationStartSimulator(); // SimulationStartSimulator | the Simulator Analysis information to start
+            var simulationStartSolution = new SimulationStartSolution(); // SimulationStartSolution | the Solution Run Template information to start
 
             try
             {
-                // Start a new simulation for a Simulator Analysis
-                Simulation result = apiInstance.StartSimulationSimulator(organizationId, simulationStartSimulator);
+                // Start a new simulation for a Solution Run Template
+                Simulation result = apiInstance.StartSimulationSolution(organizationId, simulationStartSolution);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SimulationApi.StartSimulationSimulator: " + e.Message );
+                Debug.Print("Exception when calling SimulationApi.StartSimulationSolution: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -906,7 +906,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
- **simulationStartSimulator** | [**SimulationStartSimulator**](SimulationStartSimulator.md)| the Simulator Analysis information to start | 
+ **simulationStartSolution** | [**SimulationStartSolution**](SimulationStartSolution.md)| the Solution Run Template information to start | 
 
 ### Return type
 

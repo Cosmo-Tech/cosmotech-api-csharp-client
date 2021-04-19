@@ -45,7 +45,7 @@ namespace Com.Cosmotech.Model
         /// <param name="connector">connector (required).</param>
         /// <param name="fragmentsIds">the list of other Datasets ids to compose as fragments.</param>
         /// <param name="validatorId">the validator id.</param>
-        /// <param name="compatibility">the list of compatible Simulators versions.</param>
+        /// <param name="compatibility">the list of compatible Solutions versions.</param>
         public Dataset(string name = default(string), string description = default(string), List<string> tags = default(List<string>), DatasetConnector connector = default(DatasetConnector), List<string> fragmentsIds = default(List<string>), string validatorId = default(string), List<DatasetCompatibility> compatibility = default(List<DatasetCompatibility>))
         {
             // to ensure "name" is required (not null)
@@ -133,9 +133,9 @@ namespace Com.Cosmotech.Model
         public string ValidatorId { get; set; }
 
         /// <summary>
-        /// the list of compatible Simulators versions
+        /// the list of compatible Solutions versions
         /// </summary>
-        /// <value>the list of compatible Simulators versions</value>
+        /// <value>the list of compatible Solutions versions</value>
         [DataMember(Name = "compatibility", EmitDefaultValue = false)]
         public List<DatasetCompatibility> Compatibility { get; set; }
 

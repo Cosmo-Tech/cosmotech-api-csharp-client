@@ -64,7 +64,7 @@ namespace Com.Cosmotech.Model
         /// <param name="credentials">a freeform credentials object for the Platform. Structure depends on cloud provider.</param>
         /// <param name="storage">storage.</param>
         /// <param name="coreContainerRegistry">coreContainerRegistry.</param>
-        /// <param name="simulatorsContainerRegistry">simulatorsContainerRegistry.</param>
+        /// <param name="solutionsContainerRegistry">solutionsContainerRegistry.</param>
         /// <param name="eventBusCluster">eventBusCluster.</param>
         /// <param name="dataWarehouseCluster">dataWarehouseCluster.</param>
         /// <param name="databaseCluster">databaseCluster.</param>
@@ -73,13 +73,13 @@ namespace Com.Cosmotech.Model
         /// <param name="directory">directory.</param>
         /// <param name="monitoring">monitoring.</param>
         /// <param name="analytic">analytic.</param>
-        public PlatformServices(ProviderEnum provider = default(ProviderEnum), Dictionary<string, Object> credentials = default(Dictionary<string, Object>), PlatformService storage = default(PlatformService), PlatformService coreContainerRegistry = default(PlatformService), PlatformService simulatorsContainerRegistry = default(PlatformService), PlatformService eventBusCluster = default(PlatformService), PlatformService dataWarehouseCluster = default(PlatformService), PlatformService databaseCluster = default(PlatformService), PlatformService keyVault = default(PlatformService), PlatformService kubernetesCluster = default(PlatformService), PlatformService directory = default(PlatformService), PlatformService monitoring = default(PlatformService), PlatformService analytic = default(PlatformService))
+        public PlatformServices(ProviderEnum provider = default(ProviderEnum), Dictionary<string, Object> credentials = default(Dictionary<string, Object>), PlatformService storage = default(PlatformService), PlatformService coreContainerRegistry = default(PlatformService), PlatformService solutionsContainerRegistry = default(PlatformService), PlatformService eventBusCluster = default(PlatformService), PlatformService dataWarehouseCluster = default(PlatformService), PlatformService databaseCluster = default(PlatformService), PlatformService keyVault = default(PlatformService), PlatformService kubernetesCluster = default(PlatformService), PlatformService directory = default(PlatformService), PlatformService monitoring = default(PlatformService), PlatformService analytic = default(PlatformService))
         {
             this.Provider = provider;
             this.Credentials = credentials;
             this.Storage = storage;
             this.CoreContainerRegistry = coreContainerRegistry;
-            this.SimulatorsContainerRegistry = simulatorsContainerRegistry;
+            this.SolutionsContainerRegistry = solutionsContainerRegistry;
             this.EventBusCluster = eventBusCluster;
             this.DataWarehouseCluster = dataWarehouseCluster;
             this.DatabaseCluster = databaseCluster;
@@ -110,10 +110,10 @@ namespace Com.Cosmotech.Model
         public PlatformService CoreContainerRegistry { get; set; }
 
         /// <summary>
-        /// Gets or Sets SimulatorsContainerRegistry
+        /// Gets or Sets SolutionsContainerRegistry
         /// </summary>
-        [DataMember(Name = "simulatorsContainerRegistry", EmitDefaultValue = false)]
-        public PlatformService SimulatorsContainerRegistry { get; set; }
+        [DataMember(Name = "solutionsContainerRegistry", EmitDefaultValue = false)]
+        public PlatformService SolutionsContainerRegistry { get; set; }
 
         /// <summary>
         /// Gets or Sets EventBusCluster
@@ -175,7 +175,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Credentials: ").Append(Credentials).Append("\n");
             sb.Append("  Storage: ").Append(Storage).Append("\n");
             sb.Append("  CoreContainerRegistry: ").Append(CoreContainerRegistry).Append("\n");
-            sb.Append("  SimulatorsContainerRegistry: ").Append(SimulatorsContainerRegistry).Append("\n");
+            sb.Append("  SolutionsContainerRegistry: ").Append(SolutionsContainerRegistry).Append("\n");
             sb.Append("  EventBusCluster: ").Append(EventBusCluster).Append("\n");
             sb.Append("  DataWarehouseCluster: ").Append(DataWarehouseCluster).Append("\n");
             sb.Append("  DatabaseCluster: ").Append(DatabaseCluster).Append("\n");
@@ -239,9 +239,9 @@ namespace Com.Cosmotech.Model
                     this.CoreContainerRegistry.Equals(input.CoreContainerRegistry))
                 ) && 
                 (
-                    this.SimulatorsContainerRegistry == input.SimulatorsContainerRegistry ||
-                    (this.SimulatorsContainerRegistry != null &&
-                    this.SimulatorsContainerRegistry.Equals(input.SimulatorsContainerRegistry))
+                    this.SolutionsContainerRegistry == input.SolutionsContainerRegistry ||
+                    (this.SolutionsContainerRegistry != null &&
+                    this.SolutionsContainerRegistry.Equals(input.SolutionsContainerRegistry))
                 ) && 
                 (
                     this.EventBusCluster == input.EventBusCluster ||
@@ -301,8 +301,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Storage.GetHashCode();
                 if (this.CoreContainerRegistry != null)
                     hashCode = hashCode * 59 + this.CoreContainerRegistry.GetHashCode();
-                if (this.SimulatorsContainerRegistry != null)
-                    hashCode = hashCode * 59 + this.SimulatorsContainerRegistry.GetHashCode();
+                if (this.SolutionsContainerRegistry != null)
+                    hashCode = hashCode * 59 + this.SolutionsContainerRegistry.GetHashCode();
                 if (this.EventBusCluster != null)
                     hashCode = hashCode * 59 + this.EventBusCluster.GetHashCode();
                 if (this.DataWarehouseCluster != null)

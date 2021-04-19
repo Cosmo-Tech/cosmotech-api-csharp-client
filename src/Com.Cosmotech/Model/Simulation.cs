@@ -159,81 +159,81 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the Simulator Id
+        /// the Solution Id
         /// </summary>
-        /// <value>the Simulator Id</value>
-        [DataMember(Name = "simulatorId", EmitDefaultValue = false)]
-        public string SimulatorId { get; private set; }
+        /// <value>the Solution Id</value>
+        [DataMember(Name = "solutionId", EmitDefaultValue = false)]
+        public string SolutionId { get; private set; }
 
         /// <summary>
-        /// Returns false as SimulatorId should not be serialized given that it's read-only.
+        /// Returns false as SolutionId should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSimulatorId()
+        public bool ShouldSerializeSolutionId()
         {
             return false;
         }
 
         /// <summary>
-        /// the Simulator name
+        /// the Solution name
         /// </summary>
-        /// <value>the Simulator name</value>
-        [DataMember(Name = "simulatorName", EmitDefaultValue = false)]
-        public string SimulatorName { get; private set; }
+        /// <value>the Solution name</value>
+        [DataMember(Name = "solutionName", EmitDefaultValue = false)]
+        public string SolutionName { get; private set; }
 
         /// <summary>
-        /// Returns false as SimulatorName should not be serialized given that it's read-only.
+        /// Returns false as SolutionName should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSimulatorName()
+        public bool ShouldSerializeSolutionName()
         {
             return false;
         }
 
         /// <summary>
-        /// the Simulator version
+        /// the Solution version
         /// </summary>
-        /// <value>the Simulator version</value>
-        [DataMember(Name = "simulatorVersion", EmitDefaultValue = false)]
-        public string SimulatorVersion { get; private set; }
+        /// <value>the Solution version</value>
+        [DataMember(Name = "solutionVersion", EmitDefaultValue = false)]
+        public string SolutionVersion { get; private set; }
 
         /// <summary>
-        /// Returns false as SimulatorVersion should not be serialized given that it's read-only.
+        /// Returns false as SolutionVersion should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSimulatorVersion()
+        public bool ShouldSerializeSolutionVersion()
         {
             return false;
         }
 
         /// <summary>
-        /// the Simulator Analysis id
+        /// the Solution Run Template id
         /// </summary>
-        /// <value>the Simulator Analysis id</value>
-        [DataMember(Name = "simulatorAnalysisId", EmitDefaultValue = false)]
-        public string SimulatorAnalysisId { get; private set; }
+        /// <value>the Solution Run Template id</value>
+        [DataMember(Name = "runTemplateId", EmitDefaultValue = false)]
+        public string RunTemplateId { get; private set; }
 
         /// <summary>
-        /// Returns false as SimulatorAnalysisId should not be serialized given that it's read-only.
+        /// Returns false as RunTemplateId should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSimulatorAnalysisId()
+        public bool ShouldSerializeRunTemplateId()
         {
             return false;
         }
 
         /// <summary>
-        /// the Simulator Analysis name
+        /// the Run Template name
         /// </summary>
-        /// <value>the Simulator Analysis name</value>
-        [DataMember(Name = "simulatorAnalysisName", EmitDefaultValue = false)]
-        public string SimulatorAnalysisName { get; private set; }
+        /// <value>the Run Template name</value>
+        [DataMember(Name = "runTemplateName", EmitDefaultValue = false)]
+        public string RunTemplateName { get; private set; }
 
         /// <summary>
-        /// Returns false as SimulatorAnalysisName should not be serialized given that it's read-only.
+        /// Returns false as RunTemplateName should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSimulatorAnalysisName()
+        public bool ShouldSerializeRunTemplateName()
         {
             return false;
         }
@@ -319,11 +319,11 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the list of Simulator Analysis parameters values
+        /// the list of Run Template parameters values
         /// </summary>
-        /// <value>the list of Simulator Analysis parameters values</value>
+        /// <value>the list of Run Template parameters values</value>
         [DataMember(Name = "parametersValues", EmitDefaultValue = false)]
-        public List<SimulationAnalysisParameterValue> ParametersValues { get; private set; }
+        public List<RunTemplateParameterValue> ParametersValues { get; private set; }
 
         /// <summary>
         /// Returns false as ParametersValues should not be serialized given that it's read-only.
@@ -424,11 +424,11 @@ namespace Com.Cosmotech.Model
             sb.Append("  WorkspaceName: ").Append(WorkspaceName).Append("\n");
             sb.Append("  ScenarioId: ").Append(ScenarioId).Append("\n");
             sb.Append("  ScenarioName: ").Append(ScenarioName).Append("\n");
-            sb.Append("  SimulatorId: ").Append(SimulatorId).Append("\n");
-            sb.Append("  SimulatorName: ").Append(SimulatorName).Append("\n");
-            sb.Append("  SimulatorVersion: ").Append(SimulatorVersion).Append("\n");
-            sb.Append("  SimulatorAnalysisId: ").Append(SimulatorAnalysisId).Append("\n");
-            sb.Append("  SimulatorAnalysisName: ").Append(SimulatorAnalysisName).Append("\n");
+            sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
+            sb.Append("  SolutionName: ").Append(SolutionName).Append("\n");
+            sb.Append("  SolutionVersion: ").Append(SolutionVersion).Append("\n");
+            sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
+            sb.Append("  RunTemplateName: ").Append(RunTemplateName).Append("\n");
             sb.Append("  ComputeSize: ").Append(ComputeSize).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  StartTime: ").Append(StartTime).Append("\n");
@@ -512,29 +512,29 @@ namespace Com.Cosmotech.Model
                     this.ScenarioName.Equals(input.ScenarioName))
                 ) && 
                 (
-                    this.SimulatorId == input.SimulatorId ||
-                    (this.SimulatorId != null &&
-                    this.SimulatorId.Equals(input.SimulatorId))
+                    this.SolutionId == input.SolutionId ||
+                    (this.SolutionId != null &&
+                    this.SolutionId.Equals(input.SolutionId))
                 ) && 
                 (
-                    this.SimulatorName == input.SimulatorName ||
-                    (this.SimulatorName != null &&
-                    this.SimulatorName.Equals(input.SimulatorName))
+                    this.SolutionName == input.SolutionName ||
+                    (this.SolutionName != null &&
+                    this.SolutionName.Equals(input.SolutionName))
                 ) && 
                 (
-                    this.SimulatorVersion == input.SimulatorVersion ||
-                    (this.SimulatorVersion != null &&
-                    this.SimulatorVersion.Equals(input.SimulatorVersion))
+                    this.SolutionVersion == input.SolutionVersion ||
+                    (this.SolutionVersion != null &&
+                    this.SolutionVersion.Equals(input.SolutionVersion))
                 ) && 
                 (
-                    this.SimulatorAnalysisId == input.SimulatorAnalysisId ||
-                    (this.SimulatorAnalysisId != null &&
-                    this.SimulatorAnalysisId.Equals(input.SimulatorAnalysisId))
+                    this.RunTemplateId == input.RunTemplateId ||
+                    (this.RunTemplateId != null &&
+                    this.RunTemplateId.Equals(input.RunTemplateId))
                 ) && 
                 (
-                    this.SimulatorAnalysisName == input.SimulatorAnalysisName ||
-                    (this.SimulatorAnalysisName != null &&
-                    this.SimulatorAnalysisName.Equals(input.SimulatorAnalysisName))
+                    this.RunTemplateName == input.RunTemplateName ||
+                    (this.RunTemplateName != null &&
+                    this.RunTemplateName.Equals(input.RunTemplateName))
                 ) && 
                 (
                     this.ComputeSize == input.ComputeSize ||
@@ -628,16 +628,16 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ScenarioId.GetHashCode();
                 if (this.ScenarioName != null)
                     hashCode = hashCode * 59 + this.ScenarioName.GetHashCode();
-                if (this.SimulatorId != null)
-                    hashCode = hashCode * 59 + this.SimulatorId.GetHashCode();
-                if (this.SimulatorName != null)
-                    hashCode = hashCode * 59 + this.SimulatorName.GetHashCode();
-                if (this.SimulatorVersion != null)
-                    hashCode = hashCode * 59 + this.SimulatorVersion.GetHashCode();
-                if (this.SimulatorAnalysisId != null)
-                    hashCode = hashCode * 59 + this.SimulatorAnalysisId.GetHashCode();
-                if (this.SimulatorAnalysisName != null)
-                    hashCode = hashCode * 59 + this.SimulatorAnalysisName.GetHashCode();
+                if (this.SolutionId != null)
+                    hashCode = hashCode * 59 + this.SolutionId.GetHashCode();
+                if (this.SolutionName != null)
+                    hashCode = hashCode * 59 + this.SolutionName.GetHashCode();
+                if (this.SolutionVersion != null)
+                    hashCode = hashCode * 59 + this.SolutionVersion.GetHashCode();
+                if (this.RunTemplateId != null)
+                    hashCode = hashCode * 59 + this.RunTemplateId.GetHashCode();
+                if (this.RunTemplateName != null)
+                    hashCode = hashCode * 59 + this.RunTemplateName.GetHashCode();
                 if (this.ComputeSize != null)
                     hashCode = hashCode * 59 + this.ComputeSize.GetHashCode();
                 if (this.State != null)

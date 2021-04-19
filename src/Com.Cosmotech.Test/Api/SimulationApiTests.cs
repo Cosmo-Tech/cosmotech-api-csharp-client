@@ -205,15 +205,15 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
-        /// Test StartSimulationSimulator
+        /// Test StartSimulationSolution
         /// </summary>
         [Fact]
-        public void StartSimulationSimulatorTest()
+        public void StartSimulationSolutionTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
-            //SimulationStartSimulator simulationStartSimulator = null;
-            //var response = instance.StartSimulationSimulator(organizationId, simulationStartSimulator);
+            //SimulationStartSolution simulationStartSolution = null;
+            //var response = instance.StartSimulationSolution(organizationId, simulationStartSolution);
             //Assert.IsType<Simulation>(response);
         }
     }

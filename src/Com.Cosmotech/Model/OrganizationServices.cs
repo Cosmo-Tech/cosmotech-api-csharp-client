@@ -36,12 +36,12 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="tenantCredentials">a freeform credentials object for the Organization tenant. Structure depends on cloud provider.</param>
         /// <param name="storage">storage.</param>
-        /// <param name="simulatorsContainerRegistry">simulatorsContainerRegistry.</param>
-        public OrganizationServices(Dictionary<string, Object> tenantCredentials = default(Dictionary<string, Object>), OrganizationService storage = default(OrganizationService), OrganizationService simulatorsContainerRegistry = default(OrganizationService))
+        /// <param name="solutionsContainerRegistry">solutionsContainerRegistry.</param>
+        public OrganizationServices(Dictionary<string, Object> tenantCredentials = default(Dictionary<string, Object>), OrganizationService storage = default(OrganizationService), OrganizationService solutionsContainerRegistry = default(OrganizationService))
         {
             this.TenantCredentials = tenantCredentials;
             this.Storage = storage;
-            this.SimulatorsContainerRegistry = simulatorsContainerRegistry;
+            this.SolutionsContainerRegistry = solutionsContainerRegistry;
         }
 
         /// <summary>
@@ -58,10 +58,10 @@ namespace Com.Cosmotech.Model
         public OrganizationService Storage { get; set; }
 
         /// <summary>
-        /// Gets or Sets SimulatorsContainerRegistry
+        /// Gets or Sets SolutionsContainerRegistry
         /// </summary>
-        [DataMember(Name = "simulatorsContainerRegistry", EmitDefaultValue = false)]
-        public OrganizationService SimulatorsContainerRegistry { get; set; }
+        [DataMember(Name = "solutionsContainerRegistry", EmitDefaultValue = false)]
+        public OrganizationService SolutionsContainerRegistry { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -73,7 +73,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class OrganizationServices {\n");
             sb.Append("  TenantCredentials: ").Append(TenantCredentials).Append("\n");
             sb.Append("  Storage: ").Append(Storage).Append("\n");
-            sb.Append("  SimulatorsContainerRegistry: ").Append(SimulatorsContainerRegistry).Append("\n");
+            sb.Append("  SolutionsContainerRegistry: ").Append(SolutionsContainerRegistry).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -120,9 +120,9 @@ namespace Com.Cosmotech.Model
                     this.Storage.Equals(input.Storage))
                 ) && 
                 (
-                    this.SimulatorsContainerRegistry == input.SimulatorsContainerRegistry ||
-                    (this.SimulatorsContainerRegistry != null &&
-                    this.SimulatorsContainerRegistry.Equals(input.SimulatorsContainerRegistry))
+                    this.SolutionsContainerRegistry == input.SolutionsContainerRegistry ||
+                    (this.SolutionsContainerRegistry != null &&
+                    this.SolutionsContainerRegistry.Equals(input.SolutionsContainerRegistry))
                 );
         }
 
@@ -139,8 +139,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.TenantCredentials.GetHashCode();
                 if (this.Storage != null)
                     hashCode = hashCode * 59 + this.Storage.GetHashCode();
-                if (this.SimulatorsContainerRegistry != null)
-                    hashCode = hashCode * 59 + this.SimulatorsContainerRegistry.GetHashCode();
+                if (this.SolutionsContainerRegistry != null)
+                    hashCode = hashCode * 59 + this.SolutionsContainerRegistry.GetHashCode();
                 return hashCode;
             }
         }

@@ -57,20 +57,20 @@ namespace Com.Cosmotech.Test.Model
 
 
         /// <summary>
-        /// Test the property 'SimulatorId'
+        /// Test the property 'SolutionId'
         /// </summary>
         [Fact]
-        public void SimulatorIdTest()
+        public void SolutionIdTest()
         {
-            // TODO unit test for the property 'SimulatorId'
+            // TODO unit test for the property 'SolutionId'
         }
         /// <summary>
-        /// Test the property 'SimulatorAnalysisId'
+        /// Test the property 'RunTemplateId'
         /// </summary>
         [Fact]
-        public void SimulatorAnalysisIdTest()
+        public void RunTemplateIdTest()
         {
-            // TODO unit test for the property 'SimulatorAnalysisId'
+            // TODO unit test for the property 'RunTemplateId'
         }
         /// <summary>
         /// Test the property 'WorkspaceId'

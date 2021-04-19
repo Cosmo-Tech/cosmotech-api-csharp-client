@@ -261,25 +261,25 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Simulation</returns>
         ApiResponse<Simulation> StartSimulationScenarioWithHttpInfo(string organizationId, SimulationStartScenario simulationStartScenario);
         /// <summary>
-        /// Start a new simulation for a Simulator Analysis
+        /// Start a new simulation for a Solution Run Template
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="simulationStartSimulator">the Simulator Analysis information to start</param>
+        /// <param name="simulationStartSolution">the Solution Run Template information to start</param>
         /// <returns>Simulation</returns>
-        Simulation StartSimulationSimulator(string organizationId, SimulationStartSimulator simulationStartSimulator);
+        Simulation StartSimulationSolution(string organizationId, SimulationStartSolution simulationStartSolution);
 
         /// <summary>
-        /// Start a new simulation for a Simulator Analysis
+        /// Start a new simulation for a Solution Run Template
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="simulationStartSimulator">the Simulator Analysis information to start</param>
+        /// <param name="simulationStartSolution">the Solution Run Template information to start</param>
         /// <returns>ApiResponse of Simulation</returns>
-        ApiResponse<Simulation> StartSimulationSimulatorWithHttpInfo(string organizationId, SimulationStartSimulator simulationStartSimulator);
+        ApiResponse<Simulation> StartSimulationSolutionWithHttpInfo(string organizationId, SimulationStartSolution simulationStartSolution);
         #endregion Synchronous Operations
     }
 
@@ -579,30 +579,30 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (Simulation)</returns>
         System.Threading.Tasks.Task<ApiResponse<Simulation>> StartSimulationScenarioWithHttpInfoAsync(string organizationId, SimulationStartScenario simulationStartScenario, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Start a new simulation for a Simulator Analysis
+        /// Start a new simulation for a Solution Run Template
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="simulationStartSimulator">the Simulator Analysis information to start</param>
+        /// <param name="simulationStartSolution">the Solution Run Template information to start</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Simulation</returns>
-        System.Threading.Tasks.Task<Simulation> StartSimulationSimulatorAsync(string organizationId, SimulationStartSimulator simulationStartSimulator, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Simulation> StartSimulationSolutionAsync(string organizationId, SimulationStartSolution simulationStartSolution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Start a new simulation for a Simulator Analysis
+        /// Start a new simulation for a Solution Run Template
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="simulationStartSimulator">the Simulator Analysis information to start</param>
+        /// <param name="simulationStartSolution">the Solution Run Template information to start</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Simulation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Simulation>> StartSimulationSimulatorWithHttpInfoAsync(string organizationId, SimulationStartSimulator simulationStartSimulator, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Simulation>> StartSimulationSolutionWithHttpInfoAsync(string organizationId, SimulationStartSolution simulationStartSolution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2381,34 +2381,34 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Start a new simulation for a Simulator Analysis 
+        /// Start a new simulation for a Solution Run Template 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="simulationStartSimulator">the Simulator Analysis information to start</param>
+        /// <param name="simulationStartSolution">the Solution Run Template information to start</param>
         /// <returns>Simulation</returns>
-        public Simulation StartSimulationSimulator(string organizationId, SimulationStartSimulator simulationStartSimulator)
+        public Simulation StartSimulationSolution(string organizationId, SimulationStartSolution simulationStartSolution)
         {
-            Com.Cosmotech.Client.ApiResponse<Simulation> localVarResponse = StartSimulationSimulatorWithHttpInfo(organizationId, simulationStartSimulator);
+            Com.Cosmotech.Client.ApiResponse<Simulation> localVarResponse = StartSimulationSolutionWithHttpInfo(organizationId, simulationStartSolution);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Start a new simulation for a Simulator Analysis 
+        /// Start a new simulation for a Solution Run Template 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="simulationStartSimulator">the Simulator Analysis information to start</param>
+        /// <param name="simulationStartSolution">the Solution Run Template information to start</param>
         /// <returns>ApiResponse of Simulation</returns>
-        public Com.Cosmotech.Client.ApiResponse<Simulation> StartSimulationSimulatorWithHttpInfo(string organizationId, SimulationStartSimulator simulationStartSimulator)
+        public Com.Cosmotech.Client.ApiResponse<Simulation> StartSimulationSolutionWithHttpInfo(string organizationId, SimulationStartSolution simulationStartSolution)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SimulationApi->StartSimulationSimulator");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SimulationApi->StartSimulationSolution");
 
-            // verify the required parameter 'simulationStartSimulator' is set
-            if (simulationStartSimulator == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'simulationStartSimulator' when calling SimulationApi->StartSimulationSimulator");
+            // verify the required parameter 'simulationStartSolution' is set
+            if (simulationStartSolution == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'simulationStartSolution' when calling SimulationApi->StartSimulationSolution");
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2428,7 +2428,7 @@ namespace Com.Cosmotech.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.Data = simulationStartSimulator;
+            localVarRequestOptions.Data = simulationStartSolution;
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -2438,11 +2438,11 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Simulation>("/organizations/{organization_id}/simulations/startsimulator", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Simulation>("/organizations/{organization_id}/simulations/startsolution", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("StartSimulationSimulator", localVarResponse);
+                Exception _exception = this.ExceptionFactory("StartSimulationSolution", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -2450,36 +2450,36 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Start a new simulation for a Simulator Analysis 
+        /// Start a new simulation for a Solution Run Template 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="simulationStartSimulator">the Simulator Analysis information to start</param>
+        /// <param name="simulationStartSolution">the Solution Run Template information to start</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Simulation</returns>
-        public async System.Threading.Tasks.Task<Simulation> StartSimulationSimulatorAsync(string organizationId, SimulationStartSimulator simulationStartSimulator, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Simulation> StartSimulationSolutionAsync(string organizationId, SimulationStartSolution simulationStartSolution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Simulation> localVarResponse = await StartSimulationSimulatorWithHttpInfoAsync(organizationId, simulationStartSimulator, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Simulation> localVarResponse = await StartSimulationSolutionWithHttpInfoAsync(organizationId, simulationStartSolution, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Start a new simulation for a Simulator Analysis 
+        /// Start a new simulation for a Solution Run Template 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="simulationStartSimulator">the Simulator Analysis information to start</param>
+        /// <param name="simulationStartSolution">the Solution Run Template information to start</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Simulation)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Simulation>> StartSimulationSimulatorWithHttpInfoAsync(string organizationId, SimulationStartSimulator simulationStartSimulator, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Simulation>> StartSimulationSolutionWithHttpInfoAsync(string organizationId, SimulationStartSolution simulationStartSolution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SimulationApi->StartSimulationSimulator");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SimulationApi->StartSimulationSolution");
 
-            // verify the required parameter 'simulationStartSimulator' is set
-            if (simulationStartSimulator == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'simulationStartSimulator' when calling SimulationApi->StartSimulationSimulator");
+            // verify the required parameter 'simulationStartSolution' is set
+            if (simulationStartSolution == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'simulationStartSolution' when calling SimulationApi->StartSimulationSolution");
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2501,7 +2501,7 @@ namespace Com.Cosmotech.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.Data = simulationStartSimulator;
+            localVarRequestOptions.Data = simulationStartSolution;
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -2512,11 +2512,11 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Simulation>("/organizations/{organization_id}/simulations/startsimulator", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Simulation>("/organizations/{organization_id}/simulations/startsolution", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("StartSimulationSimulator", localVarResponse);
+                Exception _exception = this.ExceptionFactory("StartSimulationSolution", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

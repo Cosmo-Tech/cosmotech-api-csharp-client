@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// a Dataset compatibility constraint to a Simulator version open range
+    /// a Dataset compatibility constraint to a Solution version open range
     /// </summary>
     [DataContract(Name = "DatasetCompatibility")]
     public partial class DatasetCompatibility : IEquatable<DatasetCompatibility>, IValidatableObject
@@ -39,35 +39,35 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DatasetCompatibility" /> class.
         /// </summary>
-        /// <param name="simulatorKey">the Simulator key which group Simulator versions (required).</param>
-        /// <param name="minimumVersion">the Simulator minimum version compatibility (version included).</param>
-        /// <param name="maximumVersion">the Simulator maximum version compatibility (version included).</param>
-        public DatasetCompatibility(string simulatorKey = default(string), string minimumVersion = default(string), string maximumVersion = default(string))
+        /// <param name="solutionKey">the Solution key which group Solution versions (required).</param>
+        /// <param name="minimumVersion">the Solution minimum version compatibility (version included).</param>
+        /// <param name="maximumVersion">the Solution maximum version compatibility (version included).</param>
+        public DatasetCompatibility(string solutionKey = default(string), string minimumVersion = default(string), string maximumVersion = default(string))
         {
-            // to ensure "simulatorKey" is required (not null)
-            this.SimulatorKey = simulatorKey ?? throw new ArgumentNullException("simulatorKey is a required property for DatasetCompatibility and cannot be null");
+            // to ensure "solutionKey" is required (not null)
+            this.SolutionKey = solutionKey ?? throw new ArgumentNullException("solutionKey is a required property for DatasetCompatibility and cannot be null");
             this.MinimumVersion = minimumVersion;
             this.MaximumVersion = maximumVersion;
         }
 
         /// <summary>
-        /// the Simulator key which group Simulator versions
+        /// the Solution key which group Solution versions
         /// </summary>
-        /// <value>the Simulator key which group Simulator versions</value>
-        [DataMember(Name = "simulatorKey", IsRequired = true, EmitDefaultValue = false)]
-        public string SimulatorKey { get; set; }
+        /// <value>the Solution key which group Solution versions</value>
+        [DataMember(Name = "solutionKey", IsRequired = true, EmitDefaultValue = false)]
+        public string SolutionKey { get; set; }
 
         /// <summary>
-        /// the Simulator minimum version compatibility (version included)
+        /// the Solution minimum version compatibility (version included)
         /// </summary>
-        /// <value>the Simulator minimum version compatibility (version included)</value>
+        /// <value>the Solution minimum version compatibility (version included)</value>
         [DataMember(Name = "minimumVersion", EmitDefaultValue = false)]
         public string MinimumVersion { get; set; }
 
         /// <summary>
-        /// the Simulator maximum version compatibility (version included)
+        /// the Solution maximum version compatibility (version included)
         /// </summary>
-        /// <value>the Simulator maximum version compatibility (version included)</value>
+        /// <value>the Solution maximum version compatibility (version included)</value>
         [DataMember(Name = "maximumVersion", EmitDefaultValue = false)]
         public string MaximumVersion { get; set; }
 
@@ -79,7 +79,7 @@ namespace Com.Cosmotech.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DatasetCompatibility {\n");
-            sb.Append("  SimulatorKey: ").Append(SimulatorKey).Append("\n");
+            sb.Append("  SolutionKey: ").Append(SolutionKey).Append("\n");
             sb.Append("  MinimumVersion: ").Append(MinimumVersion).Append("\n");
             sb.Append("  MaximumVersion: ").Append(MaximumVersion).Append("\n");
             sb.Append("}\n");
@@ -117,9 +117,9 @@ namespace Com.Cosmotech.Model
 
             return 
                 (
-                    this.SimulatorKey == input.SimulatorKey ||
-                    (this.SimulatorKey != null &&
-                    this.SimulatorKey.Equals(input.SimulatorKey))
+                    this.SolutionKey == input.SolutionKey ||
+                    (this.SolutionKey != null &&
+                    this.SolutionKey.Equals(input.SolutionKey))
                 ) && 
                 (
                     this.MinimumVersion == input.MinimumVersion ||
@@ -142,8 +142,8 @@ namespace Com.Cosmotech.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SimulatorKey != null)
-                    hashCode = hashCode * 59 + this.SimulatorKey.GetHashCode();
+                if (this.SolutionKey != null)
+                    hashCode = hashCode * 59 + this.SolutionKey.GetHashCode();
                 if (this.MinimumVersion != null)
                     hashCode = hashCode * 59 + this.MinimumVersion.GetHashCode();
                 if (this.MaximumVersion != null)

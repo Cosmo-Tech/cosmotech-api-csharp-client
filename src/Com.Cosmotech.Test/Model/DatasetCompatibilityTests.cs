@@ -57,12 +57,12 @@ namespace Com.Cosmotech.Test.Model
 
 
         /// <summary>
-        /// Test the property 'SimulatorKey'
+        /// Test the property 'SolutionKey'
         /// </summary>
         [Fact]
-        public void SimulatorKeyTest()
+        public void SolutionKeyTest()
         {
-            // TODO unit test for the property 'SimulatorKey'
+            // TODO unit test for the property 'SolutionKey'
         }
         /// <summary>
         /// Test the property 'MinimumVersion'
