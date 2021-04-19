@@ -81,6 +81,33 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test DeleteWorkspaceFile
+        /// </summary>
+        [Fact]
+        public void DeleteWorkspaceFileTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //WorkspaceFile workspaceFile = null;
+            //var response = instance.DeleteWorkspaceFile(organizationId, workspaceId, workspaceFile);
+            //Assert.IsType<WorkspaceFile>(response);
+        }
+
+        /// <summary>
+        /// Test FindAllWorkspaceFiles
+        /// </summary>
+        [Fact]
+        public void FindAllWorkspaceFilesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //var response = instance.FindAllWorkspaceFiles(organizationId, workspaceId);
+            //Assert.IsType<List<WorkspaceFile>>(response);
+        }
+
+        /// <summary>
         /// Test FindAllWorkspaces
         /// </summary>
         [Fact]

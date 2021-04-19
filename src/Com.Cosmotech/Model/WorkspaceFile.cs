@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// a Workspace Web Application
+    /// a Workspace File resource
     /// </summary>
     [DataContract(Name = "WorkspaceFile")]
     public partial class WorkspaceFile : IEquatable<WorkspaceFile>, IValidatableObject
@@ -34,16 +34,16 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspaceFile" /> class.
         /// </summary>
-        /// <param name="fileName">the Workspace Web Application URL.</param>
+        /// <param name="fileName">the Workspace File name.</param>
         public WorkspaceFile(string fileName = default(string))
         {
             this.FileName = fileName;
         }
 
         /// <summary>
-        /// the Workspace Web Application URL
+        /// the Workspace File name
         /// </summary>
-        /// <value>the Workspace Web Application URL</value>
+        /// <value>the Workspace File name</value>
         [DataMember(Name = "fileName", EmitDefaultValue = false)]
         public string FileName { get; set; }
 
