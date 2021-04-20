@@ -66,7 +66,7 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Connector" /> class.
         /// </summary>
-        /// <param name="connectorKey">the Connector key which group Connector versions (required).</param>
+        /// <param name="key">the Connector key which group Connector versions (required).</param>
         /// <param name="name">the Connector name (required).</param>
         /// <param name="description">the Connector description.</param>
         /// <param name="repository">the registry repository containing the image (required).</param>
@@ -75,10 +75,10 @@ namespace Com.Cosmotech.Model
         /// <param name="url">an optional URL link to connector page.</param>
         /// <param name="ioTypes">ioTypes (required).</param>
         /// <param name="parameterGroups">the list of connector parameters groups.</param>
-        public Connector(string connectorKey = default(string), string name = default(string), string description = default(string), string repository = default(string), string version = default(string), List<string> tags = default(List<string>), string url = default(string), List<IoTypesEnum> ioTypes = default(List<IoTypesEnum>), List<ConnectorParameterGroup> parameterGroups = default(List<ConnectorParameterGroup>))
+        public Connector(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string version = default(string), List<string> tags = default(List<string>), string url = default(string), List<IoTypesEnum> ioTypes = default(List<IoTypesEnum>), List<ConnectorParameterGroup> parameterGroups = default(List<ConnectorParameterGroup>))
         {
-            // to ensure "connectorKey" is required (not null)
-            this.ConnectorKey = connectorKey ?? throw new ArgumentNullException("connectorKey is a required property for Connector and cannot be null");
+            // to ensure "key" is required (not null)
+            this.Key = key ?? throw new ArgumentNullException("key is a required property for Connector and cannot be null");
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Connector and cannot be null");
             // to ensure "repository" is required (not null)
@@ -113,8 +113,8 @@ namespace Com.Cosmotech.Model
         /// the Connector key which group Connector versions
         /// </summary>
         /// <value>the Connector key which group Connector versions</value>
-        [DataMember(Name = "connectorKey", IsRequired = true, EmitDefaultValue = false)]
-        public string ConnectorKey { get; set; }
+        [DataMember(Name = "key", IsRequired = true, EmitDefaultValue = false)]
+        public string Key { get; set; }
 
         /// <summary>
         /// the Connector name
@@ -190,7 +190,7 @@ namespace Com.Cosmotech.Model
             var sb = new StringBuilder();
             sb.Append("class Connector {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  ConnectorKey: ").Append(ConnectorKey).Append("\n");
+            sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Repository: ").Append(Repository).Append("\n");
@@ -240,9 +240,9 @@ namespace Com.Cosmotech.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.ConnectorKey == input.ConnectorKey ||
-                    (this.ConnectorKey != null &&
-                    this.ConnectorKey.Equals(input.ConnectorKey))
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -303,8 +303,8 @@ namespace Com.Cosmotech.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ConnectorKey != null)
-                    hashCode = hashCode * 59 + this.ConnectorKey.GetHashCode();
+                if (this.Key != null)
+                    hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)

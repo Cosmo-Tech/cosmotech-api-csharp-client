@@ -39,19 +39,19 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Solution" /> class.
         /// </summary>
-        /// <param name="solutionKey">the Solution key which group Solution versions (required).</param>
+        /// <param name="key">the Solution key which group Solution versions (required).</param>
         /// <param name="name">the Solution name (required).</param>
         /// <param name="description">the Solution description.</param>
         /// <param name="repository">the registry repository containing the image (required).</param>
-        /// <param name="simulator">the main simulator name used in standard Run Template.</param>
+        /// <param name="csmSimulator">the main Cosmo Tech simulator name used in standard Run Template.</param>
         /// <param name="version">the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag (required).</param>
         /// <param name="url">an optional URL link to solution page.</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="runTemplates">list of Run Template.</param>
-        public Solution(string solutionKey = default(string), string name = default(string), string description = default(string), string repository = default(string), string simulator = default(string), string version = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplate> runTemplates = default(List<RunTemplate>))
+        public Solution(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string csmSimulator = default(string), string version = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplate> runTemplates = default(List<RunTemplate>))
         {
-            // to ensure "solutionKey" is required (not null)
-            this.SolutionKey = solutionKey ?? throw new ArgumentNullException("solutionKey is a required property for Solution and cannot be null");
+            // to ensure "key" is required (not null)
+            this.Key = key ?? throw new ArgumentNullException("key is a required property for Solution and cannot be null");
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Solution and cannot be null");
             // to ensure "repository" is required (not null)
@@ -59,7 +59,7 @@ namespace Com.Cosmotech.Model
             // to ensure "version" is required (not null)
             this.Version = version ?? throw new ArgumentNullException("version is a required property for Solution and cannot be null");
             this.Description = description;
-            this.Simulator = simulator;
+            this.CsmSimulator = csmSimulator;
             this.Url = url;
             this.Tags = tags;
             this.RunTemplates = runTemplates;
@@ -85,8 +85,8 @@ namespace Com.Cosmotech.Model
         /// the Solution key which group Solution versions
         /// </summary>
         /// <value>the Solution key which group Solution versions</value>
-        [DataMember(Name = "solutionKey", IsRequired = true, EmitDefaultValue = false)]
-        public string SolutionKey { get; set; }
+        [DataMember(Name = "key", IsRequired = true, EmitDefaultValue = false)]
+        public string Key { get; set; }
 
         /// <summary>
         /// the Solution name
@@ -110,11 +110,11 @@ namespace Com.Cosmotech.Model
         public string Repository { get; set; }
 
         /// <summary>
-        /// the main simulator name used in standard Run Template
+        /// the main Cosmo Tech simulator name used in standard Run Template
         /// </summary>
-        /// <value>the main simulator name used in standard Run Template</value>
-        [DataMember(Name = "simulator", EmitDefaultValue = false)]
-        public string Simulator { get; set; }
+        /// <value>the main Cosmo Tech simulator name used in standard Run Template</value>
+        [DataMember(Name = "csmSimulator", EmitDefaultValue = false)]
+        public string CsmSimulator { get; set; }
 
         /// <summary>
         /// the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag
@@ -169,11 +169,11 @@ namespace Com.Cosmotech.Model
             var sb = new StringBuilder();
             sb.Append("class Solution {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  SolutionKey: ").Append(SolutionKey).Append("\n");
+            sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Repository: ").Append(Repository).Append("\n");
-            sb.Append("  Simulator: ").Append(Simulator).Append("\n");
+            sb.Append("  CsmSimulator: ").Append(CsmSimulator).Append("\n");
             sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
@@ -219,9 +219,9 @@ namespace Com.Cosmotech.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.SolutionKey == input.SolutionKey ||
-                    (this.SolutionKey != null &&
-                    this.SolutionKey.Equals(input.SolutionKey))
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -239,9 +239,9 @@ namespace Com.Cosmotech.Model
                     this.Repository.Equals(input.Repository))
                 ) && 
                 (
-                    this.Simulator == input.Simulator ||
-                    (this.Simulator != null &&
-                    this.Simulator.Equals(input.Simulator))
+                    this.CsmSimulator == input.CsmSimulator ||
+                    (this.CsmSimulator != null &&
+                    this.CsmSimulator.Equals(input.CsmSimulator))
                 ) && 
                 (
                     this.Version == input.Version ||
@@ -283,16 +283,16 @@ namespace Com.Cosmotech.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.SolutionKey != null)
-                    hashCode = hashCode * 59 + this.SolutionKey.GetHashCode();
+                if (this.Key != null)
+                    hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Repository != null)
                     hashCode = hashCode * 59 + this.Repository.GetHashCode();
-                if (this.Simulator != null)
-                    hashCode = hashCode * 59 + this.Simulator.GetHashCode();
+                if (this.CsmSimulator != null)
+                    hashCode = hashCode * 59 + this.CsmSimulator.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
                 if (this.OwnerId != null)

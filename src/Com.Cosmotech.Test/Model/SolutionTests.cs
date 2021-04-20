@@ -65,12 +65,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
-        /// Test the property 'SolutionKey'
+        /// Test the property 'Key'
         /// </summary>
         [Fact]
-        public void SolutionKeyTest()
+        public void KeyTest()
         {
-            // TODO unit test for the property 'SolutionKey'
+            // TODO unit test for the property 'Key'
         }
         /// <summary>
         /// Test the property 'Name'
@@ -97,12 +97,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Repository'
         }
         /// <summary>
-        /// Test the property 'Simulator'
+        /// Test the property 'CsmSimulator'
         /// </summary>
         [Fact]
-        public void SimulatorTest()
+        public void CsmSimulatorTest()
         {
-            // TODO unit test for the property 'Simulator'
+            // TODO unit test for the property 'CsmSimulator'
         }
         /// <summary>
         /// Test the property 'Version'

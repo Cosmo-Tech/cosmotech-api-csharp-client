@@ -47,7 +47,7 @@ namespace Com.Cosmotech.Model
         /// <param name="users">the list of users Id with their role.</param>
         /// <param name="webApp">webApp.</param>
         /// <param name="services">services.</param>
-        /// <param name="sendInputToDataWarehouse">default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run (default to true).</param>
+        /// <param name="sendInputToDataWarehouse">default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to the ScenarioRun (default to true).</param>
         public Workspace(string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSolution solution = default(WorkspaceSolution), List<WorkspaceUser> users = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp), WorkspaceServices services = default(WorkspaceServices), bool sendInputToDataWarehouse = true)
         {
             // to ensure "name" is required (not null)
@@ -149,9 +149,9 @@ namespace Com.Cosmotech.Model
         public WorkspaceServices Services { get; set; }
 
         /// <summary>
-        /// default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
+        /// default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to the ScenarioRun
         /// </summary>
-        /// <value>default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
+        /// <value>default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to the ScenarioRun</value>
         [DataMember(Name = "sendInputToDataWarehouse", EmitDefaultValue = false)]
         public bool SendInputToDataWarehouse { get; set; }
 

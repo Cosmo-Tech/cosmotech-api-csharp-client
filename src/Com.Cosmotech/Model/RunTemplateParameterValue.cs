@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// the value of Analysis parameter for a Scenario for this Simulation
+    /// the value of Analysis parameter for a Scenario for this ScenarioRun
     /// </summary>
     [DataContract(Name = "RunTemplateParameterValue")]
     public partial class RunTemplateParameterValue : IEquatable<RunTemplateParameterValue>, IValidatableObject

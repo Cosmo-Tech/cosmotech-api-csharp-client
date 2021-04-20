@@ -35,13 +35,13 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="WorkspaceServices" /> class.
         /// </summary>
         /// <param name="resultsEventBus">resultsEventBus.</param>
-        /// <param name="simulationEventBus">simulationEventBus.</param>
+        /// <param name="scenariorunEventBus">scenariorunEventBus.</param>
         /// <param name="dataWarehouse">dataWarehouse.</param>
         /// <param name="storage">storage.</param>
-        public WorkspaceServices(WorkspaceService resultsEventBus = default(WorkspaceService), WorkspaceService simulationEventBus = default(WorkspaceService), WorkspaceService dataWarehouse = default(WorkspaceService), WorkspaceService storage = default(WorkspaceService))
+        public WorkspaceServices(WorkspaceService resultsEventBus = default(WorkspaceService), WorkspaceService scenariorunEventBus = default(WorkspaceService), WorkspaceService dataWarehouse = default(WorkspaceService), WorkspaceService storage = default(WorkspaceService))
         {
             this.ResultsEventBus = resultsEventBus;
-            this.SimulationEventBus = simulationEventBus;
+            this.ScenariorunEventBus = scenariorunEventBus;
             this.DataWarehouse = dataWarehouse;
             this.Storage = storage;
         }
@@ -69,10 +69,10 @@ namespace Com.Cosmotech.Model
         public WorkspaceService ResultsEventBus { get; set; }
 
         /// <summary>
-        /// Gets or Sets SimulationEventBus
+        /// Gets or Sets ScenariorunEventBus
         /// </summary>
-        [DataMember(Name = "simulationEventBus", EmitDefaultValue = false)]
-        public WorkspaceService SimulationEventBus { get; set; }
+        [DataMember(Name = "scenariorunEventBus", EmitDefaultValue = false)]
+        public WorkspaceService ScenariorunEventBus { get; set; }
 
         /// <summary>
         /// Gets or Sets DataWarehouse
@@ -96,7 +96,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class WorkspaceServices {\n");
             sb.Append("  TenantCredentials: ").Append(TenantCredentials).Append("\n");
             sb.Append("  ResultsEventBus: ").Append(ResultsEventBus).Append("\n");
-            sb.Append("  SimulationEventBus: ").Append(SimulationEventBus).Append("\n");
+            sb.Append("  ScenariorunEventBus: ").Append(ScenariorunEventBus).Append("\n");
             sb.Append("  DataWarehouse: ").Append(DataWarehouse).Append("\n");
             sb.Append("  Storage: ").Append(Storage).Append("\n");
             sb.Append("}\n");
@@ -145,9 +145,9 @@ namespace Com.Cosmotech.Model
                     this.ResultsEventBus.Equals(input.ResultsEventBus))
                 ) && 
                 (
-                    this.SimulationEventBus == input.SimulationEventBus ||
-                    (this.SimulationEventBus != null &&
-                    this.SimulationEventBus.Equals(input.SimulationEventBus))
+                    this.ScenariorunEventBus == input.ScenariorunEventBus ||
+                    (this.ScenariorunEventBus != null &&
+                    this.ScenariorunEventBus.Equals(input.ScenariorunEventBus))
                 ) && 
                 (
                     this.DataWarehouse == input.DataWarehouse ||
@@ -174,8 +174,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.TenantCredentials.GetHashCode();
                 if (this.ResultsEventBus != null)
                     hashCode = hashCode * 59 + this.ResultsEventBus.GetHashCode();
-                if (this.SimulationEventBus != null)
-                    hashCode = hashCode * 59 + this.SimulationEventBus.GetHashCode();
+                if (this.ScenariorunEventBus != null)
+                    hashCode = hashCode * 59 + this.ScenariorunEventBus.GetHashCode();
                 if (this.DataWarehouse != null)
                     hashCode = hashCode * 59 + this.DataWarehouse.GetHashCode();
                 if (this.Storage != null)

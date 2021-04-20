@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TenantCredentials** | **Dictionary&lt;string, Object&gt;** | a freeform credentials object for the Organization tenant. Structure depends on cloud provider | [optional] [readonly] 
 **ResultsEventBus** | [**WorkspaceService**](WorkspaceService.md) |  | [optional] 
-**SimulationEventBus** | [**WorkspaceService**](WorkspaceService.md) |  | [optional] 
+**ScenariorunEventBus** | [**WorkspaceService**](WorkspaceService.md) |  | [optional] 
 **DataWarehouse** | [**WorkspaceService**](WorkspaceService.md) |  | [optional] 
 **Storage** | [**WorkspaceService**](WorkspaceService.md) |  | [optional] 
 

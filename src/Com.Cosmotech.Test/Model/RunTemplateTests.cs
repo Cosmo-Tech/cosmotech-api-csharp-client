@@ -81,20 +81,20 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Description'
         }
         /// <summary>
-        /// Test the property 'IsStandardSimulator'
+        /// Test the property 'UseDirectCsmSimulator'
         /// </summary>
         [Fact]
-        public void IsStandardSimulatorTest()
+        public void UseDirectCsmSimulatorTest()
         {
-            // TODO unit test for the property 'IsStandardSimulator'
+            // TODO unit test for the property 'UseDirectCsmSimulator'
         }
         /// <summary>
-        /// Test the property 'Simulation'
+        /// Test the property 'CsmSimulation'
         /// </summary>
         [Fact]
-        public void SimulationTest()
+        public void CsmSimulationTest()
         {
-            // TODO unit test for the property 'Simulation'
+            // TODO unit test for the property 'CsmSimulation'
         }
         /// <summary>
         /// Test the property 'Tags'
@@ -129,12 +129,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'DatasetValidatorResource'
         }
         /// <summary>
-        /// Test the property 'CustomSimulatorResource'
+        /// Test the property 'EngineResource'
         /// </summary>
         [Fact]
-        public void CustomSimulatorResourceTest()
+        public void EngineResourceTest()
         {
-            // TODO unit test for the property 'CustomSimulatorResource'
+            // TODO unit test for the property 'EngineResource'
         }
         /// <summary>
         /// Test the property 'DatasetSchemaResource'

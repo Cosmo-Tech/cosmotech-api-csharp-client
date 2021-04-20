@@ -6,7 +6,7 @@ a version of a Connector
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the Connector version unique identifier | [optional] [readonly] 
-**ConnectorKey** | **string** | the Connector key which group Connector versions | 
+**Key** | **string** | the Connector key which group Connector versions | 
 **Name** | **string** | the Connector name | 
 **Description** | **string** | the Connector description | [optional] 
 **Repository** | **string** | the registry repository containing the image | 

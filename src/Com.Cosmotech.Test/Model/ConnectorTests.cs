@@ -65,12 +65,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
-        /// Test the property 'ConnectorKey'
+        /// Test the property 'Key'
         /// </summary>
         [Fact]
-        public void ConnectorKeyTest()
+        public void KeyTest()
         {
-            // TODO unit test for the property 'ConnectorKey'
+            // TODO unit test for the property 'Key'
         }
         /// <summary>
         /// Test the property 'Name'

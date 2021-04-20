@@ -73,12 +73,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'ResultsEventBus'
         }
         /// <summary>
-        /// Test the property 'SimulationEventBus'
+        /// Test the property 'ScenariorunEventBus'
         /// </summary>
         [Fact]
-        public void SimulationEventBusTest()
+        public void ScenariorunEventBusTest()
         {
-            // TODO unit test for the property 'SimulationEventBus'
+            // TODO unit test for the property 'ScenariorunEventBus'
         }
         /// <summary>
         /// Test the property 'DataWarehouse'

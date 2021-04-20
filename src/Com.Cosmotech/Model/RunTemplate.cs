@@ -42,27 +42,27 @@ namespace Com.Cosmotech.Model
         /// <param name="id">the Solution Run Template id (required).</param>
         /// <param name="name">the Run Template name (required).</param>
         /// <param name="description">the Run Template description.</param>
-        /// <param name="simulation">the simulation name. This information is send to the Simulator.</param>
+        /// <param name="csmSimulation">the Cosmo Tech simulation name. This information is send to the Engine. Mandatory information if no Engine is defined.</param>
         /// <param name="tags">the list of Run Template tags.</param>
         /// <param name="computeSize">the compute size needed for this Run Template. Standard sizes are basic and highcpu. Default is basic.</param>
         /// <param name="parametersHandlerResource">parametersHandlerResource.</param>
         /// <param name="datasetValidatorResource">datasetValidatorResource.</param>
-        /// <param name="customSimulatorResource">customSimulatorResource.</param>
+        /// <param name="engineResource">engineResource.</param>
         /// <param name="datasetSchemaResource">datasetSchemaResource.</param>
         /// <param name="parameterGroups">the list of parameters groups for the Run Template.</param>
-        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string simulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), RunTemplateResourceStorage parametersHandlerResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage datasetValidatorResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage customSimulatorResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage datasetSchemaResource = default(RunTemplateResourceStorage), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>))
+        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), RunTemplateResourceStorage parametersHandlerResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage datasetValidatorResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage engineResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage datasetSchemaResource = default(RunTemplateResourceStorage), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplate and cannot be null");
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for RunTemplate and cannot be null");
             this.Description = description;
-            this.Simulation = simulation;
+            this.CsmSimulation = csmSimulation;
             this.Tags = tags;
             this.ComputeSize = computeSize;
             this.ParametersHandlerResource = parametersHandlerResource;
             this.DatasetValidatorResource = datasetValidatorResource;
-            this.CustomSimulatorResource = customSimulatorResource;
+            this.EngineResource = engineResource;
             this.DatasetSchemaResource = datasetSchemaResource;
             this.ParameterGroups = parameterGroups;
         }
@@ -89,27 +89,27 @@ namespace Com.Cosmotech.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// whether or not the Run Template use the main standard Simulator directly. False if there is a Custom Simulator set
+        /// whether or not the Run Template use the main standard csmSimulator directly. False if there is an Engine set
         /// </summary>
-        /// <value>whether or not the Run Template use the main standard Simulator directly. False if there is a Custom Simulator set</value>
-        [DataMember(Name = "isStandardSimulator", EmitDefaultValue = false)]
-        public bool IsStandardSimulator { get; private set; }
+        /// <value>whether or not the Run Template use the main standard csmSimulator directly. False if there is an Engine set</value>
+        [DataMember(Name = "useDirectCsmSimulator", EmitDefaultValue = false)]
+        public bool UseDirectCsmSimulator { get; private set; }
 
         /// <summary>
-        /// Returns false as IsStandardSimulator should not be serialized given that it's read-only.
+        /// Returns false as UseDirectCsmSimulator should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeIsStandardSimulator()
+        public bool ShouldSerializeUseDirectCsmSimulator()
         {
             return false;
         }
 
         /// <summary>
-        /// the simulation name. This information is send to the Simulator
+        /// the Cosmo Tech simulation name. This information is send to the Engine. Mandatory information if no Engine is defined
         /// </summary>
-        /// <value>the simulation name. This information is send to the Simulator</value>
-        [DataMember(Name = "simulation", EmitDefaultValue = false)]
-        public string Simulation { get; set; }
+        /// <value>the Cosmo Tech simulation name. This information is send to the Engine. Mandatory information if no Engine is defined</value>
+        [DataMember(Name = "csmSimulation", EmitDefaultValue = false)]
+        public string CsmSimulation { get; set; }
 
         /// <summary>
         /// the list of Run Template tags
@@ -138,10 +138,10 @@ namespace Com.Cosmotech.Model
         public RunTemplateResourceStorage DatasetValidatorResource { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomSimulatorResource
+        /// Gets or Sets EngineResource
         /// </summary>
-        [DataMember(Name = "customSimulatorResource", EmitDefaultValue = false)]
-        public RunTemplateResourceStorage CustomSimulatorResource { get; set; }
+        [DataMember(Name = "engineResource", EmitDefaultValue = false)]
+        public RunTemplateResourceStorage EngineResource { get; set; }
 
         /// <summary>
         /// Gets or Sets DatasetSchemaResource
@@ -167,13 +167,13 @@ namespace Com.Cosmotech.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  IsStandardSimulator: ").Append(IsStandardSimulator).Append("\n");
-            sb.Append("  Simulation: ").Append(Simulation).Append("\n");
+            sb.Append("  UseDirectCsmSimulator: ").Append(UseDirectCsmSimulator).Append("\n");
+            sb.Append("  CsmSimulation: ").Append(CsmSimulation).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ComputeSize: ").Append(ComputeSize).Append("\n");
             sb.Append("  ParametersHandlerResource: ").Append(ParametersHandlerResource).Append("\n");
             sb.Append("  DatasetValidatorResource: ").Append(DatasetValidatorResource).Append("\n");
-            sb.Append("  CustomSimulatorResource: ").Append(CustomSimulatorResource).Append("\n");
+            sb.Append("  EngineResource: ").Append(EngineResource).Append("\n");
             sb.Append("  DatasetSchemaResource: ").Append(DatasetSchemaResource).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("}\n");
@@ -226,13 +226,13 @@ namespace Com.Cosmotech.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.IsStandardSimulator == input.IsStandardSimulator ||
-                    this.IsStandardSimulator.Equals(input.IsStandardSimulator)
+                    this.UseDirectCsmSimulator == input.UseDirectCsmSimulator ||
+                    this.UseDirectCsmSimulator.Equals(input.UseDirectCsmSimulator)
                 ) && 
                 (
-                    this.Simulation == input.Simulation ||
-                    (this.Simulation != null &&
-                    this.Simulation.Equals(input.Simulation))
+                    this.CsmSimulation == input.CsmSimulation ||
+                    (this.CsmSimulation != null &&
+                    this.CsmSimulation.Equals(input.CsmSimulation))
                 ) && 
                 (
                     this.Tags == input.Tags ||
@@ -256,9 +256,9 @@ namespace Com.Cosmotech.Model
                     this.DatasetValidatorResource.Equals(input.DatasetValidatorResource))
                 ) && 
                 (
-                    this.CustomSimulatorResource == input.CustomSimulatorResource ||
-                    (this.CustomSimulatorResource != null &&
-                    this.CustomSimulatorResource.Equals(input.CustomSimulatorResource))
+                    this.EngineResource == input.EngineResource ||
+                    (this.EngineResource != null &&
+                    this.EngineResource.Equals(input.EngineResource))
                 ) && 
                 (
                     this.DatasetSchemaResource == input.DatasetSchemaResource ||
@@ -288,9 +288,9 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
-                hashCode = hashCode * 59 + this.IsStandardSimulator.GetHashCode();
-                if (this.Simulation != null)
-                    hashCode = hashCode * 59 + this.Simulation.GetHashCode();
+                hashCode = hashCode * 59 + this.UseDirectCsmSimulator.GetHashCode();
+                if (this.CsmSimulation != null)
+                    hashCode = hashCode * 59 + this.CsmSimulation.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ComputeSize != null)
@@ -299,8 +299,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ParametersHandlerResource.GetHashCode();
                 if (this.DatasetValidatorResource != null)
                     hashCode = hashCode * 59 + this.DatasetValidatorResource.GetHashCode();
-                if (this.CustomSimulatorResource != null)
-                    hashCode = hashCode * 59 + this.CustomSimulatorResource.GetHashCode();
+                if (this.EngineResource != null)
+                    hashCode = hashCode * 59 + this.EngineResource.GetHashCode();
                 if (this.DatasetSchemaResource != null)
                     hashCode = hashCode * 59 + this.DatasetSchemaResource.GetHashCode();
                 if (this.ParameterGroups != null)
