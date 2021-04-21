@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// Scenario
+    /// a Scenario with base information
     /// </summary>
     [DataContract(Name = "Scenario")]
     public partial class Scenario : IEquatable<Scenario>, IValidatableObject
@@ -95,8 +95,7 @@ namespace Com.Cosmotech.Model
         /// <param name="users">the list of users Id with their role.</param>
         /// <param name="datasetList">the list of Dataset Id associated to this Scenario Run Template.</param>
         /// <param name="parametersValues">the list of Solution Run Template parameters values.</param>
-        /// <param name="sendInputToDataWarehouse">whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run.</param>
-        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), bool sendInputToDataWarehouse = default(bool))
+        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for Scenario and cannot be null");
@@ -107,7 +106,6 @@ namespace Com.Cosmotech.Model
             this.Users = users;
             this.DatasetList = datasetList;
             this.ParametersValues = parametersValues;
-            this.SendInputToDataWarehouse = sendInputToDataWarehouse;
         }
 
         /// <summary>
@@ -279,13 +277,6 @@ namespace Com.Cosmotech.Model
         public List<ScenarioRunTemplateParameterValue> ParametersValues { get; set; }
 
         /// <summary>
-        /// whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
-        /// </summary>
-        /// <value>whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
-        [DataMember(Name = "sendInputToDataWarehouse", EmitDefaultValue = false)]
-        public bool SendInputToDataWarehouse { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -309,7 +300,6 @@ namespace Com.Cosmotech.Model
             sb.Append("  RunTemplateName: ").Append(RunTemplateName).Append("\n");
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
             sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
-            sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -426,10 +416,6 @@ namespace Com.Cosmotech.Model
                     this.ParametersValues != null &&
                     input.ParametersValues != null &&
                     this.ParametersValues.SequenceEqual(input.ParametersValues)
-                ) && 
-                (
-                    this.SendInputToDataWarehouse == input.SendInputToDataWarehouse ||
-                    this.SendInputToDataWarehouse.Equals(input.SendInputToDataWarehouse)
                 );
         }
 
@@ -473,7 +459,6 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.DatasetList.GetHashCode();
                 if (this.ParametersValues != null)
                     hashCode = hashCode * 59 + this.ParametersValues.GetHashCode();
-                hashCode = hashCode * 59 + this.SendInputToDataWarehouse.GetHashCode();
                 return hashCode;
             }
         }

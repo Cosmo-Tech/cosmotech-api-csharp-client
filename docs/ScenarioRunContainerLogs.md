@@ -5,7 +5,7 @@ logs for a given container
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContainerId** | **string** | container ID for log source as seen by Docker engine | [optional] [readonly] 
+**Container** | [**ScenarioRunContainer**](ScenarioRunContainer.md) |  | [optional] 
 **Computer** | **string** | computer/node that&#39;s generating the log | [optional] [readonly] 
 **Logs** | [**List&lt;ScenarioRunContainerLog&gt;**](ScenarioRunContainerLog.md) | the list of container logs in structured format | [optional] [readonly] 
 **TextLog** | **string** | the plain text log if plainText option has been set | [optional] 

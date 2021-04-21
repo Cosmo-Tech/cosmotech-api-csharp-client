@@ -169,6 +169,22 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'State'
         }
         /// <summary>
+        /// Test the property 'FailedStep'
+        /// </summary>
+        [Fact]
+        public void FailedStepTest()
+        {
+            // TODO unit test for the property 'FailedStep'
+        }
+        /// <summary>
+        /// Test the property 'FailedContainerId'
+        /// </summary>
+        [Fact]
+        public void FailedContainerIdTest()
+        {
+            // TODO unit test for the property 'FailedContainerId'
+        }
+        /// <summary>
         /// Test the property 'StartTime'
         /// </summary>
         [Fact]
@@ -241,20 +257,68 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'NodeLabel'
         }
         /// <summary>
-        /// Test the property 'InitContainers'
+        /// Test the property 'FetchDatasetContainers'
         /// </summary>
         [Fact]
-        public void InitContainersTest()
+        public void FetchDatasetContainersTest()
         {
-            // TODO unit test for the property 'InitContainers'
+            // TODO unit test for the property 'FetchDatasetContainers'
         }
         /// <summary>
-        /// Test the property 'MainContainer'
+        /// Test the property 'FetchScenarioParametersContainer'
         /// </summary>
         [Fact]
-        public void MainContainerTest()
+        public void FetchScenarioParametersContainerTest()
         {
-            // TODO unit test for the property 'MainContainer'
+            // TODO unit test for the property 'FetchScenarioParametersContainer'
+        }
+        /// <summary>
+        /// Test the property 'ApplyParametersContainer'
+        /// </summary>
+        [Fact]
+        public void ApplyParametersContainerTest()
+        {
+            // TODO unit test for the property 'ApplyParametersContainer'
+        }
+        /// <summary>
+        /// Test the property 'ValidateDataContainer'
+        /// </summary>
+        [Fact]
+        public void ValidateDataContainerTest()
+        {
+            // TODO unit test for the property 'ValidateDataContainer'
+        }
+        /// <summary>
+        /// Test the property 'SendDataWarehouseContainer'
+        /// </summary>
+        [Fact]
+        public void SendDataWarehouseContainerTest()
+        {
+            // TODO unit test for the property 'SendDataWarehouseContainer'
+        }
+        /// <summary>
+        /// Test the property 'PreRunContainer'
+        /// </summary>
+        [Fact]
+        public void PreRunContainerTest()
+        {
+            // TODO unit test for the property 'PreRunContainer'
+        }
+        /// <summary>
+        /// Test the property 'RunContainer'
+        /// </summary>
+        [Fact]
+        public void RunContainerTest()
+        {
+            // TODO unit test for the property 'RunContainer'
+        }
+        /// <summary>
+        /// Test the property 'PostRunContainer'
+        /// </summary>
+        [Fact]
+        public void PostRunContainerTest()
+        {
+            // TODO unit test for the property 'PostRunContainer'
         }
 
     }

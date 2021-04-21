@@ -1,6 +1,6 @@
 # Com.Cosmotech.Api.ScenarioApi
 
-All URIs are relative to *https://api.azure.cosmo-platform.com*
+All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,7 +34,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.azure.cosmo-platform.com";
+            config.BasePath = "http://localhost:8080";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -113,7 +113,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.azure.cosmo-platform.com";
+            config.BasePath = "http://localhost:8080";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -190,7 +190,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.azure.cosmo-platform.com";
+            config.BasePath = "http://localhost:8080";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -268,7 +268,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.azure.cosmo-platform.com";
+            config.BasePath = "http://localhost:8080";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -342,7 +342,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.azure.cosmo-platform.com";
+            config.BasePath = "http://localhost:8080";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 <a name="getscenariostree"></a>
 # **GetScenariosTree**
-> List&lt;ScenarioBase&gt; GetScenariosTree (string organizationId, string workspaceId)
+> List&lt;Scenario&gt; GetScenariosTree (string organizationId, string workspaceId)
 
 Get the Scenarios Tree
 
@@ -419,7 +419,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.azure.cosmo-platform.com";
+            config.BasePath = "http://localhost:8080";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -430,7 +430,7 @@ namespace Example
             try
             {
                 // Get the Scenarios Tree
-                List<ScenarioBase> result = apiInstance.GetScenariosTree(organizationId, workspaceId);
+                List<Scenario> result = apiInstance.GetScenariosTree(organizationId, workspaceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ScenarioBase&gt;**](ScenarioBase.md)
+[**List&lt;Scenario&gt;**](Scenario.md)
 
 ### Authorization
 
@@ -493,7 +493,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.azure.cosmo-platform.com";
+            config.BasePath = "http://localhost:8080";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 

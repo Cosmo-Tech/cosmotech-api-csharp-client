@@ -129,6 +129,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'DatasetValidatorResource'
         }
         /// <summary>
+        /// Test the property 'PreRunResource'
+        /// </summary>
+        [Fact]
+        public void PreRunResourceTest()
+        {
+            // TODO unit test for the property 'PreRunResource'
+        }
+        /// <summary>
         /// Test the property 'EngineResource'
         /// </summary>
         [Fact]
@@ -137,12 +145,20 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'EngineResource'
         }
         /// <summary>
-        /// Test the property 'DatasetSchemaResource'
+        /// Test the property 'PostRunResource'
         /// </summary>
         [Fact]
-        public void DatasetSchemaResourceTest()
+        public void PostRunResourceTest()
         {
-            // TODO unit test for the property 'DatasetSchemaResource'
+            // TODO unit test for the property 'PostRunResource'
+        }
+        /// <summary>
+        /// Test the property 'SendInputToDataWarehouse'
+        /// </summary>
+        [Fact]
+        public void SendInputToDataWarehouseTest()
+        {
+            // TODO unit test for the property 'SendInputToDataWarehouse'
         }
         /// <summary>
         /// Test the property 'ParameterGroups'

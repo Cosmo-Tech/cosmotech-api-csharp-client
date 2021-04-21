@@ -47,10 +47,12 @@ namespace Com.Cosmotech.Model
         /// <param name="computeSize">the compute size needed for this Run Template. Standard sizes are basic and highcpu. Default is basic.</param>
         /// <param name="parametersHandlerResource">parametersHandlerResource.</param>
         /// <param name="datasetValidatorResource">datasetValidatorResource.</param>
+        /// <param name="preRunResource">preRunResource.</param>
         /// <param name="engineResource">engineResource.</param>
-        /// <param name="datasetSchemaResource">datasetSchemaResource.</param>
+        /// <param name="postRunResource">postRunResource.</param>
+        /// <param name="sendInputToDataWarehouse">whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run (default to true).</param>
         /// <param name="parameterGroups">the list of parameters groups for the Run Template.</param>
-        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), RunTemplateResourceStorage parametersHandlerResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage datasetValidatorResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage engineResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage datasetSchemaResource = default(RunTemplateResourceStorage), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>))
+        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), RunTemplateResourceStorage parametersHandlerResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage datasetValidatorResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage preRunResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage engineResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage postRunResource = default(RunTemplateResourceStorage), bool sendInputToDataWarehouse = true, List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplate and cannot be null");
@@ -62,8 +64,10 @@ namespace Com.Cosmotech.Model
             this.ComputeSize = computeSize;
             this.ParametersHandlerResource = parametersHandlerResource;
             this.DatasetValidatorResource = datasetValidatorResource;
+            this.PreRunResource = preRunResource;
             this.EngineResource = engineResource;
-            this.DatasetSchemaResource = datasetSchemaResource;
+            this.PostRunResource = postRunResource;
+            this.SendInputToDataWarehouse = sendInputToDataWarehouse;
             this.ParameterGroups = parameterGroups;
         }
 
@@ -138,16 +142,29 @@ namespace Com.Cosmotech.Model
         public RunTemplateResourceStorage DatasetValidatorResource { get; set; }
 
         /// <summary>
+        /// Gets or Sets PreRunResource
+        /// </summary>
+        [DataMember(Name = "preRunResource", EmitDefaultValue = false)]
+        public RunTemplateResourceStorage PreRunResource { get; set; }
+
+        /// <summary>
         /// Gets or Sets EngineResource
         /// </summary>
         [DataMember(Name = "engineResource", EmitDefaultValue = false)]
         public RunTemplateResourceStorage EngineResource { get; set; }
 
         /// <summary>
-        /// Gets or Sets DatasetSchemaResource
+        /// Gets or Sets PostRunResource
         /// </summary>
-        [DataMember(Name = "datasetSchemaResource", EmitDefaultValue = false)]
-        public RunTemplateResourceStorage DatasetSchemaResource { get; set; }
+        [DataMember(Name = "postRunResource", EmitDefaultValue = false)]
+        public RunTemplateResourceStorage PostRunResource { get; set; }
+
+        /// <summary>
+        /// whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
+        /// </summary>
+        /// <value>whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
+        [DataMember(Name = "sendInputToDataWarehouse", EmitDefaultValue = false)]
+        public bool SendInputToDataWarehouse { get; set; }
 
         /// <summary>
         /// the list of parameters groups for the Run Template
@@ -173,8 +190,10 @@ namespace Com.Cosmotech.Model
             sb.Append("  ComputeSize: ").Append(ComputeSize).Append("\n");
             sb.Append("  ParametersHandlerResource: ").Append(ParametersHandlerResource).Append("\n");
             sb.Append("  DatasetValidatorResource: ").Append(DatasetValidatorResource).Append("\n");
+            sb.Append("  PreRunResource: ").Append(PreRunResource).Append("\n");
             sb.Append("  EngineResource: ").Append(EngineResource).Append("\n");
-            sb.Append("  DatasetSchemaResource: ").Append(DatasetSchemaResource).Append("\n");
+            sb.Append("  PostRunResource: ").Append(PostRunResource).Append("\n");
+            sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -256,14 +275,23 @@ namespace Com.Cosmotech.Model
                     this.DatasetValidatorResource.Equals(input.DatasetValidatorResource))
                 ) && 
                 (
+                    this.PreRunResource == input.PreRunResource ||
+                    (this.PreRunResource != null &&
+                    this.PreRunResource.Equals(input.PreRunResource))
+                ) && 
+                (
                     this.EngineResource == input.EngineResource ||
                     (this.EngineResource != null &&
                     this.EngineResource.Equals(input.EngineResource))
                 ) && 
                 (
-                    this.DatasetSchemaResource == input.DatasetSchemaResource ||
-                    (this.DatasetSchemaResource != null &&
-                    this.DatasetSchemaResource.Equals(input.DatasetSchemaResource))
+                    this.PostRunResource == input.PostRunResource ||
+                    (this.PostRunResource != null &&
+                    this.PostRunResource.Equals(input.PostRunResource))
+                ) && 
+                (
+                    this.SendInputToDataWarehouse == input.SendInputToDataWarehouse ||
+                    this.SendInputToDataWarehouse.Equals(input.SendInputToDataWarehouse)
                 ) && 
                 (
                     this.ParameterGroups == input.ParameterGroups ||
@@ -299,10 +327,13 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ParametersHandlerResource.GetHashCode();
                 if (this.DatasetValidatorResource != null)
                     hashCode = hashCode * 59 + this.DatasetValidatorResource.GetHashCode();
+                if (this.PreRunResource != null)
+                    hashCode = hashCode * 59 + this.PreRunResource.GetHashCode();
                 if (this.EngineResource != null)
                     hashCode = hashCode * 59 + this.EngineResource.GetHashCode();
-                if (this.DatasetSchemaResource != null)
-                    hashCode = hashCode * 59 + this.DatasetSchemaResource.GetHashCode();
+                if (this.PostRunResource != null)
+                    hashCode = hashCode * 59 + this.PostRunResource.GetHashCode();
+                hashCode = hashCode * 59 + this.SendInputToDataWarehouse.GetHashCode();
                 if (this.ParameterGroups != null)
                     hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();
                 return hashCode;

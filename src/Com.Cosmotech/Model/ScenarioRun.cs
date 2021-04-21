@@ -26,24 +26,120 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// ScenarioRun
+    /// a ScenarioRun with only base properties
     /// </summary>
     [DataContract(Name = "ScenarioRun")]
     public partial class ScenarioRun : IEquatable<ScenarioRun>, IValidatableObject
     {
+        /// <summary>
+        /// the ScenarioRun state
+        /// </summary>
+        /// <value>the ScenarioRun state</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StateEnum
+        {
+            /// <summary>
+            /// Enum FetchingDatasets for value: FetchingDatasets
+            /// </summary>
+            [EnumMember(Value = "FetchingDatasets")]
+            FetchingDatasets = 1,
+
+            /// <summary>
+            /// Enum FetchingScenarioParameters for value: FetchingScenarioParameters
+            /// </summary>
+            [EnumMember(Value = "FetchingScenarioParameters")]
+            FetchingScenarioParameters = 2,
+
+            /// <summary>
+            /// Enum ApplyingScenarioParameters for value: ApplyingScenarioParameters
+            /// </summary>
+            [EnumMember(Value = "ApplyingScenarioParameters")]
+            ApplyingScenarioParameters = 3,
+
+            /// <summary>
+            /// Enum ValidatingScenarioData for value: ValidatingScenarioData
+            /// </summary>
+            [EnumMember(Value = "ValidatingScenarioData")]
+            ValidatingScenarioData = 4,
+
+            /// <summary>
+            /// Enum SendingScenarioDataToDataWarehouse for value: SendingScenarioDataToDataWarehouse
+            /// </summary>
+            [EnumMember(Value = "SendingScenarioDataToDataWarehouse")]
+            SendingScenarioDataToDataWarehouse = 5,
+
+            /// <summary>
+            /// Enum PreRun for value: PreRun
+            /// </summary>
+            [EnumMember(Value = "PreRun")]
+            PreRun = 6,
+
+            /// <summary>
+            /// Enum Running for value: Running
+            /// </summary>
+            [EnumMember(Value = "Running")]
+            Running = 7,
+
+            /// <summary>
+            /// Enum PostRun for value: PostRun
+            /// </summary>
+            [EnumMember(Value = "PostRun")]
+            PostRun = 8,
+
+            /// <summary>
+            /// Enum Success for value: Success
+            /// </summary>
+            [EnumMember(Value = "Success")]
+            Success = 9,
+
+            /// <summary>
+            /// Enum Failed for value: Failed
+            /// </summary>
+            [EnumMember(Value = "Failed")]
+            Failed = 10
+
+        }
+
+        /// <summary>
+        /// the ScenarioRun state
+        /// </summary>
+        /// <value>the ScenarioRun state</value>
+        [DataMember(Name = "state", EmitDefaultValue = false)]
+        public StateEnum? State { get; set; }
+
+        /// <summary>
+        /// Returns false as State should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeState()
+        {
+            return false;
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRun" /> class.
         /// </summary>
         /// <param name="dataWarehouseDB">the DataWarehouse database name to send data if sendInputToDataWarehouse is set.</param>
         /// <param name="resultsEventBusResourceUri">the event bus which receive Workspace ScenarioRun results messages. Message won&#39;t be send if this is not set.</param>
         /// <param name="scenariorunEventBusResourceUri">the event bus which receive Workspace ScenarioRun events messages. Message won&#39;t be send if this is not set.</param>
-        /// <param name="mainContainer">mainContainer.</param>
-        public ScenarioRun(string dataWarehouseDB = default(string), string resultsEventBusResourceUri = default(string), string scenariorunEventBusResourceUri = default(string), ScenarioRunContainers mainContainer = default(ScenarioRunContainers))
+        /// <param name="fetchScenarioParametersContainer">fetchScenarioParametersContainer.</param>
+        /// <param name="applyParametersContainer">applyParametersContainer.</param>
+        /// <param name="validateDataContainer">validateDataContainer.</param>
+        /// <param name="sendDataWarehouseContainer">sendDataWarehouseContainer.</param>
+        /// <param name="preRunContainer">preRunContainer.</param>
+        /// <param name="runContainer">runContainer.</param>
+        /// <param name="postRunContainer">postRunContainer.</param>
+        public ScenarioRun(string dataWarehouseDB = default(string), string resultsEventBusResourceUri = default(string), string scenariorunEventBusResourceUri = default(string), ScenarioRunContainer fetchScenarioParametersContainer = default(ScenarioRunContainer), ScenarioRunContainer applyParametersContainer = default(ScenarioRunContainer), ScenarioRunContainer validateDataContainer = default(ScenarioRunContainer), ScenarioRunContainer sendDataWarehouseContainer = default(ScenarioRunContainer), ScenarioRunContainer preRunContainer = default(ScenarioRunContainer), ScenarioRunContainer runContainer = default(ScenarioRunContainer), ScenarioRunContainer postRunContainer = default(ScenarioRunContainer))
         {
             this.DataWarehouseDB = dataWarehouseDB;
             this.ResultsEventBusResourceUri = resultsEventBusResourceUri;
             this.ScenariorunEventBusResourceUri = scenariorunEventBusResourceUri;
-            this.MainContainer = mainContainer;
+            this.FetchScenarioParametersContainer = fetchScenarioParametersContainer;
+            this.ApplyParametersContainer = applyParametersContainer;
+            this.ValidateDataContainer = validateDataContainer;
+            this.SendDataWarehouseContainer = sendDataWarehouseContainer;
+            this.PreRunContainer = preRunContainer;
+            this.RunContainer = runContainer;
+            this.PostRunContainer = postRunContainer;
         }
 
         /// <summary>
@@ -255,17 +351,33 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the ScenarioRun state
+        /// the failed step if state is Failed
         /// </summary>
-        /// <value>the ScenarioRun state</value>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
-        public string State { get; private set; }
+        /// <value>the failed step if state is Failed</value>
+        [DataMember(Name = "failedStep", EmitDefaultValue = false)]
+        public string FailedStep { get; private set; }
 
         /// <summary>
-        /// Returns false as State should not be serialized given that it's read-only.
+        /// Returns false as FailedStep should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeState()
+        public bool ShouldSerializeFailedStep()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// the failed container Id if state is Failed
+        /// </summary>
+        /// <value>the failed container Id if state is Failed</value>
+        [DataMember(Name = "failedContainerId", EmitDefaultValue = false)]
+        public string FailedContainerId { get; private set; }
+
+        /// <summary>
+        /// Returns false as FailedContainerId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeFailedContainerId()
         {
             return false;
         }
@@ -388,26 +500,62 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the list of init containers
+        /// the containers which fetch the Scenario Datasets
         /// </summary>
-        /// <value>the list of init containers</value>
-        [DataMember(Name = "initContainers", EmitDefaultValue = false)]
-        public List<ScenarioRunContainers> InitContainers { get; private set; }
+        /// <value>the containers which fetch the Scenario Datasets</value>
+        [DataMember(Name = "fetchDatasetContainers", EmitDefaultValue = false)]
+        public List<ScenarioRunContainer> FetchDatasetContainers { get; private set; }
 
         /// <summary>
-        /// Returns false as InitContainers should not be serialized given that it's read-only.
+        /// Returns false as FetchDatasetContainers should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeInitContainers()
+        public bool ShouldSerializeFetchDatasetContainers()
         {
             return false;
         }
 
         /// <summary>
-        /// Gets or Sets MainContainer
+        /// Gets or Sets FetchScenarioParametersContainer
         /// </summary>
-        [DataMember(Name = "mainContainer", EmitDefaultValue = false)]
-        public ScenarioRunContainers MainContainer { get; set; }
+        [DataMember(Name = "fetchScenarioParametersContainer", EmitDefaultValue = false)]
+        public ScenarioRunContainer FetchScenarioParametersContainer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ApplyParametersContainer
+        /// </summary>
+        [DataMember(Name = "applyParametersContainer", EmitDefaultValue = false)]
+        public ScenarioRunContainer ApplyParametersContainer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ValidateDataContainer
+        /// </summary>
+        [DataMember(Name = "validateDataContainer", EmitDefaultValue = false)]
+        public ScenarioRunContainer ValidateDataContainer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SendDataWarehouseContainer
+        /// </summary>
+        [DataMember(Name = "sendDataWarehouseContainer", EmitDefaultValue = false)]
+        public ScenarioRunContainer SendDataWarehouseContainer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PreRunContainer
+        /// </summary>
+        [DataMember(Name = "preRunContainer", EmitDefaultValue = false)]
+        public ScenarioRunContainer PreRunContainer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RunContainer
+        /// </summary>
+        [DataMember(Name = "runContainer", EmitDefaultValue = false)]
+        public ScenarioRunContainer RunContainer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PostRunContainer
+        /// </summary>
+        [DataMember(Name = "postRunContainer", EmitDefaultValue = false)]
+        public ScenarioRunContainer PostRunContainer { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -431,6 +579,8 @@ namespace Com.Cosmotech.Model
             sb.Append("  RunTemplateName: ").Append(RunTemplateName).Append("\n");
             sb.Append("  ComputeSize: ").Append(ComputeSize).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  FailedStep: ").Append(FailedStep).Append("\n");
+            sb.Append("  FailedContainerId: ").Append(FailedContainerId).Append("\n");
             sb.Append("  StartTime: ").Append(StartTime).Append("\n");
             sb.Append("  EndTime: ").Append(EndTime).Append("\n");
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
@@ -440,8 +590,14 @@ namespace Com.Cosmotech.Model
             sb.Append("  ResultsEventBusResourceUri: ").Append(ResultsEventBusResourceUri).Append("\n");
             sb.Append("  ScenariorunEventBusResourceUri: ").Append(ScenariorunEventBusResourceUri).Append("\n");
             sb.Append("  NodeLabel: ").Append(NodeLabel).Append("\n");
-            sb.Append("  InitContainers: ").Append(InitContainers).Append("\n");
-            sb.Append("  MainContainer: ").Append(MainContainer).Append("\n");
+            sb.Append("  FetchDatasetContainers: ").Append(FetchDatasetContainers).Append("\n");
+            sb.Append("  FetchScenarioParametersContainer: ").Append(FetchScenarioParametersContainer).Append("\n");
+            sb.Append("  ApplyParametersContainer: ").Append(ApplyParametersContainer).Append("\n");
+            sb.Append("  ValidateDataContainer: ").Append(ValidateDataContainer).Append("\n");
+            sb.Append("  SendDataWarehouseContainer: ").Append(SendDataWarehouseContainer).Append("\n");
+            sb.Append("  PreRunContainer: ").Append(PreRunContainer).Append("\n");
+            sb.Append("  RunContainer: ").Append(RunContainer).Append("\n");
+            sb.Append("  PostRunContainer: ").Append(PostRunContainer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -543,8 +699,17 @@ namespace Com.Cosmotech.Model
                 ) && 
                 (
                     this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
+                    this.State.Equals(input.State)
+                ) && 
+                (
+                    this.FailedStep == input.FailedStep ||
+                    (this.FailedStep != null &&
+                    this.FailedStep.Equals(input.FailedStep))
+                ) && 
+                (
+                    this.FailedContainerId == input.FailedContainerId ||
+                    (this.FailedContainerId != null &&
+                    this.FailedContainerId.Equals(input.FailedContainerId))
                 ) && 
                 (
                     this.StartTime == input.StartTime ||
@@ -593,15 +758,45 @@ namespace Com.Cosmotech.Model
                     this.NodeLabel.Equals(input.NodeLabel))
                 ) && 
                 (
-                    this.InitContainers == input.InitContainers ||
-                    this.InitContainers != null &&
-                    input.InitContainers != null &&
-                    this.InitContainers.SequenceEqual(input.InitContainers)
+                    this.FetchDatasetContainers == input.FetchDatasetContainers ||
+                    this.FetchDatasetContainers != null &&
+                    input.FetchDatasetContainers != null &&
+                    this.FetchDatasetContainers.SequenceEqual(input.FetchDatasetContainers)
                 ) && 
                 (
-                    this.MainContainer == input.MainContainer ||
-                    (this.MainContainer != null &&
-                    this.MainContainer.Equals(input.MainContainer))
+                    this.FetchScenarioParametersContainer == input.FetchScenarioParametersContainer ||
+                    (this.FetchScenarioParametersContainer != null &&
+                    this.FetchScenarioParametersContainer.Equals(input.FetchScenarioParametersContainer))
+                ) && 
+                (
+                    this.ApplyParametersContainer == input.ApplyParametersContainer ||
+                    (this.ApplyParametersContainer != null &&
+                    this.ApplyParametersContainer.Equals(input.ApplyParametersContainer))
+                ) && 
+                (
+                    this.ValidateDataContainer == input.ValidateDataContainer ||
+                    (this.ValidateDataContainer != null &&
+                    this.ValidateDataContainer.Equals(input.ValidateDataContainer))
+                ) && 
+                (
+                    this.SendDataWarehouseContainer == input.SendDataWarehouseContainer ||
+                    (this.SendDataWarehouseContainer != null &&
+                    this.SendDataWarehouseContainer.Equals(input.SendDataWarehouseContainer))
+                ) && 
+                (
+                    this.PreRunContainer == input.PreRunContainer ||
+                    (this.PreRunContainer != null &&
+                    this.PreRunContainer.Equals(input.PreRunContainer))
+                ) && 
+                (
+                    this.RunContainer == input.RunContainer ||
+                    (this.RunContainer != null &&
+                    this.RunContainer.Equals(input.RunContainer))
+                ) && 
+                (
+                    this.PostRunContainer == input.PostRunContainer ||
+                    (this.PostRunContainer != null &&
+                    this.PostRunContainer.Equals(input.PostRunContainer))
                 );
         }
 
@@ -640,8 +835,11 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.RunTemplateName.GetHashCode();
                 if (this.ComputeSize != null)
                     hashCode = hashCode * 59 + this.ComputeSize.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
+                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.FailedStep != null)
+                    hashCode = hashCode * 59 + this.FailedStep.GetHashCode();
+                if (this.FailedContainerId != null)
+                    hashCode = hashCode * 59 + this.FailedContainerId.GetHashCode();
                 if (this.StartTime != null)
                     hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null)
@@ -659,10 +857,22 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ScenariorunEventBusResourceUri.GetHashCode();
                 if (this.NodeLabel != null)
                     hashCode = hashCode * 59 + this.NodeLabel.GetHashCode();
-                if (this.InitContainers != null)
-                    hashCode = hashCode * 59 + this.InitContainers.GetHashCode();
-                if (this.MainContainer != null)
-                    hashCode = hashCode * 59 + this.MainContainer.GetHashCode();
+                if (this.FetchDatasetContainers != null)
+                    hashCode = hashCode * 59 + this.FetchDatasetContainers.GetHashCode();
+                if (this.FetchScenarioParametersContainer != null)
+                    hashCode = hashCode * 59 + this.FetchScenarioParametersContainer.GetHashCode();
+                if (this.ApplyParametersContainer != null)
+                    hashCode = hashCode * 59 + this.ApplyParametersContainer.GetHashCode();
+                if (this.ValidateDataContainer != null)
+                    hashCode = hashCode * 59 + this.ValidateDataContainer.GetHashCode();
+                if (this.SendDataWarehouseContainer != null)
+                    hashCode = hashCode * 59 + this.SendDataWarehouseContainer.GetHashCode();
+                if (this.PreRunContainer != null)
+                    hashCode = hashCode * 59 + this.PreRunContainer.GetHashCode();
+                if (this.RunContainer != null)
+                    hashCode = hashCode * 59 + this.RunContainer.GetHashCode();
+                if (this.PostRunContainer != null)
+                    hashCode = hashCode * 59 + this.PostRunContainer.GetHashCode();
                 return hashCode;
             }
         }

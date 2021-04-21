@@ -80,6 +80,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'PlatformRoles'
         }
+        /// <summary>
+        /// Test the property 'Organizations'
+        /// </summary>
+        [Fact]
+        public void OrganizationsTest()
+        {
+            // TODO unit test for the property 'Organizations'
+        }
 
     }
 

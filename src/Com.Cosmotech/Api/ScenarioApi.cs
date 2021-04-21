@@ -142,8 +142,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>List&lt;ScenarioBase&gt;</returns>
-        List<ScenarioBase> GetScenariosTree(string organizationId, string workspaceId);
+        /// <returns>List&lt;Scenario&gt;</returns>
+        List<Scenario> GetScenariosTree(string organizationId, string workspaceId);
 
         /// <summary>
         /// Get the Scenarios Tree
@@ -154,8 +154,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>ApiResponse of List&lt;ScenarioBase&gt;</returns>
-        ApiResponse<List<ScenarioBase>> GetScenariosTreeWithHttpInfo(string organizationId, string workspaceId);
+        /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
+        ApiResponse<List<Scenario>> GetScenariosTreeWithHttpInfo(string organizationId, string workspaceId);
         /// <summary>
         /// Update a scenario
         /// </summary>
@@ -334,8 +334,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ScenarioBase&gt;</returns>
-        System.Threading.Tasks.Task<List<ScenarioBase>> GetScenariosTreeAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;Scenario&gt;</returns>
+        System.Threading.Tasks.Task<List<Scenario>> GetScenariosTreeAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the Scenarios Tree
@@ -347,8 +347,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ScenarioBase&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ScenarioBase>>> GetScenariosTreeWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> GetScenariosTreeWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a scenario
         /// </summary>
@@ -1281,10 +1281,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>List&lt;ScenarioBase&gt;</returns>
-        public List<ScenarioBase> GetScenariosTree(string organizationId, string workspaceId)
+        /// <returns>List&lt;Scenario&gt;</returns>
+        public List<Scenario> GetScenariosTree(string organizationId, string workspaceId)
         {
-            Com.Cosmotech.Client.ApiResponse<List<ScenarioBase>> localVarResponse = GetScenariosTreeWithHttpInfo(organizationId, workspaceId);
+            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = GetScenariosTreeWithHttpInfo(organizationId, workspaceId);
             return localVarResponse.Data;
         }
 
@@ -1294,8 +1294,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>ApiResponse of List&lt;ScenarioBase&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<ScenarioBase>> GetScenariosTreeWithHttpInfo(string organizationId, string workspaceId)
+        /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<Scenario>> GetScenariosTreeWithHttpInfo(string organizationId, string workspaceId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1332,7 +1332,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<ScenarioBase>>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Scenario>>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1350,10 +1350,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ScenarioBase&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ScenarioBase>> GetScenariosTreeAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;Scenario&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Scenario>> GetScenariosTreeAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<ScenarioBase>> localVarResponse = await GetScenariosTreeWithHttpInfoAsync(organizationId, workspaceId, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = await GetScenariosTreeWithHttpInfoAsync(organizationId, workspaceId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1364,8 +1364,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ScenarioBase&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<ScenarioBase>>> GetScenariosTreeWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Scenario>>> GetScenariosTreeWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1405,7 +1405,7 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ScenarioBase>>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Scenario>>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

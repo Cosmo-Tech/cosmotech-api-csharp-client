@@ -32,6 +32,81 @@ namespace Com.Cosmotech.Model
     public partial class ScenarioRunSearch : IEquatable<ScenarioRunSearch>, IValidatableObject
     {
         /// <summary>
+        /// the state to search
+        /// </summary>
+        /// <value>the state to search</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StateEnum
+        {
+            /// <summary>
+            /// Enum FetchingDatasets for value: FetchingDatasets
+            /// </summary>
+            [EnumMember(Value = "FetchingDatasets")]
+            FetchingDatasets = 1,
+
+            /// <summary>
+            /// Enum FetchingScenarioParameters for value: FetchingScenarioParameters
+            /// </summary>
+            [EnumMember(Value = "FetchingScenarioParameters")]
+            FetchingScenarioParameters = 2,
+
+            /// <summary>
+            /// Enum ApplyingScenarioParameters for value: ApplyingScenarioParameters
+            /// </summary>
+            [EnumMember(Value = "ApplyingScenarioParameters")]
+            ApplyingScenarioParameters = 3,
+
+            /// <summary>
+            /// Enum ValidatingScenarioData for value: ValidatingScenarioData
+            /// </summary>
+            [EnumMember(Value = "ValidatingScenarioData")]
+            ValidatingScenarioData = 4,
+
+            /// <summary>
+            /// Enum SendingScenarioDataToDataWarehouse for value: SendingScenarioDataToDataWarehouse
+            /// </summary>
+            [EnumMember(Value = "SendingScenarioDataToDataWarehouse")]
+            SendingScenarioDataToDataWarehouse = 5,
+
+            /// <summary>
+            /// Enum PreRun for value: PreRun
+            /// </summary>
+            [EnumMember(Value = "PreRun")]
+            PreRun = 6,
+
+            /// <summary>
+            /// Enum Running for value: Running
+            /// </summary>
+            [EnumMember(Value = "Running")]
+            Running = 7,
+
+            /// <summary>
+            /// Enum PostRun for value: PostRun
+            /// </summary>
+            [EnumMember(Value = "PostRun")]
+            PostRun = 8,
+
+            /// <summary>
+            /// Enum Success for value: Success
+            /// </summary>
+            [EnumMember(Value = "Success")]
+            Success = 9,
+
+            /// <summary>
+            /// Enum Failed for value: Failed
+            /// </summary>
+            [EnumMember(Value = "Failed")]
+            Failed = 10
+
+        }
+
+        /// <summary>
+        /// the state to search
+        /// </summary>
+        /// <value>the state to search</value>
+        [DataMember(Name = "state", EmitDefaultValue = false)]
+        public StateEnum? State { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRunSearch" /> class.
         /// </summary>
         /// <param name="solutionId">the Solution Id to search.</param>
@@ -41,7 +116,7 @@ namespace Com.Cosmotech.Model
         /// <param name="state">the state to search.</param>
         /// <param name="jobId">the Cosmo Tech compute cluster Job Id to search.</param>
         /// <param name="ownerId">the owner Id to search.</param>
-        public ScenarioRunSearch(string solutionId = default(string), string runTemplateId = default(string), string workspaceId = default(string), string scenarioId = default(string), string state = default(string), string jobId = default(string), string ownerId = default(string))
+        public ScenarioRunSearch(string solutionId = default(string), string runTemplateId = default(string), string workspaceId = default(string), string scenarioId = default(string), StateEnum? state = default(StateEnum?), string jobId = default(string), string ownerId = default(string))
         {
             this.SolutionId = solutionId;
             this.RunTemplateId = runTemplateId;
@@ -79,13 +154,6 @@ namespace Com.Cosmotech.Model
         /// <value>the Scenario Id to search</value>
         [DataMember(Name = "scenarioId", EmitDefaultValue = false)]
         public string ScenarioId { get; set; }
-
-        /// <summary>
-        /// the state to search
-        /// </summary>
-        /// <value>the state to search</value>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
-        public string State { get; set; }
 
         /// <summary>
         /// the Cosmo Tech compute cluster Job Id to search
@@ -172,8 +240,7 @@ namespace Com.Cosmotech.Model
                 ) && 
                 (
                     this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
+                    this.State.Equals(input.State)
                 ) && 
                 (
                     this.JobId == input.JobId ||
@@ -204,8 +271,7 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.WorkspaceId.GetHashCode();
                 if (this.ScenarioId != null)
                     hashCode = hashCode * 59 + this.ScenarioId.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
+                hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.JobId != null)
                     hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.OwnerId != null)

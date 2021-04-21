@@ -106,6 +106,21 @@ namespace Com.Cosmotech.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or Sets Organizations
+        /// </summary>
+        [DataMember(Name = "organizations", EmitDefaultValue = false)]
+        public List<UserOrganization> Organizations { get; private set; }
+
+        /// <summary>
+        /// Returns false as Organizations should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeOrganizations()
+        {
+            return false;
+        }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -116,6 +131,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  PlatformRoles: ").Append(PlatformRoles).Append("\n");
+            sb.Append("  Organizations: ").Append(Organizations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +179,12 @@ namespace Com.Cosmotech.Model
                 (
                     this.PlatformRoles == input.PlatformRoles ||
                     this.PlatformRoles.SequenceEqual(input.PlatformRoles)
+                ) && 
+                (
+                    this.Organizations == input.Organizations ||
+                    this.Organizations != null &&
+                    input.Organizations != null &&
+                    this.Organizations.SequenceEqual(input.Organizations)
                 );
         }
 
@@ -180,6 +202,8 @@ namespace Com.Cosmotech.Model
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 hashCode = hashCode * 59 + this.PlatformRoles.GetHashCode();
+                if (this.Organizations != null)
+                    hashCode = hashCode * 59 + this.Organizations.GetHashCode();
                 return hashCode;
             }
         }

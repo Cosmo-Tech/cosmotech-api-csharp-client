@@ -63,8 +63,8 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">the User identifier</param>
-        /// <returns>UserDetails</returns>
-        UserDetails FindUserById(string userId);
+        /// <returns>User</returns>
+        User FindUserById(string userId);
 
         /// <summary>
         /// Get the details of an user
@@ -74,14 +74,14 @@ namespace Com.Cosmotech.Api
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">the User identifier</param>
-        /// <returns>ApiResponse of UserDetails</returns>
-        ApiResponse<UserDetails> FindUserByIdWithHttpInfo(string userId);
+        /// <returns>ApiResponse of User</returns>
+        ApiResponse<User> FindUserByIdWithHttpInfo(string userId);
         /// <summary>
         /// Get the details of an user
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>UserDetails</returns>
-        UserDetails GetCurrentUser();
+        /// <returns>User</returns>
+        User GetCurrentUser();
 
         /// <summary>
         /// Get the details of an user
@@ -90,15 +90,15 @@ namespace Com.Cosmotech.Api
         /// 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of UserDetails</returns>
-        ApiResponse<UserDetails> GetCurrentUserWithHttpInfo();
+        /// <returns>ApiResponse of User</returns>
+        ApiResponse<User> GetCurrentUserWithHttpInfo();
         /// <summary>
         /// Get the details of an user with roles for an Organization
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <returns>UserDetails</returns>
-        UserDetails GetOrganizationCurrentUser(string organizationId);
+        /// <returns>User</returns>
+        User GetOrganizationCurrentUser(string organizationId);
 
         /// <summary>
         /// Get the details of an user with roles for an Organization
@@ -108,16 +108,16 @@ namespace Com.Cosmotech.Api
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <returns>ApiResponse of UserDetails</returns>
-        ApiResponse<UserDetails> GetOrganizationCurrentUserWithHttpInfo(string organizationId);
+        /// <returns>ApiResponse of User</returns>
+        ApiResponse<User> GetOrganizationCurrentUserWithHttpInfo(string organizationId);
         /// <summary>
         /// Get the details of an user with roles for a Workspace
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>UserDetails</returns>
-        UserDetails GetWorkspaceCurrentUser(string organizationId, string workspaceId);
+        /// <returns>User</returns>
+        User GetWorkspaceCurrentUser(string organizationId, string workspaceId);
 
         /// <summary>
         /// Get the details of an user with roles for a Workspace
@@ -128,8 +128,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>ApiResponse of UserDetails</returns>
-        ApiResponse<UserDetails> GetWorkspaceCurrentUserWithHttpInfo(string organizationId, string workspaceId);
+        /// <returns>ApiResponse of User</returns>
+        ApiResponse<User> GetWorkspaceCurrentUserWithHttpInfo(string organizationId, string workspaceId);
         /// <summary>
         /// Register a new user
         /// </summary>
@@ -246,8 +246,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UserDetails</returns>
-        System.Threading.Tasks.Task<UserDetails> FindUserByIdAsync(string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of User</returns>
+        System.Threading.Tasks.Task<User> FindUserByIdAsync(string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the details of an user
@@ -258,8 +258,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UserDetails)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserDetails>> FindUserByIdWithHttpInfoAsync(string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (User)</returns>
+        System.Threading.Tasks.Task<ApiResponse<User>> FindUserByIdWithHttpInfoAsync(string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the details of an user
         /// </summary>
@@ -268,8 +268,8 @@ namespace Com.Cosmotech.Api
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UserDetails</returns>
-        System.Threading.Tasks.Task<UserDetails> GetCurrentUserAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of User</returns>
+        System.Threading.Tasks.Task<User> GetCurrentUserAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the details of an user
@@ -279,8 +279,8 @@ namespace Com.Cosmotech.Api
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UserDetails)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserDetails>> GetCurrentUserWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (User)</returns>
+        System.Threading.Tasks.Task<ApiResponse<User>> GetCurrentUserWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the details of an user with roles for an Organization
         /// </summary>
@@ -290,8 +290,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UserDetails</returns>
-        System.Threading.Tasks.Task<UserDetails> GetOrganizationCurrentUserAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of User</returns>
+        System.Threading.Tasks.Task<User> GetOrganizationCurrentUserAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the details of an user with roles for an Organization
@@ -302,8 +302,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UserDetails)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserDetails>> GetOrganizationCurrentUserWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (User)</returns>
+        System.Threading.Tasks.Task<ApiResponse<User>> GetOrganizationCurrentUserWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the details of an user with roles for a Workspace
         /// </summary>
@@ -314,8 +314,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UserDetails</returns>
-        System.Threading.Tasks.Task<UserDetails> GetWorkspaceCurrentUserAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of User</returns>
+        System.Threading.Tasks.Task<User> GetWorkspaceCurrentUserAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the details of an user with roles for a Workspace
@@ -327,8 +327,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UserDetails)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserDetails>> GetWorkspaceCurrentUserWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (User)</returns>
+        System.Threading.Tasks.Task<ApiResponse<User>> GetWorkspaceCurrentUserWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Register a new user
         /// </summary>
@@ -747,10 +747,10 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">the User identifier</param>
-        /// <returns>UserDetails</returns>
-        public UserDetails FindUserById(string userId)
+        /// <returns>User</returns>
+        public User FindUserById(string userId)
         {
-            Com.Cosmotech.Client.ApiResponse<UserDetails> localVarResponse = FindUserByIdWithHttpInfo(userId);
+            Com.Cosmotech.Client.ApiResponse<User> localVarResponse = FindUserByIdWithHttpInfo(userId);
             return localVarResponse.Data;
         }
 
@@ -759,8 +759,8 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">the User identifier</param>
-        /// <returns>ApiResponse of UserDetails</returns>
-        public Com.Cosmotech.Client.ApiResponse<UserDetails> FindUserByIdWithHttpInfo(string userId)
+        /// <returns>ApiResponse of User</returns>
+        public Com.Cosmotech.Client.ApiResponse<User> FindUserByIdWithHttpInfo(string userId)
         {
             // verify the required parameter 'userId' is set
             if (userId == null)
@@ -792,7 +792,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<UserDetails>("/users/{user_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<User>("/users/{user_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -809,10 +809,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UserDetails</returns>
-        public async System.Threading.Tasks.Task<UserDetails> FindUserByIdAsync(string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of User</returns>
+        public async System.Threading.Tasks.Task<User> FindUserByIdAsync(string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<UserDetails> localVarResponse = await FindUserByIdWithHttpInfoAsync(userId, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<User> localVarResponse = await FindUserByIdWithHttpInfoAsync(userId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -822,8 +822,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UserDetails)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<UserDetails>> FindUserByIdWithHttpInfoAsync(string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (User)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<User>> FindUserByIdWithHttpInfoAsync(string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'userId' is set
             if (userId == null)
@@ -858,7 +858,7 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<UserDetails>("/users/{user_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<User>("/users/{user_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -873,10 +873,10 @@ namespace Com.Cosmotech.Api
         /// Get the details of an user 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>UserDetails</returns>
-        public UserDetails GetCurrentUser()
+        /// <returns>User</returns>
+        public User GetCurrentUser()
         {
-            Com.Cosmotech.Client.ApiResponse<UserDetails> localVarResponse = GetCurrentUserWithHttpInfo();
+            Com.Cosmotech.Client.ApiResponse<User> localVarResponse = GetCurrentUserWithHttpInfo();
             return localVarResponse.Data;
         }
 
@@ -884,8 +884,8 @@ namespace Com.Cosmotech.Api
         /// Get the details of an user 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of UserDetails</returns>
-        public Com.Cosmotech.Client.ApiResponse<UserDetails> GetCurrentUserWithHttpInfo()
+        /// <returns>ApiResponse of User</returns>
+        public Com.Cosmotech.Client.ApiResponse<User> GetCurrentUserWithHttpInfo()
         {
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -912,7 +912,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<UserDetails>("/users/me", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<User>("/users/me", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -928,10 +928,10 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UserDetails</returns>
-        public async System.Threading.Tasks.Task<UserDetails> GetCurrentUserAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of User</returns>
+        public async System.Threading.Tasks.Task<User> GetCurrentUserAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<UserDetails> localVarResponse = await GetCurrentUserWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<User> localVarResponse = await GetCurrentUserWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -940,8 +940,8 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UserDetails)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<UserDetails>> GetCurrentUserWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (User)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<User>> GetCurrentUserWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -971,7 +971,7 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<UserDetails>("/users/me", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<User>("/users/me", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -987,10 +987,10 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <returns>UserDetails</returns>
-        public UserDetails GetOrganizationCurrentUser(string organizationId)
+        /// <returns>User</returns>
+        public User GetOrganizationCurrentUser(string organizationId)
         {
-            Com.Cosmotech.Client.ApiResponse<UserDetails> localVarResponse = GetOrganizationCurrentUserWithHttpInfo(organizationId);
+            Com.Cosmotech.Client.ApiResponse<User> localVarResponse = GetOrganizationCurrentUserWithHttpInfo(organizationId);
             return localVarResponse.Data;
         }
 
@@ -999,8 +999,8 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <returns>ApiResponse of UserDetails</returns>
-        public Com.Cosmotech.Client.ApiResponse<UserDetails> GetOrganizationCurrentUserWithHttpInfo(string organizationId)
+        /// <returns>ApiResponse of User</returns>
+        public Com.Cosmotech.Client.ApiResponse<User> GetOrganizationCurrentUserWithHttpInfo(string organizationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1032,7 +1032,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<UserDetails>("/organizations/{organization_id}/me", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<User>("/organizations/{organization_id}/me", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1049,10 +1049,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UserDetails</returns>
-        public async System.Threading.Tasks.Task<UserDetails> GetOrganizationCurrentUserAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of User</returns>
+        public async System.Threading.Tasks.Task<User> GetOrganizationCurrentUserAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<UserDetails> localVarResponse = await GetOrganizationCurrentUserWithHttpInfoAsync(organizationId, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<User> localVarResponse = await GetOrganizationCurrentUserWithHttpInfoAsync(organizationId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1062,8 +1062,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UserDetails)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<UserDetails>> GetOrganizationCurrentUserWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (User)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<User>> GetOrganizationCurrentUserWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1098,7 +1098,7 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<UserDetails>("/organizations/{organization_id}/me", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<User>("/organizations/{organization_id}/me", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1115,10 +1115,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>UserDetails</returns>
-        public UserDetails GetWorkspaceCurrentUser(string organizationId, string workspaceId)
+        /// <returns>User</returns>
+        public User GetWorkspaceCurrentUser(string organizationId, string workspaceId)
         {
-            Com.Cosmotech.Client.ApiResponse<UserDetails> localVarResponse = GetWorkspaceCurrentUserWithHttpInfo(organizationId, workspaceId);
+            Com.Cosmotech.Client.ApiResponse<User> localVarResponse = GetWorkspaceCurrentUserWithHttpInfo(organizationId, workspaceId);
             return localVarResponse.Data;
         }
 
@@ -1128,8 +1128,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>ApiResponse of UserDetails</returns>
-        public Com.Cosmotech.Client.ApiResponse<UserDetails> GetWorkspaceCurrentUserWithHttpInfo(string organizationId, string workspaceId)
+        /// <returns>ApiResponse of User</returns>
+        public Com.Cosmotech.Client.ApiResponse<User> GetWorkspaceCurrentUserWithHttpInfo(string organizationId, string workspaceId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1166,7 +1166,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<UserDetails>("/organizations/{organization_id}/workspaces/{workspace_id}/me", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<User>("/organizations/{organization_id}/workspaces/{workspace_id}/me", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1184,10 +1184,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of UserDetails</returns>
-        public async System.Threading.Tasks.Task<UserDetails> GetWorkspaceCurrentUserAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of User</returns>
+        public async System.Threading.Tasks.Task<User> GetWorkspaceCurrentUserAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<UserDetails> localVarResponse = await GetWorkspaceCurrentUserWithHttpInfoAsync(organizationId, workspaceId, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<User> localVarResponse = await GetWorkspaceCurrentUserWithHttpInfoAsync(organizationId, workspaceId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1198,8 +1198,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (UserDetails)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<UserDetails>> GetWorkspaceCurrentUserWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (User)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<User>> GetWorkspaceCurrentUserWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1239,7 +1239,7 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<UserDetails>("/organizations/{organization_id}/workspaces/{workspace_id}/me", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<User>("/organizations/{organization_id}/workspaces/{workspace_id}/me", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

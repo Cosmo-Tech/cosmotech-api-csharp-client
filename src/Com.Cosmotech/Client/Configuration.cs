@@ -102,7 +102,7 @@ namespace Com.Cosmotech.Client
         {
             Proxy = null;
             UserAgent = "OpenAPI-Generator/1.0.0/csharp";
-            BasePath = "https://api.azure.cosmo-platform.com";
+            BasePath = "http://localhost:8080";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -110,14 +110,14 @@ namespace Com.Cosmotech.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", "https://api.azure.cosmo-platform.com"},
-                        {"description", "No description provided"},
+                        {"url", "http://localhost:8080"},
+                        {"description", "Local dev environment"},
                     }
                 },
                 {
                     new Dictionary<string, object> {
-                        {"url", "http://localhost:4010"},
-                        {"description", "No description provided"},
+                        {"url", "https://api.azure.cosmo-platform.com"},
+                        {"description", "Production"},
                     }
                 }
             };
@@ -134,7 +134,7 @@ namespace Com.Cosmotech.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://api.azure.cosmo-platform.com") : this()
+            string basePath = "http://localhost:8080") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");

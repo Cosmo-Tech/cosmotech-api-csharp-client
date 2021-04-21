@@ -184,14 +184,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'ParametersValues'
         }
-        /// <summary>
-        /// Test the property 'SendInputToDataWarehouse'
-        /// </summary>
-        [Fact]
-        public void SendInputToDataWarehouseTest()
-        {
-            // TODO unit test for the property 'SendInputToDataWarehouse'
-        }
 
     }
 

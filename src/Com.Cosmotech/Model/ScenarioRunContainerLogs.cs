@@ -34,27 +34,19 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRunContainerLogs" /> class.
         /// </summary>
+        /// <param name="container">container.</param>
         /// <param name="textLog">the plain text log if plainText option has been set.</param>
-        public ScenarioRunContainerLogs(string textLog = default(string))
+        public ScenarioRunContainerLogs(ScenarioRunContainer container = default(ScenarioRunContainer), string textLog = default(string))
         {
+            this.Container = container;
             this.TextLog = textLog;
         }
 
         /// <summary>
-        /// container ID for log source as seen by Docker engine
+        /// Gets or Sets Container
         /// </summary>
-        /// <value>container ID for log source as seen by Docker engine</value>
-        [DataMember(Name = "containerId", EmitDefaultValue = false)]
-        public string ContainerId { get; private set; }
-
-        /// <summary>
-        /// Returns false as ContainerId should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeContainerId()
-        {
-            return false;
-        }
+        [DataMember(Name = "container", EmitDefaultValue = false)]
+        public ScenarioRunContainer Container { get; set; }
 
         /// <summary>
         /// computer/node that&#39;s generating the log
@@ -103,7 +95,7 @@ namespace Com.Cosmotech.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ScenarioRunContainerLogs {\n");
-            sb.Append("  ContainerId: ").Append(ContainerId).Append("\n");
+            sb.Append("  Container: ").Append(Container).Append("\n");
             sb.Append("  Computer: ").Append(Computer).Append("\n");
             sb.Append("  Logs: ").Append(Logs).Append("\n");
             sb.Append("  TextLog: ").Append(TextLog).Append("\n");
@@ -142,9 +134,9 @@ namespace Com.Cosmotech.Model
 
             return 
                 (
-                    this.ContainerId == input.ContainerId ||
-                    (this.ContainerId != null &&
-                    this.ContainerId.Equals(input.ContainerId))
+                    this.Container == input.Container ||
+                    (this.Container != null &&
+                    this.Container.Equals(input.Container))
                 ) && 
                 (
                     this.Computer == input.Computer ||
@@ -173,8 +165,8 @@ namespace Com.Cosmotech.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContainerId != null)
-                    hashCode = hashCode * 59 + this.ContainerId.GetHashCode();
+                if (this.Container != null)
+                    hashCode = hashCode * 59 + this.Container.GetHashCode();
                 if (this.Computer != null)
                     hashCode = hashCode * 59 + this.Computer.GetHashCode();
                 if (this.Logs != null)
