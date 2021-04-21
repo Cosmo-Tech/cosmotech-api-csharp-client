@@ -84,7 +84,7 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string userId = null;
             //var response = instance.FindUserById(userId);
-            //Assert.IsType<UserDetails>(response);
+            //Assert.IsType<User>(response);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Com.Cosmotech.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.GetCurrentUser();
-            //Assert.IsType<UserDetails>(response);
+            //Assert.IsType<User>(response);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //var response = instance.GetOrganizationCurrentUser(organizationId);
-            //Assert.IsType<UserDetails>(response);
+            //Assert.IsType<User>(response);
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Com.Cosmotech.Test.Api
             //string organizationId = null;
             //string workspaceId = null;
             //var response = instance.GetWorkspaceCurrentUser(organizationId, workspaceId);
-            //Assert.IsType<UserDetails>(response);
+            //Assert.IsType<User>(response);
         }
 
         /// <summary>

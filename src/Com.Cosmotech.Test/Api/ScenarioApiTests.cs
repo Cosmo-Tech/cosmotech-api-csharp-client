@@ -134,7 +134,7 @@ namespace Com.Cosmotech.Test.Api
             //string organizationId = null;
             //string workspaceId = null;
             //var response = instance.GetScenariosTree(organizationId, workspaceId);
-            //Assert.IsType<List<ScenarioBase>>(response);
+            //Assert.IsType<List<Scenario>>(response);
         }
 
         /// <summary>

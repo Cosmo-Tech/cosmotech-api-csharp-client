@@ -121,7 +121,7 @@ namespace Com.Cosmotech.Test.Api
             //string workspaceId = null;
             //string scenarioId = null;
             //var response = instance.GetScenarioScenarioRuns(organizationId, workspaceId, scenarioId);
-            //Assert.IsType<List<ScenarioRunBase>>(response);
+            //Assert.IsType<List<ScenarioRun>>(response);
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Com.Cosmotech.Test.Api
             //string organizationId = null;
             //string workspaceId = null;
             //var response = instance.GetWorkspaceScenarioRuns(organizationId, workspaceId);
-            //Assert.IsType<List<ScenarioRunBase>>(response);
+            //Assert.IsType<List<ScenarioRun>>(response);
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Com.Cosmotech.Test.Api
             //string workspaceId = null;
             //string scenarioId = null;
             //var response = instance.RunScenario(organizationId, workspaceId, scenarioId);
-            //Assert.IsType<ScenarioRunBase>(response);
+            //Assert.IsType<ScenarioRun>(response);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Com.Cosmotech.Test.Api
             //string organizationId = null;
             //ScenarioRunSearch scenarioRunSearch = null;
             //var response = instance.SearchScenarioRuns(organizationId, scenarioRunSearch);
-            //Assert.IsType<List<ScenarioRunBase>>(response);
+            //Assert.IsType<List<ScenarioRun>>(response);
         }
 
         /// <summary>
