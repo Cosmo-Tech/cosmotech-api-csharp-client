@@ -42,9 +42,8 @@ namespace Com.Cosmotech.Model
         /// <param name="id">the Parameter id (required).</param>
         /// <param name="labels">a translated label with key as ISO 639-1 code (required).</param>
         /// <param name="varType">the variable type for the parameter. Basic types or special type %DATASETID% (required).</param>
-        /// <param name="order">the Parameter Group order.</param>
         /// <param name="options">freeform options.</param>
-        public RunTemplateParameter(string id = default(string), Dictionary<string, Object> labels = default(Dictionary<string, Object>), string varType = default(string), int order = default(int), Dictionary<string, Object> options = default(Dictionary<string, Object>))
+        public RunTemplateParameter(string id = default(string), Dictionary<string, Object> labels = default(Dictionary<string, Object>), string varType = default(string), Dictionary<string, Object> options = default(Dictionary<string, Object>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplateParameter and cannot be null");
@@ -52,7 +51,6 @@ namespace Com.Cosmotech.Model
             this.Labels = labels ?? throw new ArgumentNullException("labels is a required property for RunTemplateParameter and cannot be null");
             // to ensure "varType" is required (not null)
             this.VarType = varType ?? throw new ArgumentNullException("varType is a required property for RunTemplateParameter and cannot be null");
-            this.Order = order;
             this.Options = options;
         }
 
@@ -78,13 +76,6 @@ namespace Com.Cosmotech.Model
         public string VarType { get; set; }
 
         /// <summary>
-        /// the Parameter Group order
-        /// </summary>
-        /// <value>the Parameter Group order</value>
-        [DataMember(Name = "order", EmitDefaultValue = false)]
-        public int Order { get; set; }
-
-        /// <summary>
         /// freeform options
         /// </summary>
         /// <value>freeform options</value>
@@ -102,7 +93,6 @@ namespace Com.Cosmotech.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  VarType: ").Append(VarType).Append("\n");
-            sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -155,10 +145,6 @@ namespace Com.Cosmotech.Model
                     this.VarType.Equals(input.VarType))
                 ) && 
                 (
-                    this.Order == input.Order ||
-                    this.Order.Equals(input.Order)
-                ) && 
-                (
                     this.Options == input.Options ||
                     this.Options != null &&
                     input.Options != null &&
@@ -181,7 +167,6 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Labels.GetHashCode();
                 if (this.VarType != null)
                     hashCode = hashCode * 59 + this.VarType.GetHashCode();
-                hashCode = hashCode * 59 + this.Order.GetHashCode();
                 if (this.Options != null)
                     hashCode = hashCode * 59 + this.Options.GetHashCode();
                 return hashCode;

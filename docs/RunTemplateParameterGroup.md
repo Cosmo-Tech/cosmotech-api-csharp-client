@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the Parameter Group id | 
 **Labels** | **Dictionary&lt;string, Object&gt;** | a translated label with key as ISO 639-1 code | 
-**Order** | **int** | the Parameter Group order | [optional] 
 **IsTable** | **bool** | does the group define a table | [optional] 
 **Options** | **Dictionary&lt;string, Object&gt;** | freeform options | [optional] 
 **ParentId** | **string** | the Run Template Group parent Id | [optional] 

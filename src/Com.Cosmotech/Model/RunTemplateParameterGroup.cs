@@ -41,12 +41,11 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="id">the Parameter Group id (required).</param>
         /// <param name="labels">a translated label with key as ISO 639-1 code (required).</param>
-        /// <param name="order">the Parameter Group order.</param>
         /// <param name="isTable">does the group define a table.</param>
         /// <param name="options">freeform options.</param>
         /// <param name="parentId">the Run Template Group parent Id.</param>
         /// <param name="parameters">an ordered list of Run Template Parameters (required).</param>
-        public RunTemplateParameterGroup(string id = default(string), Dictionary<string, Object> labels = default(Dictionary<string, Object>), int order = default(int), bool isTable = default(bool), Dictionary<string, Object> options = default(Dictionary<string, Object>), string parentId = default(string), List<string> parameters = default(List<string>))
+        public RunTemplateParameterGroup(string id = default(string), Dictionary<string, Object> labels = default(Dictionary<string, Object>), bool isTable = default(bool), Dictionary<string, Object> options = default(Dictionary<string, Object>), string parentId = default(string), List<string> parameters = default(List<string>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplateParameterGroup and cannot be null");
@@ -54,7 +53,6 @@ namespace Com.Cosmotech.Model
             this.Labels = labels ?? throw new ArgumentNullException("labels is a required property for RunTemplateParameterGroup and cannot be null");
             // to ensure "parameters" is required (not null)
             this.Parameters = parameters ?? throw new ArgumentNullException("parameters is a required property for RunTemplateParameterGroup and cannot be null");
-            this.Order = order;
             this.IsTable = isTable;
             this.Options = options;
             this.ParentId = parentId;
@@ -73,13 +71,6 @@ namespace Com.Cosmotech.Model
         /// <value>a translated label with key as ISO 639-1 code</value>
         [DataMember(Name = "labels", IsRequired = true, EmitDefaultValue = false)]
         public Dictionary<string, Object> Labels { get; set; }
-
-        /// <summary>
-        /// the Parameter Group order
-        /// </summary>
-        /// <value>the Parameter Group order</value>
-        [DataMember(Name = "order", EmitDefaultValue = false)]
-        public int Order { get; set; }
 
         /// <summary>
         /// does the group define a table
@@ -119,7 +110,6 @@ namespace Com.Cosmotech.Model
             sb.Append("class RunTemplateParameterGroup {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
-            sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  IsTable: ").Append(IsTable).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
@@ -170,10 +160,6 @@ namespace Com.Cosmotech.Model
                     this.Labels.SequenceEqual(input.Labels)
                 ) && 
                 (
-                    this.Order == input.Order ||
-                    this.Order.Equals(input.Order)
-                ) && 
-                (
                     this.IsTable == input.IsTable ||
                     this.IsTable.Equals(input.IsTable)
                 ) && 
@@ -209,7 +195,6 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Labels != null)
                     hashCode = hashCode * 59 + this.Labels.GetHashCode();
-                hashCode = hashCode * 59 + this.Order.GetHashCode();
                 hashCode = hashCode * 59 + this.IsTable.GetHashCode();
                 if (this.Options != null)
                     hashCode = hashCode * 59 + this.Options.GetHashCode();
