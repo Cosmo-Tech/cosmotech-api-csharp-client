@@ -50,9 +50,10 @@ namespace Com.Cosmotech.Model
         /// <param name="preRunResource">preRunResource.</param>
         /// <param name="engineResource">engineResource.</param>
         /// <param name="postRunResource">postRunResource.</param>
-        /// <param name="sendInputToDataWarehouse">whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run (default to true).</param>
-        /// <param name="parameterGroups">the list of parameters groups for the Run Template.</param>
-        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), RunTemplateResourceStorage parametersHandlerResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage datasetValidatorResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage preRunResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage engineResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage postRunResource = default(RunTemplateResourceStorage), bool sendInputToDataWarehouse = true, List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>))
+        /// <param name="sendDatasetsToDataWarehouse">whether or not the Datasets values are send to the DataWarehouse prior to Simulation Run (default to true).</param>
+        /// <param name="sendInputParametersToDataWarehouse">whether or not the input parameters values are send to the DataWarehouse prior to Simulation Run (default to true).</param>
+        /// <param name="parameterGroups">the ordered list of parameters groups for the Run Template.</param>
+        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), RunTemplateResourceStorage parametersHandlerResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage datasetValidatorResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage preRunResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage engineResource = default(RunTemplateResourceStorage), RunTemplateResourceStorage postRunResource = default(RunTemplateResourceStorage), bool sendDatasetsToDataWarehouse = true, bool sendInputParametersToDataWarehouse = true, List<string> parameterGroups = default(List<string>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplate and cannot be null");
@@ -67,7 +68,8 @@ namespace Com.Cosmotech.Model
             this.PreRunResource = preRunResource;
             this.EngineResource = engineResource;
             this.PostRunResource = postRunResource;
-            this.SendInputToDataWarehouse = sendInputToDataWarehouse;
+            this.SendDatasetsToDataWarehouse = sendDatasetsToDataWarehouse;
+            this.SendInputParametersToDataWarehouse = sendInputParametersToDataWarehouse;
             this.ParameterGroups = parameterGroups;
         }
 
@@ -91,22 +93,6 @@ namespace Com.Cosmotech.Model
         /// <value>the Run Template description</value>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
-
-        /// <summary>
-        /// whether or not the Run Template use the main standard csmSimulator directly. False if there is an Engine set
-        /// </summary>
-        /// <value>whether or not the Run Template use the main standard csmSimulator directly. False if there is an Engine set</value>
-        [DataMember(Name = "useDirectCsmSimulator", EmitDefaultValue = false)]
-        public bool UseDirectCsmSimulator { get; private set; }
-
-        /// <summary>
-        /// Returns false as UseDirectCsmSimulator should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUseDirectCsmSimulator()
-        {
-            return false;
-        }
 
         /// <summary>
         /// the Cosmo Tech simulation name. This information is send to the Engine. Mandatory information if no Engine is defined
@@ -160,18 +146,25 @@ namespace Com.Cosmotech.Model
         public RunTemplateResourceStorage PostRunResource { get; set; }
 
         /// <summary>
-        /// whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run
+        /// whether or not the Datasets values are send to the DataWarehouse prior to Simulation Run
         /// </summary>
-        /// <value>whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
-        [DataMember(Name = "sendInputToDataWarehouse", EmitDefaultValue = false)]
-        public bool SendInputToDataWarehouse { get; set; }
+        /// <value>whether or not the Datasets values are send to the DataWarehouse prior to Simulation Run</value>
+        [DataMember(Name = "sendDatasetsToDataWarehouse", EmitDefaultValue = false)]
+        public bool SendDatasetsToDataWarehouse { get; set; }
 
         /// <summary>
-        /// the list of parameters groups for the Run Template
+        /// whether or not the input parameters values are send to the DataWarehouse prior to Simulation Run
         /// </summary>
-        /// <value>the list of parameters groups for the Run Template</value>
+        /// <value>whether or not the input parameters values are send to the DataWarehouse prior to Simulation Run</value>
+        [DataMember(Name = "sendInputParametersToDataWarehouse", EmitDefaultValue = false)]
+        public bool SendInputParametersToDataWarehouse { get; set; }
+
+        /// <summary>
+        /// the ordered list of parameters groups for the Run Template
+        /// </summary>
+        /// <value>the ordered list of parameters groups for the Run Template</value>
         [DataMember(Name = "parameterGroups", EmitDefaultValue = false)]
-        public List<RunTemplateParameterGroup> ParameterGroups { get; set; }
+        public List<string> ParameterGroups { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -184,7 +177,6 @@ namespace Com.Cosmotech.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  UseDirectCsmSimulator: ").Append(UseDirectCsmSimulator).Append("\n");
             sb.Append("  CsmSimulation: ").Append(CsmSimulation).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ComputeSize: ").Append(ComputeSize).Append("\n");
@@ -193,7 +185,8 @@ namespace Com.Cosmotech.Model
             sb.Append("  PreRunResource: ").Append(PreRunResource).Append("\n");
             sb.Append("  EngineResource: ").Append(EngineResource).Append("\n");
             sb.Append("  PostRunResource: ").Append(PostRunResource).Append("\n");
-            sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
+            sb.Append("  SendDatasetsToDataWarehouse: ").Append(SendDatasetsToDataWarehouse).Append("\n");
+            sb.Append("  SendInputParametersToDataWarehouse: ").Append(SendInputParametersToDataWarehouse).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -245,10 +238,6 @@ namespace Com.Cosmotech.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.UseDirectCsmSimulator == input.UseDirectCsmSimulator ||
-                    this.UseDirectCsmSimulator.Equals(input.UseDirectCsmSimulator)
-                ) && 
-                (
                     this.CsmSimulation == input.CsmSimulation ||
                     (this.CsmSimulation != null &&
                     this.CsmSimulation.Equals(input.CsmSimulation))
@@ -290,8 +279,12 @@ namespace Com.Cosmotech.Model
                     this.PostRunResource.Equals(input.PostRunResource))
                 ) && 
                 (
-                    this.SendInputToDataWarehouse == input.SendInputToDataWarehouse ||
-                    this.SendInputToDataWarehouse.Equals(input.SendInputToDataWarehouse)
+                    this.SendDatasetsToDataWarehouse == input.SendDatasetsToDataWarehouse ||
+                    this.SendDatasetsToDataWarehouse.Equals(input.SendDatasetsToDataWarehouse)
+                ) && 
+                (
+                    this.SendInputParametersToDataWarehouse == input.SendInputParametersToDataWarehouse ||
+                    this.SendInputParametersToDataWarehouse.Equals(input.SendInputParametersToDataWarehouse)
                 ) && 
                 (
                     this.ParameterGroups == input.ParameterGroups ||
@@ -316,7 +309,6 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
-                hashCode = hashCode * 59 + this.UseDirectCsmSimulator.GetHashCode();
                 if (this.CsmSimulation != null)
                     hashCode = hashCode * 59 + this.CsmSimulation.GetHashCode();
                 if (this.Tags != null)
@@ -333,7 +325,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.EngineResource.GetHashCode();
                 if (this.PostRunResource != null)
                     hashCode = hashCode * 59 + this.PostRunResource.GetHashCode();
-                hashCode = hashCode * 59 + this.SendInputToDataWarehouse.GetHashCode();
+                hashCode = hashCode * 59 + this.SendDatasetsToDataWarehouse.GetHashCode();
+                hashCode = hashCode * 59 + this.SendInputParametersToDataWarehouse.GetHashCode();
                 if (this.ParameterGroups != null)
                     hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();
                 return hashCode;

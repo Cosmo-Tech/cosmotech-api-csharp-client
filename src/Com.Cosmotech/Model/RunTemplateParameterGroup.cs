@@ -45,8 +45,8 @@ namespace Com.Cosmotech.Model
         /// <param name="isTable">does the group define a table.</param>
         /// <param name="options">freeform options.</param>
         /// <param name="parentId">the Run Template Group parent Id.</param>
-        /// <param name="parameters">a list of Run Template Parameters (required).</param>
-        public RunTemplateParameterGroup(string id = default(string), Dictionary<string, Object> labels = default(Dictionary<string, Object>), int order = default(int), bool isTable = default(bool), Dictionary<string, Object> options = default(Dictionary<string, Object>), string parentId = default(string), List<RunTemplateParameter> parameters = default(List<RunTemplateParameter>))
+        /// <param name="parameters">an ordered list of Run Template Parameters (required).</param>
+        public RunTemplateParameterGroup(string id = default(string), Dictionary<string, Object> labels = default(Dictionary<string, Object>), int order = default(int), bool isTable = default(bool), Dictionary<string, Object> options = default(Dictionary<string, Object>), string parentId = default(string), List<string> parameters = default(List<string>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplateParameterGroup and cannot be null");
@@ -103,11 +103,11 @@ namespace Com.Cosmotech.Model
         public string ParentId { get; set; }
 
         /// <summary>
-        /// a list of Run Template Parameters
+        /// an ordered list of Run Template Parameters
         /// </summary>
-        /// <value>a list of Run Template Parameters</value>
+        /// <value>an ordered list of Run Template Parameters</value>
         [DataMember(Name = "parameters", IsRequired = true, EmitDefaultValue = false)]
-        public List<RunTemplateParameter> Parameters { get; set; }
+        public List<string> Parameters { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

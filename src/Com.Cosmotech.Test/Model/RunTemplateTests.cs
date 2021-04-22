@@ -81,14 +81,6 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Description'
         }
         /// <summary>
-        /// Test the property 'UseDirectCsmSimulator'
-        /// </summary>
-        [Fact]
-        public void UseDirectCsmSimulatorTest()
-        {
-            // TODO unit test for the property 'UseDirectCsmSimulator'
-        }
-        /// <summary>
         /// Test the property 'CsmSimulation'
         /// </summary>
         [Fact]
@@ -153,12 +145,20 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'PostRunResource'
         }
         /// <summary>
-        /// Test the property 'SendInputToDataWarehouse'
+        /// Test the property 'SendDatasetsToDataWarehouse'
         /// </summary>
         [Fact]
-        public void SendInputToDataWarehouseTest()
+        public void SendDatasetsToDataWarehouseTest()
         {
-            // TODO unit test for the property 'SendInputToDataWarehouse'
+            // TODO unit test for the property 'SendDatasetsToDataWarehouse'
+        }
+        /// <summary>
+        /// Test the property 'SendInputParametersToDataWarehouse'
+        /// </summary>
+        [Fact]
+        public void SendInputParametersToDataWarehouseTest()
+        {
+            // TODO unit test for the property 'SendInputParametersToDataWarehouse'
         }
         /// <summary>
         /// Test the property 'ParameterGroups'

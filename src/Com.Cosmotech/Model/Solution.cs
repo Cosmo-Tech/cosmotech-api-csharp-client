@@ -47,8 +47,10 @@ namespace Com.Cosmotech.Model
         /// <param name="version">the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag (required).</param>
         /// <param name="url">an optional URL link to solution page.</param>
         /// <param name="tags">the list of tags.</param>
+        /// <param name="parameters">the list of Run Template Parameters.</param>
+        /// <param name="parameterGroups">the list of parameters groups for the Run Templates.</param>
         /// <param name="runTemplates">list of Run Template.</param>
-        public Solution(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string csmSimulator = default(string), string version = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplate> runTemplates = default(List<RunTemplate>))
+        public Solution(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string csmSimulator = default(string), string version = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplateParameter> parameters = default(List<RunTemplateParameter>), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>), List<RunTemplate> runTemplates = default(List<RunTemplate>))
         {
             // to ensure "key" is required (not null)
             this.Key = key ?? throw new ArgumentNullException("key is a required property for Solution and cannot be null");
@@ -62,6 +64,8 @@ namespace Com.Cosmotech.Model
             this.CsmSimulator = csmSimulator;
             this.Url = url;
             this.Tags = tags;
+            this.Parameters = parameters;
+            this.ParameterGroups = parameterGroups;
             this.RunTemplates = runTemplates;
         }
 
@@ -154,6 +158,20 @@ namespace Com.Cosmotech.Model
         public List<string> Tags { get; set; }
 
         /// <summary>
+        /// the list of Run Template Parameters
+        /// </summary>
+        /// <value>the list of Run Template Parameters</value>
+        [DataMember(Name = "parameters", EmitDefaultValue = false)]
+        public List<RunTemplateParameter> Parameters { get; set; }
+
+        /// <summary>
+        /// the list of parameters groups for the Run Templates
+        /// </summary>
+        /// <value>the list of parameters groups for the Run Templates</value>
+        [DataMember(Name = "parameterGroups", EmitDefaultValue = false)]
+        public List<RunTemplateParameterGroup> ParameterGroups { get; set; }
+
+        /// <summary>
         /// list of Run Template
         /// </summary>
         /// <value>list of Run Template</value>
@@ -178,6 +196,8 @@ namespace Com.Cosmotech.Model
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
+            sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("  RunTemplates: ").Append(RunTemplates).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -265,6 +285,18 @@ namespace Com.Cosmotech.Model
                     this.Tags.SequenceEqual(input.Tags)
                 ) && 
                 (
+                    this.Parameters == input.Parameters ||
+                    this.Parameters != null &&
+                    input.Parameters != null &&
+                    this.Parameters.SequenceEqual(input.Parameters)
+                ) && 
+                (
+                    this.ParameterGroups == input.ParameterGroups ||
+                    this.ParameterGroups != null &&
+                    input.ParameterGroups != null &&
+                    this.ParameterGroups.SequenceEqual(input.ParameterGroups)
+                ) && 
+                (
                     this.RunTemplates == input.RunTemplates ||
                     this.RunTemplates != null &&
                     input.RunTemplates != null &&
@@ -301,6 +333,10 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Parameters != null)
+                    hashCode = hashCode * 59 + this.Parameters.GetHashCode();
+                if (this.ParameterGroups != null)
+                    hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();
                 if (this.RunTemplates != null)
                     hashCode = hashCode * 59 + this.RunTemplates.GetHashCode();
                 return hashCode;

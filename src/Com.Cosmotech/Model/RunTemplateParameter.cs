@@ -41,7 +41,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="id">the Parameter id (required).</param>
         /// <param name="labels">a translated label with key as ISO 639-1 code (required).</param>
-        /// <param name="varType">the variable type for the parameter. Basic types or special type $DATASETID, $DATAPATH (required).</param>
+        /// <param name="varType">the variable type for the parameter. Basic types or special type %DATASETID% (required).</param>
         /// <param name="order">the Parameter Group order.</param>
         /// <param name="options">freeform options.</param>
         public RunTemplateParameter(string id = default(string), Dictionary<string, Object> labels = default(Dictionary<string, Object>), string varType = default(string), int order = default(int), Dictionary<string, Object> options = default(Dictionary<string, Object>))
@@ -71,9 +71,9 @@ namespace Com.Cosmotech.Model
         public Dictionary<string, Object> Labels { get; set; }
 
         /// <summary>
-        /// the variable type for the parameter. Basic types or special type $DATASETID, $DATAPATH
+        /// the variable type for the parameter. Basic types or special type %DATASETID%
         /// </summary>
-        /// <value>the variable type for the parameter. Basic types or special type $DATASETID, $DATAPATH</value>
+        /// <value>the variable type for the parameter. Basic types or special type %DATASETID%</value>
         [DataMember(Name = "varType", IsRequired = true, EmitDefaultValue = false)]
         public string VarType { get; set; }
 

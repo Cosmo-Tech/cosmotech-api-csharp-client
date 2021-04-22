@@ -137,6 +137,22 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Tags'
         }
         /// <summary>
+        /// Test the property 'Parameters'
+        /// </summary>
+        [Fact]
+        public void ParametersTest()
+        {
+            // TODO unit test for the property 'Parameters'
+        }
+        /// <summary>
+        /// Test the property 'ParameterGroups'
+        /// </summary>
+        [Fact]
+        public void ParameterGroupsTest()
+        {
+            // TODO unit test for the property 'ParameterGroups'
+        }
+        /// <summary>
         /// Test the property 'RunTemplates'
         /// </summary>
         [Fact]
