@@ -34,14 +34,27 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRunContainer" /> class.
         /// </summary>
-        /// <param name="envVars">a freeform environment variable map.</param>
-        /// <param name="image">the container image URI.</param>
+        [JsonConstructorAttribute]
+        protected ScenarioRunContainer() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScenarioRunContainer" /> class.
+        /// </summary>
+        /// <param name="name">the container name (required).</param>
+        /// <param name="envVars">environment variable map.</param>
+        /// <param name="image">the container image URI (required).</param>
+        /// <param name="entrypoint">the container entry point.</param>
         /// <param name="runArgs">the list of run arguments for the container.</param>
-        public ScenarioRunContainer(Dictionary<string, Object> envVars = default(Dictionary<string, Object>), string image = default(string), List<string> runArgs = default(List<string>))
+        /// <param name="dependencies">the list of dependencies container name to run this container.</param>
+        public ScenarioRunContainer(string name = default(string), Dictionary<string, string> envVars = default(Dictionary<string, string>), string image = default(string), string entrypoint = default(string), List<string> runArgs = default(List<string>), List<string> dependencies = default(List<string>))
         {
+            // to ensure "name" is required (not null)
+            this.Name = name ?? throw new ArgumentNullException("name is a required property for ScenarioRunContainer and cannot be null");
+            // to ensure "image" is required (not null)
+            this.Image = image ?? throw new ArgumentNullException("image is a required property for ScenarioRunContainer and cannot be null");
             this.EnvVars = envVars;
-            this.Image = image;
+            this.Entrypoint = entrypoint;
             this.RunArgs = runArgs;
+            this.Dependencies = dependencies;
         }
 
         /// <summary>
@@ -61,18 +74,32 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// a freeform environment variable map
+        /// the container name
         /// </summary>
-        /// <value>a freeform environment variable map</value>
+        /// <value>the container name</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// environment variable map
+        /// </summary>
+        /// <value>environment variable map</value>
         [DataMember(Name = "envVars", EmitDefaultValue = false)]
-        public Dictionary<string, Object> EnvVars { get; set; }
+        public Dictionary<string, string> EnvVars { get; set; }
 
         /// <summary>
         /// the container image URI
         /// </summary>
         /// <value>the container image URI</value>
-        [DataMember(Name = "image", EmitDefaultValue = false)]
+        [DataMember(Name = "image", IsRequired = true, EmitDefaultValue = false)]
         public string Image { get; set; }
+
+        /// <summary>
+        /// the container entry point
+        /// </summary>
+        /// <value>the container entry point</value>
+        [DataMember(Name = "entrypoint", EmitDefaultValue = false)]
+        public string Entrypoint { get; set; }
 
         /// <summary>
         /// the list of run arguments for the container
@@ -80,6 +107,13 @@ namespace Com.Cosmotech.Model
         /// <value>the list of run arguments for the container</value>
         [DataMember(Name = "runArgs", EmitDefaultValue = false)]
         public List<string> RunArgs { get; set; }
+
+        /// <summary>
+        /// the list of dependencies container name to run this container
+        /// </summary>
+        /// <value>the list of dependencies container name to run this container</value>
+        [DataMember(Name = "dependencies", EmitDefaultValue = false)]
+        public List<string> Dependencies { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -90,9 +124,12 @@ namespace Com.Cosmotech.Model
             var sb = new StringBuilder();
             sb.Append("class ScenarioRunContainer {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  EnvVars: ").Append(EnvVars).Append("\n");
             sb.Append("  Image: ").Append(Image).Append("\n");
+            sb.Append("  Entrypoint: ").Append(Entrypoint).Append("\n");
             sb.Append("  RunArgs: ").Append(RunArgs).Append("\n");
+            sb.Append("  Dependencies: ").Append(Dependencies).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,6 +170,11 @@ namespace Com.Cosmotech.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
                     this.EnvVars == input.EnvVars ||
                     this.EnvVars != null &&
                     input.EnvVars != null &&
@@ -144,10 +186,21 @@ namespace Com.Cosmotech.Model
                     this.Image.Equals(input.Image))
                 ) && 
                 (
+                    this.Entrypoint == input.Entrypoint ||
+                    (this.Entrypoint != null &&
+                    this.Entrypoint.Equals(input.Entrypoint))
+                ) && 
+                (
                     this.RunArgs == input.RunArgs ||
                     this.RunArgs != null &&
                     input.RunArgs != null &&
                     this.RunArgs.SequenceEqual(input.RunArgs)
+                ) && 
+                (
+                    this.Dependencies == input.Dependencies ||
+                    this.Dependencies != null &&
+                    input.Dependencies != null &&
+                    this.Dependencies.SequenceEqual(input.Dependencies)
                 );
         }
 
@@ -162,12 +215,18 @@ namespace Com.Cosmotech.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.EnvVars != null)
                     hashCode = hashCode * 59 + this.EnvVars.GetHashCode();
                 if (this.Image != null)
                     hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Entrypoint != null)
+                    hashCode = hashCode * 59 + this.Entrypoint.GetHashCode();
                 if (this.RunArgs != null)
                     hashCode = hashCode * 59 + this.RunArgs.GetHashCode();
+                if (this.Dependencies != null)
+                    hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
                 return hashCode;
             }
         }

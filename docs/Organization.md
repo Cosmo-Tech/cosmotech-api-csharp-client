@@ -6,7 +6,7 @@ an Organization
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the Organization unique identifier | [optional] [readonly] 
-**Name** | **string** | the Organization name | 
+**Name** | **string** | the Organization name | [optional] 
 **OwnerId** | **string** | the Owner User Id | [optional] [readonly] 
 **Users** | [**List&lt;OrganizationUser&gt;**](OrganizationUser.md) |  | [optional] 
 **Services** | [**OrganizationServices**](OrganizationServices.md) |  | [optional] 

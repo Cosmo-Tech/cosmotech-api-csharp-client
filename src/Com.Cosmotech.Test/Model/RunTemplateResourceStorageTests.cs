@@ -73,12 +73,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'ResourcePath'
         }
         /// <summary>
-        /// Test the property 'CustomUri'
+        /// Test the property 'StorageOptions'
         /// </summary>
         [Fact]
-        public void CustomUriTest()
+        public void StorageOptionsTest()
         {
-            // TODO unit test for the property 'CustomUri'
+            // TODO unit test for the property 'StorageOptions'
         }
 
     }

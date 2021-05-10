@@ -81,14 +81,6 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'VarType'
         }
         /// <summary>
-        /// Test the property 'Order'
-        /// </summary>
-        [Fact]
-        public void OrderTest()
-        {
-            // TODO unit test for the property 'Order'
-        }
-        /// <summary>
         /// Test the property 'Options'
         /// </summary>
         [Fact]

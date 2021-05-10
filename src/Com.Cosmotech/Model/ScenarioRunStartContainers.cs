@@ -34,25 +34,28 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRunStartContainers" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected ScenarioRunStartContainers() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScenarioRunStartContainers" /> class.
+        /// </summary>
+        /// <param name="generateName">the base name for workflow name generation.</param>
         /// <param name="nodeLabel">the node label request.</param>
-        /// <param name="fetchScenarioParametersContainer">fetchScenarioParametersContainer.</param>
-        /// <param name="applyParametersContainer">applyParametersContainer.</param>
-        /// <param name="validateDataContainer">validateDataContainer.</param>
-        /// <param name="sendDataWarehouseContainer">sendDataWarehouseContainer.</param>
-        /// <param name="preRunContainer">preRunContainer.</param>
-        /// <param name="runContainer">runContainer.</param>
-        /// <param name="postRunContainer">postRunContainer.</param>
-        public ScenarioRunStartContainers(string nodeLabel = default(string), ScenarioRunContainer fetchScenarioParametersContainer = default(ScenarioRunContainer), ScenarioRunContainer applyParametersContainer = default(ScenarioRunContainer), ScenarioRunContainer validateDataContainer = default(ScenarioRunContainer), ScenarioRunContainer sendDataWarehouseContainer = default(ScenarioRunContainer), ScenarioRunContainer preRunContainer = default(ScenarioRunContainer), ScenarioRunContainer runContainer = default(ScenarioRunContainer), ScenarioRunContainer postRunContainer = default(ScenarioRunContainer))
+        /// <param name="containers">the containers map with name and ScenarioRunContainer (required).</param>
+        public ScenarioRunStartContainers(string generateName = default(string), string nodeLabel = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
         {
+            // to ensure "containers" is required (not null)
+            this.Containers = containers ?? throw new ArgumentNullException("containers is a required property for ScenarioRunStartContainers and cannot be null");
+            this.GenerateName = generateName;
             this.NodeLabel = nodeLabel;
-            this.FetchScenarioParametersContainer = fetchScenarioParametersContainer;
-            this.ApplyParametersContainer = applyParametersContainer;
-            this.ValidateDataContainer = validateDataContainer;
-            this.SendDataWarehouseContainer = sendDataWarehouseContainer;
-            this.PreRunContainer = preRunContainer;
-            this.RunContainer = runContainer;
-            this.PostRunContainer = postRunContainer;
         }
+
+        /// <summary>
+        /// the base name for workflow name generation
+        /// </summary>
+        /// <value>the base name for workflow name generation</value>
+        [DataMember(Name = "generateName", EmitDefaultValue = false)]
+        public string GenerateName { get; set; }
 
         /// <summary>
         /// the node label request
@@ -62,62 +65,11 @@ namespace Com.Cosmotech.Model
         public string NodeLabel { get; set; }
 
         /// <summary>
-        /// the containers which fetch the Scenario Datasets
+        /// the containers map with name and ScenarioRunContainer
         /// </summary>
-        /// <value>the containers which fetch the Scenario Datasets</value>
-        [DataMember(Name = "fetchDatasetContainers", EmitDefaultValue = false)]
-        public List<ScenarioRunContainer> FetchDatasetContainers { get; private set; }
-
-        /// <summary>
-        /// Returns false as FetchDatasetContainers should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeFetchDatasetContainers()
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// Gets or Sets FetchScenarioParametersContainer
-        /// </summary>
-        [DataMember(Name = "fetchScenarioParametersContainer", EmitDefaultValue = false)]
-        public ScenarioRunContainer FetchScenarioParametersContainer { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ApplyParametersContainer
-        /// </summary>
-        [DataMember(Name = "applyParametersContainer", EmitDefaultValue = false)]
-        public ScenarioRunContainer ApplyParametersContainer { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ValidateDataContainer
-        /// </summary>
-        [DataMember(Name = "validateDataContainer", EmitDefaultValue = false)]
-        public ScenarioRunContainer ValidateDataContainer { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SendDataWarehouseContainer
-        /// </summary>
-        [DataMember(Name = "sendDataWarehouseContainer", EmitDefaultValue = false)]
-        public ScenarioRunContainer SendDataWarehouseContainer { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PreRunContainer
-        /// </summary>
-        [DataMember(Name = "preRunContainer", EmitDefaultValue = false)]
-        public ScenarioRunContainer PreRunContainer { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RunContainer
-        /// </summary>
-        [DataMember(Name = "runContainer", EmitDefaultValue = false)]
-        public ScenarioRunContainer RunContainer { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PostRunContainer
-        /// </summary>
-        [DataMember(Name = "postRunContainer", EmitDefaultValue = false)]
-        public ScenarioRunContainer PostRunContainer { get; set; }
+        /// <value>the containers map with name and ScenarioRunContainer</value>
+        [DataMember(Name = "containers", IsRequired = true, EmitDefaultValue = false)]
+        public List<ScenarioRunContainer> Containers { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -127,15 +79,9 @@ namespace Com.Cosmotech.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ScenarioRunStartContainers {\n");
+            sb.Append("  GenerateName: ").Append(GenerateName).Append("\n");
             sb.Append("  NodeLabel: ").Append(NodeLabel).Append("\n");
-            sb.Append("  FetchDatasetContainers: ").Append(FetchDatasetContainers).Append("\n");
-            sb.Append("  FetchScenarioParametersContainer: ").Append(FetchScenarioParametersContainer).Append("\n");
-            sb.Append("  ApplyParametersContainer: ").Append(ApplyParametersContainer).Append("\n");
-            sb.Append("  ValidateDataContainer: ").Append(ValidateDataContainer).Append("\n");
-            sb.Append("  SendDataWarehouseContainer: ").Append(SendDataWarehouseContainer).Append("\n");
-            sb.Append("  PreRunContainer: ").Append(PreRunContainer).Append("\n");
-            sb.Append("  RunContainer: ").Append(RunContainer).Append("\n");
-            sb.Append("  PostRunContainer: ").Append(PostRunContainer).Append("\n");
+            sb.Append("  Containers: ").Append(Containers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,50 +117,20 @@ namespace Com.Cosmotech.Model
 
             return 
                 (
+                    this.GenerateName == input.GenerateName ||
+                    (this.GenerateName != null &&
+                    this.GenerateName.Equals(input.GenerateName))
+                ) && 
+                (
                     this.NodeLabel == input.NodeLabel ||
                     (this.NodeLabel != null &&
                     this.NodeLabel.Equals(input.NodeLabel))
                 ) && 
                 (
-                    this.FetchDatasetContainers == input.FetchDatasetContainers ||
-                    this.FetchDatasetContainers != null &&
-                    input.FetchDatasetContainers != null &&
-                    this.FetchDatasetContainers.SequenceEqual(input.FetchDatasetContainers)
-                ) && 
-                (
-                    this.FetchScenarioParametersContainer == input.FetchScenarioParametersContainer ||
-                    (this.FetchScenarioParametersContainer != null &&
-                    this.FetchScenarioParametersContainer.Equals(input.FetchScenarioParametersContainer))
-                ) && 
-                (
-                    this.ApplyParametersContainer == input.ApplyParametersContainer ||
-                    (this.ApplyParametersContainer != null &&
-                    this.ApplyParametersContainer.Equals(input.ApplyParametersContainer))
-                ) && 
-                (
-                    this.ValidateDataContainer == input.ValidateDataContainer ||
-                    (this.ValidateDataContainer != null &&
-                    this.ValidateDataContainer.Equals(input.ValidateDataContainer))
-                ) && 
-                (
-                    this.SendDataWarehouseContainer == input.SendDataWarehouseContainer ||
-                    (this.SendDataWarehouseContainer != null &&
-                    this.SendDataWarehouseContainer.Equals(input.SendDataWarehouseContainer))
-                ) && 
-                (
-                    this.PreRunContainer == input.PreRunContainer ||
-                    (this.PreRunContainer != null &&
-                    this.PreRunContainer.Equals(input.PreRunContainer))
-                ) && 
-                (
-                    this.RunContainer == input.RunContainer ||
-                    (this.RunContainer != null &&
-                    this.RunContainer.Equals(input.RunContainer))
-                ) && 
-                (
-                    this.PostRunContainer == input.PostRunContainer ||
-                    (this.PostRunContainer != null &&
-                    this.PostRunContainer.Equals(input.PostRunContainer))
+                    this.Containers == input.Containers ||
+                    this.Containers != null &&
+                    input.Containers != null &&
+                    this.Containers.SequenceEqual(input.Containers)
                 );
         }
 
@@ -227,24 +143,12 @@ namespace Com.Cosmotech.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.GenerateName != null)
+                    hashCode = hashCode * 59 + this.GenerateName.GetHashCode();
                 if (this.NodeLabel != null)
                     hashCode = hashCode * 59 + this.NodeLabel.GetHashCode();
-                if (this.FetchDatasetContainers != null)
-                    hashCode = hashCode * 59 + this.FetchDatasetContainers.GetHashCode();
-                if (this.FetchScenarioParametersContainer != null)
-                    hashCode = hashCode * 59 + this.FetchScenarioParametersContainer.GetHashCode();
-                if (this.ApplyParametersContainer != null)
-                    hashCode = hashCode * 59 + this.ApplyParametersContainer.GetHashCode();
-                if (this.ValidateDataContainer != null)
-                    hashCode = hashCode * 59 + this.ValidateDataContainer.GetHashCode();
-                if (this.SendDataWarehouseContainer != null)
-                    hashCode = hashCode * 59 + this.SendDataWarehouseContainer.GetHashCode();
-                if (this.PreRunContainer != null)
-                    hashCode = hashCode * 59 + this.PreRunContainer.GetHashCode();
-                if (this.RunContainer != null)
-                    hashCode = hashCode * 59 + this.RunContainer.GetHashCode();
-                if (this.PostRunContainer != null)
-                    hashCode = hashCode * 59 + this.PostRunContainer.GetHashCode();
+                if (this.Containers != null)
+                    hashCode = hashCode * 59 + this.Containers.GetHashCode();
                 return hashCode;
             }
         }

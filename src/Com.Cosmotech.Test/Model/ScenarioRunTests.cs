@@ -65,12 +65,20 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
-        /// Test the property 'JobId'
+        /// Test the property 'WorkflowId'
         /// </summary>
         [Fact]
-        public void JobIdTest()
+        public void WorkflowIdTest()
         {
-            // TODO unit test for the property 'JobId'
+            // TODO unit test for the property 'WorkflowId'
+        }
+        /// <summary>
+        /// Test the property 'WorkflowName'
+        /// </summary>
+        [Fact]
+        public void WorkflowNameTest()
+        {
+            // TODO unit test for the property 'WorkflowName'
         }
         /// <summary>
         /// Test the property 'OwnerId'

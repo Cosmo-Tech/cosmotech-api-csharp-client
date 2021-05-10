@@ -62,24 +62,17 @@ namespace Com.Cosmotech.Model
         /// the list of Platform roles
         /// </summary>
         /// <value>the list of Platform roles</value>
-        [DataMember(Name = "platformRoles", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "platformRoles", EmitDefaultValue = false)]
         public List<PlatformRolesEnum> PlatformRoles { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="User" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected User() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="User" /> class.
-        /// </summary>
-        /// <param name="name">the User name (required).</param>
-        /// <param name="platformRoles">the list of Platform roles (required).</param>
+        /// <param name="name">the User name.</param>
+        /// <param name="platformRoles">the list of Platform roles.</param>
         public User(string name = default(string), List<PlatformRolesEnum> platformRoles = default(List<PlatformRolesEnum>))
         {
-            // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name is a required property for User and cannot be null");
-            // to ensure "platformRoles" is required (not null)
-            this.PlatformRoles = platformRoles ?? throw new ArgumentNullException("platformRoles is a required property for User and cannot be null");
+            this.Name = name;
+            this.PlatformRoles = platformRoles;
         }
 
         /// <summary>
@@ -102,7 +95,7 @@ namespace Com.Cosmotech.Model
         /// the User name
         /// </summary>
         /// <value>the User name</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>

@@ -1,18 +1,18 @@
 # Com.Cosmotech.Api.UserApi
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *https://api.azure.cosmo-platform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AuthorizeUser**](UserApi.md#authorizeuser) | **GET** /oauth2/authorize | Authorize an User with OAuth2. Delegated to configured OAuth2 service
 [**FindAllUsers**](UserApi.md#findallusers) | **GET** /users | List all Users
 [**FindUserById**](UserApi.md#finduserbyid) | **GET** /users/{user_id} | Get the details of an user
-[**GetCurrentUser**](UserApi.md#getcurrentuser) | **GET** /users/me | Get the details of an user
-[**GetOrganizationCurrentUser**](UserApi.md#getorganizationcurrentuser) | **GET** /organizations/{organization_id}/me | Get the details of an user with roles for an Organization
-[**GetWorkspaceCurrentUser**](UserApi.md#getworkspacecurrentuser) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/me | Get the details of an user with roles for a Workspace
+[**GetCurrentUser**](UserApi.md#getcurrentuser) | **GET** /users/me | Get the details of the logged-in User
+[**GetOrganizationCurrentUser**](UserApi.md#getorganizationcurrentuser) | **GET** /organizations/{organization_id}/me | Get the details of a logged-in User with roles for an Organization
+[**GetWorkspaceCurrentUser**](UserApi.md#getworkspacecurrentuser) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/me | Get the details of the logged-in user with roles for a Workspace
 [**RegisterUser**](UserApi.md#registeruser) | **POST** /users | Register a new user
 [**UnregisterUser**](UserApi.md#unregisteruser) | **DELETE** /users/{user_id} | Unregister an user
-[**UpdateUser**](UserApi.md#updateuser) | **PATCH** /users/{user_id} | Update an user
+[**UpdateUser**](UserApi.md#updateuser) | **PATCH** /users/{user_id} | Update a User
 
 
 <a name="authorizeuser"></a>
@@ -36,7 +36,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -103,7 +103,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -171,7 +171,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 # **GetCurrentUser**
 > User GetCurrentUser ()
 
-Get the details of an user
+Get the details of the logged-in User
 
 ### Example
 ```csharp
@@ -244,7 +244,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -252,7 +252,7 @@ namespace Example
 
             try
             {
-                // Get the details of an user
+                // Get the details of the logged-in User
                 User result = apiInstance.GetCurrentUser();
                 Debug.WriteLine(result);
             }
@@ -288,7 +288,6 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | the User details |  -  |
-| **404** | the User specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -296,7 +295,7 @@ This endpoint does not need any parameter.
 # **GetOrganizationCurrentUser**
 > User GetOrganizationCurrentUser (string organizationId)
 
-Get the details of an user with roles for an Organization
+Get the details of a logged-in User with roles for an Organization
 
 ### Example
 ```csharp
@@ -313,7 +312,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -322,7 +321,7 @@ namespace Example
 
             try
             {
-                // Get the details of an user with roles for an Organization
+                // Get the details of a logged-in User with roles for an Organization
                 User result = apiInstance.GetOrganizationCurrentUser(organizationId);
                 Debug.WriteLine(result);
             }
@@ -361,7 +360,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | the User details |  -  |
-| **404** | the User specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -369,7 +367,7 @@ Name | Type | Description  | Notes
 # **GetWorkspaceCurrentUser**
 > User GetWorkspaceCurrentUser (string organizationId, string workspaceId)
 
-Get the details of an user with roles for a Workspace
+Get the details of the logged-in user with roles for a Workspace
 
 ### Example
 ```csharp
@@ -386,7 +384,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -396,7 +394,7 @@ namespace Example
 
             try
             {
-                // Get the details of an user with roles for a Workspace
+                // Get the details of the logged-in user with roles for a Workspace
                 User result = apiInstance.GetWorkspaceCurrentUser(organizationId, workspaceId);
                 Debug.WriteLine(result);
             }
@@ -436,7 +434,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | the User details |  -  |
-| **404** | the User specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -461,7 +458,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -501,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
@@ -515,7 +512,7 @@ Name | Type | Description  | Notes
 
 <a name="unregisteruser"></a>
 # **UnregisterUser**
-> User UnregisterUser (string userId)
+> void UnregisterUser (string userId)
 
 Unregister an user
 
@@ -534,7 +531,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -544,8 +541,7 @@ namespace Example
             try
             {
                 // Unregister an user
-                User result = apiInstance.UnregisterUser(userId);
-                Debug.WriteLine(result);
+                apiInstance.UnregisterUser(userId);
             }
             catch (ApiException  e)
             {
@@ -566,7 +562,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+void (empty response body)
 
 ### Authorization
 
@@ -575,14 +571,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the user details |  -  |
-| **400** | Bad request |  -  |
+| **204** | Request succeeded |  -  |
 | **404** | the User specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -591,7 +586,7 @@ Name | Type | Description  | Notes
 # **UpdateUser**
 > User UpdateUser (string userId, User user)
 
-Update an user
+Update a User
 
 ### Example
 ```csharp
@@ -608,17 +603,17 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UserApi(config);
             var userId = userId_example;  // string | the User identifier
-            var user = new User(); // User | the new User details. Organization membership is handled in Organzation service.
+            var user = new User(); // User | the new User details. Organization membership is handled via the /organizations endpoint.
 
             try
             {
-                // Update an user
+                // Update a User
                 User result = apiInstance.UpdateUser(userId, user);
                 Debug.WriteLine(result);
             }
@@ -638,7 +633,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string**| the User identifier | 
- **user** | [**User**](User.md)| the new User details. Organization membership is handled in Organzation service. | 
+ **user** | [**User**](User.md)| the new User details. Organization membership is handled via the /organizations endpoint. | 
 
 ### Return type
 
@@ -650,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 

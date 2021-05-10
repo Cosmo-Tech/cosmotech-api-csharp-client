@@ -34,24 +34,9 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRunLogs" /> class.
         /// </summary>
-        /// <param name="options">options.</param>
-        /// <param name="fetchScenarioParametersLog">fetchScenarioParametersLog.</param>
-        /// <param name="applyParametersLogs">applyParametersLogs.</param>
-        /// <param name="validateDataLogs">validateDataLogs.</param>
-        /// <param name="sendDataWarehouseLogs">sendDataWarehouseLogs.</param>
-        /// <param name="preRunLogs">preRunLogs.</param>
-        /// <param name="runLogs">runLogs.</param>
-        /// <param name="postRunLogs">postRunLogs.</param>
-        public ScenarioRunLogs(ScenarioRunLogsOptions options = default(ScenarioRunLogsOptions), ScenarioRunContainerLogs fetchScenarioParametersLog = default(ScenarioRunContainerLogs), ScenarioRunContainerLogs applyParametersLogs = default(ScenarioRunContainerLogs), ScenarioRunContainerLogs validateDataLogs = default(ScenarioRunContainerLogs), ScenarioRunContainerLogs sendDataWarehouseLogs = default(ScenarioRunContainerLogs), ScenarioRunContainerLogs preRunLogs = default(ScenarioRunContainerLogs), ScenarioRunContainerLogs runLogs = default(ScenarioRunContainerLogs), ScenarioRunContainerLogs postRunLogs = default(ScenarioRunContainerLogs))
+        [JsonConstructorAttribute]
+        public ScenarioRunLogs()
         {
-            this.Options = options;
-            this.FetchScenarioParametersLog = fetchScenarioParametersLog;
-            this.ApplyParametersLogs = applyParametersLogs;
-            this.ValidateDataLogs = validateDataLogs;
-            this.SendDataWarehouseLogs = sendDataWarehouseLogs;
-            this.PreRunLogs = preRunLogs;
-            this.RunLogs = runLogs;
-            this.PostRunLogs = postRunLogs;
         }
 
         /// <summary>
@@ -71,68 +56,20 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// Gets or Sets Options
+        /// the container map of logs
         /// </summary>
-        [DataMember(Name = "options", EmitDefaultValue = false)]
-        public ScenarioRunLogsOptions Options { get; set; }
+        /// <value>the container map of logs</value>
+        [DataMember(Name = "containers", EmitDefaultValue = false)]
+        public Dictionary<string, ScenarioRunContainerLogs> Containers { get; private set; }
 
         /// <summary>
-        /// logs for the containers which fetch the Scenario Datasets
-        /// </summary>
-        /// <value>logs for the containers which fetch the Scenario Datasets</value>
-        [DataMember(Name = "fetchDatasetLogs", EmitDefaultValue = false)]
-        public List<ScenarioRunContainerLogs> FetchDatasetLogs { get; private set; }
-
-        /// <summary>
-        /// Returns false as FetchDatasetLogs should not be serialized given that it's read-only.
+        /// Returns false as Containers should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeFetchDatasetLogs()
+        public bool ShouldSerializeContainers()
         {
             return false;
         }
-
-        /// <summary>
-        /// Gets or Sets FetchScenarioParametersLog
-        /// </summary>
-        [DataMember(Name = "fetchScenarioParametersLog", EmitDefaultValue = false)]
-        public ScenarioRunContainerLogs FetchScenarioParametersLog { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ApplyParametersLogs
-        /// </summary>
-        [DataMember(Name = "applyParametersLogs", EmitDefaultValue = false)]
-        public ScenarioRunContainerLogs ApplyParametersLogs { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ValidateDataLogs
-        /// </summary>
-        [DataMember(Name = "validateDataLogs", EmitDefaultValue = false)]
-        public ScenarioRunContainerLogs ValidateDataLogs { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SendDataWarehouseLogs
-        /// </summary>
-        [DataMember(Name = "sendDataWarehouseLogs", EmitDefaultValue = false)]
-        public ScenarioRunContainerLogs SendDataWarehouseLogs { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PreRunLogs
-        /// </summary>
-        [DataMember(Name = "preRunLogs", EmitDefaultValue = false)]
-        public ScenarioRunContainerLogs PreRunLogs { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RunLogs
-        /// </summary>
-        [DataMember(Name = "runLogs", EmitDefaultValue = false)]
-        public ScenarioRunContainerLogs RunLogs { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PostRunLogs
-        /// </summary>
-        [DataMember(Name = "postRunLogs", EmitDefaultValue = false)]
-        public ScenarioRunContainerLogs PostRunLogs { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -143,15 +80,7 @@ namespace Com.Cosmotech.Model
             var sb = new StringBuilder();
             sb.Append("class ScenarioRunLogs {\n");
             sb.Append("  ScenariorunId: ").Append(ScenariorunId).Append("\n");
-            sb.Append("  Options: ").Append(Options).Append("\n");
-            sb.Append("  FetchDatasetLogs: ").Append(FetchDatasetLogs).Append("\n");
-            sb.Append("  FetchScenarioParametersLog: ").Append(FetchScenarioParametersLog).Append("\n");
-            sb.Append("  ApplyParametersLogs: ").Append(ApplyParametersLogs).Append("\n");
-            sb.Append("  ValidateDataLogs: ").Append(ValidateDataLogs).Append("\n");
-            sb.Append("  SendDataWarehouseLogs: ").Append(SendDataWarehouseLogs).Append("\n");
-            sb.Append("  PreRunLogs: ").Append(PreRunLogs).Append("\n");
-            sb.Append("  RunLogs: ").Append(RunLogs).Append("\n");
-            sb.Append("  PostRunLogs: ").Append(PostRunLogs).Append("\n");
+            sb.Append("  Containers: ").Append(Containers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -192,50 +121,10 @@ namespace Com.Cosmotech.Model
                     this.ScenariorunId.Equals(input.ScenariorunId))
                 ) && 
                 (
-                    this.Options == input.Options ||
-                    (this.Options != null &&
-                    this.Options.Equals(input.Options))
-                ) && 
-                (
-                    this.FetchDatasetLogs == input.FetchDatasetLogs ||
-                    this.FetchDatasetLogs != null &&
-                    input.FetchDatasetLogs != null &&
-                    this.FetchDatasetLogs.SequenceEqual(input.FetchDatasetLogs)
-                ) && 
-                (
-                    this.FetchScenarioParametersLog == input.FetchScenarioParametersLog ||
-                    (this.FetchScenarioParametersLog != null &&
-                    this.FetchScenarioParametersLog.Equals(input.FetchScenarioParametersLog))
-                ) && 
-                (
-                    this.ApplyParametersLogs == input.ApplyParametersLogs ||
-                    (this.ApplyParametersLogs != null &&
-                    this.ApplyParametersLogs.Equals(input.ApplyParametersLogs))
-                ) && 
-                (
-                    this.ValidateDataLogs == input.ValidateDataLogs ||
-                    (this.ValidateDataLogs != null &&
-                    this.ValidateDataLogs.Equals(input.ValidateDataLogs))
-                ) && 
-                (
-                    this.SendDataWarehouseLogs == input.SendDataWarehouseLogs ||
-                    (this.SendDataWarehouseLogs != null &&
-                    this.SendDataWarehouseLogs.Equals(input.SendDataWarehouseLogs))
-                ) && 
-                (
-                    this.PreRunLogs == input.PreRunLogs ||
-                    (this.PreRunLogs != null &&
-                    this.PreRunLogs.Equals(input.PreRunLogs))
-                ) && 
-                (
-                    this.RunLogs == input.RunLogs ||
-                    (this.RunLogs != null &&
-                    this.RunLogs.Equals(input.RunLogs))
-                ) && 
-                (
-                    this.PostRunLogs == input.PostRunLogs ||
-                    (this.PostRunLogs != null &&
-                    this.PostRunLogs.Equals(input.PostRunLogs))
+                    this.Containers == input.Containers ||
+                    this.Containers != null &&
+                    input.Containers != null &&
+                    this.Containers.SequenceEqual(input.Containers)
                 );
         }
 
@@ -250,24 +139,8 @@ namespace Com.Cosmotech.Model
                 int hashCode = 41;
                 if (this.ScenariorunId != null)
                     hashCode = hashCode * 59 + this.ScenariorunId.GetHashCode();
-                if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
-                if (this.FetchDatasetLogs != null)
-                    hashCode = hashCode * 59 + this.FetchDatasetLogs.GetHashCode();
-                if (this.FetchScenarioParametersLog != null)
-                    hashCode = hashCode * 59 + this.FetchScenarioParametersLog.GetHashCode();
-                if (this.ApplyParametersLogs != null)
-                    hashCode = hashCode * 59 + this.ApplyParametersLogs.GetHashCode();
-                if (this.ValidateDataLogs != null)
-                    hashCode = hashCode * 59 + this.ValidateDataLogs.GetHashCode();
-                if (this.SendDataWarehouseLogs != null)
-                    hashCode = hashCode * 59 + this.SendDataWarehouseLogs.GetHashCode();
-                if (this.PreRunLogs != null)
-                    hashCode = hashCode * 59 + this.PreRunLogs.GetHashCode();
-                if (this.RunLogs != null)
-                    hashCode = hashCode * 59 + this.RunLogs.GetHashCode();
-                if (this.PostRunLogs != null)
-                    hashCode = hashCode * 59 + this.PostRunLogs.GetHashCode();
+                if (this.Containers != null)
+                    hashCode = hashCode * 59 + this.Containers.GetHashCode();
                 return hashCode;
             }
         }

@@ -6,7 +6,8 @@ a ScenarioRun with only base properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the ScenarioRun | [optional] [readonly] 
-**JobId** | **string** | the Platform compute cluster Job Id | [optional] [readonly] 
+**WorkflowId** | **string** | the Cosmo Tech compute cluster Argo Workflow Id to search | [optional] 
+**WorkflowName** | **string** | the Cosmo Tech compute cluster Argo Workflow Name | [optional] 
 **OwnerId** | **string** | the user id which own this scenariorun | [optional] [readonly] 
 **WorkspaceId** | **string** | the Workspace Id | [optional] [readonly] 
 **WorkspaceName** | **string** | the Workspace name | [optional] [readonly] 

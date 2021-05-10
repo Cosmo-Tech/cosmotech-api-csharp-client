@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the connector parameter id | 
 **Label** | **string** | the list of translated parameter group labels | 
-**ValueType** | **string** | the parameter value type | 
+**ValueType** | **string** | the parameter value type | [optional] 
 **Options** | **List&lt;string&gt;** | the list of available and valid values for the parameter | [optional] 
 **Default** | **string** | the default value | [optional] 
 **EnvVar** | **string** | associated environment variable in connector image | [optional] 

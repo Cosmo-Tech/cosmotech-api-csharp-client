@@ -114,16 +114,18 @@ namespace Com.Cosmotech.Model
         /// <param name="workspaceId">the Workspace Id to search.</param>
         /// <param name="scenarioId">the Scenario Id to search.</param>
         /// <param name="state">the state to search.</param>
-        /// <param name="jobId">the Cosmo Tech compute cluster Job Id to search.</param>
+        /// <param name="workflowId">the Cosmo Tech compute cluster Argo Workflow Id to search.</param>
+        /// <param name="workflowName">the Cosmo Tech compute cluster Argo Workflow Name.</param>
         /// <param name="ownerId">the owner Id to search.</param>
-        public ScenarioRunSearch(string solutionId = default(string), string runTemplateId = default(string), string workspaceId = default(string), string scenarioId = default(string), StateEnum? state = default(StateEnum?), string jobId = default(string), string ownerId = default(string))
+        public ScenarioRunSearch(string solutionId = default(string), string runTemplateId = default(string), string workspaceId = default(string), string scenarioId = default(string), StateEnum? state = default(StateEnum?), string workflowId = default(string), string workflowName = default(string), string ownerId = default(string))
         {
             this.SolutionId = solutionId;
             this.RunTemplateId = runTemplateId;
             this.WorkspaceId = workspaceId;
             this.ScenarioId = scenarioId;
             this.State = state;
-            this.JobId = jobId;
+            this.WorkflowId = workflowId;
+            this.WorkflowName = workflowName;
             this.OwnerId = ownerId;
         }
 
@@ -156,11 +158,18 @@ namespace Com.Cosmotech.Model
         public string ScenarioId { get; set; }
 
         /// <summary>
-        /// the Cosmo Tech compute cluster Job Id to search
+        /// the Cosmo Tech compute cluster Argo Workflow Id to search
         /// </summary>
-        /// <value>the Cosmo Tech compute cluster Job Id to search</value>
-        [DataMember(Name = "jobId", EmitDefaultValue = false)]
-        public string JobId { get; set; }
+        /// <value>the Cosmo Tech compute cluster Argo Workflow Id to search</value>
+        [DataMember(Name = "workflowId", EmitDefaultValue = false)]
+        public string WorkflowId { get; set; }
+
+        /// <summary>
+        /// the Cosmo Tech compute cluster Argo Workflow Name
+        /// </summary>
+        /// <value>the Cosmo Tech compute cluster Argo Workflow Name</value>
+        [DataMember(Name = "workflowName", EmitDefaultValue = false)]
+        public string WorkflowName { get; set; }
 
         /// <summary>
         /// the owner Id to search
@@ -182,7 +191,8 @@ namespace Com.Cosmotech.Model
             sb.Append("  WorkspaceId: ").Append(WorkspaceId).Append("\n");
             sb.Append("  ScenarioId: ").Append(ScenarioId).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  JobId: ").Append(JobId).Append("\n");
+            sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("  WorkflowName: ").Append(WorkflowName).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -243,9 +253,14 @@ namespace Com.Cosmotech.Model
                     this.State.Equals(input.State)
                 ) && 
                 (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
+                    this.WorkflowId == input.WorkflowId ||
+                    (this.WorkflowId != null &&
+                    this.WorkflowId.Equals(input.WorkflowId))
+                ) && 
+                (
+                    this.WorkflowName == input.WorkflowName ||
+                    (this.WorkflowName != null &&
+                    this.WorkflowName.Equals(input.WorkflowName))
                 ) && 
                 (
                     this.OwnerId == input.OwnerId ||
@@ -272,8 +287,10 @@ namespace Com.Cosmotech.Model
                 if (this.ScenarioId != null)
                     hashCode = hashCode * 59 + this.ScenarioId.GetHashCode();
                 hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.WorkflowId != null)
+                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                if (this.WorkflowName != null)
+                    hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
                 if (this.OwnerId != null)
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
                 return hashCode;

@@ -27,6 +27,72 @@ namespace Com.Cosmotech.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Add Parameter Groups. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
+        /// <returns>List&lt;RunTemplateParameterGroup&gt;</returns>
+        List<RunTemplateParameterGroup> AddOrReplaceParameterGroups(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup);
+
+        /// <summary>
+        /// Add Parameter Groups. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
+        /// <returns>ApiResponse of List&lt;RunTemplateParameterGroup&gt;</returns>
+        ApiResponse<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup);
+        /// <summary>
+        /// Add Parameters. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameter">the Parameters</param>
+        /// <returns>List&lt;RunTemplateParameter&gt;</returns>
+        List<RunTemplateParameter> AddOrReplaceParameters(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter);
+
+        /// <summary>
+        /// Add Parameters. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameter">the Parameters</param>
+        /// <returns>ApiResponse of List&lt;RunTemplateParameter&gt;</returns>
+        ApiResponse<List<RunTemplateParameter>> AddOrReplaceParametersWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter);
+        /// <summary>
+        /// Add Run Templates. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplate">the Run Templates</param>
+        /// <returns>List&lt;RunTemplate&gt;</returns>
+        List<RunTemplate> AddOrReplaceRunTemplates(string organizationId, string solutionId, List<RunTemplate> runTemplate);
+
+        /// <summary>
+        /// Add Run Templates. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplate">the Run Templates</param>
+        /// <returns>ApiResponse of List&lt;RunTemplate&gt;</returns>
+        ApiResponse<List<RunTemplate>> AddOrReplaceRunTemplatesWithHttpInfo(string organizationId, string solutionId, List<RunTemplate> runTemplate);
+        /// <summary>
         /// Register a new solution
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -52,8 +118,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <returns>Solution</returns>
-        Solution DeleteSolution(string organizationId, string solutionId);
+        /// <returns></returns>
+        void DeleteSolution(string organizationId, string solutionId);
 
         /// <summary>
         /// Delete a solution
@@ -64,8 +130,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <returns>ApiResponse of Solution</returns>
-        ApiResponse<Solution> DeleteSolutionWithHttpInfo(string organizationId, string solutionId);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteSolutionWithHttpInfo(string organizationId, string solutionId);
         /// <summary>
         /// List all Solutions
         /// </summary>
@@ -105,6 +171,66 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Solution</returns>
         ApiResponse<Solution> FindSolutionByIdWithHttpInfo(string organizationId, string solutionId);
         /// <summary>
+        /// Remove all Run Templates from the Solution specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns></returns>
+        void RemoveAllRunTemplates(string organizationId, string solutionId);
+
+        /// <summary>
+        /// Remove all Run Templates from the Solution specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveAllRunTemplatesWithHttpInfo(string organizationId, string solutionId);
+        /// <summary>
+        /// Remove all Parameter Groups from the Solution specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns></returns>
+        void RemoveAllSolutionParameterGroups(string organizationId, string solutionId);
+
+        /// <summary>
+        /// Remove all Parameter Groups from the Solution specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveAllSolutionParameterGroupsWithHttpInfo(string organizationId, string solutionId);
+        /// <summary>
+        /// Remove all Parameters from the Solution specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns></returns>
+        void RemoveAllSolutionParameters(string organizationId, string solutionId);
+
+        /// <summary>
+        /// Remove all Parameters from the Solution specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveAllSolutionParametersWithHttpInfo(string organizationId, string solutionId);
+        /// <summary>
         /// Update a solution
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -127,25 +253,31 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Solution</returns>
         ApiResponse<Solution> UpdateSolutionWithHttpInfo(string organizationId, string solutionId, Solution solution);
         /// <summary>
-        /// Upload and register a new solution
+        /// Upload a Run Template step handler zip file
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="body">the Solution to upload and register</param>
-        /// <returns>Solution</returns>
-        Solution Upload(string organizationId, System.IO.Stream body);
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler id identifier</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns></returns>
+        void UploadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = default(System.IO.Stream));
 
         /// <summary>
-        /// Upload and register a new solution
+        /// Upload a Run Template step handler zip file
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="body">the Solution to upload and register</param>
-        /// <returns>ApiResponse of Solution</returns>
-        ApiResponse<Solution> UploadWithHttpInfo(string organizationId, System.IO.Stream body);
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler id identifier</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> UploadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = default(System.IO.Stream));
         #endregion Synchronous Operations
     }
 
@@ -155,6 +287,87 @@ namespace Com.Cosmotech.Api
     public interface ISolutionApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Add Parameter Groups. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;RunTemplateParameterGroup&gt;</returns>
+        System.Threading.Tasks.Task<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Add Parameter Groups. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;RunTemplateParameterGroup&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<RunTemplateParameterGroup>>> AddOrReplaceParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Add Parameters. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameter">the Parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;RunTemplateParameter&gt;</returns>
+        System.Threading.Tasks.Task<List<RunTemplateParameter>> AddOrReplaceParametersAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Add Parameters. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameter">the Parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;RunTemplateParameter&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<RunTemplateParameter>>> AddOrReplaceParametersWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Add Run Templates. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplate">the Run Templates</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;RunTemplate&gt;</returns>
+        System.Threading.Tasks.Task<List<RunTemplate>> AddOrReplaceRunTemplatesAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Add Run Templates. Any item with the same ID will be overwritten
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplate">the Run Templates</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;RunTemplate&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<RunTemplate>>> AddOrReplaceRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Register a new solution
         /// </summary>
@@ -190,8 +403,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Solution</returns>
-        System.Threading.Tasks.Task<Solution> DeleteSolutionAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteSolutionAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a solution
@@ -203,8 +416,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Solution)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Solution>> DeleteSolutionWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSolutionWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Solutions
         /// </summary>
@@ -254,6 +467,81 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (Solution)</returns>
         System.Threading.Tasks.Task<ApiResponse<Solution>> FindSolutionByIdWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Remove all Run Templates from the Solution specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveAllRunTemplatesAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Remove all Run Templates from the Solution specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Remove all Parameter Groups from the Solution specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveAllSolutionParameterGroupsAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Remove all Parameter Groups from the Solution specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllSolutionParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Remove all Parameters from the Solution specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveAllSolutionParametersAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Remove all Parameters from the Solution specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllSolutionParametersWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Update a solution
         /// </summary>
         /// <remarks>
@@ -281,30 +569,36 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (Solution)</returns>
         System.Threading.Tasks.Task<ApiResponse<Solution>> UpdateSolutionWithHttpInfoAsync(string organizationId, string solutionId, Solution solution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Upload and register a new solution
+        /// Upload a Run Template step handler zip file
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="body">the Solution to upload and register</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler id identifier</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Solution</returns>
-        System.Threading.Tasks.Task<Solution> UploadAsync(string organizationId, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task UploadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Upload and register a new solution
+        /// Upload a Run Template step handler zip file
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="body">the Solution to upload and register</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler id identifier</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Solution)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Solution>> UploadWithHttpInfoAsync(string organizationId, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> UploadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -426,6 +720,477 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
+        /// Add Parameter Groups. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
+        /// <returns>List&lt;RunTemplateParameterGroup&gt;</returns>
+        public List<RunTemplateParameterGroup> AddOrReplaceParameterGroups(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup)
+        {
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>> localVarResponse = AddOrReplaceParameterGroupsWithHttpInfo(organizationId, solutionId, runTemplateParameterGroup);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add Parameter Groups. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
+        /// <returns>ApiResponse of List&lt;RunTemplateParameterGroup&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceParameterGroups");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceParameterGroups");
+
+            // verify the required parameter 'runTemplateParameterGroup' is set
+            if (runTemplateParameterGroup == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateParameterGroup' when calling SolutionApi->AddOrReplaceParameterGroups");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.Data = runTemplateParameterGroup;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<RunTemplateParameterGroup>>("/organizations/{organization_id}/solutions/{solution_id}/parameterGroups", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceParameterGroups", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add Parameter Groups. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;RunTemplateParameterGroup&gt;</returns>
+        public async System.Threading.Tasks.Task<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>> localVarResponse = await AddOrReplaceParameterGroupsWithHttpInfoAsync(organizationId, solutionId, runTemplateParameterGroup, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add Parameter Groups. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;RunTemplateParameterGroup&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>>> AddOrReplaceParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceParameterGroups");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceParameterGroups");
+
+            // verify the required parameter 'runTemplateParameterGroup' is set
+            if (runTemplateParameterGroup == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateParameterGroup' when calling SolutionApi->AddOrReplaceParameterGroups");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.Data = runTemplateParameterGroup;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<RunTemplateParameterGroup>>("/organizations/{organization_id}/solutions/{solution_id}/parameterGroups", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceParameterGroups", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add Parameters. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameter">the Parameters</param>
+        /// <returns>List&lt;RunTemplateParameter&gt;</returns>
+        public List<RunTemplateParameter> AddOrReplaceParameters(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter)
+        {
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>> localVarResponse = AddOrReplaceParametersWithHttpInfo(organizationId, solutionId, runTemplateParameter);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add Parameters. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameter">the Parameters</param>
+        /// <returns>ApiResponse of List&lt;RunTemplateParameter&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>> AddOrReplaceParametersWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceParameters");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceParameters");
+
+            // verify the required parameter 'runTemplateParameter' is set
+            if (runTemplateParameter == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateParameter' when calling SolutionApi->AddOrReplaceParameters");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.Data = runTemplateParameter;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<RunTemplateParameter>>("/organizations/{organization_id}/solutions/{solution_id}/parameters", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceParameters", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add Parameters. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameter">the Parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;RunTemplateParameter&gt;</returns>
+        public async System.Threading.Tasks.Task<List<RunTemplateParameter>> AddOrReplaceParametersAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>> localVarResponse = await AddOrReplaceParametersWithHttpInfoAsync(organizationId, solutionId, runTemplateParameter, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add Parameters. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateParameter">the Parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;RunTemplateParameter&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>>> AddOrReplaceParametersWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceParameters");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceParameters");
+
+            // verify the required parameter 'runTemplateParameter' is set
+            if (runTemplateParameter == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateParameter' when calling SolutionApi->AddOrReplaceParameters");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.Data = runTemplateParameter;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<RunTemplateParameter>>("/organizations/{organization_id}/solutions/{solution_id}/parameters", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceParameters", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add Run Templates. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplate">the Run Templates</param>
+        /// <returns>List&lt;RunTemplate&gt;</returns>
+        public List<RunTemplate> AddOrReplaceRunTemplates(string organizationId, string solutionId, List<RunTemplate> runTemplate)
+        {
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> localVarResponse = AddOrReplaceRunTemplatesWithHttpInfo(organizationId, solutionId, runTemplate);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add Run Templates. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplate">the Run Templates</param>
+        /// <returns>ApiResponse of List&lt;RunTemplate&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> AddOrReplaceRunTemplatesWithHttpInfo(string organizationId, string solutionId, List<RunTemplate> runTemplate)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceRunTemplates");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceRunTemplates");
+
+            // verify the required parameter 'runTemplate' is set
+            if (runTemplate == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplate' when calling SolutionApi->AddOrReplaceRunTemplates");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.Data = runTemplate;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<RunTemplate>>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceRunTemplates", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add Run Templates. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplate">the Run Templates</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;RunTemplate&gt;</returns>
+        public async System.Threading.Tasks.Task<List<RunTemplate>> AddOrReplaceRunTemplatesAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> localVarResponse = await AddOrReplaceRunTemplatesWithHttpInfoAsync(organizationId, solutionId, runTemplate, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add Run Templates. Any item with the same ID will be overwritten 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplate">the Run Templates</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;RunTemplate&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplate>>> AddOrReplaceRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceRunTemplates");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceRunTemplates");
+
+            // verify the required parameter 'runTemplate' is set
+            if (runTemplate == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplate' when calling SolutionApi->AddOrReplaceRunTemplates");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.Data = runTemplate;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<RunTemplate>>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceRunTemplates", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Register a new solution 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -458,7 +1223,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -530,7 +1296,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -574,11 +1341,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <returns>Solution</returns>
-        public Solution DeleteSolution(string organizationId, string solutionId)
+        /// <returns></returns>
+        public void DeleteSolution(string organizationId, string solutionId)
         {
-            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = DeleteSolutionWithHttpInfo(organizationId, solutionId);
-            return localVarResponse.Data;
+            DeleteSolutionWithHttpInfo(organizationId, solutionId);
         }
 
         /// <summary>
@@ -587,8 +1353,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <returns>ApiResponse of Solution</returns>
-        public Com.Cosmotech.Client.ApiResponse<Solution> DeleteSolutionWithHttpInfo(string organizationId, string solutionId)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteSolutionWithHttpInfo(string organizationId, string solutionId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -605,7 +1371,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -625,7 +1390,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Solution>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -643,11 +1408,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Solution</returns>
-        public async System.Threading.Tasks.Task<Solution> DeleteSolutionAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteSolutionAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = await DeleteSolutionWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DeleteSolutionWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -657,8 +1421,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Solution)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Solution>> DeleteSolutionWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteSolutionWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -676,7 +1440,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
 
@@ -698,7 +1461,7 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Solution>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -978,6 +1741,417 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
+        /// Remove all Run Templates from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns></returns>
+        public void RemoveAllRunTemplates(string organizationId, string solutionId)
+        {
+            RemoveAllRunTemplatesWithHttpInfo(organizationId, solutionId);
+        }
+
+        /// <summary>
+        /// Remove all Run Templates from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllRunTemplatesWithHttpInfo(string organizationId, string solutionId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllRunTemplates");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllRunTemplates");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllRunTemplates", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove all Run Templates from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveAllRunTemplatesAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RemoveAllRunTemplatesWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Remove all Run Templates from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllRunTemplates");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllRunTemplates");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllRunTemplates", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove all Parameter Groups from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns></returns>
+        public void RemoveAllSolutionParameterGroups(string organizationId, string solutionId)
+        {
+            RemoveAllSolutionParameterGroupsWithHttpInfo(organizationId, solutionId);
+        }
+
+        /// <summary>
+        /// Remove all Parameter Groups from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllSolutionParameterGroupsWithHttpInfo(string organizationId, string solutionId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllSolutionParameterGroups");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllSolutionParameterGroups");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/solutions/{solution_id}/parameterGroups", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllSolutionParameterGroups", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove all Parameter Groups from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveAllSolutionParameterGroupsAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RemoveAllSolutionParameterGroupsWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Remove all Parameter Groups from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllSolutionParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllSolutionParameterGroups");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllSolutionParameterGroups");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}/parameterGroups", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllSolutionParameterGroups", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove all Parameters from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns></returns>
+        public void RemoveAllSolutionParameters(string organizationId, string solutionId)
+        {
+            RemoveAllSolutionParametersWithHttpInfo(organizationId, solutionId);
+        }
+
+        /// <summary>
+        /// Remove all Parameters from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllSolutionParametersWithHttpInfo(string organizationId, string solutionId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllSolutionParameters");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllSolutionParameters");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/solutions/{solution_id}/parameters", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllSolutionParameters", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove all Parameters from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveAllSolutionParametersAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RemoveAllSolutionParametersWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Remove all Parameters from the Solution specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllSolutionParametersWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllSolutionParameters");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllSolutionParameters");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}/parameters", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllSolutionParameters", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Update a solution 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1016,7 +2190,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -1095,7 +2270,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -1135,44 +2311,56 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Upload and register a new solution 
+        /// Upload a Run Template step handler zip file 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="body">the Solution to upload and register</param>
-        /// <returns>Solution</returns>
-        public Solution Upload(string organizationId, System.IO.Stream body)
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler id identifier</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns></returns>
+        public void UploadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = default(System.IO.Stream))
         {
-            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = UploadWithHttpInfo(organizationId, body);
-            return localVarResponse.Data;
+            UploadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId, body);
         }
 
         /// <summary>
-        /// Upload and register a new solution 
+        /// Upload a Run Template step handler zip file 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="body">the Solution to upload and register</param>
-        /// <returns>ApiResponse of Solution</returns>
-        public Com.Cosmotech.Client.ApiResponse<Solution> UploadWithHttpInfo(string organizationId, System.IO.Stream body)
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler id identifier</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> UploadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = default(System.IO.Stream))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->Upload");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->UploadRunTemplateHandler");
 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'body' when calling SolutionApi->Upload");
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->UploadRunTemplateHandler");
+
+            // verify the required parameter 'runTemplateId' is set
+            if (runTemplateId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->UploadRunTemplateHandler");
+
+            // verify the required parameter 'handlerId' is set
+            if (handlerId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'handlerId' when calling SolutionApi->UploadRunTemplateHandler");
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/yaml"
+                "image/zip"
             };
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1182,6 +2370,9 @@ namespace Com.Cosmotech.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("handler_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(handlerId)); // path parameter
             localVarRequestOptions.Data = body;
 
             // authentication (oAuth2AuthCode) required
@@ -1192,11 +2383,11 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Solution>("/organizations/{organization_id}/solutions/upload", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Upload", localVarResponse);
+                Exception _exception = this.ExceptionFactory("UploadRunTemplateHandler", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1204,47 +2395,59 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Upload and register a new solution 
+        /// Upload a Run Template step handler zip file 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="body">the Solution to upload and register</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler id identifier</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Solution</returns>
-        public async System.Threading.Tasks.Task<Solution> UploadAsync(string organizationId, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task UploadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = await UploadWithHttpInfoAsync(organizationId, body, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await UploadRunTemplateHandlerWithHttpInfoAsync(organizationId, solutionId, runTemplateId, handlerId, body, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Upload and register a new solution 
+        /// Upload a Run Template step handler zip file 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="body">the Solution to upload and register</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler id identifier</param>
+        /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Solution)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Solution>> UploadWithHttpInfoAsync(string organizationId, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> UploadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->Upload");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->UploadRunTemplateHandler");
 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'body' when calling SolutionApi->Upload");
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->UploadRunTemplateHandler");
+
+            // verify the required parameter 'runTemplateId' is set
+            if (runTemplateId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->UploadRunTemplateHandler");
+
+            // verify the required parameter 'handlerId' is set
+            if (handlerId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'handlerId' when calling SolutionApi->UploadRunTemplateHandler");
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/yaml"
+                "image/zip"
             };
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
 
@@ -1255,6 +2458,9 @@ namespace Com.Cosmotech.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("handler_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(handlerId)); // path parameter
             localVarRequestOptions.Data = body;
 
             // authentication (oAuth2AuthCode) required
@@ -1266,11 +2472,11 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Solution>("/organizations/{organization_id}/solutions/upload", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("Upload", localVarResponse);
+                Exception _exception = this.ExceptionFactory("UploadRunTemplateHandler", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

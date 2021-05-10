@@ -65,6 +65,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
+        /// Test the property 'Name'
+        /// </summary>
+        [Fact]
+        public void NameTest()
+        {
+            // TODO unit test for the property 'Name'
+        }
+        /// <summary>
         /// Test the property 'EnvVars'
         /// </summary>
         [Fact]
@@ -81,12 +89,28 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Image'
         }
         /// <summary>
+        /// Test the property 'Entrypoint'
+        /// </summary>
+        [Fact]
+        public void EntrypointTest()
+        {
+            // TODO unit test for the property 'Entrypoint'
+        }
+        /// <summary>
         /// Test the property 'RunArgs'
         /// </summary>
         [Fact]
         public void RunArgsTest()
         {
             // TODO unit test for the property 'RunArgs'
+        }
+        /// <summary>
+        /// Test the property 'Dependencies'
+        /// </summary>
+        [Fact]
+        public void DependenciesTest()
+        {
+            // TODO unit test for the property 'Dependencies'
         }
 
     }

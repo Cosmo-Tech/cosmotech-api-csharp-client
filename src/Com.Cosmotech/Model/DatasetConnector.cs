@@ -41,7 +41,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="id">the Connector id (required).</param>
         /// <param name="parametersValues">parametersValues.</param>
-        public DatasetConnector(string id = default(string), Dictionary<string, Object> parametersValues = default(Dictionary<string, Object>))
+        public DatasetConnector(string id = default(string), Dictionary<string, string> parametersValues = default(Dictionary<string, string>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for DatasetConnector and cannot be null");
@@ -59,7 +59,7 @@ namespace Com.Cosmotech.Model
         /// Gets or Sets ParametersValues
         /// </summary>
         [DataMember(Name = "parametersValues", EmitDefaultValue = false)]
-        public Dictionary<string, Object> ParametersValues { get; set; }
+        public Dictionary<string, string> ParametersValues { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

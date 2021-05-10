@@ -32,9 +32,9 @@ namespace Com.Cosmotech.Model
     public partial class RunTemplateResourceStorage : IEquatable<RunTemplateResourceStorage>, IValidatableObject
     {
         /// <summary>
-        /// the storage type. Use ${CSM_PROJECT_PATH} or ${CSM_STORAGE_SIMULATOR} behind the scene
+        /// the storage type
         /// </summary>
-        /// <value>the storage type. Use ${CSM_PROJECT_PATH} or ${CSM_STORAGE_SIMULATOR} behind the scene</value>
+        /// <value>the storage type</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StorageTypeEnum
         {
@@ -45,23 +45,17 @@ namespace Com.Cosmotech.Model
             Local = 1,
 
             /// <summary>
-            /// Enum Cloud for value: cloud
+            /// Enum CloudStorage for value: cloudStorage
             /// </summary>
-            [EnumMember(Value = "cloud")]
-            Cloud = 2,
-
-            /// <summary>
-            /// Enum CustomUri for value: customUri
-            /// </summary>
-            [EnumMember(Value = "customUri")]
-            CustomUri = 3
+            [EnumMember(Value = "cloudStorage")]
+            CloudStorage = 2
 
         }
 
         /// <summary>
-        /// the storage type. Use ${CSM_PROJECT_PATH} or ${CSM_STORAGE_SIMULATOR} behind the scene
+        /// the storage type
         /// </summary>
-        /// <value>the storage type. Use ${CSM_PROJECT_PATH} or ${CSM_STORAGE_SIMULATOR} behind the scene</value>
+        /// <value>the storage type</value>
         [DataMember(Name = "storageType", IsRequired = true, EmitDefaultValue = false)]
         public StorageTypeEnum StorageType { get; set; }
         /// <summary>
@@ -72,15 +66,15 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RunTemplateResourceStorage" /> class.
         /// </summary>
-        /// <param name="storageType">the storage type. Use ${CSM_PROJECT_PATH} or ${CSM_STORAGE_SIMULATOR} behind the scene (required).</param>
+        /// <param name="storageType">the storage type (required).</param>
         /// <param name="resourcePath">the resource path (required).</param>
-        /// <param name="customUri">a custom Uri to provide the resource in resourcePath.</param>
-        public RunTemplateResourceStorage(StorageTypeEnum storageType = default(StorageTypeEnum), string resourcePath = default(string), string customUri = default(string))
+        /// <param name="storageOptions">freeform options for storage.</param>
+        public RunTemplateResourceStorage(StorageTypeEnum storageType = default(StorageTypeEnum), string resourcePath = default(string), Dictionary<string, Object> storageOptions = default(Dictionary<string, Object>))
         {
             this.StorageType = storageType;
             // to ensure "resourcePath" is required (not null)
             this.ResourcePath = resourcePath ?? throw new ArgumentNullException("resourcePath is a required property for RunTemplateResourceStorage and cannot be null");
-            this.CustomUri = customUri;
+            this.StorageOptions = storageOptions;
         }
 
         /// <summary>
@@ -91,11 +85,11 @@ namespace Com.Cosmotech.Model
         public string ResourcePath { get; set; }
 
         /// <summary>
-        /// a custom Uri to provide the resource in resourcePath
+        /// freeform options for storage
         /// </summary>
-        /// <value>a custom Uri to provide the resource in resourcePath</value>
-        [DataMember(Name = "customUri", EmitDefaultValue = false)]
-        public string CustomUri { get; set; }
+        /// <value>freeform options for storage</value>
+        [DataMember(Name = "storageOptions", EmitDefaultValue = false)]
+        public Dictionary<string, Object> StorageOptions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -107,7 +101,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class RunTemplateResourceStorage {\n");
             sb.Append("  StorageType: ").Append(StorageType).Append("\n");
             sb.Append("  ResourcePath: ").Append(ResourcePath).Append("\n");
-            sb.Append("  CustomUri: ").Append(CustomUri).Append("\n");
+            sb.Append("  StorageOptions: ").Append(StorageOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -152,9 +146,10 @@ namespace Com.Cosmotech.Model
                     this.ResourcePath.Equals(input.ResourcePath))
                 ) && 
                 (
-                    this.CustomUri == input.CustomUri ||
-                    (this.CustomUri != null &&
-                    this.CustomUri.Equals(input.CustomUri))
+                    this.StorageOptions == input.StorageOptions ||
+                    this.StorageOptions != null &&
+                    input.StorageOptions != null &&
+                    this.StorageOptions.SequenceEqual(input.StorageOptions)
                 );
         }
 
@@ -170,8 +165,8 @@ namespace Com.Cosmotech.Model
                 hashCode = hashCode * 59 + this.StorageType.GetHashCode();
                 if (this.ResourcePath != null)
                     hashCode = hashCode * 59 + this.ResourcePath.GetHashCode();
-                if (this.CustomUri != null)
-                    hashCode = hashCode * 59 + this.CustomUri.GetHashCode();
+                if (this.StorageOptions != null)
+                    hashCode = hashCode * 59 + this.StorageOptions.GetHashCode();
                 return hashCode;
             }
         }

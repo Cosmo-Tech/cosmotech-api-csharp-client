@@ -41,7 +41,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="id">the connector parameter id (required).</param>
         /// <param name="label">the list of translated parameter group labels (required).</param>
-        /// <param name="valueType">the parameter value type (required).</param>
+        /// <param name="valueType">the parameter value type.</param>
         /// <param name="options">the list of available and valid values for the parameter.</param>
         /// <param name="_default">the default value.</param>
         /// <param name="envVar">associated environment variable in connector image.</param>
@@ -51,8 +51,7 @@ namespace Com.Cosmotech.Model
             this.Id = id ?? throw new ArgumentNullException("id is a required property for ConnectorParameter and cannot be null");
             // to ensure "label" is required (not null)
             this.Label = label ?? throw new ArgumentNullException("label is a required property for ConnectorParameter and cannot be null");
-            // to ensure "valueType" is required (not null)
-            this.ValueType = valueType ?? throw new ArgumentNullException("valueType is a required property for ConnectorParameter and cannot be null");
+            this.ValueType = valueType;
             this.Options = options;
             this.Default = _default;
             this.EnvVar = envVar;
@@ -76,7 +75,7 @@ namespace Com.Cosmotech.Model
         /// the parameter value type
         /// </summary>
         /// <value>the parameter value type</value>
-        [DataMember(Name = "valueType", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "valueType", EmitDefaultValue = false)]
         public string ValueType { get; set; }
 
         /// <summary>

@@ -1,14 +1,13 @@
 # Com.Cosmotech.Api.ConnectorApi
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *https://api.azure.cosmo-platform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**FindAllConnectors**](ConnectorApi.md#findallconnectors) | **GET** /connectors | List all Connectors
-[**FindConnectorById**](ConnectorApi.md#findconnectorbyid) | **GET** /connectors/{connector_id} | Get the details of an connector
+[**FindConnectorById**](ConnectorApi.md#findconnectorbyid) | **GET** /connectors/{connector_id} | Get the details of a connector
 [**RegisterConnector**](ConnectorApi.md#registerconnector) | **POST** /connectors | Register a new connector
-[**UnregisterConnector**](ConnectorApi.md#unregisterconnector) | **DELETE** /connectors/{connector_id} | Unregister an connector
-[**UploadConnector**](ConnectorApi.md#uploadconnector) | **POST** /connectors/upload | Upload and register a new connector
+[**UnregisterConnector**](ConnectorApi.md#unregisterconnector) | **DELETE** /connectors/{connector_id} | Unregister a connector
 
 
 <a name="findallconnectors"></a>
@@ -32,7 +31,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -75,7 +74,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the connector details |  -  |
+| **200** | the list of Connectors |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -83,7 +82,7 @@ This endpoint does not need any parameter.
 # **FindConnectorById**
 > Connector FindConnectorById (string connectorId)
 
-Get the details of an connector
+Get the details of a connector
 
 ### Example
 ```csharp
@@ -100,7 +99,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -109,7 +108,7 @@ namespace Example
 
             try
             {
-                // Get the details of an connector
+                // Get the details of a connector
                 Connector result = apiInstance.FindConnectorById(connectorId);
                 Debug.WriteLine(result);
             }
@@ -173,7 +172,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -213,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
@@ -227,9 +226,9 @@ Name | Type | Description  | Notes
 
 <a name="unregisterconnector"></a>
 # **UnregisterConnector**
-> Connector UnregisterConnector (string connectorId)
+> void UnregisterConnector (string connectorId)
 
-Unregister an connector
+Unregister a connector
 
 ### Example
 ```csharp
@@ -246,7 +245,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -255,9 +254,8 @@ namespace Example
 
             try
             {
-                // Unregister an connector
-                Connector result = apiInstance.UnregisterConnector(connectorId);
-                Debug.WriteLine(result);
+                // Unregister a connector
+                apiInstance.UnregisterConnector(connectorId);
             }
             catch (ApiException  e)
             {
@@ -278,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Connector**](Connector.md)
+void (empty response body)
 
 ### Authorization
 
@@ -287,88 +285,14 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the connector details |  -  |
-| **400** | Bad request |  -  |
+| **204** | Request successful |  -  |
 | **404** | the Connector specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="uploadconnector"></a>
-# **UploadConnector**
-> Connector UploadConnector (System.IO.Stream body)
-
-Upload and register a new connector
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class UploadConnectorExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ConnectorApi(config);
-            var body = BINARY_DATA_HERE;  // System.IO.Stream | the Connector to upload and register
-
-            try
-            {
-                // Upload and register a new connector
-                Connector result = apiInstance.UploadConnector(body);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ConnectorApi.UploadConnector: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **System.IO.Stream****System.IO.Stream**| the Connector to upload and register | 
-
-### Return type
-
-[**Connector**](Connector.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: application/yaml
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | the connector details |  -  |
-| **400** | Bad request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

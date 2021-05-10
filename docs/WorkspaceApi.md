@@ -1,18 +1,97 @@
 # Com.Cosmotech.Api.WorkspaceApi
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *https://api.azure.cosmo-platform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddUsersToOrganizationWorkspace**](WorkspaceApi.md#adduserstoorganizationworkspace) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/users | Add (or replace) users to the Workspace specified
 [**CreateWorkspace**](WorkspaceApi.md#createworkspace) | **POST** /organizations/{organization_id}/workspaces | Create a new workspace
 [**DeleteWorkspace**](WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace
 [**DeleteWorkspaceFile**](WorkspaceApi.md#deleteworkspacefile) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/files | Delete a workspace file
 [**FindAllWorkspaceFiles**](WorkspaceApi.md#findallworkspacefiles) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/files | List all Workspace files
 [**FindAllWorkspaces**](WorkspaceApi.md#findallworkspaces) | **GET** /organizations/{organization_id}/workspaces | List all Workspaces
 [**FindWorkspaceById**](WorkspaceApi.md#findworkspacebyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id} | Get the details of an workspace
+[**RemoveAllUsersOfWorkspace**](WorkspaceApi.md#removeallusersofworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/users | Remove all users from the Workspace specified
 [**UpdateWorkspace**](WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
 [**UploadWorkspaceFile**](WorkspaceApi.md#uploadworkspacefile) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/files | Upload a file for the Workspace
 
+
+<a name="adduserstoorganizationworkspace"></a>
+# **AddUsersToOrganizationWorkspace**
+> List&lt;WorkspaceUser&gt; AddUsersToOrganizationWorkspace (string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser)
+
+Add (or replace) users to the Workspace specified
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class AddUsersToOrganizationWorkspaceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new WorkspaceApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var workspaceUser = new List<WorkspaceUser>(); // List<WorkspaceUser> | the Users to add. Any User with the same ID is overwritten
+
+            try
+            {
+                // Add (or replace) users to the Workspace specified
+                List<WorkspaceUser> result = apiInstance.AddUsersToOrganizationWorkspace(organizationId, workspaceId, workspaceUser);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkspaceApi.AddUsersToOrganizationWorkspace: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **workspaceUser** | [**List&lt;WorkspaceUser&gt;**](WorkspaceUser.md)| the Users to add. Any User with the same ID is overwritten | 
+
+### Return type
+
+[**List&lt;WorkspaceUser&gt;**](WorkspaceUser.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | the Workspace Users |  -  |
+| **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createworkspace"></a>
 # **CreateWorkspace**
@@ -35,7 +114,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -77,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
@@ -110,7 +189,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -186,7 +265,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -264,7 +343,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -339,7 +418,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -411,7 +490,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -465,6 +544,80 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="removeallusersofworkspace"></a>
+# **RemoveAllUsersOfWorkspace**
+> void RemoveAllUsersOfWorkspace (string organizationId, string workspaceId)
+
+Remove all users from the Workspace specified
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class RemoveAllUsersOfWorkspaceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new WorkspaceApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+
+            try
+            {
+                // Remove all users from the Workspace specified
+                apiInstance.RemoveAllUsersOfWorkspace(organizationId, workspaceId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkspaceApi.RemoveAllUsersOfWorkspace: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | the operation succeeded |  -  |
+| **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updateworkspace"></a>
 # **UpdateWorkspace**
 > Workspace UpdateWorkspace (string organizationId, string workspaceId, Workspace workspace)
@@ -486,7 +639,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -530,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
@@ -564,7 +717,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 

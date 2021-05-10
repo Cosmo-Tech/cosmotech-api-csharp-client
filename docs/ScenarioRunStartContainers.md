@@ -5,15 +5,9 @@ the parameters to run directly containers
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**GenerateName** | **string** | the base name for workflow name generation | [optional] 
 **NodeLabel** | **string** | the node label request | [optional] 
-**FetchDatasetContainers** | [**List&lt;ScenarioRunContainer&gt;**](ScenarioRunContainer.md) | the containers which fetch the Scenario Datasets | [optional] [readonly] 
-**FetchScenarioParametersContainer** | [**ScenarioRunContainer**](ScenarioRunContainer.md) |  | [optional] 
-**ApplyParametersContainer** | [**ScenarioRunContainer**](ScenarioRunContainer.md) |  | [optional] 
-**ValidateDataContainer** | [**ScenarioRunContainer**](ScenarioRunContainer.md) |  | [optional] 
-**SendDataWarehouseContainer** | [**ScenarioRunContainer**](ScenarioRunContainer.md) |  | [optional] 
-**PreRunContainer** | [**ScenarioRunContainer**](ScenarioRunContainer.md) |  | [optional] 
-**RunContainer** | [**ScenarioRunContainer**](ScenarioRunContainer.md) |  | [optional] 
-**PostRunContainer** | [**ScenarioRunContainer**](ScenarioRunContainer.md) |  | [optional] 
+**Containers** | [**List&lt;ScenarioRunContainer&gt;**](ScenarioRunContainer.md) | the containers map with name and ScenarioRunContainer | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

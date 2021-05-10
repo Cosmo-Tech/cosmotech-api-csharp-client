@@ -43,7 +43,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of List&lt;Connector&gt;</returns>
         ApiResponse<List<Connector>> FindAllConnectorsWithHttpInfo();
         /// <summary>
-        /// Get the details of an connector
+        /// Get the details of a connector
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
@@ -51,7 +51,7 @@ namespace Com.Cosmotech.Api
         Connector FindConnectorById(string connectorId);
 
         /// <summary>
-        /// Get the details of an connector
+        /// Get the details of a connector
         /// </summary>
         /// <remarks>
         /// 
@@ -79,41 +79,23 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Connector</returns>
         ApiResponse<Connector> RegisterConnectorWithHttpInfo(Connector connector);
         /// <summary>
-        /// Unregister an connector
+        /// Unregister a connector
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
-        /// <returns>Connector</returns>
-        Connector UnregisterConnector(string connectorId);
+        /// <returns></returns>
+        void UnregisterConnector(string connectorId);
 
         /// <summary>
-        /// Unregister an connector
+        /// Unregister a connector
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
-        /// <returns>ApiResponse of Connector</returns>
-        ApiResponse<Connector> UnregisterConnectorWithHttpInfo(string connectorId);
-        /// <summary>
-        /// Upload and register a new connector
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">the Connector to upload and register</param>
-        /// <returns>Connector</returns>
-        Connector UploadConnector(System.IO.Stream body);
-
-        /// <summary>
-        /// Upload and register a new connector
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">the Connector to upload and register</param>
-        /// <returns>ApiResponse of Connector</returns>
-        ApiResponse<Connector> UploadConnectorWithHttpInfo(System.IO.Stream body);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> UnregisterConnectorWithHttpInfo(string connectorId);
         #endregion Synchronous Operations
     }
 
@@ -145,7 +127,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (List&lt;Connector&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Connector>>> FindAllConnectorsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get the details of an connector
+        /// Get the details of a connector
         /// </summary>
         /// <remarks>
         /// 
@@ -157,7 +139,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<Connector> FindConnectorByIdAsync(string connectorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get the details of an connector
+        /// Get the details of a connector
         /// </summary>
         /// <remarks>
         /// 
@@ -191,7 +173,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (Connector)</returns>
         System.Threading.Tasks.Task<ApiResponse<Connector>> RegisterConnectorWithHttpInfoAsync(Connector connector, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Unregister an connector
+        /// Unregister a connector
         /// </summary>
         /// <remarks>
         /// 
@@ -199,11 +181,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Connector</returns>
-        System.Threading.Tasks.Task<Connector> UnregisterConnectorAsync(string connectorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task UnregisterConnectorAsync(string connectorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Unregister an connector
+        /// Unregister a connector
         /// </summary>
         /// <remarks>
         /// 
@@ -211,31 +193,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Connector)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Connector>> UnregisterConnectorWithHttpInfoAsync(string connectorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Upload and register a new connector
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">the Connector to upload and register</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Connector</returns>
-        System.Threading.Tasks.Task<Connector> UploadConnectorAsync(System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Upload and register a new connector
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">the Connector to upload and register</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Connector)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Connector>> UploadConnectorWithHttpInfoAsync(System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> UnregisterConnectorWithHttpInfoAsync(string connectorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -470,7 +429,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Get the details of an connector 
+        /// Get the details of a connector 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
@@ -482,7 +441,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Get the details of an connector 
+        /// Get the details of a connector 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
@@ -531,7 +490,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Get the details of an connector 
+        /// Get the details of a connector 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
@@ -544,7 +503,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Get the details of an connector 
+        /// Get the details of a connector 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
@@ -623,7 +582,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -688,7 +648,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -726,24 +687,23 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Unregister an connector 
+        /// Unregister a connector 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
-        /// <returns>Connector</returns>
-        public Connector UnregisterConnector(string connectorId)
+        /// <returns></returns>
+        public void UnregisterConnector(string connectorId)
         {
-            Com.Cosmotech.Client.ApiResponse<Connector> localVarResponse = UnregisterConnectorWithHttpInfo(connectorId);
-            return localVarResponse.Data;
+            UnregisterConnectorWithHttpInfo(connectorId);
         }
 
         /// <summary>
-        /// Unregister an connector 
+        /// Unregister a connector 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
-        /// <returns>ApiResponse of Connector</returns>
-        public Com.Cosmotech.Client.ApiResponse<Connector> UnregisterConnectorWithHttpInfo(string connectorId)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> UnregisterConnectorWithHttpInfo(string connectorId)
         {
             // verify the required parameter 'connectorId' is set
             if (connectorId == null)
@@ -756,7 +716,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -775,7 +734,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Connector>("/connectors/{connector_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/connectors/{connector_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -787,26 +746,25 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Unregister an connector 
+        /// Unregister a connector 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Connector</returns>
-        public async System.Threading.Tasks.Task<Connector> UnregisterConnectorAsync(string connectorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task UnregisterConnectorAsync(string connectorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Connector> localVarResponse = await UnregisterConnectorWithHttpInfoAsync(connectorId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await UnregisterConnectorWithHttpInfoAsync(connectorId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Unregister an connector 
+        /// Unregister a connector 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectorId">the Connector identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Connector)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Connector>> UnregisterConnectorWithHttpInfoAsync(string connectorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> UnregisterConnectorWithHttpInfoAsync(string connectorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'connectorId' is set
             if (connectorId == null)
@@ -820,7 +778,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
 
@@ -841,140 +798,11 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Connector>("/connectors/{connector_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/connectors/{connector_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UnregisterConnector", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Upload and register a new connector 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">the Connector to upload and register</param>
-        /// <returns>Connector</returns>
-        public Connector UploadConnector(System.IO.Stream body)
-        {
-            Com.Cosmotech.Client.ApiResponse<Connector> localVarResponse = UploadConnectorWithHttpInfo(body);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Upload and register a new connector 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">the Connector to upload and register</param>
-        /// <returns>ApiResponse of Connector</returns>
-        public Com.Cosmotech.Client.ApiResponse<Connector> UploadConnectorWithHttpInfo(System.IO.Stream body)
-        {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'body' when calling ConnectorApi->UploadConnector");
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "application/yaml"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = body;
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Connector>("/connectors/upload", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UploadConnector", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Upload and register a new connector 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">the Connector to upload and register</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Connector</returns>
-        public async System.Threading.Tasks.Task<Connector> UploadConnectorAsync(System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Com.Cosmotech.Client.ApiResponse<Connector> localVarResponse = await UploadConnectorWithHttpInfoAsync(body, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Upload and register a new connector 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">the Connector to upload and register</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Connector)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Connector>> UploadConnectorWithHttpInfoAsync(System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'body' when calling ConnectorApi->UploadConnector");
-
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            String[] _contentTypes = new String[] {
-                "application/yaml"
-            };
-
-            // to determine the Accept header
-            String[] _accepts = new String[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = body;
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Connector>("/connectors/upload", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UploadConnector", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

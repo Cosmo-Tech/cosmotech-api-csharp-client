@@ -27,6 +27,26 @@ namespace Com.Cosmotech.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Add (or replace) users in the Organization specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>List&lt;OrganizationUser&gt;</returns>
+        List<OrganizationUser> AddOrReplaceUsersInOrganization(string organizationId, List<OrganizationUser> organizationUser);
+
+        /// <summary>
+        /// Add (or replace) users in the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>ApiResponse of List&lt;OrganizationUser&gt;</returns>
+        ApiResponse<List<OrganizationUser>> AddOrReplaceUsersInOrganizationWithHttpInfo(string organizationId, List<OrganizationUser> organizationUser);
+        /// <summary>
         /// List all Organizations
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -43,7 +63,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of List&lt;Organization&gt;</returns>
         ApiResponse<List<Organization>> FindAllOrganizationsWithHttpInfo();
         /// <summary>
-        /// Get the details of an organization
+        /// Get the details of an Organization
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -51,7 +71,7 @@ namespace Com.Cosmotech.Api
         Organization FindOrganizationById(string organizationId);
 
         /// <summary>
-        /// Get the details of an organization
+        /// Get the details of an Organization
         /// </summary>
         /// <remarks>
         /// 
@@ -79,12 +99,50 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Organization</returns>
         ApiResponse<Organization> RegisterOrganizationWithHttpInfo(Organization organization);
         /// <summary>
+        /// Remove all users from the Organization specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <returns></returns>
+        void RemoveAllUsersInOrganization(string organizationId);
+
+        /// <summary>
+        /// Remove all users from the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveAllUsersInOrganizationWithHttpInfo(string organizationId);
+        /// <summary>
+        /// Remove the specified user from the given Organization
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <returns></returns>
+        void RemoveUserFromOrganization(string organizationId, string userId);
+
+        /// <summary>
+        /// Remove the specified user from the given Organization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveUserFromOrganizationWithHttpInfo(string organizationId, string userId);
+        /// <summary>
         /// Unregister an organization
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <returns>Organization</returns>
-        Organization UnregisterOrganization(string organizationId);
+        /// <returns></returns>
+        void UnregisterOrganization(string organizationId);
 
         /// <summary>
         /// Unregister an organization
@@ -94,10 +152,10 @@ namespace Com.Cosmotech.Api
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <returns>ApiResponse of Organization</returns>
-        ApiResponse<Organization> UnregisterOrganizationWithHttpInfo(string organizationId);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> UnregisterOrganizationWithHttpInfo(string organizationId);
         /// <summary>
-        /// Update an organization
+        /// Update an Organization
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -106,7 +164,7 @@ namespace Com.Cosmotech.Api
         Organization UpdateOrganization(string organizationId, Organization organization);
 
         /// <summary>
-        /// Update an organization
+        /// Update an Organization
         /// </summary>
         /// <remarks>
         /// 
@@ -116,6 +174,66 @@ namespace Com.Cosmotech.Api
         /// <param name="organization">the new Organization details</param>
         /// <returns>ApiResponse of Organization</returns>
         ApiResponse<Organization> UpdateOrganizationWithHttpInfo(string organizationId, Organization organization);
+        /// <summary>
+        /// Update the solutions container registry configuration for the Organization specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new solutions container registry configuration to use</param>
+        /// <returns>OrganizationService</returns>
+        OrganizationService UpdateSolutionsContainerRegistryByOrganizationId(string organizationId, OrganizationService organizationService);
+
+        /// <summary>
+        /// Update the solutions container registry configuration for the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new solutions container registry configuration to use</param>
+        /// <returns>ApiResponse of OrganizationService</returns>
+        ApiResponse<OrganizationService> UpdateSolutionsContainerRegistryByOrganizationIdWithHttpInfo(string organizationId, OrganizationService organizationService);
+        /// <summary>
+        /// Update storage configuration for the Organization specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new Storage configuration to use</param>
+        /// <returns>OrganizationService</returns>
+        OrganizationService UpdateStorageByOrganizationId(string organizationId, OrganizationService organizationService);
+
+        /// <summary>
+        /// Update storage configuration for the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new Storage configuration to use</param>
+        /// <returns>ApiResponse of OrganizationService</returns>
+        ApiResponse<OrganizationService> UpdateStorageByOrganizationIdWithHttpInfo(string organizationId, OrganizationService organizationService);
+        /// <summary>
+        /// Update tenant credentials for the Organization specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="requestBody">the new Tenant Credentials to use</param>
+        /// <returns>Dictionary&lt;string, Object&gt;</returns>
+        Dictionary<string, Object> UpdateTenantCredentialsByOrganizationId(string organizationId, Dictionary<string, Object> requestBody);
+
+        /// <summary>
+        /// Update tenant credentials for the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="requestBody">the new Tenant Credentials to use</param>
+        /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
+        ApiResponse<Dictionary<string, Object>> UpdateTenantCredentialsByOrganizationIdWithHttpInfo(string organizationId, Dictionary<string, Object> requestBody);
         #endregion Synchronous Operations
     }
 
@@ -125,6 +243,31 @@ namespace Com.Cosmotech.Api
     public interface IOrganizationApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Add (or replace) users in the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;OrganizationUser&gt;</returns>
+        System.Threading.Tasks.Task<List<OrganizationUser>> AddOrReplaceUsersInOrganizationAsync(string organizationId, List<OrganizationUser> organizationUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Add (or replace) users in the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;OrganizationUser&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<OrganizationUser>>> AddOrReplaceUsersInOrganizationWithHttpInfoAsync(string organizationId, List<OrganizationUser> organizationUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Organizations
         /// </summary>
@@ -147,7 +290,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (List&lt;Organization&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Organization>>> FindAllOrganizationsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get the details of an organization
+        /// Get the details of an Organization
         /// </summary>
         /// <remarks>
         /// 
@@ -159,7 +302,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<Organization> FindOrganizationByIdAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get the details of an organization
+        /// Get the details of an Organization
         /// </summary>
         /// <remarks>
         /// 
@@ -193,6 +336,54 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (Organization)</returns>
         System.Threading.Tasks.Task<ApiResponse<Organization>> RegisterOrganizationWithHttpInfoAsync(Organization organization, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Remove all users from the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveAllUsersInOrganizationAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Remove all users from the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllUsersInOrganizationWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Remove the specified user from the given Organization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveUserFromOrganizationAsync(string organizationId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Remove the specified user from the given Organization
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveUserFromOrganizationWithHttpInfoAsync(string organizationId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Unregister an organization
         /// </summary>
         /// <remarks>
@@ -201,8 +392,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Organization</returns>
-        System.Threading.Tasks.Task<Organization> UnregisterOrganizationAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task UnregisterOrganizationAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Unregister an organization
@@ -213,10 +404,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Organization)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Organization>> UnregisterOrganizationWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> UnregisterOrganizationWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Update an organization
+        /// Update an Organization
         /// </summary>
         /// <remarks>
         /// 
@@ -229,7 +420,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<Organization> UpdateOrganizationAsync(string organizationId, Organization organization, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Update an organization
+        /// Update an Organization
         /// </summary>
         /// <remarks>
         /// 
@@ -240,6 +431,81 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Organization)</returns>
         System.Threading.Tasks.Task<ApiResponse<Organization>> UpdateOrganizationWithHttpInfoAsync(string organizationId, Organization organization, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Update the solutions container registry configuration for the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new solutions container registry configuration to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationService</returns>
+        System.Threading.Tasks.Task<OrganizationService> UpdateSolutionsContainerRegistryByOrganizationIdAsync(string organizationId, OrganizationService organizationService, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Update the solutions container registry configuration for the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new solutions container registry configuration to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationService)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OrganizationService>> UpdateSolutionsContainerRegistryByOrganizationIdWithHttpInfoAsync(string organizationId, OrganizationService organizationService, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Update storage configuration for the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new Storage configuration to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationService</returns>
+        System.Threading.Tasks.Task<OrganizationService> UpdateStorageByOrganizationIdAsync(string organizationId, OrganizationService organizationService, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Update storage configuration for the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new Storage configuration to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationService)</returns>
+        System.Threading.Tasks.Task<ApiResponse<OrganizationService>> UpdateStorageByOrganizationIdWithHttpInfoAsync(string organizationId, OrganizationService organizationService, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Update tenant credentials for the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="requestBody">the new Tenant Credentials to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
+        System.Threading.Tasks.Task<Dictionary<string, Object>> UpdateTenantCredentialsByOrganizationIdAsync(string organizationId, Dictionary<string, Object> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Update tenant credentials for the Organization specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="requestBody">the new Tenant Credentials to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Object>>> UpdateTenantCredentialsByOrganizationIdWithHttpInfoAsync(string organizationId, Dictionary<string, Object> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -361,6 +627,149 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
+        /// Add (or replace) users in the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>List&lt;OrganizationUser&gt;</returns>
+        public List<OrganizationUser> AddOrReplaceUsersInOrganization(string organizationId, List<OrganizationUser> organizationUser)
+        {
+            Com.Cosmotech.Client.ApiResponse<List<OrganizationUser>> localVarResponse = AddOrReplaceUsersInOrganizationWithHttpInfo(organizationId, organizationUser);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add (or replace) users in the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>ApiResponse of List&lt;OrganizationUser&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<OrganizationUser>> AddOrReplaceUsersInOrganizationWithHttpInfo(string organizationId, List<OrganizationUser> organizationUser)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->AddOrReplaceUsersInOrganization");
+
+            // verify the required parameter 'organizationUser' is set
+            if (organizationUser == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationUser' when calling OrganizationApi->AddOrReplaceUsersInOrganization");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = organizationUser;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<OrganizationUser>>("/organizations/{organization_id}/users", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceUsersInOrganization", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add (or replace) users in the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;OrganizationUser&gt;</returns>
+        public async System.Threading.Tasks.Task<List<OrganizationUser>> AddOrReplaceUsersInOrganizationAsync(string organizationId, List<OrganizationUser> organizationUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<List<OrganizationUser>> localVarResponse = await AddOrReplaceUsersInOrganizationWithHttpInfoAsync(organizationId, organizationUser, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add (or replace) users in the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;OrganizationUser&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<OrganizationUser>>> AddOrReplaceUsersInOrganizationWithHttpInfoAsync(string organizationId, List<OrganizationUser> organizationUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->AddOrReplaceUsersInOrganization");
+
+            // verify the required parameter 'organizationUser' is set
+            if (organizationUser == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationUser' when calling OrganizationApi->AddOrReplaceUsersInOrganization");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = organizationUser;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<OrganizationUser>>("/organizations/{organization_id}/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceUsersInOrganization", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// List all Organizations 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -474,7 +883,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Get the details of an organization 
+        /// Get the details of an Organization 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -486,7 +895,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Get the details of an organization 
+        /// Get the details of an Organization 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -535,7 +944,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Get the details of an organization 
+        /// Get the details of an Organization 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -548,7 +957,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Get the details of an organization 
+        /// Get the details of an Organization 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -627,7 +1036,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -692,7 +1102,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -730,28 +1141,27 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Unregister an organization 
+        /// Remove all users from the Organization specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <returns>Organization</returns>
-        public Organization UnregisterOrganization(string organizationId)
+        /// <returns></returns>
+        public void RemoveAllUsersInOrganization(string organizationId)
         {
-            Com.Cosmotech.Client.ApiResponse<Organization> localVarResponse = UnregisterOrganizationWithHttpInfo(organizationId);
-            return localVarResponse.Data;
+            RemoveAllUsersInOrganizationWithHttpInfo(organizationId);
         }
 
         /// <summary>
-        /// Unregister an organization 
+        /// Remove all users from the Organization specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <returns>ApiResponse of Organization</returns>
-        public Com.Cosmotech.Client.ApiResponse<Organization> UnregisterOrganizationWithHttpInfo(string organizationId)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllUsersInOrganizationWithHttpInfo(string organizationId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UnregisterOrganization");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->RemoveAllUsersInOrganization");
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -760,7 +1170,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -779,11 +1188,11 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Organization>("/organizations/{organization_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/users", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("UnregisterOrganization", localVarResponse);
+                Exception _exception = this.ExceptionFactory("RemoveAllUsersInOrganization", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -791,30 +1200,29 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Unregister an organization 
+        /// Remove all users from the Organization specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Organization</returns>
-        public async System.Threading.Tasks.Task<Organization> UnregisterOrganizationAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveAllUsersInOrganizationAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Organization> localVarResponse = await UnregisterOrganizationWithHttpInfoAsync(organizationId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await RemoveAllUsersInOrganizationWithHttpInfoAsync(organizationId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Unregister an organization 
+        /// Remove all users from the Organization specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Organization)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Organization>> UnregisterOrganizationWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllUsersInOrganizationWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UnregisterOrganization");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->RemoveAllUsersInOrganization");
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -824,7 +1232,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
 
@@ -845,7 +1252,203 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Organization>("/organizations/{organization_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllUsersInOrganization", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove the specified user from the given Organization 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <returns></returns>
+        public void RemoveUserFromOrganization(string organizationId, string userId)
+        {
+            RemoveUserFromOrganizationWithHttpInfo(organizationId, userId);
+        }
+
+        /// <summary>
+        /// Remove the specified user from the given Organization 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveUserFromOrganizationWithHttpInfo(string organizationId, string userId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->RemoveUserFromOrganization");
+
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'userId' when calling OrganizationApi->RemoveUserFromOrganization");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/users/{user_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveUserFromOrganization", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove the specified user from the given Organization 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveUserFromOrganizationAsync(string organizationId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RemoveUserFromOrganizationWithHttpInfoAsync(organizationId, userId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Remove the specified user from the given Organization 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveUserFromOrganizationWithHttpInfoAsync(string organizationId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->RemoveUserFromOrganization");
+
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'userId' when calling OrganizationApi->RemoveUserFromOrganization");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/users/{user_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveUserFromOrganization", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Unregister an organization 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <returns></returns>
+        public void UnregisterOrganization(string organizationId)
+        {
+            UnregisterOrganizationWithHttpInfo(organizationId);
+        }
+
+        /// <summary>
+        /// Unregister an organization 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> UnregisterOrganizationWithHttpInfo(string organizationId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UnregisterOrganization");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -857,7 +1460,71 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Update an organization 
+        /// Unregister an organization 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task UnregisterOrganizationAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await UnregisterOrganizationWithHttpInfoAsync(organizationId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Unregister an organization 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> UnregisterOrganizationWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UnregisterOrganization");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UnregisterOrganization", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update an Organization 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -870,7 +1537,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Update an organization 
+        /// Update an Organization 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -889,7 +1556,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -926,7 +1594,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Update an organization 
+        /// Update an Organization 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -940,7 +1608,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Update an organization 
+        /// Update an Organization 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -961,7 +1629,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -993,6 +1662,439 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateOrganization", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update the solutions container registry configuration for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new solutions container registry configuration to use</param>
+        /// <returns>OrganizationService</returns>
+        public OrganizationService UpdateSolutionsContainerRegistryByOrganizationId(string organizationId, OrganizationService organizationService)
+        {
+            Com.Cosmotech.Client.ApiResponse<OrganizationService> localVarResponse = UpdateSolutionsContainerRegistryByOrganizationIdWithHttpInfo(organizationId, organizationService);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update the solutions container registry configuration for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new solutions container registry configuration to use</param>
+        /// <returns>ApiResponse of OrganizationService</returns>
+        public Com.Cosmotech.Client.ApiResponse<OrganizationService> UpdateSolutionsContainerRegistryByOrganizationIdWithHttpInfo(string organizationId, OrganizationService organizationService)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UpdateSolutionsContainerRegistryByOrganizationId");
+
+            // verify the required parameter 'organizationService' is set
+            if (organizationService == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationService' when calling OrganizationApi->UpdateSolutionsContainerRegistryByOrganizationId");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json",
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = organizationService;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<OrganizationService>("/organizations/{organization_id}/services/solutionsContainerRegistry", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateSolutionsContainerRegistryByOrganizationId", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update the solutions container registry configuration for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new solutions container registry configuration to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationService</returns>
+        public async System.Threading.Tasks.Task<OrganizationService> UpdateSolutionsContainerRegistryByOrganizationIdAsync(string organizationId, OrganizationService organizationService, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<OrganizationService> localVarResponse = await UpdateSolutionsContainerRegistryByOrganizationIdWithHttpInfoAsync(organizationId, organizationService, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update the solutions container registry configuration for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new solutions container registry configuration to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationService)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<OrganizationService>> UpdateSolutionsContainerRegistryByOrganizationIdWithHttpInfoAsync(string organizationId, OrganizationService organizationService, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UpdateSolutionsContainerRegistryByOrganizationId");
+
+            // verify the required parameter 'organizationService' is set
+            if (organizationService == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationService' when calling OrganizationApi->UpdateSolutionsContainerRegistryByOrganizationId");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json", 
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = organizationService;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<OrganizationService>("/organizations/{organization_id}/services/solutionsContainerRegistry", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateSolutionsContainerRegistryByOrganizationId", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update storage configuration for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new Storage configuration to use</param>
+        /// <returns>OrganizationService</returns>
+        public OrganizationService UpdateStorageByOrganizationId(string organizationId, OrganizationService organizationService)
+        {
+            Com.Cosmotech.Client.ApiResponse<OrganizationService> localVarResponse = UpdateStorageByOrganizationIdWithHttpInfo(organizationId, organizationService);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update storage configuration for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new Storage configuration to use</param>
+        /// <returns>ApiResponse of OrganizationService</returns>
+        public Com.Cosmotech.Client.ApiResponse<OrganizationService> UpdateStorageByOrganizationIdWithHttpInfo(string organizationId, OrganizationService organizationService)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UpdateStorageByOrganizationId");
+
+            // verify the required parameter 'organizationService' is set
+            if (organizationService == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationService' when calling OrganizationApi->UpdateStorageByOrganizationId");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json",
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = organizationService;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<OrganizationService>("/organizations/{organization_id}/services/storage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateStorageByOrganizationId", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update storage configuration for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new Storage configuration to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of OrganizationService</returns>
+        public async System.Threading.Tasks.Task<OrganizationService> UpdateStorageByOrganizationIdAsync(string organizationId, OrganizationService organizationService, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<OrganizationService> localVarResponse = await UpdateStorageByOrganizationIdWithHttpInfoAsync(organizationId, organizationService, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update storage configuration for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="organizationService">the new Storage configuration to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (OrganizationService)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<OrganizationService>> UpdateStorageByOrganizationIdWithHttpInfoAsync(string organizationId, OrganizationService organizationService, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UpdateStorageByOrganizationId");
+
+            // verify the required parameter 'organizationService' is set
+            if (organizationService == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationService' when calling OrganizationApi->UpdateStorageByOrganizationId");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json", 
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = organizationService;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<OrganizationService>("/organizations/{organization_id}/services/storage", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateStorageByOrganizationId", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update tenant credentials for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="requestBody">the new Tenant Credentials to use</param>
+        /// <returns>Dictionary&lt;string, Object&gt;</returns>
+        public Dictionary<string, Object> UpdateTenantCredentialsByOrganizationId(string organizationId, Dictionary<string, Object> requestBody)
+        {
+            Com.Cosmotech.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = UpdateTenantCredentialsByOrganizationIdWithHttpInfo(organizationId, requestBody);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update tenant credentials for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="requestBody">the new Tenant Credentials to use</param>
+        /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<Dictionary<string, Object>> UpdateTenantCredentialsByOrganizationIdWithHttpInfo(string organizationId, Dictionary<string, Object> requestBody)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UpdateTenantCredentialsByOrganizationId");
+
+            // verify the required parameter 'requestBody' is set
+            if (requestBody == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'requestBody' when calling OrganizationApi->UpdateTenantCredentialsByOrganizationId");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = requestBody;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<Dictionary<string, Object>>("/organizations/{organization_id}/services/tenantCredentials", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateTenantCredentialsByOrganizationId", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update tenant credentials for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="requestBody">the new Tenant Credentials to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Object>> UpdateTenantCredentialsByOrganizationIdAsync(string organizationId, Dictionary<string, Object> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = await UpdateTenantCredentialsByOrganizationIdWithHttpInfoAsync(organizationId, requestBody, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update tenant credentials for the Organization specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="requestBody">the new Tenant Credentials to use</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dictionary<string, Object>>> UpdateTenantCredentialsByOrganizationIdWithHttpInfoAsync(string organizationId, Dictionary<string, Object> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationApi->UpdateTenantCredentialsByOrganizationId");
+
+            // verify the required parameter 'requestBody' is set
+            if (requestBody == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'requestBody' when calling OrganizationApi->UpdateTenantCredentialsByOrganizationId");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = requestBody;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Dictionary<string, Object>>("/organizations/{organization_id}/services/tenantCredentials", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateTenantCredentialsByOrganizationId", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

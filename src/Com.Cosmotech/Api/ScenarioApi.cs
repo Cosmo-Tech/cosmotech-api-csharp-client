@@ -27,6 +27,54 @@ namespace Com.Cosmotech.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Add (or replace) Parameter Values for the Scenario specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
+        /// <returns>List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        List<ScenarioRunTemplateParameterValue> AddOrReplaceScenarioParameterValues(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue);
+
+        /// <summary>
+        /// Add (or replace) Parameter Values for the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
+        /// <returns>ApiResponse of List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        ApiResponse<List<ScenarioRunTemplateParameterValue>> AddOrReplaceScenarioParameterValuesWithHttpInfo(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue);
+        /// <summary>
+        /// Add (or replace) users in the Scenario specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>List&lt;ScenarioUser&gt;</returns>
+        List<ScenarioUser> AddOrReplaceUsersInScenario(string organizationId, string workspaceId, string scenarioId, List<ScenarioUser> scenarioUser);
+
+        /// <summary>
+        /// Add (or replace) users in the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>ApiResponse of List&lt;ScenarioUser&gt;</returns>
+        ApiResponse<List<ScenarioUser>> AddOrReplaceUsersInScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, List<ScenarioUser> scenarioUser);
+        /// <summary>
         /// Compare the Scenario with another one and returns the difference for parameters values
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -51,7 +99,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of ScenarioComparisonResult</returns>
         ApiResponse<ScenarioComparisonResult> CompareScenariosWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId);
         /// <summary>
-        /// Create a new scenario
+        /// Create a new Scenario
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -61,7 +109,7 @@ namespace Com.Cosmotech.Api
         Scenario CreateScenario(string organizationId, string workspaceId, Scenario scenario);
 
         /// <summary>
-        /// Create a new scenario
+        /// Create a new Scenario
         /// </summary>
         /// <remarks>
         /// 
@@ -79,8 +127,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <returns>Scenario</returns>
-        Scenario DeleteScenario(string organizationId, string workspaceId, string scenarioId);
+        /// <returns></returns>
+        void DeleteScenario(string organizationId, string workspaceId, string scenarioId);
 
         /// <summary>
         /// Delete a scenario
@@ -92,8 +140,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <returns>ApiResponse of Scenario</returns>
-        ApiResponse<Scenario> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId);
         /// <summary>
         /// List all Scenarios
         /// </summary>
@@ -157,6 +205,74 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
         ApiResponse<List<Scenario>> GetScenariosTreeWithHttpInfo(string organizationId, string workspaceId);
         /// <summary>
+        /// Remove all Parameter Values from the Scenario specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns></returns>
+        void RemoveAllScenarioParameterValues(string organizationId, string workspaceId, string scenarioId);
+
+        /// <summary>
+        /// Remove all Parameter Values from the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveAllScenarioParameterValuesWithHttpInfo(string organizationId, string workspaceId, string scenarioId);
+        /// <summary>
+        /// Remove all users from the Scenario specified
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns></returns>
+        void RemoveAllUsersOfScenario(string organizationId, string workspaceId, string scenarioId);
+
+        /// <summary>
+        /// Remove all users from the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveAllUsersOfScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId);
+        /// <summary>
+        /// Remove the specified user from the given Scenario
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <returns></returns>
+        void RemoveUserFromScenario(string organizationId, string workspaceId, string scenarioId, string userId);
+
+        /// <summary>
+        /// Remove the specified user from the given Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveUserFromScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string userId);
+        /// <summary>
         /// Update a scenario
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -190,6 +306,64 @@ namespace Com.Cosmotech.Api
     {
         #region Asynchronous Operations
         /// <summary>
+        /// Add (or replace) Parameter Values for the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        System.Threading.Tasks.Task<List<ScenarioRunTemplateParameterValue>> AddOrReplaceScenarioParameterValuesAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Add (or replace) Parameter Values for the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ScenarioRunTemplateParameterValue&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ScenarioRunTemplateParameterValue>>> AddOrReplaceScenarioParameterValuesWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Add (or replace) users in the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ScenarioUser&gt;</returns>
+        System.Threading.Tasks.Task<List<ScenarioUser>> AddOrReplaceUsersInScenarioAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioUser> scenarioUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Add (or replace) users in the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ScenarioUser&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ScenarioUser>>> AddOrReplaceUsersInScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioUser> scenarioUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Compare the Scenario with another one and returns the difference for parameters values
         /// </summary>
         /// <remarks>
@@ -219,7 +393,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (ScenarioComparisonResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<ScenarioComparisonResult>> CompareScenariosWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Create a new scenario
+        /// Create a new Scenario
         /// </summary>
         /// <remarks>
         /// 
@@ -233,7 +407,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<Scenario> CreateScenarioAsync(string organizationId, string workspaceId, Scenario scenario, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Create a new scenario
+        /// Create a new Scenario
         /// </summary>
         /// <remarks>
         /// 
@@ -256,8 +430,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Scenario</returns>
-        System.Threading.Tasks.Task<Scenario> DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a scenario
@@ -270,8 +444,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Scenario)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Scenario>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Scenarios
         /// </summary>
@@ -349,6 +523,89 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> GetScenariosTreeWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Remove all Parameter Values from the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveAllScenarioParameterValuesAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Remove all Parameter Values from the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllScenarioParameterValuesWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Remove all users from the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveAllUsersOfScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Remove all users from the Scenario specified
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllUsersOfScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Remove the specified user from the given Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveUserFromScenarioAsync(string organizationId, string workspaceId, string scenarioId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Remove the specified user from the given Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveUserFromScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a scenario
         /// </summary>
@@ -496,6 +753,348 @@ namespace Com.Cosmotech.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Add (or replace) Parameter Values for the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
+        /// <returns>List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        public List<ScenarioRunTemplateParameterValue> AddOrReplaceScenarioParameterValues(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue)
+        {
+            Com.Cosmotech.Client.ApiResponse<List<ScenarioRunTemplateParameterValue>> localVarResponse = AddOrReplaceScenarioParameterValuesWithHttpInfo(organizationId, workspaceId, scenarioId, scenarioRunTemplateParameterValue);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add (or replace) Parameter Values for the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
+        /// <returns>ApiResponse of List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<ScenarioRunTemplateParameterValue>> AddOrReplaceScenarioParameterValuesWithHttpInfo(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->AddOrReplaceScenarioParameterValues");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->AddOrReplaceScenarioParameterValues");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->AddOrReplaceScenarioParameterValues");
+
+            // verify the required parameter 'scenarioRunTemplateParameterValue' is set
+            if (scenarioRunTemplateParameterValue == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioRunTemplateParameterValue' when calling ScenarioApi->AddOrReplaceScenarioParameterValues");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            localVarRequestOptions.Data = scenarioRunTemplateParameterValue;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<ScenarioRunTemplateParameterValue>>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceScenarioParameterValues", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add (or replace) Parameter Values for the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ScenarioRunTemplateParameterValue>> AddOrReplaceScenarioParameterValuesAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<List<ScenarioRunTemplateParameterValue>> localVarResponse = await AddOrReplaceScenarioParameterValuesWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenarioRunTemplateParameterValue, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add (or replace) Parameter Values for the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ScenarioRunTemplateParameterValue&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<ScenarioRunTemplateParameterValue>>> AddOrReplaceScenarioParameterValuesWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->AddOrReplaceScenarioParameterValues");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->AddOrReplaceScenarioParameterValues");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->AddOrReplaceScenarioParameterValues");
+
+            // verify the required parameter 'scenarioRunTemplateParameterValue' is set
+            if (scenarioRunTemplateParameterValue == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioRunTemplateParameterValue' when calling ScenarioApi->AddOrReplaceScenarioParameterValues");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            localVarRequestOptions.Data = scenarioRunTemplateParameterValue;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ScenarioRunTemplateParameterValue>>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceScenarioParameterValues", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add (or replace) users in the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>List&lt;ScenarioUser&gt;</returns>
+        public List<ScenarioUser> AddOrReplaceUsersInScenario(string organizationId, string workspaceId, string scenarioId, List<ScenarioUser> scenarioUser)
+        {
+            Com.Cosmotech.Client.ApiResponse<List<ScenarioUser>> localVarResponse = AddOrReplaceUsersInScenarioWithHttpInfo(organizationId, workspaceId, scenarioId, scenarioUser);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add (or replace) users in the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>ApiResponse of List&lt;ScenarioUser&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<ScenarioUser>> AddOrReplaceUsersInScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, List<ScenarioUser> scenarioUser)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->AddOrReplaceUsersInScenario");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->AddOrReplaceUsersInScenario");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->AddOrReplaceUsersInScenario");
+
+            // verify the required parameter 'scenarioUser' is set
+            if (scenarioUser == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioUser' when calling ScenarioApi->AddOrReplaceUsersInScenario");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            localVarRequestOptions.Data = scenarioUser;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<ScenarioUser>>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/users", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceUsersInScenario", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add (or replace) users in the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;ScenarioUser&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ScenarioUser>> AddOrReplaceUsersInScenarioAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioUser> scenarioUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<List<ScenarioUser>> localVarResponse = await AddOrReplaceUsersInScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenarioUser, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add (or replace) users in the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="scenarioUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;ScenarioUser&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<ScenarioUser>>> AddOrReplaceUsersInScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioUser> scenarioUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->AddOrReplaceUsersInScenario");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->AddOrReplaceUsersInScenario");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->AddOrReplaceUsersInScenario");
+
+            // verify the required parameter 'scenarioUser' is set
+            if (scenarioUser == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioUser' when calling ScenarioApi->AddOrReplaceUsersInScenario");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            localVarRequestOptions.Data = scenarioUser;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ScenarioUser>>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddOrReplaceUsersInScenario", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -668,7 +1267,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Create a new scenario 
+        /// Create a new Scenario 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -682,7 +1281,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Create a new scenario 
+        /// Create a new Scenario 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -706,7 +1305,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -744,7 +1344,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Create a new scenario 
+        /// Create a new Scenario 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -759,7 +1359,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Create a new scenario 
+        /// Create a new Scenario 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -785,7 +1385,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -831,11 +1432,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <returns>Scenario</returns>
-        public Scenario DeleteScenario(string organizationId, string workspaceId, string scenarioId)
+        /// <returns></returns>
+        public void DeleteScenario(string organizationId, string workspaceId, string scenarioId)
         {
-            Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = DeleteScenarioWithHttpInfo(organizationId, workspaceId, scenarioId);
-            return localVarResponse.Data;
+            DeleteScenarioWithHttpInfo(organizationId, workspaceId, scenarioId);
         }
 
         /// <summary>
@@ -845,8 +1445,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <returns>ApiResponse of Scenario</returns>
-        public Com.Cosmotech.Client.ApiResponse<Scenario> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -867,7 +1467,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -888,7 +1487,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Scenario>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -907,11 +1506,10 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Scenario</returns>
-        public async System.Threading.Tasks.Task<Scenario> DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = await DeleteScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DeleteScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -922,8 +1520,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Scenario)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Scenario>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -945,7 +1543,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
 
@@ -968,7 +1565,7 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Scenario>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1417,6 +2014,473 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
+        /// Remove all Parameter Values from the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns></returns>
+        public void RemoveAllScenarioParameterValues(string organizationId, string workspaceId, string scenarioId)
+        {
+            RemoveAllScenarioParameterValuesWithHttpInfo(organizationId, workspaceId, scenarioId);
+        }
+
+        /// <summary>
+        /// Remove all Parameter Values from the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllScenarioParameterValuesWithHttpInfo(string organizationId, string workspaceId, string scenarioId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->RemoveAllScenarioParameterValues");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->RemoveAllScenarioParameterValues");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->RemoveAllScenarioParameterValues");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllScenarioParameterValues", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove all Parameter Values from the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveAllScenarioParameterValuesAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RemoveAllScenarioParameterValuesWithHttpInfoAsync(organizationId, workspaceId, scenarioId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Remove all Parameter Values from the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllScenarioParameterValuesWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->RemoveAllScenarioParameterValues");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->RemoveAllScenarioParameterValues");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->RemoveAllScenarioParameterValues");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllScenarioParameterValues", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove all users from the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns></returns>
+        public void RemoveAllUsersOfScenario(string organizationId, string workspaceId, string scenarioId)
+        {
+            RemoveAllUsersOfScenarioWithHttpInfo(organizationId, workspaceId, scenarioId);
+        }
+
+        /// <summary>
+        /// Remove all users from the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllUsersOfScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->RemoveAllUsersOfScenario");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->RemoveAllUsersOfScenario");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->RemoveAllUsersOfScenario");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/users", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllUsersOfScenario", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove all users from the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveAllUsersOfScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RemoveAllUsersOfScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Remove all users from the Scenario specified 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllUsersOfScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->RemoveAllUsersOfScenario");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->RemoveAllUsersOfScenario");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->RemoveAllUsersOfScenario");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveAllUsersOfScenario", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove the specified user from the given Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <returns></returns>
+        public void RemoveUserFromScenario(string organizationId, string workspaceId, string scenarioId, string userId)
+        {
+            RemoveUserFromScenarioWithHttpInfo(organizationId, workspaceId, scenarioId, userId);
+        }
+
+        /// <summary>
+        /// Remove the specified user from the given Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveUserFromScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string userId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->RemoveUserFromScenario");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->RemoveUserFromScenario");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->RemoveUserFromScenario");
+
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'userId' when calling ScenarioApi->RemoveUserFromScenario");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/users/{user_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveUserFromScenario", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove the specified user from the given Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveUserFromScenarioAsync(string organizationId, string workspaceId, string scenarioId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await RemoveUserFromScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, userId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Remove the specified user from the given Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="userId">the User identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveUserFromScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->RemoveUserFromScenario");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->RemoveUserFromScenario");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->RemoveUserFromScenario");
+
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'userId' when calling ScenarioApi->RemoveUserFromScenario");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/users/{user_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveUserFromScenario", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Update a scenario 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1461,7 +2525,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -1547,7 +2612,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header

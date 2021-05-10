@@ -57,20 +57,28 @@ namespace Com.Cosmotech.Test.Model
 
 
         /// <summary>
-        /// Test the property 'Container'
+        /// Test the property 'NodeId'
         /// </summary>
         [Fact]
-        public void ContainerTest()
+        public void NodeIdTest()
         {
-            // TODO unit test for the property 'Container'
+            // TODO unit test for the property 'NodeId'
         }
         /// <summary>
-        /// Test the property 'Computer'
+        /// Test the property 'ContainerName'
         /// </summary>
         [Fact]
-        public void ComputerTest()
+        public void ContainerNameTest()
         {
-            // TODO unit test for the property 'Computer'
+            // TODO unit test for the property 'ContainerName'
+        }
+        /// <summary>
+        /// Test the property 'Children'
+        /// </summary>
+        [Fact]
+        public void ChildrenTest()
+        {
+            // TODO unit test for the property 'Children'
         }
         /// <summary>
         /// Test the property 'Logs'
@@ -79,14 +87,6 @@ namespace Com.Cosmotech.Test.Model
         public void LogsTest()
         {
             // TODO unit test for the property 'Logs'
-        }
-        /// <summary>
-        /// Test the property 'TextLog'
-        /// </summary>
-        [Fact]
-        public void TextLogTest()
-        {
-            // TODO unit test for the property 'TextLog'
         }
 
     }

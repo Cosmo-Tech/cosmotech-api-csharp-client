@@ -1,6 +1,6 @@
 # Com.Cosmotech.Api.ValidatorApi
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *https://api.azure.cosmo-platform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -36,7 +36,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
@@ -111,7 +111,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 <a name="deletevalidator"></a>
 # **DeleteValidator**
-> Validator DeleteValidator (string organizationId, string validatorId)
+> void DeleteValidator (string organizationId, string validatorId)
 
 Delete a validator
 
@@ -188,7 +188,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -199,8 +199,7 @@ namespace Example
             try
             {
                 // Delete a validator
-                Validator result = apiInstance.DeleteValidator(organizationId, validatorId);
-                Debug.WriteLine(result);
+                apiInstance.DeleteValidator(organizationId, validatorId);
             }
             catch (ApiException  e)
             {
@@ -222,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Validator**](Validator.md)
+void (empty response body)
 
 ### Authorization
 
@@ -231,21 +230,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the validator details |  -  |
-| **400** | Bad request |  -  |
+| **204** | Request succeeded |  -  |
 | **404** | the Validator specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletevalidatorrun"></a>
 # **DeleteValidatorRun**
-> ValidatorRun DeleteValidatorRun (string organizationId, string validatorId, string validatorrunId)
+> void DeleteValidatorRun (string organizationId, string validatorId, string validatorrunId)
 
 Delete a validator run
 
@@ -264,7 +262,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -276,8 +274,7 @@ namespace Example
             try
             {
                 // Delete a validator run
-                ValidatorRun result = apiInstance.DeleteValidatorRun(organizationId, validatorId, validatorrunId);
-                Debug.WriteLine(result);
+                apiInstance.DeleteValidatorRun(organizationId, validatorId, validatorrunId);
             }
             catch (ApiException  e)
             {
@@ -300,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ValidatorRun**](ValidatorRun.md)
+void (empty response body)
 
 ### Authorization
 
@@ -309,14 +306,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the validator run details |  -  |
-| **400** | Bad request |  -  |
+| **204** | Request succeeded |  -  |
 | **404** | the ValidatorRun specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -342,7 +338,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -416,7 +412,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -488,7 +484,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -563,7 +559,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -640,7 +636,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -684,7 +680,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 

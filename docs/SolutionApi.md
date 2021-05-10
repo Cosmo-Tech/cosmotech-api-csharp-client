@@ -1,16 +1,256 @@
 # Com.Cosmotech.Api.SolutionApi
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *https://api.azure.cosmo-platform.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddOrReplaceParameterGroups**](SolutionApi.md#addorreplaceparametergroups) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Add Parameter Groups. Any item with the same ID will be overwritten
+[**AddOrReplaceParameters**](SolutionApi.md#addorreplaceparameters) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameters | Add Parameters. Any item with the same ID will be overwritten
+[**AddOrReplaceRunTemplates**](SolutionApi.md#addorreplaceruntemplates) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Add Run Templates. Any item with the same ID will be overwritten
 [**CreateSolution**](SolutionApi.md#createsolution) | **POST** /organizations/{organization_id}/solutions | Register a new solution
 [**DeleteSolution**](SolutionApi.md#deletesolution) | **DELETE** /organizations/{organization_id}/solutions/{solution_id} | Delete a solution
 [**FindAllSolutions**](SolutionApi.md#findallsolutions) | **GET** /organizations/{organization_id}/solutions | List all Solutions
 [**FindSolutionById**](SolutionApi.md#findsolutionbyid) | **GET** /organizations/{organization_id}/solutions/{solution_id} | Get the details of a solution
+[**RemoveAllRunTemplates**](SolutionApi.md#removeallruntemplates) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Remove all Run Templates from the Solution specified
+[**RemoveAllSolutionParameterGroups**](SolutionApi.md#removeallsolutionparametergroups) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Remove all Parameter Groups from the Solution specified
+[**RemoveAllSolutionParameters**](SolutionApi.md#removeallsolutionparameters) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameters | Remove all Parameters from the Solution specified
 [**UpdateSolution**](SolutionApi.md#updatesolution) | **PATCH** /organizations/{organization_id}/solutions/{solution_id} | Update a solution
-[**Upload**](SolutionApi.md#upload) | **POST** /organizations/{organization_id}/solutions/upload | Upload and register a new solution
+[**UploadRunTemplateHandler**](SolutionApi.md#uploadruntemplatehandler) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload | Upload a Run Template step handler zip file
 
+
+<a name="addorreplaceparametergroups"></a>
+# **AddOrReplaceParameterGroups**
+> List&lt;RunTemplateParameterGroup&gt; AddOrReplaceParameterGroups (string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup)
+
+Add Parameter Groups. Any item with the same ID will be overwritten
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class AddOrReplaceParameterGroupsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var solutionId = solutionId_example;  // string | the Solution identifier
+            var runTemplateParameterGroup = new List<RunTemplateParameterGroup>(); // List<RunTemplateParameterGroup> | the Parameter Groups
+
+            try
+            {
+                // Add Parameter Groups. Any item with the same ID will be overwritten
+                List<RunTemplateParameterGroup> result = apiInstance.AddOrReplaceParameterGroups(organizationId, solutionId, runTemplateParameterGroup);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.AddOrReplaceParameterGroups: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateParameterGroup** | [**List&lt;RunTemplateParameterGroup&gt;**](RunTemplateParameterGroup.md)| the Parameter Groups | 
+
+### Return type
+
+[**List&lt;RunTemplateParameterGroup&gt;**](RunTemplateParameterGroup.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | the Parameter Groups |  -  |
+| **400** | Bad request |  -  |
+| **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="addorreplaceparameters"></a>
+# **AddOrReplaceParameters**
+> List&lt;RunTemplateParameter&gt; AddOrReplaceParameters (string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter)
+
+Add Parameters. Any item with the same ID will be overwritten
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class AddOrReplaceParametersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var solutionId = solutionId_example;  // string | the Solution identifier
+            var runTemplateParameter = new List<RunTemplateParameter>(); // List<RunTemplateParameter> | the Parameters
+
+            try
+            {
+                // Add Parameters. Any item with the same ID will be overwritten
+                List<RunTemplateParameter> result = apiInstance.AddOrReplaceParameters(organizationId, solutionId, runTemplateParameter);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.AddOrReplaceParameters: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateParameter** | [**List&lt;RunTemplateParameter&gt;**](RunTemplateParameter.md)| the Parameters | 
+
+### Return type
+
+[**List&lt;RunTemplateParameter&gt;**](RunTemplateParameter.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | the Parameters |  -  |
+| **400** | Bad request |  -  |
+| **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="addorreplaceruntemplates"></a>
+# **AddOrReplaceRunTemplates**
+> List&lt;RunTemplate&gt; AddOrReplaceRunTemplates (string organizationId, string solutionId, List<RunTemplate> runTemplate)
+
+Add Run Templates. Any item with the same ID will be overwritten
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class AddOrReplaceRunTemplatesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var solutionId = solutionId_example;  // string | the Solution identifier
+            var runTemplate = new List<RunTemplate>(); // List<RunTemplate> | the Run Templates
+
+            try
+            {
+                // Add Run Templates. Any item with the same ID will be overwritten
+                List<RunTemplate> result = apiInstance.AddOrReplaceRunTemplates(organizationId, solutionId, runTemplate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.AddOrReplaceRunTemplates: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplate** | [**List&lt;RunTemplate&gt;**](RunTemplate.md)| the Run Templates | 
+
+### Return type
+
+[**List&lt;RunTemplate&gt;**](RunTemplate.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | the Parameters |  -  |
+| **400** | Bad request |  -  |
+| **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createsolution"></a>
 # **CreateSolution**
@@ -33,7 +273,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -75,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
@@ -89,7 +329,7 @@ Name | Type | Description  | Notes
 
 <a name="deletesolution"></a>
 # **DeleteSolution**
-> Solution DeleteSolution (string organizationId, string solutionId)
+> void DeleteSolution (string organizationId, string solutionId)
 
 Delete a solution
 
@@ -108,7 +348,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -119,8 +359,7 @@ namespace Example
             try
             {
                 // Delete a solution
-                Solution result = apiInstance.DeleteSolution(organizationId, solutionId);
-                Debug.WriteLine(result);
+                apiInstance.DeleteSolution(organizationId, solutionId);
             }
             catch (ApiException  e)
             {
@@ -142,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Solution**](Solution.md)
+void (empty response body)
 
 ### Authorization
 
@@ -151,14 +390,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the solution details |  -  |
-| **400** | Bad request |  -  |
+| **204** | Request succeeded |  -  |
 | **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -184,7 +422,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -256,7 +494,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -310,6 +548,228 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="removeallruntemplates"></a>
+# **RemoveAllRunTemplates**
+> void RemoveAllRunTemplates (string organizationId, string solutionId)
+
+Remove all Run Templates from the Solution specified
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class RemoveAllRunTemplatesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var solutionId = solutionId_example;  // string | the Solution identifier
+
+            try
+            {
+                // Remove all Run Templates from the Solution specified
+                apiInstance.RemoveAllRunTemplates(organizationId, solutionId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.RemoveAllRunTemplates: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | the operation succeeded |  -  |
+| **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="removeallsolutionparametergroups"></a>
+# **RemoveAllSolutionParameterGroups**
+> void RemoveAllSolutionParameterGroups (string organizationId, string solutionId)
+
+Remove all Parameter Groups from the Solution specified
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class RemoveAllSolutionParameterGroupsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var solutionId = solutionId_example;  // string | the Solution identifier
+
+            try
+            {
+                // Remove all Parameter Groups from the Solution specified
+                apiInstance.RemoveAllSolutionParameterGroups(organizationId, solutionId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.RemoveAllSolutionParameterGroups: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | the operation succeeded |  -  |
+| **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="removeallsolutionparameters"></a>
+# **RemoveAllSolutionParameters**
+> void RemoveAllSolutionParameters (string organizationId, string solutionId)
+
+Remove all Parameters from the Solution specified
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class RemoveAllSolutionParametersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var solutionId = solutionId_example;  // string | the Solution identifier
+
+            try
+            {
+                // Remove all Parameters from the Solution specified
+                apiInstance.RemoveAllSolutionParameters(organizationId, solutionId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.RemoveAllSolutionParameters: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | the operation succeeded |  -  |
+| **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updatesolution"></a>
 # **UpdateSolution**
 > Solution UpdateSolution (string organizationId, string solutionId, Solution solution)
@@ -331,7 +791,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -375,7 +835,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
@@ -388,11 +848,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="upload"></a>
-# **Upload**
-> Solution Upload (string organizationId, System.IO.Stream body)
+<a name="uploadruntemplatehandler"></a>
+# **UploadRunTemplateHandler**
+> void UploadRunTemplateHandler (string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = null)
 
-Upload and register a new solution
+Upload a Run Template step handler zip file
 
 ### Example
 ```csharp
@@ -404,28 +864,30 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class UploadExample
+    public class UploadRunTemplateHandlerExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "http://localhost:8080";
+            config.BasePath = "https://api.azure.cosmo-platform.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
             var organizationId = organizationId_example;  // string | the Organization identifier
-            var body = BINARY_DATA_HERE;  // System.IO.Stream | the Solution to upload and register
+            var solutionId = solutionId_example;  // string | the Solution identifier
+            var runTemplateId = runTemplateId_example;  // string | the Run Template identifier
+            var handlerId = handlerId_example;  // string | the Handler id identifier
+            var body = BINARY_DATA_HERE;  // System.IO.Stream |  (optional) 
 
             try
             {
-                // Upload and register a new solution
-                Solution result = apiInstance.Upload(organizationId, body);
-                Debug.WriteLine(result);
+                // Upload a Run Template step handler zip file
+                apiInstance.UploadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId, body);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.Upload: " + e.Message );
+                Debug.Print("Exception when calling SolutionApi.UploadRunTemplateHandler: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -439,11 +901,14 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
- **body** | **System.IO.Stream****System.IO.Stream**| the Solution to upload and register | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateId** | **string**| the Run Template identifier | 
+ **handlerId** | **string**| the Handler id identifier | 
+ **body** | **System.IO.Stream****System.IO.Stream**|  | [optional] 
 
 ### Return type
 
-[**Solution**](Solution.md)
+void (empty response body)
 
 ### Authorization
 
@@ -451,14 +916,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/yaml
- - **Accept**: application/json
+ - **Content-Type**: image/zip
+ - **Accept**: Not defined
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | the solution details |  -  |
+| **201** | zip file uploaded |  -  |
 | **400** | Bad request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

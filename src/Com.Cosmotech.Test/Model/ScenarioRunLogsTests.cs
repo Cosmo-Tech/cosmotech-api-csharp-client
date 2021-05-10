@@ -65,76 +65,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'ScenariorunId'
         }
         /// <summary>
-        /// Test the property 'Options'
+        /// Test the property 'Containers'
         /// </summary>
         [Fact]
-        public void OptionsTest()
+        public void ContainersTest()
         {
-            // TODO unit test for the property 'Options'
-        }
-        /// <summary>
-        /// Test the property 'FetchDatasetLogs'
-        /// </summary>
-        [Fact]
-        public void FetchDatasetLogsTest()
-        {
-            // TODO unit test for the property 'FetchDatasetLogs'
-        }
-        /// <summary>
-        /// Test the property 'FetchScenarioParametersLog'
-        /// </summary>
-        [Fact]
-        public void FetchScenarioParametersLogTest()
-        {
-            // TODO unit test for the property 'FetchScenarioParametersLog'
-        }
-        /// <summary>
-        /// Test the property 'ApplyParametersLogs'
-        /// </summary>
-        [Fact]
-        public void ApplyParametersLogsTest()
-        {
-            // TODO unit test for the property 'ApplyParametersLogs'
-        }
-        /// <summary>
-        /// Test the property 'ValidateDataLogs'
-        /// </summary>
-        [Fact]
-        public void ValidateDataLogsTest()
-        {
-            // TODO unit test for the property 'ValidateDataLogs'
-        }
-        /// <summary>
-        /// Test the property 'SendDataWarehouseLogs'
-        /// </summary>
-        [Fact]
-        public void SendDataWarehouseLogsTest()
-        {
-            // TODO unit test for the property 'SendDataWarehouseLogs'
-        }
-        /// <summary>
-        /// Test the property 'PreRunLogs'
-        /// </summary>
-        [Fact]
-        public void PreRunLogsTest()
-        {
-            // TODO unit test for the property 'PreRunLogs'
-        }
-        /// <summary>
-        /// Test the property 'RunLogs'
-        /// </summary>
-        [Fact]
-        public void RunLogsTest()
-        {
-            // TODO unit test for the property 'RunLogs'
-        }
-        /// <summary>
-        /// Test the property 'PostRunLogs'
-        /// </summary>
-        [Fact]
-        public void PostRunLogsTest()
-        {
-            // TODO unit test for the property 'PostRunLogs'
+            // TODO unit test for the property 'Containers'
         }
 
     }

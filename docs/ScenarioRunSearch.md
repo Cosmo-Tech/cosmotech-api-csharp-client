@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **WorkspaceId** | **string** | the Workspace Id to search | [optional] 
 **ScenarioId** | **string** | the Scenario Id to search | [optional] 
 **State** | **string** | the state to search | [optional] 
-**JobId** | **string** | the Cosmo Tech compute cluster Job Id to search | [optional] 
+**WorkflowId** | **string** | the Cosmo Tech compute cluster Argo Workflow Id to search | [optional] 
+**WorkflowName** | **string** | the Cosmo Tech compute cluster Argo Workflow Name | [optional] 
 **OwnerId** | **string** | the owner Id to search | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

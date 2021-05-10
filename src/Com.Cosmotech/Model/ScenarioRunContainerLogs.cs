@@ -34,42 +34,65 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRunContainerLogs" /> class.
         /// </summary>
-        /// <param name="container">container.</param>
-        /// <param name="textLog">the plain text log if plainText option has been set.</param>
-        public ScenarioRunContainerLogs(ScenarioRunContainer container = default(ScenarioRunContainer), string textLog = default(string))
+        [JsonConstructorAttribute]
+        public ScenarioRunContainerLogs()
         {
-            this.Container = container;
-            this.TextLog = textLog;
         }
 
         /// <summary>
-        /// Gets or Sets Container
+        /// the node Id which has executed this log
         /// </summary>
-        [DataMember(Name = "container", EmitDefaultValue = false)]
-        public ScenarioRunContainer Container { get; set; }
+        /// <value>the node Id which has executed this log</value>
+        [DataMember(Name = "nodeId", EmitDefaultValue = false)]
+        public string NodeId { get; private set; }
 
         /// <summary>
-        /// computer/node that&#39;s generating the log
-        /// </summary>
-        /// <value>computer/node that&#39;s generating the log</value>
-        [DataMember(Name = "computer", EmitDefaultValue = false)]
-        public string Computer { get; private set; }
-
-        /// <summary>
-        /// Returns false as Computer should not be serialized given that it's read-only.
+        /// Returns false as NodeId should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeComputer()
+        public bool ShouldSerializeNodeId()
         {
             return false;
         }
 
         /// <summary>
-        /// the list of container logs in structured format
+        /// the container name
         /// </summary>
-        /// <value>the list of container logs in structured format</value>
+        /// <value>the container name</value>
+        [DataMember(Name = "containerName", EmitDefaultValue = false)]
+        public string ContainerName { get; private set; }
+
+        /// <summary>
+        /// Returns false as ContainerName should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeContainerName()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// the list of children node id
+        /// </summary>
+        /// <value>the list of children node id</value>
+        [DataMember(Name = "children", EmitDefaultValue = false)]
+        public List<string> Children { get; private set; }
+
+        /// <summary>
+        /// Returns false as Children should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeChildren()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// the node logs in plain text
+        /// </summary>
+        /// <value>the node logs in plain text</value>
         [DataMember(Name = "logs", EmitDefaultValue = false)]
-        public List<ScenarioRunContainerLog> Logs { get; private set; }
+        public string Logs { get; private set; }
 
         /// <summary>
         /// Returns false as Logs should not be serialized given that it's read-only.
@@ -81,13 +104,6 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the plain text log if plainText option has been set
-        /// </summary>
-        /// <value>the plain text log if plainText option has been set</value>
-        [DataMember(Name = "textLog", EmitDefaultValue = false)]
-        public string TextLog { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -95,10 +111,10 @@ namespace Com.Cosmotech.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ScenarioRunContainerLogs {\n");
-            sb.Append("  Container: ").Append(Container).Append("\n");
-            sb.Append("  Computer: ").Append(Computer).Append("\n");
+            sb.Append("  NodeId: ").Append(NodeId).Append("\n");
+            sb.Append("  ContainerName: ").Append(ContainerName).Append("\n");
+            sb.Append("  Children: ").Append(Children).Append("\n");
             sb.Append("  Logs: ").Append(Logs).Append("\n");
-            sb.Append("  TextLog: ").Append(TextLog).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -134,25 +150,25 @@ namespace Com.Cosmotech.Model
 
             return 
                 (
-                    this.Container == input.Container ||
-                    (this.Container != null &&
-                    this.Container.Equals(input.Container))
+                    this.NodeId == input.NodeId ||
+                    (this.NodeId != null &&
+                    this.NodeId.Equals(input.NodeId))
                 ) && 
                 (
-                    this.Computer == input.Computer ||
-                    (this.Computer != null &&
-                    this.Computer.Equals(input.Computer))
+                    this.ContainerName == input.ContainerName ||
+                    (this.ContainerName != null &&
+                    this.ContainerName.Equals(input.ContainerName))
+                ) && 
+                (
+                    this.Children == input.Children ||
+                    this.Children != null &&
+                    input.Children != null &&
+                    this.Children.SequenceEqual(input.Children)
                 ) && 
                 (
                     this.Logs == input.Logs ||
-                    this.Logs != null &&
-                    input.Logs != null &&
-                    this.Logs.SequenceEqual(input.Logs)
-                ) && 
-                (
-                    this.TextLog == input.TextLog ||
-                    (this.TextLog != null &&
-                    this.TextLog.Equals(input.TextLog))
+                    (this.Logs != null &&
+                    this.Logs.Equals(input.Logs))
                 );
         }
 
@@ -165,14 +181,14 @@ namespace Com.Cosmotech.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Container != null)
-                    hashCode = hashCode * 59 + this.Container.GetHashCode();
-                if (this.Computer != null)
-                    hashCode = hashCode * 59 + this.Computer.GetHashCode();
+                if (this.NodeId != null)
+                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.ContainerName != null)
+                    hashCode = hashCode * 59 + this.ContainerName.GetHashCode();
+                if (this.Children != null)
+                    hashCode = hashCode * 59 + this.Children.GetHashCode();
                 if (this.Logs != null)
                     hashCode = hashCode * 59 + this.Logs.GetHashCode();
-                if (this.TextLog != null)
-                    hashCode = hashCode * 59 + this.TextLog.GetHashCode();
                 return hashCode;
             }
         }

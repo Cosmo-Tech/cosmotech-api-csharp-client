@@ -34,18 +34,12 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Organization" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected Organization() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Organization" /> class.
-        /// </summary>
-        /// <param name="name">the Organization name (required).</param>
+        /// <param name="name">the Organization name.</param>
         /// <param name="users">users.</param>
         /// <param name="services">services.</param>
         public Organization(string name = default(string), List<OrganizationUser> users = default(List<OrganizationUser>), OrganizationServices services = default(OrganizationServices))
         {
-            // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name is a required property for Organization and cannot be null");
+            this.Name = name;
             this.Users = users;
             this.Services = services;
         }
@@ -70,7 +64,7 @@ namespace Com.Cosmotech.Model
         /// the Organization name
         /// </summary>
         /// <value>the Organization name</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>

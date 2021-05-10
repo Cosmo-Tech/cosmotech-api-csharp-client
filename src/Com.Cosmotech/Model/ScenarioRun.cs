@@ -118,6 +118,8 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRun" /> class.
         /// </summary>
+        /// <param name="workflowId">the Cosmo Tech compute cluster Argo Workflow Id to search.</param>
+        /// <param name="workflowName">the Cosmo Tech compute cluster Argo Workflow Name.</param>
         /// <param name="dataWarehouseDB">the DataWarehouse database name to send data if sendInputToDataWarehouse is set.</param>
         /// <param name="resultsEventBusResourceUri">the event bus which receive Workspace ScenarioRun results messages. Message won&#39;t be send if this is not set.</param>
         /// <param name="scenariorunEventBusResourceUri">the event bus which receive Workspace ScenarioRun events messages. Message won&#39;t be send if this is not set.</param>
@@ -128,8 +130,10 @@ namespace Com.Cosmotech.Model
         /// <param name="preRunContainer">preRunContainer.</param>
         /// <param name="runContainer">runContainer.</param>
         /// <param name="postRunContainer">postRunContainer.</param>
-        public ScenarioRun(string dataWarehouseDB = default(string), string resultsEventBusResourceUri = default(string), string scenariorunEventBusResourceUri = default(string), ScenarioRunContainer fetchScenarioParametersContainer = default(ScenarioRunContainer), ScenarioRunContainer applyParametersContainer = default(ScenarioRunContainer), ScenarioRunContainer validateDataContainer = default(ScenarioRunContainer), ScenarioRunContainer sendDataWarehouseContainer = default(ScenarioRunContainer), ScenarioRunContainer preRunContainer = default(ScenarioRunContainer), ScenarioRunContainer runContainer = default(ScenarioRunContainer), ScenarioRunContainer postRunContainer = default(ScenarioRunContainer))
+        public ScenarioRun(string workflowId = default(string), string workflowName = default(string), string dataWarehouseDB = default(string), string resultsEventBusResourceUri = default(string), string scenariorunEventBusResourceUri = default(string), ScenarioRunContainer fetchScenarioParametersContainer = default(ScenarioRunContainer), ScenarioRunContainer applyParametersContainer = default(ScenarioRunContainer), ScenarioRunContainer validateDataContainer = default(ScenarioRunContainer), ScenarioRunContainer sendDataWarehouseContainer = default(ScenarioRunContainer), ScenarioRunContainer preRunContainer = default(ScenarioRunContainer), ScenarioRunContainer runContainer = default(ScenarioRunContainer), ScenarioRunContainer postRunContainer = default(ScenarioRunContainer))
         {
+            this.WorkflowId = workflowId;
+            this.WorkflowName = workflowName;
             this.DataWarehouseDB = dataWarehouseDB;
             this.ResultsEventBusResourceUri = resultsEventBusResourceUri;
             this.ScenariorunEventBusResourceUri = scenariorunEventBusResourceUri;
@@ -159,20 +163,18 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the Platform compute cluster Job Id
+        /// the Cosmo Tech compute cluster Argo Workflow Id to search
         /// </summary>
-        /// <value>the Platform compute cluster Job Id</value>
-        [DataMember(Name = "jobId", EmitDefaultValue = false)]
-        public string JobId { get; private set; }
+        /// <value>the Cosmo Tech compute cluster Argo Workflow Id to search</value>
+        [DataMember(Name = "workflowId", EmitDefaultValue = false)]
+        public string WorkflowId { get; set; }
 
         /// <summary>
-        /// Returns false as JobId should not be serialized given that it's read-only.
+        /// the Cosmo Tech compute cluster Argo Workflow Name
         /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeJobId()
-        {
-            return false;
-        }
+        /// <value>the Cosmo Tech compute cluster Argo Workflow Name</value>
+        [DataMember(Name = "workflowName", EmitDefaultValue = false)]
+        public string WorkflowName { get; set; }
 
         /// <summary>
         /// the user id which own this scenariorun
@@ -566,7 +568,8 @@ namespace Com.Cosmotech.Model
             var sb = new StringBuilder();
             sb.Append("class ScenarioRun {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  JobId: ").Append(JobId).Append("\n");
+            sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("  WorkflowName: ").Append(WorkflowName).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  WorkspaceId: ").Append(WorkspaceId).Append("\n");
             sb.Append("  WorkspaceName: ").Append(WorkspaceName).Append("\n");
@@ -638,9 +641,14 @@ namespace Com.Cosmotech.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
+                    this.WorkflowId == input.WorkflowId ||
+                    (this.WorkflowId != null &&
+                    this.WorkflowId.Equals(input.WorkflowId))
+                ) && 
+                (
+                    this.WorkflowName == input.WorkflowName ||
+                    (this.WorkflowName != null &&
+                    this.WorkflowName.Equals(input.WorkflowName))
                 ) && 
                 (
                     this.OwnerId == input.OwnerId ||
@@ -811,8 +819,10 @@ namespace Com.Cosmotech.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.WorkflowId != null)
+                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                if (this.WorkflowName != null)
+                    hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
                 if (this.OwnerId != null)
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
                 if (this.WorkspaceId != null)

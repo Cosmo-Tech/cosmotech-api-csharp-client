@@ -74,8 +74,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
-        /// <returns>Validator</returns>
-        Validator DeleteValidator(string organizationId, string validatorId);
+        /// <returns></returns>
+        void DeleteValidator(string organizationId, string validatorId);
 
         /// <summary>
         /// Delete a validator
@@ -86,8 +86,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
-        /// <returns>ApiResponse of Validator</returns>
-        ApiResponse<Validator> DeleteValidatorWithHttpInfo(string organizationId, string validatorId);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteValidatorWithHttpInfo(string organizationId, string validatorId);
         /// <summary>
         /// Delete a validator run
         /// </summary>
@@ -95,8 +95,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="validatorrunId">the Validator Run identifier</param>
-        /// <returns>ValidatorRun</returns>
-        ValidatorRun DeleteValidatorRun(string organizationId, string validatorId, string validatorrunId);
+        /// <returns></returns>
+        void DeleteValidatorRun(string organizationId, string validatorId, string validatorrunId);
 
         /// <summary>
         /// Delete a validator run
@@ -108,8 +108,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="validatorrunId">the Validator Run identifier</param>
-        /// <returns>ApiResponse of ValidatorRun</returns>
-        ApiResponse<ValidatorRun> DeleteValidatorRunWithHttpInfo(string organizationId, string validatorId, string validatorrunId);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteValidatorRunWithHttpInfo(string organizationId, string validatorId, string validatorrunId);
         /// <summary>
         /// List all Validator Runs
         /// </summary>
@@ -283,8 +283,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Validator</returns>
-        System.Threading.Tasks.Task<Validator> DeleteValidatorAsync(string organizationId, string validatorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteValidatorAsync(string organizationId, string validatorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a validator
@@ -296,8 +296,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Validator)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Validator>> DeleteValidatorWithHttpInfoAsync(string organizationId, string validatorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteValidatorWithHttpInfoAsync(string organizationId, string validatorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a validator run
         /// </summary>
@@ -309,8 +309,8 @@ namespace Com.Cosmotech.Api
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="validatorrunId">the Validator Run identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ValidatorRun</returns>
-        System.Threading.Tasks.Task<ValidatorRun> DeleteValidatorRunAsync(string organizationId, string validatorId, string validatorrunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteValidatorRunAsync(string organizationId, string validatorId, string validatorrunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a validator run
@@ -323,8 +323,8 @@ namespace Com.Cosmotech.Api
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="validatorrunId">the Validator Run identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ValidatorRun)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ValidatorRun>> DeleteValidatorRunWithHttpInfoAsync(string organizationId, string validatorId, string validatorrunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteValidatorRunWithHttpInfoAsync(string organizationId, string validatorId, string validatorrunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Validator Runs
         /// </summary>
@@ -605,7 +605,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -677,7 +678,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -754,7 +756,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -833,7 +836,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -878,11 +882,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
-        /// <returns>Validator</returns>
-        public Validator DeleteValidator(string organizationId, string validatorId)
+        /// <returns></returns>
+        public void DeleteValidator(string organizationId, string validatorId)
         {
-            Com.Cosmotech.Client.ApiResponse<Validator> localVarResponse = DeleteValidatorWithHttpInfo(organizationId, validatorId);
-            return localVarResponse.Data;
+            DeleteValidatorWithHttpInfo(organizationId, validatorId);
         }
 
         /// <summary>
@@ -891,8 +894,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
-        /// <returns>ApiResponse of Validator</returns>
-        public Com.Cosmotech.Client.ApiResponse<Validator> DeleteValidatorWithHttpInfo(string organizationId, string validatorId)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteValidatorWithHttpInfo(string organizationId, string validatorId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -909,7 +912,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -929,7 +931,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Validator>("/organizations/{organization_id}/datasets/validators/{validator_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/datasets/validators/{validator_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -947,11 +949,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Validator</returns>
-        public async System.Threading.Tasks.Task<Validator> DeleteValidatorAsync(string organizationId, string validatorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteValidatorAsync(string organizationId, string validatorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Validator> localVarResponse = await DeleteValidatorWithHttpInfoAsync(organizationId, validatorId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DeleteValidatorWithHttpInfoAsync(organizationId, validatorId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -961,8 +962,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Validator)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Validator>> DeleteValidatorWithHttpInfoAsync(string organizationId, string validatorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteValidatorWithHttpInfoAsync(string organizationId, string validatorId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -980,7 +981,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
 
@@ -1002,7 +1002,7 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Validator>("/organizations/{organization_id}/datasets/validators/{validator_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/datasets/validators/{validator_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1020,11 +1020,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="validatorrunId">the Validator Run identifier</param>
-        /// <returns>ValidatorRun</returns>
-        public ValidatorRun DeleteValidatorRun(string organizationId, string validatorId, string validatorrunId)
+        /// <returns></returns>
+        public void DeleteValidatorRun(string organizationId, string validatorId, string validatorrunId)
         {
-            Com.Cosmotech.Client.ApiResponse<ValidatorRun> localVarResponse = DeleteValidatorRunWithHttpInfo(organizationId, validatorId, validatorrunId);
-            return localVarResponse.Data;
+            DeleteValidatorRunWithHttpInfo(organizationId, validatorId, validatorrunId);
         }
 
         /// <summary>
@@ -1034,8 +1033,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="validatorrunId">the Validator Run identifier</param>
-        /// <returns>ApiResponse of ValidatorRun</returns>
-        public Com.Cosmotech.Client.ApiResponse<ValidatorRun> DeleteValidatorRunWithHttpInfo(string organizationId, string validatorId, string validatorrunId)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteValidatorRunWithHttpInfo(string organizationId, string validatorId, string validatorrunId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1056,7 +1055,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1077,7 +1075,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<ValidatorRun>("/organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1096,11 +1094,10 @@ namespace Com.Cosmotech.Api
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="validatorrunId">the Validator Run identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ValidatorRun</returns>
-        public async System.Threading.Tasks.Task<ValidatorRun> DeleteValidatorRunAsync(string organizationId, string validatorId, string validatorrunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteValidatorRunAsync(string organizationId, string validatorId, string validatorrunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<ValidatorRun> localVarResponse = await DeleteValidatorRunWithHttpInfoAsync(organizationId, validatorId, validatorrunId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DeleteValidatorRunWithHttpInfoAsync(organizationId, validatorId, validatorrunId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1111,8 +1108,8 @@ namespace Com.Cosmotech.Api
         /// <param name="validatorId">the Validator identifier</param>
         /// <param name="validatorrunId">the Validator Run identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ValidatorRun)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ValidatorRun>> DeleteValidatorRunWithHttpInfoAsync(string organizationId, string validatorId, string validatorrunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteValidatorRunWithHttpInfoAsync(string organizationId, string validatorId, string validatorrunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1134,7 +1131,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             String[] _accepts = new String[] {
-                "application/json"
             };
 
 
@@ -1157,7 +1153,7 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<ValidatorRun>("/organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1771,7 +1767,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json",
+                "application/yaml"
             };
 
             // to determine the Accept header
@@ -1850,7 +1847,8 @@ namespace Com.Cosmotech.Api
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
-                "application/json"
+                "application/json", 
+                "application/yaml"
             };
 
             // to determine the Accept header
