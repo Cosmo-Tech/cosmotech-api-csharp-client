@@ -32,99 +32,16 @@ namespace Com.Cosmotech.Model
     public partial class ScenarioRun : IEquatable<ScenarioRun>, IValidatableObject
     {
         /// <summary>
-        /// the ScenarioRun state
-        /// </summary>
-        /// <value>the ScenarioRun state</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
-        {
-            /// <summary>
-            /// Enum FetchingDatasets for value: FetchingDatasets
-            /// </summary>
-            [EnumMember(Value = "FetchingDatasets")]
-            FetchingDatasets = 1,
-
-            /// <summary>
-            /// Enum FetchingScenarioParameters for value: FetchingScenarioParameters
-            /// </summary>
-            [EnumMember(Value = "FetchingScenarioParameters")]
-            FetchingScenarioParameters = 2,
-
-            /// <summary>
-            /// Enum ApplyingScenarioParameters for value: ApplyingScenarioParameters
-            /// </summary>
-            [EnumMember(Value = "ApplyingScenarioParameters")]
-            ApplyingScenarioParameters = 3,
-
-            /// <summary>
-            /// Enum ValidatingScenarioData for value: ValidatingScenarioData
-            /// </summary>
-            [EnumMember(Value = "ValidatingScenarioData")]
-            ValidatingScenarioData = 4,
-
-            /// <summary>
-            /// Enum SendingScenarioDataToDataWarehouse for value: SendingScenarioDataToDataWarehouse
-            /// </summary>
-            [EnumMember(Value = "SendingScenarioDataToDataWarehouse")]
-            SendingScenarioDataToDataWarehouse = 5,
-
-            /// <summary>
-            /// Enum PreRun for value: PreRun
-            /// </summary>
-            [EnumMember(Value = "PreRun")]
-            PreRun = 6,
-
-            /// <summary>
-            /// Enum Running for value: Running
-            /// </summary>
-            [EnumMember(Value = "Running")]
-            Running = 7,
-
-            /// <summary>
-            /// Enum PostRun for value: PostRun
-            /// </summary>
-            [EnumMember(Value = "PostRun")]
-            PostRun = 8,
-
-            /// <summary>
-            /// Enum Success for value: Success
-            /// </summary>
-            [EnumMember(Value = "Success")]
-            Success = 9,
-
-            /// <summary>
-            /// Enum Failed for value: Failed
-            /// </summary>
-            [EnumMember(Value = "Failed")]
-            Failed = 10
-
-        }
-
-
-        /// <summary>
-        /// the ScenarioRun state
-        /// </summary>
-        /// <value>the ScenarioRun state</value>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
-        public StateEnum? State { get; set; }
-
-        /// <summary>
-        /// Returns false as State should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeState()
-        {
-            return false;
-        }
-        /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRun" /> class.
         /// </summary>
+        /// <param name="organizationId">the Organization id.</param>
         /// <param name="workflowId">the Cosmo Tech compute cluster Argo Workflow Id to search.</param>
         /// <param name="generateName">the base name for workflow name generation.</param>
         /// <param name="workflowName">the Cosmo Tech compute cluster Argo Workflow Name.</param>
         /// <param name="containers">the containers list.</param>
-        public ScenarioRun(string workflowId = default(string), string generateName = default(string), string workflowName = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
+        public ScenarioRun(string organizationId = default(string), string workflowId = default(string), string generateName = default(string), string workflowName = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
         {
+            this.OrganizationId = organizationId;
             this.WorkflowId = workflowId;
             this.GenerateName = generateName;
             this.WorkflowName = workflowName;
@@ -146,6 +63,13 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
+
+        /// <summary>
+        /// the Organization id
+        /// </summary>
+        /// <value>the Organization id</value>
+        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+        public string OrganizationId { get; set; }
 
         /// <summary>
         /// the Cosmo Tech compute cluster Argo Workflow Id to search
@@ -281,70 +205,6 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// the failed step if state is Failed
-        /// </summary>
-        /// <value>the failed step if state is Failed</value>
-        [DataMember(Name = "failedStep", EmitDefaultValue = false)]
-        public string FailedStep { get; private set; }
-
-        /// <summary>
-        /// Returns false as FailedStep should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeFailedStep()
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// the failed container Id if state is Failed
-        /// </summary>
-        /// <value>the failed container Id if state is Failed</value>
-        [DataMember(Name = "failedContainerId", EmitDefaultValue = false)]
-        public string FailedContainerId { get; private set; }
-
-        /// <summary>
-        /// Returns false as FailedContainerId should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeFailedContainerId()
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// the ScenarioRun start Date Time
-        /// </summary>
-        /// <value>the ScenarioRun start Date Time</value>
-        [DataMember(Name = "startTime", EmitDefaultValue = false)]
-        public string StartTime { get; private set; }
-
-        /// <summary>
-        /// Returns false as StartTime should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeStartTime()
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// the ScenarioRun end Date Time
-        /// </summary>
-        /// <value>the ScenarioRun end Date Time</value>
-        [DataMember(Name = "endTime", EmitDefaultValue = false)]
-        public string EndTime { get; private set; }
-
-        /// <summary>
-        /// Returns false as EndTime should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeEndTime()
-        {
-            return false;
-        }
-
-        /// <summary>
         /// the list of Dataset Id associated to this Analysis
         /// </summary>
         /// <value>the list of Dataset Id associated to this Analysis</value>
@@ -440,6 +300,7 @@ namespace Com.Cosmotech.Model
             var sb = new StringBuilder();
             sb.Append("class ScenarioRun {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("  GenerateName: ").Append(GenerateName).Append("\n");
             sb.Append("  WorkflowName: ").Append(WorkflowName).Append("\n");
@@ -450,11 +311,6 @@ namespace Com.Cosmotech.Model
             sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
             sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
             sb.Append("  ComputeSize: ").Append(ComputeSize).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  FailedStep: ").Append(FailedStep).Append("\n");
-            sb.Append("  FailedContainerId: ").Append(FailedContainerId).Append("\n");
-            sb.Append("  StartTime: ").Append(StartTime).Append("\n");
-            sb.Append("  EndTime: ").Append(EndTime).Append("\n");
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
             sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
             sb.Append("  SendDatasetsToDataWarehouse: ").Append(SendDatasetsToDataWarehouse).Append("\n");
@@ -499,6 +355,11 @@ namespace Com.Cosmotech.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
                 ) && 
                 (
                     this.WorkflowId == input.WorkflowId ||
@@ -551,30 +412,6 @@ namespace Com.Cosmotech.Model
                     this.ComputeSize.Equals(input.ComputeSize))
                 ) && 
                 (
-                    this.State == input.State ||
-                    this.State.Equals(input.State)
-                ) && 
-                (
-                    this.FailedStep == input.FailedStep ||
-                    (this.FailedStep != null &&
-                    this.FailedStep.Equals(input.FailedStep))
-                ) && 
-                (
-                    this.FailedContainerId == input.FailedContainerId ||
-                    (this.FailedContainerId != null &&
-                    this.FailedContainerId.Equals(input.FailedContainerId))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
                     this.DatasetList == input.DatasetList ||
                     this.DatasetList != null &&
                     input.DatasetList != null &&
@@ -618,6 +455,8 @@ namespace Com.Cosmotech.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.OrganizationId != null)
+                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 if (this.WorkflowId != null)
                     hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
                 if (this.GenerateName != null)
@@ -638,15 +477,6 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.RunTemplateId.GetHashCode();
                 if (this.ComputeSize != null)
                     hashCode = hashCode * 59 + this.ComputeSize.GetHashCode();
-                hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.FailedStep != null)
-                    hashCode = hashCode * 59 + this.FailedStep.GetHashCode();
-                if (this.FailedContainerId != null)
-                    hashCode = hashCode * 59 + this.FailedContainerId.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.DatasetList != null)
                     hashCode = hashCode * 59 + this.DatasetList.GetHashCode();
                 if (this.ParametersValues != null)

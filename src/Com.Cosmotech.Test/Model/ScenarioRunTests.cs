@@ -65,6 +65,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
+        /// Test the property 'OrganizationId'
+        /// </summary>
+        [Fact]
+        public void OrganizationIdTest()
+        {
+            // TODO unit test for the property 'OrganizationId'
+        }
+        /// <summary>
         /// Test the property 'WorkflowId'
         /// </summary>
         [Fact]
@@ -143,46 +151,6 @@ namespace Com.Cosmotech.Test.Model
         public void ComputeSizeTest()
         {
             // TODO unit test for the property 'ComputeSize'
-        }
-        /// <summary>
-        /// Test the property 'State'
-        /// </summary>
-        [Fact]
-        public void StateTest()
-        {
-            // TODO unit test for the property 'State'
-        }
-        /// <summary>
-        /// Test the property 'FailedStep'
-        /// </summary>
-        [Fact]
-        public void FailedStepTest()
-        {
-            // TODO unit test for the property 'FailedStep'
-        }
-        /// <summary>
-        /// Test the property 'FailedContainerId'
-        /// </summary>
-        [Fact]
-        public void FailedContainerIdTest()
-        {
-            // TODO unit test for the property 'FailedContainerId'
-        }
-        /// <summary>
-        /// Test the property 'StartTime'
-        /// </summary>
-        [Fact]
-        public void StartTimeTest()
-        {
-            // TODO unit test for the property 'StartTime'
-        }
-        /// <summary>
-        /// Test the property 'EndTime'
-        /// </summary>
-        [Fact]
-        public void EndTimeTest()
-        {
-            // TODO unit test for the property 'EndTime'
         }
         /// <summary>
         /// Test the property 'DatasetList'

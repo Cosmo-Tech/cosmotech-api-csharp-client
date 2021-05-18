@@ -6,6 +6,7 @@ a ScenarioRun with only base properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the ScenarioRun | [optional] [readonly] 
+**OrganizationId** | **string** | the Organization id | [optional] 
 **WorkflowId** | **string** | the Cosmo Tech compute cluster Argo Workflow Id to search | [optional] 
 **GenerateName** | **string** | the base name for workflow name generation | [optional] 
 **WorkflowName** | **string** | the Cosmo Tech compute cluster Argo Workflow Name | [optional] 
@@ -16,11 +17,6 @@ Name | Type | Description | Notes
 **SolutionId** | **string** | the Solution Id | [optional] [readonly] 
 **RunTemplateId** | **string** | the Solution Run Template id | [optional] [readonly] 
 **ComputeSize** | **string** | the compute size needed for this Analysis. Standard sizes are basic and highcpu. Default is basic | [optional] [readonly] 
-**State** | **string** | the ScenarioRun state | [optional] [readonly] 
-**FailedStep** | **string** | the failed step if state is Failed | [optional] [readonly] 
-**FailedContainerId** | **string** | the failed container Id if state is Failed | [optional] [readonly] 
-**StartTime** | **string** | the ScenarioRun start Date Time | [optional] [readonly] 
-**EndTime** | **string** | the ScenarioRun end Date Time | [optional] [readonly] 
 **DatasetList** | **List&lt;string&gt;** | the list of Dataset Id associated to this Analysis | [optional] [readonly] 
 **ParametersValues** | [**List&lt;RunTemplateParameterValue&gt;**](RunTemplateParameterValue.md) | the list of Run Template parameters values | [optional] [readonly] 
 **SendDatasetsToDataWarehouse** | **bool** | whether or not the Datasets values are send to the DataWarehouse prior to Simulation Run. If not set follow the Workspace setting | [optional] [readonly] 

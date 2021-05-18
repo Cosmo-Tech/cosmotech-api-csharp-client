@@ -9,12 +9,14 @@ Method | HTTP request | Description
 [**AddOrReplaceRunTemplates**](SolutionApi.md#addorreplaceruntemplates) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Add Run Templates. Any item with the same ID will be overwritten
 [**CreateSolution**](SolutionApi.md#createsolution) | **POST** /organizations/{organization_id}/solutions | Register a new solution
 [**DeleteSolution**](SolutionApi.md#deletesolution) | **DELETE** /organizations/{organization_id}/solutions/{solution_id} | Delete a solution
+[**DeleteSolutionRunTemplate**](SolutionApi.md#deletesolutionruntemplate) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Remove the specified Solution Run Template
 [**FindAllSolutions**](SolutionApi.md#findallsolutions) | **GET** /organizations/{organization_id}/solutions | List all Solutions
 [**FindSolutionById**](SolutionApi.md#findsolutionbyid) | **GET** /organizations/{organization_id}/solutions/{solution_id} | Get the details of a solution
 [**RemoveAllRunTemplates**](SolutionApi.md#removeallruntemplates) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Remove all Run Templates from the Solution specified
 [**RemoveAllSolutionParameterGroups**](SolutionApi.md#removeallsolutionparametergroups) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Remove all Parameter Groups from the Solution specified
 [**RemoveAllSolutionParameters**](SolutionApi.md#removeallsolutionparameters) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameters | Remove all Parameters from the Solution specified
 [**UpdateSolution**](SolutionApi.md#updatesolution) | **PATCH** /organizations/{organization_id}/solutions/{solution_id} | Update a solution
+[**UpdateSolutionRunTemplate**](SolutionApi.md#updatesolutionruntemplate) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Update the specified Solution Run Template
 [**UploadRunTemplateHandler**](SolutionApi.md#uploadruntemplatehandler) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload | Upload a Run Template step handler zip file
 
 
@@ -397,6 +399,82 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request succeeded |  -  |
+| **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletesolutionruntemplate"></a>
+# **DeleteSolutionRunTemplate**
+> void DeleteSolutionRunTemplate (string organizationId, string solutionId, string runTemplateId)
+
+Remove the specified Solution Run Template
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class DeleteSolutionRunTemplateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var solutionId = solutionId_example;  // string | the Solution identifier
+            var runTemplateId = runTemplateId_example;  // string | the Run Template identifier
+
+            try
+            {
+                // Remove the specified Solution Run Template
+                apiInstance.DeleteSolutionRunTemplate(organizationId, solutionId, runTemplateId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.DeleteSolutionRunTemplate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateId** | **string**| the Run Template identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | the operation succeeded |  -  |
 | **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -848,9 +926,89 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="updatesolutionruntemplate"></a>
+# **UpdateSolutionRunTemplate**
+> List&lt;RunTemplate&gt; UpdateSolutionRunTemplate (string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate)
+
+Update the specified Solution Run Template
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class UpdateSolutionRunTemplateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = organizationId_example;  // string | the Organization identifier
+            var solutionId = solutionId_example;  // string | the Solution identifier
+            var runTemplateId = runTemplateId_example;  // string | the Run Template identifier
+            var runTemplate = new RunTemplate(); // RunTemplate | the Run Templates
+
+            try
+            {
+                // Update the specified Solution Run Template
+                List<RunTemplate> result = apiInstance.UpdateSolutionRunTemplate(organizationId, solutionId, runTemplateId, runTemplate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.UpdateSolutionRunTemplate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateId** | **string**| the Run Template identifier | 
+ **runTemplate** | [**RunTemplate**](RunTemplate.md)| the Run Templates | 
+
+### Return type
+
+[**List&lt;RunTemplate&gt;**](RunTemplate.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/yaml
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | the Parameters |  -  |
+| **400** | Bad request |  -  |
+| **404** | the Solution or Run Template specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="uploadruntemplatehandler"></a>
 # **UploadRunTemplateHandler**
-> void UploadRunTemplateHandler (string organizationId, string solutionId, string runTemplateId, string handlerId, System.IO.Stream body = null)
+> void UploadRunTemplateHandler (string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = null)
 
 Upload a Run Template step handler zip file
 
@@ -877,13 +1035,14 @@ namespace Example
             var organizationId = organizationId_example;  // string | the Organization identifier
             var solutionId = solutionId_example;  // string | the Solution identifier
             var runTemplateId = runTemplateId_example;  // string | the Run Template identifier
-            var handlerId = handlerId_example;  // string | the Handler id identifier
-            var body = BINARY_DATA_HERE;  // System.IO.Stream |  (optional) 
+            var handlerId = ;  // RunTemplateHandlerId | the Handler identifier
+            var body = BINARY_DATA_HERE;  // System.IO.Stream | 
+            var overwrite = true;  // bool? | whether to overwrite any existing handler resource (optional)  (default to false)
 
             try
             {
                 // Upload a Run Template step handler zip file
-                apiInstance.UploadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId, body);
+                apiInstance.UploadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId, body, overwrite);
             }
             catch (ApiException  e)
             {
@@ -903,8 +1062,9 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **solutionId** | **string**| the Solution identifier | 
  **runTemplateId** | **string**| the Run Template identifier | 
- **handlerId** | **string**| the Handler id identifier | 
- **body** | **System.IO.Stream****System.IO.Stream**|  | [optional] 
+ **handlerId** | **RunTemplateHandlerId**| the Handler identifier | 
+ **body** | **System.IO.Stream****System.IO.Stream**|  | 
+ **overwrite** | **bool?**| whether to overwrite any existing handler resource | [optional] [default to false]
 
 ### Return type
 
@@ -916,7 +1076,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: image/zip
+ - **Content-Type**: application/octet-stream
  - **Accept**: Not defined
 
 
