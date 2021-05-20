@@ -73,12 +73,12 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Name'
         }
         /// <summary>
-        /// Test the property 'DisplayName'
+        /// Test the property 'ContainerName'
         /// </summary>
         [Fact]
-        public void DisplayNameTest()
+        public void ContainerNameTest()
         {
-            // TODO unit test for the property 'DisplayName'
+            // TODO unit test for the property 'ContainerName'
         }
         /// <summary>
         /// Test the property 'EstimatedDuration'

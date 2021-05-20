@@ -36,7 +36,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="id">the node id.</param>
         /// <param name="name">the node unique name.</param>
-        /// <param name="displayName">the display name, equivalent to ScenarioRun Container name.</param>
+        /// <param name="containerName">the ScenarioRun container name.</param>
         /// <param name="estimatedDuration">estimatedDuration in seconds.</param>
         /// <param name="hostNodeName">HostNodeName name of the Kubernetes node on which the Pod is running, if applicable.</param>
         /// <param name="message">a human readable message indicating details about why the node is in this condition.</param>
@@ -44,11 +44,11 @@ namespace Com.Cosmotech.Model
         /// <param name="progress">progress to completion.</param>
         /// <param name="startTime">the node start time.</param>
         /// <param name="endTime">the node end time.</param>
-        public ScenarioRunStatusNode(string id = default(string), string name = default(string), string displayName = default(string), int estimatedDuration = default(int), string hostNodeName = default(string), string message = default(string), string phase = default(string), string progress = default(string), string startTime = default(string), string endTime = default(string))
+        public ScenarioRunStatusNode(string id = default(string), string name = default(string), string containerName = default(string), int estimatedDuration = default(int), string hostNodeName = default(string), string message = default(string), string phase = default(string), string progress = default(string), string startTime = default(string), string endTime = default(string))
         {
             this.Id = id;
             this.Name = name;
-            this.DisplayName = displayName;
+            this.ContainerName = containerName;
             this.EstimatedDuration = estimatedDuration;
             this.HostNodeName = hostNodeName;
             this.Message = message;
@@ -73,11 +73,11 @@ namespace Com.Cosmotech.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// the display name, equivalent to ScenarioRun Container name
+        /// the ScenarioRun container name
         /// </summary>
-        /// <value>the display name, equivalent to ScenarioRun Container name</value>
-        [DataMember(Name = "displayName", EmitDefaultValue = false)]
-        public string DisplayName { get; set; }
+        /// <value>the ScenarioRun container name</value>
+        [DataMember(Name = "containerName", EmitDefaultValue = false)]
+        public string ContainerName { get; set; }
 
         /// <summary>
         /// estimatedDuration in seconds
@@ -138,7 +138,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class ScenarioRunStatusNode {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  ContainerName: ").Append(ContainerName).Append("\n");
             sb.Append("  EstimatedDuration: ").Append(EstimatedDuration).Append("\n");
             sb.Append("  HostNodeName: ").Append(HostNodeName).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
@@ -191,9 +191,9 @@ namespace Com.Cosmotech.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
+                    this.ContainerName == input.ContainerName ||
+                    (this.ContainerName != null &&
+                    this.ContainerName.Equals(input.ContainerName))
                 ) && 
                 (
                     this.EstimatedDuration == input.EstimatedDuration ||
@@ -244,8 +244,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.DisplayName != null)
-                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
+                if (this.ContainerName != null)
+                    hashCode = hashCode * 59 + this.ContainerName.GetHashCode();
                 hashCode = hashCode * 59 + this.EstimatedDuration.GetHashCode();
                 if (this.HostNodeName != null)
                     hashCode = hashCode * 59 + this.HostNodeName.GetHashCode();

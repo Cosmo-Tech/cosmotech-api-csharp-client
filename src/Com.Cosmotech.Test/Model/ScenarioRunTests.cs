@@ -81,6 +81,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'WorkflowId'
         }
         /// <summary>
+        /// Test the property 'CsmSimulationRun'
+        /// </summary>
+        [Fact]
+        public void CsmSimulationRunTest()
+        {
+            // TODO unit test for the property 'CsmSimulationRun'
+        }
+        /// <summary>
         /// Test the property 'GenerateName'
         /// </summary>
         [Fact]

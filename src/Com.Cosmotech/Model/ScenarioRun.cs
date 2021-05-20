@@ -79,6 +79,22 @@ namespace Com.Cosmotech.Model
         public string WorkflowId { get; set; }
 
         /// <summary>
+        /// the Cosmo Tech Simulation Run Id
+        /// </summary>
+        /// <value>the Cosmo Tech Simulation Run Id</value>
+        [DataMember(Name = "csmSimulationRun", EmitDefaultValue = false)]
+        public string CsmSimulationRun { get; private set; }
+
+        /// <summary>
+        /// Returns false as CsmSimulationRun should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCsmSimulationRun()
+        {
+            return false;
+        }
+
+        /// <summary>
         /// the base name for workflow name generation
         /// </summary>
         /// <value>the base name for workflow name generation</value>
@@ -302,6 +318,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("  CsmSimulationRun: ").Append(CsmSimulationRun).Append("\n");
             sb.Append("  GenerateName: ").Append(GenerateName).Append("\n");
             sb.Append("  WorkflowName: ").Append(WorkflowName).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
@@ -365,6 +382,11 @@ namespace Com.Cosmotech.Model
                     this.WorkflowId == input.WorkflowId ||
                     (this.WorkflowId != null &&
                     this.WorkflowId.Equals(input.WorkflowId))
+                ) && 
+                (
+                    this.CsmSimulationRun == input.CsmSimulationRun ||
+                    (this.CsmSimulationRun != null &&
+                    this.CsmSimulationRun.Equals(input.CsmSimulationRun))
                 ) && 
                 (
                     this.GenerateName == input.GenerateName ||
@@ -459,6 +481,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 if (this.WorkflowId != null)
                     hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                if (this.CsmSimulationRun != null)
+                    hashCode = hashCode * 59 + this.CsmSimulationRun.GetHashCode();
                 if (this.GenerateName != null)
                     hashCode = hashCode * 59 + this.GenerateName.GetHashCode();
                 if (this.WorkflowName != null)

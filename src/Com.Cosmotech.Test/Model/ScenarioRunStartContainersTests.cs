@@ -65,6 +65,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'GenerateName'
         }
         /// <summary>
+        /// Test the property 'CsmSimulationId'
+        /// </summary>
+        [Fact]
+        public void CsmSimulationIdTest()
+        {
+            // TODO unit test for the property 'CsmSimulationId'
+        }
+        /// <summary>
         /// Test the property 'NodeLabel'
         /// </summary>
         [Fact]

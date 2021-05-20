@@ -40,10 +40,13 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="ScenarioRunStartContainers" /> class.
         /// </summary>
         /// <param name="generateName">the base name for workflow name generation.</param>
+        /// <param name="csmSimulationId">Cosmo Tech Simulation Run Id (required).</param>
         /// <param name="nodeLabel">the node label request.</param>
         /// <param name="containers">the containerslist (required).</param>
-        public ScenarioRunStartContainers(string generateName = default(string), string nodeLabel = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
+        public ScenarioRunStartContainers(string generateName = default(string), string csmSimulationId = default(string), string nodeLabel = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
         {
+            // to ensure "csmSimulationId" is required (not null)
+            this.CsmSimulationId = csmSimulationId ?? throw new ArgumentNullException("csmSimulationId is a required property for ScenarioRunStartContainers and cannot be null");
             // to ensure "containers" is required (not null)
             this.Containers = containers ?? throw new ArgumentNullException("containers is a required property for ScenarioRunStartContainers and cannot be null");
             this.GenerateName = generateName;
@@ -56,6 +59,13 @@ namespace Com.Cosmotech.Model
         /// <value>the base name for workflow name generation</value>
         [DataMember(Name = "generateName", EmitDefaultValue = false)]
         public string GenerateName { get; set; }
+
+        /// <summary>
+        /// Cosmo Tech Simulation Run Id
+        /// </summary>
+        /// <value>Cosmo Tech Simulation Run Id</value>
+        [DataMember(Name = "csmSimulationId", IsRequired = true, EmitDefaultValue = false)]
+        public string CsmSimulationId { get; set; }
 
         /// <summary>
         /// the node label request
@@ -80,6 +90,7 @@ namespace Com.Cosmotech.Model
             var sb = new StringBuilder();
             sb.Append("class ScenarioRunStartContainers {\n");
             sb.Append("  GenerateName: ").Append(GenerateName).Append("\n");
+            sb.Append("  CsmSimulationId: ").Append(CsmSimulationId).Append("\n");
             sb.Append("  NodeLabel: ").Append(NodeLabel).Append("\n");
             sb.Append("  Containers: ").Append(Containers).Append("\n");
             sb.Append("}\n");
@@ -122,6 +133,11 @@ namespace Com.Cosmotech.Model
                     this.GenerateName.Equals(input.GenerateName))
                 ) && 
                 (
+                    this.CsmSimulationId == input.CsmSimulationId ||
+                    (this.CsmSimulationId != null &&
+                    this.CsmSimulationId.Equals(input.CsmSimulationId))
+                ) && 
+                (
                     this.NodeLabel == input.NodeLabel ||
                     (this.NodeLabel != null &&
                     this.NodeLabel.Equals(input.NodeLabel))
@@ -145,6 +161,8 @@ namespace Com.Cosmotech.Model
                 int hashCode = 41;
                 if (this.GenerateName != null)
                     hashCode = hashCode * 59 + this.GenerateName.GetHashCode();
+                if (this.CsmSimulationId != null)
+                    hashCode = hashCode * 59 + this.CsmSimulationId.GetHashCode();
                 if (this.NodeLabel != null)
                     hashCode = hashCode * 59 + this.NodeLabel.GetHashCode();
                 if (this.Containers != null)
