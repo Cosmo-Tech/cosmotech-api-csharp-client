@@ -177,6 +177,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'PostRun'
         }
         /// <summary>
+        /// Test the property 'ParametersJson'
+        /// </summary>
+        [Fact]
+        public void ParametersJsonTest()
+        {
+            // TODO unit test for the property 'ParametersJson'
+        }
+        /// <summary>
         /// Test the property 'ParametersHandlerSource'
         /// </summary>
         [Fact]

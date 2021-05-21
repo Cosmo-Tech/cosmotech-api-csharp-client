@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **PreRun** | **bool** | whether or not the pre-run step is done | [optional] 
 **Run** | **bool** | whether or not the run step is done | [optional] 
 **PostRun** | **bool** | whether or not the post-run step is done | [optional] 
+**ParametersJson** | **bool** | whether or not to store the scenario parameters in json instead of csv | [optional] 
 **ParametersHandlerSource** | **RunTemplateStepSource** |  | [optional] 
 **DatasetValidatorSource** | **RunTemplateStepSource** |  | [optional] 
 **PreRunSource** | **RunTemplateStepSource** |  | [optional] 

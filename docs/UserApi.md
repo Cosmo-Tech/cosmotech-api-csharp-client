@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**GetOrganizationCurrentUser**](UserApi.md#getorganizationcurrentuser) | **GET** /organizations/{organization_id}/me | Get the details of a logged-in User with roles for an Organization
 [**GetWorkspaceCurrentUser**](UserApi.md#getworkspacecurrentuser) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/me | Get the details of the logged-in user with roles for a Workspace
 [**RegisterUser**](UserApi.md#registeruser) | **POST** /users | Register a new user
+[**TestPlatform**](UserApi.md#testplatform) | **GET** /test | test platform API call
 [**UnregisterUser**](UserApi.md#unregisteruser) | **DELETE** /users/{user_id} | Unregister an user
 [**UpdateUser**](UserApi.md#updateuser) | **PATCH** /users/{user_id} | Update a User
 
@@ -507,6 +508,74 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **201** | the user details |  -  |
 | **400** | Bad request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="testplatform"></a>
+# **TestPlatform**
+> string TestPlatform ()
+
+test platform API call
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class TestPlatformExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.azure.cosmo-platform.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new UserApi(config);
+
+            try
+            {
+                // test platform API call
+                string result = apiInstance.TestPlatform();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.TestPlatform: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**string**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | test string |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

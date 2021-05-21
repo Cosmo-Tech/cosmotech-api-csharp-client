@@ -136,6 +136,17 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test TestPlatform
+        /// </summary>
+        [Fact]
+        public void TestPlatformTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.TestPlatform();
+            //Assert.IsType<string>(response);
+        }
+
+        /// <summary>
         /// Test UnregisterUser
         /// </summary>
         [Fact]

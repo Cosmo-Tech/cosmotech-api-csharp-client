@@ -42,8 +42,12 @@ namespace Com.Cosmotech.Model
         /// <param name="id">the Parameter id (required).</param>
         /// <param name="labels">a translated label with key as ISO 639-1 code (required).</param>
         /// <param name="varType">the variable type for the parameter. Basic types or special type %DATASETID% (required).</param>
+        /// <param name="defaultValue">the default value for this parameter.</param>
+        /// <param name="minValue">the minimum value for this parameter.</param>
+        /// <param name="maxValue">the maximum value for this parameter.</param>
+        /// <param name="regexValidation">a regex to validate the value.</param>
         /// <param name="options">freeform options.</param>
-        public RunTemplateParameter(string id = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), string varType = default(string), Dictionary<string, Object> options = default(Dictionary<string, Object>))
+        public RunTemplateParameter(string id = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), string varType = default(string), string defaultValue = default(string), string minValue = default(string), string maxValue = default(string), string regexValidation = default(string), Dictionary<string, Object> options = default(Dictionary<string, Object>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplateParameter and cannot be null");
@@ -51,6 +55,10 @@ namespace Com.Cosmotech.Model
             this.Labels = labels ?? throw new ArgumentNullException("labels is a required property for RunTemplateParameter and cannot be null");
             // to ensure "varType" is required (not null)
             this.VarType = varType ?? throw new ArgumentNullException("varType is a required property for RunTemplateParameter and cannot be null");
+            this.DefaultValue = defaultValue;
+            this.MinValue = minValue;
+            this.MaxValue = maxValue;
+            this.RegexValidation = regexValidation;
             this.Options = options;
         }
 
@@ -76,6 +84,34 @@ namespace Com.Cosmotech.Model
         public string VarType { get; set; }
 
         /// <summary>
+        /// the default value for this parameter
+        /// </summary>
+        /// <value>the default value for this parameter</value>
+        [DataMember(Name = "defaultValue", EmitDefaultValue = false)]
+        public string DefaultValue { get; set; }
+
+        /// <summary>
+        /// the minimum value for this parameter
+        /// </summary>
+        /// <value>the minimum value for this parameter</value>
+        [DataMember(Name = "minValue", EmitDefaultValue = false)]
+        public string MinValue { get; set; }
+
+        /// <summary>
+        /// the maximum value for this parameter
+        /// </summary>
+        /// <value>the maximum value for this parameter</value>
+        [DataMember(Name = "maxValue", EmitDefaultValue = false)]
+        public string MaxValue { get; set; }
+
+        /// <summary>
+        /// a regex to validate the value
+        /// </summary>
+        /// <value>a regex to validate the value</value>
+        [DataMember(Name = "regexValidation", EmitDefaultValue = false)]
+        public string RegexValidation { get; set; }
+
+        /// <summary>
         /// freeform options
         /// </summary>
         /// <value>freeform options</value>
@@ -93,6 +129,10 @@ namespace Com.Cosmotech.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  VarType: ").Append(VarType).Append("\n");
+            sb.Append("  DefaultValue: ").Append(DefaultValue).Append("\n");
+            sb.Append("  MinValue: ").Append(MinValue).Append("\n");
+            sb.Append("  MaxValue: ").Append(MaxValue).Append("\n");
+            sb.Append("  RegexValidation: ").Append(RegexValidation).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -145,6 +185,26 @@ namespace Com.Cosmotech.Model
                     this.VarType.Equals(input.VarType))
                 ) && 
                 (
+                    this.DefaultValue == input.DefaultValue ||
+                    (this.DefaultValue != null &&
+                    this.DefaultValue.Equals(input.DefaultValue))
+                ) && 
+                (
+                    this.MinValue == input.MinValue ||
+                    (this.MinValue != null &&
+                    this.MinValue.Equals(input.MinValue))
+                ) && 
+                (
+                    this.MaxValue == input.MaxValue ||
+                    (this.MaxValue != null &&
+                    this.MaxValue.Equals(input.MaxValue))
+                ) && 
+                (
+                    this.RegexValidation == input.RegexValidation ||
+                    (this.RegexValidation != null &&
+                    this.RegexValidation.Equals(input.RegexValidation))
+                ) && 
+                (
                     this.Options == input.Options ||
                     this.Options != null &&
                     input.Options != null &&
@@ -167,6 +227,14 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Labels.GetHashCode();
                 if (this.VarType != null)
                     hashCode = hashCode * 59 + this.VarType.GetHashCode();
+                if (this.DefaultValue != null)
+                    hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
+                if (this.MinValue != null)
+                    hashCode = hashCode * 59 + this.MinValue.GetHashCode();
+                if (this.MaxValue != null)
+                    hashCode = hashCode * 59 + this.MaxValue.GetHashCode();
+                if (this.RegexValidation != null)
+                    hashCode = hashCode * 59 + this.RegexValidation.GetHashCode();
                 if (this.Options != null)
                     hashCode = hashCode * 59 + this.Options.GetHashCode();
                 return hashCode;

@@ -84,13 +84,14 @@ namespace Com.Cosmotech.Model
         /// <param name="preRun">whether or not the pre-run step is done.</param>
         /// <param name="run">whether or not the run step is done.</param>
         /// <param name="postRun">whether or not the post-run step is done.</param>
+        /// <param name="parametersJson">whether or not to store the scenario parameters in json instead of csv.</param>
         /// <param name="parametersHandlerSource">parametersHandlerSource.</param>
         /// <param name="datasetValidatorSource">datasetValidatorSource.</param>
         /// <param name="preRunSource">preRunSource.</param>
         /// <param name="runSource">runSource.</param>
         /// <param name="postRunSource">postRunSource.</param>
         /// <param name="parameterGroups">the ordered list of parameters groups for the Run Template.</param>
-        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool fetchDatasets = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>))
+        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool fetchDatasets = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplate and cannot be null");
@@ -109,6 +110,7 @@ namespace Com.Cosmotech.Model
             this.PreRun = preRun;
             this.Run = run;
             this.PostRun = postRun;
+            this.ParametersJson = parametersJson;
             this.ParametersHandlerSource = parametersHandlerSource;
             this.DatasetValidatorSource = datasetValidatorSource;
             this.PreRunSource = preRunSource;
@@ -223,6 +225,13 @@ namespace Com.Cosmotech.Model
         public bool PostRun { get; set; }
 
         /// <summary>
+        /// whether or not to store the scenario parameters in json instead of csv
+        /// </summary>
+        /// <value>whether or not to store the scenario parameters in json instead of csv</value>
+        [DataMember(Name = "parametersJson", EmitDefaultValue = true)]
+        public bool ParametersJson { get; set; }
+
+        /// <summary>
         /// the ordered list of parameters groups for the Run Template
         /// </summary>
         /// <value>the ordered list of parameters groups for the Run Template</value>
@@ -252,6 +261,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  PreRun: ").Append(PreRun).Append("\n");
             sb.Append("  Run: ").Append(Run).Append("\n");
             sb.Append("  PostRun: ").Append(PostRun).Append("\n");
+            sb.Append("  ParametersJson: ").Append(ParametersJson).Append("\n");
             sb.Append("  ParametersHandlerSource: ").Append(ParametersHandlerSource).Append("\n");
             sb.Append("  DatasetValidatorSource: ").Append(DatasetValidatorSource).Append("\n");
             sb.Append("  PreRunSource: ").Append(PreRunSource).Append("\n");
@@ -360,6 +370,10 @@ namespace Com.Cosmotech.Model
                     this.PostRun.Equals(input.PostRun)
                 ) && 
                 (
+                    this.ParametersJson == input.ParametersJson ||
+                    this.ParametersJson.Equals(input.ParametersJson)
+                ) && 
+                (
                     this.ParametersHandlerSource == input.ParametersHandlerSource ||
                     this.ParametersHandlerSource.Equals(input.ParametersHandlerSource)
                 ) && 
@@ -417,6 +431,7 @@ namespace Com.Cosmotech.Model
                 hashCode = hashCode * 59 + this.PreRun.GetHashCode();
                 hashCode = hashCode * 59 + this.Run.GetHashCode();
                 hashCode = hashCode * 59 + this.PostRun.GetHashCode();
+                hashCode = hashCode * 59 + this.ParametersJson.GetHashCode();
                 hashCode = hashCode * 59 + this.ParametersHandlerSource.GetHashCode();
                 hashCode = hashCode * 59 + this.DatasetValidatorSource.GetHashCode();
                 hashCode = hashCode * 59 + this.PreRunSource.GetHashCode();

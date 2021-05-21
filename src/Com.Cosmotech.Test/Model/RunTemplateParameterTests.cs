@@ -81,6 +81,38 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'VarType'
         }
         /// <summary>
+        /// Test the property 'DefaultValue'
+        /// </summary>
+        [Fact]
+        public void DefaultValueTest()
+        {
+            // TODO unit test for the property 'DefaultValue'
+        }
+        /// <summary>
+        /// Test the property 'MinValue'
+        /// </summary>
+        [Fact]
+        public void MinValueTest()
+        {
+            // TODO unit test for the property 'MinValue'
+        }
+        /// <summary>
+        /// Test the property 'MaxValue'
+        /// </summary>
+        [Fact]
+        public void MaxValueTest()
+        {
+            // TODO unit test for the property 'MaxValue'
+        }
+        /// <summary>
+        /// Test the property 'RegexValidation'
+        /// </summary>
+        [Fact]
+        public void RegexValidationTest()
+        {
+            // TODO unit test for the property 'RegexValidation'
+        }
+        /// <summary>
         /// Test the property 'Options'
         /// </summary>
         [Fact]

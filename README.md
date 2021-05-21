@@ -170,6 +170,7 @@ Class | Method | HTTP request | Description
 *UserApi* | [**GetOrganizationCurrentUser**](docs/UserApi.md#getorganizationcurrentuser) | **GET** /organizations/{organization_id}/me | Get the details of a logged-in User with roles for an Organization
 *UserApi* | [**GetWorkspaceCurrentUser**](docs/UserApi.md#getworkspacecurrentuser) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/me | Get the details of the logged-in user with roles for a Workspace
 *UserApi* | [**RegisterUser**](docs/UserApi.md#registeruser) | **POST** /users | Register a new user
+*UserApi* | [**TestPlatform**](docs/UserApi.md#testplatform) | **GET** /test | test platform API call
 *UserApi* | [**UnregisterUser**](docs/UserApi.md#unregisteruser) | **DELETE** /users/{user_id} | Unregister an user
 *UserApi* | [**UpdateUser**](docs/UserApi.md#updateuser) | **PATCH** /users/{user_id} | Update a User
 *ValidatorApi* | [**CreateValidator**](docs/ValidatorApi.md#createvalidator) | **POST** /organizations/{organization_id}/datasets/validators | Register a new validator
