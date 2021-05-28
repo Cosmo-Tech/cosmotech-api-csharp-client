@@ -5,7 +5,7 @@ the Workspace Solution configuration
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SolutionId** | **string** | the Solution Id attached to this workspace | 
+**SolutionId** | **string** | the Solution Id attached to this workspace | [optional] 
 **RunTemplateFilter** | **List&lt;string&gt;** | the list of Solution Run Template Id to filter | [optional] 
 **DefaultRunTemplateDataset** | **Dictionary&lt;string, Object&gt;** | a map of RunTemplateId/DatasetId to set a default dataset for a Run Template | [optional] 
 

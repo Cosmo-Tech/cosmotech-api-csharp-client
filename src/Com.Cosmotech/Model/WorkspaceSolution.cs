@@ -34,18 +34,12 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkspaceSolution" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WorkspaceSolution() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkspaceSolution" /> class.
-        /// </summary>
-        /// <param name="solutionId">the Solution Id attached to this workspace (required).</param>
+        /// <param name="solutionId">the Solution Id attached to this workspace.</param>
         /// <param name="runTemplateFilter">the list of Solution Run Template Id to filter.</param>
         /// <param name="defaultRunTemplateDataset">a map of RunTemplateId/DatasetId to set a default dataset for a Run Template.</param>
         public WorkspaceSolution(string solutionId = default(string), List<string> runTemplateFilter = default(List<string>), Dictionary<string, Object> defaultRunTemplateDataset = default(Dictionary<string, Object>))
         {
-            // to ensure "solutionId" is required (not null)
-            this.SolutionId = solutionId ?? throw new ArgumentNullException("solutionId is a required property for WorkspaceSolution and cannot be null");
+            this.SolutionId = solutionId;
             this.RunTemplateFilter = runTemplateFilter;
             this.DefaultRunTemplateDataset = defaultRunTemplateDataset;
         }
@@ -54,7 +48,7 @@ namespace Com.Cosmotech.Model
         /// the Solution Id attached to this workspace
         /// </summary>
         /// <value>the Solution Id attached to this workspace</value>
-        [DataMember(Name = "solutionId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "solutionId", EmitDefaultValue = false)]
         public string SolutionId { get; set; }
 
         /// <summary>
