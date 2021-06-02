@@ -282,8 +282,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="file"></param>
         /// <param name="overwrite"> (optional, default to false)</param>
+        /// <param name="destination">Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  (optional)</param>
         /// <returns>WorkspaceFile</returns>
-        WorkspaceFile UploadWorkspaceFile(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?));
+        WorkspaceFile UploadWorkspaceFile(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), string destination = default(string));
 
         /// <summary>
         /// Upload a file for the Workspace
@@ -296,8 +297,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="file"></param>
         /// <param name="overwrite"> (optional, default to false)</param>
+        /// <param name="destination">Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  (optional)</param>
         /// <returns>ApiResponse of WorkspaceFile</returns>
-        ApiResponse<WorkspaceFile> UploadWorkspaceFileWithHttpInfo(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?));
+        ApiResponse<WorkspaceFile> UploadWorkspaceFileWithHttpInfo(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), string destination = default(string));
         #endregion Synchronous Operations
     }
 
@@ -626,9 +628,10 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="file"></param>
         /// <param name="overwrite"> (optional, default to false)</param>
+        /// <param name="destination">Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkspaceFile</returns>
-        System.Threading.Tasks.Task<WorkspaceFile> UploadWorkspaceFileAsync(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkspaceFile> UploadWorkspaceFileAsync(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), string destination = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Upload a file for the Workspace
@@ -641,9 +644,10 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="file"></param>
         /// <param name="overwrite"> (optional, default to false)</param>
+        /// <param name="destination">Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkspaceFile)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkspaceFile>> UploadWorkspaceFileWithHttpInfoAsync(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkspaceFile>> UploadWorkspaceFileWithHttpInfoAsync(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), string destination = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2514,10 +2518,11 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="file"></param>
         /// <param name="overwrite"> (optional, default to false)</param>
+        /// <param name="destination">Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  (optional)</param>
         /// <returns>WorkspaceFile</returns>
-        public WorkspaceFile UploadWorkspaceFile(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?))
+        public WorkspaceFile UploadWorkspaceFile(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), string destination = default(string))
         {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceFile> localVarResponse = UploadWorkspaceFileWithHttpInfo(organizationId, workspaceId, file, overwrite);
+            Com.Cosmotech.Client.ApiResponse<WorkspaceFile> localVarResponse = UploadWorkspaceFileWithHttpInfo(organizationId, workspaceId, file, overwrite, destination);
             return localVarResponse.Data;
         }
 
@@ -2529,8 +2534,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="file"></param>
         /// <param name="overwrite"> (optional, default to false)</param>
+        /// <param name="destination">Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  (optional)</param>
         /// <returns>ApiResponse of WorkspaceFile</returns>
-        public Com.Cosmotech.Client.ApiResponse<WorkspaceFile> UploadWorkspaceFileWithHttpInfo(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?))
+        public Com.Cosmotech.Client.ApiResponse<WorkspaceFile> UploadWorkspaceFileWithHttpInfo(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), string destination = default(string))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2566,6 +2572,10 @@ namespace Com.Cosmotech.Api
             if (overwrite != null)
             {
                 localVarRequestOptions.FormParameters.Add("overwrite", Com.Cosmotech.Client.ClientUtils.ParameterToString(overwrite)); // form parameter
+            }
+            if (destination != null)
+            {
+                localVarRequestOptions.FormParameters.Add("destination", Com.Cosmotech.Client.ClientUtils.ParameterToString(destination)); // form parameter
             }
             localVarRequestOptions.FileParameters.Add("file", file);
 
@@ -2596,11 +2606,12 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="file"></param>
         /// <param name="overwrite"> (optional, default to false)</param>
+        /// <param name="destination">Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkspaceFile</returns>
-        public async System.Threading.Tasks.Task<WorkspaceFile> UploadWorkspaceFileAsync(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkspaceFile> UploadWorkspaceFileAsync(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), string destination = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceFile> localVarResponse = await UploadWorkspaceFileWithHttpInfoAsync(organizationId, workspaceId, file, overwrite, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<WorkspaceFile> localVarResponse = await UploadWorkspaceFileWithHttpInfoAsync(organizationId, workspaceId, file, overwrite, destination, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2612,9 +2623,10 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="file"></param>
         /// <param name="overwrite"> (optional, default to false)</param>
+        /// <param name="destination">Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkspaceFile)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<WorkspaceFile>> UploadWorkspaceFileWithHttpInfoAsync(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<WorkspaceFile>> UploadWorkspaceFileWithHttpInfoAsync(string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = default(bool?), string destination = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2652,6 +2664,10 @@ namespace Com.Cosmotech.Api
             if (overwrite != null)
             {
                 localVarRequestOptions.FormParameters.Add("overwrite", Com.Cosmotech.Client.ClientUtils.ParameterToString(overwrite)); // form parameter
+            }
+            if (destination != null)
+            {
+                localVarRequestOptions.FormParameters.Add("destination", Com.Cosmotech.Client.ClientUtils.ParameterToString(destination)); // form parameter
             }
             localVarRequestOptions.FileParameters.Add("file", file);
 

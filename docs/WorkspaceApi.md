@@ -926,7 +926,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadworkspacefile"></a>
 # **UploadWorkspaceFile**
-> WorkspaceFile UploadWorkspaceFile (string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = null)
+> WorkspaceFile UploadWorkspaceFile (string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = null, string destination = null)
 
 Upload a file for the Workspace
 
@@ -954,11 +954,12 @@ namespace Example
             var workspaceId = workspaceId_example;  // string | the Workspace identifier
             var file = BINARY_DATA_HERE;  // System.IO.Stream | 
             var overwrite = true;  // bool? |  (optional)  (default to false)
+            var destination = destination_example;  // string | Destination path. Must end with a '/' if specifying a folder. Note that paths may or may not start with a '/', but they are always treated as relative to the Workspace root location.  (optional) 
 
             try
             {
                 // Upload a file for the Workspace
-                WorkspaceFile result = apiInstance.UploadWorkspaceFile(organizationId, workspaceId, file, overwrite);
+                WorkspaceFile result = apiInstance.UploadWorkspaceFile(organizationId, workspaceId, file, overwrite, destination);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -980,6 +981,7 @@ Name | Type | Description  | Notes
  **workspaceId** | **string**| the Workspace identifier | 
  **file** | **System.IO.Stream****System.IO.Stream**|  | 
  **overwrite** | **bool?**|  | [optional] [default to false]
+ **destination** | **string**| Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  | [optional] 
 
 ### Return type
 
