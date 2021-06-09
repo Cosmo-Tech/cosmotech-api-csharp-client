@@ -91,7 +91,8 @@ namespace Com.Cosmotech.Model
         /// <param name="users">the list of users Id with their role.</param>
         /// <param name="datasetList">the list of Dataset Id associated to this Scenario Run Template.</param>
         /// <param name="parametersValues">the list of Solution Run Template parameters values.</param>
-        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>))
+        /// <param name="lastRun">lastRun.</param>
+        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), ScenarioLastRun lastRun = default(ScenarioLastRun))
         {
             this.Name = name;
             this.Description = description;
@@ -101,6 +102,7 @@ namespace Com.Cosmotech.Model
             this.Users = users;
             this.DatasetList = datasetList;
             this.ParametersValues = parametersValues;
+            this.LastRun = lastRun;
         }
 
         /// <summary>
@@ -304,6 +306,12 @@ namespace Com.Cosmotech.Model
         public List<ScenarioRunTemplateParameterValue> ParametersValues { get; set; }
 
         /// <summary>
+        /// Gets or Sets LastRun
+        /// </summary>
+        [DataMember(Name = "lastRun", EmitDefaultValue = false)]
+        public ScenarioLastRun LastRun { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -329,6 +337,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  RunTemplateName: ").Append(RunTemplateName).Append("\n");
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
             sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
+            sb.Append("  LastRun: ").Append(LastRun).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -455,6 +464,11 @@ namespace Com.Cosmotech.Model
                     this.ParametersValues != null &&
                     input.ParametersValues != null &&
                     this.ParametersValues.SequenceEqual(input.ParametersValues)
+                ) && 
+                (
+                    this.LastRun == input.LastRun ||
+                    (this.LastRun != null &&
+                    this.LastRun.Equals(input.LastRun))
                 );
         }
 
@@ -502,6 +516,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.DatasetList.GetHashCode();
                 if (this.ParametersValues != null)
                     hashCode = hashCode * 59 + this.ParametersValues.GetHashCode();
+                if (this.LastRun != null)
+                    hashCode = hashCode * 59 + this.LastRun.GetHashCode();
                 return hashCode;
             }
         }

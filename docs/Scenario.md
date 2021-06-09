@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **RunTemplateName** | **string** | the Solution Run Template name associated with this Scenario | [optional] [readonly] 
 **DatasetList** | **List&lt;string&gt;** | the list of Dataset Id associated to this Scenario Run Template | [optional] 
 **ParametersValues** | [**List&lt;ScenarioRunTemplateParameterValue&gt;**](ScenarioRunTemplateParameterValue.md) | the list of Solution Run Template parameters values | [optional] 
+**LastRun** | [**ScenarioLastRun**](ScenarioLastRun.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -220,6 +220,7 @@ Class | Method | HTTP request | Description
  - [Model.Scenario](docs/Scenario.md)
  - [Model.ScenarioChangedParameterValue](docs/ScenarioChangedParameterValue.md)
  - [Model.ScenarioComparisonResult](docs/ScenarioComparisonResult.md)
+ - [Model.ScenarioLastRun](docs/ScenarioLastRun.md)
  - [Model.ScenarioRun](docs/ScenarioRun.md)
  - [Model.ScenarioRunContainer](docs/ScenarioRunContainer.md)
  - [Model.ScenarioRunContainerLogs](docs/ScenarioRunContainerLogs.md)
