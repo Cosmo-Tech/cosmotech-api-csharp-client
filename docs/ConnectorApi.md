@@ -1,6 +1,6 @@
 # Com.Cosmotech.Api.ConnectorApi
 
-All URIs are relative to *https://api.cosmotech.com*
+All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cosmotech.com";
+            config.BasePath = "https://dev.api.cosmotech.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -99,7 +99,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cosmotech.com";
+            config.BasePath = "https://dev.api.cosmotech.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -172,7 +172,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cosmotech.com";
+            config.BasePath = "https://dev.api.cosmotech.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -245,7 +245,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.cosmotech.com";
+            config.BasePath = "https://dev.api.cosmotech.com";
             // Configure OAuth2 access token for authorization: oAuth2AuthCode
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
