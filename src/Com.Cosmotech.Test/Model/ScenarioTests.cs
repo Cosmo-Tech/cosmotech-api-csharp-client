@@ -105,6 +105,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'OwnerId'
         }
         /// <summary>
+        /// Test the property 'RootId'
+        /// </summary>
+        [Fact]
+        public void RootIdTest()
+        {
+            // TODO unit test for the property 'RootId'
+        }
+        /// <summary>
         /// Test the property 'SolutionId'
         /// </summary>
         [Fact]
@@ -199,6 +207,14 @@ namespace Com.Cosmotech.Test.Model
         public void ParametersValuesTest()
         {
             // TODO unit test for the property 'ParametersValues'
+        }
+        /// <summary>
+        /// Test the property 'LastRun'
+        /// </summary>
+        [Fact]
+        public void LastRunTest()
+        {
+            // TODO unit test for the property 'LastRun'
         }
 
     }

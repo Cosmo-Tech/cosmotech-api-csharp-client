@@ -166,6 +166,22 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
+        /// the scenario root id
+        /// </summary>
+        /// <value>the scenario root id</value>
+        [DataMember(Name = "rootId", EmitDefaultValue = false)]
+        public string RootId { get; private set; }
+
+        /// <summary>
+        /// Returns false as RootId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeRootId()
+        {
+            return false;
+        }
+
+        /// <summary>
         /// the Solution Id associated with this Scenario
         /// </summary>
         /// <value>the Solution Id associated with this Scenario</value>
@@ -325,6 +341,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
+            sb.Append("  RootId: ").Append(RootId).Append("\n");
             sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
             sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
             sb.Append("  WorkspaceId: ").Append(WorkspaceId).Append("\n");
@@ -402,6 +419,11 @@ namespace Com.Cosmotech.Model
                     this.OwnerId == input.OwnerId ||
                     (this.OwnerId != null &&
                     this.OwnerId.Equals(input.OwnerId))
+                ) && 
+                (
+                    this.RootId == input.RootId ||
+                    (this.RootId != null &&
+                    this.RootId.Equals(input.RootId))
                 ) && 
                 (
                     this.SolutionId == input.SolutionId ||
@@ -493,6 +515,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.OwnerId != null)
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
+                if (this.RootId != null)
+                    hashCode = hashCode * 59 + this.RootId.GetHashCode();
                 if (this.SolutionId != null)
                     hashCode = hashCode * 59 + this.SolutionId.GetHashCode();
                 if (this.RunTemplateId != null)

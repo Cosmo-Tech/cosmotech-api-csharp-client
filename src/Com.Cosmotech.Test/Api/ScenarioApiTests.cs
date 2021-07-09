@@ -114,6 +114,18 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test DeleteAllScenarios
+        /// </summary>
+        [Fact]
+        public void DeleteAllScenariosTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //instance.DeleteAllScenarios(organizationId, workspaceId);
+        }
+
+        /// <summary>
         /// Test DeleteScenario
         /// </summary>
         [Fact]

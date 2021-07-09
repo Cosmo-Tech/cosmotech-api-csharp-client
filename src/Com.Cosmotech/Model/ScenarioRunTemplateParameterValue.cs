@@ -42,7 +42,7 @@ namespace Com.Cosmotech.Model
         /// <param name="parameterId">the parameter Id (required).</param>
         /// <param name="value">the parameter value (required).</param>
         /// <param name="isInherited">whether or not the value is inherited from parent or has been changed.</param>
-        public ScenarioRunTemplateParameterValue(string parameterId = default(string), string value = default(string), string isInherited = default(string))
+        public ScenarioRunTemplateParameterValue(string parameterId = default(string), string value = default(string), bool isInherited = default(bool))
         {
             // to ensure "parameterId" is required (not null)
             this.ParameterId = parameterId ?? throw new ArgumentNullException("parameterId is a required property for ScenarioRunTemplateParameterValue and cannot be null");
@@ -85,8 +85,8 @@ namespace Com.Cosmotech.Model
         /// whether or not the value is inherited from parent or has been changed
         /// </summary>
         /// <value>whether or not the value is inherited from parent or has been changed</value>
-        [DataMember(Name = "isInherited", EmitDefaultValue = false)]
-        public string IsInherited { get; set; }
+        [DataMember(Name = "isInherited", EmitDefaultValue = true)]
+        public bool IsInherited { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -151,8 +151,7 @@ namespace Com.Cosmotech.Model
                 ) && 
                 (
                     this.IsInherited == input.IsInherited ||
-                    (this.IsInherited != null &&
-                    this.IsInherited.Equals(input.IsInherited))
+                    this.IsInherited.Equals(input.IsInherited)
                 );
         }
 
@@ -171,8 +170,7 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.VarType.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.IsInherited != null)
-                    hashCode = hashCode * 59 + this.IsInherited.GetHashCode();
+                hashCode = hashCode * 59 + this.IsInherited.GetHashCode();
                 return hashCode;
             }
         }

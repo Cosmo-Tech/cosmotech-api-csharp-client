@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ParameterId** | **string** | the parameter Id | 
 **VarType** | **string** | the parameter value type | [optional] [readonly] 
 **Value** | **string** | the parameter value | 
-**IsInherited** | **string** | whether or not the value is inherited from parent or has been changed | [optional] 
+**IsInherited** | **bool** | whether or not the value is inherited from parent or has been changed | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
