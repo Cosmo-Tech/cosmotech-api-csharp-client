@@ -74,7 +74,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the parameter value
         /// </summary>

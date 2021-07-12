@@ -60,7 +60,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Organization name
         /// </summary>
@@ -83,7 +82,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Users
         /// </summary>

@@ -121,7 +121,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Scenario name
         /// </summary>
@@ -165,7 +164,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the scenario root id
         /// </summary>
@@ -181,7 +179,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Solution Id associated with this Scenario
         /// </summary>
@@ -197,7 +194,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Solution Run Template Id associated with this Scenario
         /// </summary>
@@ -220,7 +216,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the list of users Id with their role
         /// </summary>
@@ -243,7 +238,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the last time a Scenario was updated
         /// </summary>
@@ -259,7 +253,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the name of the owner
         /// </summary>
@@ -275,7 +268,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Solution name
         /// </summary>
@@ -291,7 +283,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Solution Run Template name associated with this Scenario
         /// </summary>
@@ -307,7 +298,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the list of Dataset Id associated to this Scenario Run Template
         /// </summary>

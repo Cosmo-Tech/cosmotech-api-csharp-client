@@ -80,7 +80,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// technical key for resource name convention and version grouping. Must be unique
         /// </summary>
@@ -131,7 +130,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// Gets or Sets Solution
         /// </summary>

@@ -105,7 +105,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Validator id
         /// </summary>
@@ -121,7 +120,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the validator name
         /// </summary>
@@ -137,7 +135,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Dataset id to run the validator on
         /// </summary>
@@ -160,7 +157,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Validator Run container id
         /// </summary>
@@ -176,7 +172,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Validator Run logs
         /// </summary>
@@ -192,7 +187,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

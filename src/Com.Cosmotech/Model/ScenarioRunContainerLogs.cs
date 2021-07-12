@@ -55,7 +55,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the container name
         /// </summary>
@@ -71,7 +70,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the list of children node id
         /// </summary>
@@ -87,7 +85,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the node logs in plain text
         /// </summary>
@@ -103,7 +100,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

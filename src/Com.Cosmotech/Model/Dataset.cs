@@ -68,7 +68,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Dataset name
         /// </summary>
@@ -98,7 +97,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the list of tags
         /// </summary>

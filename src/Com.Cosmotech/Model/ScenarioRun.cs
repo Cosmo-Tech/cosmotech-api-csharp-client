@@ -64,7 +64,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Organization id
         /// </summary>
@@ -94,7 +93,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the base name for workflow name generation
         /// </summary>
@@ -124,7 +122,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Workspace Id
         /// </summary>
@@ -140,7 +137,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// technical key for resource name convention and version grouping. Must be unique
         /// </summary>
@@ -156,7 +152,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Scenario Id
         /// </summary>
@@ -172,7 +167,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Solution Id
         /// </summary>
@@ -188,7 +182,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Solution Run Template id
         /// </summary>
@@ -204,7 +197,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the compute size needed for this Analysis. Standard sizes are basic and highcpu. Default is basic
         /// </summary>
@@ -220,7 +212,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the list of Dataset Id associated to this Analysis
         /// </summary>
@@ -236,7 +227,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the list of Run Template parameters values
         /// </summary>
@@ -252,7 +242,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// whether or not the Datasets values are send to the DataWarehouse prior to Simulation Run. If not set follow the Workspace setting
         /// </summary>
@@ -268,7 +257,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// whether or not the input parameters values are send to the DataWarehouse prior to Simulation Run. If not set follow the Workspace setting
         /// </summary>
@@ -284,7 +272,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the node label request
         /// </summary>
@@ -300,7 +287,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the containers list
         /// </summary>

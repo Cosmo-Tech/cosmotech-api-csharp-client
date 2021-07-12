@@ -55,7 +55,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Scenario Id the reference Scenario is compared to
         /// </summary>
@@ -71,7 +70,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the list of changed values for parameters
         /// </summary>
@@ -87,7 +85,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

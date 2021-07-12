@@ -55,7 +55,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the container map of logs
         /// </summary>
@@ -71,7 +70,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

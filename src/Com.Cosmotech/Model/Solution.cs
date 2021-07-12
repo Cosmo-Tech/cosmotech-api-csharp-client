@@ -86,7 +86,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Solution key which group Solution versions
         /// </summary>
@@ -144,7 +143,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// an optional URL link to solution page
         /// </summary>

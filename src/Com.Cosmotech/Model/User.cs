@@ -92,7 +92,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the User name
         /// </summary>
@@ -114,7 +113,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

@@ -73,7 +73,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the container name
         /// </summary>

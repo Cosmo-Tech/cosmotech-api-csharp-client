@@ -110,7 +110,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Connector key which group Connector versions
         /// </summary>
@@ -168,7 +167,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// an optional URL link to connector page
         /// </summary>

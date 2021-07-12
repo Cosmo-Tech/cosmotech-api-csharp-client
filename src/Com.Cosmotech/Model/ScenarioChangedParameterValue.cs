@@ -55,7 +55,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the parameter value type
         /// </summary>
@@ -71,7 +70,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the parameter value for the reference Scenario
         /// </summary>
@@ -87,7 +85,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the parameter value for the compared Scenario
         /// </summary>
@@ -103,7 +100,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

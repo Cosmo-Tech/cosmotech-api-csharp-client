@@ -56,7 +56,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Workspace name
         /// </summary>
@@ -72,7 +71,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the roles of the User in the Workspace
         /// </summary>

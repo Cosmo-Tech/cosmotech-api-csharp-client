@@ -74,7 +74,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// the Validator name
         /// </summary>
@@ -118,7 +117,6 @@ namespace Com.Cosmotech.Model
         {
             return false;
         }
-
         /// <summary>
         /// an optional URL link to Validator page
         /// </summary>
