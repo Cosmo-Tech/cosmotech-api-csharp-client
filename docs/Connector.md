@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Tags** | **List&lt;string&gt;** | the list of tags | [optional] 
 **OwnerId** | **string** | the user id which own this connector version | [optional] [readonly] 
 **Url** | **string** | an optional URL link to connector page | [optional] 
+**AzureManagedIdentity** | **bool** | whether or not the connector uses Azure Managed Identity | [optional] 
 **IoTypes** | **List&lt;string&gt;** |  | 
 **ParameterGroups** | [**List&lt;ConnectorParameterGroup&gt;**](ConnectorParameterGroup.md) | the list of connector parameters groups | [optional] 
 

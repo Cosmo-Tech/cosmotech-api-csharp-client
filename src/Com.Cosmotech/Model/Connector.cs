@@ -75,9 +75,10 @@ namespace Com.Cosmotech.Model
         /// <param name="version">the Connector version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag (required).</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="url">an optional URL link to connector page.</param>
+        /// <param name="azureManagedIdentity">whether or not the connector uses Azure Managed Identity.</param>
         /// <param name="ioTypes">ioTypes (required).</param>
         /// <param name="parameterGroups">the list of connector parameters groups.</param>
-        public Connector(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string version = default(string), List<string> tags = default(List<string>), string url = default(string), List<IoTypesEnum> ioTypes = default(List<IoTypesEnum>), List<ConnectorParameterGroup> parameterGroups = default(List<ConnectorParameterGroup>))
+        public Connector(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string version = default(string), List<string> tags = default(List<string>), string url = default(string), bool azureManagedIdentity = default(bool), List<IoTypesEnum> ioTypes = default(List<IoTypesEnum>), List<ConnectorParameterGroup> parameterGroups = default(List<ConnectorParameterGroup>))
         {
             // to ensure "key" is required (not null)
             this.Key = key ?? throw new ArgumentNullException("key is a required property for Connector and cannot be null");
@@ -92,6 +93,7 @@ namespace Com.Cosmotech.Model
             this.Description = description;
             this.Tags = tags;
             this.Url = url;
+            this.AzureManagedIdentity = azureManagedIdentity;
             this.ParameterGroups = parameterGroups;
         }
 
@@ -175,6 +177,13 @@ namespace Com.Cosmotech.Model
         public string Url { get; set; }
 
         /// <summary>
+        /// whether or not the connector uses Azure Managed Identity
+        /// </summary>
+        /// <value>whether or not the connector uses Azure Managed Identity</value>
+        [DataMember(Name = "azureManagedIdentity", EmitDefaultValue = true)]
+        public bool AzureManagedIdentity { get; set; }
+
+        /// <summary>
         /// the list of connector parameters groups
         /// </summary>
         /// <value>the list of connector parameters groups</value>
@@ -198,6 +207,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  AzureManagedIdentity: ").Append(AzureManagedIdentity).Append("\n");
             sb.Append("  IoTypes: ").Append(IoTypes).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("}\n");
@@ -281,6 +291,10 @@ namespace Com.Cosmotech.Model
                     this.Url.Equals(input.Url))
                 ) && 
                 (
+                    this.AzureManagedIdentity == input.AzureManagedIdentity ||
+                    this.AzureManagedIdentity.Equals(input.AzureManagedIdentity)
+                ) && 
+                (
                     this.IoTypes == input.IoTypes ||
                     this.IoTypes.SequenceEqual(input.IoTypes)
                 ) && 
@@ -319,6 +333,7 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
+                hashCode = hashCode * 59 + this.AzureManagedIdentity.GetHashCode();
                 hashCode = hashCode * 59 + this.IoTypes.GetHashCode();
                 if (this.ParameterGroups != null)
                     hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();

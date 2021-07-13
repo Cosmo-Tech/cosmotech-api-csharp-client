@@ -130,6 +130,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Url'
         }
         /// <summary>
+        /// Test the property 'AzureManagedIdentity'
+        /// </summary>
+        [Fact]
+        public void AzureManagedIdentityTest()
+        {
+            // TODO unit test for the property 'AzureManagedIdentity'
+        }
+        /// <summary>
         /// Test the property 'IoTypes'
         /// </summary>
         [Fact]

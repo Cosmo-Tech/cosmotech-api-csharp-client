@@ -74,6 +74,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Name'
         }
         /// <summary>
+        /// Test the property 'Labels'
+        /// </summary>
+        [Fact]
+        public void LabelsTest()
+        {
+            // TODO unit test for the property 'Labels'
+        }
+        /// <summary>
         /// Test the property 'EnvVars'
         /// </summary>
         [Fact]

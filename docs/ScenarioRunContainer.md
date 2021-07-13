@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the container Id | [optional] [readonly] 
 **Name** | **string** | the container name | 
+**Labels** | **Dictionary&lt;string, string&gt;** | the metadata labels | [optional] 
 **EnvVars** | **Dictionary&lt;string, string&gt;** | environment variable map | [optional] 
 **Image** | **string** | the container image URI | 
 **Entrypoint** | **string** | the container entry point | [optional] 

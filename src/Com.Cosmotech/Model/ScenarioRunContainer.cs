@@ -41,17 +41,19 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="ScenarioRunContainer" /> class.
         /// </summary>
         /// <param name="name">the container name (required).</param>
+        /// <param name="labels">the metadata labels.</param>
         /// <param name="envVars">environment variable map.</param>
         /// <param name="image">the container image URI (required).</param>
         /// <param name="entrypoint">the container entry point.</param>
         /// <param name="runArgs">the list of run arguments for the container.</param>
         /// <param name="dependencies">the list of dependencies container name to run this container.</param>
-        public ScenarioRunContainer(string name = default(string), Dictionary<string, string> envVars = default(Dictionary<string, string>), string image = default(string), string entrypoint = default(string), List<string> runArgs = default(List<string>), List<string> dependencies = default(List<string>))
+        public ScenarioRunContainer(string name = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), Dictionary<string, string> envVars = default(Dictionary<string, string>), string image = default(string), string entrypoint = default(string), List<string> runArgs = default(List<string>), List<string> dependencies = default(List<string>))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for ScenarioRunContainer and cannot be null");
             // to ensure "image" is required (not null)
             this.Image = image ?? throw new ArgumentNullException("image is a required property for ScenarioRunContainer and cannot be null");
+            this.Labels = labels;
             this.EnvVars = envVars;
             this.Entrypoint = entrypoint;
             this.RunArgs = runArgs;
@@ -79,6 +81,13 @@ namespace Com.Cosmotech.Model
         /// <value>the container name</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// the metadata labels
+        /// </summary>
+        /// <value>the metadata labels</value>
+        [DataMember(Name = "labels", EmitDefaultValue = false)]
+        public Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
         /// environment variable map
@@ -125,6 +134,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class ScenarioRunContainer {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  EnvVars: ").Append(EnvVars).Append("\n");
             sb.Append("  Image: ").Append(Image).Append("\n");
             sb.Append("  Entrypoint: ").Append(Entrypoint).Append("\n");
@@ -175,6 +185,12 @@ namespace Com.Cosmotech.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Labels == input.Labels ||
+                    this.Labels != null &&
+                    input.Labels != null &&
+                    this.Labels.SequenceEqual(input.Labels)
+                ) && 
+                (
                     this.EnvVars == input.EnvVars ||
                     this.EnvVars != null &&
                     input.EnvVars != null &&
@@ -217,6 +233,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Labels != null)
+                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
                 if (this.EnvVars != null)
                     hashCode = hashCode * 59 + this.EnvVars.GetHashCode();
                 if (this.Image != null)
