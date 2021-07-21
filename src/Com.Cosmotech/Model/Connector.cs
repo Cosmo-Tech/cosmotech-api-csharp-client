@@ -76,9 +76,10 @@ namespace Com.Cosmotech.Model
         /// <param name="tags">the list of tags.</param>
         /// <param name="url">an optional URL link to connector page.</param>
         /// <param name="azureManagedIdentity">whether or not the connector uses Azure Managed Identity.</param>
+        /// <param name="azureAuthenticationWithCustomerAppRegistration">whether to authenticate against Azure using the app registration credentials provided by the customer.</param>
         /// <param name="ioTypes">ioTypes (required).</param>
         /// <param name="parameterGroups">the list of connector parameters groups.</param>
-        public Connector(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string version = default(string), List<string> tags = default(List<string>), string url = default(string), bool azureManagedIdentity = default(bool), List<IoTypesEnum> ioTypes = default(List<IoTypesEnum>), List<ConnectorParameterGroup> parameterGroups = default(List<ConnectorParameterGroup>))
+        public Connector(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string version = default(string), List<string> tags = default(List<string>), string url = default(string), bool azureManagedIdentity = default(bool), bool azureAuthenticationWithCustomerAppRegistration = default(bool), List<IoTypesEnum> ioTypes = default(List<IoTypesEnum>), List<ConnectorParameterGroup> parameterGroups = default(List<ConnectorParameterGroup>))
         {
             // to ensure "key" is required (not null)
             this.Key = key ?? throw new ArgumentNullException("key is a required property for Connector and cannot be null");
@@ -94,6 +95,7 @@ namespace Com.Cosmotech.Model
             this.Tags = tags;
             this.Url = url;
             this.AzureManagedIdentity = azureManagedIdentity;
+            this.AzureAuthenticationWithCustomerAppRegistration = azureAuthenticationWithCustomerAppRegistration;
             this.ParameterGroups = parameterGroups;
         }
 
@@ -184,6 +186,13 @@ namespace Com.Cosmotech.Model
         public bool AzureManagedIdentity { get; set; }
 
         /// <summary>
+        /// whether to authenticate against Azure using the app registration credentials provided by the customer
+        /// </summary>
+        /// <value>whether to authenticate against Azure using the app registration credentials provided by the customer</value>
+        [DataMember(Name = "azureAuthenticationWithCustomerAppRegistration", EmitDefaultValue = true)]
+        public bool AzureAuthenticationWithCustomerAppRegistration { get; set; }
+
+        /// <summary>
         /// the list of connector parameters groups
         /// </summary>
         /// <value>the list of connector parameters groups</value>
@@ -208,6 +217,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  AzureManagedIdentity: ").Append(AzureManagedIdentity).Append("\n");
+            sb.Append("  AzureAuthenticationWithCustomerAppRegistration: ").Append(AzureAuthenticationWithCustomerAppRegistration).Append("\n");
             sb.Append("  IoTypes: ").Append(IoTypes).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("}\n");
@@ -295,6 +305,10 @@ namespace Com.Cosmotech.Model
                     this.AzureManagedIdentity.Equals(input.AzureManagedIdentity)
                 ) && 
                 (
+                    this.AzureAuthenticationWithCustomerAppRegistration == input.AzureAuthenticationWithCustomerAppRegistration ||
+                    this.AzureAuthenticationWithCustomerAppRegistration.Equals(input.AzureAuthenticationWithCustomerAppRegistration)
+                ) && 
+                (
                     this.IoTypes == input.IoTypes ||
                     this.IoTypes.SequenceEqual(input.IoTypes)
                 ) && 
@@ -334,6 +348,7 @@ namespace Com.Cosmotech.Model
                 if (this.Url != null)
                     hashCode = hashCode * 59 + this.Url.GetHashCode();
                 hashCode = hashCode * 59 + this.AzureManagedIdentity.GetHashCode();
+                hashCode = hashCode * 59 + this.AzureAuthenticationWithCustomerAppRegistration.GetHashCode();
                 hashCode = hashCode * 59 + this.IoTypes.GetHashCode();
                 if (this.ParameterGroups != null)
                     hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();

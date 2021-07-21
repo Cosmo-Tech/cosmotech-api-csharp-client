@@ -138,6 +138,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'AzureManagedIdentity'
         }
         /// <summary>
+        /// Test the property 'AzureAuthenticationWithCustomerAppRegistration'
+        /// </summary>
+        [Fact]
+        public void AzureAuthenticationWithCustomerAppRegistrationTest()
+        {
+            // TODO unit test for the property 'AzureAuthenticationWithCustomerAppRegistration'
+        }
+        /// <summary>
         /// Test the property 'IoTypes'
         /// </summary>
         [Fact]
