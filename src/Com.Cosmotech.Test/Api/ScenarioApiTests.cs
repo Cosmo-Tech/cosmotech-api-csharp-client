@@ -136,7 +136,8 @@ namespace Com.Cosmotech.Test.Api
             //string organizationId = null;
             //string workspaceId = null;
             //string scenarioId = null;
-            //instance.DeleteScenario(organizationId, workspaceId, scenarioId);
+            //bool? waitRelationshipPropagation = null;
+            //instance.DeleteScenario(organizationId, workspaceId, scenarioId, waitRelationshipPropagation);
         }
 
         /// <summary>

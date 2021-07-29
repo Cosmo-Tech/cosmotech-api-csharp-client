@@ -148,8 +148,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="waitRelationshipPropagation">whether to wait until child scenarios are effectively updated (optional, default to false)</param>
         /// <returns></returns>
-        void DeleteScenario(string organizationId, string workspaceId, string scenarioId);
+        void DeleteScenario(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?));
 
         /// <summary>
         /// Delete a scenario
@@ -161,8 +162,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="waitRelationshipPropagation">whether to wait until child scenarios are effectively updated (optional, default to false)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId);
+        ApiResponse<Object> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?));
         /// <summary>
         /// List all Scenarios
         /// </summary>
@@ -475,9 +477,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="waitRelationshipPropagation">whether to wait until child scenarios are effectively updated (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a scenario
@@ -489,9 +492,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="waitRelationshipPropagation">whether to wait until child scenarios are effectively updated (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Scenarios
         /// </summary>
@@ -1615,10 +1619,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="waitRelationshipPropagation">whether to wait until child scenarios are effectively updated (optional, default to false)</param>
         /// <returns></returns>
-        public void DeleteScenario(string organizationId, string workspaceId, string scenarioId)
+        public void DeleteScenario(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?))
         {
-            DeleteScenarioWithHttpInfo(organizationId, workspaceId, scenarioId);
+            DeleteScenarioWithHttpInfo(organizationId, workspaceId, scenarioId, waitRelationshipPropagation);
         }
 
         /// <summary>
@@ -1628,8 +1633,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="waitRelationshipPropagation">whether to wait until child scenarios are effectively updated (optional, default to false)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId)
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1661,6 +1667,10 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            if (waitRelationshipPropagation != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "wait_relationship_propagation", waitRelationshipPropagation));
+            }
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -1688,11 +1698,12 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="waitRelationshipPropagation">whether to wait until child scenarios are effectively updated (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, cancellationToken).ConfigureAwait(false);
+            await DeleteScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, waitRelationshipPropagation, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1702,9 +1713,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="waitRelationshipPropagation">whether to wait until child scenarios are effectively updated (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1738,6 +1750,10 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            if (waitRelationshipPropagation != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "wait_relationship_propagation", waitRelationshipPropagation));
+            }
 
             // authentication (oAuth2AuthCode) required
             // oauth required
