@@ -92,7 +92,8 @@ namespace Com.Cosmotech.Model
         /// <param name="runSource">runSource.</param>
         /// <param name="postRunSource">postRunSource.</param>
         /// <param name="parameterGroups">the ordered list of parameters groups for the Run Template.</param>
-        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool fetchDatasets = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>))
+        /// <param name="stackSteps">whether or not to stack adjacent scenario run steps in one container run which will chain steps.</param>
+        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool fetchDatasets = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>), bool stackSteps = default(bool))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplate and cannot be null");
@@ -118,6 +119,7 @@ namespace Com.Cosmotech.Model
             this.RunSource = runSource;
             this.PostRunSource = postRunSource;
             this.ParameterGroups = parameterGroups;
+            this.StackSteps = stackSteps;
         }
 
         /// <summary>
@@ -240,6 +242,13 @@ namespace Com.Cosmotech.Model
         public List<string> ParameterGroups { get; set; }
 
         /// <summary>
+        /// whether or not to stack adjacent scenario run steps in one container run which will chain steps
+        /// </summary>
+        /// <value>whether or not to stack adjacent scenario run steps in one container run which will chain steps</value>
+        [DataMember(Name = "stackSteps", EmitDefaultValue = true)]
+        public bool StackSteps { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -269,6 +278,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  RunSource: ").Append(RunSource).Append("\n");
             sb.Append("  PostRunSource: ").Append(PostRunSource).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
+            sb.Append("  StackSteps: ").Append(StackSteps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -399,6 +409,10 @@ namespace Com.Cosmotech.Model
                     this.ParameterGroups != null &&
                     input.ParameterGroups != null &&
                     this.ParameterGroups.SequenceEqual(input.ParameterGroups)
+                ) && 
+                (
+                    this.StackSteps == input.StackSteps ||
+                    this.StackSteps.Equals(input.StackSteps)
                 );
         }
 
@@ -440,6 +454,7 @@ namespace Com.Cosmotech.Model
                 hashCode = hashCode * 59 + this.PostRunSource.GetHashCode();
                 if (this.ParameterGroups != null)
                     hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();
+                hashCode = hashCode * 59 + this.StackSteps.GetHashCode();
                 return hashCode;
             }
         }

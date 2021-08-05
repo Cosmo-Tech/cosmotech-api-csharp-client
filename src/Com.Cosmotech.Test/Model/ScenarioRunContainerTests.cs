@@ -121,6 +121,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Dependencies'
         }
+        /// <summary>
+        /// Test the property 'SolutionContainer'
+        /// </summary>
+        [Fact]
+        public void SolutionContainerTest()
+        {
+            // TODO unit test for the property 'SolutionContainer'
+        }
 
     }
 

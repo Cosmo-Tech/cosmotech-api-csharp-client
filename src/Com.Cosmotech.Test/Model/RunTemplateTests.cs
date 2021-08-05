@@ -233,6 +233,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'ParameterGroups'
         }
+        /// <summary>
+        /// Test the property 'StackSteps'
+        /// </summary>
+        [Fact]
+        public void StackStepsTest()
+        {
+            // TODO unit test for the property 'StackSteps'
+        }
 
     }
 

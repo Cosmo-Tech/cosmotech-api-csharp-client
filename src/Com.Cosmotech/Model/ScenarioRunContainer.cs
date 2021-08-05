@@ -125,6 +125,21 @@ namespace Com.Cosmotech.Model
         public List<string> Dependencies { get; set; }
 
         /// <summary>
+        /// whether or not this container is a Cosmo Tech solution container
+        /// </summary>
+        /// <value>whether or not this container is a Cosmo Tech solution container</value>
+        [DataMember(Name = "solutionContainer", EmitDefaultValue = true)]
+        public bool SolutionContainer { get; private set; }
+
+        /// <summary>
+        /// Returns false as SolutionContainer should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeSolutionContainer()
+        {
+            return false;
+        }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -140,6 +155,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Entrypoint: ").Append(Entrypoint).Append("\n");
             sb.Append("  RunArgs: ").Append(RunArgs).Append("\n");
             sb.Append("  Dependencies: ").Append(Dependencies).Append("\n");
+            sb.Append("  SolutionContainer: ").Append(SolutionContainer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -217,6 +233,10 @@ namespace Com.Cosmotech.Model
                     this.Dependencies != null &&
                     input.Dependencies != null &&
                     this.Dependencies.SequenceEqual(input.Dependencies)
+                ) && 
+                (
+                    this.SolutionContainer == input.SolutionContainer ||
+                    this.SolutionContainer.Equals(input.SolutionContainer)
                 );
         }
 
@@ -245,6 +265,7 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.RunArgs.GetHashCode();
                 if (this.Dependencies != null)
                     hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
+                hashCode = hashCode * 59 + this.SolutionContainer.GetHashCode();
                 return hashCode;
             }
         }
