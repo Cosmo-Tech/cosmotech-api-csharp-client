@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Description** | **string** | the Solution description | [optional] 
 **Repository** | **string** | the registry repository containing the image | 
 **CsmSimulator** | **string** | the main Cosmo Tech simulator name used in standard Run Template | [optional] 
-**Version** | **string** | the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag | 
+**_Version** | **string** | the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag | 
 **OwnerId** | **string** | the User id which own this Solution | [optional] [readonly] 
 **Url** | **string** | an optional URL link to solution page | [optional] 
 **Tags** | **List&lt;string&gt;** | the list of tags | [optional] 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Name** | **string** | the Connector name | 
 **Description** | **string** | the Connector description | [optional] 
 **Repository** | **string** | the registry repository containing the image | 
-**Version** | **string** | the Connector version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag | 
+**_Version** | **string** | the Connector version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag | 
 **Tags** | **List&lt;string&gt;** | the list of tags | [optional] 
 **OwnerId** | **string** | the user id which own this connector version | [optional] [readonly] 
 **Url** | **string** | an optional URL link to connector page | [optional] 

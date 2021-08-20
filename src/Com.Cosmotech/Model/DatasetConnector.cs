@@ -43,7 +43,7 @@ namespace Com.Cosmotech.Model
         {
             this.Id = id;
             this.Name = name;
-            this.Version = version;
+            this._Version = version;
             this.ParametersValues = parametersValues;
         }
 
@@ -66,7 +66,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <value>the Connector version</value>
         [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// Gets or Sets ParametersValues
@@ -84,7 +84,7 @@ namespace Com.Cosmotech.Model
             sb.Append("class DatasetConnector {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -131,9 +131,9 @@ namespace Com.Cosmotech.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.ParametersValues == input.ParametersValues ||
@@ -156,8 +156,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 if (this.ParametersValues != null)
                     hashCode = hashCode * 59 + this.ParametersValues.GetHashCode();
                 return hashCode;

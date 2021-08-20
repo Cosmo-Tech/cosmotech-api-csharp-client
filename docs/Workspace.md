@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Key** | **string** | technical key for resource name convention and version grouping. Must be unique | 
 **Name** | **string** | the Workspace name | 
 **Description** | **string** | the Workspace description | [optional] 
-**Version** | **string** | the Workspace version MAJOR.MINOR.PATCH. | [optional] 
+**_Version** | **string** | the Workspace version MAJOR.MINOR.PATCH. | [optional] 
 **Tags** | **List&lt;string&gt;** | the list of tags | [optional] 
 **OwnerId** | **string** | the user id which own this workspace | [optional] [readonly] 
 **Solution** | [**WorkspaceSolution**](WorkspaceSolution.md) |  | 

@@ -58,7 +58,7 @@ namespace Com.Cosmotech.Model
             // to ensure "solution" is required (not null)
             this.Solution = solution ?? throw new ArgumentNullException("solution is a required property for Workspace and cannot be null");
             this.Description = description;
-            this.Version = version;
+            this._Version = version;
             this.Tags = tags;
             this.Users = users;
             this.WebApp = webApp;
@@ -106,7 +106,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <value>the Workspace version MAJOR.MINOR.PATCH.</value>
         [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// the list of tags
@@ -168,7 +168,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Solution: ").Append(Solution).Append("\n");
@@ -230,9 +230,9 @@ namespace Com.Cosmotech.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.Tags == input.Tags ||
@@ -284,8 +284,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.OwnerId != null)

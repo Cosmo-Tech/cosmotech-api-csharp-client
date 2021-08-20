@@ -88,7 +88,7 @@ namespace Com.Cosmotech.Model
             // to ensure "repository" is required (not null)
             this.Repository = repository ?? throw new ArgumentNullException("repository is a required property for Connector and cannot be null");
             // to ensure "version" is required (not null)
-            this.Version = version ?? throw new ArgumentNullException("version is a required property for Connector and cannot be null");
+            this._Version = version ?? throw new ArgumentNullException("version is a required property for Connector and cannot be null");
             // to ensure "ioTypes" is required (not null)
             this.IoTypes = ioTypes ?? throw new ArgumentNullException("ioTypes is a required property for Connector and cannot be null");
             this.Description = description;
@@ -147,7 +147,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <value>the Connector version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag</value>
         [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// the list of tags
@@ -212,7 +212,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Repository: ").Append(Repository).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
@@ -280,9 +280,9 @@ namespace Com.Cosmotech.Model
                     this.Repository.Equals(input.Repository))
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.Tags == input.Tags ||
@@ -339,8 +339,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Repository != null)
                     hashCode = hashCode * 59 + this.Repository.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 if (this.Tags != null)
                     hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.OwnerId != null)

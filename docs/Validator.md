@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Name** | **string** | the Validator name | 
 **Description** | **string** | the Validator description | [optional] 
 **Repository** | **string** | the registry repository containing the Validator image | 
-**Version** | **string** | the Validator version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag | 
+**_Version** | **string** | the Validator version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag | 
 **OwnerId** | **string** | the User id which own this Validator | [optional] [readonly] 
 **Url** | **string** | an optional URL link to Validator page | [optional] 
 **Tags** | **List&lt;string&gt;** | the list of tags | [optional] 
