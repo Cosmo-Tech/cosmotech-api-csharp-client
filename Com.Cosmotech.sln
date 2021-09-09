@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Cosmotech", "src\Com.Cosmotech\Com.Cosmotech.csproj", "{5C4F8194-8BC0-402F-923B-64D8CB8DC9E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Cosmotech", "src\Com.Cosmotech\Com.Cosmotech.csproj", "{96DE1733-75D5-4CF8-80CF-0BAF01108B8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Cosmotech.Test", "src\Com.Cosmotech.Test\Com.Cosmotech.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5C4F8194-8BC0-402F-923B-64D8CB8DC9E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C4F8194-8BC0-402F-923B-64D8CB8DC9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C4F8194-8BC0-402F-923B-64D8CB8DC9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C4F8194-8BC0-402F-923B-64D8CB8DC9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96DE1733-75D5-4CF8-80CF-0BAF01108B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96DE1733-75D5-4CF8-80CF-0BAF01108B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96DE1733-75D5-4CF8-80CF-0BAF01108B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96DE1733-75D5-4CF8-80CF-0BAF01108B8F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
