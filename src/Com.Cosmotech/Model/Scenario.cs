@@ -99,7 +99,9 @@ namespace Com.Cosmotech.Model
         /// <param name="datasetList">the list of Dataset Id associated to this Scenario Run Template.</param>
         /// <param name="parametersValues">the list of Solution Run Template parameters values.</param>
         /// <param name="lastRun">lastRun.</param>
-        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), ScenarioLastRun lastRun = default(ScenarioLastRun))
+        /// <param name="parentLastRun">parentLastRun.</param>
+        /// <param name="rootLastRun">rootLastRun.</param>
+        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), ScenarioLastRun lastRun = default(ScenarioLastRun), ScenarioLastRun parentLastRun = default(ScenarioLastRun), ScenarioLastRun rootLastRun = default(ScenarioLastRun))
         {
             this.Name = name;
             this.Description = description;
@@ -110,6 +112,8 @@ namespace Com.Cosmotech.Model
             this.DatasetList = datasetList;
             this.ParametersValues = parametersValues;
             this.LastRun = lastRun;
+            this.ParentLastRun = parentLastRun;
+            this.RootLastRun = rootLastRun;
         }
 
         /// <summary>
@@ -325,6 +329,18 @@ namespace Com.Cosmotech.Model
         public ScenarioLastRun LastRun { get; set; }
 
         /// <summary>
+        /// Gets or Sets ParentLastRun
+        /// </summary>
+        [DataMember(Name = "parentLastRun", EmitDefaultValue = false)]
+        public ScenarioLastRun ParentLastRun { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RootLastRun
+        /// </summary>
+        [DataMember(Name = "rootLastRun", EmitDefaultValue = false)]
+        public ScenarioLastRun RootLastRun { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -352,6 +368,8 @@ namespace Com.Cosmotech.Model
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
             sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
             sb.Append("  LastRun: ").Append(LastRun).Append("\n");
+            sb.Append("  ParentLastRun: ").Append(ParentLastRun).Append("\n");
+            sb.Append("  RootLastRun: ").Append(RootLastRun).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -488,6 +506,16 @@ namespace Com.Cosmotech.Model
                     this.LastRun == input.LastRun ||
                     (this.LastRun != null &&
                     this.LastRun.Equals(input.LastRun))
+                ) && 
+                (
+                    this.ParentLastRun == input.ParentLastRun ||
+                    (this.ParentLastRun != null &&
+                    this.ParentLastRun.Equals(input.ParentLastRun))
+                ) && 
+                (
+                    this.RootLastRun == input.RootLastRun ||
+                    (this.RootLastRun != null &&
+                    this.RootLastRun.Equals(input.RootLastRun))
                 );
         }
 
@@ -539,6 +567,10 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.ParametersValues.GetHashCode();
                 if (this.LastRun != null)
                     hashCode = hashCode * 59 + this.LastRun.GetHashCode();
+                if (this.ParentLastRun != null)
+                    hashCode = hashCode * 59 + this.ParentLastRun.GetHashCode();
+                if (this.RootLastRun != null)
+                    hashCode = hashCode * 59 + this.RootLastRun.GetHashCode();
                 return hashCode;
             }
         }

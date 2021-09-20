@@ -217,6 +217,22 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'LastRun'
         }
+        /// <summary>
+        /// Test the property 'ParentLastRun'
+        /// </summary>
+        [Fact]
+        public void ParentLastRunTest()
+        {
+            // TODO unit test for the property 'ParentLastRun'
+        }
+        /// <summary>
+        /// Test the property 'RootLastRun'
+        /// </summary>
+        [Fact]
+        public void RootLastRunTest()
+        {
+            // TODO unit test for the property 'RootLastRun'
+        }
 
     }
 

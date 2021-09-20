@@ -27,9 +27,9 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// the last Scenarion Run for this Scenario
+    /// ScenarioLastRun
     /// </summary>
-    [DataContract(Name = "Scenario_lastRun")]
+    [DataContract(Name = "ScenarioLastRun")]
     public partial class ScenarioLastRun : IEquatable<ScenarioLastRun>, IValidatableObject
     {
         /// <summary>

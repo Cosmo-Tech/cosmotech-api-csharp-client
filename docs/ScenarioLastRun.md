@@ -1,5 +1,4 @@
 # Com.Cosmotech.Model.ScenarioLastRun
-the last Scenarion Run for this Scenario
 
 ## Properties
 
