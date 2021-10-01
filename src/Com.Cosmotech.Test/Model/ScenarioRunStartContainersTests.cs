@@ -82,6 +82,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'NodeLabel'
         }
         /// <summary>
+        /// Test the property 'Labels'
+        /// </summary>
+        [Fact]
+        public void LabelsTest()
+        {
+            // TODO unit test for the property 'Labels'
+        }
+        /// <summary>
         /// Test the property 'Containers'
         /// </summary>
         [Fact]

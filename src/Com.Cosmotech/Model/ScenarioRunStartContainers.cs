@@ -43,8 +43,9 @@ namespace Com.Cosmotech.Model
         /// <param name="generateName">the base name for workflow name generation.</param>
         /// <param name="csmSimulationId">Cosmo Tech Simulation Run Id (required).</param>
         /// <param name="nodeLabel">the node label request.</param>
+        /// <param name="labels">the workflow labels.</param>
         /// <param name="containers">the containerslist (required).</param>
-        public ScenarioRunStartContainers(string generateName = default(string), string csmSimulationId = default(string), string nodeLabel = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
+        public ScenarioRunStartContainers(string generateName = default(string), string csmSimulationId = default(string), string nodeLabel = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
         {
             // to ensure "csmSimulationId" is required (not null)
             this.CsmSimulationId = csmSimulationId ?? throw new ArgumentNullException("csmSimulationId is a required property for ScenarioRunStartContainers and cannot be null");
@@ -52,6 +53,7 @@ namespace Com.Cosmotech.Model
             this.Containers = containers ?? throw new ArgumentNullException("containers is a required property for ScenarioRunStartContainers and cannot be null");
             this.GenerateName = generateName;
             this.NodeLabel = nodeLabel;
+            this.Labels = labels;
         }
 
         /// <summary>
@@ -76,6 +78,13 @@ namespace Com.Cosmotech.Model
         public string NodeLabel { get; set; }
 
         /// <summary>
+        /// the workflow labels
+        /// </summary>
+        /// <value>the workflow labels</value>
+        [DataMember(Name = "labels", EmitDefaultValue = false)]
+        public Dictionary<string, string> Labels { get; set; }
+
+        /// <summary>
         /// the containerslist
         /// </summary>
         /// <value>the containerslist</value>
@@ -93,6 +102,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  GenerateName: ").Append(GenerateName).Append("\n");
             sb.Append("  CsmSimulationId: ").Append(CsmSimulationId).Append("\n");
             sb.Append("  NodeLabel: ").Append(NodeLabel).Append("\n");
+            sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  Containers: ").Append(Containers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -144,6 +154,12 @@ namespace Com.Cosmotech.Model
                     this.NodeLabel.Equals(input.NodeLabel))
                 ) && 
                 (
+                    this.Labels == input.Labels ||
+                    this.Labels != null &&
+                    input.Labels != null &&
+                    this.Labels.SequenceEqual(input.Labels)
+                ) && 
+                (
                     this.Containers == input.Containers ||
                     this.Containers != null &&
                     input.Containers != null &&
@@ -166,6 +182,8 @@ namespace Com.Cosmotech.Model
                     hashCode = hashCode * 59 + this.CsmSimulationId.GetHashCode();
                 if (this.NodeLabel != null)
                     hashCode = hashCode * 59 + this.NodeLabel.GetHashCode();
+                if (this.Labels != null)
+                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
                 if (this.Containers != null)
                     hashCode = hashCode * 59 + this.Containers.GetHashCode();
                 return hashCode;

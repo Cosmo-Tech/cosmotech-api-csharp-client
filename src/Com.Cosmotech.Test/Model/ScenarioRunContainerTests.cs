@@ -129,6 +129,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'SolutionContainer'
         }
+        /// <summary>
+        /// Test the property 'Artifacts'
+        /// </summary>
+        [Fact]
+        public void ArtifactsTest()
+        {
+            // TODO unit test for the property 'Artifacts'
+        }
 
     }
 

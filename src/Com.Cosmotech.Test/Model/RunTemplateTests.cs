@@ -114,6 +114,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'FetchDatasets'
         }
         /// <summary>
+        /// Test the property 'ScenarioDataDownloadTransform'
+        /// </summary>
+        [Fact]
+        public void ScenarioDataDownloadTransformTest()
+        {
+            // TODO unit test for the property 'ScenarioDataDownloadTransform'
+        }
+        /// <summary>
         /// Test the property 'FetchScenarioParameters'
         /// </summary>
         [Fact]
@@ -224,6 +232,14 @@ namespace Com.Cosmotech.Test.Model
         public void PostRunSourceTest()
         {
             // TODO unit test for the property 'PostRunSource'
+        }
+        /// <summary>
+        /// Test the property 'ScenariodataTransformSource'
+        /// </summary>
+        [Fact]
+        public void ScenariodataTransformSourceTest()
+        {
+            // TODO unit test for the property 'ScenariodataTransformSource'
         }
         /// <summary>
         /// Test the property 'ParameterGroups'

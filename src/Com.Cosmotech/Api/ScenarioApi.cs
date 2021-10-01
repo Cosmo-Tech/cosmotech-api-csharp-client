@@ -166,6 +166,28 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?));
         /// <summary>
+        /// Download Scenario data
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ScenarioDataDownloadJob</returns>
+        ScenarioDataDownloadJob DownloadScenarioData(string organizationId, string workspaceId, string scenarioId);
+
+        /// <summary>
+        /// Download Scenario data
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ApiResponse of ScenarioDataDownloadJob</returns>
+        ApiResponse<ScenarioDataDownloadJob> DownloadScenarioDataWithHttpInfo(string organizationId, string workspaceId, string scenarioId);
+        /// <summary>
         /// List all Scenarios
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -207,6 +229,30 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <returns>ApiResponse of Scenario</returns>
         ApiResponse<Scenario> FindScenarioByIdWithHttpInfo(string organizationId, string workspaceId, string scenarioId);
+        /// <summary>
+        /// Get Scenario data download URL
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="downloadId">the Scenario Download identifier</param>
+        /// <returns>ScenarioDataDownloadInfo</returns>
+        ScenarioDataDownloadInfo GetScenarioDataDownloadJobInfo(string organizationId, string workspaceId, string scenarioId, string downloadId);
+
+        /// <summary>
+        /// Get Scenario data download URL
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="downloadId">the Scenario Download identifier</param>
+        /// <returns>ApiResponse of ScenarioDataDownloadInfo</returns>
+        ApiResponse<ScenarioDataDownloadInfo> GetScenarioDataDownloadJobInfoWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string downloadId);
         /// <summary>
         /// Get the Scenarios Tree
         /// </summary>
@@ -497,6 +543,33 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Download Scenario data
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ScenarioDataDownloadJob</returns>
+        System.Threading.Tasks.Task<ScenarioDataDownloadJob> DownloadScenarioDataAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Download Scenario data
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ScenarioDataDownloadJob)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ScenarioDataDownloadJob>> DownloadScenarioDataWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// List all Scenarios
         /// </summary>
         /// <remarks>
@@ -548,6 +621,35 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Scenario)</returns>
         System.Threading.Tasks.Task<ApiResponse<Scenario>> FindScenarioByIdWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get Scenario data download URL
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="downloadId">the Scenario Download identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ScenarioDataDownloadInfo</returns>
+        System.Threading.Tasks.Task<ScenarioDataDownloadInfo> GetScenarioDataDownloadJobInfoAsync(string organizationId, string workspaceId, string scenarioId, string downloadId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get Scenario data download URL
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="downloadId">the Scenario Download identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ScenarioDataDownloadInfo)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ScenarioDataDownloadInfo>> GetScenarioDataDownloadJobInfoWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string downloadId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the Scenarios Tree
         /// </summary>
@@ -1776,6 +1878,161 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
+        /// Download Scenario data 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ScenarioDataDownloadJob</returns>
+        public ScenarioDataDownloadJob DownloadScenarioData(string organizationId, string workspaceId, string scenarioId)
+        {
+            Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadJob> localVarResponse = DownloadScenarioDataWithHttpInfo(organizationId, workspaceId, scenarioId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Download Scenario data 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ApiResponse of ScenarioDataDownloadJob</returns>
+        public Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadJob> DownloadScenarioDataWithHttpInfo(string organizationId, string workspaceId, string scenarioId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->DownloadScenarioData");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->DownloadScenarioData");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->DownloadScenarioData");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<ScenarioDataDownloadJob>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DownloadScenarioData", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Download Scenario data 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ScenarioDataDownloadJob</returns>
+        public async System.Threading.Tasks.Task<ScenarioDataDownloadJob> DownloadScenarioDataAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadJob> localVarResponse = await DownloadScenarioDataWithHttpInfoAsync(organizationId, workspaceId, scenarioId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Download Scenario data 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ScenarioDataDownloadJob)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadJob>> DownloadScenarioDataWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->DownloadScenarioData");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->DownloadScenarioData");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->DownloadScenarioData");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ScenarioDataDownloadJob>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DownloadScenarioData", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// List all Scenarios 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2065,6 +2322,175 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindScenarioById", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Scenario data download URL 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="downloadId">the Scenario Download identifier</param>
+        /// <returns>ScenarioDataDownloadInfo</returns>
+        public ScenarioDataDownloadInfo GetScenarioDataDownloadJobInfo(string organizationId, string workspaceId, string scenarioId, string downloadId)
+        {
+            Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadInfo> localVarResponse = GetScenarioDataDownloadJobInfoWithHttpInfo(organizationId, workspaceId, scenarioId, downloadId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Scenario data download URL 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="downloadId">the Scenario Download identifier</param>
+        /// <returns>ApiResponse of ScenarioDataDownloadInfo</returns>
+        public Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadInfo> GetScenarioDataDownloadJobInfoWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string downloadId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->GetScenarioDataDownloadJobInfo");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->GetScenarioDataDownloadJobInfo");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->GetScenarioDataDownloadJobInfo");
+
+            // verify the required parameter 'downloadId' is set
+            if (downloadId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'downloadId' when calling ScenarioApi->GetScenarioDataDownloadJobInfo");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("download_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(downloadId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ScenarioDataDownloadInfo>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads/{download_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetScenarioDataDownloadJobInfo", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Scenario data download URL 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="downloadId">the Scenario Download identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ScenarioDataDownloadInfo</returns>
+        public async System.Threading.Tasks.Task<ScenarioDataDownloadInfo> GetScenarioDataDownloadJobInfoAsync(string organizationId, string workspaceId, string scenarioId, string downloadId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadInfo> localVarResponse = await GetScenarioDataDownloadJobInfoWithHttpInfoAsync(organizationId, workspaceId, scenarioId, downloadId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Scenario data download URL 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="downloadId">the Scenario Download identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ScenarioDataDownloadInfo)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadInfo>> GetScenarioDataDownloadJobInfoWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string downloadId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->GetScenarioDataDownloadJobInfo");
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->GetScenarioDataDownloadJobInfo");
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenarioApi->GetScenarioDataDownloadJobInfo");
+
+            // verify the required parameter 'downloadId' is set
+            if (downloadId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'downloadId' when calling ScenarioApi->GetScenarioDataDownloadJobInfo");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("download_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(downloadId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ScenarioDataDownloadInfo>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads/{download_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetScenarioDataDownloadJobInfo", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

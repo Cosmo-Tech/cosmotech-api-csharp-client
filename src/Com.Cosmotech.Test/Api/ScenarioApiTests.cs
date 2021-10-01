@@ -141,6 +141,20 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test DownloadScenarioData
+        /// </summary>
+        [Fact]
+        public void DownloadScenarioDataTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //string scenarioId = null;
+            //var response = instance.DownloadScenarioData(organizationId, workspaceId, scenarioId);
+            //Assert.IsType<ScenarioDataDownloadJob>(response);
+        }
+
+        /// <summary>
         /// Test FindAllScenarios
         /// </summary>
         [Fact]
@@ -165,6 +179,21 @@ namespace Com.Cosmotech.Test.Api
             //string scenarioId = null;
             //var response = instance.FindScenarioById(organizationId, workspaceId, scenarioId);
             //Assert.IsType<Scenario>(response);
+        }
+
+        /// <summary>
+        /// Test GetScenarioDataDownloadJobInfo
+        /// </summary>
+        [Fact]
+        public void GetScenarioDataDownloadJobInfoTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //string scenarioId = null;
+            //string downloadId = null;
+            //var response = instance.GetScenarioDataDownloadJobInfo(organizationId, workspaceId, scenarioId, downloadId);
+            //Assert.IsType<ScenarioDataDownloadInfo>(response);
         }
 
         /// <summary>

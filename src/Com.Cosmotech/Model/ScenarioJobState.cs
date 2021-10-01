@@ -27,47 +27,41 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// the Run Template step handler identifier
+    /// the Scenario job state
     /// </summary>
-    /// <value>the Run Template step handler identifier</value>
+    /// <value>the Scenario job state</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum RunTemplateHandlerId
+    public enum ScenarioJobState
     {
         /// <summary>
-        /// Enum ParametersHandler for value: parameters_handler
+        /// Enum Created for value: Created
         /// </summary>
-        [EnumMember(Value = "parameters_handler")]
-        ParametersHandler = 1,
+        [EnumMember(Value = "Created")]
+        Created = 1,
 
         /// <summary>
-        /// Enum Validator for value: validator
+        /// Enum Running for value: Running
         /// </summary>
-        [EnumMember(Value = "validator")]
-        Validator = 2,
+        [EnumMember(Value = "Running")]
+        Running = 2,
 
         /// <summary>
-        /// Enum Prerun for value: prerun
+        /// Enum Successful for value: Successful
         /// </summary>
-        [EnumMember(Value = "prerun")]
-        Prerun = 3,
+        [EnumMember(Value = "Successful")]
+        Successful = 3,
 
         /// <summary>
-        /// Enum Engine for value: engine
+        /// Enum Failed for value: Failed
         /// </summary>
-        [EnumMember(Value = "engine")]
-        Engine = 4,
+        [EnumMember(Value = "Failed")]
+        Failed = 4,
 
         /// <summary>
-        /// Enum Postrun for value: postrun
+        /// Enum Unknown for value: Unknown
         /// </summary>
-        [EnumMember(Value = "postrun")]
-        Postrun = 5,
-
-        /// <summary>
-        /// Enum ScenariodataTransform for value: scenariodata_transform
-        /// </summary>
-        [EnumMember(Value = "scenariodata_transform")]
-        ScenariodataTransform = 6
+        [EnumMember(Value = "Unknown")]
+        Unknown = 5
 
     }
 

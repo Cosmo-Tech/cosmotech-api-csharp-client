@@ -47,7 +47,8 @@ namespace Com.Cosmotech.Model
         /// <param name="entrypoint">the container entry point.</param>
         /// <param name="runArgs">the list of run arguments for the container.</param>
         /// <param name="dependencies">the list of dependencies container name to run this container.</param>
-        public ScenarioRunContainer(string name = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), Dictionary<string, string> envVars = default(Dictionary<string, string>), string image = default(string), string entrypoint = default(string), List<string> runArgs = default(List<string>), List<string> dependencies = default(List<string>))
+        /// <param name="artifacts">the list of artifacts.</param>
+        public ScenarioRunContainer(string name = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), Dictionary<string, string> envVars = default(Dictionary<string, string>), string image = default(string), string entrypoint = default(string), List<string> runArgs = default(List<string>), List<string> dependencies = default(List<string>), List<ScenarioRunContainerArtifact> artifacts = default(List<ScenarioRunContainerArtifact>))
         {
             // to ensure "name" is required (not null)
             this.Name = name ?? throw new ArgumentNullException("name is a required property for ScenarioRunContainer and cannot be null");
@@ -58,6 +59,7 @@ namespace Com.Cosmotech.Model
             this.Entrypoint = entrypoint;
             this.RunArgs = runArgs;
             this.Dependencies = dependencies;
+            this.Artifacts = artifacts;
         }
 
         /// <summary>
@@ -140,6 +142,13 @@ namespace Com.Cosmotech.Model
             return false;
         }
         /// <summary>
+        /// the list of artifacts
+        /// </summary>
+        /// <value>the list of artifacts</value>
+        [DataMember(Name = "artifacts", EmitDefaultValue = false)]
+        public List<ScenarioRunContainerArtifact> Artifacts { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -156,6 +165,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  RunArgs: ").Append(RunArgs).Append("\n");
             sb.Append("  Dependencies: ").Append(Dependencies).Append("\n");
             sb.Append("  SolutionContainer: ").Append(SolutionContainer).Append("\n");
+            sb.Append("  Artifacts: ").Append(Artifacts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -237,6 +247,12 @@ namespace Com.Cosmotech.Model
                 (
                     this.SolutionContainer == input.SolutionContainer ||
                     this.SolutionContainer.Equals(input.SolutionContainer)
+                ) && 
+                (
+                    this.Artifacts == input.Artifacts ||
+                    this.Artifacts != null &&
+                    input.Artifacts != null &&
+                    this.Artifacts.SequenceEqual(input.Artifacts)
                 );
         }
 
@@ -266,6 +282,8 @@ namespace Com.Cosmotech.Model
                 if (this.Dependencies != null)
                     hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
                 hashCode = hashCode * 59 + this.SolutionContainer.GetHashCode();
+                if (this.Artifacts != null)
+                    hashCode = hashCode * 59 + this.Artifacts.GetHashCode();
                 return hashCode;
             }
         }

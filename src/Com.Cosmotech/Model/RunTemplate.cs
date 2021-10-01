@@ -62,6 +62,12 @@ namespace Com.Cosmotech.Model
         /// </summary>
         [DataMember(Name = "postRunSource", EmitDefaultValue = false)]
         public RunTemplateStepSource? PostRunSource { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ScenariodataTransformSource
+        /// </summary>
+        [DataMember(Name = "scenariodataTransformSource", EmitDefaultValue = false)]
+        public RunTemplateStepSource? ScenariodataTransformSource { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="RunTemplate" /> class.
         /// </summary>
@@ -77,6 +83,7 @@ namespace Com.Cosmotech.Model
         /// <param name="tags">the list of Run Template tags.</param>
         /// <param name="computeSize">the compute size needed for this Run Template. Standard sizes are basic and highcpu. Default is basic.</param>
         /// <param name="fetchDatasets">whether or not the fetch dataset step is done.</param>
+        /// <param name="scenarioDataDownloadTransform">whether or not the scenario data download transform step step is done.</param>
         /// <param name="fetchScenarioParameters">whether or not the fetch parameters step is done.</param>
         /// <param name="applyParameters">whether or not the apply parameter step is done.</param>
         /// <param name="validateData">whether or not the validate step is done.</param>
@@ -91,9 +98,10 @@ namespace Com.Cosmotech.Model
         /// <param name="preRunSource">preRunSource.</param>
         /// <param name="runSource">runSource.</param>
         /// <param name="postRunSource">postRunSource.</param>
+        /// <param name="scenariodataTransformSource">scenariodataTransformSource.</param>
         /// <param name="parameterGroups">the ordered list of parameters groups for the Run Template.</param>
         /// <param name="stackSteps">whether or not to stack adjacent scenario run steps in one container run which will chain steps.</param>
-        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool fetchDatasets = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>), bool stackSteps = default(bool))
+        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool fetchDatasets = default(bool), bool scenarioDataDownloadTransform = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? scenariodataTransformSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>), bool stackSteps = default(bool))
         {
             // to ensure "id" is required (not null)
             this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplate and cannot be null");
@@ -104,6 +112,7 @@ namespace Com.Cosmotech.Model
             this.Tags = tags;
             this.ComputeSize = computeSize;
             this.FetchDatasets = fetchDatasets;
+            this.ScenarioDataDownloadTransform = scenarioDataDownloadTransform;
             this.FetchScenarioParameters = fetchScenarioParameters;
             this.ApplyParameters = applyParameters;
             this.ValidateData = validateData;
@@ -118,6 +127,7 @@ namespace Com.Cosmotech.Model
             this.PreRunSource = preRunSource;
             this.RunSource = runSource;
             this.PostRunSource = postRunSource;
+            this.ScenariodataTransformSource = scenariodataTransformSource;
             this.ParameterGroups = parameterGroups;
             this.StackSteps = stackSteps;
         }
@@ -170,6 +180,13 @@ namespace Com.Cosmotech.Model
         /// <value>whether or not the fetch dataset step is done</value>
         [DataMember(Name = "fetchDatasets", EmitDefaultValue = true)]
         public bool FetchDatasets { get; set; }
+
+        /// <summary>
+        /// whether or not the scenario data download transform step step is done
+        /// </summary>
+        /// <value>whether or not the scenario data download transform step step is done</value>
+        [DataMember(Name = "scenarioDataDownloadTransform", EmitDefaultValue = true)]
+        public bool ScenarioDataDownloadTransform { get; set; }
 
         /// <summary>
         /// whether or not the fetch parameters step is done
@@ -263,6 +280,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ComputeSize: ").Append(ComputeSize).Append("\n");
             sb.Append("  FetchDatasets: ").Append(FetchDatasets).Append("\n");
+            sb.Append("  ScenarioDataDownloadTransform: ").Append(ScenarioDataDownloadTransform).Append("\n");
             sb.Append("  FetchScenarioParameters: ").Append(FetchScenarioParameters).Append("\n");
             sb.Append("  ApplyParameters: ").Append(ApplyParameters).Append("\n");
             sb.Append("  ValidateData: ").Append(ValidateData).Append("\n");
@@ -277,6 +295,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  PreRunSource: ").Append(PreRunSource).Append("\n");
             sb.Append("  RunSource: ").Append(RunSource).Append("\n");
             sb.Append("  PostRunSource: ").Append(PostRunSource).Append("\n");
+            sb.Append("  ScenariodataTransformSource: ").Append(ScenariodataTransformSource).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("  StackSteps: ").Append(StackSteps).Append("\n");
             sb.Append("}\n");
@@ -349,6 +368,10 @@ namespace Com.Cosmotech.Model
                     this.FetchDatasets.Equals(input.FetchDatasets)
                 ) && 
                 (
+                    this.ScenarioDataDownloadTransform == input.ScenarioDataDownloadTransform ||
+                    this.ScenarioDataDownloadTransform.Equals(input.ScenarioDataDownloadTransform)
+                ) && 
+                (
                     this.FetchScenarioParameters == input.FetchScenarioParameters ||
                     this.FetchScenarioParameters.Equals(input.FetchScenarioParameters)
                 ) && 
@@ -405,6 +428,10 @@ namespace Com.Cosmotech.Model
                     this.PostRunSource.Equals(input.PostRunSource)
                 ) && 
                 (
+                    this.ScenariodataTransformSource == input.ScenariodataTransformSource ||
+                    this.ScenariodataTransformSource.Equals(input.ScenariodataTransformSource)
+                ) && 
+                (
                     this.ParameterGroups == input.ParameterGroups ||
                     this.ParameterGroups != null &&
                     input.ParameterGroups != null &&
@@ -438,6 +465,7 @@ namespace Com.Cosmotech.Model
                 if (this.ComputeSize != null)
                     hashCode = hashCode * 59 + this.ComputeSize.GetHashCode();
                 hashCode = hashCode * 59 + this.FetchDatasets.GetHashCode();
+                hashCode = hashCode * 59 + this.ScenarioDataDownloadTransform.GetHashCode();
                 hashCode = hashCode * 59 + this.FetchScenarioParameters.GetHashCode();
                 hashCode = hashCode * 59 + this.ApplyParameters.GetHashCode();
                 hashCode = hashCode * 59 + this.ValidateData.GetHashCode();
@@ -452,6 +480,7 @@ namespace Com.Cosmotech.Model
                 hashCode = hashCode * 59 + this.PreRunSource.GetHashCode();
                 hashCode = hashCode * 59 + this.RunSource.GetHashCode();
                 hashCode = hashCode * 59 + this.PostRunSource.GetHashCode();
+                hashCode = hashCode * 59 + this.ScenariodataTransformSource.GetHashCode();
                 if (this.ParameterGroups != null)
                     hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();
                 hashCode = hashCode * 59 + this.StackSteps.GetHashCode();

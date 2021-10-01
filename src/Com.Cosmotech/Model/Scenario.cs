@@ -32,61 +32,12 @@ namespace Com.Cosmotech.Model
     [DataContract(Name = "Scenario")]
     public partial class Scenario : IEquatable<Scenario>, IValidatableObject
     {
-        /// <summary>
-        /// the Scenario state
-        /// </summary>
-        /// <value>the Scenario state</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
-        {
-            /// <summary>
-            /// Enum Created for value: Created
-            /// </summary>
-            [EnumMember(Value = "Created")]
-            Created = 1,
-
-            /// <summary>
-            /// Enum Running for value: Running
-            /// </summary>
-            [EnumMember(Value = "Running")]
-            Running = 2,
-
-            /// <summary>
-            /// Enum Successful for value: Successful
-            /// </summary>
-            [EnumMember(Value = "Successful")]
-            Successful = 3,
-
-            /// <summary>
-            /// Enum Failed for value: Failed
-            /// </summary>
-            [EnumMember(Value = "Failed")]
-            Failed = 4,
-
-            /// <summary>
-            /// Enum Unknown for value: Unknown
-            /// </summary>
-            [EnumMember(Value = "Unknown")]
-            Unknown = 5
-
-        }
-
 
         /// <summary>
-        /// the Scenario state
+        /// Gets or Sets State
         /// </summary>
-        /// <value>the Scenario state</value>
         [DataMember(Name = "state", EmitDefaultValue = false)]
-        public StateEnum? State { get; set; }
-
-        /// <summary>
-        /// Returns false as State should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeState()
-        {
-            return false;
-        }
+        public ScenarioJobState? State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Scenario" /> class.
         /// </summary>
@@ -96,12 +47,13 @@ namespace Com.Cosmotech.Model
         /// <param name="parentId">the Scenario parent id.</param>
         /// <param name="runTemplateId">the Solution Run Template Id associated with this Scenario.</param>
         /// <param name="users">the list of users Id with their role.</param>
+        /// <param name="state">state.</param>
         /// <param name="datasetList">the list of Dataset Id associated to this Scenario Run Template.</param>
         /// <param name="parametersValues">the list of Solution Run Template parameters values.</param>
         /// <param name="lastRun">lastRun.</param>
         /// <param name="parentLastRun">parentLastRun.</param>
         /// <param name="rootLastRun">rootLastRun.</param>
-        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), ScenarioLastRun lastRun = default(ScenarioLastRun), ScenarioLastRun parentLastRun = default(ScenarioLastRun), ScenarioLastRun rootLastRun = default(ScenarioLastRun))
+        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), ScenarioJobState? state = default(ScenarioJobState?), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), ScenarioLastRun lastRun = default(ScenarioLastRun), ScenarioLastRun parentLastRun = default(ScenarioLastRun), ScenarioLastRun rootLastRun = default(ScenarioLastRun))
         {
             this.Name = name;
             this.Description = description;
@@ -109,6 +61,7 @@ namespace Com.Cosmotech.Model
             this.ParentId = parentId;
             this.RunTemplateId = runTemplateId;
             this.Users = users;
+            this.State = state;
             this.DatasetList = datasetList;
             this.ParametersValues = parametersValues;
             this.LastRun = lastRun;

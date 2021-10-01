@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Tags** | **List&lt;string&gt;** | the list of Run Template tags | [optional] 
 **ComputeSize** | **string** | the compute size needed for this Run Template. Standard sizes are basic and highcpu. Default is basic | [optional] 
 **FetchDatasets** | **bool** | whether or not the fetch dataset step is done | [optional] 
+**ScenarioDataDownloadTransform** | **bool** | whether or not the scenario data download transform step step is done | [optional] 
 **FetchScenarioParameters** | **bool** | whether or not the fetch parameters step is done | [optional] 
 **ApplyParameters** | **bool** | whether or not the apply parameter step is done | [optional] 
 **ValidateData** | **bool** | whether or not the validate step is done | [optional] 
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 **PreRunSource** | **RunTemplateStepSource** |  | [optional] 
 **RunSource** | **RunTemplateStepSource** |  | [optional] 
 **PostRunSource** | **RunTemplateStepSource** |  | [optional] 
+**ScenariodataTransformSource** | **RunTemplateStepSource** |  | [optional] 
 **ParameterGroups** | **List&lt;string&gt;** | the ordered list of parameters groups for the Run Template | [optional] 
 **StackSteps** | **bool** | whether or not to stack adjacent scenario run steps in one container run which will chain steps | [optional] 
 
