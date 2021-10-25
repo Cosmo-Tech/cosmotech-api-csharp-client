@@ -46,7 +46,10 @@ namespace Com.Cosmotech.Model
         public WorkspaceWebApp(string url = default(string), Dictionary<string, Object> iframes = default(Dictionary<string, Object>), Dictionary<string, Object> options = default(Dictionary<string, Object>))
         {
             // to ensure "url" is required (not null)
-            this.Url = url ?? throw new ArgumentNullException("url is a required property for WorkspaceWebApp and cannot be null");
+            if (url == null) {
+                throw new ArgumentNullException("url is a required property for WorkspaceWebApp and cannot be null");
+            }
+            this.Url = url;
             this.Iframes = iframes;
             this.Options = options;
         }
@@ -160,7 +163,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

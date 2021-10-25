@@ -52,11 +52,20 @@ namespace Com.Cosmotech.Model
         public Workspace(string key = default(string), string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSolution solution = default(WorkspaceSolution), List<WorkspaceUser> users = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp), bool sendInputToDataWarehouse = default(bool))
         {
             // to ensure "key" is required (not null)
-            this.Key = key ?? throw new ArgumentNullException("key is a required property for Workspace and cannot be null");
+            if (key == null) {
+                throw new ArgumentNullException("key is a required property for Workspace and cannot be null");
+            }
+            this.Key = key;
             // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name is a required property for Workspace and cannot be null");
+            if (name == null) {
+                throw new ArgumentNullException("name is a required property for Workspace and cannot be null");
+            }
+            this.Name = name;
             // to ensure "solution" is required (not null)
-            this.Solution = solution ?? throw new ArgumentNullException("solution is a required property for Workspace and cannot be null");
+            if (solution == null) {
+                throw new ArgumentNullException("solution is a required property for Workspace and cannot be null");
+            }
+            this.Solution = solution;
             this.Description = description;
             this._Version = version;
             this.Tags = tags;
@@ -306,7 +315,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

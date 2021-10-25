@@ -51,11 +51,20 @@ namespace Com.Cosmotech.Model
         public RunTemplateParameter(string id = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), string varType = default(string), string defaultValue = default(string), string minValue = default(string), string maxValue = default(string), string regexValidation = default(string), Dictionary<string, Object> options = default(Dictionary<string, Object>))
         {
             // to ensure "id" is required (not null)
-            this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplateParameter and cannot be null");
+            if (id == null) {
+                throw new ArgumentNullException("id is a required property for RunTemplateParameter and cannot be null");
+            }
+            this.Id = id;
             // to ensure "labels" is required (not null)
-            this.Labels = labels ?? throw new ArgumentNullException("labels is a required property for RunTemplateParameter and cannot be null");
+            if (labels == null) {
+                throw new ArgumentNullException("labels is a required property for RunTemplateParameter and cannot be null");
+            }
+            this.Labels = labels;
             // to ensure "varType" is required (not null)
-            this.VarType = varType ?? throw new ArgumentNullException("varType is a required property for RunTemplateParameter and cannot be null");
+            if (varType == null) {
+                throw new ArgumentNullException("varType is a required property for RunTemplateParameter and cannot be null");
+            }
+            this.VarType = varType;
             this.DefaultValue = defaultValue;
             this.MinValue = minValue;
             this.MaxValue = maxValue;
@@ -247,7 +256,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

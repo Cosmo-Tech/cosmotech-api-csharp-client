@@ -54,15 +54,30 @@ namespace Com.Cosmotech.Model
         public Solution(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string csmSimulator = default(string), string version = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplateParameter> parameters = default(List<RunTemplateParameter>), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>), List<RunTemplate> runTemplates = default(List<RunTemplate>))
         {
             // to ensure "key" is required (not null)
-            this.Key = key ?? throw new ArgumentNullException("key is a required property for Solution and cannot be null");
+            if (key == null) {
+                throw new ArgumentNullException("key is a required property for Solution and cannot be null");
+            }
+            this.Key = key;
             // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name is a required property for Solution and cannot be null");
+            if (name == null) {
+                throw new ArgumentNullException("name is a required property for Solution and cannot be null");
+            }
+            this.Name = name;
             // to ensure "repository" is required (not null)
-            this.Repository = repository ?? throw new ArgumentNullException("repository is a required property for Solution and cannot be null");
+            if (repository == null) {
+                throw new ArgumentNullException("repository is a required property for Solution and cannot be null");
+            }
+            this.Repository = repository;
             // to ensure "version" is required (not null)
-            this._Version = version ?? throw new ArgumentNullException("version is a required property for Solution and cannot be null");
+            if (version == null) {
+                throw new ArgumentNullException("version is a required property for Solution and cannot be null");
+            }
+            this._Version = version;
             // to ensure "runTemplates" is required (not null)
-            this.RunTemplates = runTemplates ?? throw new ArgumentNullException("runTemplates is a required property for Solution and cannot be null");
+            if (runTemplates == null) {
+                throw new ArgumentNullException("runTemplates is a required property for Solution and cannot be null");
+            }
+            this.RunTemplates = runTemplates;
             this.Description = description;
             this.CsmSimulator = csmSimulator;
             this.Url = url;
@@ -348,7 +363,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

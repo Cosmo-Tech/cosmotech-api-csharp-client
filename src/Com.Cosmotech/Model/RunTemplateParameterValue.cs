@@ -45,9 +45,15 @@ namespace Com.Cosmotech.Model
         public RunTemplateParameterValue(string parameterId = default(string), string value = default(string))
         {
             // to ensure "parameterId" is required (not null)
-            this.ParameterId = parameterId ?? throw new ArgumentNullException("parameterId is a required property for RunTemplateParameterValue and cannot be null");
+            if (parameterId == null) {
+                throw new ArgumentNullException("parameterId is a required property for RunTemplateParameterValue and cannot be null");
+            }
+            this.ParameterId = parameterId;
             // to ensure "value" is required (not null)
-            this.Value = value ?? throw new ArgumentNullException("value is a required property for RunTemplateParameterValue and cannot be null");
+            if (value == null) {
+                throw new ArgumentNullException("value is a required property for RunTemplateParameterValue and cannot be null");
+            }
+            this.Value = value;
         }
 
         /// <summary>
@@ -165,7 +171,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

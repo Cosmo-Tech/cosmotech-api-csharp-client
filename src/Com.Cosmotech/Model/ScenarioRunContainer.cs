@@ -51,9 +51,15 @@ namespace Com.Cosmotech.Model
         public ScenarioRunContainer(string name = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), Dictionary<string, string> envVars = default(Dictionary<string, string>), string image = default(string), string entrypoint = default(string), List<string> runArgs = default(List<string>), List<string> dependencies = default(List<string>), List<ScenarioRunContainerArtifact> artifacts = default(List<ScenarioRunContainerArtifact>))
         {
             // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name is a required property for ScenarioRunContainer and cannot be null");
+            if (name == null) {
+                throw new ArgumentNullException("name is a required property for ScenarioRunContainer and cannot be null");
+            }
+            this.Name = name;
             // to ensure "image" is required (not null)
-            this.Image = image ?? throw new ArgumentNullException("image is a required property for ScenarioRunContainer and cannot be null");
+            if (image == null) {
+                throw new ArgumentNullException("image is a required property for ScenarioRunContainer and cannot be null");
+            }
+            this.Image = image;
             this.Labels = labels;
             this.EnvVars = envVars;
             this.Entrypoint = entrypoint;
@@ -293,7 +299,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

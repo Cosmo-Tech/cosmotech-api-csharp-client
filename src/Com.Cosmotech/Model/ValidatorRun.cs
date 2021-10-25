@@ -87,7 +87,10 @@ namespace Com.Cosmotech.Model
         public ValidatorRun(string datasetId = default(string))
         {
             // to ensure "datasetId" is required (not null)
-            this.DatasetId = datasetId ?? throw new ArgumentNullException("datasetId is a required property for ValidatorRun and cannot be null");
+            if (datasetId == null) {
+                throw new ArgumentNullException("datasetId is a required property for ValidatorRun and cannot be null");
+            }
+            this.DatasetId = datasetId;
         }
 
         /// <summary>
@@ -311,7 +314,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

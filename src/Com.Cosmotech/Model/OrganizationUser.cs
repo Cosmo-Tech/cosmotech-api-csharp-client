@@ -85,7 +85,10 @@ namespace Com.Cosmotech.Model
         public OrganizationUser(string name = default(string), List<RolesEnum> roles = default(List<RolesEnum>))
         {
             // to ensure "roles" is required (not null)
-            this.Roles = roles ?? throw new ArgumentNullException("roles is a required property for OrganizationUser and cannot be null");
+            if (roles == null) {
+                throw new ArgumentNullException("roles is a required property for OrganizationUser and cannot be null");
+            }
+            this.Roles = roles;
             this.Name = name;
         }
 
@@ -195,7 +198,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -46,11 +46,20 @@ namespace Com.Cosmotech.Model
         public ConnectorParameterGroup(string id = default(string), string label = default(string), List<ConnectorParameter> parameters = default(List<ConnectorParameter>))
         {
             // to ensure "id" is required (not null)
-            this.Id = id ?? throw new ArgumentNullException("id is a required property for ConnectorParameterGroup and cannot be null");
+            if (id == null) {
+                throw new ArgumentNullException("id is a required property for ConnectorParameterGroup and cannot be null");
+            }
+            this.Id = id;
             // to ensure "label" is required (not null)
-            this.Label = label ?? throw new ArgumentNullException("label is a required property for ConnectorParameterGroup and cannot be null");
+            if (label == null) {
+                throw new ArgumentNullException("label is a required property for ConnectorParameterGroup and cannot be null");
+            }
+            this.Label = label;
             // to ensure "parameters" is required (not null)
-            this.Parameters = parameters ?? throw new ArgumentNullException("parameters is a required property for ConnectorParameterGroup and cannot be null");
+            if (parameters == null) {
+                throw new ArgumentNullException("parameters is a required property for ConnectorParameterGroup and cannot be null");
+            }
+            this.Parameters = parameters;
         }
 
         /// <summary>
@@ -161,7 +170,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -49,11 +49,20 @@ namespace Com.Cosmotech.Model
         public RunTemplateParameterGroup(string id = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), bool isTable = default(bool), Dictionary<string, Object> options = default(Dictionary<string, Object>), string parentId = default(string), List<string> parameters = default(List<string>))
         {
             // to ensure "id" is required (not null)
-            this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplateParameterGroup and cannot be null");
+            if (id == null) {
+                throw new ArgumentNullException("id is a required property for RunTemplateParameterGroup and cannot be null");
+            }
+            this.Id = id;
             // to ensure "labels" is required (not null)
-            this.Labels = labels ?? throw new ArgumentNullException("labels is a required property for RunTemplateParameterGroup and cannot be null");
+            if (labels == null) {
+                throw new ArgumentNullException("labels is a required property for RunTemplateParameterGroup and cannot be null");
+            }
+            this.Labels = labels;
             // to ensure "parameters" is required (not null)
-            this.Parameters = parameters ?? throw new ArgumentNullException("parameters is a required property for RunTemplateParameterGroup and cannot be null");
+            if (parameters == null) {
+                throw new ArgumentNullException("parameters is a required property for RunTemplateParameterGroup and cannot be null");
+            }
+            this.Parameters = parameters;
             this.IsTable = isTable;
             this.Options = options;
             this.ParentId = parentId;
@@ -212,7 +221,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

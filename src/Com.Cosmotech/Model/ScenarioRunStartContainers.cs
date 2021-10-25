@@ -48,9 +48,15 @@ namespace Com.Cosmotech.Model
         public ScenarioRunStartContainers(string generateName = default(string), string csmSimulationId = default(string), string nodeLabel = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
         {
             // to ensure "csmSimulationId" is required (not null)
-            this.CsmSimulationId = csmSimulationId ?? throw new ArgumentNullException("csmSimulationId is a required property for ScenarioRunStartContainers and cannot be null");
+            if (csmSimulationId == null) {
+                throw new ArgumentNullException("csmSimulationId is a required property for ScenarioRunStartContainers and cannot be null");
+            }
+            this.CsmSimulationId = csmSimulationId;
             // to ensure "containers" is required (not null)
-            this.Containers = containers ?? throw new ArgumentNullException("containers is a required property for ScenarioRunStartContainers and cannot be null");
+            if (containers == null) {
+                throw new ArgumentNullException("containers is a required property for ScenarioRunStartContainers and cannot be null");
+            }
+            this.Containers = containers;
             this.GenerateName = generateName;
             this.NodeLabel = nodeLabel;
             this.Labels = labels;
@@ -195,7 +201,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

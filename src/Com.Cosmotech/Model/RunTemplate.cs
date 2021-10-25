@@ -104,9 +104,15 @@ namespace Com.Cosmotech.Model
         public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool fetchDatasets = default(bool), bool scenarioDataDownloadTransform = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? scenariodataTransformSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>), bool stackSteps = default(bool))
         {
             // to ensure "id" is required (not null)
-            this.Id = id ?? throw new ArgumentNullException("id is a required property for RunTemplate and cannot be null");
+            if (id == null) {
+                throw new ArgumentNullException("id is a required property for RunTemplate and cannot be null");
+            }
+            this.Id = id;
             // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name is a required property for RunTemplate and cannot be null");
+            if (name == null) {
+                throw new ArgumentNullException("name is a required property for RunTemplate and cannot be null");
+            }
+            this.Name = name;
             this.Description = description;
             this.CsmSimulation = csmSimulation;
             this.Tags = tags;
@@ -493,7 +499,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

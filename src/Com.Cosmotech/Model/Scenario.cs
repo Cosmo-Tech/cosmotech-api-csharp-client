@@ -278,19 +278,19 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Gets or Sets LastRun
         /// </summary>
-        [DataMember(Name = "lastRun", EmitDefaultValue = false)]
+        [DataMember(Name = "lastRun", EmitDefaultValue = true)]
         public ScenarioLastRun LastRun { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentLastRun
         /// </summary>
-        [DataMember(Name = "parentLastRun", EmitDefaultValue = false)]
+        [DataMember(Name = "parentLastRun", EmitDefaultValue = true)]
         public ScenarioLastRun ParentLastRun { get; set; }
 
         /// <summary>
         /// Gets or Sets RootLastRun
         /// </summary>
-        [DataMember(Name = "rootLastRun", EmitDefaultValue = false)]
+        [DataMember(Name = "rootLastRun", EmitDefaultValue = true)]
         public ScenarioLastRun RootLastRun { get; set; }
 
         /// <summary>
@@ -533,7 +533,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

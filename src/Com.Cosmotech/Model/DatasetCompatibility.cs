@@ -46,7 +46,10 @@ namespace Com.Cosmotech.Model
         public DatasetCompatibility(string solutionKey = default(string), string minimumVersion = default(string), string maximumVersion = default(string))
         {
             // to ensure "solutionKey" is required (not null)
-            this.SolutionKey = solutionKey ?? throw new ArgumentNullException("solutionKey is a required property for DatasetCompatibility and cannot be null");
+            if (solutionKey == null) {
+                throw new ArgumentNullException("solutionKey is a required property for DatasetCompatibility and cannot be null");
+            }
+            this.SolutionKey = solutionKey;
             this.MinimumVersion = minimumVersion;
             this.MaximumVersion = maximumVersion;
         }
@@ -158,7 +161,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

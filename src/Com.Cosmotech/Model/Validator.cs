@@ -49,11 +49,20 @@ namespace Com.Cosmotech.Model
         public Validator(string name = default(string), string description = default(string), string repository = default(string), string version = default(string), string url = default(string), List<string> tags = default(List<string>))
         {
             // to ensure "name" is required (not null)
-            this.Name = name ?? throw new ArgumentNullException("name is a required property for Validator and cannot be null");
+            if (name == null) {
+                throw new ArgumentNullException("name is a required property for Validator and cannot be null");
+            }
+            this.Name = name;
             // to ensure "repository" is required (not null)
-            this.Repository = repository ?? throw new ArgumentNullException("repository is a required property for Validator and cannot be null");
+            if (repository == null) {
+                throw new ArgumentNullException("repository is a required property for Validator and cannot be null");
+            }
+            this.Repository = repository;
             // to ensure "version" is required (not null)
-            this._Version = version ?? throw new ArgumentNullException("version is a required property for Validator and cannot be null");
+            if (version == null) {
+                throw new ArgumentNullException("version is a required property for Validator and cannot be null");
+            }
+            this._Version = version;
             this.Description = description;
             this.Url = url;
             this.Tags = tags;
@@ -258,7 +267,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }
