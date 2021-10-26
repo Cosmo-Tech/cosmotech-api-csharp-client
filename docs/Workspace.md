@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Users** | [**List&lt;WorkspaceUser&gt;**](WorkspaceUser.md) | the list of users Id with their role | [optional] 
 **WebApp** | [**WorkspaceWebApp**](WorkspaceWebApp.md) |  | [optional] 
 **SendInputToDataWarehouse** | **bool** | default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to the ScenarioRun | [optional] 
+**UseDedicatedEventHubNamespace** | **bool** | Set this property to true to use a dedicated Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;probesmeasures\\&#39; and \\&#39;scenariorun\\&#39;. | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

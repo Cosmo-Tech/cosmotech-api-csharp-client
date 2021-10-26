@@ -145,6 +145,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'SendInputToDataWarehouse'
         }
+        /// <summary>
+        /// Test the property 'UseDedicatedEventHubNamespace'
+        /// </summary>
+        [Fact]
+        public void UseDedicatedEventHubNamespaceTest()
+        {
+            // TODO unit test for the property 'UseDedicatedEventHubNamespace'
+        }
 
     }
 
