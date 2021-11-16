@@ -156,6 +156,30 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteSolutionRunTemplateWithHttpInfo(string organizationId, string solutionId, string runTemplateId);
         /// <summary>
+        /// Download a Run Template step handler zip file
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler identifier</param>
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId);
+
+        /// <summary>
+        /// Download a Run Template step handler zip file
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler identifier</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId);
+        /// <summary>
         /// List all Solutions
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -494,6 +518,35 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSolutionRunTemplateWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Download a Run Template step handler zip file
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Download a Run Template step handler zip file
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Solutions
         /// </summary>
@@ -1724,6 +1777,167 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteSolutionRunTemplate", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Download a Run Template step handler zip file 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler identifier</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
+        {
+            Com.Cosmotech.Client.ApiResponse<System.IO.Stream> localVarResponse = DownloadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Download a Run Template step handler zip file 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler identifier</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public Com.Cosmotech.Client.ApiResponse<System.IO.Stream> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->DownloadRunTemplateHandler");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->DownloadRunTemplateHandler");
+
+            // verify the required parameter 'runTemplateId' is set
+            if (runTemplateId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->DownloadRunTemplateHandler");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/octet-stream"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("handler_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(handlerId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<System.IO.Stream>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DownloadRunTemplateHandler", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Download a Run Template step handler zip file 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadRunTemplateHandlerWithHttpInfoAsync(organizationId, solutionId, runTemplateId, handlerId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Download a Run Template step handler zip file 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="runTemplateId">the Run Template identifier</param>
+        /// <param name="handlerId">the Handler identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<System.IO.Stream>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->DownloadRunTemplateHandler");
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->DownloadRunTemplateHandler");
+
+            // verify the required parameter 'runTemplateId' is set
+            if (runTemplateId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->DownloadRunTemplateHandler");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/octet-stream"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("handler_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(handlerId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DownloadRunTemplateHandler", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

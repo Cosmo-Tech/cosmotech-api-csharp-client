@@ -136,6 +136,21 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test DownloadRunTemplateHandler
+        /// </summary>
+        [Fact]
+        public void DownloadRunTemplateHandlerTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string solutionId = null;
+            //string runTemplateId = null;
+            //RunTemplateHandlerId handlerId = null;
+            //var response = instance.DownloadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId);
+            //Assert.IsType<System.IO.Stream>(response);
+        }
+
+        /// <summary>
         /// Test FindAllSolutions
         /// </summary>
         [Fact]
