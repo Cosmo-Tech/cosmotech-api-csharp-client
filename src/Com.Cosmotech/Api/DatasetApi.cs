@@ -168,6 +168,26 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveAllDatasetCompatibilityElementsWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
+        /// Search Datasets
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetSearch">the Dataset search parameters</param>
+        /// <returns>List&lt;Dataset&gt;</returns>
+        List<Dataset> SearchDatasets(string organizationId, DatasetSearch datasetSearch);
+
+        /// <summary>
+        /// Search Datasets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetSearch">the Dataset search parameters</param>
+        /// <returns>ApiResponse of List&lt;Dataset&gt;</returns>
+        ApiResponse<List<Dataset>> SearchDatasetsWithHttpInfo(string organizationId, DatasetSearch datasetSearch);
+        /// <summary>
         /// Update a dataset
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -373,6 +393,31 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllDatasetCompatibilityElementsWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Search Datasets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetSearch">the Dataset search parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Dataset&gt;</returns>
+        System.Threading.Tasks.Task<List<Dataset>> SearchDatasetsAsync(string organizationId, DatasetSearch datasetSearch, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Search Datasets
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetSearch">the Dataset search parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Dataset&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Dataset>>> SearchDatasetsWithHttpInfoAsync(string organizationId, DatasetSearch datasetSearch, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a dataset
         /// </summary>
@@ -1503,6 +1548,151 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAllDatasetCompatibilityElements", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search Datasets 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetSearch">the Dataset search parameters</param>
+        /// <returns>List&lt;Dataset&gt;</returns>
+        public List<Dataset> SearchDatasets(string organizationId, DatasetSearch datasetSearch)
+        {
+            Com.Cosmotech.Client.ApiResponse<List<Dataset>> localVarResponse = SearchDatasetsWithHttpInfo(organizationId, datasetSearch);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search Datasets 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetSearch">the Dataset search parameters</param>
+        /// <returns>ApiResponse of List&lt;Dataset&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<Dataset>> SearchDatasetsWithHttpInfo(string organizationId, DatasetSearch datasetSearch)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling DatasetApi->SearchDatasets");
+
+            // verify the required parameter 'datasetSearch' is set
+            if (datasetSearch == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetSearch' when calling DatasetApi->SearchDatasets");
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = datasetSearch;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<Dataset>>("/organizations/{organization_id}/datasets/search", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchDatasets", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search Datasets 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetSearch">the Dataset search parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Dataset&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Dataset>> SearchDatasetsAsync(string organizationId, DatasetSearch datasetSearch, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<List<Dataset>> localVarResponse = await SearchDatasetsWithHttpInfoAsync(organizationId, datasetSearch, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search Datasets 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetSearch">the Dataset search parameters</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Dataset&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Dataset>>> SearchDatasetsWithHttpInfoAsync(string organizationId, DatasetSearch datasetSearch, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling DatasetApi->SearchDatasets");
+
+            // verify the required parameter 'datasetSearch' is set
+            if (datasetSearch == null)
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetSearch' when calling DatasetApi->SearchDatasets");
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.Data = datasetSearch;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Dataset>>("/organizations/{organization_id}/datasets/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchDatasets", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

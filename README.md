@@ -115,6 +115,7 @@ Class | Method | HTTP request | Description
 *DatasetApi* | [**FindAllDatasets**](docs/DatasetApi.md#findalldatasets) | **GET** /organizations/{organization_id}/datasets | List all Datasets
 *DatasetApi* | [**FindDatasetById**](docs/DatasetApi.md#finddatasetbyid) | **GET** /organizations/{organization_id}/datasets/{dataset_id} | Get the details of a Dataset
 *DatasetApi* | [**RemoveAllDatasetCompatibilityElements**](docs/DatasetApi.md#removealldatasetcompatibilityelements) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Remove all Dataset Compatibility elements from the Dataset specified
+*DatasetApi* | [**SearchDatasets**](docs/DatasetApi.md#searchdatasets) | **POST** /organizations/{organization_id}/datasets/search | Search Datasets
 *DatasetApi* | [**UpdateDataset**](docs/DatasetApi.md#updatedataset) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id} | Update a dataset
 *OrganizationApi* | [**AddOrReplaceUsersInOrganization**](docs/OrganizationApi.md#addorreplaceusersinorganization) | **POST** /organizations/{organization_id}/users | Add (or replace) users in the Organization specified
 *OrganizationApi* | [**FindAllOrganizations**](docs/OrganizationApi.md#findallorganizations) | **GET** /organizations | List all Organizations
@@ -211,6 +212,7 @@ Class | Method | HTTP request | Description
  - [Model.DatasetCompatibility](docs/DatasetCompatibility.md)
  - [Model.DatasetConnector](docs/DatasetConnector.md)
  - [Model.DatasetCopyParameters](docs/DatasetCopyParameters.md)
+ - [Model.DatasetSearch](docs/DatasetSearch.md)
  - [Model.Organization](docs/Organization.md)
  - [Model.OrganizationService](docs/OrganizationService.md)
  - [Model.OrganizationServices](docs/OrganizationServices.md)

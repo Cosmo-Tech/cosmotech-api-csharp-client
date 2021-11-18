@@ -145,6 +145,19 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test SearchDatasets
+        /// </summary>
+        [Fact]
+        public void SearchDatasetsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //DatasetSearch datasetSearch = null;
+            //var response = instance.SearchDatasets(organizationId, datasetSearch);
+            //Assert.IsType<List<Dataset>>(response);
+        }
+
+        /// <summary>
         /// Test UpdateDataset
         /// </summary>
         [Fact]
