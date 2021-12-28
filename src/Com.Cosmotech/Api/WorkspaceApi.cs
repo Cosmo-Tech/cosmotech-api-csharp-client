@@ -795,15 +795,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
+            }
 
             // verify the required parameter 'workspaceUser' is set
             if (workspaceUser == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceUser' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -817,10 +823,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -835,11 +847,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<List<WorkspaceUser>>("/organizations/{organization_id}/workspaces/{workspace_id}/users", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddOrReplaceUsersInOrganizationWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -873,15 +887,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
+            }
 
             // verify the required parameter 'workspaceUser' is set
             if (workspaceUser == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceUser' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -895,12 +915,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -914,13 +939,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<List<WorkspaceUser>>("/organizations/{organization_id}/workspaces/{workspace_id}/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddOrReplaceUsersInOrganizationWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -950,11 +977,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->CreateWorkspace");
+            }
 
             // verify the required parameter 'workspace' is set
             if (workspace == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspace' when calling WorkspaceApi->CreateWorkspace");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -969,10 +1000,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = workspace;
@@ -986,11 +1023,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Workspace>("/organizations/{organization_id}/workspaces", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1022,11 +1061,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->CreateWorkspace");
+            }
 
             // verify the required parameter 'workspace' is set
             if (workspace == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspace' when calling WorkspaceApi->CreateWorkspace");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1041,12 +1084,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = workspace;
@@ -1059,13 +1107,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<Workspace>("/organizations/{organization_id}/workspaces", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1094,11 +1144,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DeleteAllWorkspaceFiles");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DeleteAllWorkspaceFiles");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1110,10 +1164,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1127,11 +1187,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteAllWorkspaceFiles", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1162,11 +1224,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DeleteAllWorkspaceFiles");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DeleteAllWorkspaceFiles");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1178,12 +1244,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1196,13 +1267,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteAllWorkspaceFiles", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1232,11 +1305,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DeleteWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DeleteWorkspace");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1249,10 +1326,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1266,11 +1349,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Workspace>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1302,11 +1387,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DeleteWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DeleteWorkspace");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1319,12 +1408,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1337,13 +1431,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Workspace>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1374,15 +1470,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DeleteWorkspaceFile");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DeleteWorkspaceFile");
+            }
 
             // verify the required parameter 'fileName' is set
             if (fileName == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'fileName' when calling WorkspaceApi->DeleteWorkspaceFile");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1394,10 +1496,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1412,11 +1520,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/files/delete", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteWorkspaceFile", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1449,15 +1559,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DeleteWorkspaceFile");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DeleteWorkspaceFile");
+            }
 
             // verify the required parameter 'fileName' is set
             if (fileName == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'fileName' when calling WorkspaceApi->DeleteWorkspaceFile");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1469,12 +1585,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1488,13 +1609,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/files/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteWorkspaceFile", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1526,15 +1649,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DownloadWorkspaceFile");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DownloadWorkspaceFile");
+            }
 
             // verify the required parameter 'fileName' is set
             if (fileName == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'fileName' when calling WorkspaceApi->DownloadWorkspaceFile");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1547,10 +1676,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1565,11 +1700,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<System.IO.Stream>("/organizations/{organization_id}/workspaces/{workspace_id}/files/download", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DownloadWorkspaceFile", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1603,15 +1740,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->DownloadWorkspaceFile");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->DownloadWorkspaceFile");
+            }
 
             // verify the required parameter 'fileName' is set
             if (fileName == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'fileName' when calling WorkspaceApi->DownloadWorkspaceFile");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1624,12 +1767,17 @@ namespace Com.Cosmotech.Api
                 "application/octet-stream"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1643,13 +1791,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/organizations/{organization_id}/workspaces/{workspace_id}/files/download", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DownloadWorkspaceFile", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1679,11 +1829,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->FindAllWorkspaceFiles");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->FindAllWorkspaceFiles");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1696,10 +1850,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1713,11 +1873,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<WorkspaceFile>>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllWorkspaceFiles", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1749,11 +1911,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->FindAllWorkspaceFiles");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->FindAllWorkspaceFiles");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1766,12 +1932,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1784,13 +1955,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<WorkspaceFile>>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllWorkspaceFiles", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1818,7 +1991,9 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->FindAllWorkspaces");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1831,10 +2006,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
 
@@ -1847,11 +2028,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<Workspace>>("/organizations/{organization_id}/workspaces", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllWorkspaces", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1881,7 +2064,9 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->FindAllWorkspaces");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1894,12 +2079,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
 
@@ -1911,13 +2101,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<Workspace>>("/organizations/{organization_id}/workspaces", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllWorkspaces", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1947,11 +2139,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->FindWorkspaceById");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->FindWorkspaceById");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1964,10 +2160,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -1981,11 +2183,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Workspace>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindWorkspaceById", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2017,11 +2221,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->FindWorkspaceById");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->FindWorkspaceById");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2034,12 +2242,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -2052,13 +2265,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<Workspace>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindWorkspaceById", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2087,11 +2302,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveAllUsersOfWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveAllUsersOfWorkspace");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2103,10 +2322,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -2120,11 +2345,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/users", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAllUsersOfWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2155,11 +2382,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveAllUsersOfWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveAllUsersOfWorkspace");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2171,12 +2402,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -2189,13 +2425,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAllUsersOfWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2226,15 +2464,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
+            }
 
             // verify the required parameter 'userId' is set
             if (userId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'userId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2246,10 +2490,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -2264,11 +2514,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/users/{user_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveUserFromOrganizationWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2301,15 +2553,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
+            }
 
             // verify the required parameter 'userId' is set
             if (userId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'userId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2321,12 +2579,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -2340,13 +2603,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/users/{user_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveUserFromOrganizationWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2378,15 +2643,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->UpdateWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->UpdateWorkspace");
+            }
 
             // verify the required parameter 'workspace' is set
             if (workspace == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspace' when calling WorkspaceApi->UpdateWorkspace");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2401,10 +2672,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -2419,11 +2696,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Patch<Workspace>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2457,15 +2736,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->UpdateWorkspace");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->UpdateWorkspace");
+            }
 
             // verify the required parameter 'workspace' is set
             if (workspace == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspace' when calling WorkspaceApi->UpdateWorkspace");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2480,12 +2765,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -2499,13 +2789,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PatchAsync<Workspace>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateWorkspace", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2541,15 +2833,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->UploadWorkspaceFile");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->UploadWorkspaceFile");
+            }
 
             // verify the required parameter 'file' is set
             if (file == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'file' when calling WorkspaceApi->UploadWorkspaceFile");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2563,10 +2861,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -2589,11 +2893,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<WorkspaceFile>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UploadWorkspaceFile", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2631,15 +2937,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->UploadWorkspaceFile");
+            }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->UploadWorkspaceFile");
+            }
 
             // verify the required parameter 'file' is set
             if (file == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'file' when calling WorkspaceApi->UploadWorkspaceFile");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2653,12 +2965,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
@@ -2680,13 +2997,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<WorkspaceFile>("/organizations/{organization_id}/workspaces/{workspace_id}/files", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UploadWorkspaceFile", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;

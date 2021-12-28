@@ -905,15 +905,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceParameterGroups");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceParameterGroups");
+            }
 
             // verify the required parameter 'runTemplateParameterGroup' is set
             if (runTemplateParameterGroup == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateParameterGroup' when calling SolutionApi->AddOrReplaceParameterGroups");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -927,10 +933,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -945,11 +957,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<List<RunTemplateParameterGroup>>("/organizations/{organization_id}/solutions/{solution_id}/parameterGroups", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddOrReplaceParameterGroups", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -983,15 +997,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceParameterGroups");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceParameterGroups");
+            }
 
             // verify the required parameter 'runTemplateParameterGroup' is set
             if (runTemplateParameterGroup == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateParameterGroup' when calling SolutionApi->AddOrReplaceParameterGroups");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1005,12 +1025,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1024,13 +1049,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<List<RunTemplateParameterGroup>>("/organizations/{organization_id}/solutions/{solution_id}/parameterGroups", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddOrReplaceParameterGroups", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1062,15 +1089,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceParameters");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceParameters");
+            }
 
             // verify the required parameter 'runTemplateParameter' is set
             if (runTemplateParameter == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateParameter' when calling SolutionApi->AddOrReplaceParameters");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1084,10 +1117,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1102,11 +1141,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<List<RunTemplateParameter>>("/organizations/{organization_id}/solutions/{solution_id}/parameters", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddOrReplaceParameters", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1140,15 +1181,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceParameters");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceParameters");
+            }
 
             // verify the required parameter 'runTemplateParameter' is set
             if (runTemplateParameter == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateParameter' when calling SolutionApi->AddOrReplaceParameters");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1162,12 +1209,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1181,13 +1233,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<List<RunTemplateParameter>>("/organizations/{organization_id}/solutions/{solution_id}/parameters", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddOrReplaceParameters", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1219,15 +1273,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceRunTemplates");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceRunTemplates");
+            }
 
             // verify the required parameter 'runTemplate' is set
             if (runTemplate == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplate' when calling SolutionApi->AddOrReplaceRunTemplates");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1241,10 +1301,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1259,11 +1325,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<List<RunTemplate>>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddOrReplaceRunTemplates", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1297,15 +1365,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->AddOrReplaceRunTemplates");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->AddOrReplaceRunTemplates");
+            }
 
             // verify the required parameter 'runTemplate' is set
             if (runTemplate == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplate' when calling SolutionApi->AddOrReplaceRunTemplates");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1319,12 +1393,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1338,13 +1417,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<List<RunTemplate>>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddOrReplaceRunTemplates", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1374,11 +1455,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->CreateSolution");
+            }
 
             // verify the required parameter 'solution' is set
             if (solution == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solution' when calling SolutionApi->CreateSolution");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1393,10 +1478,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = solution;
@@ -1410,11 +1501,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Solution>("/organizations/{organization_id}/solutions", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateSolution", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1446,11 +1539,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->CreateSolution");
+            }
 
             // verify the required parameter 'solution' is set
             if (solution == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solution' when calling SolutionApi->CreateSolution");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1465,12 +1562,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = solution;
@@ -1483,13 +1585,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<Solution>("/organizations/{organization_id}/solutions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateSolution", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1518,11 +1622,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->DeleteSolution");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->DeleteSolution");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1534,10 +1642,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1551,11 +1665,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteSolution", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1586,11 +1702,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->DeleteSolution");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->DeleteSolution");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1602,12 +1722,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1620,13 +1745,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteSolution", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1657,15 +1784,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->DeleteSolutionRunTemplate");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->DeleteSolutionRunTemplate");
+            }
 
             // verify the required parameter 'runTemplateId' is set
             if (runTemplateId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->DeleteSolutionRunTemplate");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1677,10 +1810,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1695,11 +1834,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteSolutionRunTemplate", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1732,15 +1873,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->DeleteSolutionRunTemplate");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->DeleteSolutionRunTemplate");
+            }
 
             // verify the required parameter 'runTemplateId' is set
             if (runTemplateId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->DeleteSolutionRunTemplate");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1752,12 +1899,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1771,13 +1923,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteSolutionRunTemplate", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1811,15 +1965,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->DownloadRunTemplateHandler");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->DownloadRunTemplateHandler");
+            }
 
             // verify the required parameter 'runTemplateId' is set
             if (runTemplateId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->DownloadRunTemplateHandler");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1832,10 +1992,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1851,11 +2017,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<System.IO.Stream>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DownloadRunTemplateHandler", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1891,15 +2059,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->DownloadRunTemplateHandler");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->DownloadRunTemplateHandler");
+            }
 
             // verify the required parameter 'runTemplateId' is set
             if (runTemplateId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->DownloadRunTemplateHandler");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1912,12 +2086,17 @@ namespace Com.Cosmotech.Api
                 "application/octet-stream"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -1932,13 +2111,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DownloadRunTemplateHandler", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1966,7 +2147,9 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->FindAllSolutions");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1979,10 +2162,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
 
@@ -1995,11 +2184,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<Solution>>("/organizations/{organization_id}/solutions", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllSolutions", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2029,7 +2220,9 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->FindAllSolutions");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2042,12 +2235,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
 
@@ -2059,13 +2257,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<Solution>>("/organizations/{organization_id}/solutions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllSolutions", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2095,11 +2295,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->FindSolutionById");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->FindSolutionById");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2112,10 +2316,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2129,11 +2339,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Solution>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindSolutionById", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2165,11 +2377,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->FindSolutionById");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->FindSolutionById");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2182,12 +2398,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2200,13 +2421,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<Solution>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindSolutionById", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2235,11 +2458,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllRunTemplates");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllRunTemplates");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2251,10 +2478,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2268,11 +2501,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAllRunTemplates", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2303,11 +2538,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllRunTemplates");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllRunTemplates");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2319,12 +2558,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2337,13 +2581,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAllRunTemplates", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2372,11 +2618,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllSolutionParameterGroups");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllSolutionParameterGroups");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2388,10 +2638,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2405,11 +2661,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/solutions/{solution_id}/parameterGroups", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAllSolutionParameterGroups", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2440,11 +2698,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllSolutionParameterGroups");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllSolutionParameterGroups");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2456,12 +2718,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2474,13 +2741,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}/parameterGroups", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAllSolutionParameterGroups", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2509,11 +2778,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllSolutionParameters");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllSolutionParameters");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2525,10 +2798,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2542,11 +2821,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/solutions/{solution_id}/parameters", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAllSolutionParameters", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2577,11 +2858,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->RemoveAllSolutionParameters");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->RemoveAllSolutionParameters");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2593,12 +2878,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2611,13 +2901,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}/parameters", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAllSolutionParameters", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2649,15 +2941,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->UpdateSolution");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->UpdateSolution");
+            }
 
             // verify the required parameter 'solution' is set
             if (solution == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solution' when calling SolutionApi->UpdateSolution");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2672,10 +2970,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2690,11 +2994,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Patch<Solution>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateSolution", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2728,15 +3034,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->UpdateSolution");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->UpdateSolution");
+            }
 
             // verify the required parameter 'solution' is set
             if (solution == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solution' when calling SolutionApi->UpdateSolution");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2751,12 +3063,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2770,13 +3087,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PatchAsync<Solution>("/organizations/{organization_id}/solutions/{solution_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateSolution", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2810,19 +3129,27 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->UpdateSolutionRunTemplate");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->UpdateSolutionRunTemplate");
+            }
 
             // verify the required parameter 'runTemplateId' is set
             if (runTemplateId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->UpdateSolutionRunTemplate");
+            }
 
             // verify the required parameter 'runTemplate' is set
             if (runTemplate == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplate' when calling SolutionApi->UpdateSolutionRunTemplate");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -2837,10 +3164,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2856,11 +3189,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Patch<List<RunTemplate>>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateSolutionRunTemplate", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2896,19 +3231,27 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->UpdateSolutionRunTemplate");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->UpdateSolutionRunTemplate");
+            }
 
             // verify the required parameter 'runTemplateId' is set
             if (runTemplateId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->UpdateSolutionRunTemplate");
+            }
 
             // verify the required parameter 'runTemplate' is set
             if (runTemplate == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplate' when calling SolutionApi->UpdateSolutionRunTemplate");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2923,12 +3266,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -2943,13 +3291,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PatchAsync<List<RunTemplate>>("/organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateSolutionRunTemplate", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -2986,19 +3336,27 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->UploadRunTemplateHandler");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->UploadRunTemplateHandler");
+            }
 
             // verify the required parameter 'runTemplateId' is set
             if (runTemplateId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->UploadRunTemplateHandler");
+            }
 
             // verify the required parameter 'body' is set
             if (body == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'body' when calling SolutionApi->UploadRunTemplateHandler");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -3011,10 +3369,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -3035,11 +3399,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UploadRunTemplateHandler", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -3078,19 +3444,27 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->UploadRunTemplateHandler");
+            }
 
             // verify the required parameter 'solutionId' is set
             if (solutionId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->UploadRunTemplateHandler");
+            }
 
             // verify the required parameter 'runTemplateId' is set
             if (runTemplateId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->UploadRunTemplateHandler");
+            }
 
             // verify the required parameter 'body' is set
             if (body == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'body' when calling SolutionApi->UploadRunTemplateHandler");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -3103,12 +3477,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
@@ -3128,13 +3507,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UploadRunTemplateHandler", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;

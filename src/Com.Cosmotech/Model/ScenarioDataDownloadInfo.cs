@@ -68,7 +68,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioDataDownloadInfo {\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
@@ -103,8 +103,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioDataDownloadInfo input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Url == input.Url ||
@@ -127,8 +128,10 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                hashCode = hashCode * 59 + this.State.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.State.GetHashCode();
                 return hashCode;
             }
         }

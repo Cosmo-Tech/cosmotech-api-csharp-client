@@ -144,7 +144,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioRunStatus {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
@@ -188,8 +188,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioRunStatus input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -258,26 +259,46 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.OrganizationId != null)
-                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
+                }
                 if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowId.GetHashCode();
+                }
                 if (this.WorkflowName != null)
-                    hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowName.GetHashCode();
+                }
                 if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.StartTime.GetHashCode();
+                }
                 if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.EndTime.GetHashCode();
+                }
                 if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Phase.GetHashCode();
+                }
                 if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Progress.GetHashCode();
+                }
                 if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                hashCode = hashCode * 59 + this.EstimatedDuration.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.EstimatedDuration.GetHashCode();
                 if (this.Nodes != null)
-                    hashCode = hashCode * 59 + this.Nodes.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Nodes.GetHashCode();
+                }
                 return hashCode;
             }
         }

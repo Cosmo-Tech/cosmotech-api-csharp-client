@@ -112,7 +112,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ConnectorParameter {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
@@ -151,8 +151,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ConnectorParameter input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -197,17 +198,29 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Label != null)
-                    hashCode = hashCode * 59 + this.Label.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Label.GetHashCode();
+                }
                 if (this.ValueType != null)
-                    hashCode = hashCode * 59 + this.ValueType.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ValueType.GetHashCode();
+                }
                 if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
+                }
                 if (this.Default != null)
-                    hashCode = hashCode * 59 + this.Default.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Default.GetHashCode();
+                }
                 if (this.EnvVar != null)
-                    hashCode = hashCode * 59 + this.EnvVar.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.EnvVar.GetHashCode();
+                }
                 return hashCode;
             }
         }

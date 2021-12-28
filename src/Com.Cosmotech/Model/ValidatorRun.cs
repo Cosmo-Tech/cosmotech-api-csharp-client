@@ -196,7 +196,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ValidatorRun {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ValidatorId: ").Append(ValidatorId).Append("\n");
@@ -237,8 +237,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ValidatorRun input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -291,20 +292,34 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.ValidatorId != null)
-                    hashCode = hashCode * 59 + this.ValidatorId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ValidatorId.GetHashCode();
+                }
                 if (this.ValidatorName != null)
-                    hashCode = hashCode * 59 + this.ValidatorName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ValidatorName.GetHashCode();
+                }
                 if (this.DatasetId != null)
-                    hashCode = hashCode * 59 + this.DatasetId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DatasetId.GetHashCode();
+                }
                 if (this.DatasetName != null)
-                    hashCode = hashCode * 59 + this.DatasetName.GetHashCode();
-                hashCode = hashCode * 59 + this.State.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DatasetName.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.State.GetHashCode();
                 if (this.ContainerId != null)
-                    hashCode = hashCode * 59 + this.ContainerId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ContainerId.GetHashCode();
+                }
                 if (this.Logs != null)
-                    hashCode = hashCode * 59 + this.Logs.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Logs.GetHashCode();
+                }
                 return hashCode;
             }
         }

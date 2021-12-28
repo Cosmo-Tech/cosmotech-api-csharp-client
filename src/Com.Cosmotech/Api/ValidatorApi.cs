@@ -597,11 +597,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->CreateValidator");
+            }
 
             // verify the required parameter 'validator' is set
             if (validator == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validator' when calling ValidatorApi->CreateValidator");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -616,10 +620,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = validator;
@@ -633,11 +643,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Validator>("/organizations/{organization_id}/datasets/validators", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateValidator", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -669,11 +681,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->CreateValidator");
+            }
 
             // verify the required parameter 'validator' is set
             if (validator == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validator' when calling ValidatorApi->CreateValidator");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -688,12 +704,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = validator;
@@ -706,13 +727,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<Validator>("/organizations/{organization_id}/datasets/validators", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateValidator", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -744,15 +767,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->CreateValidatorRun");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->CreateValidatorRun");
+            }
 
             // verify the required parameter 'validatorRun' is set
             if (validatorRun == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorRun' when calling ValidatorApi->CreateValidatorRun");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -767,10 +796,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -785,11 +820,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<ValidatorRun>("/organizations/{organization_id}/datasets/validators/{validator_id}/history", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateValidatorRun", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -823,15 +860,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->CreateValidatorRun");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->CreateValidatorRun");
+            }
 
             // verify the required parameter 'validatorRun' is set
             if (validatorRun == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorRun' when calling ValidatorApi->CreateValidatorRun");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -846,12 +889,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -865,13 +913,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<ValidatorRun>("/organizations/{organization_id}/datasets/validators/{validator_id}/history", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateValidatorRun", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -900,11 +950,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->DeleteValidator");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->DeleteValidator");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -916,10 +970,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -933,11 +993,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/datasets/validators/{validator_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteValidator", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -968,11 +1030,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->DeleteValidator");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->DeleteValidator");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -984,12 +1050,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1002,13 +1073,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/datasets/validators/{validator_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteValidator", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1039,15 +1112,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->DeleteValidatorRun");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->DeleteValidatorRun");
+            }
 
             // verify the required parameter 'validatorrunId' is set
             if (validatorrunId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorrunId' when calling ValidatorApi->DeleteValidatorRun");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1059,10 +1138,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1077,11 +1162,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteValidatorRun", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1114,15 +1201,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->DeleteValidatorRun");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->DeleteValidatorRun");
+            }
 
             // verify the required parameter 'validatorrunId' is set
             if (validatorrunId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorrunId' when calling ValidatorApi->DeleteValidatorRun");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1134,12 +1227,17 @@ namespace Com.Cosmotech.Api
             string[] _accepts = new string[] {
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1153,13 +1251,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteValidatorRun", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1189,11 +1289,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->FindAllValidatorRuns");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->FindAllValidatorRuns");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1206,10 +1310,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1223,11 +1333,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<ValidatorRun>>("/organizations/{organization_id}/datasets/validators/{validator_id}/history", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllValidatorRuns", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1259,11 +1371,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->FindAllValidatorRuns");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->FindAllValidatorRuns");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1276,12 +1392,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1294,13 +1415,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<ValidatorRun>>("/organizations/{organization_id}/datasets/validators/{validator_id}/history", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllValidatorRuns", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1328,7 +1451,9 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->FindAllValidators");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1341,10 +1466,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
 
@@ -1357,11 +1488,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<List<Validator>>("/organizations/{organization_id}/datasets/validators", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllValidators", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1391,7 +1524,9 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->FindAllValidators");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1404,12 +1539,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
 
@@ -1421,13 +1561,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<List<Validator>>("/organizations/{organization_id}/datasets/validators", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindAllValidators", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1457,11 +1599,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->FindValidatorById");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->FindValidatorById");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1474,10 +1620,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1491,11 +1643,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Validator>("/organizations/{organization_id}/datasets/validators/{validator_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindValidatorById", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1527,11 +1681,15 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->FindValidatorById");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->FindValidatorById");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1544,12 +1702,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1562,13 +1725,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<Validator>("/organizations/{organization_id}/datasets/validators/{validator_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindValidatorById", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1600,15 +1765,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->FindValidatorRunById");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->FindValidatorRunById");
+            }
 
             // verify the required parameter 'validatorrunId' is set
             if (validatorrunId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorrunId' when calling ValidatorApi->FindValidatorRunById");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1621,10 +1792,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1639,11 +1816,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<ValidatorRun>("/organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id}", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindValidatorRunById", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1677,15 +1856,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->FindValidatorRunById");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->FindValidatorRunById");
+            }
 
             // verify the required parameter 'validatorrunId' is set
             if (validatorrunId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorrunId' when calling ValidatorApi->FindValidatorRunById");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1698,12 +1883,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1717,13 +1907,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.GetAsync<ValidatorRun>("/organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("FindValidatorRunById", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1755,15 +1947,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->RunValidator");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->RunValidator");
+            }
 
             // verify the required parameter 'validatorRun' is set
             if (validatorRun == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorRun' when calling ValidatorApi->RunValidator");
+            }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
@@ -1778,10 +1976,16 @@ namespace Com.Cosmotech.Api
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1796,11 +2000,13 @@ namespace Com.Cosmotech.Api
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<ValidatorRun>("/organizations/{organization_id}/datasets/validators/{validator_id}/run", localVarRequestOptions, this.Configuration);
-
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RunValidator", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;
@@ -1834,15 +2040,21 @@ namespace Com.Cosmotech.Api
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ValidatorApi->RunValidator");
+            }
 
             // verify the required parameter 'validatorId' is set
             if (validatorId == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorId' when calling ValidatorApi->RunValidator");
+            }
 
             // verify the required parameter 'validatorRun' is set
             if (validatorRun == null)
+            {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'validatorRun' when calling ValidatorApi->RunValidator");
+            }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -1857,12 +2069,17 @@ namespace Com.Cosmotech.Api
                 "application/json"
             };
 
-
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
 
             var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validator_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(validatorId)); // path parameter
@@ -1876,13 +2093,15 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-
             var localVarResponse = await this.AsynchronousClient.PostAsync<ValidatorRun>("/organizations/{organization_id}/datasets/validators/{validator_id}/run", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RunValidator", localVarResponse);
-                if (_exception != null) throw _exception;
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
             }
 
             return localVarResponse;

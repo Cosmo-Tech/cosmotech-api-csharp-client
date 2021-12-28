@@ -72,7 +72,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class DatasetCopyParameters {\n");
             sb.Append("  SourceId: ").Append(SourceId).Append("\n");
             sb.Append("  TargetId: ").Append(TargetId).Append("\n");
@@ -108,8 +108,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(DatasetCopyParameters input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.SourceId == input.SourceId ||
@@ -139,11 +140,17 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.SourceId != null)
-                    hashCode = hashCode * 59 + this.SourceId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SourceId.GetHashCode();
+                }
                 if (this.TargetId != null)
-                    hashCode = hashCode * 59 + this.TargetId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.TargetId.GetHashCode();
+                }
                 if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
+                }
                 return hashCode;
             }
         }

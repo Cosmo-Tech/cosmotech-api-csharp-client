@@ -106,7 +106,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioChangedParameterValue {\n");
             sb.Append("  ParameterId: ").Append(ParameterId).Append("\n");
             sb.Append("  VarType: ").Append(VarType).Append("\n");
@@ -143,8 +143,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioChangedParameterValue input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.ParameterId == input.ParameterId ||
@@ -178,13 +179,21 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.ParameterId != null)
-                    hashCode = hashCode * 59 + this.ParameterId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ParameterId.GetHashCode();
+                }
                 if (this.VarType != null)
-                    hashCode = hashCode * 59 + this.VarType.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.VarType.GetHashCode();
+                }
                 if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                }
                 if (this.ComparedValue != null)
-                    hashCode = hashCode * 59 + this.ComparedValue.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ComparedValue.GetHashCode();
+                }
                 return hashCode;
             }
         }

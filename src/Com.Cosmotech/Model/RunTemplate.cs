@@ -277,7 +277,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class RunTemplate {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -335,8 +335,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(RunTemplate input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -459,37 +460,51 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
                 if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
                 if (this.CsmSimulation != null)
-                    hashCode = hashCode * 59 + this.CsmSimulation.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.CsmSimulation.GetHashCode();
+                }
                 if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                }
                 if (this.ComputeSize != null)
-                    hashCode = hashCode * 59 + this.ComputeSize.GetHashCode();
-                hashCode = hashCode * 59 + this.FetchDatasets.GetHashCode();
-                hashCode = hashCode * 59 + this.ScenarioDataDownloadTransform.GetHashCode();
-                hashCode = hashCode * 59 + this.FetchScenarioParameters.GetHashCode();
-                hashCode = hashCode * 59 + this.ApplyParameters.GetHashCode();
-                hashCode = hashCode * 59 + this.ValidateData.GetHashCode();
-                hashCode = hashCode * 59 + this.SendDatasetsToDataWarehouse.GetHashCode();
-                hashCode = hashCode * 59 + this.SendInputParametersToDataWarehouse.GetHashCode();
-                hashCode = hashCode * 59 + this.PreRun.GetHashCode();
-                hashCode = hashCode * 59 + this.Run.GetHashCode();
-                hashCode = hashCode * 59 + this.PostRun.GetHashCode();
-                hashCode = hashCode * 59 + this.ParametersJson.GetHashCode();
-                hashCode = hashCode * 59 + this.ParametersHandlerSource.GetHashCode();
-                hashCode = hashCode * 59 + this.DatasetValidatorSource.GetHashCode();
-                hashCode = hashCode * 59 + this.PreRunSource.GetHashCode();
-                hashCode = hashCode * 59 + this.RunSource.GetHashCode();
-                hashCode = hashCode * 59 + this.PostRunSource.GetHashCode();
-                hashCode = hashCode * 59 + this.ScenariodataTransformSource.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ComputeSize.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.FetchDatasets.GetHashCode();
+                hashCode = (hashCode * 59) + this.ScenarioDataDownloadTransform.GetHashCode();
+                hashCode = (hashCode * 59) + this.FetchScenarioParameters.GetHashCode();
+                hashCode = (hashCode * 59) + this.ApplyParameters.GetHashCode();
+                hashCode = (hashCode * 59) + this.ValidateData.GetHashCode();
+                hashCode = (hashCode * 59) + this.SendDatasetsToDataWarehouse.GetHashCode();
+                hashCode = (hashCode * 59) + this.SendInputParametersToDataWarehouse.GetHashCode();
+                hashCode = (hashCode * 59) + this.PreRun.GetHashCode();
+                hashCode = (hashCode * 59) + this.Run.GetHashCode();
+                hashCode = (hashCode * 59) + this.PostRun.GetHashCode();
+                hashCode = (hashCode * 59) + this.ParametersJson.GetHashCode();
+                hashCode = (hashCode * 59) + this.ParametersHandlerSource.GetHashCode();
+                hashCode = (hashCode * 59) + this.DatasetValidatorSource.GetHashCode();
+                hashCode = (hashCode * 59) + this.PreRunSource.GetHashCode();
+                hashCode = (hashCode * 59) + this.RunSource.GetHashCode();
+                hashCode = (hashCode * 59) + this.PostRunSource.GetHashCode();
+                hashCode = (hashCode * 59) + this.ScenariodataTransformSource.GetHashCode();
                 if (this.ParameterGroups != null)
-                    hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();
-                hashCode = hashCode * 59 + this.StackSteps.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ParameterGroups.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.StackSteps.GetHashCode();
                 return hashCode;
             }
         }

@@ -116,7 +116,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class RunTemplateParameterGroup {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
@@ -155,8 +155,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(RunTemplateParameterGroup input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -202,16 +203,26 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
-                hashCode = hashCode * 59 + this.IsTable.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Labels.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.IsTable.GetHashCode();
                 if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
+                }
                 if (this.ParentId != null)
-                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
+                }
                 if (this.Parameters != null)
-                    hashCode = hashCode * 59 + this.Parameters.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
+                }
                 return hashCode;
             }
         }

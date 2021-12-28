@@ -180,7 +180,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Workspace {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
@@ -225,8 +225,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(Workspace input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -300,27 +301,47 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
+                }
                 if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
                 if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
                 if (this._Version != null)
-                    hashCode = hashCode * 59 + this._Version.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this._Version.GetHashCode();
+                }
                 if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                }
                 if (this.OwnerId != null)
-                    hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                }
                 if (this.Solution != null)
-                    hashCode = hashCode * 59 + this.Solution.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Solution.GetHashCode();
+                }
                 if (this.Users != null)
-                    hashCode = hashCode * 59 + this.Users.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Users.GetHashCode();
+                }
                 if (this.WebApp != null)
-                    hashCode = hashCode * 59 + this.WebApp.GetHashCode();
-                hashCode = hashCode * 59 + this.SendInputToDataWarehouse.GetHashCode();
-                hashCode = hashCode * 59 + this.UseDedicatedEventHubNamespace.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WebApp.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.SendInputToDataWarehouse.GetHashCode();
+                hashCode = (hashCode * 59) + this.UseDedicatedEventHubNamespace.GetHashCode();
                 return hashCode;
             }
         }

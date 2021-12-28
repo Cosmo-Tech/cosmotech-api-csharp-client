@@ -72,7 +72,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class WorkspaceSolution {\n");
             sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
             sb.Append("  RunTemplateFilter: ").Append(RunTemplateFilter).Append("\n");
@@ -108,8 +108,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(WorkspaceSolution input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.SolutionId == input.SolutionId ||
@@ -140,11 +141,17 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.SolutionId != null)
-                    hashCode = hashCode * 59 + this.SolutionId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SolutionId.GetHashCode();
+                }
                 if (this.RunTemplateFilter != null)
-                    hashCode = hashCode * 59 + this.RunTemplateFilter.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.RunTemplateFilter.GetHashCode();
+                }
                 if (this.DefaultRunTemplateDataset != null)
-                    hashCode = hashCode * 59 + this.DefaultRunTemplateDataset.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DefaultRunTemplateDataset.GetHashCode();
+                }
                 return hashCode;
             }
         }

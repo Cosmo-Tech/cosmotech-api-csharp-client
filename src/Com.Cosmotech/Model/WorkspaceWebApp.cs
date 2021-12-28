@@ -81,7 +81,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class WorkspaceWebApp {\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  Iframes: ").Append(Iframes).Append("\n");
@@ -117,8 +117,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(WorkspaceWebApp input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Url == input.Url ||
@@ -149,11 +150,17 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
+                }
                 if (this.Iframes != null)
-                    hashCode = hashCode * 59 + this.Iframes.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Iframes.GetHashCode();
+                }
                 if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
+                }
                 return hashCode;
             }
         }

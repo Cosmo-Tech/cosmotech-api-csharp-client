@@ -63,7 +63,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class DatasetSearch {\n");
             sb.Append("  DatasetTags: ").Append(DatasetTags).Append("\n");
             sb.Append("}\n");
@@ -97,8 +97,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(DatasetSearch input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.DatasetTags == input.DatasetTags ||
@@ -118,7 +119,9 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.DatasetTags != null)
-                    hashCode = hashCode * 59 + this.DatasetTags.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DatasetTags.GetHashCode();
+                }
                 return hashCode;
             }
         }

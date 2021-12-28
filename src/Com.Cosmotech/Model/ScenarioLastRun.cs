@@ -81,7 +81,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioLastRun {\n");
             sb.Append("  ScenarioRunId: ").Append(ScenarioRunId).Append("\n");
             sb.Append("  CsmSimulationRun: ").Append(CsmSimulationRun).Append("\n");
@@ -118,8 +118,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioLastRun input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.ScenarioRunId == input.ScenarioRunId ||
@@ -153,13 +154,21 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.ScenarioRunId != null)
-                    hashCode = hashCode * 59 + this.ScenarioRunId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ScenarioRunId.GetHashCode();
+                }
                 if (this.CsmSimulationRun != null)
-                    hashCode = hashCode * 59 + this.CsmSimulationRun.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.CsmSimulationRun.GetHashCode();
+                }
                 if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowId.GetHashCode();
+                }
                 if (this.WorkflowName != null)
-                    hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowName.GetHashCode();
+                }
                 return hashCode;
             }
         }

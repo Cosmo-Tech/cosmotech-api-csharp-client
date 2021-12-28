@@ -70,7 +70,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class OrganizationServices {\n");
             sb.Append("  TenantCredentials: ").Append(TenantCredentials).Append("\n");
             sb.Append("  Storage: ").Append(Storage).Append("\n");
@@ -106,8 +106,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(OrganizationServices input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.TenantCredentials == input.TenantCredentials ||
@@ -137,11 +138,17 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.TenantCredentials != null)
-                    hashCode = hashCode * 59 + this.TenantCredentials.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.TenantCredentials.GetHashCode();
+                }
                 if (this.Storage != null)
-                    hashCode = hashCode * 59 + this.Storage.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Storage.GetHashCode();
+                }
                 if (this.SolutionsContainerRegistry != null)
-                    hashCode = hashCode * 59 + this.SolutionsContainerRegistry.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SolutionsContainerRegistry.GetHashCode();
+                }
                 return hashCode;
             }
         }

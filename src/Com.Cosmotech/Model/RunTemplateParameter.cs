@@ -134,7 +134,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class RunTemplateParameter {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
@@ -175,8 +175,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(RunTemplateParameter input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -232,21 +233,37 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Labels.GetHashCode();
+                }
                 if (this.VarType != null)
-                    hashCode = hashCode * 59 + this.VarType.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.VarType.GetHashCode();
+                }
                 if (this.DefaultValue != null)
-                    hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DefaultValue.GetHashCode();
+                }
                 if (this.MinValue != null)
-                    hashCode = hashCode * 59 + this.MinValue.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.MinValue.GetHashCode();
+                }
                 if (this.MaxValue != null)
-                    hashCode = hashCode * 59 + this.MaxValue.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.MaxValue.GetHashCode();
+                }
                 if (this.RegexValidation != null)
-                    hashCode = hashCode * 59 + this.RegexValidation.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.RegexValidation.GetHashCode();
+                }
                 if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
+                }
                 return hashCode;
             }
         }

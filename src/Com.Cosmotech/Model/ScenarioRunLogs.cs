@@ -76,7 +76,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioRunLogs {\n");
             sb.Append("  ScenariorunId: ").Append(ScenariorunId).Append("\n");
             sb.Append("  Containers: ").Append(Containers).Append("\n");
@@ -111,8 +111,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioRunLogs input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.ScenariorunId == input.ScenariorunId ||
@@ -137,9 +138,13 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.ScenariorunId != null)
-                    hashCode = hashCode * 59 + this.ScenariorunId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ScenariorunId.GetHashCode();
+                }
                 if (this.Containers != null)
-                    hashCode = hashCode * 59 + this.Containers.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Containers.GetHashCode();
+                }
                 return hashCode;
             }
         }

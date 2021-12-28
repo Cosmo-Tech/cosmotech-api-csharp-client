@@ -81,7 +81,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class DatasetCompatibility {\n");
             sb.Append("  SolutionKey: ").Append(SolutionKey).Append("\n");
             sb.Append("  MinimumVersion: ").Append(MinimumVersion).Append("\n");
@@ -117,8 +117,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(DatasetCompatibility input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.SolutionKey == input.SolutionKey ||
@@ -147,11 +148,17 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.SolutionKey != null)
-                    hashCode = hashCode * 59 + this.SolutionKey.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SolutionKey.GetHashCode();
+                }
                 if (this.MinimumVersion != null)
-                    hashCode = hashCode * 59 + this.MinimumVersion.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.MinimumVersion.GetHashCode();
+                }
                 if (this.MaximumVersion != null)
-                    hashCode = hashCode * 59 + this.MaximumVersion.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.MaximumVersion.GetHashCode();
+                }
                 return hashCode;
             }
         }

@@ -220,7 +220,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Connector {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
@@ -266,8 +266,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(Connector input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -345,28 +346,48 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
+                }
                 if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
                 if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
                 if (this.Repository != null)
-                    hashCode = hashCode * 59 + this.Repository.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Repository.GetHashCode();
+                }
                 if (this._Version != null)
-                    hashCode = hashCode * 59 + this._Version.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this._Version.GetHashCode();
+                }
                 if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                }
                 if (this.OwnerId != null)
-                    hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                }
                 if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                hashCode = hashCode * 59 + this.AzureManagedIdentity.GetHashCode();
-                hashCode = hashCode * 59 + this.AzureAuthenticationWithCustomerAppRegistration.GetHashCode();
-                hashCode = hashCode * 59 + this.IoTypes.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.AzureManagedIdentity.GetHashCode();
+                hashCode = (hashCode * 59) + this.AzureAuthenticationWithCustomerAppRegistration.GetHashCode();
+                hashCode = (hashCode * 59) + this.IoTypes.GetHashCode();
                 if (this.ParameterGroups != null)
-                    hashCode = hashCode * 59 + this.ParameterGroups.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ParameterGroups.GetHashCode();
+                }
                 return hashCode;
             }
         }

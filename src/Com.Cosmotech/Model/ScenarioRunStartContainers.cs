@@ -103,7 +103,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioRunStartContainers {\n");
             sb.Append("  GenerateName: ").Append(GenerateName).Append("\n");
             sb.Append("  CsmSimulationId: ").Append(CsmSimulationId).Append("\n");
@@ -141,8 +141,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioRunStartContainers input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.GenerateName == input.GenerateName ||
@@ -183,15 +184,25 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.GenerateName != null)
-                    hashCode = hashCode * 59 + this.GenerateName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.GenerateName.GetHashCode();
+                }
                 if (this.CsmSimulationId != null)
-                    hashCode = hashCode * 59 + this.CsmSimulationId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.CsmSimulationId.GetHashCode();
+                }
                 if (this.NodeLabel != null)
-                    hashCode = hashCode * 59 + this.NodeLabel.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.NodeLabel.GetHashCode();
+                }
                 if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Labels.GetHashCode();
+                }
                 if (this.Containers != null)
-                    hashCode = hashCode * 59 + this.Containers.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Containers.GetHashCode();
+                }
                 return hashCode;
             }
         }

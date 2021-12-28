@@ -160,7 +160,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioRunContainer {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -203,8 +203,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioRunContainer input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -272,24 +273,42 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
                 if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Labels.GetHashCode();
+                }
                 if (this.EnvVars != null)
-                    hashCode = hashCode * 59 + this.EnvVars.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.EnvVars.GetHashCode();
+                }
                 if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Image.GetHashCode();
+                }
                 if (this.Entrypoint != null)
-                    hashCode = hashCode * 59 + this.Entrypoint.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Entrypoint.GetHashCode();
+                }
                 if (this.RunArgs != null)
-                    hashCode = hashCode * 59 + this.RunArgs.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.RunArgs.GetHashCode();
+                }
                 if (this.Dependencies != null)
-                    hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
-                hashCode = hashCode * 59 + this.SolutionContainer.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Dependencies.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.SolutionContainer.GetHashCode();
                 if (this.Artifacts != null)
-                    hashCode = hashCode * 59 + this.Artifacts.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Artifacts.GetHashCode();
+                }
                 return hashCode;
             }
         }

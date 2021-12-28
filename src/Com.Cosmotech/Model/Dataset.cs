@@ -137,7 +137,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Dataset {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -179,8 +179,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(Dataset input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -242,23 +243,41 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
                 if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
                 if (this.OwnerId != null)
-                    hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                }
                 if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                }
                 if (this.Connector != null)
-                    hashCode = hashCode * 59 + this.Connector.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Connector.GetHashCode();
+                }
                 if (this.FragmentsIds != null)
-                    hashCode = hashCode * 59 + this.FragmentsIds.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.FragmentsIds.GetHashCode();
+                }
                 if (this.ValidatorId != null)
-                    hashCode = hashCode * 59 + this.ValidatorId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ValidatorId.GetHashCode();
+                }
                 if (this.Compatibility != null)
-                    hashCode = hashCode * 59 + this.Compatibility.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Compatibility.GetHashCode();
+                }
                 return hashCode;
             }
         }

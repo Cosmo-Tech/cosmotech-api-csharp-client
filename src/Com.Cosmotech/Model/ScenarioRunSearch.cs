@@ -186,7 +186,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioRunSearch {\n");
             sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
             sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
@@ -227,8 +227,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioRunSearch input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.SolutionId == input.SolutionId ||
@@ -281,20 +282,34 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.SolutionId != null)
-                    hashCode = hashCode * 59 + this.SolutionId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SolutionId.GetHashCode();
+                }
                 if (this.RunTemplateId != null)
-                    hashCode = hashCode * 59 + this.RunTemplateId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.RunTemplateId.GetHashCode();
+                }
                 if (this.WorkspaceId != null)
-                    hashCode = hashCode * 59 + this.WorkspaceId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkspaceId.GetHashCode();
+                }
                 if (this.ScenarioId != null)
-                    hashCode = hashCode * 59 + this.ScenarioId.GetHashCode();
-                hashCode = hashCode * 59 + this.State.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ScenarioId.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.State.GetHashCode();
                 if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowId.GetHashCode();
+                }
                 if (this.WorkflowName != null)
-                    hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowName.GetHashCode();
+                }
                 if (this.OwnerId != null)
-                    hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                }
                 return hashCode;
             }
         }

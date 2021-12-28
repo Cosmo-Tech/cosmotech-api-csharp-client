@@ -90,7 +90,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class OrganizationService {\n");
             sb.Append("  CloudService: ").Append(CloudService).Append("\n");
             sb.Append("  BaseUri: ").Append(BaseUri).Append("\n");
@@ -128,8 +128,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(OrganizationService input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.CloudService == input.CloudService ||
@@ -169,15 +170,25 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.CloudService != null)
-                    hashCode = hashCode * 59 + this.CloudService.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.CloudService.GetHashCode();
+                }
                 if (this.BaseUri != null)
-                    hashCode = hashCode * 59 + this.BaseUri.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.BaseUri.GetHashCode();
+                }
                 if (this.PlatformService != null)
-                    hashCode = hashCode * 59 + this.PlatformService.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.PlatformService.GetHashCode();
+                }
                 if (this.ResourceUri != null)
-                    hashCode = hashCode * 59 + this.ResourceUri.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ResourceUri.GetHashCode();
+                }
                 if (this.Credentials != null)
-                    hashCode = hashCode * 59 + this.Credentials.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Credentials.GetHashCode();
+                }
                 return hashCode;
             }
         }

@@ -106,7 +106,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioRunContainerLogs {\n");
             sb.Append("  NodeId: ").Append(NodeId).Append("\n");
             sb.Append("  ContainerName: ").Append(ContainerName).Append("\n");
@@ -143,8 +143,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioRunContainerLogs input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.NodeId == input.NodeId ||
@@ -179,13 +180,21 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.NodeId != null)
-                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.NodeId.GetHashCode();
+                }
                 if (this.ContainerName != null)
-                    hashCode = hashCode * 59 + this.ContainerName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ContainerName.GetHashCode();
+                }
                 if (this.Children != null)
-                    hashCode = hashCode * 59 + this.Children.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Children.GetHashCode();
+                }
                 if (this.Logs != null)
-                    hashCode = hashCode * 59 + this.Logs.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Logs.GetHashCode();
+                }
                 return hashCode;
             }
         }

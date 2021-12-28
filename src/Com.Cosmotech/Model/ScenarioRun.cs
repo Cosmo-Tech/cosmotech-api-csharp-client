@@ -300,7 +300,7 @@ namespace Com.Cosmotech.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioRun {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
@@ -352,8 +352,9 @@ namespace Com.Cosmotech.Model
         public bool Equals(ScenarioRun input)
         {
             if (input == null)
+            {
                 return false;
-
+            }
             return 
                 (
                     this.Id == input.Id ||
@@ -463,41 +464,75 @@ namespace Com.Cosmotech.Model
             {
                 int hashCode = 41;
                 if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.OrganizationId != null)
-                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
+                }
                 if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowId.GetHashCode();
+                }
                 if (this.CsmSimulationRun != null)
-                    hashCode = hashCode * 59 + this.CsmSimulationRun.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.CsmSimulationRun.GetHashCode();
+                }
                 if (this.GenerateName != null)
-                    hashCode = hashCode * 59 + this.GenerateName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.GenerateName.GetHashCode();
+                }
                 if (this.WorkflowName != null)
-                    hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowName.GetHashCode();
+                }
                 if (this.OwnerId != null)
-                    hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                }
                 if (this.WorkspaceId != null)
-                    hashCode = hashCode * 59 + this.WorkspaceId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkspaceId.GetHashCode();
+                }
                 if (this.WorkspaceKey != null)
-                    hashCode = hashCode * 59 + this.WorkspaceKey.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.WorkspaceKey.GetHashCode();
+                }
                 if (this.ScenarioId != null)
-                    hashCode = hashCode * 59 + this.ScenarioId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ScenarioId.GetHashCode();
+                }
                 if (this.SolutionId != null)
-                    hashCode = hashCode * 59 + this.SolutionId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SolutionId.GetHashCode();
+                }
                 if (this.RunTemplateId != null)
-                    hashCode = hashCode * 59 + this.RunTemplateId.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.RunTemplateId.GetHashCode();
+                }
                 if (this.ComputeSize != null)
-                    hashCode = hashCode * 59 + this.ComputeSize.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ComputeSize.GetHashCode();
+                }
                 if (this.DatasetList != null)
-                    hashCode = hashCode * 59 + this.DatasetList.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DatasetList.GetHashCode();
+                }
                 if (this.ParametersValues != null)
-                    hashCode = hashCode * 59 + this.ParametersValues.GetHashCode();
-                hashCode = hashCode * 59 + this.SendDatasetsToDataWarehouse.GetHashCode();
-                hashCode = hashCode * 59 + this.SendInputParametersToDataWarehouse.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ParametersValues.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.SendDatasetsToDataWarehouse.GetHashCode();
+                hashCode = (hashCode * 59) + this.SendInputParametersToDataWarehouse.GetHashCode();
                 if (this.NodeLabel != null)
-                    hashCode = hashCode * 59 + this.NodeLabel.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.NodeLabel.GetHashCode();
+                }
                 if (this.Containers != null)
-                    hashCode = hashCode * 59 + this.Containers.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Containers.GetHashCode();
+                }
                 return hashCode;
             }
         }
