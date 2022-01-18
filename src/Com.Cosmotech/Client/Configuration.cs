@@ -120,6 +120,12 @@ namespace Com.Cosmotech.Client
                         {"url", "https://api.cosmotech.com"},
                         {"description", "Production"},
                     }
+                },
+                {
+                    new Dictionary<string, object> {
+                        {"url", "https://staging.api.cosmotech.com"},
+                        {"description", "Staging"},
+                    }
                 }
             };
 
