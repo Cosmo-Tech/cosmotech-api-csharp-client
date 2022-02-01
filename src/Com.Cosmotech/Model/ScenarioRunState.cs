@@ -27,47 +27,47 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// the Scenario job state
+    /// the ScenarioRun end-to-end state
     /// </summary>
-    /// <value>the Scenario job state</value>
+    /// <value>the ScenarioRun end-to-end state</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum ScenarioJobState
+    public enum ScenarioRunState
     {
-        /// <summary>
-        /// Enum Created for value: Created
-        /// </summary>
-        [EnumMember(Value = "Created")]
-        Created = 1,
-
         /// <summary>
         /// Enum Running for value: Running
         /// </summary>
         [EnumMember(Value = "Running")]
-        Running = 2,
+        Running = 1,
 
         /// <summary>
         /// Enum Successful for value: Successful
         /// </summary>
         [EnumMember(Value = "Successful")]
-        Successful = 3,
+        Successful = 2,
 
         /// <summary>
         /// Enum Failed for value: Failed
         /// </summary>
         [EnumMember(Value = "Failed")]
-        Failed = 4,
+        Failed = 3,
 
         /// <summary>
         /// Enum Unknown for value: Unknown
         /// </summary>
         [EnumMember(Value = "Unknown")]
-        Unknown = 5,
+        Unknown = 4,
 
         /// <summary>
         /// Enum DataIngestionInProgress for value: DataIngestionInProgress
         /// </summary>
         [EnumMember(Value = "DataIngestionInProgress")]
-        DataIngestionInProgress = 6
+        DataIngestionInProgress = 5,
+
+        /// <summary>
+        /// Enum DataIngestionFailure for value: DataIngestionFailure
+        /// </summary>
+        [EnumMember(Value = "DataIngestionFailure")]
+        DataIngestionFailure = 6
 
     }
 

@@ -145,6 +145,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Nodes'
         }
+        /// <summary>
+        /// Test the property 'State'
+        /// </summary>
+        [Fact]
+        public void StateTest()
+        {
+            // TODO unit test for the property 'State'
+        }
 
     }
 

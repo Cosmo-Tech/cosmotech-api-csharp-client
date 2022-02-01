@@ -237,6 +237,7 @@ Class | Method | HTTP request | Description
  - [Model.ScenarioRunLogs](docs/ScenarioRunLogs.md)
  - [Model.ScenarioRunSearch](docs/ScenarioRunSearch.md)
  - [Model.ScenarioRunStartContainers](docs/ScenarioRunStartContainers.md)
+ - [Model.ScenarioRunState](docs/ScenarioRunState.md)
  - [Model.ScenarioRunStatus](docs/ScenarioRunStatus.md)
  - [Model.ScenarioRunStatusNode](docs/ScenarioRunStatusNode.md)
  - [Model.ScenarioRunTemplateParameterValue](docs/ScenarioRunTemplateParameterValue.md)

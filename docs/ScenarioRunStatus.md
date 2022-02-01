@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Message** | **string** | a  human readable message indicating details about why the workflow is in this condition | [optional] 
 **EstimatedDuration** | **int** | estimatedDuration in seconds | [optional] 
 **Nodes** | [**List&lt;ScenarioRunStatusNode&gt;**](ScenarioRunStatusNode.md) | status of ScenarioRun nodes | [optional] 
+**State** | **ScenarioRunState** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

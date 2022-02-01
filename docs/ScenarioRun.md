@@ -6,6 +6,7 @@ a ScenarioRun with only base properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the ScenarioRun | [optional] [readonly] 
+**State** | **ScenarioRunState** |  | [optional] 
 **OrganizationId** | **string** | the Organization id | [optional] 
 **WorkflowId** | **string** | the Cosmo Tech compute cluster Argo Workflow Id to search | [optional] 
 **CsmSimulationRun** | **string** | the Cosmo Tech Simulation Run Id | [optional] [readonly] 

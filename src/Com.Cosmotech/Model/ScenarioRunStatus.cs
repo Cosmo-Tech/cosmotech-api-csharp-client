@@ -32,6 +32,12 @@ namespace Com.Cosmotech.Model
     [DataContract(Name = "ScenarioRunStatus")]
     public partial class ScenarioRunStatus : IEquatable<ScenarioRunStatus>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets State
+        /// </summary>
+        [DataMember(Name = "state", EmitDefaultValue = false)]
+        public ScenarioRunState? State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRunStatus" /> class.
         /// </summary>
@@ -46,7 +52,8 @@ namespace Com.Cosmotech.Model
         /// <param name="message">a  human readable message indicating details about why the workflow is in this condition.</param>
         /// <param name="estimatedDuration">estimatedDuration in seconds.</param>
         /// <param name="nodes">status of ScenarioRun nodes.</param>
-        public ScenarioRunStatus(string id = default(string), string organizationId = default(string), string workflowId = default(string), string workflowName = default(string), string startTime = default(string), string endTime = default(string), string phase = default(string), string progress = default(string), string message = default(string), int estimatedDuration = default(int), List<ScenarioRunStatusNode> nodes = default(List<ScenarioRunStatusNode>))
+        /// <param name="state">state.</param>
+        public ScenarioRunStatus(string id = default(string), string organizationId = default(string), string workflowId = default(string), string workflowName = default(string), string startTime = default(string), string endTime = default(string), string phase = default(string), string progress = default(string), string message = default(string), int estimatedDuration = default(int), List<ScenarioRunStatusNode> nodes = default(List<ScenarioRunStatusNode>), ScenarioRunState? state = default(ScenarioRunState?))
         {
             this.Id = id;
             this.OrganizationId = organizationId;
@@ -59,6 +66,7 @@ namespace Com.Cosmotech.Model
             this.Message = message;
             this.EstimatedDuration = estimatedDuration;
             this.Nodes = nodes;
+            this.State = state;
         }
 
         /// <summary>
@@ -157,6 +165,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  EstimatedDuration: ").Append(EstimatedDuration).Append("\n");
             sb.Append("  Nodes: ").Append(Nodes).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -246,6 +255,10 @@ namespace Com.Cosmotech.Model
                     this.Nodes != null &&
                     input.Nodes != null &&
                     this.Nodes.SequenceEqual(input.Nodes)
+                ) && 
+                (
+                    this.State == input.State ||
+                    this.State.Equals(input.State)
                 );
         }
 
@@ -299,6 +312,7 @@ namespace Com.Cosmotech.Model
                 {
                     hashCode = (hashCode * 59) + this.Nodes.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.State.GetHashCode();
                 return hashCode;
             }
         }

@@ -32,16 +32,24 @@ namespace Com.Cosmotech.Model
     [DataContract(Name = "ScenarioRun")]
     public partial class ScenarioRun : IEquatable<ScenarioRun>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets State
+        /// </summary>
+        [DataMember(Name = "state", EmitDefaultValue = false)]
+        public ScenarioRunState? State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRun" /> class.
         /// </summary>
+        /// <param name="state">state.</param>
         /// <param name="organizationId">the Organization id.</param>
         /// <param name="workflowId">the Cosmo Tech compute cluster Argo Workflow Id to search.</param>
         /// <param name="generateName">the base name for workflow name generation.</param>
         /// <param name="workflowName">the Cosmo Tech compute cluster Argo Workflow Name.</param>
         /// <param name="containers">the containers list.</param>
-        public ScenarioRun(string organizationId = default(string), string workflowId = default(string), string generateName = default(string), string workflowName = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
+        public ScenarioRun(ScenarioRunState? state = default(ScenarioRunState?), string organizationId = default(string), string workflowId = default(string), string generateName = default(string), string workflowName = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
         {
+            this.State = state;
             this.OrganizationId = organizationId;
             this.WorkflowId = workflowId;
             this.GenerateName = generateName;
@@ -303,6 +311,7 @@ namespace Com.Cosmotech.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ScenarioRun {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("  CsmSimulationRun: ").Append(CsmSimulationRun).Append("\n");
@@ -360,6 +369,10 @@ namespace Com.Cosmotech.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.State == input.State ||
+                    this.State.Equals(input.State)
                 ) && 
                 (
                     this.OrganizationId == input.OrganizationId ||
@@ -467,6 +480,7 @@ namespace Com.Cosmotech.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.State.GetHashCode();
                 if (this.OrganizationId != null)
                 {
                     hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
