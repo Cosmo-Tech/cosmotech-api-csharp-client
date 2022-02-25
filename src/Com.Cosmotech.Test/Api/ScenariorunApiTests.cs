@@ -185,5 +185,18 @@ namespace Com.Cosmotech.Test.Api
             //var response = instance.StartScenarioRunContainers(organizationId, scenarioRunStartContainers);
             //Assert.IsType<ScenarioRun>(response);
         }
+
+        /// <summary>
+        /// Test StopScenarioRun
+        /// </summary>
+        [Fact]
+        public void StopScenarioRunTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string scenariorunId = null;
+            //var response = instance.StopScenarioRun(organizationId, scenariorunId);
+            //Assert.IsType<ScenarioRunStatus>(response);
+        }
     }
 }

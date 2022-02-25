@@ -231,6 +231,26 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRunStartContainers">the raw containers definition</param>
         /// <returns>ApiResponse of ScenarioRun</returns>
         ApiResponse<ScenarioRun> StartScenarioRunContainersWithHttpInfo(string organizationId, ScenarioRunStartContainers scenarioRunStartContainers);
+        /// <summary>
+        /// stop a ScenarioRun for the Scenario
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="scenariorunId">the scenariorun identifier</param>
+        /// <returns>ScenarioRunStatus</returns>
+        ScenarioRunStatus StopScenarioRun(string organizationId, string scenariorunId);
+
+        /// <summary>
+        /// stop a ScenarioRun for the Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="scenariorunId">the scenariorun identifier</param>
+        /// <returns>ApiResponse of ScenarioRunStatus</returns>
+        ApiResponse<ScenarioRunStatus> StopScenarioRunWithHttpInfo(string organizationId, string scenariorunId);
         #endregion Synchronous Operations
     }
 
@@ -494,6 +514,31 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioRun)</returns>
         System.Threading.Tasks.Task<ApiResponse<ScenarioRun>> StartScenarioRunContainersWithHttpInfoAsync(string organizationId, ScenarioRunStartContainers scenarioRunStartContainers, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// stop a ScenarioRun for the Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="scenariorunId">the scenariorun identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ScenarioRunStatus</returns>
+        System.Threading.Tasks.Task<ScenarioRunStatus> StopScenarioRunAsync(string organizationId, string scenariorunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// stop a ScenarioRun for the Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="scenariorunId">the scenariorun identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ScenarioRunStatus)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ScenarioRunStatus>> StopScenarioRunWithHttpInfoAsync(string organizationId, string scenariorunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2285,6 +2330,170 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("StartScenarioRunContainers", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// stop a ScenarioRun for the Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="scenariorunId">the scenariorun identifier</param>
+        /// <returns>ScenarioRunStatus</returns>
+        public ScenarioRunStatus StopScenarioRun(string organizationId, string scenariorunId)
+        {
+            Com.Cosmotech.Client.ApiResponse<ScenarioRunStatus> localVarResponse = StopScenarioRunWithHttpInfo(organizationId, scenariorunId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// stop a ScenarioRun for the Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="scenariorunId">the scenariorun identifier</param>
+        /// <returns>ApiResponse of ScenarioRunStatus</returns>
+        public Com.Cosmotech.Client.ApiResponse<ScenarioRunStatus> StopScenarioRunWithHttpInfo(string organizationId, string scenariorunId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenariorunApi->StopScenarioRun");
+            }
+
+            // verify the required parameter 'scenariorunId' is set
+            if (scenariorunId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenariorunId' when calling ScenariorunApi->StopScenarioRun");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenariorun_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenariorunId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<ScenarioRunStatus>("/organizations/{organization_id}/scenarioruns/{scenariorun_id}/stop", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopScenarioRun", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// stop a ScenarioRun for the Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="scenariorunId">the scenariorun identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ScenarioRunStatus</returns>
+        public async System.Threading.Tasks.Task<ScenarioRunStatus> StopScenarioRunAsync(string organizationId, string scenariorunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<ScenarioRunStatus> localVarResponse = await StopScenarioRunWithHttpInfoAsync(organizationId, scenariorunId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// stop a ScenarioRun for the Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="scenariorunId">the scenariorun identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ScenarioRunStatus)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioRunStatus>> StopScenarioRunWithHttpInfoAsync(string organizationId, string scenariorunId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenariorunApi->StopScenarioRun");
+            }
+
+            // verify the required parameter 'scenariorunId' is set
+            if (scenariorunId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenariorunId' when calling ScenariorunApi->StopScenarioRun");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenariorun_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenariorunId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ScenarioRunStatus>("/organizations/{organization_id}/scenarioruns/{scenariorun_id}/stop", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StopScenarioRun", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
