@@ -41,8 +41,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DatasetApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var datasetId = datasetId_example;  // string | the Dataset identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
             var datasetCompatibility = new List<DatasetCompatibility>(); // List<DatasetCompatibility> | the Dataset Compatibility elements
 
             try
@@ -119,7 +119,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DatasetApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var datasetCopyParameters = new DatasetCopyParameters(); // DatasetCopyParameters | the Dataset copy parameters
 
             try
@@ -195,7 +195,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DatasetApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var dataset = new Dataset(); // Dataset | the Dataset to create
 
             try
@@ -270,8 +270,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DatasetApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var datasetId = datasetId_example;  // string | the Dataset identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
 
             try
             {
@@ -344,7 +344,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DatasetApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
 
             try
             {
@@ -416,8 +416,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DatasetApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var datasetId = datasetId_example;  // string | the Dataset identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
 
             try
             {
@@ -491,8 +491,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DatasetApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var datasetId = datasetId_example;  // string | the Dataset identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
 
             try
             {
@@ -565,7 +565,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DatasetApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var datasetSearch = new DatasetSearch(); // DatasetSearch | the Dataset search parameters
 
             try
@@ -639,8 +639,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DatasetApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var datasetId = datasetId_example;  // string | the Dataset identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
             var dataset = new Dataset(); // Dataset | the new Dataset details.
 
             try

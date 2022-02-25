@@ -177,7 +177,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UserApi(config);
-            var userId = userId_example;  // string | the User identifier
+            var userId = "userId_example";  // string | the User identifier
 
             try
             {
@@ -318,7 +318,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UserApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
 
             try
             {
@@ -390,8 +390,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UserApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -605,7 +605,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UserApi(config);
-            var userId = userId_example;  // string | the User identifier
+            var userId = "userId_example";  // string | the User identifier
 
             try
             {
@@ -677,7 +677,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UserApi(config);
-            var userId = userId_example;  // string | the User identifier
+            var userId = "userId_example";  // string | the User identifier
             var user = new User(); // User | the new User details. Organization membership is handled via the /organizations endpoint.
 
             try

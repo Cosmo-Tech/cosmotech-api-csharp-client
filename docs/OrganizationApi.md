@@ -43,7 +43,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var organizationUser = new List<OrganizationUser>(); // List<OrganizationUser> | the Users to add. Any User with the same ID is overwritten
 
             try
@@ -187,7 +187,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
 
             try
             {
@@ -333,7 +333,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
 
             try
             {
@@ -405,8 +405,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var userId = userId_example;  // string | the User identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var userId = "userId_example";  // string | the User identifier
 
             try
             {
@@ -479,7 +479,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
 
             try
             {
@@ -551,7 +551,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var organization = new Organization(); // Organization | the new Organization details
 
             try
@@ -627,7 +627,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var organizationService = new OrganizationService(); // OrganizationService | the new solutions container registry configuration to use
 
             try
@@ -702,7 +702,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var organizationService = new OrganizationService(); // OrganizationService | the new Storage configuration to use
 
             try
@@ -777,7 +777,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var requestBody = new Dictionary<string, Object>(); // Dictionary<string, Object> | the new Tenant Credentials to use
 
             try

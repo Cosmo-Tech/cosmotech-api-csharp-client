@@ -41,7 +41,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ValidatorApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var validator = new Validator(); // Validator | the Validator to create
 
             try
@@ -116,8 +116,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ValidatorApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var validatorId = validatorId_example;  // string | the ValidatorRun identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var validatorId = "validatorId_example";  // string | the ValidatorRun identifier
             var validatorRun = new ValidatorRun(); // ValidatorRun | the Validator Run to create
 
             try
@@ -193,8 +193,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ValidatorApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var validatorId = validatorId_example;  // string | the Validator identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var validatorId = "validatorId_example";  // string | the Validator identifier
 
             try
             {
@@ -267,9 +267,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ValidatorApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var validatorId = validatorId_example;  // string | the Validator identifier
-            var validatorrunId = validatorrunId_example;  // string | the Validator Run identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var validatorId = "validatorId_example";  // string | the Validator identifier
+            var validatorrunId = "validatorrunId_example";  // string | the Validator Run identifier
 
             try
             {
@@ -343,8 +343,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ValidatorApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var validatorId = validatorId_example;  // string | the ValidatorRun identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var validatorId = "validatorId_example";  // string | the ValidatorRun identifier
 
             try
             {
@@ -417,7 +417,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ValidatorApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
 
             try
             {
@@ -489,8 +489,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ValidatorApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var validatorId = validatorId_example;  // string | the Validator identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var validatorId = "validatorId_example";  // string | the Validator identifier
 
             try
             {
@@ -564,9 +564,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ValidatorApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var validatorId = validatorId_example;  // string | the Validator identifier
-            var validatorrunId = validatorrunId_example;  // string | the Validator Run identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var validatorId = "validatorId_example";  // string | the Validator identifier
+            var validatorrunId = "validatorrunId_example";  // string | the Validator Run identifier
 
             try
             {
@@ -641,8 +641,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ValidatorApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var validatorId = validatorId_example;  // string | the ValidatorRun identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var validatorId = "validatorId_example";  // string | the ValidatorRun identifier
             var validatorRun = new ValidatorRun(); // ValidatorRun | the Validator to run
 
             try

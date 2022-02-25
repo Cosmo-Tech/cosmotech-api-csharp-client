@@ -43,8 +43,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var scenariorunId = scenariorunId_example;  // string | the ScenarioRun identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var scenariorunId = "scenariorunId_example";  // string | the ScenarioRun identifier
 
             try
             {
@@ -118,8 +118,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var scenariorunId = scenariorunId_example;  // string | the ScenarioRun identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var scenariorunId = "scenariorunId_example";  // string | the ScenarioRun identifier
 
             try
             {
@@ -193,8 +193,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var scenariorunId = scenariorunId_example;  // string | the ScenarioRun identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var scenariorunId = "scenariorunId_example";  // string | the ScenarioRun identifier
 
             try
             {
@@ -269,8 +269,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var scenariorunId = scenariorunId_example;  // string | the ScenarioRun identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var scenariorunId = "scenariorunId_example";  // string | the ScenarioRun identifier
 
             try
             {
@@ -343,8 +343,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var scenariorunId = scenariorunId_example;  // string | the ScenarioRun identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var scenariorunId = "scenariorunId_example";  // string | the ScenarioRun identifier
 
             try
             {
@@ -417,9 +417,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
 
             try
             {
@@ -493,8 +493,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -567,9 +567,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
 
             try
             {
@@ -643,7 +643,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var scenarioRunSearch = new ScenarioRunSearch(); // ScenarioRunSearch | the ScenarioRun search parameters
 
             try
@@ -717,7 +717,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var scenarioRunStartContainers = new ScenarioRunStartContainers(); // ScenarioRunStartContainers | the raw containers definition
 
             try
@@ -793,8 +793,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenariorunApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var scenariorunId = scenariorunId_example;  // string | the scenariorun identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var scenariorunId = "scenariorunId_example";  // string | the scenariorun identifier
 
             try
             {

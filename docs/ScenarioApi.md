@@ -47,9 +47,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
             var scenarioRunTemplateParameterValue = new List<ScenarioRunTemplateParameterValue>(); // List<ScenarioRunTemplateParameterValue> | the Parameter Value to add. Any Parameter Value with the same ID is overwritten
 
             try
@@ -127,9 +127,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
             var scenarioUser = new List<ScenarioUser>(); // List<ScenarioUser> | the Users to add. Any User with the same ID is overwritten
 
             try
@@ -207,10 +207,10 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
-            var comparedScenarioId = comparedScenarioId_example;  // string | the Scenario identifier to compare to
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
+            var comparedScenarioId = "comparedScenarioId_example";  // string | the Scenario identifier to compare to
 
             try
             {
@@ -286,8 +286,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenario = new Scenario(); // Scenario | the Scenario to create
 
             try
@@ -363,8 +363,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -437,10 +437,10 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
-            var waitRelationshipPropagation = true;  // bool? | whether to wait until child scenarios are effectively updated (optional)  (default to false)
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
+            var waitRelationshipPropagation = false;  // bool? | whether to wait until child scenarios are effectively updated (optional)  (default to false)
 
             try
             {
@@ -515,9 +515,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
 
             try
             {
@@ -592,8 +592,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -666,9 +666,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
 
             try
             {
@@ -743,10 +743,10 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
-            var downloadId = downloadId_example;  // string | the Scenario Download identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
+            var downloadId = "downloadId_example";  // string | the Scenario Download identifier
 
             try
             {
@@ -822,8 +822,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -896,9 +896,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
 
             try
             {
@@ -972,9 +972,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
 
             try
             {
@@ -1048,10 +1048,10 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
-            var userId = userId_example;  // string | the User identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
+            var userId = "userId_example";  // string | the User identifier
 
             try
             {
@@ -1126,9 +1126,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ScenarioApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var scenarioId = scenarioId_example;  // string | the Scenario identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
             var scenario = new Scenario(); // Scenario | the new Scenario details.
 
             try

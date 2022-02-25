@@ -104,7 +104,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ConnectorApi(config);
-            var connectorId = connectorId_example;  // string | the Connector identifier
+            var connectorId = "connectorId_example";  // string | the Connector identifier
 
             try
             {
@@ -250,7 +250,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ConnectorApi(config);
-            var connectorId = connectorId_example;  // string | the Connector identifier
+            var connectorId = "connectorId_example";  // string | the Connector identifier
 
             try
             {

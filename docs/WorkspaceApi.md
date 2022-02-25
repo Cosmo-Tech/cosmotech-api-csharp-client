@@ -45,8 +45,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var workspaceUser = new List<WorkspaceUser>(); // List<WorkspaceUser> | the Users to add. Any User with the same ID is overwritten
 
             try
@@ -122,7 +122,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspace = new Workspace(); // Workspace | the Workspace to create
 
             try
@@ -197,8 +197,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -271,8 +271,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -347,9 +347,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var fileName = fileName_example;  // string | the file name
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var fileName = "fileName_example";  // string | the file name
 
             try
             {
@@ -423,9 +423,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var fileName = fileName_example;  // string | the file name
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var fileName = "fileName_example";  // string | the file name
 
             try
             {
@@ -500,8 +500,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -575,7 +575,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
 
             try
             {
@@ -647,8 +647,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -722,8 +722,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
 
             try
             {
@@ -796,9 +796,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var userId = userId_example;  // string | the User identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var userId = "userId_example";  // string | the User identifier
 
             try
             {
@@ -872,8 +872,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var workspace = new Workspace(); // Workspace | the new Workspace details.
 
             try
@@ -950,11 +950,11 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WorkspaceApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var workspaceId = workspaceId_example;  // string | the Workspace identifier
-            var file = BINARY_DATA_HERE;  // System.IO.Stream | 
-            var overwrite = true;  // bool? |  (optional)  (default to false)
-            var destination = destination_example;  // string | Destination path. Must end with a '/' if specifying a folder. Note that paths may or may not start with a '/', but they are always treated as relative to the Workspace root location.  (optional) 
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
+            var overwrite = false;  // bool? |  (optional)  (default to false)
+            var destination = "destination_example";  // string | Destination path. Must end with a '/' if specifying a folder. Note that paths may or may not start with a '/', but they are always treated as relative to the Workspace root location.  (optional) 
 
             try
             {

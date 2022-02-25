@@ -47,8 +47,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
             var runTemplateParameterGroup = new List<RunTemplateParameterGroup>(); // List<RunTemplateParameterGroup> | the Parameter Groups
 
             try
@@ -125,8 +125,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
             var runTemplateParameter = new List<RunTemplateParameter>(); // List<RunTemplateParameter> | the Parameters
 
             try
@@ -203,8 +203,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
             var runTemplate = new List<RunTemplate>(); // List<RunTemplate> | the Run Templates
 
             try
@@ -281,7 +281,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
             var solution = new Solution(); // Solution | the Solution to create
 
             try
@@ -356,8 +356,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
 
             try
             {
@@ -430,9 +430,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
-            var runTemplateId = runTemplateId_example;  // string | the Run Template identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
+            var runTemplateId = "runTemplateId_example";  // string | the Run Template identifier
 
             try
             {
@@ -506,10 +506,10 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
-            var runTemplateId = runTemplateId_example;  // string | the Run Template identifier
-            var handlerId = ;  // RunTemplateHandlerId | the Handler identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
+            var runTemplateId = "runTemplateId_example";  // string | the Run Template identifier
+            var handlerId = (RunTemplateHandlerId) "parameters_handler";  // RunTemplateHandlerId | the Handler identifier
 
             try
             {
@@ -585,7 +585,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
 
             try
             {
@@ -657,8 +657,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
 
             try
             {
@@ -732,8 +732,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
 
             try
             {
@@ -806,8 +806,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
 
             try
             {
@@ -880,8 +880,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
 
             try
             {
@@ -954,8 +954,8 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
             var solution = new Solution(); // Solution | the new Solution details.
 
             try
@@ -1032,9 +1032,9 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
-            var runTemplateId = runTemplateId_example;  // string | the Run Template identifier
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
+            var runTemplateId = "runTemplateId_example";  // string | the Run Template identifier
             var runTemplate = new RunTemplate(); // RunTemplate | the Run Templates
 
             try
@@ -1112,12 +1112,12 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SolutionApi(config);
-            var organizationId = organizationId_example;  // string | the Organization identifier
-            var solutionId = solutionId_example;  // string | the Solution identifier
-            var runTemplateId = runTemplateId_example;  // string | the Run Template identifier
-            var handlerId = ;  // RunTemplateHandlerId | the Handler identifier
-            var body = BINARY_DATA_HERE;  // System.IO.Stream | 
-            var overwrite = true;  // bool? | whether to overwrite any existing handler resource (optional)  (default to false)
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
+            var runTemplateId = "runTemplateId_example";  // string | the Run Template identifier
+            var handlerId = (RunTemplateHandlerId) "parameters_handler";  // RunTemplateHandlerId | the Handler identifier
+            var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
+            var overwrite = false;  // bool? | whether to overwrite any existing handler resource (optional)  (default to false)
 
             try
             {
