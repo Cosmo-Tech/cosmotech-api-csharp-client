@@ -46,7 +46,7 @@ namespace Com.Cosmotech.Model
         /// <param name="workflowId">the Cosmo Tech compute cluster Argo Workflow Id to search.</param>
         /// <param name="generateName">the base name for workflow name generation.</param>
         /// <param name="workflowName">the Cosmo Tech compute cluster Argo Workflow Name.</param>
-        /// <param name="containers">the containers list.</param>
+        /// <param name="containers">the containers list. This information is not returned by the API..</param>
         public ScenarioRun(ScenarioRunState? state = default(ScenarioRunState?), string organizationId = default(string), string workflowId = default(string), string generateName = default(string), string workflowName = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
         {
             this.State = state;
@@ -296,9 +296,9 @@ namespace Com.Cosmotech.Model
             return false;
         }
         /// <summary>
-        /// the containers list
+        /// the containers list. This information is not returned by the API.
         /// </summary>
-        /// <value>the containers list</value>
+        /// <value>the containers list. This information is not returned by the API.</value>
         [DataMember(Name = "containers", EmitDefaultValue = false)]
         public List<ScenarioRunContainer> Containers { get; set; }
 
