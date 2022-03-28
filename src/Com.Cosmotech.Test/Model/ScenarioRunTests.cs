@@ -170,6 +170,22 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'ComputeSize'
         }
         /// <summary>
+        /// Test the property 'SdkVersion'
+        /// </summary>
+        [Fact]
+        public void SdkVersionTest()
+        {
+            // TODO unit test for the property 'SdkVersion'
+        }
+        /// <summary>
+        /// Test the property 'NoDataIngestionState'
+        /// </summary>
+        [Fact]
+        public void NoDataIngestionStateTest()
+        {
+            // TODO unit test for the property 'NoDataIngestionState'
+        }
+        /// <summary>
         /// Test the property 'DatasetList'
         /// </summary>
         [Fact]

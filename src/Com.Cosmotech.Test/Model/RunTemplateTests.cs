@@ -106,6 +106,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'ComputeSize'
         }
         /// <summary>
+        /// Test the property 'NoDataIngestionState'
+        /// </summary>
+        [Fact]
+        public void NoDataIngestionStateTest()
+        {
+            // TODO unit test for the property 'NoDataIngestionState'
+        }
+        /// <summary>
         /// Test the property 'FetchDatasets'
         /// </summary>
         [Fact]

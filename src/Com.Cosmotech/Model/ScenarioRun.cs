@@ -46,14 +46,18 @@ namespace Com.Cosmotech.Model
         /// <param name="workflowId">the Cosmo Tech compute cluster Argo Workflow Id to search.</param>
         /// <param name="generateName">the base name for workflow name generation.</param>
         /// <param name="workflowName">the Cosmo Tech compute cluster Argo Workflow Name.</param>
+        /// <param name="sdkVersion">the MAJOR.MINOR version used to build the solution solution.</param>
+        /// <param name="noDataIngestionState">set to true if the run template does not use any Datawarehouse consumers (AMQP consumers for Azure).</param>
         /// <param name="containers">the containers list. This information is not returned by the API..</param>
-        public ScenarioRun(ScenarioRunState? state = default(ScenarioRunState?), string organizationId = default(string), string workflowId = default(string), string generateName = default(string), string workflowName = default(string), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
+        public ScenarioRun(ScenarioRunState? state = default(ScenarioRunState?), string organizationId = default(string), string workflowId = default(string), string generateName = default(string), string workflowName = default(string), string sdkVersion = default(string), bool noDataIngestionState = default(bool), List<ScenarioRunContainer> containers = default(List<ScenarioRunContainer>))
         {
             this.State = state;
             this.OrganizationId = organizationId;
             this.WorkflowId = workflowId;
             this.GenerateName = generateName;
             this.WorkflowName = workflowName;
+            this.SdkVersion = sdkVersion;
+            this.NoDataIngestionState = noDataIngestionState;
             this.Containers = containers;
         }
 
@@ -221,6 +225,20 @@ namespace Com.Cosmotech.Model
             return false;
         }
         /// <summary>
+        /// the MAJOR.MINOR version used to build the solution solution
+        /// </summary>
+        /// <value>the MAJOR.MINOR version used to build the solution solution</value>
+        [DataMember(Name = "sdkVersion", EmitDefaultValue = false)]
+        public string SdkVersion { get; set; }
+
+        /// <summary>
+        /// set to true if the run template does not use any Datawarehouse consumers (AMQP consumers for Azure)
+        /// </summary>
+        /// <value>set to true if the run template does not use any Datawarehouse consumers (AMQP consumers for Azure)</value>
+        [DataMember(Name = "noDataIngestionState", EmitDefaultValue = true)]
+        public bool NoDataIngestionState { get; set; }
+
+        /// <summary>
         /// the list of Dataset Id associated to this Analysis
         /// </summary>
         /// <value>the list of Dataset Id associated to this Analysis</value>
@@ -324,6 +342,8 @@ namespace Com.Cosmotech.Model
             sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
             sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
             sb.Append("  ComputeSize: ").Append(ComputeSize).Append("\n");
+            sb.Append("  SdkVersion: ").Append(SdkVersion).Append("\n");
+            sb.Append("  NoDataIngestionState: ").Append(NoDataIngestionState).Append("\n");
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
             sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
             sb.Append("  SendDatasetsToDataWarehouse: ").Append(SendDatasetsToDataWarehouse).Append("\n");
@@ -435,6 +455,15 @@ namespace Com.Cosmotech.Model
                     this.ComputeSize.Equals(input.ComputeSize))
                 ) && 
                 (
+                    this.SdkVersion == input.SdkVersion ||
+                    (this.SdkVersion != null &&
+                    this.SdkVersion.Equals(input.SdkVersion))
+                ) && 
+                (
+                    this.NoDataIngestionState == input.NoDataIngestionState ||
+                    this.NoDataIngestionState.Equals(input.NoDataIngestionState)
+                ) && 
+                (
                     this.DatasetList == input.DatasetList ||
                     this.DatasetList != null &&
                     input.DatasetList != null &&
@@ -529,6 +558,11 @@ namespace Com.Cosmotech.Model
                 {
                     hashCode = (hashCode * 59) + this.ComputeSize.GetHashCode();
                 }
+                if (this.SdkVersion != null)
+                {
+                    hashCode = (hashCode * 59) + this.SdkVersion.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.NoDataIngestionState.GetHashCode();
                 if (this.DatasetList != null)
                 {
                     hashCode = (hashCode * 59) + this.DatasetList.GetHashCode();

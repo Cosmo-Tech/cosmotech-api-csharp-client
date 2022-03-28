@@ -122,6 +122,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'OwnerId'
         }
         /// <summary>
+        /// Test the property 'SdkVersion'
+        /// </summary>
+        [Fact]
+        public void SdkVersionTest()
+        {
+            // TODO unit test for the property 'SdkVersion'
+        }
+        /// <summary>
         /// Test the property 'Url'
         /// </summary>
         [Fact]

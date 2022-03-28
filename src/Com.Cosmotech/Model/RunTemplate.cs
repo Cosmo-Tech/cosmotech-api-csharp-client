@@ -82,6 +82,7 @@ namespace Com.Cosmotech.Model
         /// <param name="csmSimulation">the Cosmo Tech simulation name. This information is send to the Engine. Mandatory information if no Engine is defined.</param>
         /// <param name="tags">the list of Run Template tags.</param>
         /// <param name="computeSize">the compute size needed for this Run Template. Standard sizes are basic and highcpu. Default is basic.</param>
+        /// <param name="noDataIngestionState">set to true if the run template does not want to check data ingestion state (no probes or not control plane).</param>
         /// <param name="fetchDatasets">whether or not the fetch dataset step is done.</param>
         /// <param name="scenarioDataDownloadTransform">whether or not the scenario data download transform step step is done.</param>
         /// <param name="fetchScenarioParameters">whether or not the fetch parameters step is done.</param>
@@ -101,7 +102,7 @@ namespace Com.Cosmotech.Model
         /// <param name="scenariodataTransformSource">scenariodataTransformSource.</param>
         /// <param name="parameterGroups">the ordered list of parameters groups for the Run Template.</param>
         /// <param name="stackSteps">whether or not to stack adjacent scenario run steps in one container run which will chain steps.</param>
-        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool fetchDatasets = default(bool), bool scenarioDataDownloadTransform = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? scenariodataTransformSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>), bool stackSteps = default(bool))
+        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool noDataIngestionState = default(bool), bool fetchDatasets = default(bool), bool scenarioDataDownloadTransform = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? scenariodataTransformSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>), bool stackSteps = default(bool))
         {
             // to ensure "id" is required (not null)
             if (id == null) {
@@ -117,6 +118,7 @@ namespace Com.Cosmotech.Model
             this.CsmSimulation = csmSimulation;
             this.Tags = tags;
             this.ComputeSize = computeSize;
+            this.NoDataIngestionState = noDataIngestionState;
             this.FetchDatasets = fetchDatasets;
             this.ScenarioDataDownloadTransform = scenarioDataDownloadTransform;
             this.FetchScenarioParameters = fetchScenarioParameters;
@@ -179,6 +181,13 @@ namespace Com.Cosmotech.Model
         /// <value>the compute size needed for this Run Template. Standard sizes are basic and highcpu. Default is basic</value>
         [DataMember(Name = "computeSize", EmitDefaultValue = false)]
         public string ComputeSize { get; set; }
+
+        /// <summary>
+        /// set to true if the run template does not want to check data ingestion state (no probes or not control plane)
+        /// </summary>
+        /// <value>set to true if the run template does not want to check data ingestion state (no probes or not control plane)</value>
+        [DataMember(Name = "noDataIngestionState", EmitDefaultValue = true)]
+        public bool NoDataIngestionState { get; set; }
 
         /// <summary>
         /// whether or not the fetch dataset step is done
@@ -285,6 +294,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  CsmSimulation: ").Append(CsmSimulation).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ComputeSize: ").Append(ComputeSize).Append("\n");
+            sb.Append("  NoDataIngestionState: ").Append(NoDataIngestionState).Append("\n");
             sb.Append("  FetchDatasets: ").Append(FetchDatasets).Append("\n");
             sb.Append("  ScenarioDataDownloadTransform: ").Append(ScenarioDataDownloadTransform).Append("\n");
             sb.Append("  FetchScenarioParameters: ").Append(FetchScenarioParameters).Append("\n");
@@ -369,6 +379,10 @@ namespace Com.Cosmotech.Model
                     this.ComputeSize == input.ComputeSize ||
                     (this.ComputeSize != null &&
                     this.ComputeSize.Equals(input.ComputeSize))
+                ) && 
+                (
+                    this.NoDataIngestionState == input.NoDataIngestionState ||
+                    this.NoDataIngestionState.Equals(input.NoDataIngestionState)
                 ) && 
                 (
                     this.FetchDatasets == input.FetchDatasets ||
@@ -483,6 +497,7 @@ namespace Com.Cosmotech.Model
                 {
                     hashCode = (hashCode * 59) + this.ComputeSize.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.NoDataIngestionState.GetHashCode();
                 hashCode = (hashCode * 59) + this.FetchDatasets.GetHashCode();
                 hashCode = (hashCode * 59) + this.ScenarioDataDownloadTransform.GetHashCode();
                 hashCode = (hashCode * 59) + this.FetchScenarioParameters.GetHashCode();

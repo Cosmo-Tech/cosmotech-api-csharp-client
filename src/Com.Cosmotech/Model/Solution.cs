@@ -46,12 +46,13 @@ namespace Com.Cosmotech.Model
         /// <param name="repository">the registry repository containing the image (required).</param>
         /// <param name="csmSimulator">the main Cosmo Tech simulator name used in standard Run Template.</param>
         /// <param name="version">the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag (required).</param>
+        /// <param name="sdkVersion">the MAJOR.MINOR version used to build this solution.</param>
         /// <param name="url">an optional URL link to solution page.</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="parameters">the list of Run Template Parameters.</param>
         /// <param name="parameterGroups">the list of parameters groups for the Run Templates.</param>
         /// <param name="runTemplates">list of Run Template (required).</param>
-        public Solution(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string csmSimulator = default(string), string version = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplateParameter> parameters = default(List<RunTemplateParameter>), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>), List<RunTemplate> runTemplates = default(List<RunTemplate>))
+        public Solution(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string csmSimulator = default(string), string version = default(string), string sdkVersion = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplateParameter> parameters = default(List<RunTemplateParameter>), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>), List<RunTemplate> runTemplates = default(List<RunTemplate>))
         {
             // to ensure "key" is required (not null)
             if (key == null) {
@@ -80,6 +81,7 @@ namespace Com.Cosmotech.Model
             this.RunTemplates = runTemplates;
             this.Description = description;
             this.CsmSimulator = csmSimulator;
+            this.SdkVersion = sdkVersion;
             this.Url = url;
             this.Tags = tags;
             this.Parameters = parameters;
@@ -159,6 +161,13 @@ namespace Com.Cosmotech.Model
             return false;
         }
         /// <summary>
+        /// the MAJOR.MINOR version used to build this solution
+        /// </summary>
+        /// <value>the MAJOR.MINOR version used to build this solution</value>
+        [DataMember(Name = "sdkVersion", EmitDefaultValue = false)]
+        public string SdkVersion { get; set; }
+
+        /// <summary>
         /// an optional URL link to solution page
         /// </summary>
         /// <value>an optional URL link to solution page</value>
@@ -209,6 +218,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  CsmSimulator: ").Append(CsmSimulator).Append("\n");
             sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
+            sb.Append("  SdkVersion: ").Append(SdkVersion).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
@@ -290,6 +300,11 @@ namespace Com.Cosmotech.Model
                     this.OwnerId.Equals(input.OwnerId))
                 ) && 
                 (
+                    this.SdkVersion == input.SdkVersion ||
+                    (this.SdkVersion != null &&
+                    this.SdkVersion.Equals(input.SdkVersion))
+                ) && 
+                (
                     this.Url == input.Url ||
                     (this.Url != null &&
                     this.Url.Equals(input.Url))
@@ -360,6 +375,10 @@ namespace Com.Cosmotech.Model
                 if (this.OwnerId != null)
                 {
                     hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                }
+                if (this.SdkVersion != null)
+                {
+                    hashCode = (hashCode * 59) + this.SdkVersion.GetHashCode();
                 }
                 if (this.Url != null)
                 {
