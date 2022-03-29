@@ -102,7 +102,10 @@ namespace Com.Cosmotech.Model
         /// <param name="scenariodataTransformSource">scenariodataTransformSource.</param>
         /// <param name="parameterGroups">the ordered list of parameters groups for the Run Template.</param>
         /// <param name="stackSteps">whether or not to stack adjacent scenario run steps in one container run which will chain steps.</param>
-        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool noDataIngestionState = default(bool), bool fetchDatasets = default(bool), bool scenarioDataDownloadTransform = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? scenariodataTransformSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>), bool stackSteps = default(bool))
+        /// <param name="gitRepositoryUrl">an optional URL to the git repository.</param>
+        /// <param name="gitBranchName">an optional git branch name.</param>
+        /// <param name="runTemplateSourceDir">an optional directory where to find the run template source.</param>
+        public RunTemplate(string id = default(string), string name = default(string), string description = default(string), string csmSimulation = default(string), List<string> tags = default(List<string>), string computeSize = default(string), bool noDataIngestionState = default(bool), bool fetchDatasets = default(bool), bool scenarioDataDownloadTransform = default(bool), bool fetchScenarioParameters = default(bool), bool applyParameters = default(bool), bool validateData = default(bool), bool sendDatasetsToDataWarehouse = default(bool), bool sendInputParametersToDataWarehouse = default(bool), bool preRun = default(bool), bool run = default(bool), bool postRun = default(bool), bool parametersJson = default(bool), RunTemplateStepSource? parametersHandlerSource = default(RunTemplateStepSource?), RunTemplateStepSource? datasetValidatorSource = default(RunTemplateStepSource?), RunTemplateStepSource? preRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? runSource = default(RunTemplateStepSource?), RunTemplateStepSource? postRunSource = default(RunTemplateStepSource?), RunTemplateStepSource? scenariodataTransformSource = default(RunTemplateStepSource?), List<string> parameterGroups = default(List<string>), bool stackSteps = default(bool), string gitRepositoryUrl = default(string), string gitBranchName = default(string), string runTemplateSourceDir = default(string))
         {
             // to ensure "id" is required (not null)
             if (id == null) {
@@ -138,6 +141,9 @@ namespace Com.Cosmotech.Model
             this.ScenariodataTransformSource = scenariodataTransformSource;
             this.ParameterGroups = parameterGroups;
             this.StackSteps = stackSteps;
+            this.GitRepositoryUrl = gitRepositoryUrl;
+            this.GitBranchName = gitBranchName;
+            this.RunTemplateSourceDir = runTemplateSourceDir;
         }
 
         /// <summary>
@@ -281,6 +287,27 @@ namespace Com.Cosmotech.Model
         public bool StackSteps { get; set; }
 
         /// <summary>
+        /// an optional URL to the git repository
+        /// </summary>
+        /// <value>an optional URL to the git repository</value>
+        [DataMember(Name = "gitRepositoryUrl", EmitDefaultValue = false)]
+        public string GitRepositoryUrl { get; set; }
+
+        /// <summary>
+        /// an optional git branch name
+        /// </summary>
+        /// <value>an optional git branch name</value>
+        [DataMember(Name = "gitBranchName", EmitDefaultValue = false)]
+        public string GitBranchName { get; set; }
+
+        /// <summary>
+        /// an optional directory where to find the run template source
+        /// </summary>
+        /// <value>an optional directory where to find the run template source</value>
+        [DataMember(Name = "runTemplateSourceDir", EmitDefaultValue = false)]
+        public string RunTemplateSourceDir { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -314,6 +341,9 @@ namespace Com.Cosmotech.Model
             sb.Append("  ScenariodataTransformSource: ").Append(ScenariodataTransformSource).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("  StackSteps: ").Append(StackSteps).Append("\n");
+            sb.Append("  GitRepositoryUrl: ").Append(GitRepositoryUrl).Append("\n");
+            sb.Append("  GitBranchName: ").Append(GitBranchName).Append("\n");
+            sb.Append("  RunTemplateSourceDir: ").Append(RunTemplateSourceDir).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -461,6 +491,21 @@ namespace Com.Cosmotech.Model
                 (
                     this.StackSteps == input.StackSteps ||
                     this.StackSteps.Equals(input.StackSteps)
+                ) && 
+                (
+                    this.GitRepositoryUrl == input.GitRepositoryUrl ||
+                    (this.GitRepositoryUrl != null &&
+                    this.GitRepositoryUrl.Equals(input.GitRepositoryUrl))
+                ) && 
+                (
+                    this.GitBranchName == input.GitBranchName ||
+                    (this.GitBranchName != null &&
+                    this.GitBranchName.Equals(input.GitBranchName))
+                ) && 
+                (
+                    this.RunTemplateSourceDir == input.RunTemplateSourceDir ||
+                    (this.RunTemplateSourceDir != null &&
+                    this.RunTemplateSourceDir.Equals(input.RunTemplateSourceDir))
                 );
         }
 
@@ -520,6 +565,18 @@ namespace Com.Cosmotech.Model
                     hashCode = (hashCode * 59) + this.ParameterGroups.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.StackSteps.GetHashCode();
+                if (this.GitRepositoryUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.GitRepositoryUrl.GetHashCode();
+                }
+                if (this.GitBranchName != null)
+                {
+                    hashCode = (hashCode * 59) + this.GitBranchName.GetHashCode();
+                }
+                if (this.RunTemplateSourceDir != null)
+                {
+                    hashCode = (hashCode * 59) + this.RunTemplateSourceDir.GetHashCode();
+                }
                 return hashCode;
             }
         }

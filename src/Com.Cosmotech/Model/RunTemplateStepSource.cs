@@ -27,23 +27,35 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// the source local or cloud
+    /// the source local, cloud or git repository
     /// </summary>
-    /// <value>the source local or cloud</value>
+    /// <value>the source local, cloud or git repository</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum RunTemplateStepSource
     {
         /// <summary>
-        /// Enum Local for value: local
-        /// </summary>
-        [EnumMember(Value = "local")]
-        Local = 1,
-
-        /// <summary>
         /// Enum Cloud for value: cloud
         /// </summary>
         [EnumMember(Value = "cloud")]
-        Cloud = 2
+        Cloud = 1,
+
+        /// <summary>
+        /// Enum Git for value: git
+        /// </summary>
+        [EnumMember(Value = "git")]
+        Git = 2,
+
+        /// <summary>
+        /// Enum Local for value: local
+        /// </summary>
+        [EnumMember(Value = "local")]
+        Local = 3,
+
+        /// <summary>
+        /// Enum Platform for value: platform
+        /// </summary>
+        [EnumMember(Value = "platform")]
+        Platform = 4
 
     }
 

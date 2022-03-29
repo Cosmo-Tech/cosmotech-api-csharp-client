@@ -1,5 +1,5 @@
 # Com.Cosmotech.Model.RunTemplateStepSource
-the source local or cloud
+the source local, cloud or git repository
 
 ## Properties
 

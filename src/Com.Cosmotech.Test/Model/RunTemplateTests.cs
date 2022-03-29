@@ -265,6 +265,30 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'StackSteps'
         }
+        /// <summary>
+        /// Test the property 'GitRepositoryUrl'
+        /// </summary>
+        [Fact]
+        public void GitRepositoryUrlTest()
+        {
+            // TODO unit test for the property 'GitRepositoryUrl'
+        }
+        /// <summary>
+        /// Test the property 'GitBranchName'
+        /// </summary>
+        [Fact]
+        public void GitBranchNameTest()
+        {
+            // TODO unit test for the property 'GitBranchName'
+        }
+        /// <summary>
+        /// Test the property 'RunTemplateSourceDir'
+        /// </summary>
+        [Fact]
+        public void RunTemplateSourceDirTest()
+        {
+            // TODO unit test for the property 'RunTemplateSourceDir'
+        }
 
     }
 
