@@ -27,47 +27,35 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// the Run Template step handler identifier
+    /// the validation status of the scenario
     /// </summary>
-    /// <value>the Run Template step handler identifier</value>
+    /// <value>the validation status of the scenario</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum RunTemplateHandlerId
+    public enum ScenarioValidationStatus
     {
         /// <summary>
-        /// Enum ParametersHandler for value: parameters_handler
+        /// Enum Draft for value: Draft
         /// </summary>
-        [EnumMember(Value = "parameters_handler")]
-        ParametersHandler = 1,
+        [EnumMember(Value = "Draft")]
+        Draft = 1,
 
         /// <summary>
-        /// Enum Validator for value: validator
+        /// Enum Rejected for value: Rejected
         /// </summary>
-        [EnumMember(Value = "validator")]
-        Validator = 2,
+        [EnumMember(Value = "Rejected")]
+        Rejected = 2,
 
         /// <summary>
-        /// Enum Prerun for value: prerun
+        /// Enum Unknown for value: Unknown
         /// </summary>
-        [EnumMember(Value = "prerun")]
-        Prerun = 3,
+        [EnumMember(Value = "Unknown")]
+        Unknown = 3,
 
         /// <summary>
-        /// Enum Engine for value: engine
+        /// Enum Validated for value: Validated
         /// </summary>
-        [EnumMember(Value = "engine")]
-        Engine = 4,
-
-        /// <summary>
-        /// Enum Postrun for value: postrun
-        /// </summary>
-        [EnumMember(Value = "postrun")]
-        Postrun = 5,
-
-        /// <summary>
-        /// Enum ScenariodataTransform for value: scenariodata_transform
-        /// </summary>
-        [EnumMember(Value = "scenariodata_transform")]
-        ScenariodataTransform = 6
+        [EnumMember(Value = "Validated")]
+        Validated = 4
 
     }
 
