@@ -14,11 +14,9 @@ jobs:
         dotnet-version: 3.1.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
     - name: Create the package
       run: dotnet pack -p:PackageVersion=${{ github.event.release.tag_name }} --configuration Release
     - name: Publish the package to nuget.org
-      run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push src/Com.Cosmotech/bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
       env:
         NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
