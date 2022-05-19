@@ -17,7 +17,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Create the package
-      run: dotnet -p:PackageVersion=${{ github.event.release.tag_name }} --configuration Release Com.Cosmotech
+      run: dotnet pack -p:PackageVersion=${{ github.event.release.tag_name }} --configuration Release Com.Cosmotech
     - name: Publish the package to nuget.org
       run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
       env:
