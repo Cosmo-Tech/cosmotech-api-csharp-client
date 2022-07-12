@@ -289,6 +289,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'RunTemplateSourceDir'
         }
+        /// <summary>
+        /// Test the property 'ExecutionTimeout'
+        /// </summary>
+        [Fact]
+        public void ExecutionTimeoutTest()
+        {
+            // TODO unit test for the property 'ExecutionTimeout'
+        }
 
     }
 
