@@ -41,8 +41,8 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="RunTemplateParameter" /> class.
         /// </summary>
         /// <param name="id">the Parameter id (required).</param>
-        /// <param name="labels">a translated label with key as ISO 639-1 code (required).</param>
-        /// <param name="varType">the variable type for the parameter. Basic types or special type %DATASETID% (required).</param>
+        /// <param name="labels">a translated label with key as ISO 639-1 code.</param>
+        /// <param name="varType">the variable type for the parameter. Basic types or special type %DATASETID%.</param>
         /// <param name="defaultValue">the default value for this parameter.</param>
         /// <param name="minValue">the minimum value for this parameter.</param>
         /// <param name="maxValue">the maximum value for this parameter.</param>
@@ -55,15 +55,7 @@ namespace Com.Cosmotech.Model
                 throw new ArgumentNullException("id is a required property for RunTemplateParameter and cannot be null");
             }
             this.Id = id;
-            // to ensure "labels" is required (not null)
-            if (labels == null) {
-                throw new ArgumentNullException("labels is a required property for RunTemplateParameter and cannot be null");
-            }
             this.Labels = labels;
-            // to ensure "varType" is required (not null)
-            if (varType == null) {
-                throw new ArgumentNullException("varType is a required property for RunTemplateParameter and cannot be null");
-            }
             this.VarType = varType;
             this.DefaultValue = defaultValue;
             this.MinValue = minValue;
@@ -83,14 +75,14 @@ namespace Com.Cosmotech.Model
         /// a translated label with key as ISO 639-1 code
         /// </summary>
         /// <value>a translated label with key as ISO 639-1 code</value>
-        [DataMember(Name = "labels", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "labels", EmitDefaultValue = false)]
         public Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
         /// the variable type for the parameter. Basic types or special type %DATASETID%
         /// </summary>
         /// <value>the variable type for the parameter. Basic types or special type %DATASETID%</value>
-        [DataMember(Name = "varType", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "varType", EmitDefaultValue = false)]
         public string VarType { get; set; }
 
         /// <summary>

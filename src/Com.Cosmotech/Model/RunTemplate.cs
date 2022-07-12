@@ -77,7 +77,7 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="RunTemplate" /> class.
         /// </summary>
         /// <param name="id">the Solution Run Template id (required).</param>
-        /// <param name="name">the Run Template name (required).</param>
+        /// <param name="name">the Run Template name.</param>
         /// <param name="description">the Run Template description.</param>
         /// <param name="csmSimulation">the Cosmo Tech simulation name. This information is send to the Engine. Mandatory information if no Engine is defined.</param>
         /// <param name="tags">the list of Run Template tags.</param>
@@ -113,10 +113,6 @@ namespace Com.Cosmotech.Model
                 throw new ArgumentNullException("id is a required property for RunTemplate and cannot be null");
             }
             this.Id = id;
-            // to ensure "name" is required (not null)
-            if (name == null) {
-                throw new ArgumentNullException("name is a required property for RunTemplate and cannot be null");
-            }
             this.Name = name;
             this.Description = description;
             this.CsmSimulation = csmSimulation;
@@ -159,7 +155,7 @@ namespace Com.Cosmotech.Model
         /// the Run Template name
         /// </summary>
         /// <value>the Run Template name</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>

@@ -41,11 +41,11 @@ namespace Com.Cosmotech.Model
         /// Initializes a new instance of the <see cref="RunTemplateParameterGroup" /> class.
         /// </summary>
         /// <param name="id">the Parameter Group id (required).</param>
-        /// <param name="labels">a translated label with key as ISO 639-1 code (required).</param>
+        /// <param name="labels">a translated label with key as ISO 639-1 code.</param>
         /// <param name="isTable">does the group define a table.</param>
         /// <param name="options">freeform options.</param>
         /// <param name="parentId">the Run Template Group parent Id.</param>
-        /// <param name="parameters">an ordered list of Run Template Parameters (required).</param>
+        /// <param name="parameters">an ordered list of Run Template Parameters.</param>
         public RunTemplateParameterGroup(string id = default(string), Dictionary<string, string> labels = default(Dictionary<string, string>), bool isTable = default(bool), Dictionary<string, Object> options = default(Dictionary<string, Object>), string parentId = default(string), List<string> parameters = default(List<string>))
         {
             // to ensure "id" is required (not null)
@@ -53,19 +53,11 @@ namespace Com.Cosmotech.Model
                 throw new ArgumentNullException("id is a required property for RunTemplateParameterGroup and cannot be null");
             }
             this.Id = id;
-            // to ensure "labels" is required (not null)
-            if (labels == null) {
-                throw new ArgumentNullException("labels is a required property for RunTemplateParameterGroup and cannot be null");
-            }
             this.Labels = labels;
-            // to ensure "parameters" is required (not null)
-            if (parameters == null) {
-                throw new ArgumentNullException("parameters is a required property for RunTemplateParameterGroup and cannot be null");
-            }
-            this.Parameters = parameters;
             this.IsTable = isTable;
             this.Options = options;
             this.ParentId = parentId;
+            this.Parameters = parameters;
         }
 
         /// <summary>
@@ -79,7 +71,7 @@ namespace Com.Cosmotech.Model
         /// a translated label with key as ISO 639-1 code
         /// </summary>
         /// <value>a translated label with key as ISO 639-1 code</value>
-        [DataMember(Name = "labels", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "labels", EmitDefaultValue = false)]
         public Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
@@ -107,7 +99,7 @@ namespace Com.Cosmotech.Model
         /// an ordered list of Run Template Parameters
         /// </summary>
         /// <value>an ordered list of Run Template Parameters</value>
-        [DataMember(Name = "parameters", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "parameters", EmitDefaultValue = false)]
         public List<string> Parameters { get; set; }
 
         /// <summary>

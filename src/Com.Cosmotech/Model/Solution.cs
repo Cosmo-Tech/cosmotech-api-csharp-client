@@ -35,57 +35,32 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Solution" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected Solution() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Solution" /> class.
-        /// </summary>
-        /// <param name="key">the Solution key which group Solution versions (required).</param>
-        /// <param name="name">the Solution name (required).</param>
+        /// <param name="key">the Solution key which group Solution versions.</param>
+        /// <param name="name">the Solution name.</param>
         /// <param name="description">the Solution description.</param>
-        /// <param name="repository">the registry repository containing the image (required).</param>
+        /// <param name="repository">the registry repository containing the image.</param>
         /// <param name="csmSimulator">the main Cosmo Tech simulator name used in standard Run Template.</param>
-        /// <param name="version">the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag (required).</param>
+        /// <param name="version">the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag.</param>
         /// <param name="sdkVersion">the MAJOR.MINOR version used to build this solution.</param>
         /// <param name="url">an optional URL link to solution page.</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="parameters">the list of Run Template Parameters.</param>
         /// <param name="parameterGroups">the list of parameters groups for the Run Templates.</param>
-        /// <param name="runTemplates">list of Run Template (required).</param>
+        /// <param name="runTemplates">list of Run Template.</param>
         public Solution(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string csmSimulator = default(string), string version = default(string), string sdkVersion = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplateParameter> parameters = default(List<RunTemplateParameter>), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>), List<RunTemplate> runTemplates = default(List<RunTemplate>))
         {
-            // to ensure "key" is required (not null)
-            if (key == null) {
-                throw new ArgumentNullException("key is a required property for Solution and cannot be null");
-            }
             this.Key = key;
-            // to ensure "name" is required (not null)
-            if (name == null) {
-                throw new ArgumentNullException("name is a required property for Solution and cannot be null");
-            }
             this.Name = name;
-            // to ensure "repository" is required (not null)
-            if (repository == null) {
-                throw new ArgumentNullException("repository is a required property for Solution and cannot be null");
-            }
-            this.Repository = repository;
-            // to ensure "version" is required (not null)
-            if (version == null) {
-                throw new ArgumentNullException("version is a required property for Solution and cannot be null");
-            }
-            this._Version = version;
-            // to ensure "runTemplates" is required (not null)
-            if (runTemplates == null) {
-                throw new ArgumentNullException("runTemplates is a required property for Solution and cannot be null");
-            }
-            this.RunTemplates = runTemplates;
             this.Description = description;
+            this.Repository = repository;
             this.CsmSimulator = csmSimulator;
+            this._Version = version;
             this.SdkVersion = sdkVersion;
             this.Url = url;
             this.Tags = tags;
             this.Parameters = parameters;
             this.ParameterGroups = parameterGroups;
+            this.RunTemplates = runTemplates;
         }
 
         /// <summary>
@@ -107,14 +82,14 @@ namespace Com.Cosmotech.Model
         /// the Solution key which group Solution versions
         /// </summary>
         /// <value>the Solution key which group Solution versions</value>
-        [DataMember(Name = "key", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "key", EmitDefaultValue = false)]
         public string Key { get; set; }
 
         /// <summary>
         /// the Solution name
         /// </summary>
         /// <value>the Solution name</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -128,7 +103,7 @@ namespace Com.Cosmotech.Model
         /// the registry repository containing the image
         /// </summary>
         /// <value>the registry repository containing the image</value>
-        [DataMember(Name = "repository", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "repository", EmitDefaultValue = false)]
         public string Repository { get; set; }
 
         /// <summary>
@@ -142,7 +117,7 @@ namespace Com.Cosmotech.Model
         /// the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag
         /// </summary>
         /// <value>the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag</value>
-        [DataMember(Name = "version", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public string _Version { get; set; }
 
         /// <summary>
@@ -199,7 +174,7 @@ namespace Com.Cosmotech.Model
         /// list of Run Template
         /// </summary>
         /// <value>list of Run Template</value>
-        [DataMember(Name = "runTemplates", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "runTemplates", EmitDefaultValue = false)]
         public List<RunTemplate> RunTemplates { get; set; }
 
         /// <summary>
