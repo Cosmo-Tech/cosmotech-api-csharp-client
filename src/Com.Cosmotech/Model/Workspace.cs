@@ -50,7 +50,8 @@ namespace Com.Cosmotech.Model
         /// <param name="webApp">webApp.</param>
         /// <param name="sendInputToDataWarehouse">default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to the ScenarioRun.</param>
         /// <param name="useDedicatedEventHubNamespace">Set this property to true to use a dedicated Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;probesmeasures\\&#39; and \\&#39;scenariorun\\&#39;. (default to false).</param>
-        public Workspace(string key = default(string), string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSolution solution = default(WorkspaceSolution), List<WorkspaceUser> users = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp), bool sendInputToDataWarehouse = default(bool), bool useDedicatedEventHubNamespace = false)
+        /// <param name="sendScenarioMetadataToEventHub">Set this property to false to not send scenario metada to Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;scenariometadata\\&#39; and \\&#39;scenariorunmetadata\\&#39;. (default to false).</param>
+        public Workspace(string key = default(string), string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSolution solution = default(WorkspaceSolution), List<WorkspaceUser> users = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp), bool sendInputToDataWarehouse = default(bool), bool useDedicatedEventHubNamespace = false, bool sendScenarioMetadataToEventHub = false)
         {
             // to ensure "key" is required (not null)
             if (key == null) {
@@ -74,6 +75,7 @@ namespace Com.Cosmotech.Model
             this.WebApp = webApp;
             this.SendInputToDataWarehouse = sendInputToDataWarehouse;
             this.UseDedicatedEventHubNamespace = useDedicatedEventHubNamespace;
+            this.SendScenarioMetadataToEventHub = sendScenarioMetadataToEventHub;
         }
 
         /// <summary>
@@ -175,6 +177,13 @@ namespace Com.Cosmotech.Model
         public bool UseDedicatedEventHubNamespace { get; set; }
 
         /// <summary>
+        /// Set this property to false to not send scenario metada to Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;scenariometadata\\&#39; and \\&#39;scenariorunmetadata\\&#39;.
+        /// </summary>
+        /// <value>Set this property to false to not send scenario metada to Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;scenariometadata\\&#39; and \\&#39;scenariorunmetadata\\&#39;.</value>
+        [DataMember(Name = "sendScenarioMetadataToEventHub", EmitDefaultValue = true)]
+        public bool SendScenarioMetadataToEventHub { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -194,6 +203,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  WebApp: ").Append(WebApp).Append("\n");
             sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
             sb.Append("  UseDedicatedEventHubNamespace: ").Append(UseDedicatedEventHubNamespace).Append("\n");
+            sb.Append("  SendScenarioMetadataToEventHub: ").Append(SendScenarioMetadataToEventHub).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -288,6 +298,10 @@ namespace Com.Cosmotech.Model
                 (
                     this.UseDedicatedEventHubNamespace == input.UseDedicatedEventHubNamespace ||
                     this.UseDedicatedEventHubNamespace.Equals(input.UseDedicatedEventHubNamespace)
+                ) && 
+                (
+                    this.SendScenarioMetadataToEventHub == input.SendScenarioMetadataToEventHub ||
+                    this.SendScenarioMetadataToEventHub.Equals(input.SendScenarioMetadataToEventHub)
                 );
         }
 
@@ -342,6 +356,7 @@ namespace Com.Cosmotech.Model
                 }
                 hashCode = (hashCode * 59) + this.SendInputToDataWarehouse.GetHashCode();
                 hashCode = (hashCode * 59) + this.UseDedicatedEventHubNamespace.GetHashCode();
+                hashCode = (hashCode * 59) + this.SendScenarioMetadataToEventHub.GetHashCode();
                 return hashCode;
             }
         }

@@ -153,6 +153,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'UseDedicatedEventHubNamespace'
         }
+        /// <summary>
+        /// Test the property 'SendScenarioMetadataToEventHub'
+        /// </summary>
+        [Fact]
+        public void SendScenarioMetadataToEventHubTest()
+        {
+            // TODO unit test for the property 'SendScenarioMetadataToEventHub'
+        }
 
     }
 
