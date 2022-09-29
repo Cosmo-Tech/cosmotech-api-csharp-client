@@ -28,6 +28,46 @@ namespace Com.Cosmotech.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Delete all historical ScenarioRuns in the database
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <returns></returns>
+        void DeleteHistoricalDataOrganization(string organizationId);
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns in the database
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteHistoricalDataOrganizationWithHttpInfo(string organizationId);
+        /// <summary>
+        /// Delete all historical ScenarioRuns for the Scenario
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns></returns>
+        void DeleteHistoricalScenarioRunsByScenario(string organizationId, string workspaceId, string scenarioId);
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns for the Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteHistoricalScenarioRunsByScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId);
+        /// <summary>
         /// Delete a scenariorun
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -260,6 +300,56 @@ namespace Com.Cosmotech.Api
     public interface IScenariorunApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Delete all historical ScenarioRuns in the database
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteHistoricalDataOrganizationAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns in the database
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteHistoricalDataOrganizationWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete all historical ScenarioRuns for the Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteHistoricalScenarioRunsByScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns for the Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteHistoricalScenarioRunsByScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a scenariorun
         /// </summary>
@@ -657,6 +747,326 @@ namespace Com.Cosmotech.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns in the database 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <returns></returns>
+        public void DeleteHistoricalDataOrganization(string organizationId)
+        {
+            DeleteHistoricalDataOrganizationWithHttpInfo(organizationId);
+        }
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns in the database 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteHistoricalDataOrganizationWithHttpInfo(string organizationId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenariorunApi->DeleteHistoricalDataOrganization");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/scenarioruns/deletehistoricaldata", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteHistoricalDataOrganization", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns in the database 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteHistoricalDataOrganizationAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await DeleteHistoricalDataOrganizationWithHttpInfoAsync(organizationId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns in the database 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteHistoricalDataOrganizationWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenariorunApi->DeleteHistoricalDataOrganization");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/scenarioruns/deletehistoricaldata", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteHistoricalDataOrganization", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns for the Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns></returns>
+        public void DeleteHistoricalScenarioRunsByScenario(string organizationId, string workspaceId, string scenarioId)
+        {
+            DeleteHistoricalScenarioRunsByScenarioWithHttpInfo(organizationId, workspaceId, scenarioId);
+        }
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns for the Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteHistoricalScenarioRunsByScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenariorunApi->DeleteHistoricalScenarioRunsByScenario");
+            }
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenariorunApi->DeleteHistoricalScenarioRunsByScenario");
+            }
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenariorunApi->DeleteHistoricalScenarioRunsByScenario");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteHistoricalScenarioRunsByScenario", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns for the Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteHistoricalScenarioRunsByScenarioAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            await DeleteHistoricalScenarioRunsByScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Delete all historical ScenarioRuns for the Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenarioId">the Scenario identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteHistoricalScenarioRunsByScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenariorunApi->DeleteHistoricalScenarioRunsByScenario");
+            }
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenariorunApi->DeleteHistoricalScenarioRunsByScenario");
+            }
+
+            // verify the required parameter 'scenarioId' is set
+            if (scenarioId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenarioId' when calling ScenariorunApi->DeleteHistoricalScenarioRunsByScenario");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scenario_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenarioId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteHistoricalScenarioRunsByScenario", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

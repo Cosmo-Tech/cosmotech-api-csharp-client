@@ -4,6 +4,8 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**DeleteHistoricalDataOrganization**](ScenariorunApi.md#deletehistoricaldataorganization) | **DELETE** /organizations/{organization_id}/scenarioruns/deletehistoricaldata | Delete all historical ScenarioRuns in the database
+[**DeleteHistoricalScenarioRunsByScenario**](ScenariorunApi.md#deletehistoricalscenariorunsbyscenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns | Delete all historical ScenarioRuns for the Scenario
 [**DeleteScenarioRun**](ScenariorunApi.md#deletescenariorun) | **DELETE** /organizations/{organization_id}/scenarioruns/{scenariorun_id} | Delete a scenariorun
 [**FindScenarioRunById**](ScenariorunApi.md#findscenariorunbyid) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id} | Get the details of a scenariorun
 [**GetScenarioRunCumulatedLogs**](ScenariorunApi.md#getscenarioruncumulatedlogs) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id}/cumulatedlogs | Get the cumulated logs of a scenariorun
@@ -16,6 +18,156 @@ Method | HTTP request | Description
 [**StartScenarioRunContainers**](ScenariorunApi.md#startscenarioruncontainers) | **POST** /organizations/{organization_id}/scenarioruns/startcontainers | Start a new scenariorun with raw containers definition
 [**StopScenarioRun**](ScenariorunApi.md#stopscenariorun) | **POST** /organizations/{organization_id}/scenarioruns/{scenariorun_id}/stop | stop a ScenarioRun for the Scenario
 
+
+<a name="deletehistoricaldataorganization"></a>
+# **DeleteHistoricalDataOrganization**
+> void DeleteHistoricalDataOrganization (string organizationId)
+
+Delete all historical ScenarioRuns in the database
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class DeleteHistoricalDataOrganizationExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new ScenariorunApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+
+            try
+            {
+                // Delete all historical ScenarioRuns in the database
+                apiInstance.DeleteHistoricalDataOrganization(organizationId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ScenariorunApi.DeleteHistoricalDataOrganization: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Request succeeded |  -  |
+| **400** | Bad request |  -  |
+| **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletehistoricalscenariorunsbyscenario"></a>
+# **DeleteHistoricalScenarioRunsByScenario**
+> void DeleteHistoricalScenarioRunsByScenario (string organizationId, string workspaceId, string scenarioId)
+
+Delete all historical ScenarioRuns for the Scenario
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class DeleteHistoricalScenarioRunsByScenarioExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new ScenariorunApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
+
+            try
+            {
+                // Delete all historical ScenarioRuns for the Scenario
+                apiInstance.DeleteHistoricalScenarioRunsByScenario(organizationId, workspaceId, scenarioId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ScenariorunApi.DeleteHistoricalScenarioRunsByScenario: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **scenarioId** | **string**| the Scenario identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Request succeeded |  -  |
+| **400** | Bad request |  -  |
+| **404** | the Scenario specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletescenariorun"></a>
 # **DeleteScenarioRun**

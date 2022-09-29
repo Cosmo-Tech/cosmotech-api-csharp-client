@@ -56,6 +56,30 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test DeleteHistoricalDataOrganization
+        /// </summary>
+        [Fact]
+        public void DeleteHistoricalDataOrganizationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //instance.DeleteHistoricalDataOrganization(organizationId);
+        }
+
+        /// <summary>
+        /// Test DeleteHistoricalScenarioRunsByScenario
+        /// </summary>
+        [Fact]
+        public void DeleteHistoricalScenarioRunsByScenarioTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //string scenarioId = null;
+            //instance.DeleteHistoricalScenarioRunsByScenario(organizationId, workspaceId, scenarioId);
+        }
+
+        /// <summary>
         /// Test DeleteScenarioRun
         /// </summary>
         [Fact]
