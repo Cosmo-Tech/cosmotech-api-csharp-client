@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **OwnerId** | **string** | the Owner User Id | [optional] [readonly] 
 **Users** | [**List&lt;OrganizationUser&gt;**](OrganizationUser.md) |  | [optional] 
 **Services** | [**OrganizationServices**](OrganizationServices.md) |  | [optional] 
+**Security** | [**OrganizationSecurity**](OrganizationSecurity.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
