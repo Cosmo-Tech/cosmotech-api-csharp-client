@@ -4,7 +4,7 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddWorkspaceAccessControl**](WorkspaceApi.md#addworkspaceaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/access | Add a control access to the Workspace
+[**AddWorkspaceAccessControl**](WorkspaceApi.md#addworkspaceaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/access | add a control acccess to the Workspace
 [**CreateWorkspace**](WorkspaceApi.md#createworkspace) | **POST** /organizations/{organization_id}/workspaces | Create a new workspace
 [**DeleteAllWorkspaceFiles**](WorkspaceApi.md#deleteallworkspacefiles) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/files | Delete all Workspace files
 [**DeleteWorkspace**](WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace
@@ -13,14 +13,13 @@ Method | HTTP request | Description
 [**FindAllWorkspaceFiles**](WorkspaceApi.md#findallworkspacefiles) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/files | List all Workspace files
 [**FindAllWorkspaces**](WorkspaceApi.md#findallworkspaces) | **GET** /organizations/{organization_id}/workspaces | List all Workspaces
 [**FindWorkspaceById**](WorkspaceApi.md#findworkspacebyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id} | Get the details of an workspace
-[**GetWorkspaceAccessControl**](WorkspaceApi.md#getworkspaceaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Get a control access for the Workspace
+[**GetWorkspaceAccessControl**](WorkspaceApi.md#getworkspaceaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | get a control acccess for the Workspace
 [**GetWorkspacePermissions**](WorkspaceApi.md#getworkspacepermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/permissions/{role} | Get the Workspace permission by given role
 [**GetWorkspaceSecurity**](WorkspaceApi.md#getworkspacesecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security | Get the Workspace security information
 [**GetWorkspaceSecurityUsers**](WorkspaceApi.md#getworkspacesecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/users | Get the Workspace security users list
 [**RemoveWorkspaceAccessControl**](WorkspaceApi.md#removeworkspaceaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Remove the specified access from the given Organization Workspace
-[**SetWorkspaceDefaultSecurity**](WorkspaceApi.md#setworkspacedefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/default | Set the Workspace default security
+[**SetWorkspaceDefaultSecurity**](WorkspaceApi.md#setworkspacedefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/default | set the Workspace default security
 [**UpdateWorkspace**](WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
-[**UpdateWorkspaceAccessControl**](WorkspaceApi.md#updateworkspaceaccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Update the specified access to User for a Workspace
 [**UploadWorkspaceFile**](WorkspaceApi.md#uploadworkspacefile) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/files | Upload a file for the Workspace
 
 
@@ -28,7 +27,7 @@ Method | HTTP request | Description
 # **AddWorkspaceAccessControl**
 > WorkspaceAccessControl AddWorkspaceAccessControl (string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl)
 
-Add a control access to the Workspace
+add a control acccess to the Workspace
 
 ### Example
 ```csharp
@@ -56,7 +55,7 @@ namespace Example
 
             try
             {
-                // Add a control access to the Workspace
+                // add a control acccess to the Workspace
                 WorkspaceAccessControl result = apiInstance.AddWorkspaceAccessControl(organizationId, workspaceId, workspaceAccessControl);
                 Debug.WriteLine(result);
             }
@@ -697,7 +696,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | the Workspace details |  -  |
-| **404** | The Workspace specified is unknown or you don&#39;t have access to it |  -  |
+| **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -705,7 +704,7 @@ Name | Type | Description  | Notes
 # **GetWorkspaceAccessControl**
 > WorkspaceAccessControl GetWorkspaceAccessControl (string organizationId, string workspaceId, string identityId)
 
-Get a control access for the Workspace
+get a control acccess for the Workspace
 
 ### Example
 ```csharp
@@ -733,7 +732,7 @@ namespace Example
 
             try
             {
-                // Get a control access for the Workspace
+                // get a control acccess for the Workspace
                 WorkspaceAccessControl result = apiInstance.GetWorkspaceAccessControl(organizationId, workspaceId, identityId);
                 Debug.WriteLine(result);
             }
@@ -774,7 +773,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The Workspace access |  -  |
-| **404** | The Workspace or user specified is unknown or you don&#39;t have access to it |  -  |
+| **404** | the Workspace or user specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1076,15 +1075,15 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request succeeded |  -  |
-| **404** | The Workspace or the user specified is unknown or you don&#39;t have access to them |  -  |
+| **404** | the Workspace or the user specified is unknown or you don&#39;t have access to them |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="setworkspacedefaultsecurity"></a>
 # **SetWorkspaceDefaultSecurity**
-> WorkspaceSecurity SetWorkspaceDefaultSecurity (string organizationId, string workspaceId, WorkspaceRole workspaceRole)
+> WorkspaceSecurity SetWorkspaceDefaultSecurity (string organizationId, string workspaceId, string body)
 
-Set the Workspace default security
+set the Workspace default security
 
 ### Example
 ```csharp
@@ -1108,12 +1107,12 @@ namespace Example
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var workspaceRole = new WorkspaceRole(); // WorkspaceRole | the new Workspace default security.
+            var body = writer;  // string | the new Workspace default security.
 
             try
             {
-                // Set the Workspace default security
-                WorkspaceSecurity result = apiInstance.SetWorkspaceDefaultSecurity(organizationId, workspaceId, workspaceRole);
+                // set the Workspace default security
+                WorkspaceSecurity result = apiInstance.SetWorkspaceDefaultSecurity(organizationId, workspaceId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1133,7 +1132,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
- **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md)| the new Workspace default security. | 
+ **body** | **string**| the new Workspace default security. | 
 
 ### Return type
 
@@ -1185,7 +1184,7 @@ namespace Example
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var workspace = new Workspace(); // Workspace | The new Workspace details.
+            var workspace = new Workspace(); // Workspace | the new Workspace details.
 
             try
             {
@@ -1210,7 +1209,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
- **workspace** | [**Workspace**](Workspace.md)| The new Workspace details. | 
+ **workspace** | [**Workspace**](Workspace.md)| the new Workspace details. | 
 
 ### Return type
 
@@ -1232,85 +1231,6 @@ Name | Type | Description  | Notes
 | **200** | the workspace details |  -  |
 | **400** | Bad request |  -  |
 | **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updateworkspaceaccesscontrol"></a>
-# **UpdateWorkspaceAccessControl**
-> WorkspaceAccessControl UpdateWorkspaceAccessControl (string organizationId, string workspaceId, string identityId, WorkspaceRole workspaceRole)
-
-Update the specified access to User for a Workspace
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class UpdateWorkspaceAccessControlExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new WorkspaceApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var identityId = "identityId_example";  // string | the User identifier
-            var workspaceRole = new WorkspaceRole(); // WorkspaceRole | The new Workspace Access Control
-
-            try
-            {
-                // Update the specified access to User for a Workspace
-                WorkspaceAccessControl result = apiInstance.UpdateWorkspaceAccessControl(organizationId, workspaceId, identityId, workspaceRole);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WorkspaceApi.UpdateWorkspaceAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **identityId** | **string**| the User identifier | 
- **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md)| The new Workspace Access Control | 
-
-### Return type
-
-[**WorkspaceAccessControl**](WorkspaceAccessControl.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The Workspace access |  -  |
-| **404** | The Workspace specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

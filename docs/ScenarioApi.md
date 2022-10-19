@@ -5,7 +5,7 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddOrReplaceScenarioParameterValues**](ScenarioApi.md#addorreplacescenarioparametervalues) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Add (or replace) Parameter Values for the Scenario specified
-[**AddScenarioAccessControl**](ScenarioApi.md#addscenarioaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access | Add a control access to the Scenario
+[**AddScenarioAccessControl**](ScenarioApi.md#addscenarioaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access | add a control acccess to the Scenario
 [**CompareScenarios**](ScenarioApi.md#comparescenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/compare/{compared_scenario_id} | Compare the Scenario with another one and returns the difference for parameters values
 [**CreateScenario**](ScenarioApi.md#createscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Create a new Scenario
 [**DeleteAllScenarios**](ScenarioApi.md#deleteallscenarios) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Delete all Scenarios of the Workspace
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**FindAllScenarios**](ScenarioApi.md#findallscenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | List all Scenarios
 [**FindAllScenariosByValidationStatus**](ScenarioApi.md#findallscenariosbyvalidationstatus) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/{validationStatus} | List all Scenarios by validation status
 [**FindScenarioById**](ScenarioApi.md#findscenariobyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Get the details of an scenario
-[**GetScenarioAccessControl**](ScenarioApi.md#getscenarioaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Get a control access for the Scenario
+[**GetScenarioAccessControl**](ScenarioApi.md#getscenarioaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | get a control acccess for the Scenario
 [**GetScenarioDataDownloadJobInfo**](ScenarioApi.md#getscenariodatadownloadjobinfo) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads/{download_id} | Get Scenario data download URL
 [**GetScenarioPermissions**](ScenarioApi.md#getscenariopermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/permissions/{role} | Get the Scenario permission by given role
 [**GetScenarioSecurity**](ScenarioApi.md#getscenariosecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security | Get the Scenario security information
@@ -23,9 +23,8 @@ Method | HTTP request | Description
 [**GetScenariosTree**](ScenarioApi.md#getscenariostree) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree | Get the Scenarios Tree
 [**RemoveAllScenarioParameterValues**](ScenarioApi.md#removeallscenarioparametervalues) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Remove all Parameter Values from the Scenario specified
 [**RemoveScenarioAccessControl**](ScenarioApi.md#removescenarioaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Remove the specified access from the given Organization Scenario
-[**SetScenarioDefaultSecurity**](ScenarioApi.md#setscenariodefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/default | Set the Scenario default security
+[**SetScenarioDefaultSecurity**](ScenarioApi.md#setscenariodefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/default | set the Scenario default security
 [**UpdateScenario**](ScenarioApi.md#updatescenario) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Update a scenario
-[**UpdateScenarioAccessControl**](ScenarioApi.md#updatescenarioaccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Update the specified access to User for a Scenario
 
 
 <a name="addorreplacescenarioparametervalues"></a>
@@ -112,7 +111,7 @@ Name | Type | Description  | Notes
 # **AddScenarioAccessControl**
 > ScenarioAccessControl AddScenarioAccessControl (string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl)
 
-Add a control access to the Scenario
+add a control acccess to the Scenario
 
 ### Example
 ```csharp
@@ -141,7 +140,7 @@ namespace Example
 
             try
             {
-                // Add a control access to the Scenario
+                // add a control acccess to the Scenario
                 ScenarioAccessControl result = apiInstance.AddScenarioAccessControl(organizationId, workspaceId, scenarioId, scenarioAccessControl);
                 Debug.WriteLine(result);
             }
@@ -803,7 +802,7 @@ Name | Type | Description  | Notes
 # **GetScenarioAccessControl**
 > ScenarioAccessControl GetScenarioAccessControl (string organizationId, string workspaceId, string scenarioId, string identityId)
 
-Get a control access for the Scenario
+get a control acccess for the Scenario
 
 ### Example
 ```csharp
@@ -832,7 +831,7 @@ namespace Example
 
             try
             {
-                // Get a control access for the Scenario
+                // get a control acccess for the Scenario
                 ScenarioAccessControl result = apiInstance.GetScenarioAccessControl(organizationId, workspaceId, scenarioId, identityId);
                 Debug.WriteLine(result);
             }
@@ -1493,9 +1492,9 @@ void (empty response body)
 
 <a name="setscenariodefaultsecurity"></a>
 # **SetScenarioDefaultSecurity**
-> ScenarioSecurity SetScenarioDefaultSecurity (string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole)
+> ScenarioSecurity SetScenarioDefaultSecurity (string organizationId, string workspaceId, string scenarioId, string body)
 
-Set the Scenario default security
+set the Scenario default security
 
 ### Example
 ```csharp
@@ -1520,12 +1519,12 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var scenarioRole = new ScenarioRole(); // ScenarioRole | the new Scenario default security.
+            var body = writer;  // string | the new Scenario default security.
 
             try
             {
-                // Set the Scenario default security
-                ScenarioSecurity result = apiInstance.SetScenarioDefaultSecurity(organizationId, workspaceId, scenarioId, scenarioRole);
+                // set the Scenario default security
+                ScenarioSecurity result = apiInstance.SetScenarioDefaultSecurity(organizationId, workspaceId, scenarioId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1546,7 +1545,7 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
  **scenarioId** | **string**| the Scenario identifier | 
- **scenarioRole** | [**ScenarioRole**](ScenarioRole.md)| the new Scenario default security. | 
+ **body** | **string**| the new Scenario default security. | 
 
 ### Return type
 
@@ -1647,87 +1646,6 @@ Name | Type | Description  | Notes
 | **200** | the scenario details |  -  |
 | **400** | Bad request |  -  |
 | **404** | the Scenario specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updatescenarioaccesscontrol"></a>
-# **UpdateScenarioAccessControl**
-> ScenarioAccessControl UpdateScenarioAccessControl (string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole)
-
-Update the specified access to User for a Scenario
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class UpdateScenarioAccessControlExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ScenarioApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var identityId = "identityId_example";  // string | the User identifier
-            var scenarioRole = new ScenarioRole(); // ScenarioRole | The new Scenario Access Control
-
-            try
-            {
-                // Update the specified access to User for a Scenario
-                ScenarioAccessControl result = apiInstance.UpdateScenarioAccessControl(organizationId, workspaceId, scenarioId, identityId, scenarioRole);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ScenarioApi.UpdateScenarioAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **identityId** | **string**| the User identifier | 
- **scenarioRole** | [**ScenarioRole**](ScenarioRole.md)| The new Scenario Access Control | 
-
-### Return type
-
-[**ScenarioAccessControl**](ScenarioAccessControl.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The Scenario access |  -  |
-| **404** | The Organization specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
