@@ -4,7 +4,7 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddOrReplaceUsersInOrganizationWorkspace**](WorkspaceApi.md#addorreplaceusersinorganizationworkspace) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/users | Add (or replace) users to the Workspace specified
+[**AddWorkspaceAccessControl**](WorkspaceApi.md#addworkspaceaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/access | add a control acccess to the Workspace
 [**CreateWorkspace**](WorkspaceApi.md#createworkspace) | **POST** /organizations/{organization_id}/workspaces | Create a new workspace
 [**DeleteAllWorkspaceFiles**](WorkspaceApi.md#deleteallworkspacefiles) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/files | Delete all Workspace files
 [**DeleteWorkspace**](WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace
@@ -13,17 +13,21 @@ Method | HTTP request | Description
 [**FindAllWorkspaceFiles**](WorkspaceApi.md#findallworkspacefiles) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/files | List all Workspace files
 [**FindAllWorkspaces**](WorkspaceApi.md#findallworkspaces) | **GET** /organizations/{organization_id}/workspaces | List all Workspaces
 [**FindWorkspaceById**](WorkspaceApi.md#findworkspacebyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id} | Get the details of an workspace
-[**RemoveAllUsersOfWorkspace**](WorkspaceApi.md#removeallusersofworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/users | Remove all users from the Workspace specified
-[**RemoveUserFromOrganizationWorkspace**](WorkspaceApi.md#removeuserfromorganizationworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/users/{user_id} | Remove the specified user from the given Organization Workspace
+[**GetWorkspaceAccessControl**](WorkspaceApi.md#getworkspaceaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | get a control acccess for the Workspace
+[**GetWorkspacePermissions**](WorkspaceApi.md#getworkspacepermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/permissions/{role} | Get the Workspace permission by given role
+[**GetWorkspaceSecurity**](WorkspaceApi.md#getworkspacesecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security | Get the Workspace security information
+[**GetWorkspaceSecurityUsers**](WorkspaceApi.md#getworkspacesecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/users | Get the Workspace security users list
+[**RemoveWorkspaceAccessControl**](WorkspaceApi.md#removeworkspaceaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Remove the specified access from the given Organization Workspace
+[**SetWorkspaceDefaultSecurity**](WorkspaceApi.md#setworkspacedefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/default | set the Workspace default security
 [**UpdateWorkspace**](WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
 [**UploadWorkspaceFile**](WorkspaceApi.md#uploadworkspacefile) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/files | Upload a file for the Workspace
 
 
-<a name="addorreplaceusersinorganizationworkspace"></a>
-# **AddOrReplaceUsersInOrganizationWorkspace**
-> List&lt;WorkspaceUser&gt; AddOrReplaceUsersInOrganizationWorkspace (string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser)
+<a name="addworkspaceaccesscontrol"></a>
+# **AddWorkspaceAccessControl**
+> WorkspaceAccessControl AddWorkspaceAccessControl (string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl)
 
-Add (or replace) users to the Workspace specified
+add a control acccess to the Workspace
 
 ### Example
 ```csharp
@@ -35,7 +39,7 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class AddOrReplaceUsersInOrganizationWorkspaceExample
+    public class AddWorkspaceAccessControlExample
     {
         public static void Main()
         {
@@ -47,17 +51,17 @@ namespace Example
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var workspaceUser = new List<WorkspaceUser>(); // List<WorkspaceUser> | the Users to add. Any User with the same ID is overwritten
+            var workspaceAccessControl = new WorkspaceAccessControl(); // WorkspaceAccessControl | the new Workspace security access to add.
 
             try
             {
-                // Add (or replace) users to the Workspace specified
-                List<WorkspaceUser> result = apiInstance.AddOrReplaceUsersInOrganizationWorkspace(organizationId, workspaceId, workspaceUser);
+                // add a control acccess to the Workspace
+                WorkspaceAccessControl result = apiInstance.AddWorkspaceAccessControl(organizationId, workspaceId, workspaceAccessControl);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.AddOrReplaceUsersInOrganizationWorkspace: " + e.Message );
+                Debug.Print("Exception when calling WorkspaceApi.AddWorkspaceAccessControl: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -72,11 +76,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
- **workspaceUser** | [**List&lt;WorkspaceUser&gt;**](WorkspaceUser.md)| the Users to add. Any User with the same ID is overwritten | 
+ **workspaceAccessControl** | [**WorkspaceAccessControl**](WorkspaceAccessControl.md)| the new Workspace security access to add. | 
 
 ### Return type
 
-[**List&lt;WorkspaceUser&gt;**](WorkspaceUser.md)
+[**WorkspaceAccessControl**](WorkspaceAccessControl.md)
 
 ### Authorization
 
@@ -84,14 +88,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the Workspace Users |  -  |
+| **201** | The Workspace access |  -  |
 | **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -696,11 +700,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="removeallusersofworkspace"></a>
-# **RemoveAllUsersOfWorkspace**
-> void RemoveAllUsersOfWorkspace (string organizationId, string workspaceId)
+<a name="getworkspaceaccesscontrol"></a>
+# **GetWorkspaceAccessControl**
+> WorkspaceAccessControl GetWorkspaceAccessControl (string organizationId, string workspaceId, string identityId)
 
-Remove all users from the Workspace specified
+get a control acccess for the Workspace
 
 ### Example
 ```csharp
@@ -712,7 +716,160 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class RemoveAllUsersOfWorkspaceExample
+    public class GetWorkspaceAccessControlExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new WorkspaceApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var identityId = "identityId_example";  // string | the User identifier
+
+            try
+            {
+                // get a control acccess for the Workspace
+                WorkspaceAccessControl result = apiInstance.GetWorkspaceAccessControl(organizationId, workspaceId, identityId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **identityId** | **string**| the User identifier | 
+
+### Return type
+
+[**WorkspaceAccessControl**](WorkspaceAccessControl.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The Workspace access |  -  |
+| **404** | the Workspace or user specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getworkspacepermissions"></a>
+# **GetWorkspacePermissions**
+> List&lt;string&gt; GetWorkspacePermissions (string organizationId, string workspaceId, string role)
+
+Get the Workspace permission by given role
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetWorkspacePermissionsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new WorkspaceApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var role = "role_example";  // string | the Role
+
+            try
+            {
+                // Get the Workspace permission by given role
+                List<string> result = apiInstance.GetWorkspacePermissions(organizationId, workspaceId, role);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkspaceApi.GetWorkspacePermissions: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **role** | **string**| the Role | 
+
+### Return type
+
+**List<string>**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The Workspace security permission list |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getworkspacesecurity"></a>
+# **GetWorkspaceSecurity**
+> WorkspaceSecurity GetWorkspaceSecurity (string organizationId, string workspaceId)
+
+Get the Workspace security information
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetWorkspaceSecurityExample
     {
         public static void Main()
         {
@@ -727,12 +884,13 @@ namespace Example
 
             try
             {
-                // Remove all users from the Workspace specified
-                apiInstance.RemoveAllUsersOfWorkspace(organizationId, workspaceId);
+                // Get the Workspace security information
+                WorkspaceSecurity result = apiInstance.GetWorkspaceSecurity(organizationId, workspaceId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.RemoveAllUsersOfWorkspace: " + e.Message );
+                Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceSecurity: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -750,7 +908,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**WorkspaceSecurity**](WorkspaceSecurity.md)
 
 ### Authorization
 
@@ -759,22 +917,22 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **204** | the operation succeeded |  -  |
+| **200** | The Workspace security |  -  |
 | **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="removeuserfromorganizationworkspace"></a>
-# **RemoveUserFromOrganizationWorkspace**
-> void RemoveUserFromOrganizationWorkspace (string organizationId, string workspaceId, string userId)
+<a name="getworkspacesecurityusers"></a>
+# **GetWorkspaceSecurityUsers**
+> List&lt;string&gt; GetWorkspaceSecurityUsers (string organizationId, string workspaceId)
 
-Remove the specified user from the given Organization Workspace
+Get the Workspace security users list
 
 ### Example
 ```csharp
@@ -786,7 +944,7 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class RemoveUserFromOrganizationWorkspaceExample
+    public class GetWorkspaceSecurityUsersExample
     {
         public static void Main()
         {
@@ -798,16 +956,16 @@ namespace Example
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var userId = "userId_example";  // string | the User identifier
 
             try
             {
-                // Remove the specified user from the given Organization Workspace
-                apiInstance.RemoveUserFromOrganizationWorkspace(organizationId, workspaceId, userId);
+                // Get the Workspace security users list
+                List<string> result = apiInstance.GetWorkspaceSecurityUsers(organizationId, workspaceId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.RemoveUserFromOrganizationWorkspace: " + e.Message );
+                Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceSecurityUsers: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -822,7 +980,82 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
- **userId** | **string**| the User identifier | 
+
+### Return type
+
+**List<string>**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The Workspace security users list |  -  |
+| **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="removeworkspaceaccesscontrol"></a>
+# **RemoveWorkspaceAccessControl**
+> void RemoveWorkspaceAccessControl (string organizationId, string workspaceId, string identityId)
+
+Remove the specified access from the given Organization Workspace
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class RemoveWorkspaceAccessControlExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new WorkspaceApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var identityId = "identityId_example";  // string | the User identifier
+
+            try
+            {
+                // Remove the specified access from the given Organization Workspace
+                apiInstance.RemoveWorkspaceAccessControl(organizationId, workspaceId, identityId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkspaceApi.RemoveWorkspaceAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **identityId** | **string**| the User identifier | 
 
 ### Return type
 
@@ -842,7 +1075,84 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request succeeded |  -  |
-| **404** | the Workspace or the User specified is unknown or you don&#39;t have access to them |  -  |
+| **404** | the Workspace or the user specified is unknown or you don&#39;t have access to them |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setworkspacedefaultsecurity"></a>
+# **SetWorkspaceDefaultSecurity**
+> WorkspaceSecurity SetWorkspaceDefaultSecurity (string organizationId, string workspaceId, string body)
+
+set the Workspace default security
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class SetWorkspaceDefaultSecurityExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new WorkspaceApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var body = writer;  // string | the new Workspace default security.
+
+            try
+            {
+                // set the Workspace default security
+                WorkspaceSecurity result = apiInstance.SetWorkspaceDefaultSecurity(organizationId, workspaceId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkspaceApi.SetWorkspaceDefaultSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **body** | **string**| the new Workspace default security. | 
+
+### Return type
+
+[**WorkspaceSecurity**](WorkspaceSecurity.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/yaml
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | The Workspace default visibility |  -  |
+| **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
