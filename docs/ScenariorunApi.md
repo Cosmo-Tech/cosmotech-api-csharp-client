@@ -4,8 +4,7 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteHistoricalDataOrganization**](ScenariorunApi.md#deletehistoricaldataorganization) | **DELETE** /organizations/{organization_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Organization
-[**DeleteHistoricalDataWorkspace**](ScenariorunApi.md#deletehistoricaldataworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Workspace
+[**DeleteHistoricalDataOrganization**](ScenariorunApi.md#deletehistoricaldataorganization) | **DELETE** /organizations/{organization_id}/scenarioruns/deletehistoricaldata | Delete all historical ScenarioRuns in the database
 [**DeleteHistoricalScenarioRunsByScenario**](ScenariorunApi.md#deletehistoricalscenariorunsbyscenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns | Delete all historical ScenarioRuns for the Scenario
 [**DeleteScenarioRun**](ScenariorunApi.md#deletescenariorun) | **DELETE** /organizations/{organization_id}/scenarioruns/{scenariorun_id} | Delete a scenariorun
 [**FindScenarioRunById**](ScenariorunApi.md#findscenariorunbyid) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id} | Get the details of a scenariorun
@@ -24,7 +23,7 @@ Method | HTTP request | Description
 # **DeleteHistoricalDataOrganization**
 > void DeleteHistoricalDataOrganization (string organizationId)
 
-Delete all historical ScenarioRuns in the Organization
+Delete all historical ScenarioRuns in the database
 
 ### Example
 ```csharp
@@ -50,7 +49,7 @@ namespace Example
 
             try
             {
-                // Delete all historical ScenarioRuns in the Organization
+                // Delete all historical ScenarioRuns in the database
                 apiInstance.DeleteHistoricalDataOrganization(organizationId);
             }
             catch (ApiException  e)
@@ -90,81 +89,6 @@ void (empty response body)
 | **204** | Request succeeded |  -  |
 | **400** | Bad request |  -  |
 | **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="deletehistoricaldataworkspace"></a>
-# **DeleteHistoricalDataWorkspace**
-> void DeleteHistoricalDataWorkspace (string organizationId, string workspaceId)
-
-Delete all historical ScenarioRuns in the Workspace
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class DeleteHistoricalDataWorkspaceExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ScenariorunApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-
-            try
-            {
-                // Delete all historical ScenarioRuns in the Workspace
-                apiInstance.DeleteHistoricalDataWorkspace(organizationId, workspaceId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ScenariorunApi.DeleteHistoricalDataWorkspace: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **204** | Request succeeded |  -  |
-| **400** | Bad request |  -  |
-| **404** | the Organization or Workspace specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
