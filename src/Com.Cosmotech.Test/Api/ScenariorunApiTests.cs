@@ -67,6 +67,18 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test DeleteHistoricalDataWorkspace
+        /// </summary>
+        [Fact]
+        public void DeleteHistoricalDataWorkspaceTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //instance.DeleteHistoricalDataWorkspace(organizationId, workspaceId);
+        }
+
+        /// <summary>
         /// Test DeleteHistoricalScenarioRunsByScenario
         /// </summary>
         [Fact]

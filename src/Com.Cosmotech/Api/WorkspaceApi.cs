@@ -28,17 +28,17 @@ namespace Com.Cosmotech.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// add a control acccess to the Workspace
+        /// Add (or replace) users to the Workspace specified
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceAccessControl">the new Workspace security access to add.</param>
-        /// <returns>WorkspaceAccessControl</returns>
-        WorkspaceAccessControl AddWorkspaceAccessControl(string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl);
+        /// <param name="workspaceUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>List&lt;WorkspaceUser&gt;</returns>
+        List<WorkspaceUser> AddOrReplaceUsersInOrganizationWorkspace(string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser);
 
         /// <summary>
-        /// add a control acccess to the Workspace
+        /// Add (or replace) users to the Workspace specified
         /// </summary>
         /// <remarks>
         /// 
@@ -46,9 +46,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceAccessControl">the new Workspace security access to add.</param>
-        /// <returns>ApiResponse of WorkspaceAccessControl</returns>
-        ApiResponse<WorkspaceAccessControl> AddWorkspaceAccessControlWithHttpInfo(string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl);
+        /// <param name="workspaceUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>ApiResponse of List&lt;WorkspaceUser&gt;</returns>
+        ApiResponse<List<WorkspaceUser>> AddOrReplaceUsersInOrganizationWorkspaceWithHttpInfo(string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser);
         /// <summary>
         /// Create a new workspace
         /// </summary>
@@ -212,101 +212,16 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Workspace</returns>
         ApiResponse<Workspace> FindWorkspaceByIdWithHttpInfo(string organizationId, string workspaceId);
         /// <summary>
-        /// get a control acccess for the Workspace
+        /// Remove all users from the Workspace specified
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
-        /// <returns>WorkspaceAccessControl</returns>
-        WorkspaceAccessControl GetWorkspaceAccessControl(string organizationId, string workspaceId, string identityId);
-
-        /// <summary>
-        /// get a control acccess for the Workspace
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
-        /// <returns>ApiResponse of WorkspaceAccessControl</returns>
-        ApiResponse<WorkspaceAccessControl> GetWorkspaceAccessControlWithHttpInfo(string organizationId, string workspaceId, string identityId);
-        /// <summary>
-        /// Get the Workspace permission by given role
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="role">the Role</param>
-        /// <returns>List&lt;string&gt;</returns>
-        List<string> GetWorkspacePermissions(string organizationId, string workspaceId, string role);
-
-        /// <summary>
-        /// Get the Workspace permission by given role
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="role">the Role</param>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> GetWorkspacePermissionsWithHttpInfo(string organizationId, string workspaceId, string role);
-        /// <summary>
-        /// Get the Workspace security information
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>WorkspaceSecurity</returns>
-        WorkspaceSecurity GetWorkspaceSecurity(string organizationId, string workspaceId);
-
-        /// <summary>
-        /// Get the Workspace security information
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>ApiResponse of WorkspaceSecurity</returns>
-        ApiResponse<WorkspaceSecurity> GetWorkspaceSecurityWithHttpInfo(string organizationId, string workspaceId);
-        /// <summary>
-        /// Get the Workspace security users list
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>List&lt;string&gt;</returns>
-        List<string> GetWorkspaceSecurityUsers(string organizationId, string workspaceId);
-
-        /// <summary>
-        /// Get the Workspace security users list
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> GetWorkspaceSecurityUsersWithHttpInfo(string organizationId, string workspaceId);
-        /// <summary>
-        /// Remove the specified access from the given Organization Workspace
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
         /// <returns></returns>
-        void RemoveWorkspaceAccessControl(string organizationId, string workspaceId, string identityId);
+        void RemoveAllUsersOfWorkspace(string organizationId, string workspaceId);
 
         /// <summary>
-        /// Remove the specified access from the given Organization Workspace
+        /// Remove all users from the Workspace specified
         /// </summary>
         /// <remarks>
         /// 
@@ -314,21 +229,20 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveWorkspaceAccessControlWithHttpInfo(string organizationId, string workspaceId, string identityId);
+        ApiResponse<Object> RemoveAllUsersOfWorkspaceWithHttpInfo(string organizationId, string workspaceId);
         /// <summary>
-        /// set the Workspace default security
+        /// Remove the specified user from the given Organization Workspace
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="body">the new Workspace default security.</param>
-        /// <returns>WorkspaceSecurity</returns>
-        WorkspaceSecurity SetWorkspaceDefaultSecurity(string organizationId, string workspaceId, string body);
+        /// <param name="userId">the User identifier</param>
+        /// <returns></returns>
+        void RemoveUserFromOrganizationWorkspace(string organizationId, string workspaceId, string userId);
 
         /// <summary>
-        /// set the Workspace default security
+        /// Remove the specified user from the given Organization Workspace
         /// </summary>
         /// <remarks>
         /// 
@@ -336,9 +250,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="body">the new Workspace default security.</param>
-        /// <returns>ApiResponse of WorkspaceSecurity</returns>
-        ApiResponse<WorkspaceSecurity> SetWorkspaceDefaultSecurityWithHttpInfo(string organizationId, string workspaceId, string body);
+        /// <param name="userId">the User identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveUserFromOrganizationWorkspaceWithHttpInfo(string organizationId, string workspaceId, string userId);
         /// <summary>
         /// Update a workspace
         /// </summary>
@@ -397,7 +311,7 @@ namespace Com.Cosmotech.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// add a control acccess to the Workspace
+        /// Add (or replace) users to the Workspace specified
         /// </summary>
         /// <remarks>
         /// 
@@ -405,13 +319,13 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceAccessControl">the new Workspace security access to add.</param>
+        /// <param name="workspaceUser">the Users to add. Any User with the same ID is overwritten</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkspaceAccessControl</returns>
-        System.Threading.Tasks.Task<WorkspaceAccessControl> AddWorkspaceAccessControlAsync(string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;WorkspaceUser&gt;</returns>
+        System.Threading.Tasks.Task<List<WorkspaceUser>> AddOrReplaceUsersInOrganizationWorkspaceAsync(string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// add a control acccess to the Workspace
+        /// Add (or replace) users to the Workspace specified
         /// </summary>
         /// <remarks>
         /// 
@@ -419,10 +333,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceAccessControl">the new Workspace security access to add.</param>
+        /// <param name="workspaceUser">the Users to add. Any User with the same ID is overwritten</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkspaceAccessControl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkspaceAccessControl>> AddWorkspaceAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;WorkspaceUser&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WorkspaceUser>>> AddOrReplaceUsersInOrganizationWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a new workspace
         /// </summary>
@@ -626,7 +540,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (Workspace)</returns>
         System.Threading.Tasks.Task<ApiResponse<Workspace>> FindWorkspaceByIdWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// get a control acccess for the Workspace
+        /// Remove all users from the Workspace specified
         /// </summary>
         /// <remarks>
         /// 
@@ -634,117 +548,12 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkspaceAccessControl</returns>
-        System.Threading.Tasks.Task<WorkspaceAccessControl> GetWorkspaceAccessControlAsync(string organizationId, string workspaceId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// get a control acccess for the Workspace
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkspaceAccessControl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkspaceAccessControl>> GetWorkspaceAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Get the Workspace permission by given role
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="role">the Role</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> GetWorkspacePermissionsAsync(string organizationId, string workspaceId, string role, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Get the Workspace permission by given role
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="role">the Role</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> GetWorkspacePermissionsWithHttpInfoAsync(string organizationId, string workspaceId, string role, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Get the Workspace security information
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkspaceSecurity</returns>
-        System.Threading.Tasks.Task<WorkspaceSecurity> GetWorkspaceSecurityAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Get the Workspace security information
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkspaceSecurity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkspaceSecurity>> GetWorkspaceSecurityWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Get the Workspace security users list
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> GetWorkspaceSecurityUsersAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// Get the Workspace security users list
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> GetWorkspaceSecurityUsersWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// Remove the specified access from the given Organization Workspace
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveWorkspaceAccessControlAsync(string organizationId, string workspaceId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RemoveAllUsersOfWorkspaceAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Remove the specified access from the given Organization Workspace
+        /// Remove all users from the Workspace specified
         /// </summary>
         /// <remarks>
         /// 
@@ -752,12 +561,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveWorkspaceAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllUsersOfWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// set the Workspace default security
+        /// Remove the specified user from the given Organization Workspace
         /// </summary>
         /// <remarks>
         /// 
@@ -765,13 +573,13 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="body">the new Workspace default security.</param>
+        /// <param name="userId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkspaceSecurity</returns>
-        System.Threading.Tasks.Task<WorkspaceSecurity> SetWorkspaceDefaultSecurityAsync(string organizationId, string workspaceId, string body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveUserFromOrganizationWorkspaceAsync(string organizationId, string workspaceId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// set the Workspace default security
+        /// Remove the specified user from the given Organization Workspace
         /// </summary>
         /// <remarks>
         /// 
@@ -779,10 +587,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="body">the new Workspace default security.</param>
+        /// <param name="userId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkspaceSecurity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkspaceSecurity>> SetWorkspaceDefaultSecurityWithHttpInfoAsync(string organizationId, string workspaceId, string body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveUserFromOrganizationWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a workspace
         /// </summary>
@@ -962,52 +770,51 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// add a control acccess to the Workspace 
+        /// Add (or replace) users to the Workspace specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceAccessControl">the new Workspace security access to add.</param>
-        /// <returns>WorkspaceAccessControl</returns>
-        public WorkspaceAccessControl AddWorkspaceAccessControl(string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl)
+        /// <param name="workspaceUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>List&lt;WorkspaceUser&gt;</returns>
+        public List<WorkspaceUser> AddOrReplaceUsersInOrganizationWorkspace(string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser)
         {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceAccessControl> localVarResponse = AddWorkspaceAccessControlWithHttpInfo(organizationId, workspaceId, workspaceAccessControl);
+            Com.Cosmotech.Client.ApiResponse<List<WorkspaceUser>> localVarResponse = AddOrReplaceUsersInOrganizationWorkspaceWithHttpInfo(organizationId, workspaceId, workspaceUser);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// add a control acccess to the Workspace 
+        /// Add (or replace) users to the Workspace specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceAccessControl">the new Workspace security access to add.</param>
-        /// <returns>ApiResponse of WorkspaceAccessControl</returns>
-        public Com.Cosmotech.Client.ApiResponse<WorkspaceAccessControl> AddWorkspaceAccessControlWithHttpInfo(string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl)
+        /// <param name="workspaceUser">the Users to add. Any User with the same ID is overwritten</param>
+        /// <returns>ApiResponse of List&lt;WorkspaceUser&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<WorkspaceUser>> AddOrReplaceUsersInOrganizationWorkspaceWithHttpInfo(string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->AddWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
             }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->AddWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
             }
 
-            // verify the required parameter 'workspaceAccessControl' is set
-            if (workspaceAccessControl == null)
+            // verify the required parameter 'workspaceUser' is set
+            if (workspaceUser == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceAccessControl' when calling WorkspaceApi->AddWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceUser' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
             }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "application/yaml"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1029,7 +836,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.Data = workspaceAccessControl;
+            localVarRequestOptions.Data = workspaceUser;
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -1039,10 +846,10 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<WorkspaceAccessControl>("/organizations/{organization_id}/workspaces/{workspace_id}/security/access", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<WorkspaceUser>>("/organizations/{organization_id}/workspaces/{workspace_id}/users", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddWorkspaceAccessControl", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AddOrReplaceUsersInOrganizationWorkspace", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1053,55 +860,54 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// add a control acccess to the Workspace 
+        /// Add (or replace) users to the Workspace specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceAccessControl">the new Workspace security access to add.</param>
+        /// <param name="workspaceUser">the Users to add. Any User with the same ID is overwritten</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkspaceAccessControl</returns>
-        public async System.Threading.Tasks.Task<WorkspaceAccessControl> AddWorkspaceAccessControlAsync(string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;WorkspaceUser&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WorkspaceUser>> AddOrReplaceUsersInOrganizationWorkspaceAsync(string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceAccessControl> localVarResponse = await AddWorkspaceAccessControlWithHttpInfoAsync(organizationId, workspaceId, workspaceAccessControl, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<WorkspaceUser>> localVarResponse = await AddOrReplaceUsersInOrganizationWorkspaceWithHttpInfoAsync(organizationId, workspaceId, workspaceUser, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// add a control acccess to the Workspace 
+        /// Add (or replace) users to the Workspace specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceAccessControl">the new Workspace security access to add.</param>
+        /// <param name="workspaceUser">the Users to add. Any User with the same ID is overwritten</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkspaceAccessControl)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<WorkspaceAccessControl>> AddWorkspaceAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;WorkspaceUser&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<WorkspaceUser>>> AddOrReplaceUsersInOrganizationWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, List<WorkspaceUser> workspaceUser, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->AddWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
             }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->AddWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
             }
 
-            // verify the required parameter 'workspaceAccessControl' is set
-            if (workspaceAccessControl == null)
+            // verify the required parameter 'workspaceUser' is set
+            if (workspaceUser == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceAccessControl' when calling WorkspaceApi->AddWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceUser' when calling WorkspaceApi->AddOrReplaceUsersInOrganizationWorkspace");
             }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "application/yaml"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1123,7 +929,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.Data = workspaceAccessControl;
+            localVarRequestOptions.Data = workspaceUser;
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -1133,11 +939,11 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkspaceAccessControl>("/organizations/{organization_id}/workspaces/{workspace_id}/security/access", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<WorkspaceUser>>("/organizations/{organization_id}/workspaces/{workspace_id}/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("AddWorkspaceAccessControl", localVarResponse);
+                Exception _exception = this.ExceptionFactory("AddOrReplaceUsersInOrganizationWorkspace", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -2474,736 +2280,36 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// get a control acccess for the Workspace 
+        /// Remove all users from the Workspace specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
-        /// <returns>WorkspaceAccessControl</returns>
-        public WorkspaceAccessControl GetWorkspaceAccessControl(string organizationId, string workspaceId, string identityId)
-        {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceAccessControl> localVarResponse = GetWorkspaceAccessControlWithHttpInfo(organizationId, workspaceId, identityId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// get a control acccess for the Workspace 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
-        /// <returns>ApiResponse of WorkspaceAccessControl</returns>
-        public Com.Cosmotech.Client.ApiResponse<WorkspaceAccessControl> GetWorkspaceAccessControlWithHttpInfo(string organizationId, string workspaceId, string identityId)
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->GetWorkspaceAccessControl");
-            }
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->GetWorkspaceAccessControl");
-            }
-
-            // verify the required parameter 'identityId' is set
-            if (identityId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'identityId' when calling WorkspaceApi->GetWorkspaceAccessControl");
-            }
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<WorkspaceAccessControl>("/organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkspaceAccessControl", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// get a control acccess for the Workspace 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkspaceAccessControl</returns>
-        public async System.Threading.Tasks.Task<WorkspaceAccessControl> GetWorkspaceAccessControlAsync(string organizationId, string workspaceId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceAccessControl> localVarResponse = await GetWorkspaceAccessControlWithHttpInfoAsync(organizationId, workspaceId, identityId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// get a control acccess for the Workspace 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkspaceAccessControl)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<WorkspaceAccessControl>> GetWorkspaceAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->GetWorkspaceAccessControl");
-            }
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->GetWorkspaceAccessControl");
-            }
-
-            // verify the required parameter 'identityId' is set
-            if (identityId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'identityId' when calling WorkspaceApi->GetWorkspaceAccessControl");
-            }
-
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<WorkspaceAccessControl>("/organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkspaceAccessControl", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get the Workspace permission by given role 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="role">the Role</param>
-        /// <returns>List&lt;string&gt;</returns>
-        public List<string> GetWorkspacePermissions(string organizationId, string workspaceId, string role)
-        {
-            Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = GetWorkspacePermissionsWithHttpInfo(organizationId, workspaceId, role);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the Workspace permission by given role 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="role">the Role</param>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<string>> GetWorkspacePermissionsWithHttpInfo(string organizationId, string workspaceId, string role)
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->GetWorkspacePermissions");
-            }
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->GetWorkspacePermissions");
-            }
-
-            // verify the required parameter 'role' is set
-            if (role == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'role' when calling WorkspaceApi->GetWorkspacePermissions");
-            }
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("role", Com.Cosmotech.Client.ClientUtils.ParameterToString(role)); // path parameter
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<string>>("/organizations/{organization_id}/workspaces/{workspace_id}/permissions/{role}", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkspacePermissions", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get the Workspace permission by given role 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="role">the Role</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> GetWorkspacePermissionsAsync(string organizationId, string workspaceId, string role, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = await GetWorkspacePermissionsWithHttpInfoAsync(organizationId, workspaceId, role, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the Workspace permission by given role 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="role">the Role</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<string>>> GetWorkspacePermissionsWithHttpInfoAsync(string organizationId, string workspaceId, string role, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->GetWorkspacePermissions");
-            }
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->GetWorkspacePermissions");
-            }
-
-            // verify the required parameter 'role' is set
-            if (role == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'role' when calling WorkspaceApi->GetWorkspacePermissions");
-            }
-
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("role", Com.Cosmotech.Client.ClientUtils.ParameterToString(role)); // path parameter
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/organizations/{organization_id}/workspaces/{workspace_id}/permissions/{role}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkspacePermissions", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get the Workspace security information 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>WorkspaceSecurity</returns>
-        public WorkspaceSecurity GetWorkspaceSecurity(string organizationId, string workspaceId)
-        {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity> localVarResponse = GetWorkspaceSecurityWithHttpInfo(organizationId, workspaceId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the Workspace security information 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>ApiResponse of WorkspaceSecurity</returns>
-        public Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity> GetWorkspaceSecurityWithHttpInfo(string organizationId, string workspaceId)
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->GetWorkspaceSecurity");
-            }
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->GetWorkspaceSecurity");
-            }
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<WorkspaceSecurity>("/organizations/{organization_id}/workspaces/{workspace_id}/security", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkspaceSecurity", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get the Workspace security information 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkspaceSecurity</returns>
-        public async System.Threading.Tasks.Task<WorkspaceSecurity> GetWorkspaceSecurityAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity> localVarResponse = await GetWorkspaceSecurityWithHttpInfoAsync(organizationId, workspaceId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the Workspace security information 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkspaceSecurity)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity>> GetWorkspaceSecurityWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->GetWorkspaceSecurity");
-            }
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->GetWorkspaceSecurity");
-            }
-
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<WorkspaceSecurity>("/organizations/{organization_id}/workspaces/{workspace_id}/security", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkspaceSecurity", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get the Workspace security users list 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>List&lt;string&gt;</returns>
-        public List<string> GetWorkspaceSecurityUsers(string organizationId, string workspaceId)
-        {
-            Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = GetWorkspaceSecurityUsersWithHttpInfo(organizationId, workspaceId);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the Workspace security users list 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<string>> GetWorkspaceSecurityUsersWithHttpInfo(string organizationId, string workspaceId)
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->GetWorkspaceSecurityUsers");
-            }
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->GetWorkspaceSecurityUsers");
-            }
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<List<string>>("/organizations/{organization_id}/workspaces/{workspace_id}/security/users", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkspaceSecurityUsers", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get the Workspace security users list 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> GetWorkspaceSecurityUsersAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = await GetWorkspaceSecurityUsersWithHttpInfoAsync(organizationId, workspaceId, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get the Workspace security users list 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<string>>> GetWorkspaceSecurityUsersWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->GetWorkspaceSecurityUsers");
-            }
-
-            // verify the required parameter 'workspaceId' is set
-            if (workspaceId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->GetWorkspaceSecurityUsers");
-            }
-
-
-            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-
-            // authentication (oAuth2AuthCode) required
-            // oauth required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/organizations/{organization_id}/workspaces/{workspace_id}/security/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetWorkspaceSecurityUsers", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Remove the specified access from the given Organization Workspace 
-        /// </summary>
-        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
         /// <returns></returns>
-        public void RemoveWorkspaceAccessControl(string organizationId, string workspaceId, string identityId)
+        public void RemoveAllUsersOfWorkspace(string organizationId, string workspaceId)
         {
-            RemoveWorkspaceAccessControlWithHttpInfo(organizationId, workspaceId, identityId);
+            RemoveAllUsersOfWorkspaceWithHttpInfo(organizationId, workspaceId);
         }
 
         /// <summary>
-        /// Remove the specified access from the given Organization Workspace 
+        /// Remove all users from the Workspace specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> RemoveWorkspaceAccessControlWithHttpInfo(string organizationId, string workspaceId, string identityId)
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllUsersOfWorkspaceWithHttpInfo(string organizationId, string workspaceId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveAllUsersOfWorkspace");
             }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveWorkspaceAccessControl");
-            }
-
-            // verify the required parameter 'identityId' is set
-            if (identityId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'identityId' when calling WorkspaceApi->RemoveWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveAllUsersOfWorkspace");
             }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -3229,7 +2335,6 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -3239,10 +2344,10 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/users", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RemoveWorkspaceAccessControl", localVarResponse);
+                Exception _exception = this.ExceptionFactory("RemoveAllUsersOfWorkspace", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3253,46 +2358,38 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Remove the specified access from the given Organization Workspace 
+        /// Remove all users from the Workspace specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveWorkspaceAccessControlAsync(string organizationId, string workspaceId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RemoveAllUsersOfWorkspaceAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RemoveWorkspaceAccessControlWithHttpInfoAsync(organizationId, workspaceId, identityId, cancellationToken).ConfigureAwait(false);
+            await RemoveAllUsersOfWorkspaceWithHttpInfoAsync(organizationId, workspaceId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Remove the specified access from the given Organization Workspace 
+        /// Remove all users from the Workspace specified 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="identityId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveWorkspaceAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllUsersOfWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveAllUsersOfWorkspace");
             }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveWorkspaceAccessControl");
-            }
-
-            // verify the required parameter 'identityId' is set
-            if (identityId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'identityId' when calling WorkspaceApi->RemoveWorkspaceAccessControl");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveAllUsersOfWorkspace");
             }
 
 
@@ -3319,7 +2416,6 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -3329,11 +2425,11 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("RemoveWorkspaceAccessControl", localVarResponse);
+                Exception _exception = this.ExceptionFactory("RemoveAllUsersOfWorkspace", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3344,57 +2440,53 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// set the Workspace default security 
+        /// Remove the specified user from the given Organization Workspace 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="body">the new Workspace default security.</param>
-        /// <returns>WorkspaceSecurity</returns>
-        public WorkspaceSecurity SetWorkspaceDefaultSecurity(string organizationId, string workspaceId, string body)
+        /// <param name="userId">the User identifier</param>
+        /// <returns></returns>
+        public void RemoveUserFromOrganizationWorkspace(string organizationId, string workspaceId, string userId)
         {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity> localVarResponse = SetWorkspaceDefaultSecurityWithHttpInfo(organizationId, workspaceId, body);
-            return localVarResponse.Data;
+            RemoveUserFromOrganizationWorkspaceWithHttpInfo(organizationId, workspaceId, userId);
         }
 
         /// <summary>
-        /// set the Workspace default security 
+        /// Remove the specified user from the given Organization Workspace 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="body">the new Workspace default security.</param>
-        /// <returns>ApiResponse of WorkspaceSecurity</returns>
-        public Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity> SetWorkspaceDefaultSecurityWithHttpInfo(string organizationId, string workspaceId, string body)
+        /// <param name="userId">the User identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveUserFromOrganizationWorkspaceWithHttpInfo(string organizationId, string workspaceId, string userId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->SetWorkspaceDefaultSecurity");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
             }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->SetWorkspaceDefaultSecurity");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
             }
 
-            // verify the required parameter 'body' is set
-            if (body == null)
+            // verify the required parameter 'userId' is set
+            if (userId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'body' when calling WorkspaceApi->SetWorkspaceDefaultSecurity");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'userId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
             }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json",
-                "application/yaml"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -3411,7 +2503,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -3421,10 +2513,10 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<WorkspaceSecurity>("/organizations/{organization_id}/workspaces/{workspace_id}/security/default", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/users/{user_id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SetWorkspaceDefaultSecurity", localVarResponse);
+                Exception _exception = this.ExceptionFactory("RemoveUserFromOrganizationWorkspace", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -3435,60 +2527,56 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// set the Workspace default security 
+        /// Remove the specified user from the given Organization Workspace 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="body">the new Workspace default security.</param>
+        /// <param name="userId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkspaceSecurity</returns>
-        public async System.Threading.Tasks.Task<WorkspaceSecurity> SetWorkspaceDefaultSecurityAsync(string organizationId, string workspaceId, string body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveUserFromOrganizationWorkspaceAsync(string organizationId, string workspaceId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity> localVarResponse = await SetWorkspaceDefaultSecurityWithHttpInfoAsync(organizationId, workspaceId, body, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await RemoveUserFromOrganizationWorkspaceWithHttpInfoAsync(organizationId, workspaceId, userId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// set the Workspace default security 
+        /// Remove the specified user from the given Organization Workspace 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="body">the new Workspace default security.</param>
+        /// <param name="userId">the User identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkspaceSecurity)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity>> SetWorkspaceDefaultSecurityWithHttpInfoAsync(string organizationId, string workspaceId, string body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveUserFromOrganizationWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, string userId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->SetWorkspaceDefaultSecurity");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
             }
 
             // verify the required parameter 'workspaceId' is set
             if (workspaceId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->SetWorkspaceDefaultSecurity");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
             }
 
-            // verify the required parameter 'body' is set
-            if (body == null)
+            // verify the required parameter 'userId' is set
+            if (userId == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'body' when calling WorkspaceApi->SetWorkspaceDefaultSecurity");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'userId' when calling WorkspaceApi->RemoveUserFromOrganizationWorkspace");
             }
 
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json", 
-                "application/yaml"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -3505,7 +2593,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
-            localVarRequestOptions.Data = body;
+            localVarRequestOptions.PathParameters.Add("user_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -3515,11 +2603,11 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkspaceSecurity>("/organizations/{organization_id}/workspaces/{workspace_id}/security/default", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}/users/{user_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SetWorkspaceDefaultSecurity", localVarResponse);
+                Exception _exception = this.ExceptionFactory("RemoveUserFromOrganizationWorkspace", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
