@@ -117,24 +117,19 @@ Class | Method | HTTP request | Description
 *DatasetApi* | [**RemoveAllDatasetCompatibilityElements**](docs/DatasetApi.md#removealldatasetcompatibilityelements) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Remove all Dataset Compatibility elements from the Dataset specified
 *DatasetApi* | [**SearchDatasets**](docs/DatasetApi.md#searchdatasets) | **POST** /organizations/{organization_id}/datasets/search | Search Datasets
 *DatasetApi* | [**UpdateDataset**](docs/DatasetApi.md#updatedataset) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id} | Update a dataset
-*OrganizationApi* | [**AddOrganizationAccessControl**](docs/OrganizationApi.md#addorganizationaccesscontrol) | **POST** /organizations/{organization_id}/security/access | add a control acccess to the Organization
+*OrganizationApi* | [**AddOrReplaceUsersInOrganization**](docs/OrganizationApi.md#addorreplaceusersinorganization) | **POST** /organizations/{organization_id}/users | Add (or replace) users in the Organization specified
 *OrganizationApi* | [**FindAllOrganizations**](docs/OrganizationApi.md#findallorganizations) | **GET** /organizations | List all Organizations
 *OrganizationApi* | [**FindOrganizationById**](docs/OrganizationApi.md#findorganizationbyid) | **GET** /organizations/{organization_id} | Get the details of an Organization
-*OrganizationApi* | [**GetAllPermissions**](docs/OrganizationApi.md#getallpermissions) | **GET** /organizations/permissions | Get all permissions per components
-*OrganizationApi* | [**GetOrganizationAccessControl**](docs/OrganizationApi.md#getorganizationaccesscontrol) | **GET** /organizations/{organization_id}/security/access/{identity_id} | get a control acccess for the Organization
-*OrganizationApi* | [**GetOrganizationPermissions**](docs/OrganizationApi.md#getorganizationpermissions) | **GET** /organizations/{organization_id}/permissions/{role} | Get the Organization permissions by given role
-*OrganizationApi* | [**GetOrganizationSecurity**](docs/OrganizationApi.md#getorganizationsecurity) | **GET** /organizations/{organization_id}/security | Get the Organization security information
-*OrganizationApi* | [**GetOrganizationSecurityUsers**](docs/OrganizationApi.md#getorganizationsecurityusers) | **GET** /organizations/{organization_id}/security/users | Get the Organization security users list
 *OrganizationApi* | [**RegisterOrganization**](docs/OrganizationApi.md#registerorganization) | **POST** /organizations | Register a new organization
-*OrganizationApi* | [**RemoveOrganizationAccessControl**](docs/OrganizationApi.md#removeorganizationaccesscontrol) | **DELETE** /organizations/{organization_id}/security/access/{identity_id} | Remove the specified access from the given Organization
-*OrganizationApi* | [**SetOrganizationDefaultSecurity**](docs/OrganizationApi.md#setorganizationdefaultsecurity) | **POST** /organizations/{organization_id}/security/default | set the Organization default security
+*OrganizationApi* | [**RemoveAllUsersInOrganization**](docs/OrganizationApi.md#removeallusersinorganization) | **DELETE** /organizations/{organization_id}/users | Remove all users from the Organization specified
+*OrganizationApi* | [**RemoveUserFromOrganization**](docs/OrganizationApi.md#removeuserfromorganization) | **DELETE** /organizations/{organization_id}/users/{user_id} | Remove the specified user from the given Organization
 *OrganizationApi* | [**UnregisterOrganization**](docs/OrganizationApi.md#unregisterorganization) | **DELETE** /organizations/{organization_id} | Unregister an organization
 *OrganizationApi* | [**UpdateOrganization**](docs/OrganizationApi.md#updateorganization) | **PATCH** /organizations/{organization_id} | Update an Organization
 *OrganizationApi* | [**UpdateSolutionsContainerRegistryByOrganizationId**](docs/OrganizationApi.md#updatesolutionscontainerregistrybyorganizationid) | **PATCH** /organizations/{organization_id}/services/solutionsContainerRegistry | Update the solutions container registry configuration for the Organization specified
 *OrganizationApi* | [**UpdateStorageByOrganizationId**](docs/OrganizationApi.md#updatestoragebyorganizationid) | **PATCH** /organizations/{organization_id}/services/storage | Update storage configuration for the Organization specified
 *OrganizationApi* | [**UpdateTenantCredentialsByOrganizationId**](docs/OrganizationApi.md#updatetenantcredentialsbyorganizationid) | **PATCH** /organizations/{organization_id}/services/tenantCredentials | Update tenant credentials for the Organization specified
 *ScenarioApi* | [**AddOrReplaceScenarioParameterValues**](docs/ScenarioApi.md#addorreplacescenarioparametervalues) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Add (or replace) Parameter Values for the Scenario specified
-*ScenarioApi* | [**AddScenarioAccessControl**](docs/ScenarioApi.md#addscenarioaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access | add a control acccess to the Scenario
+*ScenarioApi* | [**AddOrReplaceUsersInScenario**](docs/ScenarioApi.md#addorreplaceusersinscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/users | Add (or replace) users in the Scenario specified
 *ScenarioApi* | [**CompareScenarios**](docs/ScenarioApi.md#comparescenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/compare/{compared_scenario_id} | Compare the Scenario with another one and returns the difference for parameters values
 *ScenarioApi* | [**CreateScenario**](docs/ScenarioApi.md#createscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Create a new Scenario
 *ScenarioApi* | [**DeleteAllScenarios**](docs/ScenarioApi.md#deleteallscenarios) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Delete all Scenarios of the Workspace
@@ -143,16 +138,12 @@ Class | Method | HTTP request | Description
 *ScenarioApi* | [**FindAllScenarios**](docs/ScenarioApi.md#findallscenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | List all Scenarios
 *ScenarioApi* | [**FindAllScenariosByValidationStatus**](docs/ScenarioApi.md#findallscenariosbyvalidationstatus) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/{validationStatus} | List all Scenarios by validation status
 *ScenarioApi* | [**FindScenarioById**](docs/ScenarioApi.md#findscenariobyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Get the details of an scenario
-*ScenarioApi* | [**GetScenarioAccessControl**](docs/ScenarioApi.md#getscenarioaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | get a control acccess for the Scenario
 *ScenarioApi* | [**GetScenarioDataDownloadJobInfo**](docs/ScenarioApi.md#getscenariodatadownloadjobinfo) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads/{download_id} | Get Scenario data download URL
-*ScenarioApi* | [**GetScenarioPermissions**](docs/ScenarioApi.md#getscenariopermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/permissions/{role} | Get the Scenario permission by given role
-*ScenarioApi* | [**GetScenarioSecurity**](docs/ScenarioApi.md#getscenariosecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security | Get the Scenario security information
-*ScenarioApi* | [**GetScenarioSecurityUsers**](docs/ScenarioApi.md#getscenariosecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/users | Get the Scenario security users list
 *ScenarioApi* | [**GetScenarioValidationStatusById**](docs/ScenarioApi.md#getscenariovalidationstatusbyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/ValidationStatus | Get the validation status of an scenario
 *ScenarioApi* | [**GetScenariosTree**](docs/ScenarioApi.md#getscenariostree) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree | Get the Scenarios Tree
 *ScenarioApi* | [**RemoveAllScenarioParameterValues**](docs/ScenarioApi.md#removeallscenarioparametervalues) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Remove all Parameter Values from the Scenario specified
-*ScenarioApi* | [**RemoveScenarioAccessControl**](docs/ScenarioApi.md#removescenarioaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Remove the specified access from the given Organization Scenario
-*ScenarioApi* | [**SetScenarioDefaultSecurity**](docs/ScenarioApi.md#setscenariodefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/default | set the Scenario default security
+*ScenarioApi* | [**RemoveAllUsersOfScenario**](docs/ScenarioApi.md#removeallusersofscenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/users | Remove all users from the Scenario specified
+*ScenarioApi* | [**RemoveUserFromScenario**](docs/ScenarioApi.md#removeuserfromscenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/users/{user_id} | Remove the specified user from the given Scenario
 *ScenarioApi* | [**UpdateScenario**](docs/ScenarioApi.md#updatescenario) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Update a scenario
 *ScenariorunApi* | [**DeleteHistoricalDataOrganization**](docs/ScenariorunApi.md#deletehistoricaldataorganization) | **DELETE** /organizations/{organization_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Organization
 *ScenariorunApi* | [**DeleteHistoricalDataWorkspace**](docs/ScenariorunApi.md#deletehistoricaldataworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Workspace
@@ -202,7 +193,7 @@ Class | Method | HTTP request | Description
 *ValidatorApi* | [**FindValidatorById**](docs/ValidatorApi.md#findvalidatorbyid) | **GET** /organizations/{organization_id}/datasets/validators/{validator_id} | Get the details of a validator
 *ValidatorApi* | [**FindValidatorRunById**](docs/ValidatorApi.md#findvalidatorrunbyid) | **GET** /organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id} | Get the details of a validator run
 *ValidatorApi* | [**RunValidator**](docs/ValidatorApi.md#runvalidator) | **POST** /organizations/{organization_id}/datasets/validators/{validator_id}/run | Run a Validator
-*WorkspaceApi* | [**AddWorkspaceAccessControl**](docs/WorkspaceApi.md#addworkspaceaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/access | add a control acccess to the Workspace
+*WorkspaceApi* | [**AddOrReplaceUsersInOrganizationWorkspace**](docs/WorkspaceApi.md#addorreplaceusersinorganizationworkspace) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/users | Add (or replace) users to the Workspace specified
 *WorkspaceApi* | [**CreateWorkspace**](docs/WorkspaceApi.md#createworkspace) | **POST** /organizations/{organization_id}/workspaces | Create a new workspace
 *WorkspaceApi* | [**DeleteAllWorkspaceFiles**](docs/WorkspaceApi.md#deleteallworkspacefiles) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/files | Delete all Workspace files
 *WorkspaceApi* | [**DeleteWorkspace**](docs/WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace
@@ -211,12 +202,8 @@ Class | Method | HTTP request | Description
 *WorkspaceApi* | [**FindAllWorkspaceFiles**](docs/WorkspaceApi.md#findallworkspacefiles) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/files | List all Workspace files
 *WorkspaceApi* | [**FindAllWorkspaces**](docs/WorkspaceApi.md#findallworkspaces) | **GET** /organizations/{organization_id}/workspaces | List all Workspaces
 *WorkspaceApi* | [**FindWorkspaceById**](docs/WorkspaceApi.md#findworkspacebyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id} | Get the details of an workspace
-*WorkspaceApi* | [**GetWorkspaceAccessControl**](docs/WorkspaceApi.md#getworkspaceaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | get a control acccess for the Workspace
-*WorkspaceApi* | [**GetWorkspacePermissions**](docs/WorkspaceApi.md#getworkspacepermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/permissions/{role} | Get the Workspace permission by given role
-*WorkspaceApi* | [**GetWorkspaceSecurity**](docs/WorkspaceApi.md#getworkspacesecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security | Get the Workspace security information
-*WorkspaceApi* | [**GetWorkspaceSecurityUsers**](docs/WorkspaceApi.md#getworkspacesecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/users | Get the Workspace security users list
-*WorkspaceApi* | [**RemoveWorkspaceAccessControl**](docs/WorkspaceApi.md#removeworkspaceaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Remove the specified access from the given Organization Workspace
-*WorkspaceApi* | [**SetWorkspaceDefaultSecurity**](docs/WorkspaceApi.md#setworkspacedefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/default | set the Workspace default security
+*WorkspaceApi* | [**RemoveAllUsersOfWorkspace**](docs/WorkspaceApi.md#removeallusersofworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/users | Remove all users from the Workspace specified
+*WorkspaceApi* | [**RemoveUserFromOrganizationWorkspace**](docs/WorkspaceApi.md#removeuserfromorganizationworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/users/{user_id} | Remove the specified user from the given Organization Workspace
 *WorkspaceApi* | [**UpdateWorkspace**](docs/WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
 *WorkspaceApi* | [**UploadWorkspaceFile**](docs/WorkspaceApi.md#uploadworkspacefile) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/files | Upload a file for the Workspace
 
@@ -224,39 +211,31 @@ Class | Method | HTTP request | Description
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
- - [Model.ComponentRolePermissions](docs/ComponentRolePermissions.md)
  - [Model.Connector](docs/Connector.md)
  - [Model.ConnectorParameter](docs/ConnectorParameter.md)
  - [Model.ConnectorParameterGroup](docs/ConnectorParameterGroup.md)
- - [Model.ContainerResourceSizeInfo](docs/ContainerResourceSizeInfo.md)
- - [Model.ContainerResourceSizing](docs/ContainerResourceSizing.md)
  - [Model.Dataset](docs/Dataset.md)
  - [Model.DatasetCompatibility](docs/DatasetCompatibility.md)
  - [Model.DatasetConnector](docs/DatasetConnector.md)
  - [Model.DatasetCopyParameters](docs/DatasetCopyParameters.md)
  - [Model.DatasetSearch](docs/DatasetSearch.md)
  - [Model.Organization](docs/Organization.md)
- - [Model.OrganizationAccessControl](docs/OrganizationAccessControl.md)
- - [Model.OrganizationSecurity](docs/OrganizationSecurity.md)
  - [Model.OrganizationService](docs/OrganizationService.md)
  - [Model.OrganizationServices](docs/OrganizationServices.md)
- - [Model.ResourceSizeInfo](docs/ResourceSizeInfo.md)
+ - [Model.OrganizationUser](docs/OrganizationUser.md)
  - [Model.RunTemplate](docs/RunTemplate.md)
  - [Model.RunTemplateHandlerId](docs/RunTemplateHandlerId.md)
  - [Model.RunTemplateParameter](docs/RunTemplateParameter.md)
  - [Model.RunTemplateParameterGroup](docs/RunTemplateParameterGroup.md)
  - [Model.RunTemplateParameterValue](docs/RunTemplateParameterValue.md)
- - [Model.RunTemplateResourceSizing](docs/RunTemplateResourceSizing.md)
  - [Model.RunTemplateStepSource](docs/RunTemplateStepSource.md)
  - [Model.Scenario](docs/Scenario.md)
- - [Model.ScenarioAccessControl](docs/ScenarioAccessControl.md)
  - [Model.ScenarioChangedParameterValue](docs/ScenarioChangedParameterValue.md)
  - [Model.ScenarioComparisonResult](docs/ScenarioComparisonResult.md)
  - [Model.ScenarioDataDownloadInfo](docs/ScenarioDataDownloadInfo.md)
  - [Model.ScenarioDataDownloadJob](docs/ScenarioDataDownloadJob.md)
  - [Model.ScenarioJobState](docs/ScenarioJobState.md)
  - [Model.ScenarioLastRun](docs/ScenarioLastRun.md)
- - [Model.ScenarioResourceSizing](docs/ScenarioResourceSizing.md)
  - [Model.ScenarioRun](docs/ScenarioRun.md)
  - [Model.ScenarioRunContainer](docs/ScenarioRunContainer.md)
  - [Model.ScenarioRunContainerArtifact](docs/ScenarioRunContainerArtifact.md)
@@ -268,7 +247,7 @@ Class | Method | HTTP request | Description
  - [Model.ScenarioRunStatus](docs/ScenarioRunStatus.md)
  - [Model.ScenarioRunStatusNode](docs/ScenarioRunStatusNode.md)
  - [Model.ScenarioRunTemplateParameterValue](docs/ScenarioRunTemplateParameterValue.md)
- - [Model.ScenarioSecurity](docs/ScenarioSecurity.md)
+ - [Model.ScenarioUser](docs/ScenarioUser.md)
  - [Model.ScenarioValidationStatus](docs/ScenarioValidationStatus.md)
  - [Model.Solution](docs/Solution.md)
  - [Model.User](docs/User.md)
@@ -277,10 +256,9 @@ Class | Method | HTTP request | Description
  - [Model.Validator](docs/Validator.md)
  - [Model.ValidatorRun](docs/ValidatorRun.md)
  - [Model.Workspace](docs/Workspace.md)
- - [Model.WorkspaceAccessControl](docs/WorkspaceAccessControl.md)
  - [Model.WorkspaceFile](docs/WorkspaceFile.md)
- - [Model.WorkspaceSecurity](docs/WorkspaceSecurity.md)
  - [Model.WorkspaceSolution](docs/WorkspaceSolution.md)
+ - [Model.WorkspaceUser](docs/WorkspaceUser.md)
  - [Model.WorkspaceWebApp](docs/WorkspaceWebApp.md)
 
 
