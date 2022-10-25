@@ -4,19 +4,20 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddOrganizationAccessControl**](OrganizationApi.md#addorganizationaccesscontrol) | **POST** /organizations/{organization_id}/security/access | add a control acccess to the Organization
+[**AddOrganizationAccessControl**](OrganizationApi.md#addorganizationaccesscontrol) | **POST** /organizations/{organization_id}/security/access | Add a control access to the Organization
 [**FindAllOrganizations**](OrganizationApi.md#findallorganizations) | **GET** /organizations | List all Organizations
 [**FindOrganizationById**](OrganizationApi.md#findorganizationbyid) | **GET** /organizations/{organization_id} | Get the details of an Organization
 [**GetAllPermissions**](OrganizationApi.md#getallpermissions) | **GET** /organizations/permissions | Get all permissions per components
-[**GetOrganizationAccessControl**](OrganizationApi.md#getorganizationaccesscontrol) | **GET** /organizations/{organization_id}/security/access/{identity_id} | get a control acccess for the Organization
+[**GetOrganizationAccessControl**](OrganizationApi.md#getorganizationaccesscontrol) | **GET** /organizations/{organization_id}/security/access/{identity_id} | Get a control access for the Organization
 [**GetOrganizationPermissions**](OrganizationApi.md#getorganizationpermissions) | **GET** /organizations/{organization_id}/permissions/{role} | Get the Organization permissions by given role
 [**GetOrganizationSecurity**](OrganizationApi.md#getorganizationsecurity) | **GET** /organizations/{organization_id}/security | Get the Organization security information
 [**GetOrganizationSecurityUsers**](OrganizationApi.md#getorganizationsecurityusers) | **GET** /organizations/{organization_id}/security/users | Get the Organization security users list
 [**RegisterOrganization**](OrganizationApi.md#registerorganization) | **POST** /organizations | Register a new organization
 [**RemoveOrganizationAccessControl**](OrganizationApi.md#removeorganizationaccesscontrol) | **DELETE** /organizations/{organization_id}/security/access/{identity_id} | Remove the specified access from the given Organization
-[**SetOrganizationDefaultSecurity**](OrganizationApi.md#setorganizationdefaultsecurity) | **POST** /organizations/{organization_id}/security/default | set the Organization default security
+[**SetOrganizationDefaultSecurity**](OrganizationApi.md#setorganizationdefaultsecurity) | **POST** /organizations/{organization_id}/security/default | Set the Organization default security
 [**UnregisterOrganization**](OrganizationApi.md#unregisterorganization) | **DELETE** /organizations/{organization_id} | Unregister an organization
 [**UpdateOrganization**](OrganizationApi.md#updateorganization) | **PATCH** /organizations/{organization_id} | Update an Organization
+[**UpdateOrganizationAccessControl**](OrganizationApi.md#updateorganizationaccesscontrol) | **PATCH** /organizations/{organization_id}/security/access/{identity_id} | Update the specified access to User for an Organization
 [**UpdateSolutionsContainerRegistryByOrganizationId**](OrganizationApi.md#updatesolutionscontainerregistrybyorganizationid) | **PATCH** /organizations/{organization_id}/services/solutionsContainerRegistry | Update the solutions container registry configuration for the Organization specified
 [**UpdateStorageByOrganizationId**](OrganizationApi.md#updatestoragebyorganizationid) | **PATCH** /organizations/{organization_id}/services/storage | Update storage configuration for the Organization specified
 [**UpdateTenantCredentialsByOrganizationId**](OrganizationApi.md#updatetenantcredentialsbyorganizationid) | **PATCH** /organizations/{organization_id}/services/tenantCredentials | Update tenant credentials for the Organization specified
@@ -26,7 +27,7 @@ Method | HTTP request | Description
 # **AddOrganizationAccessControl**
 > OrganizationAccessControl AddOrganizationAccessControl (string organizationId, OrganizationAccessControl organizationAccessControl)
 
-add a control acccess to the Organization
+Add a control access to the Organization
 
 ### Example
 ```csharp
@@ -53,7 +54,7 @@ namespace Example
 
             try
             {
-                // add a control acccess to the Organization
+                // Add a control access to the Organization
                 OrganizationAccessControl result = apiInstance.AddOrganizationAccessControl(organizationId, organizationAccessControl);
                 Debug.WriteLine(result);
             }
@@ -310,7 +311,7 @@ This endpoint does not need any parameter.
 # **GetOrganizationAccessControl**
 > OrganizationAccessControl GetOrganizationAccessControl (string organizationId, string identityId)
 
-get a control acccess for the Organization
+Get a control access for the Organization
 
 ### Example
 ```csharp
@@ -337,7 +338,7 @@ namespace Example
 
             try
             {
-                // get a control acccess for the Organization
+                // Get a control access for the Organization
                 OrganizationAccessControl result = apiInstance.GetOrganizationAccessControl(organizationId, identityId);
                 Debug.WriteLine(result);
             }
@@ -377,7 +378,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The Organization access |  -  |
-| **404** | the Organization or user specified is unknown or you don&#39;t have access to it |  -  |
+| **404** | The Organization or user specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -554,7 +555,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new OrganizationApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var organizationId = "organizationId_example";  // string | The Organization identifier
 
             try
             {
@@ -577,7 +578,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
+ **organizationId** | **string**| The Organization identifier | 
 
 ### Return type
 
@@ -750,9 +751,9 @@ void (empty response body)
 
 <a name="setorganizationdefaultsecurity"></a>
 # **SetOrganizationDefaultSecurity**
-> OrganizationSecurity SetOrganizationDefaultSecurity (string organizationId, string body)
+> OrganizationSecurity SetOrganizationDefaultSecurity (string organizationId, OrganizationRole organizationRole)
 
-set the Organization default security
+Set the Organization default security
 
 ### Example
 ```csharp
@@ -775,12 +776,12 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
-            var body = writer;  // string | the new Organization default security.
+            var organizationRole = new OrganizationRole(); // OrganizationRole | the new Organization default security.
 
             try
             {
-                // set the Organization default security
-                OrganizationSecurity result = apiInstance.SetOrganizationDefaultSecurity(organizationId, body);
+                // Set the Organization default security
+                OrganizationSecurity result = apiInstance.SetOrganizationDefaultSecurity(organizationId, organizationRole);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -799,7 +800,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
- **body** | **string**| the new Organization default security. | 
+ **organizationRole** | [**OrganizationRole**](OrganizationRole.md)| the new Organization default security. | 
 
 ### Return type
 
@@ -968,6 +969,83 @@ Name | Type | Description  | Notes
 | **200** | the organization details |  -  |
 | **400** | Bad request |  -  |
 | **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updateorganizationaccesscontrol"></a>
+# **UpdateOrganizationAccessControl**
+> OrganizationAccessControl UpdateOrganizationAccessControl (string organizationId, string identityId, OrganizationRole organizationRole)
+
+Update the specified access to User for an Organization
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class UpdateOrganizationAccessControlExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new OrganizationApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var identityId = "identityId_example";  // string | the User identifier
+            var organizationRole = new OrganizationRole(); // OrganizationRole | The new Organization Access Control
+
+            try
+            {
+                // Update the specified access to User for an Organization
+                OrganizationAccessControl result = apiInstance.UpdateOrganizationAccessControl(organizationId, identityId, organizationRole);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.UpdateOrganizationAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **identityId** | **string**| the User identifier | 
+ **organizationRole** | [**OrganizationRole**](OrganizationRole.md)| The new Organization Access Control | 
+
+### Return type
+
+[**OrganizationAccessControl**](OrganizationAccessControl.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The Organization access |  -  |
+| **404** | The Organization specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
