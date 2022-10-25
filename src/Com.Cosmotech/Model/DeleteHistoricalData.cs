@@ -27,56 +27,49 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// the list of User roles for a Workspace
+    /// Configuration of scenario runs deletion automatic mecanism
     /// </summary>
-    [DataContract(Name = "UserWorkspace")]
-    public partial class UserWorkspace : IEquatable<UserWorkspace>, IValidatableObject
+    [DataContract(Name = "DeleteHistoricalData")]
+    public partial class DeleteHistoricalData : IEquatable<DeleteHistoricalData>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserWorkspace" /> class.
+        /// Initializes a new instance of the <see cref="DeleteHistoricalData" /> class.
         /// </summary>
-        /// <param name="roles">the roles of the User in the Workspace.</param>
-        public UserWorkspace(List<string> roles = default(List<string>))
+        [JsonConstructorAttribute]
+        protected DeleteHistoricalData() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteHistoricalData" /> class.
+        /// </summary>
+        /// <param name="enable">Activate or Deactivate historical data deletion (required) (default to true).</param>
+        /// <param name="pollFrequency">define the polling frequency of scenario run status (in millis) (default to 10000).</param>
+        /// <param name="timeOut">define the polling timeout (default to 28800).</param>
+        public DeleteHistoricalData(bool enable = true, int pollFrequency = 10000, int timeOut = 28800)
         {
-            this.Roles = roles;
+            this.Enable = enable;
+            this.PollFrequency = pollFrequency;
+            this.TimeOut = timeOut;
         }
 
         /// <summary>
-        /// the Workspace Id
+        /// Activate or Deactivate historical data deletion
         /// </summary>
-        /// <value>the Workspace Id</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; private set; }
+        /// <value>Activate or Deactivate historical data deletion</value>
+        [DataMember(Name = "enable", IsRequired = true, EmitDefaultValue = true)]
+        public bool Enable { get; set; }
 
         /// <summary>
-        /// Returns false as Id should not be serialized given that it's read-only.
+        /// define the polling frequency of scenario run status (in millis)
         /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeId()
-        {
-            return false;
-        }
-        /// <summary>
-        /// the Workspace name
-        /// </summary>
-        /// <value>the Workspace name</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; private set; }
+        /// <value>define the polling frequency of scenario run status (in millis)</value>
+        [DataMember(Name = "pollFrequency", EmitDefaultValue = false)]
+        public int PollFrequency { get; set; }
 
         /// <summary>
-        /// Returns false as Name should not be serialized given that it's read-only.
+        /// define the polling timeout
         /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeName()
-        {
-            return false;
-        }
-        /// <summary>
-        /// the roles of the User in the Workspace
-        /// </summary>
-        /// <value>the roles of the User in the Workspace</value>
-        [DataMember(Name = "roles", EmitDefaultValue = false)]
-        public List<string> Roles { get; set; }
+        /// <value>define the polling timeout</value>
+        [DataMember(Name = "timeOut", EmitDefaultValue = false)]
+        public int TimeOut { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -85,10 +78,10 @@ namespace Com.Cosmotech.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UserWorkspace {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Roles: ").Append(Roles).Append("\n");
+            sb.Append("class DeleteHistoricalData {\n");
+            sb.Append("  Enable: ").Append(Enable).Append("\n");
+            sb.Append("  PollFrequency: ").Append(PollFrequency).Append("\n");
+            sb.Append("  TimeOut: ").Append(TimeOut).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,15 +102,15 @@ namespace Com.Cosmotech.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UserWorkspace);
+            return this.Equals(input as DeleteHistoricalData);
         }
 
         /// <summary>
-        /// Returns true if UserWorkspace instances are equal
+        /// Returns true if DeleteHistoricalData instances are equal
         /// </summary>
-        /// <param name="input">Instance of UserWorkspace to be compared</param>
+        /// <param name="input">Instance of DeleteHistoricalData to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserWorkspace input)
+        public bool Equals(DeleteHistoricalData input)
         {
             if (input == null)
             {
@@ -125,20 +118,16 @@ namespace Com.Cosmotech.Model
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.Enable == input.Enable ||
+                    this.Enable.Equals(input.Enable)
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.PollFrequency == input.PollFrequency ||
+                    this.PollFrequency.Equals(input.PollFrequency)
                 ) && 
                 (
-                    this.Roles == input.Roles ||
-                    this.Roles != null &&
-                    input.Roles != null &&
-                    this.Roles.SequenceEqual(input.Roles)
+                    this.TimeOut == input.TimeOut ||
+                    this.TimeOut.Equals(input.TimeOut)
                 );
         }
 
@@ -151,18 +140,9 @@ namespace Com.Cosmotech.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Roles != null)
-                {
-                    hashCode = (hashCode * 59) + this.Roles.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Enable.GetHashCode();
+                hashCode = (hashCode * 59) + this.PollFrequency.GetHashCode();
+                hashCode = (hashCode * 59) + this.TimeOut.GetHashCode();
                 return hashCode;
             }
         }
