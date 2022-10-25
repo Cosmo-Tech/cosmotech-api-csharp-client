@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **SolutionName** | **string** | the Solution name | [optional] [readonly] 
 **RunTemplateName** | **string** | the Solution Run Template name associated with this Scenario | [optional] [readonly] 
 **DatasetList** | **List&lt;string&gt;** | the list of Dataset Id associated to this Scenario Run Template | [optional] 
+**RunSizing** | [**ScenarioResourceSizing**](ScenarioResourceSizing.md) |  | [optional] 
 **ParametersValues** | [**List&lt;ScenarioRunTemplateParameterValue&gt;**](ScenarioRunTemplateParameterValue.md) | the list of Solution Run Template parameters values | [optional] 
 **LastRun** | [**ScenarioLastRun**](ScenarioLastRun.md) |  | [optional] 
 **ParentLastRun** | [**ScenarioLastRun**](ScenarioLastRun.md) |  | [optional] 
