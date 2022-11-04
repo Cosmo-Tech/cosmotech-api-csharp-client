@@ -106,6 +106,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'ComputeSize'
         }
         /// <summary>
+        /// Test the property 'RunSizing'
+        /// </summary>
+        [Fact]
+        public void RunSizingTest()
+        {
+            // TODO unit test for the property 'RunSizing'
+        }
+        /// <summary>
         /// Test the property 'NoDataIngestionState'
         /// </summary>
         [Fact]

@@ -52,29 +52,31 @@ namespace Com.Cosmotech.Model
         /// <param name="tags">the list of tags.</param>
         /// <param name="parentId">the Scenario parent id.</param>
         /// <param name="runTemplateId">the Solution Run Template Id associated with this Scenario.</param>
-        /// <param name="users">the list of users Id with their role.</param>
         /// <param name="state">state.</param>
         /// <param name="datasetList">the list of Dataset Id associated to this Scenario Run Template.</param>
+        /// <param name="runSizing">runSizing.</param>
         /// <param name="parametersValues">the list of Solution Run Template parameters values.</param>
         /// <param name="lastRun">lastRun.</param>
         /// <param name="parentLastRun">parentLastRun.</param>
         /// <param name="rootLastRun">rootLastRun.</param>
         /// <param name="validationStatus">validationStatus.</param>
-        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), List<ScenarioUser> users = default(List<ScenarioUser>), ScenarioJobState? state = default(ScenarioJobState?), List<string> datasetList = default(List<string>), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), ScenarioLastRun lastRun = default(ScenarioLastRun), ScenarioLastRun parentLastRun = default(ScenarioLastRun), ScenarioLastRun rootLastRun = default(ScenarioLastRun), ScenarioValidationStatus? validationStatus = default(ScenarioValidationStatus?))
+        /// <param name="security">security.</param>
+        public Scenario(string name = default(string), string description = default(string), List<string> tags = default(List<string>), string parentId = default(string), string runTemplateId = default(string), ScenarioJobState? state = default(ScenarioJobState?), List<string> datasetList = default(List<string>), ScenarioResourceSizing runSizing = default(ScenarioResourceSizing), List<ScenarioRunTemplateParameterValue> parametersValues = default(List<ScenarioRunTemplateParameterValue>), ScenarioLastRun lastRun = default(ScenarioLastRun), ScenarioLastRun parentLastRun = default(ScenarioLastRun), ScenarioLastRun rootLastRun = default(ScenarioLastRun), ScenarioValidationStatus? validationStatus = default(ScenarioValidationStatus?), ScenarioSecurity security = default(ScenarioSecurity))
         {
             this.Name = name;
             this.Description = description;
             this.Tags = tags;
             this.ParentId = parentId;
             this.RunTemplateId = runTemplateId;
-            this.Users = users;
             this.State = state;
             this.DatasetList = datasetList;
+            this.RunSizing = runSizing;
             this.ParametersValues = parametersValues;
             this.LastRun = lastRun;
             this.ParentLastRun = parentLastRun;
             this.RootLastRun = rootLastRun;
             this.ValidationStatus = validationStatus;
+            this.Security = security;
         }
 
         /// <summary>
@@ -188,13 +190,6 @@ namespace Com.Cosmotech.Model
             return false;
         }
         /// <summary>
-        /// the list of users Id with their role
-        /// </summary>
-        /// <value>the list of users Id with their role</value>
-        [DataMember(Name = "users", EmitDefaultValue = false)]
-        public List<ScenarioUser> Users { get; set; }
-
-        /// <summary>
         /// the Scenario creation date
         /// </summary>
         /// <value>the Scenario creation date</value>
@@ -277,6 +272,12 @@ namespace Com.Cosmotech.Model
         public List<string> DatasetList { get; set; }
 
         /// <summary>
+        /// Gets or Sets RunSizing
+        /// </summary>
+        [DataMember(Name = "runSizing", EmitDefaultValue = false)]
+        public ScenarioResourceSizing RunSizing { get; set; }
+
+        /// <summary>
         /// the list of Solution Run Template parameters values
         /// </summary>
         /// <value>the list of Solution Run Template parameters values</value>
@@ -302,6 +303,12 @@ namespace Com.Cosmotech.Model
         public ScenarioLastRun RootLastRun { get; set; }
 
         /// <summary>
+        /// Gets or Sets Security
+        /// </summary>
+        [DataMember(Name = "security", EmitDefaultValue = true)]
+        public ScenarioSecurity Security { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -319,7 +326,6 @@ namespace Com.Cosmotech.Model
             sb.Append("  SolutionId: ").Append(SolutionId).Append("\n");
             sb.Append("  RunTemplateId: ").Append(RunTemplateId).Append("\n");
             sb.Append("  WorkspaceId: ").Append(WorkspaceId).Append("\n");
-            sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
             sb.Append("  LastUpdate: ").Append(LastUpdate).Append("\n");
@@ -327,11 +333,13 @@ namespace Com.Cosmotech.Model
             sb.Append("  SolutionName: ").Append(SolutionName).Append("\n");
             sb.Append("  RunTemplateName: ").Append(RunTemplateName).Append("\n");
             sb.Append("  DatasetList: ").Append(DatasetList).Append("\n");
+            sb.Append("  RunSizing: ").Append(RunSizing).Append("\n");
             sb.Append("  ParametersValues: ").Append(ParametersValues).Append("\n");
             sb.Append("  LastRun: ").Append(LastRun).Append("\n");
             sb.Append("  ParentLastRun: ").Append(ParentLastRun).Append("\n");
             sb.Append("  RootLastRun: ").Append(RootLastRun).Append("\n");
             sb.Append("  ValidationStatus: ").Append(ValidationStatus).Append("\n");
+            sb.Append("  Security: ").Append(Security).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -419,12 +427,6 @@ namespace Com.Cosmotech.Model
                     this.WorkspaceId.Equals(input.WorkspaceId))
                 ) && 
                 (
-                    this.Users == input.Users ||
-                    this.Users != null &&
-                    input.Users != null &&
-                    this.Users.SequenceEqual(input.Users)
-                ) && 
-                (
                     this.State == input.State ||
                     this.State.Equals(input.State)
                 ) && 
@@ -460,6 +462,11 @@ namespace Com.Cosmotech.Model
                     this.DatasetList.SequenceEqual(input.DatasetList)
                 ) && 
                 (
+                    this.RunSizing == input.RunSizing ||
+                    (this.RunSizing != null &&
+                    this.RunSizing.Equals(input.RunSizing))
+                ) && 
+                (
                     this.ParametersValues == input.ParametersValues ||
                     this.ParametersValues != null &&
                     input.ParametersValues != null &&
@@ -483,6 +490,11 @@ namespace Com.Cosmotech.Model
                 (
                     this.ValidationStatus == input.ValidationStatus ||
                     this.ValidationStatus.Equals(input.ValidationStatus)
+                ) && 
+                (
+                    this.Security == input.Security ||
+                    (this.Security != null &&
+                    this.Security.Equals(input.Security))
                 );
         }
 
@@ -535,10 +547,6 @@ namespace Com.Cosmotech.Model
                 {
                     hashCode = (hashCode * 59) + this.WorkspaceId.GetHashCode();
                 }
-                if (this.Users != null)
-                {
-                    hashCode = (hashCode * 59) + this.Users.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.State.GetHashCode();
                 if (this.CreationDate != null)
                 {
@@ -564,6 +572,10 @@ namespace Com.Cosmotech.Model
                 {
                     hashCode = (hashCode * 59) + this.DatasetList.GetHashCode();
                 }
+                if (this.RunSizing != null)
+                {
+                    hashCode = (hashCode * 59) + this.RunSizing.GetHashCode();
+                }
                 if (this.ParametersValues != null)
                 {
                     hashCode = (hashCode * 59) + this.ParametersValues.GetHashCode();
@@ -581,6 +593,10 @@ namespace Com.Cosmotech.Model
                     hashCode = (hashCode * 59) + this.RootLastRun.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ValidationStatus.GetHashCode();
+                if (this.Security != null)
+                {
+                    hashCode = (hashCode * 59) + this.Security.GetHashCode();
+                }
                 return hashCode;
             }
         }
