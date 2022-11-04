@@ -130,22 +130,6 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'SolutionContainer'
         }
         /// <summary>
-        /// Test the property 'NodeLabel'
-        /// </summary>
-        [Fact]
-        public void NodeLabelTest()
-        {
-            // TODO unit test for the property 'NodeLabel'
-        }
-        /// <summary>
-        /// Test the property 'RunSizing'
-        /// </summary>
-        [Fact]
-        public void RunSizingTest()
-        {
-            // TODO unit test for the property 'RunSizing'
-        }
-        /// <summary>
         /// Test the property 'Artifacts'
         /// </summary>
         [Fact]

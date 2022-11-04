@@ -82,20 +82,20 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'OwnerId'
         }
         /// <summary>
+        /// Test the property 'Users'
+        /// </summary>
+        [Fact]
+        public void UsersTest()
+        {
+            // TODO unit test for the property 'Users'
+        }
+        /// <summary>
         /// Test the property 'Services'
         /// </summary>
         [Fact]
         public void ServicesTest()
         {
             // TODO unit test for the property 'Services'
-        }
-        /// <summary>
-        /// Test the property 'Security'
-        /// </summary>
-        [Fact]
-        public void SecurityTest()
-        {
-            // TODO unit test for the property 'Security'
         }
 
     }
