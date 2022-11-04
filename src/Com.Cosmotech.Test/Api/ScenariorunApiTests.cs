@@ -63,7 +63,22 @@ namespace Com.Cosmotech.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
-            //instance.DeleteHistoricalDataOrganization(organizationId);
+            //bool? deleteUnknown = null;
+            //instance.DeleteHistoricalDataOrganization(organizationId, deleteUnknown);
+        }
+
+        /// <summary>
+        /// Test DeleteHistoricalDataScenario
+        /// </summary>
+        [Fact]
+        public void DeleteHistoricalDataScenarioTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //string scenarioId = null;
+            //bool? deleteUnknown = null;
+            //instance.DeleteHistoricalDataScenario(organizationId, workspaceId, scenarioId, deleteUnknown);
         }
 
         /// <summary>
@@ -75,20 +90,8 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //string workspaceId = null;
-            //instance.DeleteHistoricalDataWorkspace(organizationId, workspaceId);
-        }
-
-        /// <summary>
-        /// Test DeleteHistoricalScenarioRunsByScenario
-        /// </summary>
-        [Fact]
-        public void DeleteHistoricalScenarioRunsByScenarioTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string organizationId = null;
-            //string workspaceId = null;
-            //string scenarioId = null;
-            //instance.DeleteHistoricalScenarioRunsByScenario(organizationId, workspaceId, scenarioId);
+            //bool? deleteUnknown = null;
+            //instance.DeleteHistoricalDataWorkspace(organizationId, workspaceId, deleteUnknown);
         }
 
         /// <summary>
