@@ -4,9 +4,9 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Delete**](TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/delete/{graphId} | 
-[**ImportGraph**](TwingraphApi.md#importgraph) | **POST** /organizations/{organization_id}/import | 
-[**Query**](TwingraphApi.md#query) | **POST** /organizations/{organization_id}/query | 
+[**Delete**](TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | 
+[**ImportGraph**](TwingraphApi.md#importgraph) | **POST** /organizations/{organization_id}/twingraph/import | 
+[**Query**](TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | 
 
 
 <a name="delete"></a>
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 <a name="query"></a>
 # **Query**
-> string Query (string organizationId, TwinGraphQuery twinGraphQuery)
+> string Query (string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
 
 
 
@@ -187,11 +187,12 @@ namespace Example
 
             var apiInstance = new TwingraphApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
             var twinGraphQuery = new TwinGraphQuery(); // TwinGraphQuery | the query to run
 
             try
             {
-                string result = apiInstance.Query(organizationId, twinGraphQuery);
+                string result = apiInstance.Query(organizationId, graphId, twinGraphQuery);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -210,6 +211,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
  **twinGraphQuery** | [**TwinGraphQuery**](TwinGraphQuery.md)| the query to run | 
 
 ### Return type

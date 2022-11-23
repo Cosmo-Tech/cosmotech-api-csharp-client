@@ -5,7 +5,6 @@ a twin graph query in cypher language
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GraphId** | **string** | Twin graph name | [optional] 
 **_Version** | **string** | Twin graph version | [optional] 
 **Query** | **string** | the query in cypher language | [optional] 
 
