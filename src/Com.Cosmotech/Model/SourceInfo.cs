@@ -27,33 +27,81 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// a scenario run container artifact
+    /// Source job import information
     /// </summary>
-    [DataContract(Name = "ScenarioRunContainerArtifact")]
-    public partial class ScenarioRunContainerArtifact : IEquatable<ScenarioRunContainerArtifact>, IValidatableObject
+    [DataContract(Name = "SourceInfo")]
+    public partial class SourceInfo : IEquatable<SourceInfo>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScenarioRunContainerArtifact" /> class.
+        /// the source type containing the files to import
         /// </summary>
-        /// <param name="name">the artifact name.</param>
-        /// <param name="path">the artifact path (relative to /var/csmoutput).</param>
-        public ScenarioRunContainerArtifact(string name = default(string), string path = default(string))
+        /// <value>the source type containing the files to import</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
         {
+            /// <summary>
+            /// Enum ADT for value: ADT
+            /// </summary>
+            [EnumMember(Value = "ADT")]
+            ADT = 1,
+
+            /// <summary>
+            /// Enum Storage for value: Storage
+            /// </summary>
+            [EnumMember(Value = "Storage")]
+            Storage = 2
+
+        }
+
+
+        /// <summary>
+        /// the source type containing the files to import
+        /// </summary>
+        /// <value>the source type containing the files to import</value>
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
+        public TypeEnum Type { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SourceInfo" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected SourceInfo() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SourceInfo" /> class.
+        /// </summary>
+        /// <param name="name">the source name containing the files to import.</param>
+        /// <param name="location">the source location containing the files to import (required).</param>
+        /// <param name="path">the source location containing the files to import.</param>
+        /// <param name="type">the source type containing the files to import (required).</param>
+        public SourceInfo(string name = default(string), string location = default(string), string path = default(string), TypeEnum type = default(TypeEnum))
+        {
+            // to ensure "location" is required (not null)
+            if (location == null) {
+                throw new ArgumentNullException("location is a required property for SourceInfo and cannot be null");
+            }
+            this.Location = location;
+            this.Type = type;
             this.Name = name;
             this.Path = path;
         }
 
         /// <summary>
-        /// the artifact name
+        /// the source name containing the files to import
         /// </summary>
-        /// <value>the artifact name</value>
+        /// <value>the source name containing the files to import</value>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// the artifact path (relative to /var/csmoutput)
+        /// the source location containing the files to import
         /// </summary>
-        /// <value>the artifact path (relative to /var/csmoutput)</value>
+        /// <value>the source location containing the files to import</value>
+        [DataMember(Name = "location", IsRequired = true, EmitDefaultValue = false)]
+        public string Location { get; set; }
+
+        /// <summary>
+        /// the source location containing the files to import
+        /// </summary>
+        /// <value>the source location containing the files to import</value>
         [DataMember(Name = "path", EmitDefaultValue = false)]
         public string Path { get; set; }
 
@@ -64,9 +112,11 @@ namespace Com.Cosmotech.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ScenarioRunContainerArtifact {\n");
+            sb.Append("class SourceInfo {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Location: ").Append(Location).Append("\n");
             sb.Append("  Path: ").Append(Path).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +137,15 @@ namespace Com.Cosmotech.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ScenarioRunContainerArtifact);
+            return this.Equals(input as SourceInfo);
         }
 
         /// <summary>
-        /// Returns true if ScenarioRunContainerArtifact instances are equal
+        /// Returns true if SourceInfo instances are equal
         /// </summary>
-        /// <param name="input">Instance of ScenarioRunContainerArtifact to be compared</param>
+        /// <param name="input">Instance of SourceInfo to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ScenarioRunContainerArtifact input)
+        public bool Equals(SourceInfo input)
         {
             if (input == null)
             {
@@ -108,9 +158,18 @@ namespace Com.Cosmotech.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.Location == input.Location ||
+                    (this.Location != null &&
+                    this.Location.Equals(input.Location))
+                ) && 
+                (
                     this.Path == input.Path ||
                     (this.Path != null &&
                     this.Path.Equals(input.Path))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
                 );
         }
 
@@ -127,10 +186,15 @@ namespace Com.Cosmotech.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                if (this.Location != null)
+                {
+                    hashCode = (hashCode * 59) + this.Location.GetHashCode();
+                }
                 if (this.Path != null)
                 {
                     hashCode = (hashCode * 59) + this.Path.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 return hashCode;
             }
         }
