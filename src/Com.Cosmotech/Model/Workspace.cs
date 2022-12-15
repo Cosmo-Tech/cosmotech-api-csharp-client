@@ -50,8 +50,11 @@ namespace Com.Cosmotech.Model
         /// <param name="webApp">webApp.</param>
         /// <param name="sendInputToDataWarehouse">default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to the ScenarioRun.</param>
         /// <param name="useDedicatedEventHubNamespace">Set this property to true to use a dedicated Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;probesmeasures\\&#39; and \\&#39;scenariorun\\&#39;. (default to false).</param>
+        /// <param name="dedicatedEventHubSasKeyName">the Dedicated Event Hub SAS key name, default to RootManageSharedAccessKey. Use the /secret endpoint to set the key value.</param>
+        /// <param name="dedicatedEventHubAuthenticationStrategy">the Event Hub authentication strategy, SHARED_ACCESS_POLICY or TENANT_CLIENT_CREDENTIALS. Default to the one defined for the tenant..</param>
+        /// <param name="sendScenarioRunToEventHub">default setting for all Scenarios and Run Templates to set whether or not the ScenarioRun is send to the Event Hub (default to true).</param>
         /// <param name="sendScenarioMetadataToEventHub">Set this property to false to not send scenario metada to Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;scenariometadata\\&#39; and \\&#39;scenariorunmetadata\\&#39;. (default to false).</param>
-        public Workspace(string key = default(string), string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSolution solution = default(WorkspaceSolution), List<WorkspaceUser> users = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp), bool sendInputToDataWarehouse = default(bool), bool useDedicatedEventHubNamespace = false, bool sendScenarioMetadataToEventHub = false)
+        public Workspace(string key = default(string), string name = default(string), string description = default(string), string version = default(string), List<string> tags = default(List<string>), WorkspaceSolution solution = default(WorkspaceSolution), List<WorkspaceUser> users = default(List<WorkspaceUser>), WorkspaceWebApp webApp = default(WorkspaceWebApp), bool sendInputToDataWarehouse = default(bool), bool useDedicatedEventHubNamespace = false, string dedicatedEventHubSasKeyName = default(string), string dedicatedEventHubAuthenticationStrategy = default(string), bool sendScenarioRunToEventHub = true, bool sendScenarioMetadataToEventHub = false)
         {
             // to ensure "key" is required (not null)
             if (key == null) {
@@ -75,6 +78,9 @@ namespace Com.Cosmotech.Model
             this.WebApp = webApp;
             this.SendInputToDataWarehouse = sendInputToDataWarehouse;
             this.UseDedicatedEventHubNamespace = useDedicatedEventHubNamespace;
+            this.DedicatedEventHubSasKeyName = dedicatedEventHubSasKeyName;
+            this.DedicatedEventHubAuthenticationStrategy = dedicatedEventHubAuthenticationStrategy;
+            this.SendScenarioRunToEventHub = sendScenarioRunToEventHub;
             this.SendScenarioMetadataToEventHub = sendScenarioMetadataToEventHub;
         }
 
@@ -177,6 +183,27 @@ namespace Com.Cosmotech.Model
         public bool UseDedicatedEventHubNamespace { get; set; }
 
         /// <summary>
+        /// the Dedicated Event Hub SAS key name, default to RootManageSharedAccessKey. Use the /secret endpoint to set the key value
+        /// </summary>
+        /// <value>the Dedicated Event Hub SAS key name, default to RootManageSharedAccessKey. Use the /secret endpoint to set the key value</value>
+        [DataMember(Name = "dedicatedEventHubSasKeyName", EmitDefaultValue = false)]
+        public string DedicatedEventHubSasKeyName { get; set; }
+
+        /// <summary>
+        /// the Event Hub authentication strategy, SHARED_ACCESS_POLICY or TENANT_CLIENT_CREDENTIALS. Default to the one defined for the tenant.
+        /// </summary>
+        /// <value>the Event Hub authentication strategy, SHARED_ACCESS_POLICY or TENANT_CLIENT_CREDENTIALS. Default to the one defined for the tenant.</value>
+        [DataMember(Name = "dedicatedEventHubAuthenticationStrategy", EmitDefaultValue = false)]
+        public string DedicatedEventHubAuthenticationStrategy { get; set; }
+
+        /// <summary>
+        /// default setting for all Scenarios and Run Templates to set whether or not the ScenarioRun is send to the Event Hub
+        /// </summary>
+        /// <value>default setting for all Scenarios and Run Templates to set whether or not the ScenarioRun is send to the Event Hub</value>
+        [DataMember(Name = "sendScenarioRunToEventHub", EmitDefaultValue = true)]
+        public bool SendScenarioRunToEventHub { get; set; }
+
+        /// <summary>
         /// Set this property to false to not send scenario metada to Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;scenariometadata\\&#39; and \\&#39;scenariorunmetadata\\&#39;.
         /// </summary>
         /// <value>Set this property to false to not send scenario metada to Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;scenariometadata\\&#39; and \\&#39;scenariorunmetadata\\&#39;.</value>
@@ -203,6 +230,9 @@ namespace Com.Cosmotech.Model
             sb.Append("  WebApp: ").Append(WebApp).Append("\n");
             sb.Append("  SendInputToDataWarehouse: ").Append(SendInputToDataWarehouse).Append("\n");
             sb.Append("  UseDedicatedEventHubNamespace: ").Append(UseDedicatedEventHubNamespace).Append("\n");
+            sb.Append("  DedicatedEventHubSasKeyName: ").Append(DedicatedEventHubSasKeyName).Append("\n");
+            sb.Append("  DedicatedEventHubAuthenticationStrategy: ").Append(DedicatedEventHubAuthenticationStrategy).Append("\n");
+            sb.Append("  SendScenarioRunToEventHub: ").Append(SendScenarioRunToEventHub).Append("\n");
             sb.Append("  SendScenarioMetadataToEventHub: ").Append(SendScenarioMetadataToEventHub).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -300,6 +330,20 @@ namespace Com.Cosmotech.Model
                     this.UseDedicatedEventHubNamespace.Equals(input.UseDedicatedEventHubNamespace)
                 ) && 
                 (
+                    this.DedicatedEventHubSasKeyName == input.DedicatedEventHubSasKeyName ||
+                    (this.DedicatedEventHubSasKeyName != null &&
+                    this.DedicatedEventHubSasKeyName.Equals(input.DedicatedEventHubSasKeyName))
+                ) && 
+                (
+                    this.DedicatedEventHubAuthenticationStrategy == input.DedicatedEventHubAuthenticationStrategy ||
+                    (this.DedicatedEventHubAuthenticationStrategy != null &&
+                    this.DedicatedEventHubAuthenticationStrategy.Equals(input.DedicatedEventHubAuthenticationStrategy))
+                ) && 
+                (
+                    this.SendScenarioRunToEventHub == input.SendScenarioRunToEventHub ||
+                    this.SendScenarioRunToEventHub.Equals(input.SendScenarioRunToEventHub)
+                ) && 
+                (
                     this.SendScenarioMetadataToEventHub == input.SendScenarioMetadataToEventHub ||
                     this.SendScenarioMetadataToEventHub.Equals(input.SendScenarioMetadataToEventHub)
                 );
@@ -356,6 +400,15 @@ namespace Com.Cosmotech.Model
                 }
                 hashCode = (hashCode * 59) + this.SendInputToDataWarehouse.GetHashCode();
                 hashCode = (hashCode * 59) + this.UseDedicatedEventHubNamespace.GetHashCode();
+                if (this.DedicatedEventHubSasKeyName != null)
+                {
+                    hashCode = (hashCode * 59) + this.DedicatedEventHubSasKeyName.GetHashCode();
+                }
+                if (this.DedicatedEventHubAuthenticationStrategy != null)
+                {
+                    hashCode = (hashCode * 59) + this.DedicatedEventHubAuthenticationStrategy.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.SendScenarioRunToEventHub.GetHashCode();
                 hashCode = (hashCode * 59) + this.SendScenarioMetadataToEventHub.GetHashCode();
                 return hashCode;
             }

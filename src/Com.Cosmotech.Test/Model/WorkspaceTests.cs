@@ -154,6 +154,30 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'UseDedicatedEventHubNamespace'
         }
         /// <summary>
+        /// Test the property 'DedicatedEventHubSasKeyName'
+        /// </summary>
+        [Fact]
+        public void DedicatedEventHubSasKeyNameTest()
+        {
+            // TODO unit test for the property 'DedicatedEventHubSasKeyName'
+        }
+        /// <summary>
+        /// Test the property 'DedicatedEventHubAuthenticationStrategy'
+        /// </summary>
+        [Fact]
+        public void DedicatedEventHubAuthenticationStrategyTest()
+        {
+            // TODO unit test for the property 'DedicatedEventHubAuthenticationStrategy'
+        }
+        /// <summary>
+        /// Test the property 'SendScenarioRunToEventHub'
+        /// </summary>
+        [Fact]
+        public void SendScenarioRunToEventHubTest()
+        {
+            // TODO unit test for the property 'SendScenarioRunToEventHub'
+        }
+        /// <summary>
         /// Test the property 'SendScenarioMetadataToEventHub'
         /// </summary>
         [Fact]

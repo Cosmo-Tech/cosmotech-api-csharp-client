@@ -70,6 +70,19 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test CreateSecret
+        /// </summary>
+        [Fact]
+        public void CreateSecretTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //WorkspaceSecret workspaceSecret = null;
+            //instance.CreateSecret(organizationId, workspaceId, workspaceSecret);
+        }
+
+        /// <summary>
         /// Test CreateWorkspace
         /// </summary>
         [Fact]
