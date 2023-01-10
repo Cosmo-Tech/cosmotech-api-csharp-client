@@ -4,30 +4,24 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddOrganizationAccessControl**](OrganizationApi.md#addorganizationaccesscontrol) | **POST** /organizations/{organization_id}/security/access | Add a control access to the Organization
+[**AddOrReplaceUsersInOrganization**](OrganizationApi.md#addorreplaceusersinorganization) | **POST** /organizations/{organization_id}/users | Add (or replace) users in the Organization specified
 [**FindAllOrganizations**](OrganizationApi.md#findallorganizations) | **GET** /organizations | List all Organizations
 [**FindOrganizationById**](OrganizationApi.md#findorganizationbyid) | **GET** /organizations/{organization_id} | Get the details of an Organization
-[**GetAllPermissions**](OrganizationApi.md#getallpermissions) | **GET** /organizations/permissions | Get all permissions per components
-[**GetOrganizationAccessControl**](OrganizationApi.md#getorganizationaccesscontrol) | **GET** /organizations/{organization_id}/security/access/{identity_id} | Get a control access for the Organization
-[**GetOrganizationPermissions**](OrganizationApi.md#getorganizationpermissions) | **GET** /organizations/{organization_id}/permissions/{role} | Get the Organization permissions by given role
-[**GetOrganizationSecurity**](OrganizationApi.md#getorganizationsecurity) | **GET** /organizations/{organization_id}/security | Get the Organization security information
-[**GetOrganizationSecurityUsers**](OrganizationApi.md#getorganizationsecurityusers) | **GET** /organizations/{organization_id}/security/users | Get the Organization security users list
 [**RegisterOrganization**](OrganizationApi.md#registerorganization) | **POST** /organizations | Register a new organization
-[**RemoveOrganizationAccessControl**](OrganizationApi.md#removeorganizationaccesscontrol) | **DELETE** /organizations/{organization_id}/security/access/{identity_id} | Remove the specified access from the given Organization
-[**SetOrganizationDefaultSecurity**](OrganizationApi.md#setorganizationdefaultsecurity) | **POST** /organizations/{organization_id}/security/default | Set the Organization default security
+[**RemoveAllUsersInOrganization**](OrganizationApi.md#removeallusersinorganization) | **DELETE** /organizations/{organization_id}/users | Remove all users from the Organization specified
+[**RemoveUserFromOrganization**](OrganizationApi.md#removeuserfromorganization) | **DELETE** /organizations/{organization_id}/users/{user_id} | Remove the specified user from the given Organization
 [**UnregisterOrganization**](OrganizationApi.md#unregisterorganization) | **DELETE** /organizations/{organization_id} | Unregister an organization
 [**UpdateOrganization**](OrganizationApi.md#updateorganization) | **PATCH** /organizations/{organization_id} | Update an Organization
-[**UpdateOrganizationAccessControl**](OrganizationApi.md#updateorganizationaccesscontrol) | **PATCH** /organizations/{organization_id}/security/access/{identity_id} | Update the specified access to User for an Organization
 [**UpdateSolutionsContainerRegistryByOrganizationId**](OrganizationApi.md#updatesolutionscontainerregistrybyorganizationid) | **PATCH** /organizations/{organization_id}/services/solutionsContainerRegistry | Update the solutions container registry configuration for the Organization specified
 [**UpdateStorageByOrganizationId**](OrganizationApi.md#updatestoragebyorganizationid) | **PATCH** /organizations/{organization_id}/services/storage | Update storage configuration for the Organization specified
 [**UpdateTenantCredentialsByOrganizationId**](OrganizationApi.md#updatetenantcredentialsbyorganizationid) | **PATCH** /organizations/{organization_id}/services/tenantCredentials | Update tenant credentials for the Organization specified
 
 
-<a name="addorganizationaccesscontrol"></a>
-# **AddOrganizationAccessControl**
-> OrganizationAccessControl AddOrganizationAccessControl (string organizationId, OrganizationAccessControl organizationAccessControl)
+<a name="addorreplaceusersinorganization"></a>
+# **AddOrReplaceUsersInOrganization**
+> List&lt;OrganizationUser&gt; AddOrReplaceUsersInOrganization (string organizationId, List<OrganizationUser> organizationUser)
 
-Add a control access to the Organization
+Add (or replace) users in the Organization specified
 
 ### Example
 ```csharp
@@ -39,7 +33,7 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class AddOrganizationAccessControlExample
+    public class AddOrReplaceUsersInOrganizationExample
     {
         public static void Main()
         {
@@ -50,17 +44,17 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
-            var organizationAccessControl = new OrganizationAccessControl(); // OrganizationAccessControl | the new Organization security access to add.
+            var organizationUser = new List<OrganizationUser>(); // List<OrganizationUser> | the Users to add. Any User with the same ID is overwritten
 
             try
             {
-                // Add a control access to the Organization
-                OrganizationAccessControl result = apiInstance.AddOrganizationAccessControl(organizationId, organizationAccessControl);
+                // Add (or replace) users in the Organization specified
+                List<OrganizationUser> result = apiInstance.AddOrReplaceUsersInOrganization(organizationId, organizationUser);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.AddOrganizationAccessControl: " + e.Message );
+                Debug.Print("Exception when calling OrganizationApi.AddOrReplaceUsersInOrganization: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -74,11 +68,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
- **organizationAccessControl** | [**OrganizationAccessControl**](OrganizationAccessControl.md)| the new Organization security access to add. | 
+ **organizationUser** | [**List&lt;OrganizationUser&gt;**](OrganizationUser.md)| the Users to add. Any User with the same ID is overwritten | 
 
 ### Return type
 
-[**OrganizationAccessControl**](OrganizationAccessControl.md)
+[**List&lt;OrganizationUser&gt;**](OrganizationUser.md)
 
 ### Authorization
 
@@ -86,14 +80,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/yaml
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | The Organization access |  -  |
+| **201** | the Organization Users |  -  |
+| **400** | Bad request |  -  |
 | **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -239,369 +234,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getallpermissions"></a>
-# **GetAllPermissions**
-> List&lt;ComponentRolePermissions&gt; GetAllPermissions ()
-
-Get all permissions per components
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class GetAllPermissionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new OrganizationApi(config);
-
-            try
-            {
-                // Get all permissions per components
-                List<ComponentRolePermissions> result = apiInstance.GetAllPermissions();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrganizationApi.GetAllPermissions: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;ComponentRolePermissions&gt;**](ComponentRolePermissions.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The Scenarios security permission list |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getorganizationaccesscontrol"></a>
-# **GetOrganizationAccessControl**
-> OrganizationAccessControl GetOrganizationAccessControl (string organizationId, string identityId)
-
-Get a control access for the Organization
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class GetOrganizationAccessControlExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new OrganizationApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var identityId = "identityId_example";  // string | the User identifier
-
-            try
-            {
-                // Get a control access for the Organization
-                OrganizationAccessControl result = apiInstance.GetOrganizationAccessControl(organizationId, identityId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrganizationApi.GetOrganizationAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **identityId** | **string**| the User identifier | 
-
-### Return type
-
-[**OrganizationAccessControl**](OrganizationAccessControl.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The Organization access |  -  |
-| **404** | The Organization or user specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getorganizationpermissions"></a>
-# **GetOrganizationPermissions**
-> List&lt;string&gt; GetOrganizationPermissions (string organizationId, string role)
-
-Get the Organization permissions by given role
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class GetOrganizationPermissionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new OrganizationApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var role = "role_example";  // string | the Role
-
-            try
-            {
-                // Get the Organization permissions by given role
-                List<string> result = apiInstance.GetOrganizationPermissions(organizationId, role);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrganizationApi.GetOrganizationPermissions: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **role** | **string**| the Role | 
-
-### Return type
-
-**List<string>**
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The Organization security permission list |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getorganizationsecurity"></a>
-# **GetOrganizationSecurity**
-> OrganizationSecurity GetOrganizationSecurity (string organizationId)
-
-Get the Organization security information
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class GetOrganizationSecurityExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new OrganizationApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-
-            try
-            {
-                // Get the Organization security information
-                OrganizationSecurity result = apiInstance.GetOrganizationSecurity(organizationId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrganizationApi.GetOrganizationSecurity: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
-
-### Return type
-
-[**OrganizationSecurity**](OrganizationSecurity.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The Organization security |  -  |
-| **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getorganizationsecurityusers"></a>
-# **GetOrganizationSecurityUsers**
-> List&lt;string&gt; GetOrganizationSecurityUsers (string organizationId)
-
-Get the Organization security users list
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class GetOrganizationSecurityUsersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new OrganizationApi(config);
-            var organizationId = "organizationId_example";  // string | The Organization identifier
-
-            try
-            {
-                // Get the Organization security users list
-                List<string> result = apiInstance.GetOrganizationSecurityUsers(organizationId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrganizationApi.GetOrganizationSecurityUsers: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| The Organization identifier | 
-
-### Return type
-
-**List<string>**
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The Organization security users list |  -  |
-| **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="registerorganization"></a>
 # **RegisterOrganization**
 > Organization RegisterOrganization (Organization organization)
@@ -675,11 +307,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="removeorganizationaccesscontrol"></a>
-# **RemoveOrganizationAccessControl**
-> void RemoveOrganizationAccessControl (string organizationId, string identityId)
+<a name="removeallusersinorganization"></a>
+# **RemoveAllUsersInOrganization**
+> void RemoveAllUsersInOrganization (string organizationId)
 
-Remove the specified access from the given Organization
+Remove all users from the Organization specified
 
 ### Example
 ```csharp
@@ -691,7 +323,7 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class RemoveOrganizationAccessControlExample
+    public class RemoveAllUsersInOrganizationExample
     {
         public static void Main()
         {
@@ -702,16 +334,15 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
-            var identityId = "identityId_example";  // string | the User identifier
 
             try
             {
-                // Remove the specified access from the given Organization
-                apiInstance.RemoveOrganizationAccessControl(organizationId, identityId);
+                // Remove all users from the Organization specified
+                apiInstance.RemoveAllUsersInOrganization(organizationId);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.RemoveOrganizationAccessControl: " + e.Message );
+                Debug.Print("Exception when calling OrganizationApi.RemoveAllUsersInOrganization: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -725,7 +356,80 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
- **identityId** | **string**| the User identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | the operation succeeded |  -  |
+| **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="removeuserfromorganization"></a>
+# **RemoveUserFromOrganization**
+> void RemoveUserFromOrganization (string organizationId, string userId)
+
+Remove the specified user from the given Organization
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class RemoveUserFromOrganizationExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new OrganizationApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var userId = "userId_example";  // string | the User identifier
+
+            try
+            {
+                // Remove the specified user from the given Organization
+                apiInstance.RemoveUserFromOrganization(organizationId, userId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling OrganizationApi.RemoveUserFromOrganization: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **userId** | **string**| the User identifier | 
 
 ### Return type
 
@@ -745,82 +449,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request succeeded |  -  |
-| **404** | the Organization or the user specified is unknown or you don&#39;t have access to them |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="setorganizationdefaultsecurity"></a>
-# **SetOrganizationDefaultSecurity**
-> OrganizationSecurity SetOrganizationDefaultSecurity (string organizationId, OrganizationRole organizationRole)
-
-Set the Organization default security
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class SetOrganizationDefaultSecurityExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new OrganizationApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var organizationRole = new OrganizationRole(); // OrganizationRole | the new Organization default security.
-
-            try
-            {
-                // Set the Organization default security
-                OrganizationSecurity result = apiInstance.SetOrganizationDefaultSecurity(organizationId, organizationRole);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrganizationApi.SetOrganizationDefaultSecurity: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **organizationRole** | [**OrganizationRole**](OrganizationRole.md)| the new Organization default security. | 
-
-### Return type
-
-[**OrganizationSecurity**](OrganizationSecurity.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/yaml
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | The Organization default visibility |  -  |
-| **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
+| **404** | the Organization or the User specified is unknown or you don&#39;t have access to them |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -969,83 +598,6 @@ Name | Type | Description  | Notes
 | **200** | the organization details |  -  |
 | **400** | Bad request |  -  |
 | **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updateorganizationaccesscontrol"></a>
-# **UpdateOrganizationAccessControl**
-> OrganizationAccessControl UpdateOrganizationAccessControl (string organizationId, string identityId, OrganizationRole organizationRole)
-
-Update the specified access to User for an Organization
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class UpdateOrganizationAccessControlExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new OrganizationApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var identityId = "identityId_example";  // string | the User identifier
-            var organizationRole = new OrganizationRole(); // OrganizationRole | The new Organization Access Control
-
-            try
-            {
-                // Update the specified access to User for an Organization
-                OrganizationAccessControl result = apiInstance.UpdateOrganizationAccessControl(organizationId, identityId, organizationRole);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrganizationApi.UpdateOrganizationAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **identityId** | **string**| the User identifier | 
- **organizationRole** | [**OrganizationRole**](OrganizationRole.md)| The new Organization Access Control | 
-
-### Return type
-
-[**OrganizationAccessControl**](OrganizationAccessControl.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The Organization access |  -  |
-| **404** | The Organization specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

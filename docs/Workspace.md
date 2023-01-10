@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Tags** | **List&lt;string&gt;** | the list of tags | [optional] 
 **OwnerId** | **string** | the user id which own this workspace | [optional] [readonly] 
 **Solution** | [**WorkspaceSolution**](WorkspaceSolution.md) |  | 
+**Users** | [**List&lt;WorkspaceUser&gt;**](WorkspaceUser.md) | the list of users Id with their role | [optional] 
 **WebApp** | [**WorkspaceWebApp**](WorkspaceWebApp.md) |  | [optional] 
 **SendInputToDataWarehouse** | **bool** | default setting for all Scenarios and Run Templates to set whether or not the Dataset values and the input parameters values are send to the DataWarehouse prior to the ScenarioRun | [optional] 
 **UseDedicatedEventHubNamespace** | **bool** | Set this property to true to use a dedicated Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;probesmeasures\\&#39; and \\&#39;scenariorun\\&#39;. | [optional] [default to false]
@@ -20,7 +21,6 @@ Name | Type | Description | Notes
 **DedicatedEventHubAuthenticationStrategy** | **string** | the Event Hub authentication strategy, SHARED_ACCESS_POLICY or TENANT_CLIENT_CREDENTIALS. Default to the one defined for the tenant. | [optional] 
 **SendScenarioRunToEventHub** | **bool** | default setting for all Scenarios and Run Templates to set whether or not the ScenarioRun is send to the Event Hub | [optional] [default to true]
 **SendScenarioMetadataToEventHub** | **bool** | Set this property to false to not send scenario metada to Azure Event Hub Namespace for this Workspace. The Event Hub Namespace must be named \\&#39;&lt;organization_id\\&gt;-&lt;workspace_id\\&gt;\\&#39; (in lower case). This Namespace must also contain two Event Hubs named \\&#39;scenariometadata\\&#39; and \\&#39;scenariorunmetadata\\&#39;. | [optional] [default to false]
-**Security** | [**WorkspaceSecurity**](WorkspaceSecurity.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
