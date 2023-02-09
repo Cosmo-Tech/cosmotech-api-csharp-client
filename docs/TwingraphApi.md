@@ -5,6 +5,8 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Delete**](TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | 
+[**FindAllTwingraphs**](TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | 
+[**GetGraphMetaData**](TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | 
 [**ImportGraph**](TwingraphApi.md#importgraph) | **POST** /organizations/{organization_id}/twingraph/import | 
 [**JobStatus**](TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | 
 [**Query**](TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | 
@@ -81,6 +83,154 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="findalltwingraphs"></a>
+# **FindAllTwingraphs**
+> List&lt;string&gt; FindAllTwingraphs (string organizationId)
+
+
+
+Return the list of all graphs stored in the organization
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class FindAllTwingraphsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+
+            try
+            {
+                List<string> result = apiInstance.FindAllTwingraphs(organizationId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.FindAllTwingraphs: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+
+### Return type
+
+**List<string>**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getgraphmetadata"></a>
+# **GetGraphMetaData**
+> Object GetGraphMetaData (string organizationId, string graphId)
+
+
+
+Return the metaData of the specified graph
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetGraphMetaDataExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
+
+            try
+            {
+                Object result = apiInstance.GetGraphMetaData(organizationId, graphId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.GetGraphMetaData: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
