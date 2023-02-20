@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**GetOrganizationPermissions**](OrganizationApi.md#getorganizationpermissions) | **GET** /organizations/{organization_id}/permissions/{role} | Get the Organization permissions by given role
 [**GetOrganizationSecurity**](OrganizationApi.md#getorganizationsecurity) | **GET** /organizations/{organization_id}/security | Get the Organization security information
 [**GetOrganizationSecurityUsers**](OrganizationApi.md#getorganizationsecurityusers) | **GET** /organizations/{organization_id}/security/users | Get the Organization security users list
-[**ImportOrganization**](OrganizationApi.md#importorganization) | **POST** /organizations/import | Import an organization
 [**RegisterOrganization**](OrganizationApi.md#registerorganization) | **POST** /organizations | Register a new organization
 [**RemoveOrganizationAccessControl**](OrganizationApi.md#removeorganizationaccesscontrol) | **DELETE** /organizations/{organization_id}/security/access/{identity_id} | Remove the specified access from the given Organization
 [**SetOrganizationDefaultSecurity**](OrganizationApi.md#setorganizationdefaultsecurity) | **POST** /organizations/{organization_id}/security/default | Set the Organization default security
@@ -600,79 +599,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | The Organization security users list |  -  |
 | **404** | the Organization specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="importorganization"></a>
-# **ImportOrganization**
-> Organization ImportOrganization (Organization organization)
-
-Import an organization
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class ImportOrganizationExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new OrganizationApi(config);
-            var organization = new Organization(); // Organization | the Organization to import
-
-            try
-            {
-                // Import an organization
-                Organization result = apiInstance.ImportOrganization(organization);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrganizationApi.ImportOrganization: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | [**Organization**](Organization.md)| the Organization to import | 
-
-### Return type
-
-[**Organization**](Organization.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/yaml
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | the Organization details |  -  |
-| **400** | Bad request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
