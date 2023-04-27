@@ -36,7 +36,7 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
+        [DataMember(Name = "state", EmitDefaultValue = true)]
         public ScenarioRunState? State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScenarioRun" /> class.

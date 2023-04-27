@@ -75,7 +75,9 @@ namespace Com.Cosmotech.Test.Api
         public void FindAllOrganizationsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.FindAllOrganizations();
+            //int? page = null;
+            //int? size = null;
+            //var response = instance.FindAllOrganizations(page, size);
             //Assert.IsType<List<Organization>>(response);
         }
 
@@ -150,6 +152,18 @@ namespace Com.Cosmotech.Test.Api
             //string organizationId = null;
             //var response = instance.GetOrganizationSecurityUsers(organizationId);
             //Assert.IsType<List<string>>(response);
+        }
+
+        /// <summary>
+        /// Test ImportOrganization
+        /// </summary>
+        [Fact]
+        public void ImportOrganizationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Organization organization = null;
+            //var response = instance.ImportOrganization(organization);
+            //Assert.IsType<Organization>(response);
         }
 
         /// <summary>

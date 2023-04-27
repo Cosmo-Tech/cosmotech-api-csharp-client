@@ -62,7 +62,9 @@ namespace Com.Cosmotech.Test.Api
         public void FindAllConnectorsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //var response = instance.FindAllConnectors();
+            //int? page = null;
+            //int? size = null;
+            //var response = instance.FindAllConnectors(page, size);
             //Assert.IsType<List<Connector>>(response);
         }
 
@@ -75,6 +77,18 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string connectorId = null;
             //var response = instance.FindConnectorById(connectorId);
+            //Assert.IsType<Connector>(response);
+        }
+
+        /// <summary>
+        /// Test ImportConnector
+        /// </summary>
+        [Fact]
+        public void ImportConnectorTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Connector connector = null;
+            //var response = instance.ImportConnector(connector);
             //Assert.IsType<Connector>(response);
         }
 

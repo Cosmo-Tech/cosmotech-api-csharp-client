@@ -130,6 +130,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'RunTemplateId'
         }
         /// <summary>
+        /// Test the property 'OrganizationId'
+        /// </summary>
+        [Fact]
+        public void OrganizationIdTest()
+        {
+            // TODO unit test for the property 'OrganizationId'
+        }
+        /// <summary>
         /// Test the property 'WorkspaceId'
         /// </summary>
         [Fact]

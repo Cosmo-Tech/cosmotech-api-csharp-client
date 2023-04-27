@@ -4,13 +4,337 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**BatchQuery**](TwingraphApi.md#batchquery) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch-query | 
+[**BatchUploadUpdate**](TwingraphApi.md#batchuploadupdate) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch | 
+[**CreateEntities**](TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
+[**CreateGraph**](TwingraphApi.md#creategraph) | **POST** /organizations/{organization_id}/twingraph/{graph_id} | 
 [**Delete**](TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | 
+[**DeleteEntities**](TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
+[**DownloadGraph**](TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/bulk-query/download/{hash} | 
 [**FindAllTwingraphs**](TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | 
+[**GetEntities**](TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
 [**GetGraphMetaData**](TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | 
 [**ImportGraph**](TwingraphApi.md#importgraph) | **POST** /organizations/{organization_id}/twingraph/import | 
 [**JobStatus**](TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | 
 [**Query**](TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | 
+[**UpdateEntities**](TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
+[**UpdateGraphMetaData**](TwingraphApi.md#updategraphmetadata) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/metadata | 
 
+
+<a name="batchquery"></a>
+# **BatchQuery**
+> TwinGraphHash BatchQuery (string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
+
+
+
+Run a query on a graph instance and return the result as a zip file in async mode
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class BatchQueryExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
+            var twinGraphQuery = new TwinGraphQuery(); // TwinGraphQuery | the query to run
+
+            try
+            {
+                TwinGraphHash result = apiInstance.BatchQuery(organizationId, graphId, twinGraphQuery);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.BatchQuery: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
+ **twinGraphQuery** | [**TwinGraphQuery**](TwinGraphQuery.md)| the query to run | 
+
+### Return type
+
+[**TwinGraphHash**](TwinGraphHash.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="batchuploadupdate"></a>
+# **BatchUploadUpdate**
+> TwinGraphBatchResult BatchUploadUpdate (string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body)
+
+
+
+Async batch update by loading a CSV file on a graph instance 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class BatchUploadUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
+            var twinGraphQuery = new TwinGraphQuery(); // TwinGraphQuery | 
+            var body = id,name,rank
+1,"John Doe",37
+2,"Joe Bloggs",14
+;  // System.IO.Stream | 
+
+            try
+            {
+                TwinGraphBatchResult result = apiInstance.BatchUploadUpdate(organizationId, graphId, twinGraphQuery, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.BatchUploadUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
+ **twinGraphQuery** | [**TwinGraphQuery**](TwinGraphQuery.md)|  | 
+ **body** | **System.IO.Stream****System.IO.Stream**|  | 
+
+### Return type
+
+[**TwinGraphBatchResult**](TwinGraphBatchResult.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: text/csv, application/octet-stream
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | csv file processed |  -  |
+| **400** | Bad request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createentities"></a>
+# **CreateEntities**
+> List&lt;Object&gt; CreateEntities (string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+
+
+
+create new entities in a graph instance
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class CreateEntitiesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
+            var modelType = "node";  // string | the entity model type
+            var graphProperties = new List<GraphProperties>(); // List<GraphProperties> | the entities to create
+
+            try
+            {
+                List<Object> result = apiInstance.CreateEntities(organizationId, graphId, modelType, graphProperties);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.CreateEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
+ **modelType** | **string**| the entity model type | 
+ **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to create | 
+
+### Return type
+
+**List<Object>**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="creategraph"></a>
+# **CreateGraph**
+> void CreateGraph (string organizationId, string graphId, System.IO.Stream body = null)
+
+
+
+Create a new graph
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class CreateGraphExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
+            var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
+
+            try
+            {
+                apiInstance.CreateGraph(organizationId, graphId, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.CreateGraph: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
+ **body** | **System.IO.Stream****System.IO.Stream**|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/octet-stream
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="delete"></a>
 # **Delete**
@@ -86,6 +410,159 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deleteentities"></a>
+# **DeleteEntities**
+> void DeleteEntities (string organizationId, string graphId, string modelType, List<string> requestBody)
+
+
+
+delete entities in a graph instance
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class DeleteEntitiesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
+            var modelType = "node";  // string | the entity model type
+            var requestBody = new List<string>(); // List<string> | the entities to delete
+
+            try
+            {
+                apiInstance.DeleteEntities(organizationId, graphId, modelType, requestBody);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.DeleteEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
+ **modelType** | **string**| the entity model type | 
+ **requestBody** | [**List&lt;string&gt;**](string.md)| the entities to delete | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="downloadgraph"></a>
+# **DownloadGraph**
+> System.IO.Stream DownloadGraph (string organizationId, string hash)
+
+
+
+Download a graph compressed in a zip file
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class DownloadGraphExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var hash = "hash_example";  // string | the Graph download identifier
+
+            try
+            {
+                System.IO.Stream result = apiInstance.DownloadGraph(organizationId, hash);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.DownloadGraph: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **hash** | **string**| the Graph download identifier | 
+
+### Return type
+
+**System.IO.Stream**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="findalltwingraphs"></a>
 # **FindAllTwingraphs**
 > List&lt;string&gt; FindAllTwingraphs (string organizationId)
@@ -149,6 +626,85 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getentities"></a>
+# **GetEntities**
+> List&lt;Object&gt; GetEntities (string organizationId, string graphId, string modelType, List<string> requestBody)
+
+
+
+get entities in a graph instance
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetEntitiesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
+            var modelType = "node";  // string | the entity model type
+            var requestBody = new List<string>(); // List<string> | the entities to get
+
+            try
+            {
+                List<Object> result = apiInstance.GetEntities(organizationId, graphId, modelType, requestBody);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.GetEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
+ **modelType** | **string**| the entity model type | 
+ **requestBody** | [**List&lt;string&gt;**](string.md)| the entities to get | 
+
+### Return type
+
+**List<Object>**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -451,6 +1007,162 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/yaml
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updateentities"></a>
+# **UpdateEntities**
+> List&lt;Object&gt; UpdateEntities (string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+
+
+
+update entities in a graph instance
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class UpdateEntitiesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
+            var modelType = "node";  // string | the entity model type
+            var graphProperties = new List<GraphProperties>(); // List<GraphProperties> | the entities to update
+
+            try
+            {
+                List<Object> result = apiInstance.UpdateEntities(organizationId, graphId, modelType, graphProperties);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.UpdateEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
+ **modelType** | **string**| the entity model type | 
+ **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to update | 
+
+### Return type
+
+**List<Object>**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updategraphmetadata"></a>
+# **UpdateGraphMetaData**
+> Object UpdateGraphMetaData (string organizationId, string graphId, Dictionary<string, string> requestBody)
+
+
+
+Update the metaData of the specified graph
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class UpdateGraphMetaDataExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new TwingraphApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var graphId = "graphId_example";  // string | the Graph Identifier
+            var requestBody = new Dictionary<string, string>(); // Dictionary<string, string> | the metaData to update
+
+            try
+            {
+                Object result = apiInstance.UpdateGraphMetaData(organizationId, graphId, requestBody);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TwingraphApi.UpdateGraphMetaData: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **graphId** | **string**| the Graph Identifier | 
+ **requestBody** | [**Dictionary&lt;string, string&gt;**](string.md)| the metaData to update | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

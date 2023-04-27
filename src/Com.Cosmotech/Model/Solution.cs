@@ -79,6 +79,21 @@ namespace Com.Cosmotech.Model
             return false;
         }
         /// <summary>
+        /// the Organization unique identifier
+        /// </summary>
+        /// <value>the Organization unique identifier</value>
+        [DataMember(Name = "organizationId", EmitDefaultValue = false)]
+        public string OrganizationId { get; private set; }
+
+        /// <summary>
+        /// Returns false as OrganizationId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeOrganizationId()
+        {
+            return false;
+        }
+        /// <summary>
         /// the Solution key which group Solution versions
         /// </summary>
         /// <value>the Solution key which group Solution versions</value>
@@ -186,6 +201,7 @@ namespace Com.Cosmotech.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Solution {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -238,6 +254,11 @@ namespace Com.Cosmotech.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
                 ) && 
                 (
                     this.Key == input.Key ||
@@ -322,6 +343,10 @@ namespace Com.Cosmotech.Model
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.OrganizationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
                 }
                 if (this.Key != null)
                 {

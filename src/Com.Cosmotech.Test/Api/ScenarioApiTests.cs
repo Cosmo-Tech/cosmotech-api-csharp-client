@@ -163,7 +163,9 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //string workspaceId = null;
-            //var response = instance.FindAllScenarios(organizationId, workspaceId);
+            //int? page = null;
+            //int? size = null;
+            //var response = instance.FindAllScenarios(organizationId, workspaceId, page, size);
             //Assert.IsType<List<Scenario>>(response);
         }
 
@@ -177,7 +179,9 @@ namespace Com.Cosmotech.Test.Api
             //string organizationId = null;
             //string workspaceId = null;
             //ScenarioValidationStatus validationStatus = null;
-            //var response = instance.FindAllScenariosByValidationStatus(organizationId, workspaceId, validationStatus);
+            //int? page = null;
+            //int? size = null;
+            //var response = instance.FindAllScenariosByValidationStatus(organizationId, workspaceId, validationStatus, page, size);
             //Assert.IsType<List<Scenario>>(response);
         }
 
@@ -292,6 +296,20 @@ namespace Com.Cosmotech.Test.Api
             //string workspaceId = null;
             //var response = instance.GetScenariosTree(organizationId, workspaceId);
             //Assert.IsType<List<Scenario>>(response);
+        }
+
+        /// <summary>
+        /// Test ImportScenario
+        /// </summary>
+        [Fact]
+        public void ImportScenarioTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //Scenario scenario = null;
+            //var response = instance.ImportScenario(organizationId, workspaceId, scenario);
+            //Assert.IsType<Scenario>(response);
         }
 
         /// <summary>

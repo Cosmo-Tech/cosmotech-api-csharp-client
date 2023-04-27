@@ -193,8 +193,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <returns>List&lt;Scenario&gt;</returns>
-        List<Scenario> FindAllScenarios(string organizationId, string workspaceId);
+        List<Scenario> FindAllScenarios(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?));
 
         /// <summary>
         /// List all Scenarios
@@ -205,8 +207,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
-        ApiResponse<List<Scenario>> FindAllScenariosWithHttpInfo(string organizationId, string workspaceId);
+        ApiResponse<List<Scenario>> FindAllScenariosWithHttpInfo(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?));
         /// <summary>
         /// List all Scenarios by validation status
         /// </summary>
@@ -214,8 +218,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="validationStatus">the Scenario Validation Status</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <returns>List&lt;Scenario&gt;</returns>
-        List<Scenario> FindAllScenariosByValidationStatus(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus);
+        List<Scenario> FindAllScenariosByValidationStatus(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?));
 
         /// <summary>
         /// List all Scenarios by validation status
@@ -227,8 +233,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="validationStatus">the Scenario Validation Status</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
-        ApiResponse<List<Scenario>> FindAllScenariosByValidationStatusWithHttpInfo(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus);
+        ApiResponse<List<Scenario>> FindAllScenariosByValidationStatusWithHttpInfo(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?));
         /// <summary>
         /// Get the details of an scenario
         /// </summary>
@@ -407,6 +415,28 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
         ApiResponse<List<Scenario>> GetScenariosTreeWithHttpInfo(string organizationId, string workspaceId);
+        /// <summary>
+        /// Import Scenario
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenario">the Scenario to import</param>
+        /// <returns>Scenario</returns>
+        Scenario ImportScenario(string organizationId, string workspaceId, Scenario scenario);
+
+        /// <summary>
+        /// Import Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenario">the Scenario to import</param>
+        /// <returns>ApiResponse of Scenario</returns>
+        ApiResponse<Scenario> ImportScenarioWithHttpInfo(string organizationId, string workspaceId, Scenario scenario);
         /// <summary>
         /// Remove all Parameter Values from the Scenario specified
         /// </summary>
@@ -740,9 +770,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
-        System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosAsync(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all Scenarios
@@ -753,9 +785,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> FindAllScenariosWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> FindAllScenariosWithHttpInfoAsync(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Scenarios by validation status
         /// </summary>
@@ -766,9 +800,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="validationStatus">the Scenario Validation Status</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
-        System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosByValidationStatusAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosByValidationStatusAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all Scenarios by validation status
@@ -780,9 +816,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="validationStatus">the Scenario Validation Status</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> FindAllScenariosByValidationStatusWithHttpInfoAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> FindAllScenariosByValidationStatusWithHttpInfoAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the details of an scenario
         /// </summary>
@@ -1001,6 +1039,33 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> GetScenariosTreeWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Import Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenario">the Scenario to import</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Scenario</returns>
+        System.Threading.Tasks.Task<Scenario> ImportScenarioAsync(string organizationId, string workspaceId, Scenario scenario, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Import Scenario
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenario">the Scenario to import</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Scenario)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Scenario>> ImportScenarioWithHttpInfoAsync(string organizationId, string workspaceId, Scenario scenario, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove all Parameter Values from the Scenario specified
         /// </summary>
@@ -2596,10 +2661,12 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <returns>List&lt;Scenario&gt;</returns>
-        public List<Scenario> FindAllScenarios(string organizationId, string workspaceId)
+        public List<Scenario> FindAllScenarios(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = FindAllScenariosWithHttpInfo(organizationId, workspaceId);
+            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = FindAllScenariosWithHttpInfo(organizationId, workspaceId, page, size);
             return localVarResponse.Data;
         }
 
@@ -2609,8 +2676,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<Scenario>> FindAllScenariosWithHttpInfo(string organizationId, string workspaceId)
+        public Com.Cosmotech.Client.ApiResponse<List<Scenario>> FindAllScenariosWithHttpInfo(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2648,6 +2717,14 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
+            }
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -2676,11 +2753,13 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosAsync(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = await FindAllScenariosWithHttpInfoAsync(organizationId, workspaceId, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = await FindAllScenariosWithHttpInfoAsync(organizationId, workspaceId, page, size, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2690,9 +2769,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Scenario>>> FindAllScenariosWithHttpInfoAsync(string organizationId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Scenario>>> FindAllScenariosWithHttpInfoAsync(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2731,6 +2812,14 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
+            }
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -2761,10 +2850,12 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="validationStatus">the Scenario Validation Status</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <returns>List&lt;Scenario&gt;</returns>
-        public List<Scenario> FindAllScenariosByValidationStatus(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus)
+        public List<Scenario> FindAllScenariosByValidationStatus(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = FindAllScenariosByValidationStatusWithHttpInfo(organizationId, workspaceId, validationStatus);
+            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = FindAllScenariosByValidationStatusWithHttpInfo(organizationId, workspaceId, validationStatus, page, size);
             return localVarResponse.Data;
         }
 
@@ -2775,8 +2866,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="validationStatus">the Scenario Validation Status</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<Scenario>> FindAllScenariosByValidationStatusWithHttpInfo(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus)
+        public Com.Cosmotech.Client.ApiResponse<List<Scenario>> FindAllScenariosByValidationStatusWithHttpInfo(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2815,6 +2908,14 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validationStatus", Com.Cosmotech.Client.ClientUtils.ParameterToString(validationStatus)); // path parameter
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
+            }
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -2844,11 +2945,13 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="validationStatus">the Scenario Validation Status</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosByValidationStatusAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosByValidationStatusAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = await FindAllScenariosByValidationStatusWithHttpInfoAsync(organizationId, workspaceId, validationStatus, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = await FindAllScenariosByValidationStatusWithHttpInfoAsync(organizationId, workspaceId, validationStatus, page, size, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2859,9 +2962,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="validationStatus">the Scenario Validation Status</param>
+        /// <param name="page">page number to query (optional)</param>
+        /// <param name="size">amount of result by page (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Scenario>>> FindAllScenariosByValidationStatusWithHttpInfoAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Scenario>>> FindAllScenariosByValidationStatusWithHttpInfoAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2901,6 +3006,14 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("validationStatus", Com.Cosmotech.Client.ClientUtils.ParameterToString(validationStatus)); // path parameter
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (size != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
+            }
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -4389,6 +4502,190 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetScenariosTree", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Import Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenario">the Scenario to import</param>
+        /// <returns>Scenario</returns>
+        public Scenario ImportScenario(string organizationId, string workspaceId, Scenario scenario)
+        {
+            Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = ImportScenarioWithHttpInfo(organizationId, workspaceId, scenario);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenario">the Scenario to import</param>
+        /// <returns>ApiResponse of Scenario</returns>
+        public Com.Cosmotech.Client.ApiResponse<Scenario> ImportScenarioWithHttpInfo(string organizationId, string workspaceId, Scenario scenario)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->ImportScenario");
+            }
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->ImportScenario");
+            }
+
+            // verify the required parameter 'scenario' is set
+            if (scenario == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenario' when calling ScenarioApi->ImportScenario");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.Data = scenario;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Scenario>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/import", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ImportScenario", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Import Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenario">the Scenario to import</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Scenario</returns>
+        public async System.Threading.Tasks.Task<Scenario> ImportScenarioAsync(string organizationId, string workspaceId, Scenario scenario, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = await ImportScenarioWithHttpInfoAsync(organizationId, workspaceId, scenario, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Import Scenario 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="scenario">the Scenario to import</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Scenario)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Scenario>> ImportScenarioWithHttpInfoAsync(string organizationId, string workspaceId, Scenario scenario, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling ScenarioApi->ImportScenario");
+            }
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling ScenarioApi->ImportScenario");
+            }
+
+            // verify the required parameter 'scenario' is set
+            if (scenario == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'scenario' when calling ScenarioApi->ImportScenario");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.Data = scenario;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Scenario>("/organizations/{organization_id}/workspaces/{workspace_id}/scenarios/import", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ImportScenario", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
