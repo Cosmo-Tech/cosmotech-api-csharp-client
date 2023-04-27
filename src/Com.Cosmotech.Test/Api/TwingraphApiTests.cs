@@ -134,8 +134,8 @@ namespace Com.Cosmotech.Test.Api
             //string organizationId = null;
             //string graphId = null;
             //string modelType = null;
-            //List<string> requestBody = null;
-            //instance.DeleteEntities(organizationId, graphId, modelType, requestBody);
+            //List<string> ids = null;
+            //instance.DeleteEntities(organizationId, graphId, modelType, ids);
         }
 
         /// <summary>
@@ -173,8 +173,8 @@ namespace Com.Cosmotech.Test.Api
             //string organizationId = null;
             //string graphId = null;
             //string modelType = null;
-            //List<string> requestBody = null;
-            //var response = instance.GetEntities(organizationId, graphId, modelType, requestBody);
+            //List<string> ids = null;
+            //var response = instance.GetEntities(organizationId, graphId, modelType, ids);
             //Assert.IsType<List<Object>>(response);
         }
 

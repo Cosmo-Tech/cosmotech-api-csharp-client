@@ -412,7 +412,7 @@ void (empty response body)
 
 <a name="deleteentities"></a>
 # **DeleteEntities**
-> void DeleteEntities (string organizationId, string graphId, string modelType, List<string> requestBody)
+> void DeleteEntities (string organizationId, string graphId, string modelType, List<string> ids)
 
 
 
@@ -441,11 +441,11 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var graphId = "graphId_example";  // string | the Graph Identifier
             var modelType = "node";  // string | the entity model type
-            var requestBody = new List<string>(); // List<string> | the entities to delete
+            var ids = new List<string>(); // List<string> | the entities to delete
 
             try
             {
-                apiInstance.DeleteEntities(organizationId, graphId, modelType, requestBody);
+                apiInstance.DeleteEntities(organizationId, graphId, modelType, ids);
             }
             catch (ApiException  e)
             {
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **graphId** | **string**| the Graph Identifier | 
  **modelType** | **string**| the entity model type | 
- **requestBody** | [**List&lt;string&gt;**](string.md)| the entities to delete | 
+ **ids** | [**List&lt;string&gt;**](string.md)| the entities to delete | 
 
 ### Return type
 
@@ -477,7 +477,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 
@@ -638,7 +638,7 @@ Name | Type | Description  | Notes
 
 <a name="getentities"></a>
 # **GetEntities**
-> List&lt;Object&gt; GetEntities (string organizationId, string graphId, string modelType, List<string> requestBody)
+> List&lt;Object&gt; GetEntities (string organizationId, string graphId, string modelType, List<string> ids)
 
 
 
@@ -667,11 +667,11 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var graphId = "graphId_example";  // string | the Graph Identifier
             var modelType = "node";  // string | the entity model type
-            var requestBody = new List<string>(); // List<string> | the entities to get
+            var ids = new List<string>(); // List<string> | the entities to get
 
             try
             {
-                List<Object> result = apiInstance.GetEntities(organizationId, graphId, modelType, requestBody);
+                List<Object> result = apiInstance.GetEntities(organizationId, graphId, modelType, ids);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **graphId** | **string**| the Graph Identifier | 
  **modelType** | **string**| the entity model type | 
- **requestBody** | [**List&lt;string&gt;**](string.md)| the entities to get | 
+ **ids** | [**List&lt;string&gt;**](string.md)| the entities to get | 
 
 ### Return type
 
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
