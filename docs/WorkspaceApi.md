@@ -5,6 +5,7 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddWorkspaceAccessControl**](WorkspaceApi.md#addworkspaceaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/access | Add a control access to the Workspace
+[**CreateSecret**](WorkspaceApi.md#createsecret) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/secret | Create a secret for the Workspace
 [**CreateWorkspace**](WorkspaceApi.md#createworkspace) | **POST** /organizations/{organization_id}/workspaces | Create a new workspace
 [**DeleteAllWorkspaceFiles**](WorkspaceApi.md#deleteallworkspacefiles) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/files | Delete all Workspace files
 [**DeleteWorkspace**](WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace
@@ -17,6 +18,7 @@ Method | HTTP request | Description
 [**GetWorkspacePermissions**](WorkspaceApi.md#getworkspacepermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/permissions/{role} | Get the Workspace permission by given role
 [**GetWorkspaceSecurity**](WorkspaceApi.md#getworkspacesecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security | Get the Workspace security information
 [**GetWorkspaceSecurityUsers**](WorkspaceApi.md#getworkspacesecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/users | Get the Workspace security users list
+[**ImportWorkspace**](WorkspaceApi.md#importworkspace) | **POST** /organizations/{organization_id}/workspaces/import | Import a workspace
 [**RemoveWorkspaceAccessControl**](WorkspaceApi.md#removeworkspaceaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Remove the specified access from the given Organization Workspace
 [**SetWorkspaceDefaultSecurity**](WorkspaceApi.md#setworkspacedefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/default | Set the Workspace default security
 [**UpdateWorkspace**](WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
@@ -98,6 +100,82 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **201** | The Workspace access |  -  |
 | **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createsecret"></a>
+# **CreateSecret**
+> void CreateSecret (string organizationId, string workspaceId, WorkspaceSecret workspaceSecret)
+
+Create a secret for the Workspace
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class CreateSecretExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new WorkspaceApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var workspaceSecret = new WorkspaceSecret(); // WorkspaceSecret | the definition of the secret
+
+            try
+            {
+                // Create a secret for the Workspace
+                apiInstance.CreateSecret(organizationId, workspaceId, workspaceSecret);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkspaceApi.CreateSecret: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **workspaceSecret** | [**WorkspaceSecret**](WorkspaceSecret.md)| the definition of the secret | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/yaml
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Request succeeded |  -  |
+| **404** | the Workspace or the User specified is unknown or you don&#39;t have access to them |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -556,7 +634,7 @@ Name | Type | Description  | Notes
 
 <a name="findallworkspaces"></a>
 # **FindAllWorkspaces**
-> List&lt;Workspace&gt; FindAllWorkspaces (string organizationId)
+> List&lt;Workspace&gt; FindAllWorkspaces (string organizationId, int? page = null, int? size = null)
 
 List all Workspaces
 
@@ -581,11 +659,13 @@ namespace Example
 
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
+            var page = 56;  // int? | page number to query (optional) 
+            var size = 56;  // int? | amount of result by page (optional) 
 
             try
             {
                 // List all Workspaces
-                List<Workspace> result = apiInstance.FindAllWorkspaces(organizationId);
+                List<Workspace> result = apiInstance.FindAllWorkspaces(organizationId, page, size);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -604,6 +684,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
+ **page** | **int?**| page number to query | [optional] 
+ **size** | **int?**| amount of result by page | [optional] 
 
 ### Return type
 
@@ -1000,7 +1082,82 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The Workspace security users list |  -  |
-| **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
+| **404** | the Workspace or the User specified is unknown or you don&#39;t have access to them |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="importworkspace"></a>
+# **ImportWorkspace**
+> Workspace ImportWorkspace (string organizationId, Workspace workspace)
+
+Import a workspace
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class ImportWorkspaceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new WorkspaceApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspace = new Workspace(); // Workspace | the Workspace to import
+
+            try
+            {
+                // Import a workspace
+                Workspace result = apiInstance.ImportWorkspace(organizationId, workspace);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkspaceApi.ImportWorkspace: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspace** | [**Workspace**](Workspace.md)| the Workspace to import | 
+
+### Return type
+
+[**Workspace**](Workspace.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/yaml
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | the workspace details |  -  |
+| **400** | Bad request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

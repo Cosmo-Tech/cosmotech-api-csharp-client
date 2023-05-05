@@ -5,8 +5,8 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteHistoricalDataOrganization**](ScenariorunApi.md#deletehistoricaldataorganization) | **DELETE** /organizations/{organization_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Organization
+[**DeleteHistoricalDataScenario**](ScenariorunApi.md#deletehistoricaldatascenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Scenario
 [**DeleteHistoricalDataWorkspace**](ScenariorunApi.md#deletehistoricaldataworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Workspace
-[**DeleteHistoricalScenarioRunsByScenario**](ScenariorunApi.md#deletehistoricalscenariorunsbyscenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns | Delete all historical ScenarioRuns for the Scenario
 [**DeleteScenarioRun**](ScenariorunApi.md#deletescenariorun) | **DELETE** /organizations/{organization_id}/scenarioruns/{scenariorun_id} | Delete a scenariorun
 [**FindScenarioRunById**](ScenariorunApi.md#findscenariorunbyid) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id} | Get the details of a scenariorun
 [**GetScenarioRunCumulatedLogs**](ScenariorunApi.md#getscenarioruncumulatedlogs) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id}/cumulatedlogs | Get the cumulated logs of a scenariorun
@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**GetScenarioRunStatus**](ScenariorunApi.md#getscenariorunstatus) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id}/status | get the status for the ScenarioRun
 [**GetScenarioRuns**](ScenariorunApi.md#getscenarioruns) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns | get the list of ScenarioRuns for the Scenario
 [**GetWorkspaceScenarioRuns**](ScenariorunApi.md#getworkspacescenarioruns) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarioruns | get the list of ScenarioRuns for the Workspace
+[**ImportScenarioRun**](ScenariorunApi.md#importscenariorun) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/run/import | import a ScenarioRun for the Scenario
 [**RunScenario**](ScenariorunApi.md#runscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/run | run a ScenarioRun for the Scenario
 [**SearchScenarioRuns**](ScenariorunApi.md#searchscenarioruns) | **POST** /organizations/{organization_id}/scenarioruns/search | Search ScenarioRuns
 [**StartScenarioRunContainers**](ScenariorunApi.md#startscenarioruncontainers) | **POST** /organizations/{organization_id}/scenarioruns/startcontainers | Start a new scenariorun with raw containers definition
@@ -22,7 +23,7 @@ Method | HTTP request | Description
 
 <a name="deletehistoricaldataorganization"></a>
 # **DeleteHistoricalDataOrganization**
-> void DeleteHistoricalDataOrganization (string organizationId)
+> void DeleteHistoricalDataOrganization (string organizationId, bool? deleteUnknown = null)
 
 Delete all historical ScenarioRuns in the Organization
 
@@ -47,11 +48,12 @@ namespace Example
 
             var apiInstance = new ScenariorunApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
+            var deleteUnknown = false;  // bool? | condition to delete runs with an Unknown status (optional)  (default to false)
 
             try
             {
                 // Delete all historical ScenarioRuns in the Organization
-                apiInstance.DeleteHistoricalDataOrganization(organizationId);
+                apiInstance.DeleteHistoricalDataOrganization(organizationId, deleteUnknown);
             }
             catch (ApiException  e)
             {
@@ -69,6 +71,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
+ **deleteUnknown** | **bool?**| condition to delete runs with an Unknown status | [optional] [default to false]
 
 ### Return type
 
@@ -93,9 +96,88 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deletehistoricaldatascenario"></a>
+# **DeleteHistoricalDataScenario**
+> void DeleteHistoricalDataScenario (string organizationId, string workspaceId, string scenarioId, bool? deleteUnknown = null)
+
+Delete all historical ScenarioRuns in the Scenario
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class DeleteHistoricalDataScenarioExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new ScenariorunApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
+            var deleteUnknown = false;  // bool? | condition to delete runs with an Unknown status (optional)  (default to false)
+
+            try
+            {
+                // Delete all historical ScenarioRuns in the Scenario
+                apiInstance.DeleteHistoricalDataScenario(organizationId, workspaceId, scenarioId, deleteUnknown);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ScenariorunApi.DeleteHistoricalDataScenario: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **scenarioId** | **string**| the Scenario identifier | 
+ **deleteUnknown** | **bool?**| condition to delete runs with an Unknown status | [optional] [default to false]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Request succeeded |  -  |
+| **400** | Bad request |  -  |
+| **404** | the Scenario specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="deletehistoricaldataworkspace"></a>
 # **DeleteHistoricalDataWorkspace**
-> void DeleteHistoricalDataWorkspace (string organizationId, string workspaceId)
+> void DeleteHistoricalDataWorkspace (string organizationId, string workspaceId, bool? deleteUnknown = null)
 
 Delete all historical ScenarioRuns in the Workspace
 
@@ -121,11 +203,12 @@ namespace Example
             var apiInstance = new ScenariorunApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var deleteUnknown = false;  // bool? | condition to delete runs with an Unknown status (optional)  (default to false)
 
             try
             {
                 // Delete all historical ScenarioRuns in the Workspace
-                apiInstance.DeleteHistoricalDataWorkspace(organizationId, workspaceId);
+                apiInstance.DeleteHistoricalDataWorkspace(organizationId, workspaceId, deleteUnknown);
             }
             catch (ApiException  e)
             {
@@ -144,6 +227,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
+ **deleteUnknown** | **bool?**| condition to delete runs with an Unknown status | [optional] [default to false]
 
 ### Return type
 
@@ -165,83 +249,6 @@ void (empty response body)
 | **204** | Request succeeded |  -  |
 | **400** | Bad request |  -  |
 | **404** | the Organization or Workspace specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="deletehistoricalscenariorunsbyscenario"></a>
-# **DeleteHistoricalScenarioRunsByScenario**
-> void DeleteHistoricalScenarioRunsByScenario (string organizationId, string workspaceId, string scenarioId)
-
-Delete all historical ScenarioRuns for the Scenario
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class DeleteHistoricalScenarioRunsByScenarioExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ScenariorunApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-
-            try
-            {
-                // Delete all historical ScenarioRuns for the Scenario
-                apiInstance.DeleteHistoricalScenarioRunsByScenario(organizationId, workspaceId, scenarioId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ScenariorunApi.DeleteHistoricalScenarioRunsByScenario: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **204** | Request succeeded |  -  |
-| **400** | Bad request |  -  |
-| **404** | the Scenario specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -621,7 +628,7 @@ Name | Type | Description  | Notes
 
 <a name="getscenarioruns"></a>
 # **GetScenarioRuns**
-> List&lt;ScenarioRun&gt; GetScenarioRuns (string organizationId, string workspaceId, string scenarioId)
+> List&lt;ScenarioRun&gt; GetScenarioRuns (string organizationId, string workspaceId, string scenarioId, int? page = null, int? size = null)
 
 get the list of ScenarioRuns for the Scenario
 
@@ -648,11 +655,13 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
+            var page = 56;  // int? | page number to query (optional) 
+            var size = 56;  // int? | amount of result by page (optional) 
 
             try
             {
                 // get the list of ScenarioRuns for the Scenario
-                List<ScenarioRun> result = apiInstance.GetScenarioRuns(organizationId, workspaceId, scenarioId);
+                List<ScenarioRun> result = apiInstance.GetScenarioRuns(organizationId, workspaceId, scenarioId, page, size);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -673,6 +682,8 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
  **scenarioId** | **string**| the Scenario identifier | 
+ **page** | **int?**| page number to query | [optional] 
+ **size** | **int?**| amount of result by page | [optional] 
 
 ### Return type
 
@@ -697,7 +708,7 @@ Name | Type | Description  | Notes
 
 <a name="getworkspacescenarioruns"></a>
 # **GetWorkspaceScenarioRuns**
-> List&lt;ScenarioRun&gt; GetWorkspaceScenarioRuns (string organizationId, string workspaceId)
+> List&lt;ScenarioRun&gt; GetWorkspaceScenarioRuns (string organizationId, string workspaceId, int? page = null, int? size = null)
 
 get the list of ScenarioRuns for the Workspace
 
@@ -723,11 +734,13 @@ namespace Example
             var apiInstance = new ScenariorunApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var page = 56;  // int? | page number to query (optional) 
+            var size = 56;  // int? | amount of result by page (optional) 
 
             try
             {
                 // get the list of ScenarioRuns for the Workspace
-                List<ScenarioRun> result = apiInstance.GetWorkspaceScenarioRuns(organizationId, workspaceId);
+                List<ScenarioRun> result = apiInstance.GetWorkspaceScenarioRuns(organizationId, workspaceId, page, size);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -747,6 +760,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
+ **page** | **int?**| page number to query | [optional] 
+ **size** | **int?**| amount of result by page | [optional] 
 
 ### Return type
 
@@ -766,6 +781,84 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | the scenariorun details list |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="importscenariorun"></a>
+# **ImportScenarioRun**
+> ScenarioRun ImportScenarioRun (string organizationId, string workspaceId, string scenarioId, ScenarioRun scenarioRun)
+
+import a ScenarioRun for the Scenario
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class ImportScenarioRunExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new ScenariorunApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
+            var scenarioRun = new ScenarioRun(); // ScenarioRun | the ScenarioRun to import
+
+            try
+            {
+                // import a ScenarioRun for the Scenario
+                ScenarioRun result = apiInstance.ImportScenarioRun(organizationId, workspaceId, scenarioId, scenarioRun);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ScenariorunApi.ImportScenarioRun: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **scenarioId** | **string**| the Scenario identifier | 
+ **scenarioRun** | [**ScenarioRun**](ScenarioRun.md)| the ScenarioRun to import | 
+
+### Return type
+
+[**ScenarioRun**](ScenarioRun.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | the scenariorun details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -847,7 +940,7 @@ Name | Type | Description  | Notes
 
 <a name="searchscenarioruns"></a>
 # **SearchScenarioRuns**
-> List&lt;ScenarioRun&gt; SearchScenarioRuns (string organizationId, ScenarioRunSearch scenarioRunSearch)
+> List&lt;ScenarioRun&gt; SearchScenarioRuns (string organizationId, ScenarioRunSearch scenarioRunSearch, int? page = null, int? size = null)
 
 Search ScenarioRuns
 
@@ -873,11 +966,13 @@ namespace Example
             var apiInstance = new ScenariorunApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var scenarioRunSearch = new ScenarioRunSearch(); // ScenarioRunSearch | the ScenarioRun search parameters
+            var page = 56;  // int? | page number to query (optional) 
+            var size = 56;  // int? | amount of result by page (optional) 
 
             try
             {
                 // Search ScenarioRuns
-                List<ScenarioRun> result = apiInstance.SearchScenarioRuns(organizationId, scenarioRunSearch);
+                List<ScenarioRun> result = apiInstance.SearchScenarioRuns(organizationId, scenarioRunSearch, page, size);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -897,6 +992,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **scenarioRunSearch** | [**ScenarioRunSearch**](ScenarioRunSearch.md)| the ScenarioRun search parameters | 
+ **page** | **int?**| page number to query | [optional] 
+ **size** | **int?**| amount of result by page | [optional] 
 
 ### Return type
 
