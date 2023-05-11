@@ -28,7 +28,7 @@ namespace Com.Cosmotech.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
         /// <remarks>
         /// Run a query on a graph instance and return the result as a zip file in async mode
@@ -41,7 +41,7 @@ namespace Com.Cosmotech.Api
         TwinGraphHash BatchQuery(string organizationId, string graphId, TwinGraphQuery twinGraphQuery);
 
         /// <summary>
-        /// 
+        /// Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
         /// <remarks>
         /// Run a query on a graph instance and return the result as a zip file in async mode
@@ -53,7 +53,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of TwinGraphHash</returns>
         ApiResponse<TwinGraphHash> BatchQueryWithHttpInfo(string organizationId, string graphId, TwinGraphQuery twinGraphQuery);
         /// <summary>
-        /// 
+        /// Async batch update by loading a CSV file on a graph instance 
         /// </summary>
         /// <remarks>
         /// Async batch update by loading a CSV file on a graph instance 
@@ -67,7 +67,7 @@ namespace Com.Cosmotech.Api
         TwinGraphBatchResult BatchUploadUpdate(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body);
 
         /// <summary>
-        /// 
+        /// Async batch update by loading a CSV file on a graph instance 
         /// </summary>
         /// <remarks>
         /// Async batch update by loading a CSV file on a graph instance 
@@ -80,7 +80,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of TwinGraphBatchResult</returns>
         ApiResponse<TwinGraphBatchResult> BatchUploadUpdateWithHttpInfo(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body);
         /// <summary>
-        /// 
+        /// Create new entities in a graph instance
         /// </summary>
         /// <remarks>
         /// create new entities in a graph instance
@@ -94,7 +94,7 @@ namespace Com.Cosmotech.Api
         List<Object> CreateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
 
         /// <summary>
-        /// 
+        /// Create new entities in a graph instance
         /// </summary>
         /// <remarks>
         /// create new entities in a graph instance
@@ -107,7 +107,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of List&lt;Object&gt;</returns>
         ApiResponse<List<Object>> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
         /// <summary>
-        /// 
+        /// Create a new graph
         /// </summary>
         /// <remarks>
         /// Create a new graph
@@ -120,7 +120,7 @@ namespace Com.Cosmotech.Api
         void CreateGraph(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream));
 
         /// <summary>
-        /// 
+        /// Create a new graph
         /// </summary>
         /// <remarks>
         /// Create a new graph
@@ -132,7 +132,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CreateGraphWithHttpInfo(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream));
         /// <summary>
-        /// 
+        /// Launch a mass delete job
         /// </summary>
         /// <remarks>
         /// Launch a mass delete job
@@ -144,7 +144,7 @@ namespace Com.Cosmotech.Api
         void Delete(string organizationId, string graphId);
 
         /// <summary>
-        /// 
+        /// Launch a mass delete job
         /// </summary>
         /// <remarks>
         /// Launch a mass delete job
@@ -155,7 +155,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteWithHttpInfo(string organizationId, string graphId);
         /// <summary>
-        /// 
+        /// Delete entities in a graph instance
         /// </summary>
         /// <remarks>
         /// delete entities in a graph instance
@@ -169,7 +169,7 @@ namespace Com.Cosmotech.Api
         void DeleteEntities(string organizationId, string graphId, string modelType, List<string> ids);
 
         /// <summary>
-        /// 
+        /// Delete entities in a graph instance
         /// </summary>
         /// <remarks>
         /// delete entities in a graph instance
@@ -182,7 +182,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids);
         /// <summary>
-        /// 
+        /// Download a graph compressed in a zip file
         /// </summary>
         /// <remarks>
         /// Download a graph compressed in a zip file
@@ -194,7 +194,7 @@ namespace Com.Cosmotech.Api
         System.IO.Stream DownloadGraph(string organizationId, string hash);
 
         /// <summary>
-        /// 
+        /// Download a graph compressed in a zip file
         /// </summary>
         /// <remarks>
         /// Download a graph compressed in a zip file
@@ -205,7 +205,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of System.IO.Stream</returns>
         ApiResponse<System.IO.Stream> DownloadGraphWithHttpInfo(string organizationId, string hash);
         /// <summary>
-        /// 
+        /// Return the list of all graphs stored in the organization
         /// </summary>
         /// <remarks>
         /// Return the list of all graphs stored in the organization
@@ -216,7 +216,7 @@ namespace Com.Cosmotech.Api
         List<string> FindAllTwingraphs(string organizationId);
 
         /// <summary>
-        /// 
+        /// Return the list of all graphs stored in the organization
         /// </summary>
         /// <remarks>
         /// Return the list of all graphs stored in the organization
@@ -226,7 +226,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
         ApiResponse<List<string>> FindAllTwingraphsWithHttpInfo(string organizationId);
         /// <summary>
-        /// 
+        /// Get entities in a graph instance
         /// </summary>
         /// <remarks>
         /// get entities in a graph instance
@@ -240,7 +240,7 @@ namespace Com.Cosmotech.Api
         List<Object> GetEntities(string organizationId, string graphId, string modelType, List<string> ids);
 
         /// <summary>
-        /// 
+        /// Get entities in a graph instance
         /// </summary>
         /// <remarks>
         /// get entities in a graph instance
@@ -253,7 +253,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of List&lt;Object&gt;</returns>
         ApiResponse<List<Object>> GetEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids);
         /// <summary>
-        /// 
+        /// Return the metaData of the specified graph
         /// </summary>
         /// <remarks>
         /// Return the metaData of the specified graph
@@ -265,7 +265,7 @@ namespace Com.Cosmotech.Api
         Object GetGraphMetaData(string organizationId, string graphId);
 
         /// <summary>
-        /// 
+        /// Return the metaData of the specified graph
         /// </summary>
         /// <remarks>
         /// Return the metaData of the specified graph
@@ -276,7 +276,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> GetGraphMetaDataWithHttpInfo(string organizationId, string graphId);
         /// <summary>
-        /// 
+        /// Import a new version of a twin graph
         /// </summary>
         /// <remarks>
         /// Import a new version of a twin graph
@@ -288,7 +288,7 @@ namespace Com.Cosmotech.Api
         TwinGraphImportInfo ImportGraph(string organizationId, TwinGraphImport twinGraphImport);
 
         /// <summary>
-        /// 
+        /// Import a new version of a twin graph
         /// </summary>
         /// <remarks>
         /// Import a new version of a twin graph
@@ -299,7 +299,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of TwinGraphImportInfo</returns>
         ApiResponse<TwinGraphImportInfo> ImportGraphWithHttpInfo(string organizationId, TwinGraphImport twinGraphImport);
         /// <summary>
-        /// 
+        /// Get the status of a job
         /// </summary>
         /// <remarks>
         /// Get the status of a job
@@ -311,7 +311,7 @@ namespace Com.Cosmotech.Api
         string JobStatus(string organizationId, string jobId);
 
         /// <summary>
-        /// 
+        /// Get the status of a job
         /// </summary>
         /// <remarks>
         /// Get the status of a job
@@ -322,7 +322,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> JobStatusWithHttpInfo(string organizationId, string jobId);
         /// <summary>
-        /// 
+        /// Run a query on a graph instance
         /// </summary>
         /// <remarks>
         /// Run a query on a graph instance
@@ -335,7 +335,7 @@ namespace Com.Cosmotech.Api
         string Query(string organizationId, string graphId, TwinGraphQuery twinGraphQuery);
 
         /// <summary>
-        /// 
+        /// Run a query on a graph instance
         /// </summary>
         /// <remarks>
         /// Run a query on a graph instance
@@ -347,7 +347,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> QueryWithHttpInfo(string organizationId, string graphId, TwinGraphQuery twinGraphQuery);
         /// <summary>
-        /// 
+        /// Update entities in a graph instance
         /// </summary>
         /// <remarks>
         /// update entities in a graph instance
@@ -361,7 +361,7 @@ namespace Com.Cosmotech.Api
         List<Object> UpdateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
 
         /// <summary>
-        /// 
+        /// Update entities in a graph instance
         /// </summary>
         /// <remarks>
         /// update entities in a graph instance
@@ -374,7 +374,7 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of List&lt;Object&gt;</returns>
         ApiResponse<List<Object>> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
         /// <summary>
-        /// 
+        /// Update the metaData of the specified graph
         /// </summary>
         /// <remarks>
         /// Update the metaData of the specified graph
@@ -387,7 +387,7 @@ namespace Com.Cosmotech.Api
         Object UpdateGraphMetaData(string organizationId, string graphId, Dictionary<string, string> requestBody);
 
         /// <summary>
-        /// 
+        /// Update the metaData of the specified graph
         /// </summary>
         /// <remarks>
         /// Update the metaData of the specified graph
@@ -408,7 +408,7 @@ namespace Com.Cosmotech.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
         /// <remarks>
         /// Run a query on a graph instance and return the result as a zip file in async mode
@@ -422,7 +422,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<TwinGraphHash> BatchQueryAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
         /// <remarks>
         /// Run a query on a graph instance and return the result as a zip file in async mode
@@ -435,7 +435,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (TwinGraphHash)</returns>
         System.Threading.Tasks.Task<ApiResponse<TwinGraphHash>> BatchQueryWithHttpInfoAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Async batch update by loading a CSV file on a graph instance 
         /// </summary>
         /// <remarks>
         /// Async batch update by loading a CSV file on a graph instance 
@@ -450,7 +450,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<TwinGraphBatchResult> BatchUploadUpdateAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Async batch update by loading a CSV file on a graph instance 
         /// </summary>
         /// <remarks>
         /// Async batch update by loading a CSV file on a graph instance 
@@ -464,7 +464,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (TwinGraphBatchResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<TwinGraphBatchResult>> BatchUploadUpdateWithHttpInfoAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Create new entities in a graph instance
         /// </summary>
         /// <remarks>
         /// create new entities in a graph instance
@@ -479,7 +479,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<List<Object>> CreateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Create new entities in a graph instance
         /// </summary>
         /// <remarks>
         /// create new entities in a graph instance
@@ -493,7 +493,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Object>>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Create a new graph
         /// </summary>
         /// <remarks>
         /// Create a new graph
@@ -507,7 +507,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task CreateGraphAsync(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Create a new graph
         /// </summary>
         /// <remarks>
         /// Create a new graph
@@ -520,7 +520,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CreateGraphWithHttpInfoAsync(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Launch a mass delete job
         /// </summary>
         /// <remarks>
         /// Launch a mass delete job
@@ -533,7 +533,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task DeleteAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Launch a mass delete job
         /// </summary>
         /// <remarks>
         /// Launch a mass delete job
@@ -545,7 +545,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Delete entities in a graph instance
         /// </summary>
         /// <remarks>
         /// delete entities in a graph instance
@@ -560,7 +560,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task DeleteEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Delete entities in a graph instance
         /// </summary>
         /// <remarks>
         /// delete entities in a graph instance
@@ -574,7 +574,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Download a graph compressed in a zip file
         /// </summary>
         /// <remarks>
         /// Download a graph compressed in a zip file
@@ -587,7 +587,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<System.IO.Stream> DownloadGraphAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Download a graph compressed in a zip file
         /// </summary>
         /// <remarks>
         /// Download a graph compressed in a zip file
@@ -599,7 +599,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadGraphWithHttpInfoAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Return the list of all graphs stored in the organization
         /// </summary>
         /// <remarks>
         /// Return the list of all graphs stored in the organization
@@ -611,7 +611,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<List<string>> FindAllTwingraphsAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Return the list of all graphs stored in the organization
         /// </summary>
         /// <remarks>
         /// Return the list of all graphs stored in the organization
@@ -622,7 +622,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<string>>> FindAllTwingraphsWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get entities in a graph instance
         /// </summary>
         /// <remarks>
         /// get entities in a graph instance
@@ -637,7 +637,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<List<Object>> GetEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get entities in a graph instance
         /// </summary>
         /// <remarks>
         /// get entities in a graph instance
@@ -651,7 +651,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Object>>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Return the metaData of the specified graph
         /// </summary>
         /// <remarks>
         /// Return the metaData of the specified graph
@@ -664,7 +664,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<Object> GetGraphMetaDataAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Return the metaData of the specified graph
         /// </summary>
         /// <remarks>
         /// Return the metaData of the specified graph
@@ -676,7 +676,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> GetGraphMetaDataWithHttpInfoAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Import a new version of a twin graph
         /// </summary>
         /// <remarks>
         /// Import a new version of a twin graph
@@ -689,7 +689,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<TwinGraphImportInfo> ImportGraphAsync(string organizationId, TwinGraphImport twinGraphImport, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Import a new version of a twin graph
         /// </summary>
         /// <remarks>
         /// Import a new version of a twin graph
@@ -701,7 +701,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (TwinGraphImportInfo)</returns>
         System.Threading.Tasks.Task<ApiResponse<TwinGraphImportInfo>> ImportGraphWithHttpInfoAsync(string organizationId, TwinGraphImport twinGraphImport, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Get the status of a job
         /// </summary>
         /// <remarks>
         /// Get the status of a job
@@ -714,7 +714,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<string> JobStatusAsync(string organizationId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Get the status of a job
         /// </summary>
         /// <remarks>
         /// Get the status of a job
@@ -726,7 +726,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (string)</returns>
         System.Threading.Tasks.Task<ApiResponse<string>> JobStatusWithHttpInfoAsync(string organizationId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Run a query on a graph instance
         /// </summary>
         /// <remarks>
         /// Run a query on a graph instance
@@ -740,7 +740,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<string> QueryAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Run a query on a graph instance
         /// </summary>
         /// <remarks>
         /// Run a query on a graph instance
@@ -753,7 +753,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (string)</returns>
         System.Threading.Tasks.Task<ApiResponse<string>> QueryWithHttpInfoAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Update entities in a graph instance
         /// </summary>
         /// <remarks>
         /// update entities in a graph instance
@@ -768,7 +768,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<List<Object>> UpdateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Update entities in a graph instance
         /// </summary>
         /// <remarks>
         /// update entities in a graph instance
@@ -782,7 +782,7 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Object>>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// 
+        /// Update the metaData of the specified graph
         /// </summary>
         /// <remarks>
         /// Update the metaData of the specified graph
@@ -796,7 +796,7 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task<Object> UpdateGraphMetaDataAsync(string organizationId, string graphId, Dictionary<string, string> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// 
+        /// Update the metaData of the specified graph
         /// </summary>
         /// <remarks>
         /// Update the metaData of the specified graph
@@ -929,7 +929,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Run a query on a graph instance and return the result as a zip file in async mode
+        /// Run a query on a graph instance and return the result as a zip file in async mode Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -943,7 +943,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Run a query on a graph instance and return the result as a zip file in async mode
+        /// Run a query on a graph instance and return the result as a zip file in async mode Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1019,7 +1019,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Run a query on a graph instance and return the result as a zip file in async mode
+        /// Run a query on a graph instance and return the result as a zip file in async mode Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1034,7 +1034,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Run a query on a graph instance and return the result as a zip file in async mode
+        /// Run a query on a graph instance and return the result as a zip file in async mode Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1113,7 +1113,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Async batch update by loading a CSV file on a graph instance 
+        /// Async batch update by loading a CSV file on a graph instance  Async batch update by loading a CSV file on a graph instance 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1128,7 +1128,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Async batch update by loading a CSV file on a graph instance 
+        /// Async batch update by loading a CSV file on a graph instance  Async batch update by loading a CSV file on a graph instance 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1213,7 +1213,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Async batch update by loading a CSV file on a graph instance 
+        /// Async batch update by loading a CSV file on a graph instance  Async batch update by loading a CSV file on a graph instance 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1229,7 +1229,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Async batch update by loading a CSV file on a graph instance 
+        /// Async batch update by loading a CSV file on a graph instance  Async batch update by loading a CSV file on a graph instance 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1317,7 +1317,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  create new entities in a graph instance
+        /// Create new entities in a graph instance create new entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1332,7 +1332,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  create new entities in a graph instance
+        /// Create new entities in a graph instance create new entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1416,7 +1416,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  create new entities in a graph instance
+        /// Create new entities in a graph instance create new entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1432,7 +1432,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  create new entities in a graph instance
+        /// Create new entities in a graph instance create new entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1519,7 +1519,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Create a new graph
+        /// Create a new graph Create a new graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1532,7 +1532,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Create a new graph
+        /// Create a new graph Create a new graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1601,7 +1601,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Create a new graph
+        /// Create a new graph Create a new graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1615,7 +1615,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Create a new graph
+        /// Create a new graph Create a new graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1687,7 +1687,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Launch a mass delete job
+        /// Launch a mass delete job Launch a mass delete job
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1699,7 +1699,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Launch a mass delete job
+        /// Launch a mass delete job Launch a mass delete job
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1765,7 +1765,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Launch a mass delete job
+        /// Launch a mass delete job Launch a mass delete job
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1778,7 +1778,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Launch a mass delete job
+        /// Launch a mass delete job Launch a mass delete job
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1847,7 +1847,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  delete entities in a graph instance
+        /// Delete entities in a graph instance delete entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1861,7 +1861,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  delete entities in a graph instance
+        /// Delete entities in a graph instance delete entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1943,7 +1943,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  delete entities in a graph instance
+        /// Delete entities in a graph instance delete entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1958,7 +1958,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  delete entities in a graph instance
+        /// Delete entities in a graph instance delete entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2043,7 +2043,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Download a graph compressed in a zip file
+        /// Download a graph compressed in a zip file Download a graph compressed in a zip file
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2056,7 +2056,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Download a graph compressed in a zip file
+        /// Download a graph compressed in a zip file Download a graph compressed in a zip file
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2123,7 +2123,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Download a graph compressed in a zip file
+        /// Download a graph compressed in a zip file Download a graph compressed in a zip file
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2137,7 +2137,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Download a graph compressed in a zip file
+        /// Download a graph compressed in a zip file Download a graph compressed in a zip file
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2207,7 +2207,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Return the list of all graphs stored in the organization
+        /// Return the list of all graphs stored in the organization Return the list of all graphs stored in the organization
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2219,7 +2219,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Return the list of all graphs stored in the organization
+        /// Return the list of all graphs stored in the organization Return the list of all graphs stored in the organization
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2278,7 +2278,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Return the list of all graphs stored in the organization
+        /// Return the list of all graphs stored in the organization Return the list of all graphs stored in the organization
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2291,7 +2291,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Return the list of all graphs stored in the organization
+        /// Return the list of all graphs stored in the organization Return the list of all graphs stored in the organization
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2353,7 +2353,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  get entities in a graph instance
+        /// Get entities in a graph instance get entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2368,7 +2368,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  get entities in a graph instance
+        /// Get entities in a graph instance get entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2451,7 +2451,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  get entities in a graph instance
+        /// Get entities in a graph instance get entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2467,7 +2467,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  get entities in a graph instance
+        /// Get entities in a graph instance get entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2553,7 +2553,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Return the metaData of the specified graph
+        /// Return the metaData of the specified graph Return the metaData of the specified graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2566,7 +2566,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Return the metaData of the specified graph
+        /// Return the metaData of the specified graph Return the metaData of the specified graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2633,7 +2633,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Return the metaData of the specified graph
+        /// Return the metaData of the specified graph Return the metaData of the specified graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2647,7 +2647,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Return the metaData of the specified graph
+        /// Return the metaData of the specified graph Return the metaData of the specified graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2717,7 +2717,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Import a new version of a twin graph
+        /// Import a new version of a twin graph Import a new version of a twin graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2730,7 +2730,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Import a new version of a twin graph
+        /// Import a new version of a twin graph Import a new version of a twin graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2799,7 +2799,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Import a new version of a twin graph
+        /// Import a new version of a twin graph Import a new version of a twin graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2813,7 +2813,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Import a new version of a twin graph
+        /// Import a new version of a twin graph Import a new version of a twin graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2885,7 +2885,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Get the status of a job
+        /// Get the status of a job Get the status of a job
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2898,7 +2898,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Get the status of a job
+        /// Get the status of a job Get the status of a job
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2966,7 +2966,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Get the status of a job
+        /// Get the status of a job Get the status of a job
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2980,7 +2980,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Get the status of a job
+        /// Get the status of a job Get the status of a job
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3051,7 +3051,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Run a query on a graph instance
+        /// Run a query on a graph instance Run a query on a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3065,7 +3065,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Run a query on a graph instance
+        /// Run a query on a graph instance Run a query on a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3142,7 +3142,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Run a query on a graph instance
+        /// Run a query on a graph instance Run a query on a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3157,7 +3157,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Run a query on a graph instance
+        /// Run a query on a graph instance Run a query on a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3237,7 +3237,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  update entities in a graph instance
+        /// Update entities in a graph instance update entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3252,7 +3252,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  update entities in a graph instance
+        /// Update entities in a graph instance update entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3336,7 +3336,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  update entities in a graph instance
+        /// Update entities in a graph instance update entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3352,7 +3352,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  update entities in a graph instance
+        /// Update entities in a graph instance update entities in a graph instance
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3439,7 +3439,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Update the metaData of the specified graph
+        /// Update the metaData of the specified graph Update the metaData of the specified graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3453,7 +3453,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Update the metaData of the specified graph
+        /// Update the metaData of the specified graph Update the metaData of the specified graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3529,7 +3529,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Update the metaData of the specified graph
+        /// Update the metaData of the specified graph Update the metaData of the specified graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -3544,7 +3544,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        ///  Update the metaData of the specified graph
+        /// Update the metaData of the specified graph Update the metaData of the specified graph
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>

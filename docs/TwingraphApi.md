@@ -4,28 +4,28 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BatchQuery**](TwingraphApi.md#batchquery) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch-query | 
-[**BatchUploadUpdate**](TwingraphApi.md#batchuploadupdate) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch | 
-[**CreateEntities**](TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
-[**CreateGraph**](TwingraphApi.md#creategraph) | **POST** /organizations/{organization_id}/twingraph/{graph_id} | 
-[**Delete**](TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | 
-[**DeleteEntities**](TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
-[**DownloadGraph**](TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/bulk-query/download/{hash} | 
-[**FindAllTwingraphs**](TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | 
-[**GetEntities**](TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
-[**GetGraphMetaData**](TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | 
-[**ImportGraph**](TwingraphApi.md#importgraph) | **POST** /organizations/{organization_id}/twingraph/import | 
-[**JobStatus**](TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | 
-[**Query**](TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | 
-[**UpdateEntities**](TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
-[**UpdateGraphMetaData**](TwingraphApi.md#updategraphmetadata) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/metadata | 
+[**BatchQuery**](TwingraphApi.md#batchquery) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode
+[**BatchUploadUpdate**](TwingraphApi.md#batchuploadupdate) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch | Async batch update by loading a CSV file on a graph instance 
+[**CreateEntities**](TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Create new entities in a graph instance
+[**CreateGraph**](TwingraphApi.md#creategraph) | **POST** /organizations/{organization_id}/twingraph/{graph_id} | Create a new graph
+[**Delete**](TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | Launch a mass delete job
+[**DeleteEntities**](TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Delete entities in a graph instance
+[**DownloadGraph**](TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/bulk-query/download/{hash} | Download a graph compressed in a zip file
+[**FindAllTwingraphs**](TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | Return the list of all graphs stored in the organization
+[**GetEntities**](TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Get entities in a graph instance
+[**GetGraphMetaData**](TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Return the metaData of the specified graph
+[**ImportGraph**](TwingraphApi.md#importgraph) | **POST** /organizations/{organization_id}/twingraph/import | Import a new version of a twin graph
+[**JobStatus**](TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | Get the status of a job
+[**Query**](TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | Run a query on a graph instance
+[**UpdateEntities**](TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Update entities in a graph instance
+[**UpdateGraphMetaData**](TwingraphApi.md#updategraphmetadata) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Update the metaData of the specified graph
 
 
 <a name="batchquery"></a>
 # **BatchQuery**
 > TwinGraphHash BatchQuery (string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
 
-
+Run a query on a graph instance and return the result as a zip file in async mode
 
 Run a query on a graph instance and return the result as a zip file in async mode
 
@@ -55,6 +55,7 @@ namespace Example
 
             try
             {
+                // Run a query on a graph instance and return the result as a zip file in async mode
                 TwinGraphHash result = apiInstance.BatchQuery(organizationId, graphId, twinGraphQuery);
                 Debug.WriteLine(result);
             }
@@ -102,7 +103,7 @@ Name | Type | Description  | Notes
 # **BatchUploadUpdate**
 > TwinGraphBatchResult BatchUploadUpdate (string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body)
 
-
+Async batch update by loading a CSV file on a graph instance 
 
 Async batch update by loading a CSV file on a graph instance 
 
@@ -136,6 +137,7 @@ namespace Example
 
             try
             {
+                // Async batch update by loading a CSV file on a graph instance 
                 TwinGraphBatchResult result = apiInstance.BatchUploadUpdate(organizationId, graphId, twinGraphQuery, body);
                 Debug.WriteLine(result);
             }
@@ -185,7 +187,7 @@ Name | Type | Description  | Notes
 # **CreateEntities**
 > List&lt;Object&gt; CreateEntities (string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
 
-
+Create new entities in a graph instance
 
 create new entities in a graph instance
 
@@ -216,6 +218,7 @@ namespace Example
 
             try
             {
+                // Create new entities in a graph instance
                 List<Object> result = apiInstance.CreateEntities(organizationId, graphId, modelType, graphProperties);
                 Debug.WriteLine(result);
             }
@@ -264,7 +267,7 @@ Name | Type | Description  | Notes
 # **CreateGraph**
 > void CreateGraph (string organizationId, string graphId, System.IO.Stream body = null)
 
-
+Create a new graph
 
 Create a new graph
 
@@ -294,6 +297,7 @@ namespace Example
 
             try
             {
+                // Create a new graph
                 apiInstance.CreateGraph(organizationId, graphId, body);
             }
             catch (ApiException  e)
@@ -340,7 +344,7 @@ void (empty response body)
 # **Delete**
 > void Delete (string organizationId, string graphId)
 
-
+Launch a mass delete job
 
 Launch a mass delete job
 
@@ -369,6 +373,7 @@ namespace Example
 
             try
             {
+                // Launch a mass delete job
                 apiInstance.Delete(organizationId, graphId);
             }
             catch (ApiException  e)
@@ -414,7 +419,7 @@ void (empty response body)
 # **DeleteEntities**
 > void DeleteEntities (string organizationId, string graphId, string modelType, List<string> ids)
 
-
+Delete entities in a graph instance
 
 delete entities in a graph instance
 
@@ -445,6 +450,7 @@ namespace Example
 
             try
             {
+                // Delete entities in a graph instance
                 apiInstance.DeleteEntities(organizationId, graphId, modelType, ids);
             }
             catch (ApiException  e)
@@ -492,7 +498,7 @@ void (empty response body)
 # **DownloadGraph**
 > System.IO.Stream DownloadGraph (string organizationId, string hash)
 
-
+Download a graph compressed in a zip file
 
 Download a graph compressed in a zip file
 
@@ -521,6 +527,7 @@ namespace Example
 
             try
             {
+                // Download a graph compressed in a zip file
                 System.IO.Stream result = apiInstance.DownloadGraph(organizationId, hash);
                 Debug.WriteLine(result);
             }
@@ -567,7 +574,7 @@ Name | Type | Description  | Notes
 # **FindAllTwingraphs**
 > List&lt;string&gt; FindAllTwingraphs (string organizationId)
 
-
+Return the list of all graphs stored in the organization
 
 Return the list of all graphs stored in the organization
 
@@ -595,6 +602,7 @@ namespace Example
 
             try
             {
+                // Return the list of all graphs stored in the organization
                 List<string> result = apiInstance.FindAllTwingraphs(organizationId);
                 Debug.WriteLine(result);
             }
@@ -640,7 +648,7 @@ Name | Type | Description  | Notes
 # **GetEntities**
 > List&lt;Object&gt; GetEntities (string organizationId, string graphId, string modelType, List<string> ids)
 
-
+Get entities in a graph instance
 
 get entities in a graph instance
 
@@ -671,6 +679,7 @@ namespace Example
 
             try
             {
+                // Get entities in a graph instance
                 List<Object> result = apiInstance.GetEntities(organizationId, graphId, modelType, ids);
                 Debug.WriteLine(result);
             }
@@ -719,7 +728,7 @@ Name | Type | Description  | Notes
 # **GetGraphMetaData**
 > Object GetGraphMetaData (string organizationId, string graphId)
 
-
+Return the metaData of the specified graph
 
 Return the metaData of the specified graph
 
@@ -748,6 +757,7 @@ namespace Example
 
             try
             {
+                // Return the metaData of the specified graph
                 Object result = apiInstance.GetGraphMetaData(organizationId, graphId);
                 Debug.WriteLine(result);
             }
@@ -794,7 +804,7 @@ Name | Type | Description  | Notes
 # **ImportGraph**
 > TwinGraphImportInfo ImportGraph (string organizationId, TwinGraphImport twinGraphImport)
 
-
+Import a new version of a twin graph
 
 Import a new version of a twin graph
 
@@ -823,6 +833,7 @@ namespace Example
 
             try
             {
+                // Import a new version of a twin graph
                 TwinGraphImportInfo result = apiInstance.ImportGraph(organizationId, twinGraphImport);
                 Debug.WriteLine(result);
             }
@@ -869,7 +880,7 @@ Name | Type | Description  | Notes
 # **JobStatus**
 > string JobStatus (string organizationId, string jobId)
 
-
+Get the status of a job
 
 Get the status of a job
 
@@ -898,6 +909,7 @@ namespace Example
 
             try
             {
+                // Get the status of a job
                 string result = apiInstance.JobStatus(organizationId, jobId);
                 Debug.WriteLine(result);
             }
@@ -944,7 +956,7 @@ Name | Type | Description  | Notes
 # **Query**
 > string Query (string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
 
-
+Run a query on a graph instance
 
 Run a query on a graph instance
 
@@ -974,6 +986,7 @@ namespace Example
 
             try
             {
+                // Run a query on a graph instance
                 string result = apiInstance.Query(organizationId, graphId, twinGraphQuery);
                 Debug.WriteLine(result);
             }
@@ -1021,7 +1034,7 @@ Name | Type | Description  | Notes
 # **UpdateEntities**
 > List&lt;Object&gt; UpdateEntities (string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
 
-
+Update entities in a graph instance
 
 update entities in a graph instance
 
@@ -1052,6 +1065,7 @@ namespace Example
 
             try
             {
+                // Update entities in a graph instance
                 List<Object> result = apiInstance.UpdateEntities(organizationId, graphId, modelType, graphProperties);
                 Debug.WriteLine(result);
             }
@@ -1100,7 +1114,7 @@ Name | Type | Description  | Notes
 # **UpdateGraphMetaData**
 > Object UpdateGraphMetaData (string organizationId, string graphId, Dictionary<string, string> requestBody)
 
-
+Update the metaData of the specified graph
 
 Update the metaData of the specified graph
 
@@ -1130,6 +1144,7 @@ namespace Example
 
             try
             {
+                // Update the metaData of the specified graph
                 Object result = apiInstance.UpdateGraphMetaData(organizationId, graphId, requestBody);
                 Debug.WriteLine(result);
             }

@@ -193,21 +193,21 @@ Class | Method | HTTP request | Description
 *SolutionApi* | [**UpdateSolution**](docs/SolutionApi.md#updatesolution) | **PATCH** /organizations/{organization_id}/solutions/{solution_id} | Update a solution
 *SolutionApi* | [**UpdateSolutionRunTemplate**](docs/SolutionApi.md#updatesolutionruntemplate) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Update the specified Solution Run Template
 *SolutionApi* | [**UploadRunTemplateHandler**](docs/SolutionApi.md#uploadruntemplatehandler) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload | Upload a Run Template step handler zip file
-*TwingraphApi* | [**BatchQuery**](docs/TwingraphApi.md#batchquery) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch-query | 
-*TwingraphApi* | [**BatchUploadUpdate**](docs/TwingraphApi.md#batchuploadupdate) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch | 
-*TwingraphApi* | [**CreateEntities**](docs/TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
-*TwingraphApi* | [**CreateGraph**](docs/TwingraphApi.md#creategraph) | **POST** /organizations/{organization_id}/twingraph/{graph_id} | 
-*TwingraphApi* | [**Delete**](docs/TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | 
-*TwingraphApi* | [**DeleteEntities**](docs/TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
-*TwingraphApi* | [**DownloadGraph**](docs/TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/bulk-query/download/{hash} | 
-*TwingraphApi* | [**FindAllTwingraphs**](docs/TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | 
-*TwingraphApi* | [**GetEntities**](docs/TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
-*TwingraphApi* | [**GetGraphMetaData**](docs/TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | 
-*TwingraphApi* | [**ImportGraph**](docs/TwingraphApi.md#importgraph) | **POST** /organizations/{organization_id}/twingraph/import | 
-*TwingraphApi* | [**JobStatus**](docs/TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | 
-*TwingraphApi* | [**Query**](docs/TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | 
-*TwingraphApi* | [**UpdateEntities**](docs/TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | 
-*TwingraphApi* | [**UpdateGraphMetaData**](docs/TwingraphApi.md#updategraphmetadata) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/metadata | 
+*TwingraphApi* | [**BatchQuery**](docs/TwingraphApi.md#batchquery) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode
+*TwingraphApi* | [**BatchUploadUpdate**](docs/TwingraphApi.md#batchuploadupdate) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch | Async batch update by loading a CSV file on a graph instance 
+*TwingraphApi* | [**CreateEntities**](docs/TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Create new entities in a graph instance
+*TwingraphApi* | [**CreateGraph**](docs/TwingraphApi.md#creategraph) | **POST** /organizations/{organization_id}/twingraph/{graph_id} | Create a new graph
+*TwingraphApi* | [**Delete**](docs/TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | Launch a mass delete job
+*TwingraphApi* | [**DeleteEntities**](docs/TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Delete entities in a graph instance
+*TwingraphApi* | [**DownloadGraph**](docs/TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/bulk-query/download/{hash} | Download a graph compressed in a zip file
+*TwingraphApi* | [**FindAllTwingraphs**](docs/TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | Return the list of all graphs stored in the organization
+*TwingraphApi* | [**GetEntities**](docs/TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Get entities in a graph instance
+*TwingraphApi* | [**GetGraphMetaData**](docs/TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Return the metaData of the specified graph
+*TwingraphApi* | [**ImportGraph**](docs/TwingraphApi.md#importgraph) | **POST** /organizations/{organization_id}/twingraph/import | Import a new version of a twin graph
+*TwingraphApi* | [**JobStatus**](docs/TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | Get the status of a job
+*TwingraphApi* | [**Query**](docs/TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | Run a query on a graph instance
+*TwingraphApi* | [**UpdateEntities**](docs/TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Update entities in a graph instance
+*TwingraphApi* | [**UpdateGraphMetaData**](docs/TwingraphApi.md#updategraphmetadata) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Update the metaData of the specified graph
 *ValidatorApi* | [**CreateValidator**](docs/ValidatorApi.md#createvalidator) | **POST** /organizations/{organization_id}/datasets/validators | Register a new validator
 *ValidatorApi* | [**CreateValidatorRun**](docs/ValidatorApi.md#createvalidatorrun) | **POST** /organizations/{organization_id}/datasets/validators/{validator_id}/history | Register a new validator run
 *ValidatorApi* | [**DeleteValidator**](docs/ValidatorApi.md#deletevalidator) | **DELETE** /organizations/{organization_id}/datasets/validators/{validator_id} | Delete a validator
