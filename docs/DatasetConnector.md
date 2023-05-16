@@ -1,5 +1,5 @@
 # Com.Cosmotech.Model.DatasetConnector
-the Connector setup bound to a Dataset
+a Connector setup
 
 ## Properties
 
