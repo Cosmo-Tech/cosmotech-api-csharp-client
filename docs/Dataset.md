@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Name** | **string** | the Dataset name | [optional] 
 **Description** | **string** | the Dataset description | [optional] 
 **OwnerId** | **string** | the User id which own this Dataset | [optional] [readonly] 
+**OrganizationId** | **string** | the Organization Id related to this Dataset | [optional] [readonly] 
 **Tags** | **List&lt;string&gt;** | the list of tags | [optional] 
 **Connector** | [**DatasetConnector**](DatasetConnector.md) |  | [optional] 
 **FragmentsIds** | **List&lt;string&gt;** | the list of other Datasets ids to compose as fragments | [optional] 
