@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**DownloadRunTemplateHandler**](SolutionApi.md#downloadruntemplatehandler) | **GET** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download | Download a Run Template step handler zip file
 [**FindAllSolutions**](SolutionApi.md#findallsolutions) | **GET** /organizations/{organization_id}/solutions | List all Solutions
 [**FindSolutionById**](SolutionApi.md#findsolutionbyid) | **GET** /organizations/{organization_id}/solutions/{solution_id} | Get the details of a solution
+[**ImportSolution**](SolutionApi.md#importsolution) | **POST** /organizations/{organization_id}/solutions/import | Import a solution
 [**RemoveAllRunTemplates**](SolutionApi.md#removeallruntemplates) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Remove all Run Templates from the Solution specified
 [**RemoveAllSolutionParameterGroups**](SolutionApi.md#removeallsolutionparametergroups) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Remove all Parameter Groups from the Solution specified
 [**RemoveAllSolutionParameters**](SolutionApi.md#removeallsolutionparameters) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameters | Remove all Parameters from the Solution specified
@@ -561,7 +562,7 @@ Name | Type | Description  | Notes
 
 <a name="findallsolutions"></a>
 # **FindAllSolutions**
-> List&lt;Solution&gt; FindAllSolutions (string organizationId)
+> List&lt;Solution&gt; FindAllSolutions (string organizationId, int? page = null, int? size = null)
 
 List all Solutions
 
@@ -586,11 +587,13 @@ namespace Example
 
             var apiInstance = new SolutionApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
+            var page = 56;  // int? | page number to query (optional) 
+            var size = 56;  // int? | amount of result by page (optional) 
 
             try
             {
                 // List all Solutions
-                List<Solution> result = apiInstance.FindAllSolutions(organizationId);
+                List<Solution> result = apiInstance.FindAllSolutions(organizationId, page, size);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -609,6 +612,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
+ **page** | **int?**| page number to query | [optional] 
+ **size** | **int?**| amount of result by page | [optional] 
 
 ### Return type
 
@@ -703,6 +708,81 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | the Solution details |  -  |
 | **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="importsolution"></a>
+# **ImportSolution**
+> Solution ImportSolution (string organizationId, Solution solution)
+
+Import a solution
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class ImportSolutionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solution = new Solution(); // Solution | the Solution to import
+
+            try
+            {
+                // Import a solution
+                Solution result = apiInstance.ImportSolution(organizationId, solution);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.ImportSolution: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solution** | [**Solution**](Solution.md)| the Solution to import | 
+
+### Return type
+
+[**Solution**](Solution.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/yaml
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | the solution details |  -  |
+| **400** | Bad request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
