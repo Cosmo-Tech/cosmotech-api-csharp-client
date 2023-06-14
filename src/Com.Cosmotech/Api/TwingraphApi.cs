@@ -90,8 +90,8 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <returns>List&lt;Object&gt;</returns>
-        List<Object> CreateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
+        /// <returns>string</returns>
+        string CreateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
 
         /// <summary>
         /// Create new entities in a graph instance
@@ -104,13 +104,13 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        ApiResponse<List<Object>> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
         /// <summary>
         /// Create a new graph
         /// </summary>
         /// <remarks>
-        /// Create a new graph
+        /// To create a new graph from flat files,  you need to create a Zip file. This Zip file must countain two folders named Edges and Nodes.  .zip hierarchy: *main_folder/Nodes *main_folder/Edges  In each folder you can place one or multiple csv files containing your Nodes or Edges data.  Your csv files must follow the following header (column name) requirements:  The Nodes CSVs requires at least one column (the 1st).Column name &#x3D; &#39;Id&#39;. It will represent the nodes ID Ids must be populated with string  The Edges CSVs require three columns named, in order, * source * target * Id  those colomns represent * The source of the edge * The target of the edge * The Id of the edge  All following columns content are up to you. 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -123,7 +123,7 @@ namespace Com.Cosmotech.Api
         /// Create a new graph
         /// </summary>
         /// <remarks>
-        /// Create a new graph
+        /// To create a new graph from flat files,  you need to create a Zip file. This Zip file must countain two folders named Edges and Nodes.  .zip hierarchy: *main_folder/Nodes *main_folder/Edges  In each folder you can place one or multiple csv files containing your Nodes or Edges data.  Your csv files must follow the following header (column name) requirements:  The Nodes CSVs requires at least one column (the 1st).Column name &#x3D; &#39;Id&#39;. It will represent the nodes ID Ids must be populated with string  The Edges CSVs require three columns named, in order, * source * target * Id  those colomns represent * The source of the edge * The target of the edge * The Id of the edge  All following columns content are up to you. 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -132,10 +132,10 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CreateGraphWithHttpInfo(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream));
         /// <summary>
-        /// Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas
         /// </summary>
         /// <remarks>
-        /// Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -144,10 +144,10 @@ namespace Com.Cosmotech.Api
         void Delete(string organizationId, string graphId);
 
         /// <summary>
-        /// Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas
         /// </summary>
         /// <remarks>
-        /// Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -236,8 +236,8 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <returns>List&lt;Object&gt;</returns>
-        List<Object> GetEntities(string organizationId, string graphId, string modelType, List<string> ids);
+        /// <returns>string</returns>
+        string GetEntities(string organizationId, string graphId, string modelType, List<string> ids);
 
         /// <summary>
         /// Get entities in a graph instance
@@ -250,8 +250,8 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        ApiResponse<List<Object>> GetEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids);
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> GetEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids);
         /// <summary>
         /// Return the metaData of the specified graph
         /// </summary>
@@ -357,8 +357,8 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <returns>List&lt;Object&gt;</returns>
-        List<Object> UpdateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
+        /// <returns>string</returns>
+        string UpdateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
 
         /// <summary>
         /// Update entities in a graph instance
@@ -371,8 +371,8 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        ApiResponse<List<Object>> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
         /// <summary>
         /// Update the metaData of the specified graph
         /// </summary>
@@ -475,8 +475,8 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        System.Threading.Tasks.Task<List<Object>> CreateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> CreateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create new entities in a graph instance
@@ -490,13 +490,13 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Object>>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a new graph
         /// </summary>
         /// <remarks>
-        /// Create a new graph
+        /// To create a new graph from flat files,  you need to create a Zip file. This Zip file must countain two folders named Edges and Nodes.  .zip hierarchy: *main_folder/Nodes *main_folder/Edges  In each folder you can place one or multiple csv files containing your Nodes or Edges data.  Your csv files must follow the following header (column name) requirements:  The Nodes CSVs requires at least one column (the 1st).Column name &#x3D; &#39;Id&#39;. It will represent the nodes ID Ids must be populated with string  The Edges CSVs require three columns named, in order, * source * target * Id  those colomns represent * The source of the edge * The target of the edge * The Id of the edge  All following columns content are up to you. 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -510,7 +510,7 @@ namespace Com.Cosmotech.Api
         /// Create a new graph
         /// </summary>
         /// <remarks>
-        /// Create a new graph
+        /// To create a new graph from flat files,  you need to create a Zip file. This Zip file must countain two folders named Edges and Nodes.  .zip hierarchy: *main_folder/Nodes *main_folder/Edges  In each folder you can place one or multiple csv files containing your Nodes or Edges data.  Your csv files must follow the following header (column name) requirements:  The Nodes CSVs requires at least one column (the 1st).Column name &#x3D; &#39;Id&#39;. It will represent the nodes ID Ids must be populated with string  The Edges CSVs require three columns named, in order, * source * target * Id  those colomns represent * The source of the edge * The target of the edge * The Id of the edge  All following columns content are up to you. 
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -520,10 +520,10 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CreateGraphWithHttpInfoAsync(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas
         /// </summary>
         /// <remarks>
-        /// Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -533,10 +533,10 @@ namespace Com.Cosmotech.Api
         System.Threading.Tasks.Task DeleteAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas
         /// </summary>
         /// <remarks>
-        /// Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -633,8 +633,8 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        System.Threading.Tasks.Task<List<Object>> GetEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> GetEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get entities in a graph instance
@@ -648,8 +648,8 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Object>>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Return the metaData of the specified graph
         /// </summary>
@@ -764,8 +764,8 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        System.Threading.Tasks.Task<List<Object>> UpdateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> UpdateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update entities in a graph instance
@@ -779,8 +779,8 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Object>>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update the metaData of the specified graph
         /// </summary>
@@ -1324,10 +1324,10 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <returns>List&lt;Object&gt;</returns>
-        public List<Object> CreateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+        /// <returns>string</returns>
+        public string CreateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
         {
-            Com.Cosmotech.Client.ApiResponse<List<Object>> localVarResponse = CreateEntitiesWithHttpInfo(organizationId, graphId, modelType, graphProperties);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = CreateEntitiesWithHttpInfo(organizationId, graphId, modelType, graphProperties);
             return localVarResponse.Data;
         }
 
@@ -1339,8 +1339,8 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<Object>> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+        /// <returns>ApiResponse of string</returns>
+        public Com.Cosmotech.Client.ApiResponse<string> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1402,7 +1402,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<Object>>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateEntities", localVarResponse);
@@ -1424,10 +1424,10 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Object>> CreateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> CreateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Object>> localVarResponse = await CreateEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, graphProperties, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await CreateEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, graphProperties, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1440,8 +1440,8 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Object>>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1504,7 +1504,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Object>>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1519,7 +1519,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Create a new graph Create a new graph
+        /// Create a new graph To create a new graph from flat files,  you need to create a Zip file. This Zip file must countain two folders named Edges and Nodes.  .zip hierarchy: *main_folder/Nodes *main_folder/Edges  In each folder you can place one or multiple csv files containing your Nodes or Edges data.  Your csv files must follow the following header (column name) requirements:  The Nodes CSVs requires at least one column (the 1st).Column name &#x3D; &#39;Id&#39;. It will represent the nodes ID Ids must be populated with string  The Edges CSVs require three columns named, in order, * source * target * Id  those colomns represent * The source of the edge * The target of the edge * The Id of the edge  All following columns content are up to you. 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1532,7 +1532,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Create a new graph Create a new graph
+        /// Create a new graph To create a new graph from flat files,  you need to create a Zip file. This Zip file must countain two folders named Edges and Nodes.  .zip hierarchy: *main_folder/Nodes *main_folder/Edges  In each folder you can place one or multiple csv files containing your Nodes or Edges data.  Your csv files must follow the following header (column name) requirements:  The Nodes CSVs requires at least one column (the 1st).Column name &#x3D; &#39;Id&#39;. It will represent the nodes ID Ids must be populated with string  The Edges CSVs require three columns named, in order, * source * target * Id  those colomns represent * The source of the edge * The target of the edge * The Id of the edge  All following columns content are up to you. 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1601,7 +1601,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Create a new graph Create a new graph
+        /// Create a new graph To create a new graph from flat files,  you need to create a Zip file. This Zip file must countain two folders named Edges and Nodes.  .zip hierarchy: *main_folder/Nodes *main_folder/Edges  In each folder you can place one or multiple csv files containing your Nodes or Edges data.  Your csv files must follow the following header (column name) requirements:  The Nodes CSVs requires at least one column (the 1st).Column name &#x3D; &#39;Id&#39;. It will represent the nodes ID Ids must be populated with string  The Edges CSVs require three columns named, in order, * source * target * Id  those colomns represent * The source of the edge * The target of the edge * The Id of the edge  All following columns content are up to you. 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1615,7 +1615,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Create a new graph Create a new graph
+        /// Create a new graph To create a new graph from flat files,  you need to create a Zip file. This Zip file must countain two folders named Edges and Nodes.  .zip hierarchy: *main_folder/Nodes *main_folder/Edges  In each folder you can place one or multiple csv files containing your Nodes or Edges data.  Your csv files must follow the following header (column name) requirements:  The Nodes CSVs requires at least one column (the 1st).Column name &#x3D; &#39;Id&#39;. It will represent the nodes ID Ids must be populated with string  The Edges CSVs require three columns named, in order, * source * target * Id  those colomns represent * The source of the edge * The target of the edge * The Id of the edge  All following columns content are up to you. 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1687,7 +1687,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Launch a mass delete job Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas Delete all versions of a graph and his metadatas
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1699,7 +1699,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Launch a mass delete job Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas Delete all versions of a graph and his metadatas
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1765,7 +1765,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Launch a mass delete job Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas Delete all versions of a graph and his metadatas
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -1778,7 +1778,7 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
-        /// Launch a mass delete job Launch a mass delete job
+        /// Delete all versions of a graph and his metadatas Delete all versions of a graph and his metadatas
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
@@ -2360,10 +2360,10 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <returns>List&lt;Object&gt;</returns>
-        public List<Object> GetEntities(string organizationId, string graphId, string modelType, List<string> ids)
+        /// <returns>string</returns>
+        public string GetEntities(string organizationId, string graphId, string modelType, List<string> ids)
         {
-            Com.Cosmotech.Client.ApiResponse<List<Object>> localVarResponse = GetEntitiesWithHttpInfo(organizationId, graphId, modelType, ids);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = GetEntitiesWithHttpInfo(organizationId, graphId, modelType, ids);
             return localVarResponse.Data;
         }
 
@@ -2375,8 +2375,8 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<Object>> GetEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids)
+        /// <returns>ApiResponse of string</returns>
+        public Com.Cosmotech.Client.ApiResponse<string> GetEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2437,7 +2437,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Object>>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetEntities", localVarResponse);
@@ -2459,10 +2459,10 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Object>> GetEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> GetEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Object>> localVarResponse = await GetEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, ids, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, ids, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2475,8 +2475,8 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Object>>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2538,7 +2538,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Object>>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3244,10 +3244,10 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <returns>List&lt;Object&gt;</returns>
-        public List<Object> UpdateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+        /// <returns>string</returns>
+        public string UpdateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
         {
-            Com.Cosmotech.Client.ApiResponse<List<Object>> localVarResponse = UpdateEntitiesWithHttpInfo(organizationId, graphId, modelType, graphProperties);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = UpdateEntitiesWithHttpInfo(organizationId, graphId, modelType, graphProperties);
             return localVarResponse.Data;
         }
 
@@ -3259,8 +3259,8 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<Object>> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+        /// <returns>ApiResponse of string</returns>
+        public Com.Cosmotech.Client.ApiResponse<string> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3322,7 +3322,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<List<Object>>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateEntities", localVarResponse);
@@ -3344,10 +3344,10 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Object&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Object>> UpdateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> UpdateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Object>> localVarResponse = await UpdateEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, graphProperties, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await UpdateEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, graphProperties, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3360,8 +3360,8 @@ namespace Com.Cosmotech.Api
         /// <param name="modelType">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Object>>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3424,7 +3424,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<List<Object>>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

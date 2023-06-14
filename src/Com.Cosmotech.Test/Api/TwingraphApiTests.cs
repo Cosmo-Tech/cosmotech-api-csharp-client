@@ -96,7 +96,7 @@ namespace Com.Cosmotech.Test.Api
             //string modelType = null;
             //List<GraphProperties> graphProperties = null;
             //var response = instance.CreateEntities(organizationId, graphId, modelType, graphProperties);
-            //Assert.IsType<List<Object>>(response);
+            //Assert.IsType<string>(response);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Com.Cosmotech.Test.Api
             //string modelType = null;
             //List<string> ids = null;
             //var response = instance.GetEntities(organizationId, graphId, modelType, ids);
-            //Assert.IsType<List<Object>>(response);
+            //Assert.IsType<string>(response);
         }
 
         /// <summary>
@@ -243,7 +243,7 @@ namespace Com.Cosmotech.Test.Api
             //string modelType = null;
             //List<GraphProperties> graphProperties = null;
             //var response = instance.UpdateEntities(organizationId, graphId, modelType, graphProperties);
-            //Assert.IsType<List<Object>>(response);
+            //Assert.IsType<string>(response);
         }
 
         /// <summary>
