@@ -93,9 +93,9 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //string graphId = null;
-            //string modelType = null;
+            //string type = null;
             //List<GraphProperties> graphProperties = null;
-            //var response = instance.CreateEntities(organizationId, graphId, modelType, graphProperties);
+            //var response = instance.CreateEntities(organizationId, graphId, type, graphProperties);
             //Assert.IsType<string>(response);
         }
 
@@ -133,9 +133,9 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //string graphId = null;
-            //string modelType = null;
+            //string type = null;
             //List<string> ids = null;
-            //instance.DeleteEntities(organizationId, graphId, modelType, ids);
+            //instance.DeleteEntities(organizationId, graphId, type, ids);
         }
 
         /// <summary>
@@ -172,9 +172,9 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //string graphId = null;
-            //string modelType = null;
+            //string type = null;
             //List<string> ids = null;
-            //var response = instance.GetEntities(organizationId, graphId, modelType, ids);
+            //var response = instance.GetEntities(organizationId, graphId, type, ids);
             //Assert.IsType<string>(response);
         }
 
@@ -240,9 +240,9 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //string graphId = null;
-            //string modelType = null;
+            //string type = null;
             //List<GraphProperties> graphProperties = null;
-            //var response = instance.UpdateEntities(organizationId, graphId, modelType, graphProperties);
+            //var response = instance.UpdateEntities(organizationId, graphId, type, graphProperties);
             //Assert.IsType<string>(response);
         }
 

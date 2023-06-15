@@ -6,18 +6,18 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**BatchQuery**](TwingraphApi.md#batchquery) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode
 [**BatchUploadUpdate**](TwingraphApi.md#batchuploadupdate) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch | Async batch update by loading a CSV file on a graph instance 
-[**CreateEntities**](TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Create new entities in a graph instance
+[**CreateEntities**](TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Create new entities in a graph instance
 [**CreateGraph**](TwingraphApi.md#creategraph) | **POST** /organizations/{organization_id}/twingraph/{graph_id} | Create a new graph
 [**Delete**](TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | Delete all versions of a graph and his metadatas
-[**DeleteEntities**](TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Delete entities in a graph instance
-[**DownloadGraph**](TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/bulk-query/download/{hash} | Download a graph compressed in a zip file
+[**DeleteEntities**](TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Delete entities in a graph instance
+[**DownloadGraph**](TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/download/{hash} | Download a graph compressed in a zip file
 [**FindAllTwingraphs**](TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | Return the list of all graphs stored in the organization
-[**GetEntities**](TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Get entities in a graph instance
+[**GetEntities**](TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Get entities in a graph instance
 [**GetGraphMetaData**](TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Return the metaData of the specified graph
 [**ImportGraph**](TwingraphApi.md#importgraph) | **POST** /organizations/{organization_id}/twingraph/import | Import a new version of a twin graph
 [**JobStatus**](TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | Get the status of a job
 [**Query**](TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | Run a query on a graph instance
-[**UpdateEntities**](TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/{modelType} | Update entities in a graph instance
+[**UpdateEntities**](TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Update entities in a graph instance
 [**UpdateGraphMetaData**](TwingraphApi.md#updategraphmetadata) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Update the metaData of the specified graph
 
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 <a name="createentities"></a>
 # **CreateEntities**
-> string CreateEntities (string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+> string CreateEntities (string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
 
 Create new entities in a graph instance
 
@@ -213,13 +213,13 @@ namespace Example
             var apiInstance = new TwingraphApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var graphId = "graphId_example";  // string | the Graph Identifier
-            var modelType = "node";  // string | the entity model type
+            var type = "node";  // string | the entity model type
             var graphProperties = new List<GraphProperties>(); // List<GraphProperties> | the entities to create
 
             try
             {
                 // Create new entities in a graph instance
-                string result = apiInstance.CreateEntities(organizationId, graphId, modelType, graphProperties);
+                string result = apiInstance.CreateEntities(organizationId, graphId, type, graphProperties);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **graphId** | **string**| the Graph Identifier | 
- **modelType** | **string**| the entity model type | 
+ **type** | **string**| the entity model type | 
  **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to create | 
 
 ### Return type
@@ -417,7 +417,7 @@ void (empty response body)
 
 <a name="deleteentities"></a>
 # **DeleteEntities**
-> void DeleteEntities (string organizationId, string graphId, string modelType, List<string> ids)
+> void DeleteEntities (string organizationId, string graphId, string type, List<string> ids)
 
 Delete entities in a graph instance
 
@@ -445,13 +445,13 @@ namespace Example
             var apiInstance = new TwingraphApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var graphId = "graphId_example";  // string | the Graph Identifier
-            var modelType = "node";  // string | the entity model type
+            var type = "node";  // string | the entity model type
             var ids = new List<string>(); // List<string> | the entities to delete
 
             try
             {
                 // Delete entities in a graph instance
-                apiInstance.DeleteEntities(organizationId, graphId, modelType, ids);
+                apiInstance.DeleteEntities(organizationId, graphId, type, ids);
             }
             catch (ApiException  e)
             {
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **graphId** | **string**| the Graph Identifier | 
- **modelType** | **string**| the entity model type | 
+ **type** | **string**| the entity model type | 
  **ids** | [**List&lt;string&gt;**](string.md)| the entities to delete | 
 
 ### Return type
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 <a name="getentities"></a>
 # **GetEntities**
-> string GetEntities (string organizationId, string graphId, string modelType, List<string> ids)
+> string GetEntities (string organizationId, string graphId, string type, List<string> ids)
 
 Get entities in a graph instance
 
@@ -674,13 +674,13 @@ namespace Example
             var apiInstance = new TwingraphApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var graphId = "graphId_example";  // string | the Graph Identifier
-            var modelType = "node";  // string | the entity model type
+            var type = "node";  // string | the entity model type
             var ids = new List<string>(); // List<string> | the entities to get
 
             try
             {
                 // Get entities in a graph instance
-                string result = apiInstance.GetEntities(organizationId, graphId, modelType, ids);
+                string result = apiInstance.GetEntities(organizationId, graphId, type, ids);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -700,7 +700,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **graphId** | **string**| the Graph Identifier | 
- **modelType** | **string**| the entity model type | 
+ **type** | **string**| the entity model type | 
  **ids** | [**List&lt;string&gt;**](string.md)| the entities to get | 
 
 ### Return type
@@ -1032,7 +1032,7 @@ Name | Type | Description  | Notes
 
 <a name="updateentities"></a>
 # **UpdateEntities**
-> string UpdateEntities (string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+> string UpdateEntities (string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
 
 Update entities in a graph instance
 
@@ -1060,13 +1060,13 @@ namespace Example
             var apiInstance = new TwingraphApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var graphId = "graphId_example";  // string | the Graph Identifier
-            var modelType = "node";  // string | the entity model type
+            var type = "node";  // string | the entity model type
             var graphProperties = new List<GraphProperties>(); // List<GraphProperties> | the entities to update
 
             try
             {
                 // Update entities in a graph instance
-                string result = apiInstance.UpdateEntities(organizationId, graphId, modelType, graphProperties);
+                string result = apiInstance.UpdateEntities(organizationId, graphId, type, graphProperties);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1086,7 +1086,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **graphId** | **string**| the Graph Identifier | 
- **modelType** | **string**| the entity model type | 
+ **type** | **string**| the entity model type | 
  **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to update | 
 
 ### Return type

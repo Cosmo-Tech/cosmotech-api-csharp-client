@@ -88,10 +88,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <returns>string</returns>
-        string CreateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
+        string CreateEntities(string organizationId, string graphId, string type, List<GraphProperties> graphProperties);
 
         /// <summary>
         /// Create new entities in a graph instance
@@ -102,10 +102,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
+        ApiResponse<string> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<GraphProperties> graphProperties);
         /// <summary>
         /// Create a new graph
         /// </summary>
@@ -163,10 +163,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <returns></returns>
-        void DeleteEntities(string organizationId, string graphId, string modelType, List<string> ids);
+        void DeleteEntities(string organizationId, string graphId, string type, List<string> ids);
 
         /// <summary>
         /// Delete entities in a graph instance
@@ -177,10 +177,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids);
+        ApiResponse<Object> DeleteEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<string> ids);
         /// <summary>
         /// Download a graph compressed in a zip file
         /// </summary>
@@ -234,10 +234,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <returns>string</returns>
-        string GetEntities(string organizationId, string graphId, string modelType, List<string> ids);
+        string GetEntities(string organizationId, string graphId, string type, List<string> ids);
 
         /// <summary>
         /// Get entities in a graph instance
@@ -248,10 +248,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> GetEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids);
+        ApiResponse<string> GetEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<string> ids);
         /// <summary>
         /// Return the metaData of the specified graph
         /// </summary>
@@ -355,10 +355,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <returns>string</returns>
-        string UpdateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
+        string UpdateEntities(string organizationId, string graphId, string type, List<GraphProperties> graphProperties);
 
         /// <summary>
         /// Update entities in a graph instance
@@ -369,10 +369,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties);
+        ApiResponse<string> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<GraphProperties> graphProperties);
         /// <summary>
         /// Update the metaData of the specified graph
         /// </summary>
@@ -472,11 +472,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> CreateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> CreateEntitiesAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create new entities in a graph instance
@@ -487,11 +487,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a new graph
         /// </summary>
@@ -553,11 +553,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteEntitiesAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete entities in a graph instance
@@ -568,11 +568,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Download a graph compressed in a zip file
         /// </summary>
@@ -630,11 +630,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> GetEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> GetEntitiesAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get entities in a graph instance
@@ -645,11 +645,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Return the metaData of the specified graph
         /// </summary>
@@ -761,11 +761,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> UpdateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> UpdateEntitiesAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update entities in a graph instance
@@ -776,11 +776,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update the metaData of the specified graph
         /// </summary>
@@ -1322,12 +1322,12 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <returns>string</returns>
-        public string CreateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+        public string CreateEntities(string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = CreateEntitiesWithHttpInfo(organizationId, graphId, modelType, graphProperties);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = CreateEntitiesWithHttpInfo(organizationId, graphId, type, graphProperties);
             return localVarResponse.Data;
         }
 
@@ -1337,10 +1337,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+        public Com.Cosmotech.Client.ApiResponse<string> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1354,10 +1354,10 @@ namespace Com.Cosmotech.Api
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'graphId' when calling TwingraphApi->CreateEntities");
             }
 
-            // verify the required parameter 'modelType' is set
-            if (modelType == null)
+            // verify the required parameter 'type' is set
+            if (type == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'modelType' when calling TwingraphApi->CreateEntities");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'type' when calling TwingraphApi->CreateEntities");
             }
 
             // verify the required parameter 'graphProperties' is set
@@ -1391,7 +1391,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("graph_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(graphId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("modelType", Com.Cosmotech.Client.ClientUtils.ParameterToString(modelType)); // path parameter
+            localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.Data = graphProperties;
 
             // authentication (oAuth2AuthCode) required
@@ -1402,7 +1402,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<string>("/organizations/{organization_id}/twingraph/{graph_id}/entity/{type}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateEntities", localVarResponse);
@@ -1421,13 +1421,13 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> CreateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> CreateEntitiesAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await CreateEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, graphProperties, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await CreateEntitiesWithHttpInfoAsync(organizationId, graphId, type, graphProperties, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1437,11 +1437,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1455,10 +1455,10 @@ namespace Com.Cosmotech.Api
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'graphId' when calling TwingraphApi->CreateEntities");
             }
 
-            // verify the required parameter 'modelType' is set
-            if (modelType == null)
+            // verify the required parameter 'type' is set
+            if (type == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'modelType' when calling TwingraphApi->CreateEntities");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'type' when calling TwingraphApi->CreateEntities");
             }
 
             // verify the required parameter 'graphProperties' is set
@@ -1493,7 +1493,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("graph_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(graphId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("modelType", Com.Cosmotech.Client.ClientUtils.ParameterToString(modelType)); // path parameter
+            localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.Data = graphProperties;
 
             // authentication (oAuth2AuthCode) required
@@ -1504,7 +1504,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/organizations/{organization_id}/twingraph/{graph_id}/entity/{type}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1852,12 +1852,12 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <returns></returns>
-        public void DeleteEntities(string organizationId, string graphId, string modelType, List<string> ids)
+        public void DeleteEntities(string organizationId, string graphId, string type, List<string> ids)
         {
-            DeleteEntitiesWithHttpInfo(organizationId, graphId, modelType, ids);
+            DeleteEntitiesWithHttpInfo(organizationId, graphId, type, ids);
         }
 
         /// <summary>
@@ -1866,10 +1866,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> DeleteEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids)
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<string> ids)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1883,10 +1883,10 @@ namespace Com.Cosmotech.Api
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'graphId' when calling TwingraphApi->DeleteEntities");
             }
 
-            // verify the required parameter 'modelType' is set
-            if (modelType == null)
+            // verify the required parameter 'type' is set
+            if (type == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'modelType' when calling TwingraphApi->DeleteEntities");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'type' when calling TwingraphApi->DeleteEntities");
             }
 
             // verify the required parameter 'ids' is set
@@ -1918,7 +1918,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("graph_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(graphId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("modelType", Com.Cosmotech.Client.ClientUtils.ParameterToString(modelType)); // path parameter
+            localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("multi", "ids", ids));
 
             // authentication (oAuth2AuthCode) required
@@ -1929,7 +1929,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/twingraph/{graph_id}/entity/{type}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteEntities", localVarResponse);
@@ -1948,13 +1948,13 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteEntitiesAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, ids, cancellationToken).ConfigureAwait(false);
+            await DeleteEntitiesWithHttpInfoAsync(organizationId, graphId, type, ids, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1963,11 +1963,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1981,10 +1981,10 @@ namespace Com.Cosmotech.Api
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'graphId' when calling TwingraphApi->DeleteEntities");
             }
 
-            // verify the required parameter 'modelType' is set
-            if (modelType == null)
+            // verify the required parameter 'type' is set
+            if (type == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'modelType' when calling TwingraphApi->DeleteEntities");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'type' when calling TwingraphApi->DeleteEntities");
             }
 
             // verify the required parameter 'ids' is set
@@ -2017,7 +2017,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("graph_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(graphId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("modelType", Com.Cosmotech.Client.ClientUtils.ParameterToString(modelType)); // path parameter
+            localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("multi", "ids", ids));
 
             // authentication (oAuth2AuthCode) required
@@ -2028,7 +2028,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/twingraph/{graph_id}/entity/{type}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2109,7 +2109,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<System.IO.Stream>("/organizations/{organization_id}/twingraph/bulk-query/download/{hash}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<System.IO.Stream>("/organizations/{organization_id}/twingraph/download/{hash}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DownloadGraph", localVarResponse);
@@ -2192,7 +2192,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/organizations/{organization_id}/twingraph/bulk-query/download/{hash}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/organizations/{organization_id}/twingraph/download/{hash}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2358,12 +2358,12 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <returns>string</returns>
-        public string GetEntities(string organizationId, string graphId, string modelType, List<string> ids)
+        public string GetEntities(string organizationId, string graphId, string type, List<string> ids)
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = GetEntitiesWithHttpInfo(organizationId, graphId, modelType, ids);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = GetEntitiesWithHttpInfo(organizationId, graphId, type, ids);
             return localVarResponse.Data;
         }
 
@@ -2373,10 +2373,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> GetEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<string> ids)
+        public Com.Cosmotech.Client.ApiResponse<string> GetEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<string> ids)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2390,10 +2390,10 @@ namespace Com.Cosmotech.Api
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'graphId' when calling TwingraphApi->GetEntities");
             }
 
-            // verify the required parameter 'modelType' is set
-            if (modelType == null)
+            // verify the required parameter 'type' is set
+            if (type == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'modelType' when calling TwingraphApi->GetEntities");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'type' when calling TwingraphApi->GetEntities");
             }
 
             // verify the required parameter 'ids' is set
@@ -2426,7 +2426,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("graph_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(graphId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("modelType", Com.Cosmotech.Client.ClientUtils.ParameterToString(modelType)); // path parameter
+            localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("multi", "ids", ids));
 
             // authentication (oAuth2AuthCode) required
@@ -2437,7 +2437,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<string>("/organizations/{organization_id}/twingraph/{graph_id}/entity/{type}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetEntities", localVarResponse);
@@ -2456,13 +2456,13 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> GetEntitiesAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> GetEntitiesAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, ids, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetEntitiesWithHttpInfoAsync(organizationId, graphId, type, ids, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2472,11 +2472,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2490,10 +2490,10 @@ namespace Com.Cosmotech.Api
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'graphId' when calling TwingraphApi->GetEntities");
             }
 
-            // verify the required parameter 'modelType' is set
-            if (modelType == null)
+            // verify the required parameter 'type' is set
+            if (type == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'modelType' when calling TwingraphApi->GetEntities");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'type' when calling TwingraphApi->GetEntities");
             }
 
             // verify the required parameter 'ids' is set
@@ -2527,7 +2527,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("graph_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(graphId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("modelType", Com.Cosmotech.Client.ClientUtils.ParameterToString(modelType)); // path parameter
+            localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("multi", "ids", ids));
 
             // authentication (oAuth2AuthCode) required
@@ -2538,7 +2538,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/organizations/{organization_id}/twingraph/{graph_id}/entity/{type}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3242,12 +3242,12 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <returns>string</returns>
-        public string UpdateEntities(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+        public string UpdateEntities(string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = UpdateEntitiesWithHttpInfo(organizationId, graphId, modelType, graphProperties);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = UpdateEntitiesWithHttpInfo(organizationId, graphId, type, graphProperties);
             return localVarResponse.Data;
         }
 
@@ -3257,10 +3257,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties)
+        public Com.Cosmotech.Client.ApiResponse<string> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3274,10 +3274,10 @@ namespace Com.Cosmotech.Api
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'graphId' when calling TwingraphApi->UpdateEntities");
             }
 
-            // verify the required parameter 'modelType' is set
-            if (modelType == null)
+            // verify the required parameter 'type' is set
+            if (type == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'modelType' when calling TwingraphApi->UpdateEntities");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'type' when calling TwingraphApi->UpdateEntities");
             }
 
             // verify the required parameter 'graphProperties' is set
@@ -3311,7 +3311,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("graph_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(graphId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("modelType", Com.Cosmotech.Client.ClientUtils.ParameterToString(modelType)); // path parameter
+            localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.Data = graphProperties;
 
             // authentication (oAuth2AuthCode) required
@@ -3322,7 +3322,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<string>("/organizations/{organization_id}/twingraph/{graph_id}/entity/{type}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateEntities", localVarResponse);
@@ -3341,13 +3341,13 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> UpdateEntitiesAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> UpdateEntitiesAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await UpdateEntitiesWithHttpInfoAsync(organizationId, graphId, modelType, graphProperties, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await UpdateEntitiesWithHttpInfoAsync(organizationId, graphId, type, graphProperties, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3357,11 +3357,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
-        /// <param name="modelType">the entity model type</param>
+        /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string modelType, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3375,10 +3375,10 @@ namespace Com.Cosmotech.Api
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'graphId' when calling TwingraphApi->UpdateEntities");
             }
 
-            // verify the required parameter 'modelType' is set
-            if (modelType == null)
+            // verify the required parameter 'type' is set
+            if (type == null)
             {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'modelType' when calling TwingraphApi->UpdateEntities");
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'type' when calling TwingraphApi->UpdateEntities");
             }
 
             // verify the required parameter 'graphProperties' is set
@@ -3413,7 +3413,7 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("graph_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(graphId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("modelType", Com.Cosmotech.Client.ClientUtils.ParameterToString(modelType)); // path parameter
+            localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.Data = graphProperties;
 
             // authentication (oAuth2AuthCode) required
@@ -3424,7 +3424,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<string>("/organizations/{organization_id}/twingraph/{graph_id}/{modelType}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<string>("/organizations/{organization_id}/twingraph/{graph_id}/entity/{type}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
