@@ -178,6 +178,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'SdkVersion'
         }
         /// <summary>
+        /// Test the property 'CreatedAt'
+        /// </summary>
+        [Fact]
+        public void CreatedAtTest()
+        {
+            // TODO unit test for the property 'CreatedAt'
+        }
+        /// <summary>
         /// Test the property 'NoDataIngestionState'
         /// </summary>
         [Fact]
