@@ -264,6 +264,7 @@ Class | Method | HTTP request | Description
  - [Model.ResourceSizeInfo](docs/ResourceSizeInfo.md)
  - [Model.RunTemplate](docs/RunTemplate.md)
  - [Model.RunTemplateHandlerId](docs/RunTemplateHandlerId.md)
+ - [Model.RunTemplateOrchestrator](docs/RunTemplateOrchestrator.md)
  - [Model.RunTemplateParameter](docs/RunTemplateParameter.md)
  - [Model.RunTemplateParameterGroup](docs/RunTemplateParameterGroup.md)
  - [Model.RunTemplateParameterValue](docs/RunTemplateParameterValue.md)

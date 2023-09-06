@@ -298,6 +298,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'RunTemplateSourceDir'
         }
         /// <summary>
+        /// Test the property 'OrchestratorType'
+        /// </summary>
+        [Fact]
+        public void OrchestratorTypeTest()
+        {
+            // TODO unit test for the property 'OrchestratorType'
+        }
+        /// <summary>
         /// Test the property 'ExecutionTimeout'
         /// </summary>
         [Fact]

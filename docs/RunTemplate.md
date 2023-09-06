@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **GitRepositoryUrl** | **string** | an optional URL to the git repository | [optional] 
 **GitBranchName** | **string** | an optional git branch name | [optional] 
 **RunTemplateSourceDir** | **string** | an optional directory where to find the run template source | [optional] 
+**OrchestratorType** | **RunTemplateOrchestrator** |  | [optional] 
 **ExecutionTimeout** | **int** | an optional duration in seconds in which a workflow is allowed to run | [optional] 
 **DeleteHistoricalData** | [**DeleteHistoricalData**](DeleteHistoricalData.md) |  | [optional] 
 
