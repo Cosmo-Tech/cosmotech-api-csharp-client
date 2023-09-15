@@ -177,6 +177,8 @@ Class | Method | HTTP request | Description
 *ScenariorunApi* | [**SearchScenarioRuns**](docs/ScenariorunApi.md#searchscenarioruns) | **POST** /organizations/{organization_id}/scenarioruns/search | Search ScenarioRuns
 *ScenariorunApi* | [**StartScenarioRunContainers**](docs/ScenariorunApi.md#startscenarioruncontainers) | **POST** /organizations/{organization_id}/scenarioruns/startcontainers | Start a new scenariorun with raw containers definition
 *ScenariorunApi* | [**StopScenarioRun**](docs/ScenariorunApi.md#stopscenariorun) | **POST** /organizations/{organization_id}/scenarioruns/{scenariorun_id}/stop | stop a ScenarioRun for the Scenario
+*ScenariorunresultApi* | [**GetScenarioRunResult**](docs/ScenariorunresultApi.md#getscenariorunresult) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/{scenariorun_id}/probes/{probe_id} | Get a ScenarioRunResult in the Organization
+*ScenariorunresultApi* | [**SendScenarioRunResult**](docs/ScenariorunresultApi.md#sendscenariorunresult) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/{scenariorun_id}/probes/{probe_id} | Create a new ScenarioRunResult in the Organization
 *SolutionApi* | [**AddOrReplaceParameterGroups**](docs/SolutionApi.md#addorreplaceparametergroups) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Add Parameter Groups. Any item with the same ID will be overwritten
 *SolutionApi* | [**AddOrReplaceParameters**](docs/SolutionApi.md#addorreplaceparameters) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameters | Add Parameters. Any item with the same ID will be overwritten
 *SolutionApi* | [**AddOrReplaceRunTemplates**](docs/SolutionApi.md#addorreplaceruntemplates) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Add Run Templates. Any item with the same ID will be overwritten
@@ -286,6 +288,7 @@ Class | Method | HTTP request | Description
  - [Model.ScenarioRunContainerLogs](docs/ScenarioRunContainerLogs.md)
  - [Model.ScenarioRunLogs](docs/ScenarioRunLogs.md)
  - [Model.ScenarioRunResourceRequested](docs/ScenarioRunResourceRequested.md)
+ - [Model.ScenarioRunResult](docs/ScenarioRunResult.md)
  - [Model.ScenarioRunSearch](docs/ScenarioRunSearch.md)
  - [Model.ScenarioRunStartContainers](docs/ScenarioRunStartContainers.md)
  - [Model.ScenarioRunState](docs/ScenarioRunState.md)
