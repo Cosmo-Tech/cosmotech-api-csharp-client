@@ -6,6 +6,7 @@ a Workspace
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the Workspace version unique identifier | [optional] [readonly] 
+**OrganizationId** | **string** | the Organization unique identifier | [optional] [readonly] 
 **Key** | **string** | technical key for resource name convention and version grouping. Must be unique | 
 **Name** | **string** | the Workspace name | 
 **Description** | **string** | the Workspace description | [optional] 
