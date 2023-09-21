@@ -420,7 +420,7 @@ void (empty response body)
 
 <a name="deletescenario"></a>
 # **DeleteScenario**
-> void DeleteScenario (string organizationId, string workspaceId, string scenarioId)
+> void DeleteScenario (string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = null)
 
 Delete a scenario
 
@@ -447,11 +447,12 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
+            var waitRelationshipPropagation = false;  // bool? | whether to wait until child scenarios are effectively updated (optional)  (default to false)
 
             try
             {
                 // Delete a scenario
-                apiInstance.DeleteScenario(organizationId, workspaceId, scenarioId);
+                apiInstance.DeleteScenario(organizationId, workspaceId, scenarioId, waitRelationshipPropagation);
             }
             catch (ApiException  e)
             {
@@ -471,6 +472,7 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
  **scenarioId** | **string**| the Scenario identifier | 
+ **waitRelationshipPropagation** | **bool?**| whether to wait until child scenarios are effectively updated | [optional] [default to false]
 
 ### Return type
 
