@@ -34,15 +34,15 @@ namespace Com.Cosmotech.Model
     public enum RunTemplateOrchestrator
     {
         /// <summary>
-        /// Enum ArgoWorkflow for value: argo-workflow
+        /// Enum ArgoWorkflow for value: argoWorkflow
         /// </summary>
-        [EnumMember(Value = "argo-workflow")]
+        [EnumMember(Value = "argoWorkflow")]
         ArgoWorkflow = 1,
 
         /// <summary>
-        /// Enum CsmOrc for value: csm-orc
+        /// Enum CsmOrc for value: csmOrc
         /// </summary>
-        [EnumMember(Value = "csm-orc")]
+        [EnumMember(Value = "csmOrc")]
         CsmOrc = 2
 
     }
