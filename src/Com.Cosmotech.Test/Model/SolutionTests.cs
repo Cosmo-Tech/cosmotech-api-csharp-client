@@ -177,6 +177,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'RunTemplates'
         }
+        /// <summary>
+        /// Test the property 'Security'
+        /// </summary>
+        [Fact]
+        public void SecurityTest()
+        {
+            // TODO unit test for the property 'Security'
+        }
 
     }
 

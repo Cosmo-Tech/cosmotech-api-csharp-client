@@ -98,6 +98,20 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test AddSolutionAccessControl
+        /// </summary>
+        [Fact]
+        public void AddSolutionAccessControlTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string solutionId = null;
+            //SolutionAccessControl solutionAccessControl = null;
+            //var response = instance.AddSolutionAccessControl(organizationId, solutionId, solutionAccessControl);
+            //Assert.IsType<SolutionAccessControl>(response);
+        }
+
+        /// <summary>
         /// Test CreateSolution
         /// </summary>
         [Fact]
@@ -178,16 +192,30 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
-        /// Test ImportSolution
+        /// Test GetSolutionAccessControl
         /// </summary>
         [Fact]
-        public void ImportSolutionTest()
+        public void GetSolutionAccessControlTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
-            //Solution solution = null;
-            //var response = instance.ImportSolution(organizationId, solution);
-            //Assert.IsType<Solution>(response);
+            //string solutionId = null;
+            //string identityId = null;
+            //var response = instance.GetSolutionAccessControl(organizationId, solutionId, identityId);
+            //Assert.IsType<SolutionAccessControl>(response);
+        }
+
+        /// <summary>
+        /// Test GetSolutionSecurityUsers
+        /// </summary>
+        [Fact]
+        public void GetSolutionSecurityUsersTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string solutionId = null;
+            //var response = instance.GetSolutionSecurityUsers(organizationId, solutionId);
+            //Assert.IsType<List<string>>(response);
         }
 
         /// <summary>
@@ -227,6 +255,19 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test RemoveSolutionAccessControl
+        /// </summary>
+        [Fact]
+        public void RemoveSolutionAccessControlTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string solutionId = null;
+            //string identityId = null;
+            //instance.RemoveSolutionAccessControl(organizationId, solutionId, identityId);
+        }
+
+        /// <summary>
         /// Test UpdateSolution
         /// </summary>
         [Fact]
@@ -238,6 +279,21 @@ namespace Com.Cosmotech.Test.Api
             //Solution solution = null;
             //var response = instance.UpdateSolution(organizationId, solutionId, solution);
             //Assert.IsType<Solution>(response);
+        }
+
+        /// <summary>
+        /// Test UpdateSolutionAccessControl
+        /// </summary>
+        [Fact]
+        public void UpdateSolutionAccessControlTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string solutionId = null;
+            //string identityId = null;
+            //SolutionRole solutionRole = null;
+            //var response = instance.UpdateSolutionAccessControl(organizationId, solutionId, identityId, solutionRole);
+            //Assert.IsType<SolutionAccessControl>(response);
         }
 
         /// <summary>
