@@ -190,21 +190,6 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
-        /// Test ImportScenarioRun
-        /// </summary>
-        [Fact]
-        public void ImportScenarioRunTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string organizationId = null;
-            //string workspaceId = null;
-            //string scenarioId = null;
-            //ScenarioRun scenarioRun = null;
-            //var response = instance.ImportScenarioRun(organizationId, workspaceId, scenarioId, scenarioRun);
-            //Assert.IsType<ScenarioRun>(response);
-        }
-
-        /// <summary>
         /// Test RunScenario
         /// </summary>
         [Fact]
