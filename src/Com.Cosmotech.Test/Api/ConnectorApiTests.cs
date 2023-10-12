@@ -93,18 +93,6 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
-        /// Test ImportConnector
-        /// </summary>
-        [Fact]
-        public void ImportConnectorTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Connector connector = null;
-            //var response = instance.ImportConnector(connector);
-            //Assert.IsType<Connector>(response);
-        }
-
-        /// <summary>
         /// Test RegisterConnector
         /// </summary>
         [Fact]

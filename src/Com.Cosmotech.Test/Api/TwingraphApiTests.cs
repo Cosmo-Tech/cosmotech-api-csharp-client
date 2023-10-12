@@ -192,19 +192,6 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
-        /// Test ImportGraph
-        /// </summary>
-        [Fact]
-        public void ImportGraphTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string organizationId = null;
-            //TwinGraphImport twinGraphImport = null;
-            //var response = instance.ImportGraph(organizationId, twinGraphImport);
-            //Assert.IsType<TwinGraphImportInfo>(response);
-        }
-
-        /// <summary>
         /// Test JobStatus
         /// </summary>
         [Fact]
