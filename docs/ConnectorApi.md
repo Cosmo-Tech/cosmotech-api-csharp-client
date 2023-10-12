@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**FindAllConnectors**](ConnectorApi.md#findallconnectors) | **GET** /connectors | List all Connectors
 [**FindConnectorById**](ConnectorApi.md#findconnectorbyid) | **GET** /connectors/{connector_id} | Get the details of a connector
+[**FindConnectorByName**](ConnectorApi.md#findconnectorbyname) | **GET** /connectors/name/{connector_name} | Get the details of a connector
 [**ImportConnector**](ConnectorApi.md#importconnector) | **POST** /connectors/import | Import existing connector
 [**RegisterConnector**](ConnectorApi.md#registerconnector) | **POST** /connectors | Register a new connector
 [**UnregisterConnector**](ConnectorApi.md#unregisterconnector) | **DELETE** /connectors/{connector_id} | Unregister a connector
@@ -155,6 +156,78 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | the Connector details |  -  |
 | **404** | the Connector specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="findconnectorbyname"></a>
+# **FindConnectorByName**
+> Connector FindConnectorByName (string connectorName)
+
+Get the details of a connector
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class FindConnectorByNameExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new ConnectorApi(config);
+            var connectorName = "connectorName_example";  // string | the Connector name
+
+            try
+            {
+                // Get the details of a connector
+                Connector result = apiInstance.FindConnectorByName(connectorName);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConnectorApi.FindConnectorByName: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connectorName** | **string**| the Connector name | 
+
+### Return type
+
+[**Connector**](Connector.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | the Connector details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -4,17 +4,110 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddDatasetAccessControl**](DatasetApi.md#adddatasetaccesscontrol) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/security/access | Add a control access to the Dataset
 [**AddOrReplaceDatasetCompatibilityElements**](DatasetApi.md#addorreplacedatasetcompatibilityelements) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Add Dataset Compatibility elements.
 [**CopyDataset**](DatasetApi.md#copydataset) | **POST** /organizations/{organization_id}/datasets/copy | Copy a Dataset to another Dataset. Source must have a read capable connector and Target a write capable connector.
 [**CreateDataset**](DatasetApi.md#createdataset) | **POST** /organizations/{organization_id}/datasets | Create a new Dataset
+[**CreateSubDataset**](DatasetApi.md#createsubdataset) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/subdataset | Run a query on a dataset
+[**CreateTwingraphEntities**](DatasetApi.md#createtwingraphentities) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Create new entities in a graph instance
 [**DeleteDataset**](DatasetApi.md#deletedataset) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id} | Delete a dataset
+[**DeleteTwingraphEntities**](DatasetApi.md#deletetwingraphentities) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Delete entities in a graph instance
+[**DownloadTwingraph**](DatasetApi.md#downloadtwingraph) | **GET** /organizations/{organization_id}/datasets/twingraph/download/{hash} | Download a graph compressed in a zip file
 [**FindAllDatasets**](DatasetApi.md#findalldatasets) | **GET** /organizations/{organization_id}/datasets | List all Datasets
 [**FindDatasetById**](DatasetApi.md#finddatasetbyid) | **GET** /organizations/{organization_id}/datasets/{dataset_id} | Get the details of a Dataset
-[**ImportDataset**](DatasetApi.md#importdataset) | **POST** /organizations/{organization_id}/datasets/import | Import a new Dataset
+[**GetDatasetAccessControl**](DatasetApi.md#getdatasetaccesscontrol) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Get a control access for the Dataset
+[**GetDatasetSecurityUsers**](DatasetApi.md#getdatasetsecurityusers) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/users | Get the Dataset security users list
+[**GetDatasetTwingraphStatus**](DatasetApi.md#getdatasettwingraphstatus) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/job/{job_id}/status | Get the status of twingraph import
+[**GetTwingraphEntities**](DatasetApi.md#gettwingraphentities) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Get entities in a graph instance
+[**RefreshDataset**](DatasetApi.md#refreshdataset) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/refresh | Refresh dataset
 [**RemoveAllDatasetCompatibilityElements**](DatasetApi.md#removealldatasetcompatibilityelements) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Remove all Dataset Compatibility elements from the Dataset specified
+[**RemoveDatasetAccessControl**](DatasetApi.md#removedatasetaccesscontrol) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Remove the specified access from the given Dataset
 [**SearchDatasets**](DatasetApi.md#searchdatasets) | **POST** /organizations/{organization_id}/datasets/search | Search Datasets
+[**TwingraphBatchQuery**](DatasetApi.md#twingraphbatchquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode
+[**TwingraphBatchUpdate**](DatasetApi.md#twingraphbatchupdate) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch | Async batch update by loading a CSV file on a graph instance 
+[**TwingraphQuery**](DatasetApi.md#twingraphquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/twingraph | Run a query on a graph instance and return the result as a json
 [**UpdateDataset**](DatasetApi.md#updatedataset) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id} | Update a dataset
+[**UpdateDatasetAccessControl**](DatasetApi.md#updatedatasetaccesscontrol) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Update the specified access to User for a Dataset
+[**UpdateTwingraphEntities**](DatasetApi.md#updatetwingraphentities) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Update entities in a graph instance
+[**UploadTwingraph**](DatasetApi.md#uploadtwingraph) | **POST** /organizations/{organization_id}/datasets/{dataset_id} | Upload Twingraph with ZIP File
 
+
+<a name="adddatasetaccesscontrol"></a>
+# **AddDatasetAccessControl**
+> DatasetAccessControl AddDatasetAccessControl (string organizationId, string datasetId, DatasetAccessControl datasetAccessControl)
+
+Add a control access to the Dataset
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class AddDatasetAccessControlExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+            var datasetAccessControl = new DatasetAccessControl(); // DatasetAccessControl | the new Dataset security access to add.
+
+            try
+            {
+                // Add a control access to the Dataset
+                DatasetAccessControl result = apiInstance.AddDatasetAccessControl(organizationId, datasetId, datasetAccessControl);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.AddDatasetAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **datasetAccessControl** | [**DatasetAccessControl**](DatasetAccessControl.md)| the new Dataset security access to add. | 
+
+### Return type
+
+[**DatasetAccessControl**](DatasetAccessControl.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/yaml
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | The Dataset access |  -  |
+| **404** | the Dataset specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="addorreplacedatasetcompatibilityelements"></a>
 # **AddOrReplaceDatasetCompatibilityElements**
@@ -245,6 +338,164 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="createsubdataset"></a>
+# **CreateSubDataset**
+> Dataset CreateSubDataset (string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery)
+
+Run a query on a dataset
+
+Run a query on a dataset
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class CreateSubDatasetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+            var subDatasetGraphQuery = new SubDatasetGraphQuery(); // SubDatasetGraphQuery | the query to run
+
+            try
+            {
+                // Run a query on a dataset
+                Dataset result = apiInstance.CreateSubDataset(organizationId, datasetId, subDatasetGraphQuery);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.CreateSubDataset: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **subDatasetGraphQuery** | [**SubDatasetGraphQuery**](SubDatasetGraphQuery.md)| the query to run | 
+
+### Return type
+
+[**Dataset**](Dataset.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createtwingraphentities"></a>
+# **CreateTwingraphEntities**
+> string CreateTwingraphEntities (string organizationId, string datasetId, string type, List<GraphProperties> graphProperties)
+
+Create new entities in a graph instance
+
+create new entities in a graph instance
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class CreateTwingraphEntitiesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset Identifier
+            var type = "node";  // string | the entity model type
+            var graphProperties = new List<GraphProperties>(); // List<GraphProperties> | the entities to create
+
+            try
+            {
+                // Create new entities in a graph instance
+                string result = apiInstance.CreateTwingraphEntities(organizationId, datasetId, type, graphProperties);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.CreateTwingraphEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **type** | **string**| the entity model type | 
+ **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to create | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="deletedataset"></a>
 # **DeleteDataset**
 > void DeleteDataset (string organizationId, string datasetId)
@@ -316,6 +567,161 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Request successful |  -  |
 | **404** | the Dataset specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletetwingraphentities"></a>
+# **DeleteTwingraphEntities**
+> void DeleteTwingraphEntities (string organizationId, string datasetId, string type, List<string> ids)
+
+Delete entities in a graph instance
+
+delete entities in a graph instance
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class DeleteTwingraphEntitiesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset Identifier
+            var type = "node";  // string | the entity model type
+            var ids = new List<string>(); // List<string> | the entities to delete
+
+            try
+            {
+                // Delete entities in a graph instance
+                apiInstance.DeleteTwingraphEntities(organizationId, datasetId, type, ids);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.DeleteTwingraphEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **type** | **string**| the entity model type | 
+ **ids** | [**List&lt;string&gt;**](string.md)| the entities to delete | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="downloadtwingraph"></a>
+# **DownloadTwingraph**
+> System.IO.Stream DownloadTwingraph (string organizationId, string hash)
+
+Download a graph compressed in a zip file
+
+Download a graph compressed in a zip file
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class DownloadTwingraphExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var hash = "hash_example";  // string | the Graph download identifier
+
+            try
+            {
+                // Download a graph compressed in a zip file
+                System.IO.Stream result = apiInstance.DownloadTwingraph(organizationId, hash);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.DownloadTwingraph: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **hash** | **string**| the Graph download identifier | 
+
+### Return type
+
+**System.IO.Stream**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -470,11 +876,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="importdataset"></a>
-# **ImportDataset**
-> Dataset ImportDataset (string organizationId, Dataset dataset)
+<a name="getdatasetaccesscontrol"></a>
+# **GetDatasetAccessControl**
+> DatasetAccessControl GetDatasetAccessControl (string organizationId, string datasetId, string identityId)
 
-Import a new Dataset
+Get a control access for the Dataset
 
 ### Example
 ```csharp
@@ -486,7 +892,7 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class ImportDatasetExample
+    public class GetDatasetAccessControlExample
     {
         public static void Main()
         {
@@ -497,17 +903,18 @@ namespace Example
 
             var apiInstance = new DatasetApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
-            var dataset = new Dataset(); // Dataset | the Dataset to import
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+            var identityId = "identityId_example";  // string | the User identifier
 
             try
             {
-                // Import a new Dataset
-                Dataset result = apiInstance.ImportDataset(organizationId, dataset);
+                // Get a control access for the Dataset
+                DatasetAccessControl result = apiInstance.GetDatasetAccessControl(organizationId, datasetId, identityId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.ImportDataset: " + e.Message );
+                Debug.Print("Exception when calling DatasetApi.GetDatasetAccessControl: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -521,11 +928,12 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
- **dataset** | [**Dataset**](Dataset.md)| the Dataset to import | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **identityId** | **string**| the User identifier | 
 
 ### Return type
 
-[**Dataset**](Dataset.md)
+[**DatasetAccessControl**](DatasetAccessControl.md)
 
 ### Authorization
 
@@ -533,15 +941,324 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | the dataset details |  -  |
-| **400** | Bad request |  -  |
+| **200** | The Dataset access |  -  |
+| **404** | The Dataset or user specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getdatasetsecurityusers"></a>
+# **GetDatasetSecurityUsers**
+> List&lt;string&gt; GetDatasetSecurityUsers (string organizationId, string datasetId)
+
+Get the Dataset security users list
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetDatasetSecurityUsersExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+
+            try
+            {
+                // Get the Dataset security users list
+                List<string> result = apiInstance.GetDatasetSecurityUsers(organizationId, datasetId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.GetDatasetSecurityUsers: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+
+### Return type
+
+**List<string>**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The Dataset security users list |  -  |
+| **404** | the Dataset or the User specified is unknown or you don&#39;t have access to them |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getdatasettwingraphstatus"></a>
+# **GetDatasetTwingraphStatus**
+> string GetDatasetTwingraphStatus (string organizationId, string datasetId, string jobId)
+
+Get the status of twingraph import
+
+Get the status of a twingraph import
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetDatasetTwingraphStatusExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the dataset identifier
+            var jobId = "jobId_example";  // string | the job identifier
+
+            try
+            {
+                // Get the status of twingraph import
+                string result = apiInstance.GetDatasetTwingraphStatus(organizationId, datasetId, jobId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.GetDatasetTwingraphStatus: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the dataset identifier | 
+ **jobId** | **string**| the job identifier | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/yaml, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="gettwingraphentities"></a>
+# **GetTwingraphEntities**
+> string GetTwingraphEntities (string organizationId, string datasetId, string type, List<string> ids)
+
+Get entities in a graph instance
+
+get entities in a graph instance
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetTwingraphEntitiesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset Identifier
+            var type = "node";  // string | the entity model type
+            var ids = new List<string>(); // List<string> | the entities to get
+
+            try
+            {
+                // Get entities in a graph instance
+                string result = apiInstance.GetTwingraphEntities(organizationId, datasetId, type, ids);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.GetTwingraphEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **type** | **string**| the entity model type | 
+ **ids** | [**List&lt;string&gt;**](string.md)| the entities to get | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="refreshdataset"></a>
+# **RefreshDataset**
+> DatasetTwinGraphInfo RefreshDataset (string organizationId, string datasetId)
+
+Refresh dataset
+
+Refresh ADT, Storage dataset
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class RefreshDatasetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+
+            try
+            {
+                // Refresh dataset
+                DatasetTwinGraphInfo result = apiInstance.RefreshDataset(organizationId, datasetId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.RefreshDataset: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+
+### Return type
+
+[**DatasetTwinGraphInfo**](DatasetTwinGraphInfo.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -616,6 +1333,82 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | the operation succeeded |  -  |
 | **404** | the Dataset specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="removedatasetaccesscontrol"></a>
+# **RemoveDatasetAccessControl**
+> void RemoveDatasetAccessControl (string organizationId, string datasetId, string identityId)
+
+Remove the specified access from the given Dataset
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class RemoveDatasetAccessControlExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+            var identityId = "identityId_example";  // string | the User identifier
+
+            try
+            {
+                // Remove the specified access from the given Dataset
+                apiInstance.RemoveDatasetAccessControl(organizationId, datasetId, identityId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.RemoveDatasetAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **identityId** | **string**| the User identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Request succeeded |  -  |
+| **404** | The Dataset or the user specified is unknown or you don&#39;t have access to them |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -697,6 +1490,246 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="twingraphbatchquery"></a>
+# **TwingraphBatchQuery**
+> DatasetTwinGraphHash TwingraphBatchQuery (string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
+
+Run a query on a graph instance and return the result as a zip file in async mode
+
+Run a query on a graph instance and return the result as a zip file in async mode
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class TwingraphBatchQueryExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Graph Identifier
+            var datasetTwinGraphQuery = new DatasetTwinGraphQuery(); // DatasetTwinGraphQuery | the query to run
+
+            try
+            {
+                // Run a query on a graph instance and return the result as a zip file in async mode
+                DatasetTwinGraphHash result = apiInstance.TwingraphBatchQuery(organizationId, datasetId, datasetTwinGraphQuery);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.TwingraphBatchQuery: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Graph Identifier | 
+ **datasetTwinGraphQuery** | [**DatasetTwinGraphQuery**](DatasetTwinGraphQuery.md)| the query to run | 
+
+### Return type
+
+[**DatasetTwinGraphHash**](DatasetTwinGraphHash.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="twingraphbatchupdate"></a>
+# **TwingraphBatchUpdate**
+> TwinGraphBatchResult TwingraphBatchUpdate (string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body)
+
+Async batch update by loading a CSV file on a graph instance 
+
+Async batch update by loading a CSV file on a graph instance 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class TwingraphBatchUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset Identifier
+            var twinGraphQuery = new DatasetTwinGraphQuery(); // DatasetTwinGraphQuery | 
+            var body = id,name,rank
+1,"John Doe",37
+2,"Joe Bloggs",14
+;  // System.IO.Stream | 
+
+            try
+            {
+                // Async batch update by loading a CSV file on a graph instance 
+                TwinGraphBatchResult result = apiInstance.TwingraphBatchUpdate(organizationId, datasetId, twinGraphQuery, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.TwingraphBatchUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **twinGraphQuery** | [**DatasetTwinGraphQuery**](DatasetTwinGraphQuery.md)|  | 
+ **body** | **System.IO.Stream****System.IO.Stream**|  | 
+
+### Return type
+
+[**TwinGraphBatchResult**](TwinGraphBatchResult.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: text/csv, application/octet-stream
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | csv file processed |  -  |
+| **400** | Bad request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="twingraphquery"></a>
+# **TwingraphQuery**
+> string TwingraphQuery (string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
+
+Run a query on a graph instance and return the result as a json
+
+Run a query on a graph instance and return the result as a json
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class TwingraphQueryExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+            var datasetTwinGraphQuery = new DatasetTwinGraphQuery(); // DatasetTwinGraphQuery | the query to run
+
+            try
+            {
+                // Run a query on a graph instance and return the result as a json
+                string result = apiInstance.TwingraphQuery(organizationId, datasetId, datasetTwinGraphQuery);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.TwingraphQuery: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **datasetTwinGraphQuery** | [**DatasetTwinGraphQuery**](DatasetTwinGraphQuery.md)| the query to run | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updatedataset"></a>
 # **UpdateDataset**
 > Dataset UpdateDataset (string organizationId, string datasetId, Dataset dataset)
@@ -772,6 +1805,242 @@ Name | Type | Description  | Notes
 | **200** | the dataset details |  -  |
 | **400** | Bad request |  -  |
 | **404** | the Dataset specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatedatasetaccesscontrol"></a>
+# **UpdateDatasetAccessControl**
+> DatasetAccessControl UpdateDatasetAccessControl (string organizationId, string datasetId, string identityId, DatasetRole datasetRole)
+
+Update the specified access to User for a Dataset
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class UpdateDatasetAccessControlExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+            var identityId = "identityId_example";  // string | the User identifier
+            var datasetRole = new DatasetRole(); // DatasetRole | The new Dataset Access Control
+
+            try
+            {
+                // Update the specified access to User for a Dataset
+                DatasetAccessControl result = apiInstance.UpdateDatasetAccessControl(organizationId, datasetId, identityId, datasetRole);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.UpdateDatasetAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **identityId** | **string**| the User identifier | 
+ **datasetRole** | [**DatasetRole**](DatasetRole.md)| The new Dataset Access Control | 
+
+### Return type
+
+[**DatasetAccessControl**](DatasetAccessControl.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The Dataset access |  -  |
+| **404** | The Dataset specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatetwingraphentities"></a>
+# **UpdateTwingraphEntities**
+> string UpdateTwingraphEntities (string organizationId, string datasetId, string type, List<GraphProperties> graphProperties)
+
+Update entities in a graph instance
+
+update entities in a graph instance
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class UpdateTwingraphEntitiesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset Identifier
+            var type = "node";  // string | the entity model type
+            var graphProperties = new List<GraphProperties>(); // List<GraphProperties> | the entities to update
+
+            try
+            {
+                // Update entities in a graph instance
+                string result = apiInstance.UpdateTwingraphEntities(organizationId, datasetId, type, graphProperties);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.UpdateTwingraphEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **type** | **string**| the entity model type | 
+ **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to update | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="uploadtwingraph"></a>
+# **UploadTwingraph**
+> void UploadTwingraph (string organizationId, string datasetId, System.IO.Stream body)
+
+Upload Twingraph with ZIP File
+
+Upload Twingraph ZIP
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class UploadTwingraphExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+            var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
+
+            try
+            {
+                // Upload Twingraph with ZIP File
+                apiInstance.UploadTwingraph(organizationId, datasetId, body);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.UploadTwingraph: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **body** | **System.IO.Stream****System.IO.Stream**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/octet-stream
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Twingraph File Uploaded |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
