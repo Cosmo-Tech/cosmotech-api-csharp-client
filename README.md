@@ -123,6 +123,7 @@ Class | Method | HTTP request | Description
 *DatasetApi* | [**FindAllDatasets**](docs/DatasetApi.md#findalldatasets) | **GET** /organizations/{organization_id}/datasets | List all Datasets
 *DatasetApi* | [**FindDatasetById**](docs/DatasetApi.md#finddatasetbyid) | **GET** /organizations/{organization_id}/datasets/{dataset_id} | Get the details of a Dataset
 *DatasetApi* | [**GetDatasetAccessControl**](docs/DatasetApi.md#getdatasetaccesscontrol) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Get a control access for the Dataset
+*DatasetApi* | [**GetDatasetSecurity**](docs/DatasetApi.md#getdatasetsecurity) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security | Get the Dataset security information
 *DatasetApi* | [**GetDatasetSecurityUsers**](docs/DatasetApi.md#getdatasetsecurityusers) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/users | Get the Dataset security users list
 *DatasetApi* | [**GetDatasetTwingraphStatus**](docs/DatasetApi.md#getdatasettwingraphstatus) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/job/{job_id}/status | Get the dataset's refresh job status
 *DatasetApi* | [**GetTwingraphEntities**](docs/DatasetApi.md#gettwingraphentities) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Get entities in a graph instance
@@ -130,6 +131,7 @@ Class | Method | HTTP request | Description
 *DatasetApi* | [**RemoveAllDatasetCompatibilityElements**](docs/DatasetApi.md#removealldatasetcompatibilityelements) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Remove all Dataset Compatibility elements from the Dataset specified
 *DatasetApi* | [**RemoveDatasetAccessControl**](docs/DatasetApi.md#removedatasetaccesscontrol) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Remove the specified access from the given Dataset
 *DatasetApi* | [**SearchDatasets**](docs/DatasetApi.md#searchdatasets) | **POST** /organizations/{organization_id}/datasets/search | Search Datasets by tags
+*DatasetApi* | [**SetDatasetDefaultSecurity**](docs/DatasetApi.md#setdatasetdefaultsecurity) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/security/default | Set the Dataset default security
 *DatasetApi* | [**TwingraphBatchQuery**](docs/DatasetApi.md#twingraphbatchquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode
 *DatasetApi* | [**TwingraphBatchUpdate**](docs/DatasetApi.md#twingraphbatchupdate) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch | Async batch update by loading a CSV file on a graph instance 
 *DatasetApi* | [**TwingraphQuery**](docs/DatasetApi.md#twingraphquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/twingraph | Return the result of a query made on the graph instance as a json
@@ -203,11 +205,13 @@ Class | Method | HTTP request | Description
 *SolutionApi* | [**FindAllSolutions**](docs/SolutionApi.md#findallsolutions) | **GET** /organizations/{organization_id}/solutions | List all Solutions
 *SolutionApi* | [**FindSolutionById**](docs/SolutionApi.md#findsolutionbyid) | **GET** /organizations/{organization_id}/solutions/{solution_id} | Get the details of a solution
 *SolutionApi* | [**GetSolutionAccessControl**](docs/SolutionApi.md#getsolutionaccesscontrol) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Get a control access for the Solution
+*SolutionApi* | [**GetSolutionSecurity**](docs/SolutionApi.md#getsolutionsecurity) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security | Get the Solution security information
 *SolutionApi* | [**GetSolutionSecurityUsers**](docs/SolutionApi.md#getsolutionsecurityusers) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/users | Get the Solution security users list
 *SolutionApi* | [**RemoveAllRunTemplates**](docs/SolutionApi.md#removeallruntemplates) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Remove all Run Templates from the Solution specified
 *SolutionApi* | [**RemoveAllSolutionParameterGroups**](docs/SolutionApi.md#removeallsolutionparametergroups) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Remove all Parameter Groups from the Solution specified
 *SolutionApi* | [**RemoveAllSolutionParameters**](docs/SolutionApi.md#removeallsolutionparameters) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameters | Remove all Parameters from the Solution specified
 *SolutionApi* | [**RemoveSolutionAccessControl**](docs/SolutionApi.md#removesolutionaccesscontrol) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Remove the specified access from the given Organization Solution
+*SolutionApi* | [**SetSolutionDefaultSecurity**](docs/SolutionApi.md#setsolutiondefaultsecurity) | **POST** /organizations/{organization_id}/solutions/{solution_id}/security/default | Set the Solution default security
 *SolutionApi* | [**UpdateSolution**](docs/SolutionApi.md#updatesolution) | **PATCH** /organizations/{organization_id}/solutions/{solution_id} | Update a solution
 *SolutionApi* | [**UpdateSolutionAccessControl**](docs/SolutionApi.md#updatesolutionaccesscontrol) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Update the specified access to User for a Solution
 *SolutionApi* | [**UpdateSolutionRunTemplate**](docs/SolutionApi.md#updatesolutionruntemplate) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Update the specified Solution Run Template

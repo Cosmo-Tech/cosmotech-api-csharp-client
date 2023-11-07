@@ -301,6 +301,26 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of DatasetAccessControl</returns>
         ApiResponse<DatasetAccessControl> GetDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId);
         /// <summary>
+        /// Get the Dataset security information
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <returns>DatasetSecurity</returns>
+        DatasetSecurity GetDatasetSecurity(string organizationId, string datasetId);
+
+        /// <summary>
+        /// Get the Dataset security information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <returns>ApiResponse of DatasetSecurity</returns>
+        ApiResponse<DatasetSecurity> GetDatasetSecurityWithHttpInfo(string organizationId, string datasetId);
+        /// <summary>
         /// Get the Dataset security users list
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -461,6 +481,28 @@ namespace Com.Cosmotech.Api
         /// <param name="size">amount of result by page (optional)</param>
         /// <returns>ApiResponse of List&lt;Dataset&gt;</returns>
         ApiResponse<List<Dataset>> SearchDatasetsWithHttpInfo(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?));
+        /// <summary>
+        /// Set the Dataset default security
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <returns>DatasetSecurity</returns>
+        DatasetSecurity SetDatasetDefaultSecurity(string organizationId, string datasetId, DatasetRole datasetRole);
+
+        /// <summary>
+        /// Set the Dataset default security
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <returns>ApiResponse of DatasetSecurity</returns>
+        ApiResponse<DatasetSecurity> SetDatasetDefaultSecurityWithHttpInfo(string organizationId, string datasetId, DatasetRole datasetRole);
         /// <summary>
         /// Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
@@ -964,6 +1006,31 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (DatasetAccessControl)</returns>
         System.Threading.Tasks.Task<ApiResponse<DatasetAccessControl>> GetDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Get the Dataset security information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DatasetSecurity</returns>
+        System.Threading.Tasks.Task<DatasetSecurity> GetDatasetSecurityAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get the Dataset security information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DatasetSecurity>> GetDatasetSecurityWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Get the Dataset security users list
         /// </summary>
         /// <remarks>
@@ -1150,6 +1217,33 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Dataset&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Dataset>>> SearchDatasetsWithHttpInfoAsync(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Set the Dataset default security
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DatasetSecurity</returns>
+        System.Threading.Tasks.Task<DatasetSecurity> SetDatasetDefaultSecurityAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Set the Dataset default security
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DatasetSecurity>> SetDatasetDefaultSecurityWithHttpInfoAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
@@ -3594,6 +3688,170 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
+        /// Get the Dataset security information 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <returns>DatasetSecurity</returns>
+        public DatasetSecurity GetDatasetSecurity(string organizationId, string datasetId)
+        {
+            Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = GetDatasetSecurityWithHttpInfo(organizationId, datasetId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the Dataset security information 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <returns>ApiResponse of DatasetSecurity</returns>
+        public Com.Cosmotech.Client.ApiResponse<DatasetSecurity> GetDatasetSecurityWithHttpInfo(string organizationId, string datasetId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling DatasetApi->GetDatasetSecurity");
+            }
+
+            // verify the required parameter 'datasetId' is set
+            if (datasetId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetId' when calling DatasetApi->GetDatasetSecurity");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<DatasetSecurity>("/organizations/{organization_id}/datasets/{dataset_id}/security", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDatasetSecurity", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get the Dataset security information 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DatasetSecurity</returns>
+        public async System.Threading.Tasks.Task<DatasetSecurity> GetDatasetSecurityAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = await GetDatasetSecurityWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the Dataset security information 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetSecurity>> GetDatasetSecurityWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling DatasetApi->GetDatasetSecurity");
+            }
+
+            // verify the required parameter 'datasetId' is set
+            if (datasetId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetId' when calling DatasetApi->GetDatasetSecurity");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DatasetSecurity>("/organizations/{organization_id}/datasets/{dataset_id}/security", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDatasetSecurity", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get the Dataset security users list 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -4826,6 +5084,192 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SearchDatasets", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set the Dataset default security 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <returns>DatasetSecurity</returns>
+        public DatasetSecurity SetDatasetDefaultSecurity(string organizationId, string datasetId, DatasetRole datasetRole)
+        {
+            Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = SetDatasetDefaultSecurityWithHttpInfo(organizationId, datasetId, datasetRole);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set the Dataset default security 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <returns>ApiResponse of DatasetSecurity</returns>
+        public Com.Cosmotech.Client.ApiResponse<DatasetSecurity> SetDatasetDefaultSecurityWithHttpInfo(string organizationId, string datasetId, DatasetRole datasetRole)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling DatasetApi->SetDatasetDefaultSecurity");
+            }
+
+            // verify the required parameter 'datasetId' is set
+            if (datasetId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetId' when calling DatasetApi->SetDatasetDefaultSecurity");
+            }
+
+            // verify the required parameter 'datasetRole' is set
+            if (datasetRole == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetRole' when calling DatasetApi->SetDatasetDefaultSecurity");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
+            localVarRequestOptions.Data = datasetRole;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DatasetSecurity>("/organizations/{organization_id}/datasets/{dataset_id}/security/default", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetDatasetDefaultSecurity", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set the Dataset default security 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DatasetSecurity</returns>
+        public async System.Threading.Tasks.Task<DatasetSecurity> SetDatasetDefaultSecurityAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = await SetDatasetDefaultSecurityWithHttpInfoAsync(organizationId, datasetId, datasetRole, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set the Dataset default security 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="datasetId">the Dataset identifier</param>
+        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetSecurity>> SetDatasetDefaultSecurityWithHttpInfoAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling DatasetApi->SetDatasetDefaultSecurity");
+            }
+
+            // verify the required parameter 'datasetId' is set
+            if (datasetId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetId' when calling DatasetApi->SetDatasetDefaultSecurity");
+            }
+
+            // verify the required parameter 'datasetRole' is set
+            if (datasetRole == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetRole' when calling DatasetApi->SetDatasetDefaultSecurity");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
+            localVarRequestOptions.Data = datasetRole;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DatasetSecurity>("/organizations/{organization_id}/datasets/{dataset_id}/security/default", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetDatasetDefaultSecurity", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

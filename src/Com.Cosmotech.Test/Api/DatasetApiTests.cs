@@ -219,6 +219,19 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test GetDatasetSecurity
+        /// </summary>
+        [Fact]
+        public void GetDatasetSecurityTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string datasetId = null;
+            //var response = instance.GetDatasetSecurity(organizationId, datasetId);
+            //Assert.IsType<DatasetSecurity>(response);
+        }
+
+        /// <summary>
         /// Test GetDatasetSecurityUsers
         /// </summary>
         [Fact]
@@ -311,6 +324,20 @@ namespace Com.Cosmotech.Test.Api
             //int? size = null;
             //var response = instance.SearchDatasets(organizationId, datasetSearch, page, size);
             //Assert.IsType<List<Dataset>>(response);
+        }
+
+        /// <summary>
+        /// Test SetDatasetDefaultSecurity
+        /// </summary>
+        [Fact]
+        public void SetDatasetDefaultSecurityTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string datasetId = null;
+            //DatasetRole datasetRole = null;
+            //var response = instance.SetDatasetDefaultSecurity(organizationId, datasetId, datasetRole);
+            //Assert.IsType<DatasetSecurity>(response);
         }
 
         /// <summary>

@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**FindAllDatasets**](DatasetApi.md#findalldatasets) | **GET** /organizations/{organization_id}/datasets | List all Datasets
 [**FindDatasetById**](DatasetApi.md#finddatasetbyid) | **GET** /organizations/{organization_id}/datasets/{dataset_id} | Get the details of a Dataset
 [**GetDatasetAccessControl**](DatasetApi.md#getdatasetaccesscontrol) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Get a control access for the Dataset
+[**GetDatasetSecurity**](DatasetApi.md#getdatasetsecurity) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security | Get the Dataset security information
 [**GetDatasetSecurityUsers**](DatasetApi.md#getdatasetsecurityusers) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/users | Get the Dataset security users list
 [**GetDatasetTwingraphStatus**](DatasetApi.md#getdatasettwingraphstatus) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/job/{job_id}/status | Get the dataset&#39;s refresh job status
 [**GetTwingraphEntities**](DatasetApi.md#gettwingraphentities) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Get entities in a graph instance
@@ -23,6 +24,7 @@ Method | HTTP request | Description
 [**RemoveAllDatasetCompatibilityElements**](DatasetApi.md#removealldatasetcompatibilityelements) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Remove all Dataset Compatibility elements from the Dataset specified
 [**RemoveDatasetAccessControl**](DatasetApi.md#removedatasetaccesscontrol) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Remove the specified access from the given Dataset
 [**SearchDatasets**](DatasetApi.md#searchdatasets) | **POST** /organizations/{organization_id}/datasets/search | Search Datasets by tags
+[**SetDatasetDefaultSecurity**](DatasetApi.md#setdatasetdefaultsecurity) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/security/default | Set the Dataset default security
 [**TwingraphBatchQuery**](DatasetApi.md#twingraphbatchquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode
 [**TwingraphBatchUpdate**](DatasetApi.md#twingraphbatchupdate) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch | Async batch update by loading a CSV file on a graph instance 
 [**TwingraphQuery**](DatasetApi.md#twingraphquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/twingraph | Return the result of a query made on the graph instance as a json
@@ -955,6 +957,81 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getdatasetsecurity"></a>
+# **GetDatasetSecurity**
+> DatasetSecurity GetDatasetSecurity (string organizationId, string datasetId)
+
+Get the Dataset security information
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetDatasetSecurityExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+
+            try
+            {
+                // Get the Dataset security information
+                DatasetSecurity result = apiInstance.GetDatasetSecurity(organizationId, datasetId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.GetDatasetSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+
+### Return type
+
+[**DatasetSecurity**](DatasetSecurity.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The Dataset security |  -  |
+| **404** | the Dataset specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getdatasetsecurityusers"></a>
 # **GetDatasetSecurityUsers**
 > List&lt;string&gt; GetDatasetSecurityUsers (string organizationId, string datasetId)
@@ -1489,6 +1566,83 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | the list of Datasets |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setdatasetdefaultsecurity"></a>
+# **SetDatasetDefaultSecurity**
+> DatasetSecurity SetDatasetDefaultSecurity (string organizationId, string datasetId, DatasetRole datasetRole)
+
+Set the Dataset default security
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class SetDatasetDefaultSecurityExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new DatasetApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var datasetId = "datasetId_example";  // string | the Dataset identifier
+            var datasetRole = new DatasetRole(); // DatasetRole | the new Dataset default security.
+
+            try
+            {
+                // Set the Dataset default security
+                DatasetSecurity result = apiInstance.SetDatasetDefaultSecurity(organizationId, datasetId, datasetRole);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DatasetApi.SetDatasetDefaultSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **datasetRole** | [**DatasetRole**](DatasetRole.md)| the new Dataset default security. | 
+
+### Return type
+
+[**DatasetSecurity**](DatasetSecurity.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/yaml
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | The Dataset default visibility |  -  |
+| **404** | the Dataset specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

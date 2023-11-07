@@ -206,6 +206,19 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
+        /// Test GetSolutionSecurity
+        /// </summary>
+        [Fact]
+        public void GetSolutionSecurityTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string solutionId = null;
+            //var response = instance.GetSolutionSecurity(organizationId, solutionId);
+            //Assert.IsType<SolutionSecurity>(response);
+        }
+
+        /// <summary>
         /// Test GetSolutionSecurityUsers
         /// </summary>
         [Fact]
@@ -265,6 +278,20 @@ namespace Com.Cosmotech.Test.Api
             //string solutionId = null;
             //string identityId = null;
             //instance.RemoveSolutionAccessControl(organizationId, solutionId, identityId);
+        }
+
+        /// <summary>
+        /// Test SetSolutionDefaultSecurity
+        /// </summary>
+        [Fact]
+        public void SetSolutionDefaultSecurityTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string solutionId = null;
+            //SolutionRole solutionRole = null;
+            //var response = instance.SetSolutionDefaultSecurity(organizationId, solutionId, solutionRole);
+            //Assert.IsType<SolutionSecurity>(response);
         }
 
         /// <summary>

@@ -266,6 +266,26 @@ namespace Com.Cosmotech.Api
         /// <returns>ApiResponse of SolutionAccessControl</returns>
         ApiResponse<SolutionAccessControl> GetSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId);
         /// <summary>
+        /// Get the Solution security information
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>SolutionSecurity</returns>
+        SolutionSecurity GetSolutionSecurity(string organizationId, string solutionId);
+
+        /// <summary>
+        /// Get the Solution security information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>ApiResponse of SolutionSecurity</returns>
+        ApiResponse<SolutionSecurity> GetSolutionSecurityWithHttpInfo(string organizationId, string solutionId);
+        /// <summary>
         /// Get the Solution security users list
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -367,6 +387,28 @@ namespace Com.Cosmotech.Api
         /// <param name="identityId">the User identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId);
+        /// <summary>
+        /// Set the Solution default security
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <returns>SolutionSecurity</returns>
+        SolutionSecurity SetSolutionDefaultSecurity(string organizationId, string solutionId, SolutionRole solutionRole);
+
+        /// <summary>
+        /// Set the Solution default security
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <returns>ApiResponse of SolutionSecurity</returns>
+        ApiResponse<SolutionSecurity> SetSolutionDefaultSecurityWithHttpInfo(string organizationId, string solutionId, SolutionRole solutionRole);
         /// <summary>
         /// Update a solution
         /// </summary>
@@ -768,6 +810,31 @@ namespace Com.Cosmotech.Api
         /// <returns>Task of ApiResponse (SolutionAccessControl)</returns>
         System.Threading.Tasks.Task<ApiResponse<SolutionAccessControl>> GetSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Get the Solution security information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SolutionSecurity</returns>
+        System.Threading.Tasks.Task<SolutionSecurity> GetSolutionSecurityAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get the Solution security information
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SolutionSecurity>> GetSolutionSecurityWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Get the Solution security users list
         /// </summary>
         /// <remarks>
@@ -894,6 +961,33 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Set the Solution default security
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SolutionSecurity</returns>
+        System.Threading.Tasks.Task<SolutionSecurity> SetSolutionDefaultSecurityAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Set the Solution default security
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SolutionSecurity>> SetSolutionDefaultSecurityWithHttpInfoAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a solution
         /// </summary>
@@ -3081,6 +3175,170 @@ namespace Com.Cosmotech.Api
         }
 
         /// <summary>
+        /// Get the Solution security information 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>SolutionSecurity</returns>
+        public SolutionSecurity GetSolutionSecurity(string organizationId, string solutionId)
+        {
+            Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = GetSolutionSecurityWithHttpInfo(organizationId, solutionId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the Solution security information 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <returns>ApiResponse of SolutionSecurity</returns>
+        public Com.Cosmotech.Client.ApiResponse<SolutionSecurity> GetSolutionSecurityWithHttpInfo(string organizationId, string solutionId)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->GetSolutionSecurity");
+            }
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->GetSolutionSecurity");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SolutionSecurity>("/organizations/{organization_id}/solutions/{solution_id}/security", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetSolutionSecurity", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get the Solution security information 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SolutionSecurity</returns>
+        public async System.Threading.Tasks.Task<SolutionSecurity> GetSolutionSecurityAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = await GetSolutionSecurityWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the Solution security information 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionSecurity>> GetSolutionSecurityWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->GetSolutionSecurity");
+            }
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->GetSolutionSecurity");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SolutionSecurity>("/organizations/{organization_id}/solutions/{solution_id}/security", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetSolutionSecurity", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get the Solution security users list 
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3893,6 +4151,192 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveSolutionAccessControl", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set the Solution default security 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <returns>SolutionSecurity</returns>
+        public SolutionSecurity SetSolutionDefaultSecurity(string organizationId, string solutionId, SolutionRole solutionRole)
+        {
+            Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = SetSolutionDefaultSecurityWithHttpInfo(organizationId, solutionId, solutionRole);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set the Solution default security 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <returns>ApiResponse of SolutionSecurity</returns>
+        public Com.Cosmotech.Client.ApiResponse<SolutionSecurity> SetSolutionDefaultSecurityWithHttpInfo(string organizationId, string solutionId, SolutionRole solutionRole)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->SetSolutionDefaultSecurity");
+            }
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->SetSolutionDefaultSecurity");
+            }
+
+            // verify the required parameter 'solutionRole' is set
+            if (solutionRole == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionRole' when calling SolutionApi->SetSolutionDefaultSecurity");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.Data = solutionRole;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<SolutionSecurity>("/organizations/{organization_id}/solutions/{solution_id}/security/default", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetSolutionDefaultSecurity", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Set the Solution default security 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SolutionSecurity</returns>
+        public async System.Threading.Tasks.Task<SolutionSecurity> SetSolutionDefaultSecurityAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = await SetSolutionDefaultSecurityWithHttpInfoAsync(organizationId, solutionId, solutionRole, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Set the Solution default security 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="solutionId">the Solution identifier</param>
+        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionSecurity>> SetSolutionDefaultSecurityWithHttpInfoAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling SolutionApi->SetSolutionDefaultSecurity");
+            }
+
+            // verify the required parameter 'solutionId' is set
+            if (solutionId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionId' when calling SolutionApi->SetSolutionDefaultSecurity");
+            }
+
+            // verify the required parameter 'solutionRole' is set
+            if (solutionRole == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'solutionRole' when calling SolutionApi->SetSolutionDefaultSecurity");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "application/yaml"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
+            localVarRequestOptions.Data = solutionRole;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SolutionSecurity>("/organizations/{organization_id}/solutions/{solution_id}/security/default", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetSolutionDefaultSecurity", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

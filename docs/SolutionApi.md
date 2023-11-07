@@ -15,11 +15,13 @@ Method | HTTP request | Description
 [**FindAllSolutions**](SolutionApi.md#findallsolutions) | **GET** /organizations/{organization_id}/solutions | List all Solutions
 [**FindSolutionById**](SolutionApi.md#findsolutionbyid) | **GET** /organizations/{organization_id}/solutions/{solution_id} | Get the details of a solution
 [**GetSolutionAccessControl**](SolutionApi.md#getsolutionaccesscontrol) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Get a control access for the Solution
+[**GetSolutionSecurity**](SolutionApi.md#getsolutionsecurity) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security | Get the Solution security information
 [**GetSolutionSecurityUsers**](SolutionApi.md#getsolutionsecurityusers) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/users | Get the Solution security users list
 [**RemoveAllRunTemplates**](SolutionApi.md#removeallruntemplates) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Remove all Run Templates from the Solution specified
 [**RemoveAllSolutionParameterGroups**](SolutionApi.md#removeallsolutionparametergroups) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Remove all Parameter Groups from the Solution specified
 [**RemoveAllSolutionParameters**](SolutionApi.md#removeallsolutionparameters) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameters | Remove all Parameters from the Solution specified
 [**RemoveSolutionAccessControl**](SolutionApi.md#removesolutionaccesscontrol) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Remove the specified access from the given Organization Solution
+[**SetSolutionDefaultSecurity**](SolutionApi.md#setsolutiondefaultsecurity) | **POST** /organizations/{organization_id}/solutions/{solution_id}/security/default | Set the Solution default security
 [**UpdateSolution**](SolutionApi.md#updatesolution) | **PATCH** /organizations/{organization_id}/solutions/{solution_id} | Update a solution
 [**UpdateSolutionAccessControl**](SolutionApi.md#updatesolutionaccesscontrol) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Update the specified access to User for a Solution
 [**UpdateSolutionRunTemplate**](SolutionApi.md#updatesolutionruntemplate) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Update the specified Solution Run Template
@@ -869,6 +871,81 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getsolutionsecurity"></a>
+# **GetSolutionSecurity**
+> SolutionSecurity GetSolutionSecurity (string organizationId, string solutionId)
+
+Get the Solution security information
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class GetSolutionSecurityExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
+
+            try
+            {
+                // Get the Solution security information
+                SolutionSecurity result = apiInstance.GetSolutionSecurity(organizationId, solutionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.GetSolutionSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+
+### Return type
+
+[**SolutionSecurity**](SolutionSecurity.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The Solution security |  -  |
+| **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getsolutionsecurityusers"></a>
 # **GetSolutionSecurityUsers**
 > List&lt;string&gt; GetSolutionSecurityUsers (string organizationId, string solutionId)
@@ -1239,6 +1316,83 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | Request succeeded |  -  |
 | **404** | The Solution or the user specified is unknown or you don&#39;t have access to them |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setsolutiondefaultsecurity"></a>
+# **SetSolutionDefaultSecurity**
+> SolutionSecurity SetSolutionDefaultSecurity (string organizationId, string solutionId, SolutionRole solutionRole)
+
+Set the Solution default security
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class SetSolutionDefaultSecurityExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
+            var solutionRole = new SolutionRole(); // SolutionRole | the new Solution default security.
+
+            try
+            {
+                // Set the Solution default security
+                SolutionSecurity result = apiInstance.SetSolutionDefaultSecurity(organizationId, solutionId, solutionRole);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.SetSolutionDefaultSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **solutionRole** | [**SolutionRole**](SolutionRole.md)| the new Solution default security. | 
+
+### Return type
+
+[**SolutionSecurity**](SolutionSecurity.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/yaml
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | The Solution default visibility |  -  |
+| **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
