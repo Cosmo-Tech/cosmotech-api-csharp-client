@@ -125,7 +125,7 @@ Class | Method | HTTP request | Description
 *DatasetApi* | [**GetDatasetAccessControl**](docs/DatasetApi.md#getdatasetaccesscontrol) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Get a control access for the Dataset
 *DatasetApi* | [**GetDatasetSecurity**](docs/DatasetApi.md#getdatasetsecurity) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security | Get the Dataset security information
 *DatasetApi* | [**GetDatasetSecurityUsers**](docs/DatasetApi.md#getdatasetsecurityusers) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/users | Get the Dataset security users list
-*DatasetApi* | [**GetDatasetTwingraphStatus**](docs/DatasetApi.md#getdatasettwingraphstatus) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/job/{job_id}/status | Get the dataset's refresh job status
+*DatasetApi* | [**GetDatasetTwingraphStatus**](docs/DatasetApi.md#getdatasettwingraphstatus) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/status | Get the dataset's refresh job status
 *DatasetApi* | [**GetTwingraphEntities**](docs/DatasetApi.md#gettwingraphentities) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Get entities in a graph instance
 *DatasetApi* | [**RefreshDataset**](docs/DatasetApi.md#refreshdataset) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/refresh | Refresh data on dataset from dataset's source
 *DatasetApi* | [**RemoveAllDatasetCompatibilityElements**](docs/DatasetApi.md#removealldatasetcompatibilityelements) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Remove all Dataset Compatibility elements from the Dataset specified

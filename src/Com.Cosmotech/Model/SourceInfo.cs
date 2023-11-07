@@ -43,7 +43,8 @@ namespace Com.Cosmotech.Model
         /// <param name="name">the source name containing the files to import.</param>
         /// <param name="location">the source location containing the files to import (required).</param>
         /// <param name="path">the source location containing the files to import.</param>
-        public SourceInfo(string name = default(string), string location = default(string), string path = default(string))
+        /// <param name="jobId">indicate the last import jobId.</param>
+        public SourceInfo(string name = default(string), string location = default(string), string path = default(string), string jobId = default(string))
         {
             // to ensure "location" is required (not null)
             if (location == null) {
@@ -52,6 +53,7 @@ namespace Com.Cosmotech.Model
             this.Location = location;
             this.Name = name;
             this.Path = path;
+            this.JobId = jobId;
         }
 
         /// <summary>
@@ -76,6 +78,13 @@ namespace Com.Cosmotech.Model
         public string Path { get; set; }
 
         /// <summary>
+        /// indicate the last import jobId
+        /// </summary>
+        /// <value>indicate the last import jobId</value>
+        [DataMember(Name = "jobId", EmitDefaultValue = false)]
+        public string JobId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -86,6 +95,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Location: ").Append(Location).Append("\n");
             sb.Append("  Path: ").Append(Path).Append("\n");
+            sb.Append("  JobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -135,6 +145,11 @@ namespace Com.Cosmotech.Model
                     this.Path == input.Path ||
                     (this.Path != null &&
                     this.Path.Equals(input.Path))
+                ) && 
+                (
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 );
         }
 
@@ -158,6 +173,10 @@ namespace Com.Cosmotech.Model
                 if (this.Path != null)
                 {
                     hashCode = (hashCode * 59) + this.Path.GetHashCode();
+                }
+                if (this.JobId != null)
+                {
+                    hashCode = (hashCode * 59) + this.JobId.GetHashCode();
                 }
                 return hashCode;
             }

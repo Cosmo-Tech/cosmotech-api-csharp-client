@@ -349,9 +349,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="jobId">the job identifier</param>
         /// <returns>string</returns>
-        string GetDatasetTwingraphStatus(string organizationId, string datasetId, string jobId);
+        string GetDatasetTwingraphStatus(string organizationId, string datasetId);
 
         /// <summary>
         /// Get the dataset&#39;s refresh job status
@@ -362,9 +361,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="jobId">the job identifier</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> GetDatasetTwingraphStatusWithHttpInfo(string organizationId, string datasetId, string jobId);
+        ApiResponse<string> GetDatasetTwingraphStatusWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
         /// Get entities in a graph instance
         /// </summary>
@@ -1064,10 +1062,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="jobId">the job identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> GetDatasetTwingraphStatusAsync(string organizationId, string datasetId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> GetDatasetTwingraphStatusAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the dataset&#39;s refresh job status
@@ -1078,10 +1075,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="jobId">the job identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> GetDatasetTwingraphStatusWithHttpInfoAsync(string organizationId, string datasetId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> GetDatasetTwingraphStatusWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get entities in a graph instance
         /// </summary>
@@ -4021,11 +4017,10 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="jobId">the job identifier</param>
         /// <returns>string</returns>
-        public string GetDatasetTwingraphStatus(string organizationId, string datasetId, string jobId)
+        public string GetDatasetTwingraphStatus(string organizationId, string datasetId)
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = GetDatasetTwingraphStatusWithHttpInfo(organizationId, datasetId, jobId);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = GetDatasetTwingraphStatusWithHttpInfo(organizationId, datasetId);
             return localVarResponse.Data;
         }
 
@@ -4035,9 +4030,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="jobId">the job identifier</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> GetDatasetTwingraphStatusWithHttpInfo(string organizationId, string datasetId, string jobId)
+        public Com.Cosmotech.Client.ApiResponse<string> GetDatasetTwingraphStatusWithHttpInfo(string organizationId, string datasetId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4049,12 +4043,6 @@ namespace Com.Cosmotech.Api
             if (datasetId == null)
             {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetId' when calling DatasetApi->GetDatasetTwingraphStatus");
-            }
-
-            // verify the required parameter 'jobId' is set
-            if (jobId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'jobId' when calling DatasetApi->GetDatasetTwingraphStatus");
             }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -4082,7 +4070,6 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("job_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(jobId)); // path parameter
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -4092,7 +4079,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<string>("/organizations/{organization_id}/datasets/{dataset_id}/job/{job_id}/status", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<string>("/organizations/{organization_id}/datasets/{dataset_id}/status", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetDatasetTwingraphStatus", localVarResponse);
@@ -4111,12 +4098,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="jobId">the job identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> GetDatasetTwingraphStatusAsync(string organizationId, string datasetId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> GetDatasetTwingraphStatusAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetDatasetTwingraphStatusWithHttpInfoAsync(organizationId, datasetId, jobId, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetDatasetTwingraphStatusWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4126,10 +4112,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="jobId">the job identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetDatasetTwingraphStatusWithHttpInfoAsync(string organizationId, string datasetId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetDatasetTwingraphStatusWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4141,12 +4126,6 @@ namespace Com.Cosmotech.Api
             if (datasetId == null)
             {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'datasetId' when calling DatasetApi->GetDatasetTwingraphStatus");
-            }
-
-            // verify the required parameter 'jobId' is set
-            if (jobId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'jobId' when calling DatasetApi->GetDatasetTwingraphStatus");
             }
 
 
@@ -4175,7 +4154,6 @@ namespace Com.Cosmotech.Api
 
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("job_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(jobId)); // path parameter
 
             // authentication (oAuth2AuthCode) required
             // oauth required
@@ -4185,7 +4163,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/organizations/{organization_id}/datasets/{dataset_id}/job/{job_id}/status", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/organizations/{organization_id}/datasets/{dataset_id}/status", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

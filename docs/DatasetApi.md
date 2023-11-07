@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**GetDatasetAccessControl**](DatasetApi.md#getdatasetaccesscontrol) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Get a control access for the Dataset
 [**GetDatasetSecurity**](DatasetApi.md#getdatasetsecurity) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security | Get the Dataset security information
 [**GetDatasetSecurityUsers**](DatasetApi.md#getdatasetsecurityusers) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/users | Get the Dataset security users list
-[**GetDatasetTwingraphStatus**](DatasetApi.md#getdatasettwingraphstatus) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/job/{job_id}/status | Get the dataset&#39;s refresh job status
+[**GetDatasetTwingraphStatus**](DatasetApi.md#getdatasettwingraphstatus) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/status | Get the dataset&#39;s refresh job status
 [**GetTwingraphEntities**](DatasetApi.md#gettwingraphentities) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Get entities in a graph instance
 [**RefreshDataset**](DatasetApi.md#refreshdataset) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/refresh | Refresh data on dataset from dataset&#39;s source
 [**RemoveAllDatasetCompatibilityElements**](DatasetApi.md#removealldatasetcompatibilityelements) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Remove all Dataset Compatibility elements from the Dataset specified
@@ -1109,7 +1109,7 @@ Name | Type | Description  | Notes
 
 <a name="getdatasettwingraphstatus"></a>
 # **GetDatasetTwingraphStatus**
-> string GetDatasetTwingraphStatus (string organizationId, string datasetId, string jobId)
+> string GetDatasetTwingraphStatus (string organizationId, string datasetId)
 
 Get the dataset's refresh job status
 
@@ -1137,12 +1137,11 @@ namespace Example
             var apiInstance = new DatasetApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var datasetId = "datasetId_example";  // string | the dataset identifier
-            var jobId = "jobId_example";  // string | the job identifier
 
             try
             {
                 // Get the dataset's refresh job status
-                string result = apiInstance.GetDatasetTwingraphStatus(organizationId, datasetId, jobId);
+                string result = apiInstance.GetDatasetTwingraphStatus(organizationId, datasetId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1162,7 +1161,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **datasetId** | **string**| the dataset identifier | 
- **jobId** | **string**| the job identifier | 
 
 ### Return type
 

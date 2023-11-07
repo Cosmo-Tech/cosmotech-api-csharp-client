@@ -81,6 +81,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Path'
         }
+        /// <summary>
+        /// Test the property 'JobId'
+        /// </summary>
+        [Fact]
+        public void JobIdTest()
+        {
+            // TODO unit test for the property 'JobId'
+        }
 
     }
 

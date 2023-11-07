@@ -253,8 +253,7 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //string datasetId = null;
-            //string jobId = null;
-            //var response = instance.GetDatasetTwingraphStatus(organizationId, datasetId, jobId);
+            //var response = instance.GetDatasetTwingraphStatus(organizationId, datasetId);
             //Assert.IsType<string>(response);
         }
 
