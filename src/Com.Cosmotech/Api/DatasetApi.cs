@@ -485,7 +485,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
         /// <returns>DatasetSecurity</returns>
         DatasetSecurity SetDatasetDefaultSecurity(string organizationId, string datasetId, DatasetRole datasetRole);
 
@@ -498,7 +498,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
         /// <returns>ApiResponse of DatasetSecurity</returns>
         ApiResponse<DatasetSecurity> SetDatasetDefaultSecurityWithHttpInfo(string organizationId, string datasetId, DatasetRole datasetRole);
         /// <summary>
@@ -1222,7 +1222,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetSecurity</returns>
         System.Threading.Tasks.Task<DatasetSecurity> SetDatasetDefaultSecurityAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1236,7 +1236,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
         System.Threading.Tasks.Task<ApiResponse<DatasetSecurity>> SetDatasetDefaultSecurityWithHttpInfoAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -5077,7 +5077,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
         /// <returns>DatasetSecurity</returns>
         public DatasetSecurity SetDatasetDefaultSecurity(string organizationId, string datasetId, DatasetRole datasetRole)
         {
@@ -5091,7 +5091,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
         /// <returns>ApiResponse of DatasetSecurity</returns>
         public Com.Cosmotech.Client.ApiResponse<DatasetSecurity> SetDatasetDefaultSecurityWithHttpInfo(string organizationId, string datasetId, DatasetRole datasetRole)
         {
@@ -5168,7 +5168,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetSecurity</returns>
         public async System.Threading.Tasks.Task<DatasetSecurity> SetDatasetDefaultSecurityAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -5183,7 +5183,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="datasetRole">the new Dataset default security.</param>
+        /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetSecurity>> SetDatasetDefaultSecurityWithHttpInfoAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

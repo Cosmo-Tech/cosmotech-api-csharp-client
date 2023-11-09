@@ -393,7 +393,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
         /// <returns>SolutionSecurity</returns>
         SolutionSecurity SetSolutionDefaultSecurity(string organizationId, string solutionId, SolutionRole solutionRole);
 
@@ -406,7 +406,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
         /// <returns>ApiResponse of SolutionSecurity</returns>
         ApiResponse<SolutionSecurity> SetSolutionDefaultSecurityWithHttpInfo(string organizationId, string solutionId, SolutionRole solutionRole);
         /// <summary>
@@ -970,7 +970,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionSecurity</returns>
         System.Threading.Tasks.Task<SolutionSecurity> SetSolutionDefaultSecurityAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -984,7 +984,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
         System.Threading.Tasks.Task<ApiResponse<SolutionSecurity>> SetSolutionDefaultSecurityWithHttpInfoAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -4166,7 +4166,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
         /// <returns>SolutionSecurity</returns>
         public SolutionSecurity SetSolutionDefaultSecurity(string organizationId, string solutionId, SolutionRole solutionRole)
         {
@@ -4180,7 +4180,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
         /// <returns>ApiResponse of SolutionSecurity</returns>
         public Com.Cosmotech.Client.ApiResponse<SolutionSecurity> SetSolutionDefaultSecurityWithHttpInfo(string organizationId, string solutionId, SolutionRole solutionRole)
         {
@@ -4257,7 +4257,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionSecurity</returns>
         public async System.Threading.Tasks.Task<SolutionSecurity> SetSolutionDefaultSecurityAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4272,7 +4272,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="solutionRole">the new Solution default security.</param>
+        /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionSecurity>> SetSolutionDefaultSecurityWithHttpInfoAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

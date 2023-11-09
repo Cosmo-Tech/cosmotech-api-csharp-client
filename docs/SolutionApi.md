@@ -1347,7 +1347,7 @@ namespace Example
             var apiInstance = new SolutionApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var solutionId = "solutionId_example";  // string | the Solution identifier
-            var solutionRole = new SolutionRole(); // SolutionRole | the new Solution default security.
+            var solutionRole = new SolutionRole(); // SolutionRole | This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.
 
             try
             {
@@ -1372,7 +1372,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **solutionId** | **string**| the Solution identifier | 
- **solutionRole** | [**SolutionRole**](SolutionRole.md)| the new Solution default security. | 
+ **solutionRole** | [**SolutionRole**](SolutionRole.md)| This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution. | 
 
 ### Return type
 

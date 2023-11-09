@@ -349,7 +349,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceRole">the new Workspace default security.</param>
+        /// <param name="workspaceRole">This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.</param>
         /// <returns>WorkspaceSecurity</returns>
         WorkspaceSecurity SetWorkspaceDefaultSecurity(string organizationId, string workspaceId, WorkspaceRole workspaceRole);
 
@@ -362,7 +362,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceRole">the new Workspace default security.</param>
+        /// <param name="workspaceRole">This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.</param>
         /// <returns>ApiResponse of WorkspaceSecurity</returns>
         ApiResponse<WorkspaceSecurity> SetWorkspaceDefaultSecurityWithHttpInfo(string organizationId, string workspaceId, WorkspaceRole workspaceRole);
         /// <summary>
@@ -846,7 +846,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceRole">the new Workspace default security.</param>
+        /// <param name="workspaceRole">This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkspaceSecurity</returns>
         System.Threading.Tasks.Task<WorkspaceSecurity> SetWorkspaceDefaultSecurityAsync(string organizationId, string workspaceId, WorkspaceRole workspaceRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -860,7 +860,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceRole">the new Workspace default security.</param>
+        /// <param name="workspaceRole">This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkspaceSecurity)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkspaceSecurity>> SetWorkspaceDefaultSecurityWithHttpInfoAsync(string organizationId, string workspaceId, WorkspaceRole workspaceRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -3665,7 +3665,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceRole">the new Workspace default security.</param>
+        /// <param name="workspaceRole">This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.</param>
         /// <returns>WorkspaceSecurity</returns>
         public WorkspaceSecurity SetWorkspaceDefaultSecurity(string organizationId, string workspaceId, WorkspaceRole workspaceRole)
         {
@@ -3679,7 +3679,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceRole">the new Workspace default security.</param>
+        /// <param name="workspaceRole">This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.</param>
         /// <returns>ApiResponse of WorkspaceSecurity</returns>
         public Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity> SetWorkspaceDefaultSecurityWithHttpInfo(string organizationId, string workspaceId, WorkspaceRole workspaceRole)
         {
@@ -3756,7 +3756,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceRole">the new Workspace default security.</param>
+        /// <param name="workspaceRole">This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkspaceSecurity</returns>
         public async System.Threading.Tasks.Task<WorkspaceSecurity> SetWorkspaceDefaultSecurityAsync(string organizationId, string workspaceId, WorkspaceRole workspaceRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3771,7 +3771,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
-        /// <param name="workspaceRole">the new Workspace default security.</param>
+        /// <param name="workspaceRole">This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkspaceSecurity)</returns>
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<WorkspaceSecurity>> SetWorkspaceDefaultSecurityWithHttpInfoAsync(string organizationId, string workspaceId, WorkspaceRole workspaceRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

@@ -220,7 +220,7 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="organizationRole">the new Organization default security.</param>
+        /// <param name="organizationRole">This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization.</param>
         /// <returns>OrganizationSecurity</returns>
         OrganizationSecurity SetOrganizationDefaultSecurity(string organizationId, OrganizationRole organizationRole);
 
@@ -232,7 +232,7 @@ namespace Com.Cosmotech.Api
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="organizationRole">the new Organization default security.</param>
+        /// <param name="organizationRole">This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization.</param>
         /// <returns>ApiResponse of OrganizationSecurity</returns>
         ApiResponse<OrganizationSecurity> SetOrganizationDefaultSecurityWithHttpInfo(string organizationId, OrganizationRole organizationRole);
         /// <summary>
@@ -610,7 +610,7 @@ namespace Com.Cosmotech.Api
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="organizationRole">the new Organization default security.</param>
+        /// <param name="organizationRole">This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationSecurity</returns>
         System.Threading.Tasks.Task<OrganizationSecurity> SetOrganizationDefaultSecurityAsync(string organizationId, OrganizationRole organizationRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -623,7 +623,7 @@ namespace Com.Cosmotech.Api
         /// </remarks>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="organizationRole">the new Organization default security.</param>
+        /// <param name="organizationRole">This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationSecurity)</returns>
         System.Threading.Tasks.Task<ApiResponse<OrganizationSecurity>> SetOrganizationDefaultSecurityWithHttpInfoAsync(string organizationId, OrganizationRole organizationRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2426,7 +2426,7 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="organizationRole">the new Organization default security.</param>
+        /// <param name="organizationRole">This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization.</param>
         /// <returns>OrganizationSecurity</returns>
         public OrganizationSecurity SetOrganizationDefaultSecurity(string organizationId, OrganizationRole organizationRole)
         {
@@ -2439,7 +2439,7 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="organizationRole">the new Organization default security.</param>
+        /// <param name="organizationRole">This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization.</param>
         /// <returns>ApiResponse of OrganizationSecurity</returns>
         public Com.Cosmotech.Client.ApiResponse<OrganizationSecurity> SetOrganizationDefaultSecurityWithHttpInfo(string organizationId, OrganizationRole organizationRole)
         {
@@ -2508,7 +2508,7 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="organizationRole">the new Organization default security.</param>
+        /// <param name="organizationRole">This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OrganizationSecurity</returns>
         public async System.Threading.Tasks.Task<OrganizationSecurity> SetOrganizationDefaultSecurityAsync(string organizationId, OrganizationRole organizationRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2522,7 +2522,7 @@ namespace Com.Cosmotech.Api
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
-        /// <param name="organizationRole">the new Organization default security.</param>
+        /// <param name="organizationRole">This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OrganizationSecurity)</returns>
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<OrganizationSecurity>> SetOrganizationDefaultSecurityWithHttpInfoAsync(string organizationId, OrganizationRole organizationRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

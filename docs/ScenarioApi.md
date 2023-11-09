@@ -1528,7 +1528,7 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var scenarioRole = new ScenarioRole(); // ScenarioRole | the new Scenario default security.
+            var scenarioRole = new ScenarioRole(); // ScenarioRole | This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.
 
             try
             {
@@ -1554,7 +1554,7 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
  **scenarioId** | **string**| the Scenario identifier | 
- **scenarioRole** | [**ScenarioRole**](ScenarioRole.md)| the new Scenario default security. | 
+ **scenarioRole** | [**ScenarioRole**](ScenarioRole.md)| This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario. | 
 
 ### Return type
 

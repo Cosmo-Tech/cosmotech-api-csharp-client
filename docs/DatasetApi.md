@@ -1595,7 +1595,7 @@ namespace Example
             var apiInstance = new DatasetApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var datasetId = "datasetId_example";  // string | the Dataset identifier
-            var datasetRole = new DatasetRole(); // DatasetRole | the new Dataset default security.
+            var datasetRole = new DatasetRole(); // DatasetRole | This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.
 
             try
             {
@@ -1620,7 +1620,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **datasetId** | **string**| the Dataset identifier | 
- **datasetRole** | [**DatasetRole**](DatasetRole.md)| the new Dataset default security. | 
+ **datasetRole** | [**DatasetRole**](DatasetRole.md)| This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset. | 
 
 ### Return type
 

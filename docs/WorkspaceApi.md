@@ -1189,7 +1189,7 @@ namespace Example
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var workspaceRole = new WorkspaceRole(); // WorkspaceRole | the new Workspace default security.
+            var workspaceRole = new WorkspaceRole(); // WorkspaceRole | This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.
 
             try
             {
@@ -1214,7 +1214,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
- **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md)| the new Workspace default security. | 
+ **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md)| This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace. | 
 
 ### Return type
 

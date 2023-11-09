@@ -468,7 +468,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioRole">the new Scenario default security.</param>
+        /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <returns>ScenarioSecurity</returns>
         ScenarioSecurity SetScenarioDefaultSecurity(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole);
 
@@ -482,7 +482,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioRole">the new Scenario default security.</param>
+        /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <returns>ApiResponse of ScenarioSecurity</returns>
         ApiResponse<ScenarioSecurity> SetScenarioDefaultSecurityWithHttpInfo(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole);
         /// <summary>
@@ -1083,7 +1083,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioRole">the new Scenario default security.</param>
+        /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioSecurity</returns>
         System.Threading.Tasks.Task<ScenarioSecurity> SetScenarioDefaultSecurityAsync(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1098,7 +1098,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioRole">the new Scenario default security.</param>
+        /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioSecurity)</returns>
         System.Threading.Tasks.Task<ApiResponse<ScenarioSecurity>> SetScenarioDefaultSecurityWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -4849,7 +4849,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioRole">the new Scenario default security.</param>
+        /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <returns>ScenarioSecurity</returns>
         public ScenarioSecurity SetScenarioDefaultSecurity(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole)
         {
@@ -4864,7 +4864,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioRole">the new Scenario default security.</param>
+        /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <returns>ApiResponse of ScenarioSecurity</returns>
         public Com.Cosmotech.Client.ApiResponse<ScenarioSecurity> SetScenarioDefaultSecurityWithHttpInfo(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole)
         {
@@ -4949,7 +4949,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioRole">the new Scenario default security.</param>
+        /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioSecurity</returns>
         public async System.Threading.Tasks.Task<ScenarioSecurity> SetScenarioDefaultSecurityAsync(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -4965,7 +4965,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="scenarioId">the Scenario identifier</param>
-        /// <param name="scenarioRole">the new Scenario default security.</param>
+        /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioSecurity)</returns>
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioSecurity>> SetScenarioDefaultSecurityWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
