@@ -38,6 +38,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="twinGraphQuery">the query to run</param>
         /// <returns>TwinGraphHash</returns>
+        [Obsolete]
         TwinGraphHash BatchQuery(string organizationId, string graphId, TwinGraphQuery twinGraphQuery);
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="twinGraphQuery">the query to run</param>
         /// <returns>ApiResponse of TwinGraphHash</returns>
+        [Obsolete]
         ApiResponse<TwinGraphHash> BatchQueryWithHttpInfo(string organizationId, string graphId, TwinGraphQuery twinGraphQuery);
         /// <summary>
         /// Async batch update by loading a CSV file on a graph instance 
@@ -64,6 +66,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
         /// <returns>TwinGraphBatchResult</returns>
+        [Obsolete]
         TwinGraphBatchResult BatchUploadUpdate(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body);
 
         /// <summary>
@@ -78,6 +81,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of TwinGraphBatchResult</returns>
+        [Obsolete]
         ApiResponse<TwinGraphBatchResult> BatchUploadUpdateWithHttpInfo(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body);
         /// <summary>
         /// Create new entities in a graph instance
@@ -91,6 +95,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <returns>string</returns>
+        [Obsolete]
         string CreateEntities(string organizationId, string graphId, string type, List<GraphProperties> graphProperties);
 
         /// <summary>
@@ -105,6 +110,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         ApiResponse<string> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<GraphProperties> graphProperties);
         /// <summary>
         /// Create a new graph
@@ -117,6 +123,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="body"> (optional)</param>
         /// <returns></returns>
+        [Obsolete]
         void CreateGraph(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream));
 
         /// <summary>
@@ -130,6 +137,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> CreateGraphWithHttpInfo(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream));
         /// <summary>
         /// Delete all versions of a graph and his metadatas
@@ -141,6 +149,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
         /// <returns></returns>
+        [Obsolete]
         void Delete(string organizationId, string graphId);
 
         /// <summary>
@@ -153,6 +162,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> DeleteWithHttpInfo(string organizationId, string graphId);
         /// <summary>
         /// Delete entities in a graph instance
@@ -166,6 +176,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <returns></returns>
+        [Obsolete]
         void DeleteEntities(string organizationId, string graphId, string type, List<string> ids);
 
         /// <summary>
@@ -180,6 +191,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> DeleteEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<string> ids);
         /// <summary>
         /// Download a graph compressed in a zip file
@@ -191,6 +203,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
         /// <returns>System.IO.Stream</returns>
+        [Obsolete]
         System.IO.Stream DownloadGraph(string organizationId, string hash);
 
         /// <summary>
@@ -203,6 +216,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
+        [Obsolete]
         ApiResponse<System.IO.Stream> DownloadGraphWithHttpInfo(string organizationId, string hash);
         /// <summary>
         /// Return the list of all graphs stored in the organization
@@ -213,6 +227,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <returns>List&lt;string&gt;</returns>
+        [Obsolete]
         List<string> FindAllTwingraphs(string organizationId);
 
         /// <summary>
@@ -224,6 +239,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        [Obsolete]
         ApiResponse<List<string>> FindAllTwingraphsWithHttpInfo(string organizationId);
         /// <summary>
         /// Get entities in a graph instance
@@ -237,6 +253,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <returns>string</returns>
+        [Obsolete]
         string GetEntities(string organizationId, string graphId, string type, List<string> ids);
 
         /// <summary>
@@ -251,6 +268,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         ApiResponse<string> GetEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<string> ids);
         /// <summary>
         /// Return the metaData of the specified graph
@@ -262,6 +280,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
         /// <returns>Object</returns>
+        [Obsolete]
         Object GetGraphMetaData(string organizationId, string graphId);
 
         /// <summary>
@@ -274,6 +293,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
         /// <returns>ApiResponse of Object</returns>
+        [Obsolete]
         ApiResponse<Object> GetGraphMetaDataWithHttpInfo(string organizationId, string graphId);
         /// <summary>
         /// Get the status of a job
@@ -285,6 +305,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="jobId">the job identifier</param>
         /// <returns>string</returns>
+        [Obsolete]
         string JobStatus(string organizationId, string jobId);
 
         /// <summary>
@@ -297,6 +318,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="jobId">the job identifier</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         ApiResponse<string> JobStatusWithHttpInfo(string organizationId, string jobId);
         /// <summary>
         /// Run a query on a graph instance
@@ -309,6 +331,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="twinGraphQuery">the query to run</param>
         /// <returns>string</returns>
+        [Obsolete]
         string Query(string organizationId, string graphId, TwinGraphQuery twinGraphQuery);
 
         /// <summary>
@@ -322,6 +345,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="twinGraphQuery">the query to run</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         ApiResponse<string> QueryWithHttpInfo(string organizationId, string graphId, TwinGraphQuery twinGraphQuery);
         /// <summary>
         /// Update entities in a graph instance
@@ -335,6 +359,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <returns>string</returns>
+        [Obsolete]
         string UpdateEntities(string organizationId, string graphId, string type, List<GraphProperties> graphProperties);
 
         /// <summary>
@@ -349,6 +374,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         ApiResponse<string> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<GraphProperties> graphProperties);
         /// <summary>
         /// Update the metaData of the specified graph
@@ -361,6 +387,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="requestBody">the metaData to update</param>
         /// <returns>Object</returns>
+        [Obsolete]
         Object UpdateGraphMetaData(string organizationId, string graphId, Dictionary<string, string> requestBody);
 
         /// <summary>
@@ -374,6 +401,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="requestBody">the metaData to update</param>
         /// <returns>ApiResponse of Object</returns>
+        [Obsolete]
         ApiResponse<Object> UpdateGraphMetaDataWithHttpInfo(string organizationId, string graphId, Dictionary<string, string> requestBody);
         #endregion Synchronous Operations
     }
@@ -396,6 +424,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery">the query to run</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TwinGraphHash</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<TwinGraphHash> BatchQueryAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -410,6 +439,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery">the query to run</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TwinGraphHash)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<TwinGraphHash>> BatchQueryWithHttpInfoAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Async batch update by loading a CSV file on a graph instance 
@@ -424,6 +454,7 @@ namespace Com.Cosmotech.Api
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TwinGraphBatchResult</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<TwinGraphBatchResult> BatchUploadUpdateAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -439,6 +470,7 @@ namespace Com.Cosmotech.Api
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TwinGraphBatchResult)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<TwinGraphBatchResult>> BatchUploadUpdateWithHttpInfoAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create new entities in a graph instance
@@ -453,6 +485,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<string> CreateEntitiesAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -468,6 +501,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<string>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a new graph
@@ -481,6 +515,7 @@ namespace Com.Cosmotech.Api
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         System.Threading.Tasks.Task CreateGraphAsync(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -495,6 +530,7 @@ namespace Com.Cosmotech.Api
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> CreateGraphWithHttpInfoAsync(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete all versions of a graph and his metadatas
@@ -507,6 +543,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         System.Threading.Tasks.Task DeleteAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -520,6 +557,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWithHttpInfoAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete entities in a graph instance
@@ -534,6 +572,7 @@ namespace Com.Cosmotech.Api
         /// <param name="ids">the entities to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         System.Threading.Tasks.Task DeleteEntitiesAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -549,6 +588,7 @@ namespace Com.Cosmotech.Api
         /// <param name="ids">the entities to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Download a graph compressed in a zip file
@@ -561,6 +601,7 @@ namespace Com.Cosmotech.Api
         /// <param name="hash">the Graph download identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<System.IO.Stream> DownloadGraphAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -574,6 +615,7 @@ namespace Com.Cosmotech.Api
         /// <param name="hash">the Graph download identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadGraphWithHttpInfoAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Return the list of all graphs stored in the organization
@@ -585,6 +627,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<string>> FindAllTwingraphsAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -597,6 +640,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<string>>> FindAllTwingraphsWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get entities in a graph instance
@@ -611,6 +655,7 @@ namespace Com.Cosmotech.Api
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<string> GetEntitiesAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -626,6 +671,7 @@ namespace Com.Cosmotech.Api
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<string>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Return the metaData of the specified graph
@@ -638,6 +684,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<Object> GetGraphMetaDataAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -651,6 +698,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> GetGraphMetaDataWithHttpInfoAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the status of a job
@@ -663,6 +711,7 @@ namespace Com.Cosmotech.Api
         /// <param name="jobId">the job identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<string> JobStatusAsync(string organizationId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -676,6 +725,7 @@ namespace Com.Cosmotech.Api
         /// <param name="jobId">the job identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<string>> JobStatusWithHttpInfoAsync(string organizationId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Run a query on a graph instance
@@ -689,6 +739,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery">the query to run</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<string> QueryAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -703,6 +754,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery">the query to run</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<string>> QueryWithHttpInfoAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update entities in a graph instance
@@ -717,6 +769,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<string> UpdateEntitiesAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -732,6 +785,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<string>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update the metaData of the specified graph
@@ -745,6 +799,7 @@ namespace Com.Cosmotech.Api
         /// <param name="requestBody">the metaData to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<Object> UpdateGraphMetaDataAsync(string organizationId, string graphId, Dictionary<string, string> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -759,6 +814,7 @@ namespace Com.Cosmotech.Api
         /// <param name="requestBody">the metaData to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> UpdateGraphMetaDataWithHttpInfoAsync(string organizationId, string graphId, Dictionary<string, string> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
@@ -888,6 +944,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="twinGraphQuery">the query to run</param>
         /// <returns>TwinGraphHash</returns>
+        [Obsolete]
         public TwinGraphHash BatchQuery(string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
         {
             Com.Cosmotech.Client.ApiResponse<TwinGraphHash> localVarResponse = BatchQueryWithHttpInfo(organizationId, graphId, twinGraphQuery);
@@ -902,6 +959,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="twinGraphQuery">the query to run</param>
         /// <returns>ApiResponse of TwinGraphHash</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<TwinGraphHash> BatchQueryWithHttpInfo(string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
         {
             // verify the required parameter 'organizationId' is set
@@ -979,6 +1037,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery">the query to run</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TwinGraphHash</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TwinGraphHash> BatchQueryAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<TwinGraphHash> localVarResponse = await BatchQueryWithHttpInfoAsync(organizationId, graphId, twinGraphQuery, cancellationToken).ConfigureAwait(false);
@@ -994,6 +1053,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery">the query to run</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TwinGraphHash)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<TwinGraphHash>> BatchQueryWithHttpInfoAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -1073,6 +1133,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
         /// <returns>TwinGraphBatchResult</returns>
+        [Obsolete]
         public TwinGraphBatchResult BatchUploadUpdate(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body)
         {
             Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult> localVarResponse = BatchUploadUpdateWithHttpInfo(organizationId, graphId, twinGraphQuery, body);
@@ -1088,6 +1149,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
         /// <returns>ApiResponse of TwinGraphBatchResult</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult> BatchUploadUpdateWithHttpInfo(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body)
         {
             // verify the required parameter 'organizationId' is set
@@ -1174,6 +1236,7 @@ namespace Com.Cosmotech.Api
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TwinGraphBatchResult</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TwinGraphBatchResult> BatchUploadUpdateAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult> localVarResponse = await BatchUploadUpdateWithHttpInfoAsync(organizationId, graphId, twinGraphQuery, body, cancellationToken).ConfigureAwait(false);
@@ -1190,6 +1253,7 @@ namespace Com.Cosmotech.Api
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TwinGraphBatchResult)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult>> BatchUploadUpdateWithHttpInfoAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -1277,6 +1341,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <returns>string</returns>
+        [Obsolete]
         public string CreateEntities(string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = CreateEntitiesWithHttpInfo(organizationId, graphId, type, graphProperties);
@@ -1292,6 +1357,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<string> CreateEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
         {
             // verify the required parameter 'organizationId' is set
@@ -1377,6 +1443,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<string> CreateEntitiesAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await CreateEntitiesWithHttpInfoAsync(organizationId, graphId, type, graphProperties, cancellationToken).ConfigureAwait(false);
@@ -1393,6 +1460,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphProperties">the entities to create</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> CreateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -1478,6 +1546,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="body"> (optional)</param>
         /// <returns></returns>
+        [Obsolete]
         public void CreateGraph(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream))
         {
             CreateGraphWithHttpInfo(organizationId, graphId, body);
@@ -1491,6 +1560,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Object> CreateGraphWithHttpInfo(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream))
         {
             // verify the required parameter 'organizationId' is set
@@ -1561,6 +1631,7 @@ namespace Com.Cosmotech.Api
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task CreateGraphAsync(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await CreateGraphWithHttpInfoAsync(organizationId, graphId, body, cancellationToken).ConfigureAwait(false);
@@ -1575,6 +1646,7 @@ namespace Com.Cosmotech.Api
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> CreateGraphWithHttpInfoAsync(string organizationId, string graphId, System.IO.Stream body = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -1645,6 +1717,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
         /// <returns></returns>
+        [Obsolete]
         public void Delete(string organizationId, string graphId)
         {
             DeleteWithHttpInfo(organizationId, graphId);
@@ -1657,6 +1730,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Object> DeleteWithHttpInfo(string organizationId, string graphId)
         {
             // verify the required parameter 'organizationId' is set
@@ -1724,6 +1798,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task DeleteAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await DeleteWithHttpInfoAsync(organizationId, graphId, cancellationToken).ConfigureAwait(false);
@@ -1737,6 +1812,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteWithHttpInfoAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -1807,6 +1883,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <returns></returns>
+        [Obsolete]
         public void DeleteEntities(string organizationId, string graphId, string type, List<string> ids)
         {
             DeleteEntitiesWithHttpInfo(organizationId, graphId, type, ids);
@@ -1821,6 +1898,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Object> DeleteEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<string> ids)
         {
             // verify the required parameter 'organizationId' is set
@@ -1904,6 +1982,7 @@ namespace Com.Cosmotech.Api
         /// <param name="ids">the entities to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task DeleteEntitiesAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await DeleteEntitiesWithHttpInfoAsync(organizationId, graphId, type, ids, cancellationToken).ConfigureAwait(false);
@@ -1919,6 +1998,7 @@ namespace Com.Cosmotech.Api
         /// <param name="ids">the entities to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2001,6 +2081,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
         /// <returns>System.IO.Stream</returns>
+        [Obsolete]
         public System.IO.Stream DownloadGraph(string organizationId, string hash)
         {
             Com.Cosmotech.Client.ApiResponse<System.IO.Stream> localVarResponse = DownloadGraphWithHttpInfo(organizationId, hash);
@@ -2014,6 +2095,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<System.IO.Stream> DownloadGraphWithHttpInfo(string organizationId, string hash)
         {
             // verify the required parameter 'organizationId' is set
@@ -2082,6 +2164,7 @@ namespace Com.Cosmotech.Api
         /// <param name="hash">the Graph download identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<System.IO.Stream> DownloadGraphAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadGraphWithHttpInfoAsync(organizationId, hash, cancellationToken).ConfigureAwait(false);
@@ -2096,6 +2179,7 @@ namespace Com.Cosmotech.Api
         /// <param name="hash">the Graph download identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<System.IO.Stream>> DownloadGraphWithHttpInfoAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2164,6 +2248,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <returns>List&lt;string&gt;</returns>
+        [Obsolete]
         public List<string> FindAllTwingraphs(string organizationId)
         {
             Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = FindAllTwingraphsWithHttpInfo(organizationId);
@@ -2176,6 +2261,7 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<List<string>> FindAllTwingraphsWithHttpInfo(string organizationId)
         {
             // verify the required parameter 'organizationId' is set
@@ -2236,6 +2322,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<string>> FindAllTwingraphsAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = await FindAllTwingraphsWithHttpInfoAsync(organizationId, cancellationToken).ConfigureAwait(false);
@@ -2249,6 +2336,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<string>>> FindAllTwingraphsWithHttpInfoAsync(string organizationId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2313,6 +2401,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <returns>string</returns>
+        [Obsolete]
         public string GetEntities(string organizationId, string graphId, string type, List<string> ids)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = GetEntitiesWithHttpInfo(organizationId, graphId, type, ids);
@@ -2328,6 +2417,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<string> GetEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<string> ids)
         {
             // verify the required parameter 'organizationId' is set
@@ -2412,6 +2502,7 @@ namespace Com.Cosmotech.Api
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<string> GetEntitiesAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetEntitiesWithHttpInfoAsync(organizationId, graphId, type, ids, cancellationToken).ConfigureAwait(false);
@@ -2428,6 +2519,7 @@ namespace Com.Cosmotech.Api
         /// <param name="ids">the entities to get</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2511,6 +2603,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
         /// <returns>Object</returns>
+        [Obsolete]
         public Object GetGraphMetaData(string organizationId, string graphId)
         {
             Com.Cosmotech.Client.ApiResponse<Object> localVarResponse = GetGraphMetaDataWithHttpInfo(organizationId, graphId);
@@ -2524,6 +2617,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="graphId">the Graph Identifier</param>
         /// <returns>ApiResponse of Object</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Object> GetGraphMetaDataWithHttpInfo(string organizationId, string graphId)
         {
             // verify the required parameter 'organizationId' is set
@@ -2592,6 +2686,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Object> GetGraphMetaDataAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<Object> localVarResponse = await GetGraphMetaDataWithHttpInfoAsync(organizationId, graphId, cancellationToken).ConfigureAwait(false);
@@ -2606,6 +2701,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> GetGraphMetaDataWithHttpInfoAsync(string organizationId, string graphId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2675,6 +2771,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="jobId">the job identifier</param>
         /// <returns>string</returns>
+        [Obsolete]
         public string JobStatus(string organizationId, string jobId)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = JobStatusWithHttpInfo(organizationId, jobId);
@@ -2688,6 +2785,7 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="jobId">the job identifier</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<string> JobStatusWithHttpInfo(string organizationId, string jobId)
         {
             // verify the required parameter 'organizationId' is set
@@ -2757,6 +2855,7 @@ namespace Com.Cosmotech.Api
         /// <param name="jobId">the job identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<string> JobStatusAsync(string organizationId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await JobStatusWithHttpInfoAsync(organizationId, jobId, cancellationToken).ConfigureAwait(false);
@@ -2771,6 +2870,7 @@ namespace Com.Cosmotech.Api
         /// <param name="jobId">the job identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> JobStatusWithHttpInfoAsync(string organizationId, string jobId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2842,6 +2942,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="twinGraphQuery">the query to run</param>
         /// <returns>string</returns>
+        [Obsolete]
         public string Query(string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = QueryWithHttpInfo(organizationId, graphId, twinGraphQuery);
@@ -2856,6 +2957,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="twinGraphQuery">the query to run</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<string> QueryWithHttpInfo(string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
         {
             // verify the required parameter 'organizationId' is set
@@ -2934,6 +3036,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery">the query to run</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<string> QueryAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await QueryWithHttpInfoAsync(organizationId, graphId, twinGraphQuery, cancellationToken).ConfigureAwait(false);
@@ -2949,6 +3052,7 @@ namespace Com.Cosmotech.Api
         /// <param name="twinGraphQuery">the query to run</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> QueryWithHttpInfoAsync(string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -3029,6 +3133,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <returns>string</returns>
+        [Obsolete]
         public string UpdateEntities(string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = UpdateEntitiesWithHttpInfo(organizationId, graphId, type, graphProperties);
@@ -3044,6 +3149,7 @@ namespace Com.Cosmotech.Api
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
         /// <returns>ApiResponse of string</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<string> UpdateEntitiesWithHttpInfo(string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
         {
             // verify the required parameter 'organizationId' is set
@@ -3129,6 +3235,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<string> UpdateEntitiesAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await UpdateEntitiesWithHttpInfoAsync(organizationId, graphId, type, graphProperties, cancellationToken).ConfigureAwait(false);
@@ -3145,6 +3252,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphProperties">the entities to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> UpdateEntitiesWithHttpInfoAsync(string organizationId, string graphId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -3230,6 +3338,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="requestBody">the metaData to update</param>
         /// <returns>Object</returns>
+        [Obsolete]
         public Object UpdateGraphMetaData(string organizationId, string graphId, Dictionary<string, string> requestBody)
         {
             Com.Cosmotech.Client.ApiResponse<Object> localVarResponse = UpdateGraphMetaDataWithHttpInfo(organizationId, graphId, requestBody);
@@ -3244,6 +3353,7 @@ namespace Com.Cosmotech.Api
         /// <param name="graphId">the Graph Identifier</param>
         /// <param name="requestBody">the metaData to update</param>
         /// <returns>ApiResponse of Object</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Object> UpdateGraphMetaDataWithHttpInfo(string organizationId, string graphId, Dictionary<string, string> requestBody)
         {
             // verify the required parameter 'organizationId' is set
@@ -3321,6 +3431,7 @@ namespace Com.Cosmotech.Api
         /// <param name="requestBody">the metaData to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Object> UpdateGraphMetaDataAsync(string organizationId, string graphId, Dictionary<string, string> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<Object> localVarResponse = await UpdateGraphMetaDataWithHttpInfoAsync(organizationId, graphId, requestBody, cancellationToken).ConfigureAwait(false);
@@ -3336,6 +3447,7 @@ namespace Com.Cosmotech.Api
         /// <param name="requestBody">the metaData to update</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> UpdateGraphMetaDataWithHttpInfoAsync(string organizationId, string graphId, Dictionary<string, string> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
