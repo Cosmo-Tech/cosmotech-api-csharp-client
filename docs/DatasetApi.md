@@ -1912,7 +1912,7 @@ namespace Example
             var apiInstance = new DatasetApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var datasetId = "datasetId_example";  // string | the Dataset identifier
-            var dataset = new Dataset(); // Dataset | the new Dataset details.
+            var dataset = new Dataset(); // Dataset | the new Dataset details. This endpoint can't be used to update security
 
             try
             {
@@ -1937,7 +1937,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **datasetId** | **string**| the Dataset identifier | 
- **dataset** | [**Dataset**](Dataset.md)| the new Dataset details. | 
+ **dataset** | [**Dataset**](Dataset.md)| the new Dataset details. This endpoint can&#39;t be used to update security | 
 
 ### Return type
 

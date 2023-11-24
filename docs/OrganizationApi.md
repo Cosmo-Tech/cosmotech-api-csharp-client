@@ -929,7 +929,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
-            var organization = new Organization(); // Organization | the new Organization details
+            var organization = new Organization(); // Organization | the new Organization details. This endpoint can't be used to update security
 
             try
             {
@@ -953,7 +953,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
- **organization** | [**Organization**](Organization.md)| the new Organization details | 
+ **organization** | [**Organization**](Organization.md)| the new Organization details. This endpoint can&#39;t be used to update security | 
 
 ### Return type
 

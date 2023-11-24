@@ -1266,7 +1266,7 @@ namespace Example
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var workspace = new Workspace(); // Workspace | The new Workspace details.
+            var workspace = new Workspace(); // Workspace | The new Workspace details. This endpoint can't be used to update security
 
             try
             {
@@ -1291,7 +1291,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
- **workspace** | [**Workspace**](Workspace.md)| The new Workspace details. | 
+ **workspace** | [**Workspace**](Workspace.md)| The new Workspace details. This endpoint can&#39;t be used to update security | 
 
 ### Return type
 

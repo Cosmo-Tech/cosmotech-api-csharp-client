@@ -1607,7 +1607,7 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var scenario = new Scenario(); // Scenario | the new Scenario details.
+            var scenario = new Scenario(); // Scenario | the new Scenario details. This endpoint can't be used to update security
 
             try
             {
@@ -1633,7 +1633,7 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
  **scenarioId** | **string**| the Scenario identifier | 
- **scenario** | [**Scenario**](Scenario.md)| the new Scenario details. | 
+ **scenario** | [**Scenario**](Scenario.md)| the new Scenario details. This endpoint can&#39;t be used to update security | 
 
 ### Return type
 

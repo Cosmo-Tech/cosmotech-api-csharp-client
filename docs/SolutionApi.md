@@ -1424,7 +1424,7 @@ namespace Example
             var apiInstance = new SolutionApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var solutionId = "solutionId_example";  // string | the Solution identifier
-            var solution = new Solution(); // Solution | the new Solution details.
+            var solution = new Solution(); // Solution | the new Solution details. This endpoint can't be used to update security
 
             try
             {
@@ -1449,7 +1449,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **solutionId** | **string**| the Solution identifier | 
- **solution** | [**Solution**](Solution.md)| the new Solution details. | 
+ **solution** | [**Solution**](Solution.md)| the new Solution details. This endpoint can&#39;t be used to update security | 
 
 ### Return type
 
