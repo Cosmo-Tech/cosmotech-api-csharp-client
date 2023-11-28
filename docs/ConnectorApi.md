@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**FindAllConnectors**](ConnectorApi.md#findallconnectors) | **GET** /connectors | List all Connectors
 [**FindConnectorById**](ConnectorApi.md#findconnectorbyid) | **GET** /connectors/{connector_id} | Get the details of a connector
-[**ImportConnector**](ConnectorApi.md#importconnector) | **POST** /connectors/import | Import existing connector
+[**FindConnectorByName**](ConnectorApi.md#findconnectorbyname) | **GET** /connectors/name/{connector_name} | Get the details of a connector
 [**RegisterConnector**](ConnectorApi.md#registerconnector) | **POST** /connectors | Register a new connector
 [**UnregisterConnector**](ConnectorApi.md#unregisterconnector) | **DELETE** /connectors/{connector_id} | Unregister a connector
 
@@ -158,11 +158,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="importconnector"></a>
-# **ImportConnector**
-> Connector ImportConnector (Connector connector)
+<a name="findconnectorbyname"></a>
+# **FindConnectorByName**
+> Connector FindConnectorByName (string connectorName)
 
-Import existing connector
+Get the details of a connector
 
 ### Example
 ```csharp
@@ -174,7 +174,7 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class ImportConnectorExample
+    public class FindConnectorByNameExample
     {
         public static void Main()
         {
@@ -184,17 +184,17 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ConnectorApi(config);
-            var connector = new Connector(); // Connector | the Connector to import
+            var connectorName = "connectorName_example";  // string | the Connector name
 
             try
             {
-                // Import existing connector
-                Connector result = apiInstance.ImportConnector(connector);
+                // Get the details of a connector
+                Connector result = apiInstance.FindConnectorByName(connectorName);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConnectorApi.ImportConnector: " + e.Message );
+                Debug.Print("Exception when calling ConnectorApi.FindConnectorByName: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -207,7 +207,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connector** | [**Connector**](Connector.md)| the Connector to import | 
+ **connectorName** | **string**| the Connector name | 
 
 ### Return type
 
@@ -219,15 +219,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | the connector details |  -  |
-| **400** | Bad request |  -  |
+| **200** | the Connector details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

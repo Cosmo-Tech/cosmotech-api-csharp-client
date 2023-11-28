@@ -16,12 +16,11 @@ Method | HTTP request | Description
 [**FindScenarioById**](ScenarioApi.md#findscenariobyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Get the details of an scenario
 [**GetScenarioAccessControl**](ScenarioApi.md#getscenarioaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Get a control access for the Scenario
 [**GetScenarioDataDownloadJobInfo**](ScenarioApi.md#getscenariodatadownloadjobinfo) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads/{download_id} | Get Scenario data download URL
-[**GetScenarioPermissions**](ScenarioApi.md#getscenariopermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/permissions/{role} | Get the Scenario permission by given role
+[**GetScenarioPermissions**](ScenarioApi.md#getscenariopermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/permissions/{role} | Get the Scenario permission by given role
 [**GetScenarioSecurity**](ScenarioApi.md#getscenariosecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security | Get the Scenario security information
 [**GetScenarioSecurityUsers**](ScenarioApi.md#getscenariosecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/users | Get the Scenario security users list
 [**GetScenarioValidationStatusById**](ScenarioApi.md#getscenariovalidationstatusbyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/ValidationStatus | Get the validation status of an scenario
 [**GetScenariosTree**](ScenarioApi.md#getscenariostree) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree | Get the Scenarios Tree
-[**ImportScenario**](ScenarioApi.md#importscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/import | Import Scenario
 [**RemoveAllScenarioParameterValues**](ScenarioApi.md#removeallscenarioparametervalues) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Remove all Parameter Values from the Scenario specified
 [**RemoveScenarioAccessControl**](ScenarioApi.md#removescenarioaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Remove the specified access from the given Organization Scenario
 [**SetScenarioDefaultSecurity**](ScenarioApi.md#setscenariodefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/default | Set the Scenario default security
@@ -420,7 +419,7 @@ void (empty response body)
 
 <a name="deletescenario"></a>
 # **DeleteScenario**
-> void DeleteScenario (string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = null)
+> void DeleteScenario (string organizationId, string workspaceId, string scenarioId)
 
 Delete a scenario
 
@@ -447,12 +446,11 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var waitRelationshipPropagation = false;  // bool? | whether to wait until child scenarios are effectively updated (optional)  (default to false)
 
             try
             {
                 // Delete a scenario
-                apiInstance.DeleteScenario(organizationId, workspaceId, scenarioId, waitRelationshipPropagation);
+                apiInstance.DeleteScenario(organizationId, workspaceId, scenarioId);
             }
             catch (ApiException  e)
             {
@@ -472,7 +470,6 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
  **scenarioId** | **string**| the Scenario identifier | 
- **waitRelationshipPropagation** | **bool?**| whether to wait until child scenarios are effectively updated | [optional] [default to false]
 
 ### Return type
 
@@ -968,7 +965,7 @@ Name | Type | Description  | Notes
 
 <a name="getscenariopermissions"></a>
 # **GetScenarioPermissions**
-> List&lt;string&gt; GetScenarioPermissions (string organizationId, string workspaceId, string role)
+> List&lt;string&gt; GetScenarioPermissions (string organizationId, string workspaceId, string scenarioId, string role)
 
 Get the Scenario permission by given role
 
@@ -994,12 +991,13 @@ namespace Example
             var apiInstance = new ScenarioApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
             var role = "role_example";  // string | the Role
 
             try
             {
                 // Get the Scenario permission by given role
-                List<string> result = apiInstance.GetScenarioPermissions(organizationId, workspaceId, role);
+                List<string> result = apiInstance.GetScenarioPermissions(organizationId, workspaceId, scenarioId, role);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1019,6 +1017,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
+ **scenarioId** | **string**| the Scenario identifier | 
  **role** | **string**| the Role | 
 
 ### Return type
@@ -1346,83 +1345,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="importscenario"></a>
-# **ImportScenario**
-> Scenario ImportScenario (string organizationId, string workspaceId, Scenario scenario)
-
-Import Scenario
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class ImportScenarioExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ScenarioApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var scenario = new Scenario(); // Scenario | the Scenario to import
-
-            try
-            {
-                // Import Scenario
-                Scenario result = apiInstance.ImportScenario(organizationId, workspaceId, scenario);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ScenarioApi.ImportScenario: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenario** | [**Scenario**](Scenario.md)| the Scenario to import | 
-
-### Return type
-
-[**Scenario**](Scenario.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | the scenario details |  -  |
-| **400** | Bad request |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="removeallscenarioparametervalues"></a>
 # **RemoveAllScenarioParameterValues**
 > void RemoveAllScenarioParameterValues (string organizationId, string workspaceId, string scenarioId)
@@ -1606,7 +1528,7 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var scenarioRole = new ScenarioRole(); // ScenarioRole | the new Scenario default security.
+            var scenarioRole = new ScenarioRole(); // ScenarioRole | This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.
 
             try
             {
@@ -1632,7 +1554,7 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
  **scenarioId** | **string**| the Scenario identifier | 
- **scenarioRole** | [**ScenarioRole**](ScenarioRole.md)| the new Scenario default security. | 
+ **scenarioRole** | [**ScenarioRole**](ScenarioRole.md)| This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario. | 
 
 ### Return type
 
@@ -1685,7 +1607,7 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var scenario = new Scenario(); // Scenario | the new Scenario details.
+            var scenario = new Scenario(); // Scenario | the new Scenario details. This endpoint can't be used to update security
 
             try
             {
@@ -1711,7 +1633,7 @@ Name | Type | Description  | Notes
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
  **scenarioId** | **string**| the Scenario identifier | 
- **scenario** | [**Scenario**](Scenario.md)| the new Scenario details. | 
+ **scenario** | [**Scenario**](Scenario.md)| the new Scenario details. This endpoint can&#39;t be used to update security | 
 
 ### Return type
 
