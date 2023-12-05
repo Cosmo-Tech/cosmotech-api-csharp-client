@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the Solution Run Template id | 
 **Name** | **string** | the Run Template name | [optional] 
+**Labels** | **Dictionary&lt;string, string&gt;** | a translated label with key as ISO 639-1 code | [optional] 
 **Description** | **string** | the Run Template description | [optional] 
 **CsmSimulation** | **string** | the Cosmo Tech simulation name. This information is send to the Engine. Mandatory information if no Engine is defined | [optional] 
 **Tags** | **List&lt;string&gt;** | the list of Run Template tags | [optional] 
