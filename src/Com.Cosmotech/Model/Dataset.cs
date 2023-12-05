@@ -160,6 +160,21 @@ namespace Com.Cosmotech.Model
             return false;
         }
         /// <summary>
+        /// the name of the owner
+        /// </summary>
+        /// <value>the name of the owner</value>
+        [DataMember(Name = "ownerName", EmitDefaultValue = false)]
+        public string OwnerName { get; private set; }
+
+        /// <summary>
+        /// Returns false as OwnerName should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeOwnerName()
+        {
+            return false;
+        }
+        /// <summary>
         /// the Organization Id related to this Dataset
         /// </summary>
         /// <value>the Organization Id related to this Dataset</value>
@@ -290,6 +305,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
+            sb.Append("  OwnerName: ").Append(OwnerName).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  TwingraphId: ").Append(TwingraphId).Append("\n");
@@ -360,6 +376,11 @@ namespace Com.Cosmotech.Model
                     this.OwnerId == input.OwnerId ||
                     (this.OwnerId != null &&
                     this.OwnerId.Equals(input.OwnerId))
+                ) && 
+                (
+                    this.OwnerName == input.OwnerName ||
+                    (this.OwnerName != null &&
+                    this.OwnerName.Equals(input.OwnerName))
                 ) && 
                 (
                     this.OrganizationId == input.OrganizationId ||
@@ -466,6 +487,10 @@ namespace Com.Cosmotech.Model
                 if (this.OwnerId != null)
                 {
                     hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                }
+                if (this.OwnerName != null)
+                {
+                    hashCode = (hashCode * 59) + this.OwnerName.GetHashCode();
                 }
                 if (this.OrganizationId != null)
                 {

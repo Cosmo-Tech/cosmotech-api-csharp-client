@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Name** | **string** | the Dataset name | [optional] 
 **Description** | **string** | the Dataset description | [optional] 
 **OwnerId** | **string** | the User id which own this Dataset | [optional] [readonly] 
+**OwnerName** | **string** | the name of the owner | [optional] [readonly] 
 **OrganizationId** | **string** | the Organization Id related to this Dataset | [optional] [readonly] 
 **ParentId** | **string** | the Dataset id which is the parent of this Dataset | [optional] 
 **TwingraphId** | **string** | the twin graph id | [optional] 
