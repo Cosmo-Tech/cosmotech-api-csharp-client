@@ -2200,7 +2200,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadtwingraph"></a>
 # **UploadTwingraph**
-> void UploadTwingraph (string organizationId, string datasetId, System.IO.Stream body)
+> FileUploadValidation UploadTwingraph (string organizationId, string datasetId, System.IO.Stream body)
 
 Upload data from zip file to dataset's twingraph
 
@@ -2233,7 +2233,8 @@ namespace Example
             try
             {
                 // Upload data from zip file to dataset's twingraph
-                apiInstance.UploadTwingraph(organizationId, datasetId, body);
+                FileUploadValidation result = apiInstance.UploadTwingraph(organizationId, datasetId, body);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -2256,7 +2257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**FileUploadValidation**](FileUploadValidation.md)
 
 ### Authorization
 
@@ -2265,13 +2266,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/octet-stream
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Twingraph file upload started |  -  |
+| **202** | File uploaded successfully. Processing... |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
