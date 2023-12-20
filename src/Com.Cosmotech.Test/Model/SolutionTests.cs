@@ -106,6 +106,14 @@ namespace Com.Cosmotech.Test.Model
             // TODO unit test for the property 'Repository'
         }
         /// <summary>
+        /// Test the property 'AlwaysPull'
+        /// </summary>
+        [Fact]
+        public void AlwaysPullTest()
+        {
+            // TODO unit test for the property 'AlwaysPull'
+        }
+        /// <summary>
         /// Test the property 'CsmSimulator'
         /// </summary>
         [Fact]
