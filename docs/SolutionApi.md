@@ -566,7 +566,7 @@ void (empty response body)
 
 <a name="downloadruntemplatehandler"></a>
 # **DownloadRunTemplateHandler**
-> System.IO.Stream DownloadRunTemplateHandler (string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
+> byte[] DownloadRunTemplateHandler (string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
 
 Download a Run Template step handler zip file
 
@@ -598,7 +598,7 @@ namespace Example
             try
             {
                 // Download a Run Template step handler zip file
-                System.IO.Stream result = apiInstance.DownloadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId);
+                byte[] result = apiInstance.DownloadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+**byte[]**
 
 ### Authorization
 
@@ -638,7 +638,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the run template handle file as a resource |  -  |
+| **200** | the run template handle file as a resource |  * Content-Disposition - Run Template step handler zip file <br>  |
 | **404** | the Run Template Handler file specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

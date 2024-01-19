@@ -185,8 +185,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId);
+        /// <returns>byte[]</returns>
+        byte[] DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId);
 
         /// <summary>
         /// Download a Run Template step handler zip file
@@ -199,8 +199,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId);
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId);
         /// <summary>
         /// List all Solutions
         /// </summary>
@@ -713,8 +713,8 @@ namespace Com.Cosmotech.Api
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Download a Run Template step handler zip file
@@ -728,8 +728,8 @@ namespace Com.Cosmotech.Api
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Solutions
         /// </summary>
@@ -2478,10 +2478,10 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
+        /// <returns>byte[]</returns>
+        public byte[] DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
         {
-            Com.Cosmotech.Client.ApiResponse<System.IO.Stream> localVarResponse = DownloadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId);
+            Com.Cosmotech.Client.ApiResponse<byte[]> localVarResponse = DownloadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId);
             return localVarResponse.Data;
         }
 
@@ -2493,8 +2493,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Com.Cosmotech.Client.ApiResponse<System.IO.Stream> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
+        /// <returns>ApiResponse of byte[]</returns>
+        public Com.Cosmotech.Client.ApiResponse<byte[]> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2549,7 +2549,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<System.IO.Stream>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<byte[]>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DownloadRunTemplateHandler", localVarResponse);
@@ -2571,10 +2571,10 @@ namespace Com.Cosmotech.Api
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadRunTemplateHandlerWithHttpInfoAsync(organizationId, solutionId, runTemplateId, handlerId, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<byte[]> localVarResponse = await DownloadRunTemplateHandlerWithHttpInfoAsync(organizationId, solutionId, runTemplateId, handlerId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2587,8 +2587,8 @@ namespace Com.Cosmotech.Api
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<System.IO.Stream>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<byte[]>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2644,7 +2644,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<byte[]>("/organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

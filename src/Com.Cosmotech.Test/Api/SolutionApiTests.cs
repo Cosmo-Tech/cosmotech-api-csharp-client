@@ -161,7 +161,7 @@ namespace Com.Cosmotech.Test.Api
             //string runTemplateId = null;
             //RunTemplateHandlerId handlerId = null;
             //var response = instance.DownloadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId);
-            //Assert.IsType<System.IO.Stream>(response);
+            //Assert.IsType<byte[]>(response);
         }
 
         /// <summary>
