@@ -61,7 +61,13 @@ namespace Com.Cosmotech.Model
         /// Enum Twincache for value: Twincache
         /// </summary>
         [EnumMember(Value = "Twincache")]
-        Twincache = 5
+        Twincache = 5,
+
+        /// <summary>
+        /// Enum ETL for value: ETL
+        /// </summary>
+        [EnumMember(Value = "ETL")]
+        ETL = 6
 
     }
 
