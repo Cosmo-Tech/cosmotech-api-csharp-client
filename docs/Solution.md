@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **Parameters** | [**List&lt;RunTemplateParameter&gt;**](RunTemplateParameter.md) | the list of Run Template Parameters | [optional] 
 **ParameterGroups** | [**List&lt;RunTemplateParameterGroup&gt;**](RunTemplateParameterGroup.md) | the list of parameters groups for the Run Templates | [optional] 
 **RunTemplates** | [**List&lt;RunTemplate&gt;**](RunTemplate.md) | list of Run Template | [optional] 
-**Security** | [**SolutionSecurity**](SolutionSecurity.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

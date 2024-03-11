@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | the Solution Run Template id | 
 **Name** | **string** | the Run Template name | [optional] 
-**Labels** | **Dictionary&lt;string, string&gt;** | a translated label with key as ISO 639-1 code | [optional] 
 **Description** | **string** | the Run Template description | [optional] 
 **CsmSimulation** | **string** | the Cosmo Tech simulation name. This information is send to the Engine. Mandatory information if no Engine is defined | [optional] 
 **Tags** | **List&lt;string&gt;** | the list of Run Template tags | [optional] 
@@ -36,7 +35,6 @@ Name | Type | Description | Notes
 **GitRepositoryUrl** | **string** | an optional URL to the git repository | [optional] 
 **GitBranchName** | **string** | an optional git branch name | [optional] 
 **RunTemplateSourceDir** | **string** | an optional directory where to find the run template source | [optional] 
-**OrchestratorType** | **RunTemplateOrchestrator** |  | [optional] 
 **ExecutionTimeout** | **int** | an optional duration in seconds in which a workflow is allowed to run | [optional] 
 **DeleteHistoricalData** | [**DeleteHistoricalData**](DeleteHistoricalData.md) |  | [optional] 
 
