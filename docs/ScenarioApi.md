@@ -2,34 +2,32 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**AddOrReplaceScenarioParameterValues**](ScenarioApi.md#addorreplacescenarioparametervalues) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Add (or replace) Parameter Values for the Scenario specified
-[**AddScenarioAccessControl**](ScenarioApi.md#addscenarioaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access | Add a control access to the Scenario
-[**CompareScenarios**](ScenarioApi.md#comparescenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/compare/{compared_scenario_id} | Compare the Scenario with another one and returns the difference for parameters values
-[**CreateScenario**](ScenarioApi.md#createscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Create a new Scenario
-[**DeleteAllScenarios**](ScenarioApi.md#deleteallscenarios) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Delete all Scenarios of the Workspace
-[**DeleteScenario**](ScenarioApi.md#deletescenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Delete a scenario
-[**DownloadScenarioData**](ScenarioApi.md#downloadscenariodata) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads | Download Scenario data
-[**FindAllScenarios**](ScenarioApi.md#findallscenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | List all Scenarios
-[**FindAllScenariosByValidationStatus**](ScenarioApi.md#findallscenariosbyvalidationstatus) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/{validationStatus} | List all Scenarios by validation status
-[**FindScenarioById**](ScenarioApi.md#findscenariobyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Get the details of an scenario
-[**GetScenarioAccessControl**](ScenarioApi.md#getscenarioaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Get a control access for the Scenario
-[**GetScenarioDataDownloadJobInfo**](ScenarioApi.md#getscenariodatadownloadjobinfo) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads/{download_id} | Get Scenario data download URL
-[**GetScenarioPermissions**](ScenarioApi.md#getscenariopermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/permissions/{role} | Get the Scenario permission by given role
-[**GetScenarioSecurity**](ScenarioApi.md#getscenariosecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security | Get the Scenario security information
-[**GetScenarioSecurityUsers**](ScenarioApi.md#getscenariosecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/users | Get the Scenario security users list
-[**GetScenarioValidationStatusById**](ScenarioApi.md#getscenariovalidationstatusbyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/ValidationStatus | Get the validation status of an scenario
-[**GetScenariosTree**](ScenarioApi.md#getscenariostree) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree | Get the Scenarios Tree
-[**ImportScenario**](ScenarioApi.md#importscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/import | Import Scenario
-[**RemoveAllScenarioParameterValues**](ScenarioApi.md#removeallscenarioparametervalues) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Remove all Parameter Values from the Scenario specified
-[**RemoveScenarioAccessControl**](ScenarioApi.md#removescenarioaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Remove the specified access from the given Organization Scenario
-[**SetScenarioDefaultSecurity**](ScenarioApi.md#setscenariodefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/default | Set the Scenario default security
-[**UpdateScenario**](ScenarioApi.md#updatescenario) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Update a scenario
-[**UpdateScenarioAccessControl**](ScenarioApi.md#updatescenarioaccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Update the specified access to User for a Scenario
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**AddOrReplaceScenarioParameterValues**](ScenarioApi.md#addorreplacescenarioparametervalues) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Add (or replace) Parameter Values for the Scenario specified |
+| [**AddScenarioAccessControl**](ScenarioApi.md#addscenarioaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access | Add a control access to the Scenario |
+| [**CompareScenarios**](ScenarioApi.md#comparescenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/compare/{compared_scenario_id} | Compare the Scenario with another one and returns the difference for parameters values |
+| [**CreateScenario**](ScenarioApi.md#createscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Create a new Scenario |
+| [**DeleteAllScenarios**](ScenarioApi.md#deleteallscenarios) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Delete all Scenarios of the Workspace |
+| [**DeleteScenario**](ScenarioApi.md#deletescenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Delete a scenario |
+| [**DownloadScenarioData**](ScenarioApi.md#downloadscenariodata) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads | Download Scenario data |
+| [**FindAllScenarios**](ScenarioApi.md#findallscenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | List all Scenarios |
+| [**FindAllScenariosByValidationStatus**](ScenarioApi.md#findallscenariosbyvalidationstatus) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/{validationStatus} | List all Scenarios by validation status |
+| [**FindScenarioById**](ScenarioApi.md#findscenariobyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Get the details of an scenario |
+| [**GetScenarioAccessControl**](ScenarioApi.md#getscenarioaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Get a control access for the Scenario |
+| [**GetScenarioDataDownloadJobInfo**](ScenarioApi.md#getscenariodatadownloadjobinfo) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads/{download_id} | Get Scenario data download URL |
+| [**GetScenarioPermissions**](ScenarioApi.md#getscenariopermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/permissions/{role} | Get the Scenario permission by given role |
+| [**GetScenarioSecurity**](ScenarioApi.md#getscenariosecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security | Get the Scenario security information |
+| [**GetScenarioSecurityUsers**](ScenarioApi.md#getscenariosecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/users | Get the Scenario security users list |
+| [**GetScenarioValidationStatusById**](ScenarioApi.md#getscenariovalidationstatusbyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/ValidationStatus | Get the validation status of an scenario |
+| [**GetScenariosTree**](ScenarioApi.md#getscenariostree) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree | Get the Scenarios Tree |
+| [**RemoveAllScenarioParameterValues**](ScenarioApi.md#removeallscenarioparametervalues) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Remove all Parameter Values from the Scenario specified |
+| [**RemoveScenarioAccessControl**](ScenarioApi.md#removescenarioaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Remove the specified access from the given Organization Scenario |
+| [**SetScenarioDefaultSecurity**](ScenarioApi.md#setscenariodefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/default | Set the Scenario default security |
+| [**UpdateScenario**](ScenarioApi.md#updatescenario) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Update a scenario |
+| [**UpdateScenarioAccessControl**](ScenarioApi.md#updatescenarioaccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Update the specified access to User for a Scenario |
 
-
-<a name="addorreplacescenarioparametervalues"></a>
+<a id="addorreplacescenarioparametervalues"></a>
 # **AddOrReplaceScenarioParameterValues**
 > List&lt;ScenarioRunTemplateParameterValue&gt; AddOrReplaceScenarioParameterValues (string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue)
 
@@ -68,8 +66,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.AddOrReplaceScenarioParameterValues: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.AddOrReplaceScenarioParameterValues: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -77,14 +75,34 @@ namespace Example
 }
 ```
 
+#### Using the AddOrReplaceScenarioParameterValuesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add (or replace) Parameter Values for the Scenario specified
+    ApiResponse<List<ScenarioRunTemplateParameterValue>> response = apiInstance.AddOrReplaceScenarioParameterValuesWithHttpInfo(organizationId, workspaceId, scenarioId, scenarioRunTemplateParameterValue);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.AddOrReplaceScenarioParameterValuesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **scenarioRunTemplateParameterValue** | [**List&lt;ScenarioRunTemplateParameterValue&gt;**](ScenarioRunTemplateParameterValue.md)| the Parameter Value to add. Any Parameter Value with the same ID is overwritten | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **scenarioRunTemplateParameterValue** | [**List&lt;ScenarioRunTemplateParameterValue&gt;**](ScenarioRunTemplateParameterValue.md) | the Parameter Value to add. Any Parameter Value with the same ID is overwritten |  |
 
 ### Return type
 
@@ -109,7 +127,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="addscenarioaccesscontrol"></a>
+<a id="addscenarioaccesscontrol"></a>
 # **AddScenarioAccessControl**
 > ScenarioAccessControl AddScenarioAccessControl (string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl)
 
@@ -148,8 +166,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.AddScenarioAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.AddScenarioAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -157,14 +175,34 @@ namespace Example
 }
 ```
 
+#### Using the AddScenarioAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add a control access to the Scenario
+    ApiResponse<ScenarioAccessControl> response = apiInstance.AddScenarioAccessControlWithHttpInfo(organizationId, workspaceId, scenarioId, scenarioAccessControl);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.AddScenarioAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **scenarioAccessControl** | [**ScenarioAccessControl**](ScenarioAccessControl.md)| the new Scenario security access to add. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **scenarioAccessControl** | [**ScenarioAccessControl**](ScenarioAccessControl.md) | the new Scenario security access to add. |  |
 
 ### Return type
 
@@ -188,7 +226,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="comparescenarios"></a>
+<a id="comparescenarios"></a>
 # **CompareScenarios**
 > ScenarioComparisonResult CompareScenarios (string organizationId, string workspaceId, string scenarioId, string comparedScenarioId)
 
@@ -227,8 +265,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.CompareScenarios: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.CompareScenarios: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -236,14 +274,34 @@ namespace Example
 }
 ```
 
+#### Using the CompareScenariosWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Compare the Scenario with another one and returns the difference for parameters values
+    ApiResponse<ScenarioComparisonResult> response = apiInstance.CompareScenariosWithHttpInfo(organizationId, workspaceId, scenarioId, comparedScenarioId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.CompareScenariosWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **comparedScenarioId** | **string**| the Scenario identifier to compare to | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **comparedScenarioId** | **string** | the Scenario identifier to compare to |  |
 
 ### Return type
 
@@ -267,7 +325,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createscenario"></a>
+<a id="createscenario"></a>
 # **CreateScenario**
 > Scenario CreateScenario (string organizationId, string workspaceId, Scenario scenario)
 
@@ -305,8 +363,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.CreateScenario: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.CreateScenario: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -314,13 +372,33 @@ namespace Example
 }
 ```
 
+#### Using the CreateScenarioWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a new Scenario
+    ApiResponse<Scenario> response = apiInstance.CreateScenarioWithHttpInfo(organizationId, workspaceId, scenario);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.CreateScenarioWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenario** | [**Scenario**](Scenario.md)| the Scenario to create | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenario** | [**Scenario**](Scenario.md) | the Scenario to create |  |
 
 ### Return type
 
@@ -344,7 +422,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteallscenarios"></a>
+<a id="deleteallscenarios"></a>
 # **DeleteAllScenarios**
 > void DeleteAllScenarios (string organizationId, string workspaceId)
 
@@ -380,8 +458,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.DeleteAllScenarios: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.DeleteAllScenarios: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -389,12 +467,29 @@ namespace Example
 }
 ```
 
+#### Using the DeleteAllScenariosWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete all Scenarios of the Workspace
+    apiInstance.DeleteAllScenariosWithHttpInfo(organizationId, workspaceId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.DeleteAllScenariosWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
 
 ### Return type
 
@@ -418,9 +513,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletescenario"></a>
+<a id="deletescenario"></a>
 # **DeleteScenario**
-> void DeleteScenario (string organizationId, string workspaceId, string scenarioId, bool? waitRelationshipPropagation = null)
+> void DeleteScenario (string organizationId, string workspaceId, string scenarioId)
 
 Delete a scenario
 
@@ -447,17 +542,16 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var waitRelationshipPropagation = false;  // bool? | whether to wait until child scenarios are effectively updated (optional)  (default to false)
 
             try
             {
                 // Delete a scenario
-                apiInstance.DeleteScenario(organizationId, workspaceId, scenarioId, waitRelationshipPropagation);
+                apiInstance.DeleteScenario(organizationId, workspaceId, scenarioId);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.DeleteScenario: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.DeleteScenario: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -465,14 +559,30 @@ namespace Example
 }
 ```
 
+#### Using the DeleteScenarioWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a scenario
+    apiInstance.DeleteScenarioWithHttpInfo(organizationId, workspaceId, scenarioId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.DeleteScenarioWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **waitRelationshipPropagation** | **bool?**| whether to wait until child scenarios are effectively updated | [optional] [default to false]
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
 
 ### Return type
 
@@ -496,7 +606,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="downloadscenariodata"></a>
+<a id="downloadscenariodata"></a>
 # **DownloadScenarioData**
 > ScenarioDataDownloadJob DownloadScenarioData (string organizationId, string workspaceId, string scenarioId)
 
@@ -534,8 +644,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.DownloadScenarioData: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.DownloadScenarioData: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -543,13 +653,33 @@ namespace Example
 }
 ```
 
+#### Using the DownloadScenarioDataWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Download Scenario data
+    ApiResponse<ScenarioDataDownloadJob> response = apiInstance.DownloadScenarioDataWithHttpInfo(organizationId, workspaceId, scenarioId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.DownloadScenarioDataWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
 
 ### Return type
 
@@ -573,7 +703,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findallscenarios"></a>
+<a id="findallscenarios"></a>
 # **FindAllScenarios**
 > List&lt;Scenario&gt; FindAllScenarios (string organizationId, string workspaceId, int? page = null, int? size = null)
 
@@ -612,8 +742,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.FindAllScenarios: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.FindAllScenarios: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -621,14 +751,34 @@ namespace Example
 }
 ```
 
+#### Using the FindAllScenariosWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List all Scenarios
+    ApiResponse<List<Scenario>> response = apiInstance.FindAllScenariosWithHttpInfo(organizationId, workspaceId, page, size);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.FindAllScenariosWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **page** | **int?**| page number to query | [optional] 
- **size** | **int?**| amount of result by page | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **page** | **int?** | page number to query | [optional]  |
+| **size** | **int?** | amount of result by page | [optional]  |
 
 ### Return type
 
@@ -651,7 +801,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findallscenariosbyvalidationstatus"></a>
+<a id="findallscenariosbyvalidationstatus"></a>
 # **FindAllScenariosByValidationStatus**
 > List&lt;Scenario&gt; FindAllScenariosByValidationStatus (string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = null, int? size = null)
 
@@ -679,7 +829,7 @@ namespace Example
             var apiInstance = new ScenarioApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var validationStatus = (ScenarioValidationStatus) "Draft";  // ScenarioValidationStatus | the Scenario Validation Status
+            var validationStatus = new ScenarioValidationStatus(); // ScenarioValidationStatus | the Scenario Validation Status
             var page = 56;  // int? | page number to query (optional) 
             var size = 56;  // int? | amount of result by page (optional) 
 
@@ -691,8 +841,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.FindAllScenariosByValidationStatus: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.FindAllScenariosByValidationStatus: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -700,15 +850,35 @@ namespace Example
 }
 ```
 
+#### Using the FindAllScenariosByValidationStatusWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List all Scenarios by validation status
+    ApiResponse<List<Scenario>> response = apiInstance.FindAllScenariosByValidationStatusWithHttpInfo(organizationId, workspaceId, validationStatus, page, size);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.FindAllScenariosByValidationStatusWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **validationStatus** | **ScenarioValidationStatus**| the Scenario Validation Status | 
- **page** | **int?**| page number to query | [optional] 
- **size** | **int?**| amount of result by page | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **validationStatus** | [**ScenarioValidationStatus**](ScenarioValidationStatus.md) | the Scenario Validation Status |  |
+| **page** | **int?** | page number to query | [optional]  |
+| **size** | **int?** | amount of result by page | [optional]  |
 
 ### Return type
 
@@ -731,7 +901,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findscenariobyid"></a>
+<a id="findscenariobyid"></a>
 # **FindScenarioById**
 > Scenario FindScenarioById (string organizationId, string workspaceId, string scenarioId)
 
@@ -769,8 +939,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.FindScenarioById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.FindScenarioById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -778,13 +948,33 @@ namespace Example
 }
 ```
 
+#### Using the FindScenarioByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the details of an scenario
+    ApiResponse<Scenario> response = apiInstance.FindScenarioByIdWithHttpInfo(organizationId, workspaceId, scenarioId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.FindScenarioByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
 
 ### Return type
 
@@ -808,7 +998,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getscenarioaccesscontrol"></a>
+<a id="getscenarioaccesscontrol"></a>
 # **GetScenarioAccessControl**
 > ScenarioAccessControl GetScenarioAccessControl (string organizationId, string workspaceId, string scenarioId, string identityId)
 
@@ -847,8 +1037,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.GetScenarioAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.GetScenarioAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -856,14 +1046,34 @@ namespace Example
 }
 ```
 
+#### Using the GetScenarioAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a control access for the Scenario
+    ApiResponse<ScenarioAccessControl> response = apiInstance.GetScenarioAccessControlWithHttpInfo(organizationId, workspaceId, scenarioId, identityId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.GetScenarioAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **identityId** | **string**| the User identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **identityId** | **string** | the User identifier |  |
 
 ### Return type
 
@@ -887,7 +1097,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getscenariodatadownloadjobinfo"></a>
+<a id="getscenariodatadownloadjobinfo"></a>
 # **GetScenarioDataDownloadJobInfo**
 > ScenarioDataDownloadInfo GetScenarioDataDownloadJobInfo (string organizationId, string workspaceId, string scenarioId, string downloadId)
 
@@ -926,8 +1136,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.GetScenarioDataDownloadJobInfo: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.GetScenarioDataDownloadJobInfo: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -935,14 +1145,34 @@ namespace Example
 }
 ```
 
+#### Using the GetScenarioDataDownloadJobInfoWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get Scenario data download URL
+    ApiResponse<ScenarioDataDownloadInfo> response = apiInstance.GetScenarioDataDownloadJobInfoWithHttpInfo(organizationId, workspaceId, scenarioId, downloadId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.GetScenarioDataDownloadJobInfoWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **downloadId** | **string**| the Scenario Download identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **downloadId** | **string** | the Scenario Download identifier |  |
 
 ### Return type
 
@@ -966,9 +1196,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getscenariopermissions"></a>
+<a id="getscenariopermissions"></a>
 # **GetScenarioPermissions**
-> List&lt;string&gt; GetScenarioPermissions (string organizationId, string workspaceId, string role)
+> List&lt;string&gt; GetScenarioPermissions (string organizationId, string workspaceId, string scenarioId, string role)
 
 Get the Scenario permission by given role
 
@@ -994,18 +1224,19 @@ namespace Example
             var apiInstance = new ScenarioApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var scenarioId = "scenarioId_example";  // string | the Scenario identifier
             var role = "role_example";  // string | the Role
 
             try
             {
                 // Get the Scenario permission by given role
-                List<string> result = apiInstance.GetScenarioPermissions(organizationId, workspaceId, role);
+                List<string> result = apiInstance.GetScenarioPermissions(organizationId, workspaceId, scenarioId, role);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.GetScenarioPermissions: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.GetScenarioPermissions: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1013,13 +1244,34 @@ namespace Example
 }
 ```
 
+#### Using the GetScenarioPermissionsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Scenario permission by given role
+    ApiResponse<List<string>> response = apiInstance.GetScenarioPermissionsWithHttpInfo(organizationId, workspaceId, scenarioId, role);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.GetScenarioPermissionsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **role** | **string**| the Role | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **role** | **string** | the Role |  |
 
 ### Return type
 
@@ -1042,7 +1294,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getscenariosecurity"></a>
+<a id="getscenariosecurity"></a>
 # **GetScenarioSecurity**
 > ScenarioSecurity GetScenarioSecurity (string organizationId, string workspaceId, string scenarioId)
 
@@ -1080,8 +1332,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.GetScenarioSecurity: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.GetScenarioSecurity: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1089,13 +1341,33 @@ namespace Example
 }
 ```
 
+#### Using the GetScenarioSecurityWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Scenario security information
+    ApiResponse<ScenarioSecurity> response = apiInstance.GetScenarioSecurityWithHttpInfo(organizationId, workspaceId, scenarioId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.GetScenarioSecurityWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
 
 ### Return type
 
@@ -1119,7 +1391,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getscenariosecurityusers"></a>
+<a id="getscenariosecurityusers"></a>
 # **GetScenarioSecurityUsers**
 > List&lt;string&gt; GetScenarioSecurityUsers (string organizationId, string workspaceId, string scenarioId)
 
@@ -1157,8 +1429,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.GetScenarioSecurityUsers: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.GetScenarioSecurityUsers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1166,13 +1438,33 @@ namespace Example
 }
 ```
 
+#### Using the GetScenarioSecurityUsersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Scenario security users list
+    ApiResponse<List<string>> response = apiInstance.GetScenarioSecurityUsersWithHttpInfo(organizationId, workspaceId, scenarioId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.GetScenarioSecurityUsersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
 
 ### Return type
 
@@ -1196,7 +1488,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getscenariovalidationstatusbyid"></a>
+<a id="getscenariovalidationstatusbyid"></a>
 # **GetScenarioValidationStatusById**
 > ScenarioValidationStatus GetScenarioValidationStatusById (string organizationId, string workspaceId, string scenarioId)
 
@@ -1234,8 +1526,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.GetScenarioValidationStatusById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.GetScenarioValidationStatusById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1243,13 +1535,33 @@ namespace Example
 }
 ```
 
+#### Using the GetScenarioValidationStatusByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the validation status of an scenario
+    ApiResponse<ScenarioValidationStatus> response = apiInstance.GetScenarioValidationStatusByIdWithHttpInfo(organizationId, workspaceId, scenarioId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.GetScenarioValidationStatusByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
 
 ### Return type
 
@@ -1272,7 +1584,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getscenariostree"></a>
+<a id="getscenariostree"></a>
 # **GetScenariosTree**
 > List&lt;Scenario&gt; GetScenariosTree (string organizationId, string workspaceId)
 
@@ -1309,8 +1621,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.GetScenariosTree: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.GetScenariosTree: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1318,12 +1630,32 @@ namespace Example
 }
 ```
 
+#### Using the GetScenariosTreeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Scenarios Tree
+    ApiResponse<List<Scenario>> response = apiInstance.GetScenariosTreeWithHttpInfo(organizationId, workspaceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.GetScenariosTreeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
 
 ### Return type
 
@@ -1346,84 +1678,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="importscenario"></a>
-# **ImportScenario**
-> Scenario ImportScenario (string organizationId, string workspaceId, Scenario scenario)
-
-Import Scenario
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class ImportScenarioExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ScenarioApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var scenario = new Scenario(); // Scenario | the Scenario to import
-
-            try
-            {
-                // Import Scenario
-                Scenario result = apiInstance.ImportScenario(organizationId, workspaceId, scenario);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ScenarioApi.ImportScenario: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenario** | [**Scenario**](Scenario.md)| the Scenario to import | 
-
-### Return type
-
-[**Scenario**](Scenario.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | the scenario details |  -  |
-| **400** | Bad request |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="removeallscenarioparametervalues"></a>
+<a id="removeallscenarioparametervalues"></a>
 # **RemoveAllScenarioParameterValues**
 > void RemoveAllScenarioParameterValues (string organizationId, string workspaceId, string scenarioId)
 
@@ -1460,8 +1715,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.RemoveAllScenarioParameterValues: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.RemoveAllScenarioParameterValues: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1469,13 +1724,30 @@ namespace Example
 }
 ```
 
+#### Using the RemoveAllScenarioParameterValuesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove all Parameter Values from the Scenario specified
+    apiInstance.RemoveAllScenarioParameterValuesWithHttpInfo(organizationId, workspaceId, scenarioId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.RemoveAllScenarioParameterValuesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
 
 ### Return type
 
@@ -1499,7 +1771,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="removescenarioaccesscontrol"></a>
+<a id="removescenarioaccesscontrol"></a>
 # **RemoveScenarioAccessControl**
 > void RemoveScenarioAccessControl (string organizationId, string workspaceId, string scenarioId, string identityId)
 
@@ -1537,8 +1809,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.RemoveScenarioAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.RemoveScenarioAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1546,14 +1818,31 @@ namespace Example
 }
 ```
 
+#### Using the RemoveScenarioAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove the specified access from the given Organization Scenario
+    apiInstance.RemoveScenarioAccessControlWithHttpInfo(organizationId, workspaceId, scenarioId, identityId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.RemoveScenarioAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **identityId** | **string**| the User identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **identityId** | **string** | the User identifier |  |
 
 ### Return type
 
@@ -1577,7 +1866,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="setscenariodefaultsecurity"></a>
+<a id="setscenariodefaultsecurity"></a>
 # **SetScenarioDefaultSecurity**
 > ScenarioSecurity SetScenarioDefaultSecurity (string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole)
 
@@ -1606,7 +1895,7 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var scenarioRole = new ScenarioRole(); // ScenarioRole | the new Scenario default security.
+            var scenarioRole = new ScenarioRole(); // ScenarioRole | This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.
 
             try
             {
@@ -1616,8 +1905,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.SetScenarioDefaultSecurity: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.SetScenarioDefaultSecurity: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1625,14 +1914,34 @@ namespace Example
 }
 ```
 
+#### Using the SetScenarioDefaultSecurityWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set the Scenario default security
+    ApiResponse<ScenarioSecurity> response = apiInstance.SetScenarioDefaultSecurityWithHttpInfo(organizationId, workspaceId, scenarioId, scenarioRole);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.SetScenarioDefaultSecurityWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **scenarioRole** | [**ScenarioRole**](ScenarioRole.md)| the new Scenario default security. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **scenarioRole** | [**ScenarioRole**](ScenarioRole.md) | This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario. |  |
 
 ### Return type
 
@@ -1656,7 +1965,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatescenario"></a>
+<a id="updatescenario"></a>
 # **UpdateScenario**
 > Scenario UpdateScenario (string organizationId, string workspaceId, string scenarioId, Scenario scenario)
 
@@ -1685,7 +1994,7 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var scenarioId = "scenarioId_example";  // string | the Scenario identifier
-            var scenario = new Scenario(); // Scenario | the new Scenario details.
+            var scenario = new Scenario(); // Scenario | the new Scenario details. This endpoint can't be used to update security
 
             try
             {
@@ -1695,8 +2004,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.UpdateScenario: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.UpdateScenario: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1704,14 +2013,34 @@ namespace Example
 }
 ```
 
+#### Using the UpdateScenarioWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update a scenario
+    ApiResponse<Scenario> response = apiInstance.UpdateScenarioWithHttpInfo(organizationId, workspaceId, scenarioId, scenario);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.UpdateScenarioWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **scenario** | [**Scenario**](Scenario.md)| the new Scenario details. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **scenario** | [**Scenario**](Scenario.md) | the new Scenario details. This endpoint can&#39;t be used to update security |  |
 
 ### Return type
 
@@ -1736,7 +2065,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatescenarioaccesscontrol"></a>
+<a id="updatescenarioaccesscontrol"></a>
 # **UpdateScenarioAccessControl**
 > ScenarioAccessControl UpdateScenarioAccessControl (string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole)
 
@@ -1776,8 +2105,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenarioApi.UpdateScenarioAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenarioApi.UpdateScenarioAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1785,15 +2114,35 @@ namespace Example
 }
 ```
 
+#### Using the UpdateScenarioAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update the specified access to User for a Scenario
+    ApiResponse<ScenarioAccessControl> response = apiInstance.UpdateScenarioAccessControlWithHttpInfo(organizationId, workspaceId, scenarioId, identityId, scenarioRole);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenarioApi.UpdateScenarioAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **identityId** | **string**| the User identifier | 
- **scenarioRole** | [**ScenarioRole**](ScenarioRole.md)| The new Scenario Access Control | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **identityId** | **string** | the User identifier |  |
+| **scenarioRole** | [**ScenarioRole**](ScenarioRole.md) | The new Scenario Access Control |  |
 
 ### Return type
 

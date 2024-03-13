@@ -68,7 +68,6 @@ namespace Com.Cosmotech.Model
         /// </summary>
         [EnumMember(Value = "ETL")]
         ETL = 6
-
     }
 
 }

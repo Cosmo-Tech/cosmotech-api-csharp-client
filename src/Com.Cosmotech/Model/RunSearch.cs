@@ -30,7 +30,7 @@ namespace Com.Cosmotech.Model
     /// the search options
     /// </summary>
     [DataContract(Name = "RunSearch")]
-    public partial class RunSearch : IEquatable<RunSearch>, IValidatableObject
+    public partial class RunSearch : IValidatableObject
     {
         /// <summary>
         /// the state to search
@@ -98,7 +98,6 @@ namespace Com.Cosmotech.Model
             /// </summary>
             [EnumMember(Value = "Failed")]
             Failed = 10
-
         }
 
 
@@ -210,116 +209,11 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RunSearch);
-        }
-
-        /// <summary>
-        /// Returns true if RunSearch instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RunSearch to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RunSearch input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.SolutionId == input.SolutionId ||
-                    (this.SolutionId != null &&
-                    this.SolutionId.Equals(input.SolutionId))
-                ) && 
-                (
-                    this.RunTemplateId == input.RunTemplateId ||
-                    (this.RunTemplateId != null &&
-                    this.RunTemplateId.Equals(input.RunTemplateId))
-                ) && 
-                (
-                    this.WorkspaceId == input.WorkspaceId ||
-                    (this.WorkspaceId != null &&
-                    this.WorkspaceId.Equals(input.WorkspaceId))
-                ) && 
-                (
-                    this.RunnerId == input.RunnerId ||
-                    (this.RunnerId != null &&
-                    this.RunnerId.Equals(input.RunnerId))
-                ) && 
-                (
-                    this.State == input.State ||
-                    this.State.Equals(input.State)
-                ) && 
-                (
-                    this.WorkflowId == input.WorkflowId ||
-                    (this.WorkflowId != null &&
-                    this.WorkflowId.Equals(input.WorkflowId))
-                ) && 
-                (
-                    this.WorkflowName == input.WorkflowName ||
-                    (this.WorkflowName != null &&
-                    this.WorkflowName.Equals(input.WorkflowName))
-                ) && 
-                (
-                    this.OwnerId == input.OwnerId ||
-                    (this.OwnerId != null &&
-                    this.OwnerId.Equals(input.OwnerId))
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.SolutionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.SolutionId.GetHashCode();
-                }
-                if (this.RunTemplateId != null)
-                {
-                    hashCode = (hashCode * 59) + this.RunTemplateId.GetHashCode();
-                }
-                if (this.WorkspaceId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkspaceId.GetHashCode();
-                }
-                if (this.RunnerId != null)
-                {
-                    hashCode = (hashCode * 59) + this.RunnerId.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.State.GetHashCode();
-                if (this.WorkflowId != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkflowId.GetHashCode();
-                }
-                if (this.WorkflowName != null)
-                {
-                    hashCode = (hashCode * 59) + this.WorkflowName.GetHashCode();
-                }
-                if (this.OwnerId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
-                }
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

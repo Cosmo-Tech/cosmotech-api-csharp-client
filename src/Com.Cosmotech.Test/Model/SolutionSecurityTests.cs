@@ -15,7 +15,6 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -56,15 +55,15 @@ namespace Com.Cosmotech.Test.Model
             //Assert.IsType<SolutionSecurity>(instance);
         }
 
-
         /// <summary>
-        /// Test the property 'Default'
+        /// Test the property 'VarDefault'
         /// </summary>
         [Fact]
-        public void DefaultTest()
+        public void VarDefaultTest()
         {
-            // TODO unit test for the property 'Default'
+            // TODO unit test for the property 'VarDefault'
         }
+
         /// <summary>
         /// Test the property 'AccessControlList'
         /// </summary>
@@ -73,7 +72,5 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'AccessControlList'
         }
-
     }
-
 }

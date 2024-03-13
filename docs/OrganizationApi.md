@@ -2,29 +2,27 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**AddOrganizationAccessControl**](OrganizationApi.md#addorganizationaccesscontrol) | **POST** /organizations/{organization_id}/security/access | Add a control access to the Organization
-[**FindAllOrganizations**](OrganizationApi.md#findallorganizations) | **GET** /organizations | List all Organizations
-[**FindOrganizationById**](OrganizationApi.md#findorganizationbyid) | **GET** /organizations/{organization_id} | Get the details of an Organization
-[**GetAllPermissions**](OrganizationApi.md#getallpermissions) | **GET** /organizations/permissions | Get all permissions per components
-[**GetOrganizationAccessControl**](OrganizationApi.md#getorganizationaccesscontrol) | **GET** /organizations/{organization_id}/security/access/{identity_id} | Get a control access for the Organization
-[**GetOrganizationPermissions**](OrganizationApi.md#getorganizationpermissions) | **GET** /organizations/{organization_id}/permissions/{role} | Get the Organization permissions by given role
-[**GetOrganizationSecurity**](OrganizationApi.md#getorganizationsecurity) | **GET** /organizations/{organization_id}/security | Get the Organization security information
-[**GetOrganizationSecurityUsers**](OrganizationApi.md#getorganizationsecurityusers) | **GET** /organizations/{organization_id}/security/users | Get the Organization security users list
-[**ImportOrganization**](OrganizationApi.md#importorganization) | **POST** /organizations/import | Import an organization
-[**RegisterOrganization**](OrganizationApi.md#registerorganization) | **POST** /organizations | Register a new organization
-[**RemoveOrganizationAccessControl**](OrganizationApi.md#removeorganizationaccesscontrol) | **DELETE** /organizations/{organization_id}/security/access/{identity_id} | Remove the specified access from the given Organization
-[**SetOrganizationDefaultSecurity**](OrganizationApi.md#setorganizationdefaultsecurity) | **POST** /organizations/{organization_id}/security/default | Set the Organization default security
-[**UnregisterOrganization**](OrganizationApi.md#unregisterorganization) | **DELETE** /organizations/{organization_id} | Unregister an organization
-[**UpdateOrganization**](OrganizationApi.md#updateorganization) | **PATCH** /organizations/{organization_id} | Update an Organization
-[**UpdateOrganizationAccessControl**](OrganizationApi.md#updateorganizationaccesscontrol) | **PATCH** /organizations/{organization_id}/security/access/{identity_id} | Update the specified access to User for an Organization
-[**UpdateSolutionsContainerRegistryByOrganizationId**](OrganizationApi.md#updatesolutionscontainerregistrybyorganizationid) | **PATCH** /organizations/{organization_id}/services/solutionsContainerRegistry | Update the solutions container registry configuration for the Organization specified
-[**UpdateStorageByOrganizationId**](OrganizationApi.md#updatestoragebyorganizationid) | **PATCH** /organizations/{organization_id}/services/storage | Update storage configuration for the Organization specified
-[**UpdateTenantCredentialsByOrganizationId**](OrganizationApi.md#updatetenantcredentialsbyorganizationid) | **PATCH** /organizations/{organization_id}/services/tenantCredentials | Update tenant credentials for the Organization specified
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**AddOrganizationAccessControl**](OrganizationApi.md#addorganizationaccesscontrol) | **POST** /organizations/{organization_id}/security/access | Add a control access to the Organization |
+| [**FindAllOrganizations**](OrganizationApi.md#findallorganizations) | **GET** /organizations | List all Organizations |
+| [**FindOrganizationById**](OrganizationApi.md#findorganizationbyid) | **GET** /organizations/{organization_id} | Get the details of an Organization |
+| [**GetAllPermissions**](OrganizationApi.md#getallpermissions) | **GET** /organizations/permissions | Get all permissions per components |
+| [**GetOrganizationAccessControl**](OrganizationApi.md#getorganizationaccesscontrol) | **GET** /organizations/{organization_id}/security/access/{identity_id} | Get a control access for the Organization |
+| [**GetOrganizationPermissions**](OrganizationApi.md#getorganizationpermissions) | **GET** /organizations/{organization_id}/permissions/{role} | Get the Organization permissions by given role |
+| [**GetOrganizationSecurity**](OrganizationApi.md#getorganizationsecurity) | **GET** /organizations/{organization_id}/security | Get the Organization security information |
+| [**GetOrganizationSecurityUsers**](OrganizationApi.md#getorganizationsecurityusers) | **GET** /organizations/{organization_id}/security/users | Get the Organization security users list |
+| [**RegisterOrganization**](OrganizationApi.md#registerorganization) | **POST** /organizations | Register a new organization |
+| [**RemoveOrganizationAccessControl**](OrganizationApi.md#removeorganizationaccesscontrol) | **DELETE** /organizations/{organization_id}/security/access/{identity_id} | Remove the specified access from the given Organization |
+| [**SetOrganizationDefaultSecurity**](OrganizationApi.md#setorganizationdefaultsecurity) | **POST** /organizations/{organization_id}/security/default | Set the Organization default security |
+| [**UnregisterOrganization**](OrganizationApi.md#unregisterorganization) | **DELETE** /organizations/{organization_id} | Unregister an organization |
+| [**UpdateOrganization**](OrganizationApi.md#updateorganization) | **PATCH** /organizations/{organization_id} | Update an Organization |
+| [**UpdateOrganizationAccessControl**](OrganizationApi.md#updateorganizationaccesscontrol) | **PATCH** /organizations/{organization_id}/security/access/{identity_id} | Update the specified access to User for an Organization |
+| [**UpdateSolutionsContainerRegistryByOrganizationId**](OrganizationApi.md#updatesolutionscontainerregistrybyorganizationid) | **PATCH** /organizations/{organization_id}/services/solutionsContainerRegistry | Update the solutions container registry configuration for the Organization specified |
+| [**UpdateStorageByOrganizationId**](OrganizationApi.md#updatestoragebyorganizationid) | **PATCH** /organizations/{organization_id}/services/storage | Update storage configuration for the Organization specified |
+| [**UpdateTenantCredentialsByOrganizationId**](OrganizationApi.md#updatetenantcredentialsbyorganizationid) | **PATCH** /organizations/{organization_id}/services/tenantCredentials | Update tenant credentials for the Organization specified |
 
-
-<a name="addorganizationaccesscontrol"></a>
+<a id="addorganizationaccesscontrol"></a>
 # **AddOrganizationAccessControl**
 > OrganizationAccessControl AddOrganizationAccessControl (string organizationId, OrganizationAccessControl organizationAccessControl)
 
@@ -61,8 +59,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.AddOrganizationAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.AddOrganizationAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -70,12 +68,32 @@ namespace Example
 }
 ```
 
+#### Using the AddOrganizationAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add a control access to the Organization
+    ApiResponse<OrganizationAccessControl> response = apiInstance.AddOrganizationAccessControlWithHttpInfo(organizationId, organizationAccessControl);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.AddOrganizationAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **organizationAccessControl** | [**OrganizationAccessControl**](OrganizationAccessControl.md)| the new Organization security access to add. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **organizationAccessControl** | [**OrganizationAccessControl**](OrganizationAccessControl.md) | the new Organization security access to add. |  |
 
 ### Return type
 
@@ -99,7 +117,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findallorganizations"></a>
+<a id="findallorganizations"></a>
 # **FindAllOrganizations**
 > List&lt;Organization&gt; FindAllOrganizations (int? page = null, int? size = null)
 
@@ -136,8 +154,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.FindAllOrganizations: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.FindAllOrganizations: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -145,12 +163,32 @@ namespace Example
 }
 ```
 
+#### Using the FindAllOrganizationsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List all Organizations
+    ApiResponse<List<Organization>> response = apiInstance.FindAllOrganizationsWithHttpInfo(page, size);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.FindAllOrganizationsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int?**| page number to query | [optional] 
- **size** | **int?**| amount of result by page | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **page** | **int?** | page number to query | [optional]  |
+| **size** | **int?** | amount of result by page | [optional]  |
 
 ### Return type
 
@@ -173,7 +211,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findorganizationbyid"></a>
+<a id="findorganizationbyid"></a>
 # **FindOrganizationById**
 > Organization FindOrganizationById (string organizationId)
 
@@ -209,8 +247,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.FindOrganizationById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.FindOrganizationById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -218,11 +256,31 @@ namespace Example
 }
 ```
 
+#### Using the FindOrganizationByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the details of an Organization
+    ApiResponse<Organization> response = apiInstance.FindOrganizationByIdWithHttpInfo(organizationId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.FindOrganizationByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
 
 ### Return type
 
@@ -246,7 +304,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getallpermissions"></a>
+<a id="getallpermissions"></a>
 # **GetAllPermissions**
 > List&lt;ComponentRolePermissions&gt; GetAllPermissions ()
 
@@ -281,8 +339,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.GetAllPermissions: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.GetAllPermissions: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -290,9 +348,28 @@ namespace Example
 }
 ```
 
+#### Using the GetAllPermissionsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get all permissions per components
+    ApiResponse<List<ComponentRolePermissions>> response = apiInstance.GetAllPermissionsWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.GetAllPermissionsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**List&lt;ComponentRolePermissions&gt;**](ComponentRolePermissions.md)
@@ -314,7 +391,7 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getorganizationaccesscontrol"></a>
+<a id="getorganizationaccesscontrol"></a>
 # **GetOrganizationAccessControl**
 > OrganizationAccessControl GetOrganizationAccessControl (string organizationId, string identityId)
 
@@ -351,8 +428,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.GetOrganizationAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.GetOrganizationAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -360,12 +437,32 @@ namespace Example
 }
 ```
 
+#### Using the GetOrganizationAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a control access for the Organization
+    ApiResponse<OrganizationAccessControl> response = apiInstance.GetOrganizationAccessControlWithHttpInfo(organizationId, identityId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.GetOrganizationAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **identityId** | **string**| the User identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **identityId** | **string** | the User identifier |  |
 
 ### Return type
 
@@ -389,7 +486,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getorganizationpermissions"></a>
+<a id="getorganizationpermissions"></a>
 # **GetOrganizationPermissions**
 > List&lt;string&gt; GetOrganizationPermissions (string organizationId, string role)
 
@@ -426,8 +523,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.GetOrganizationPermissions: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.GetOrganizationPermissions: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -435,12 +532,32 @@ namespace Example
 }
 ```
 
+#### Using the GetOrganizationPermissionsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Organization permissions by given role
+    ApiResponse<List<string>> response = apiInstance.GetOrganizationPermissionsWithHttpInfo(organizationId, role);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.GetOrganizationPermissionsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **role** | **string**| the Role | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **role** | **string** | the Role |  |
 
 ### Return type
 
@@ -463,7 +580,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getorganizationsecurity"></a>
+<a id="getorganizationsecurity"></a>
 # **GetOrganizationSecurity**
 > OrganizationSecurity GetOrganizationSecurity (string organizationId)
 
@@ -499,8 +616,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.GetOrganizationSecurity: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.GetOrganizationSecurity: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -508,11 +625,31 @@ namespace Example
 }
 ```
 
+#### Using the GetOrganizationSecurityWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Organization security information
+    ApiResponse<OrganizationSecurity> response = apiInstance.GetOrganizationSecurityWithHttpInfo(organizationId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.GetOrganizationSecurityWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
 
 ### Return type
 
@@ -536,7 +673,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getorganizationsecurityusers"></a>
+<a id="getorganizationsecurityusers"></a>
 # **GetOrganizationSecurityUsers**
 > List&lt;string&gt; GetOrganizationSecurityUsers (string organizationId)
 
@@ -572,8 +709,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.GetOrganizationSecurityUsers: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.GetOrganizationSecurityUsers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -581,11 +718,31 @@ namespace Example
 }
 ```
 
+#### Using the GetOrganizationSecurityUsersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Organization security users list
+    ApiResponse<List<string>> response = apiInstance.GetOrganizationSecurityUsersWithHttpInfo(organizationId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.GetOrganizationSecurityUsersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| The Organization identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | The Organization identifier |  |
 
 ### Return type
 
@@ -609,80 +766,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="importorganization"></a>
-# **ImportOrganization**
-> Organization ImportOrganization (Organization organization)
-
-Import an organization
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class ImportOrganizationExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new OrganizationApi(config);
-            var organization = new Organization(); // Organization | the Organization to import
-
-            try
-            {
-                // Import an organization
-                Organization result = apiInstance.ImportOrganization(organization);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrganizationApi.ImportOrganization: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | [**Organization**](Organization.md)| the Organization to import | 
-
-### Return type
-
-[**Organization**](Organization.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/yaml
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | the Organization details |  -  |
-| **400** | Bad request |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="registerorganization"></a>
+<a id="registerorganization"></a>
 # **RegisterOrganization**
 > Organization RegisterOrganization (Organization organization)
 
@@ -718,8 +802,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.RegisterOrganization: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.RegisterOrganization: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -727,11 +811,31 @@ namespace Example
 }
 ```
 
+#### Using the RegisterOrganizationWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Register a new organization
+    ApiResponse<Organization> response = apiInstance.RegisterOrganizationWithHttpInfo(organization);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.RegisterOrganizationWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | [**Organization**](Organization.md)| the Organization to register | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organization** | [**Organization**](Organization.md) | the Organization to register |  |
 
 ### Return type
 
@@ -755,7 +859,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="removeorganizationaccesscontrol"></a>
+<a id="removeorganizationaccesscontrol"></a>
 # **RemoveOrganizationAccessControl**
 > void RemoveOrganizationAccessControl (string organizationId, string identityId)
 
@@ -791,8 +895,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.RemoveOrganizationAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.RemoveOrganizationAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -800,12 +904,29 @@ namespace Example
 }
 ```
 
+#### Using the RemoveOrganizationAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove the specified access from the given Organization
+    apiInstance.RemoveOrganizationAccessControlWithHttpInfo(organizationId, identityId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.RemoveOrganizationAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **identityId** | **string**| the User identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **identityId** | **string** | the User identifier |  |
 
 ### Return type
 
@@ -829,7 +950,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="setorganizationdefaultsecurity"></a>
+<a id="setorganizationdefaultsecurity"></a>
 # **SetOrganizationDefaultSecurity**
 > OrganizationSecurity SetOrganizationDefaultSecurity (string organizationId, OrganizationRole organizationRole)
 
@@ -856,7 +977,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
-            var organizationRole = new OrganizationRole(); // OrganizationRole | the new Organization default security.
+            var organizationRole = new OrganizationRole(); // OrganizationRole | This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization.
 
             try
             {
@@ -866,8 +987,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.SetOrganizationDefaultSecurity: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.SetOrganizationDefaultSecurity: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -875,12 +996,32 @@ namespace Example
 }
 ```
 
+#### Using the SetOrganizationDefaultSecurityWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set the Organization default security
+    ApiResponse<OrganizationSecurity> response = apiInstance.SetOrganizationDefaultSecurityWithHttpInfo(organizationId, organizationRole);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.SetOrganizationDefaultSecurityWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **organizationRole** | [**OrganizationRole**](OrganizationRole.md)| the new Organization default security. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **organizationRole** | [**OrganizationRole**](OrganizationRole.md) | This change the organization default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the organization. |  |
 
 ### Return type
 
@@ -904,7 +1045,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="unregisterorganization"></a>
+<a id="unregisterorganization"></a>
 # **UnregisterOrganization**
 > void UnregisterOrganization (string organizationId)
 
@@ -939,8 +1080,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.UnregisterOrganization: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.UnregisterOrganization: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -948,11 +1089,28 @@ namespace Example
 }
 ```
 
+#### Using the UnregisterOrganizationWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Unregister an organization
+    apiInstance.UnregisterOrganizationWithHttpInfo(organizationId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.UnregisterOrganizationWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
 
 ### Return type
 
@@ -976,7 +1134,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateorganization"></a>
+<a id="updateorganization"></a>
 # **UpdateOrganization**
 > Organization UpdateOrganization (string organizationId, Organization organization)
 
@@ -1003,7 +1161,7 @@ namespace Example
 
             var apiInstance = new OrganizationApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
-            var organization = new Organization(); // Organization | the new Organization details
+            var organization = new Organization(); // Organization | the new Organization details. This endpoint can't be used to update security
 
             try
             {
@@ -1013,8 +1171,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.UpdateOrganization: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.UpdateOrganization: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1022,12 +1180,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateOrganizationWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update an Organization
+    ApiResponse<Organization> response = apiInstance.UpdateOrganizationWithHttpInfo(organizationId, organization);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.UpdateOrganizationWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **organization** | [**Organization**](Organization.md)| the new Organization details | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **organization** | [**Organization**](Organization.md) | the new Organization details. This endpoint can&#39;t be used to update security |  |
 
 ### Return type
 
@@ -1052,7 +1230,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateorganizationaccesscontrol"></a>
+<a id="updateorganizationaccesscontrol"></a>
 # **UpdateOrganizationAccessControl**
 > OrganizationAccessControl UpdateOrganizationAccessControl (string organizationId, string identityId, OrganizationRole organizationRole)
 
@@ -1090,8 +1268,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.UpdateOrganizationAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.UpdateOrganizationAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1099,13 +1277,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateOrganizationAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update the specified access to User for an Organization
+    ApiResponse<OrganizationAccessControl> response = apiInstance.UpdateOrganizationAccessControlWithHttpInfo(organizationId, identityId, organizationRole);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.UpdateOrganizationAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **identityId** | **string**| the User identifier | 
- **organizationRole** | [**OrganizationRole**](OrganizationRole.md)| The new Organization Access Control | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **identityId** | **string** | the User identifier |  |
+| **organizationRole** | [**OrganizationRole**](OrganizationRole.md) | The new Organization Access Control |  |
 
 ### Return type
 
@@ -1129,7 +1327,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatesolutionscontainerregistrybyorganizationid"></a>
+<a id="updatesolutionscontainerregistrybyorganizationid"></a>
 # **UpdateSolutionsContainerRegistryByOrganizationId**
 > OrganizationService UpdateSolutionsContainerRegistryByOrganizationId (string organizationId, OrganizationService organizationService)
 
@@ -1166,8 +1364,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.UpdateSolutionsContainerRegistryByOrganizationId: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.UpdateSolutionsContainerRegistryByOrganizationId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1175,12 +1373,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateSolutionsContainerRegistryByOrganizationIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update the solutions container registry configuration for the Organization specified
+    ApiResponse<OrganizationService> response = apiInstance.UpdateSolutionsContainerRegistryByOrganizationIdWithHttpInfo(organizationId, organizationService);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.UpdateSolutionsContainerRegistryByOrganizationIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **organizationService** | [**OrganizationService**](OrganizationService.md)| the new solutions container registry configuration to use | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **organizationService** | [**OrganizationService**](OrganizationService.md) | the new solutions container registry configuration to use |  |
 
 ### Return type
 
@@ -1204,7 +1422,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatestoragebyorganizationid"></a>
+<a id="updatestoragebyorganizationid"></a>
 # **UpdateStorageByOrganizationId**
 > OrganizationService UpdateStorageByOrganizationId (string organizationId, OrganizationService organizationService)
 
@@ -1241,8 +1459,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.UpdateStorageByOrganizationId: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.UpdateStorageByOrganizationId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1250,12 +1468,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateStorageByOrganizationIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update storage configuration for the Organization specified
+    ApiResponse<OrganizationService> response = apiInstance.UpdateStorageByOrganizationIdWithHttpInfo(organizationId, organizationService);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.UpdateStorageByOrganizationIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **organizationService** | [**OrganizationService**](OrganizationService.md)| the new Storage configuration to use | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **organizationService** | [**OrganizationService**](OrganizationService.md) | the new Storage configuration to use |  |
 
 ### Return type
 
@@ -1279,7 +1517,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatetenantcredentialsbyorganizationid"></a>
+<a id="updatetenantcredentialsbyorganizationid"></a>
 # **UpdateTenantCredentialsByOrganizationId**
 > Dictionary&lt;string, Object&gt; UpdateTenantCredentialsByOrganizationId (string organizationId, Dictionary<string, Object> requestBody)
 
@@ -1316,8 +1554,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationApi.UpdateTenantCredentialsByOrganizationId: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationApi.UpdateTenantCredentialsByOrganizationId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1325,12 +1563,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateTenantCredentialsByOrganizationIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update tenant credentials for the Organization specified
+    ApiResponse<Dictionary<string, Object>> response = apiInstance.UpdateTenantCredentialsByOrganizationIdWithHttpInfo(organizationId, requestBody);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationApi.UpdateTenantCredentialsByOrganizationIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **requestBody** | [**Dictionary&lt;string, Object&gt;**](Object.md)| the new Tenant Credentials to use | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **requestBody** | [**Dictionary&lt;string, Object&gt;**](Object.md) | the new Tenant Credentials to use |  |
 
 ### Return type
 

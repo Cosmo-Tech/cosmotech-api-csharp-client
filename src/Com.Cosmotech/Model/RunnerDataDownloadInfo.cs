@@ -30,7 +30,7 @@ namespace Com.Cosmotech.Model
     /// Runner data download job info
     /// </summary>
     [DataContract(Name = "RunnerDataDownloadInfo")]
-    public partial class RunnerDataDownloadInfo : IEquatable<RunnerDataDownloadInfo>, IValidatableObject
+    public partial class RunnerDataDownloadInfo : IValidatableObject
     {
 
         /// <summary>
@@ -86,62 +86,11 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="input">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object input)
-        {
-            return this.Equals(input as RunnerDataDownloadInfo);
-        }
-
-        /// <summary>
-        /// Returns true if RunnerDataDownloadInfo instances are equal
-        /// </summary>
-        /// <param name="input">Instance of RunnerDataDownloadInfo to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(RunnerDataDownloadInfo input)
-        {
-            if (input == null)
-            {
-                return false;
-            }
-            return 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.State == input.State ||
-                    this.State.Equals(input.State)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.State.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

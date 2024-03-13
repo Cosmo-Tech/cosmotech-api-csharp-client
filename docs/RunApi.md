@@ -2,16 +2,15 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**DeleteRun**](RunApi.md#deleterun) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id} | Delete a run
-[**GetRun**](RunApi.md#getrun) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id} | Get the details of a run
-[**GetRunLogs**](RunApi.md#getrunlogs) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/logs | get the logs for the Run
-[**GetRunStatus**](RunApi.md#getrunstatus) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/status | get the status for the Run
-[**ListRuns**](RunApi.md#listruns) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs | get the list of Runs for the Runner
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**DeleteRun**](RunApi.md#deleterun) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id} | Delete a run |
+| [**GetRun**](RunApi.md#getrun) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id} | Get the details of a run |
+| [**GetRunLogs**](RunApi.md#getrunlogs) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/logs | get the logs for the Run |
+| [**GetRunStatus**](RunApi.md#getrunstatus) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/status | get the status for the Run |
+| [**ListRuns**](RunApi.md#listruns) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs | get the list of Runs for the Runner |
 
-
-<a name="deleterun"></a>
+<a id="deleterun"></a>
 # **DeleteRun**
 > void DeleteRun (string organizationId, string workspaceId, string runnerId, string runId)
 
@@ -49,8 +48,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunApi.DeleteRun: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling RunApi.DeleteRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -58,14 +57,31 @@ namespace Example
 }
 ```
 
+#### Using the DeleteRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a run
+    apiInstance.DeleteRunWithHttpInfo(organizationId, workspaceId, runnerId, runId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RunApi.DeleteRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **runnerId** | **string**| the Runner identifier | 
- **runId** | **string**| the Run identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **runnerId** | **string** | the Runner identifier |  |
+| **runId** | **string** | the Run identifier |  |
 
 ### Return type
 
@@ -90,7 +106,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getrun"></a>
+<a id="getrun"></a>
 # **GetRun**
 > Run GetRun (string organizationId, string workspaceId, string runnerId, string runId)
 
@@ -129,8 +145,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunApi.GetRun: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling RunApi.GetRun: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -138,14 +154,34 @@ namespace Example
 }
 ```
 
+#### Using the GetRunWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the details of a run
+    ApiResponse<Run> response = apiInstance.GetRunWithHttpInfo(organizationId, workspaceId, runnerId, runId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RunApi.GetRunWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **runnerId** | **string**| the Runner identifier | 
- **runId** | **string**| the Run identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **runnerId** | **string** | the Runner identifier |  |
+| **runId** | **string** | the Run identifier |  |
 
 ### Return type
 
@@ -169,7 +205,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getrunlogs"></a>
+<a id="getrunlogs"></a>
 # **GetRunLogs**
 > RunLogs GetRunLogs (string organizationId, string workspaceId, string runnerId, string runId)
 
@@ -208,8 +244,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunApi.GetRunLogs: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling RunApi.GetRunLogs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -217,14 +253,34 @@ namespace Example
 }
 ```
 
+#### Using the GetRunLogsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get the logs for the Run
+    ApiResponse<RunLogs> response = apiInstance.GetRunLogsWithHttpInfo(organizationId, workspaceId, runnerId, runId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RunApi.GetRunLogsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **runnerId** | **string**| the Runner identifier | 
- **runId** | **string**| the Run identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **runnerId** | **string** | the Runner identifier |  |
+| **runId** | **string** | the Run identifier |  |
 
 ### Return type
 
@@ -247,7 +303,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getrunstatus"></a>
+<a id="getrunstatus"></a>
 # **GetRunStatus**
 > RunStatus GetRunStatus (string organizationId, string workspaceId, string runnerId, string runId)
 
@@ -286,8 +342,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunApi.GetRunStatus: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling RunApi.GetRunStatus: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -295,14 +351,34 @@ namespace Example
 }
 ```
 
+#### Using the GetRunStatusWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get the status for the Run
+    ApiResponse<RunStatus> response = apiInstance.GetRunStatusWithHttpInfo(organizationId, workspaceId, runnerId, runId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RunApi.GetRunStatusWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **runnerId** | **string**| the Runner identifier | 
- **runId** | **string**| the Run identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **runnerId** | **string** | the Runner identifier |  |
+| **runId** | **string** | the Run identifier |  |
 
 ### Return type
 
@@ -325,7 +401,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="listruns"></a>
+<a id="listruns"></a>
 # **ListRuns**
 > List&lt;Run&gt; ListRuns (string organizationId, string workspaceId, string runnerId, int? page = null, int? size = null)
 
@@ -365,8 +441,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunApi.ListRuns: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling RunApi.ListRuns: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -374,15 +450,35 @@ namespace Example
 }
 ```
 
+#### Using the ListRunsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get the list of Runs for the Runner
+    ApiResponse<List<Run>> response = apiInstance.ListRunsWithHttpInfo(organizationId, workspaceId, runnerId, page, size);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RunApi.ListRunsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **runnerId** | **string**| the Runner identifier | 
- **page** | **int?**| page number to query | [optional] 
- **size** | **int?**| amount of result by page | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **runnerId** | **string** | the Runner identifier |  |
+| **page** | **int?** | page number to query | [optional]  |
+| **size** | **int?** | amount of result by page | [optional]  |
 
 ### Return type
 

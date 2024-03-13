@@ -56,7 +56,6 @@ namespace Com.Cosmotech.Model
         /// </summary>
         [EnumMember(Value = "Unknown")]
         Unknown = 4
-
     }
 
 }
