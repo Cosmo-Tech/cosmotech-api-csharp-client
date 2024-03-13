@@ -26,8 +26,8 @@ Name | Type | Description | Notes
 **RunSizing** | [**RunnerResourceSizing**](RunnerResourceSizing.md) |  | [optional] 
 **ParametersValues** | [**List&lt;RunnerRunTemplateParameterValue&gt;**](RunnerRunTemplateParameterValue.md) | the list of Solution Run Template parameters values | [optional] 
 **LastRun** | [**RunnerLastRun**](RunnerLastRun.md) |  | [optional] 
-**ParentLastRun** | [**RunnerLastRun**](RunnerLastRun.md) |  | [optional] 
-**RootLastRun** | [**RunnerLastRun**](RunnerLastRun.md) |  | [optional] 
+**ParentLastRun** | [**RunnerParentLastRun**](RunnerParentLastRun.md) |  | [optional] 
+**RootLastRun** | [**RunnerRootLastRun**](RunnerRootLastRun.md) |  | [optional] 
 **ValidationStatus** | **RunnerValidationStatus** |  | [optional] 
 **Security** | [**RunnerSecurity**](RunnerSecurity.md) |  | [optional] 
 
