@@ -2,19 +2,20 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-| Method | HTTP request | Description |
-|--------|--------------|-------------|
-| [**CreateValidator**](ValidatorApi.md#createvalidator) | **POST** /organizations/{organization_id}/datasets/validators | Register a new validator |
-| [**CreateValidatorRun**](ValidatorApi.md#createvalidatorrun) | **POST** /organizations/{organization_id}/datasets/validators/{validator_id}/history | Register a new validator run |
-| [**DeleteValidator**](ValidatorApi.md#deletevalidator) | **DELETE** /organizations/{organization_id}/datasets/validators/{validator_id} | Delete a validator |
-| [**DeleteValidatorRun**](ValidatorApi.md#deletevalidatorrun) | **DELETE** /organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id} | Delete a validator run |
-| [**FindAllValidatorRuns**](ValidatorApi.md#findallvalidatorruns) | **GET** /organizations/{organization_id}/datasets/validators/{validator_id}/history | List all Validator Runs |
-| [**FindAllValidators**](ValidatorApi.md#findallvalidators) | **GET** /organizations/{organization_id}/datasets/validators | List all Validators |
-| [**FindValidatorById**](ValidatorApi.md#findvalidatorbyid) | **GET** /organizations/{organization_id}/datasets/validators/{validator_id} | Get the details of a validator |
-| [**FindValidatorRunById**](ValidatorApi.md#findvalidatorrunbyid) | **GET** /organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id} | Get the details of a validator run |
-| [**RunValidator**](ValidatorApi.md#runvalidator) | **POST** /organizations/{organization_id}/datasets/validators/{validator_id}/run | Run a Validator |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**CreateValidator**](ValidatorApi.md#createvalidator) | **POST** /organizations/{organization_id}/datasets/validators | Register a new validator
+[**CreateValidatorRun**](ValidatorApi.md#createvalidatorrun) | **POST** /organizations/{organization_id}/datasets/validators/{validator_id}/history | Register a new validator run
+[**DeleteValidator**](ValidatorApi.md#deletevalidator) | **DELETE** /organizations/{organization_id}/datasets/validators/{validator_id} | Delete a validator
+[**DeleteValidatorRun**](ValidatorApi.md#deletevalidatorrun) | **DELETE** /organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id} | Delete a validator run
+[**FindAllValidatorRuns**](ValidatorApi.md#findallvalidatorruns) | **GET** /organizations/{organization_id}/datasets/validators/{validator_id}/history | List all Validator Runs
+[**FindAllValidators**](ValidatorApi.md#findallvalidators) | **GET** /organizations/{organization_id}/datasets/validators | List all Validators
+[**FindValidatorById**](ValidatorApi.md#findvalidatorbyid) | **GET** /organizations/{organization_id}/datasets/validators/{validator_id} | Get the details of a validator
+[**FindValidatorRunById**](ValidatorApi.md#findvalidatorrunbyid) | **GET** /organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id} | Get the details of a validator run
+[**RunValidator**](ValidatorApi.md#runvalidator) | **POST** /organizations/{organization_id}/datasets/validators/{validator_id}/run | Run a Validator
 
-<a id="createvalidator"></a>
+
+<a name="createvalidator"></a>
 # **CreateValidator**
 > Validator CreateValidator (string organizationId, Validator validator)
 
@@ -51,8 +52,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ValidatorApi.CreateValidator: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling ValidatorApi.CreateValidator: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -60,32 +61,12 @@ namespace Example
 }
 ```
 
-#### Using the CreateValidatorWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Register a new validator
-    ApiResponse<Validator> response = apiInstance.CreateValidatorWithHttpInfo(organizationId, validator);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ValidatorApi.CreateValidatorWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **validator** | [**Validator**](Validator.md) | the Validator to create |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **validator** | [**Validator**](Validator.md)| the Validator to create | 
 
 ### Return type
 
@@ -109,7 +90,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createvalidatorrun"></a>
+<a name="createvalidatorrun"></a>
 # **CreateValidatorRun**
 > ValidatorRun CreateValidatorRun (string organizationId, string validatorId, ValidatorRun validatorRun)
 
@@ -147,8 +128,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ValidatorApi.CreateValidatorRun: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling ValidatorApi.CreateValidatorRun: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -156,33 +137,13 @@ namespace Example
 }
 ```
 
-#### Using the CreateValidatorRunWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Register a new validator run
-    ApiResponse<ValidatorRun> response = apiInstance.CreateValidatorRunWithHttpInfo(organizationId, validatorId, validatorRun);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ValidatorApi.CreateValidatorRunWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **validatorId** | **string** | the ValidatorRun identifier |  |
-| **validatorRun** | [**ValidatorRun**](ValidatorRun.md) | the Validator Run to create |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **validatorId** | **string**| the ValidatorRun identifier | 
+ **validatorRun** | [**ValidatorRun**](ValidatorRun.md)| the Validator Run to create | 
 
 ### Return type
 
@@ -206,7 +167,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletevalidator"></a>
+<a name="deletevalidator"></a>
 # **DeleteValidator**
 > void DeleteValidator (string organizationId, string validatorId)
 
@@ -242,8 +203,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ValidatorApi.DeleteValidator: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling ValidatorApi.DeleteValidator: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -251,29 +212,12 @@ namespace Example
 }
 ```
 
-#### Using the DeleteValidatorWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Delete a validator
-    apiInstance.DeleteValidatorWithHttpInfo(organizationId, validatorId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ValidatorApi.DeleteValidatorWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **validatorId** | **string** | the Validator identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **validatorId** | **string**| the Validator identifier | 
 
 ### Return type
 
@@ -297,7 +241,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletevalidatorrun"></a>
+<a name="deletevalidatorrun"></a>
 # **DeleteValidatorRun**
 > void DeleteValidatorRun (string organizationId, string validatorId, string validatorrunId)
 
@@ -334,8 +278,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ValidatorApi.DeleteValidatorRun: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling ValidatorApi.DeleteValidatorRun: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -343,30 +287,13 @@ namespace Example
 }
 ```
 
-#### Using the DeleteValidatorRunWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Delete a validator run
-    apiInstance.DeleteValidatorRunWithHttpInfo(organizationId, validatorId, validatorrunId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ValidatorApi.DeleteValidatorRunWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **validatorId** | **string** | the Validator identifier |  |
-| **validatorrunId** | **string** | the Validator Run identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **validatorId** | **string**| the Validator identifier | 
+ **validatorrunId** | **string**| the Validator Run identifier | 
 
 ### Return type
 
@@ -390,7 +317,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="findallvalidatorruns"></a>
+<a name="findallvalidatorruns"></a>
 # **FindAllValidatorRuns**
 > List&lt;ValidatorRun&gt; FindAllValidatorRuns (string organizationId, string validatorId)
 
@@ -427,8 +354,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ValidatorApi.FindAllValidatorRuns: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling ValidatorApi.FindAllValidatorRuns: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -436,32 +363,12 @@ namespace Example
 }
 ```
 
-#### Using the FindAllValidatorRunsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // List all Validator Runs
-    ApiResponse<List<ValidatorRun>> response = apiInstance.FindAllValidatorRunsWithHttpInfo(organizationId, validatorId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ValidatorApi.FindAllValidatorRunsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **validatorId** | **string** | the ValidatorRun identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **validatorId** | **string**| the ValidatorRun identifier | 
 
 ### Return type
 
@@ -484,7 +391,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="findallvalidators"></a>
+<a name="findallvalidators"></a>
 # **FindAllValidators**
 > List&lt;Validator&gt; FindAllValidators (string organizationId)
 
@@ -520,8 +427,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ValidatorApi.FindAllValidators: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling ValidatorApi.FindAllValidators: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -529,31 +436,11 @@ namespace Example
 }
 ```
 
-#### Using the FindAllValidatorsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // List all Validators
-    ApiResponse<List<Validator>> response = apiInstance.FindAllValidatorsWithHttpInfo(organizationId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ValidatorApi.FindAllValidatorsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
 
 ### Return type
 
@@ -576,7 +463,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="findvalidatorbyid"></a>
+<a name="findvalidatorbyid"></a>
 # **FindValidatorById**
 > Validator FindValidatorById (string organizationId, string validatorId)
 
@@ -613,8 +500,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ValidatorApi.FindValidatorById: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling ValidatorApi.FindValidatorById: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -622,32 +509,12 @@ namespace Example
 }
 ```
 
-#### Using the FindValidatorByIdWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the details of a validator
-    ApiResponse<Validator> response = apiInstance.FindValidatorByIdWithHttpInfo(organizationId, validatorId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ValidatorApi.FindValidatorByIdWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **validatorId** | **string** | the Validator identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **validatorId** | **string**| the Validator identifier | 
 
 ### Return type
 
@@ -671,7 +538,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="findvalidatorrunbyid"></a>
+<a name="findvalidatorrunbyid"></a>
 # **FindValidatorRunById**
 > ValidatorRun FindValidatorRunById (string organizationId, string validatorId, string validatorrunId)
 
@@ -709,8 +576,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ValidatorApi.FindValidatorRunById: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling ValidatorApi.FindValidatorRunById: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -718,33 +585,13 @@ namespace Example
 }
 ```
 
-#### Using the FindValidatorRunByIdWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the details of a validator run
-    ApiResponse<ValidatorRun> response = apiInstance.FindValidatorRunByIdWithHttpInfo(organizationId, validatorId, validatorrunId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ValidatorApi.FindValidatorRunByIdWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **validatorId** | **string** | the Validator identifier |  |
-| **validatorrunId** | **string** | the Validator Run identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **validatorId** | **string**| the Validator identifier | 
+ **validatorrunId** | **string**| the Validator Run identifier | 
 
 ### Return type
 
@@ -768,7 +615,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="runvalidator"></a>
+<a name="runvalidator"></a>
 # **RunValidator**
 > ValidatorRun RunValidator (string organizationId, string validatorId, ValidatorRun validatorRun)
 
@@ -806,8 +653,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ValidatorApi.RunValidator: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling ValidatorApi.RunValidator: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -815,33 +662,13 @@ namespace Example
 }
 ```
 
-#### Using the RunValidatorWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Run a Validator
-    ApiResponse<ValidatorRun> response = apiInstance.RunValidatorWithHttpInfo(organizationId, validatorId, validatorRun);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ValidatorApi.RunValidatorWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **validatorId** | **string** | the ValidatorRun identifier |  |
-| **validatorRun** | [**ValidatorRun**](ValidatorRun.md) | the Validator to run |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **validatorId** | **string**| the ValidatorRun identifier | 
+ **validatorRun** | [**ValidatorRun**](ValidatorRun.md)| the Validator to run | 
 
 ### Return type
 
