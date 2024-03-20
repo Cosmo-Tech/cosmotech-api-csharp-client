@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Workspace name. This name is display in the sample webApp | 
 **Description** | **string** | the Workspace description | [optional] 
 **LinkedDatasetIdList** | **List&lt;string&gt;** | list of dataset linked to this dataset | [optional] 
-**VarVersion** | **string** | the Workspace version MAJOR.MINOR.PATCH. | [optional] 
+**_Version** | **string** | the Workspace version MAJOR.MINOR.PATCH. | [optional] 
 **Tags** | **List&lt;string&gt;** | the list of tags | [optional] 
 **OwnerId** | **string** | the user id which own this workspace. set by the API from Authentification service receved id | [optional] [readonly] 
 **Solution** | [**WorkspaceSolution**](WorkspaceSolution.md) |  | 

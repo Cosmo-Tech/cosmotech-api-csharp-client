@@ -2,32 +2,33 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-| Method | HTTP request | Description |
-|--------|--------------|-------------|
-| [**AddOrReplaceParameterGroups**](SolutionApi.md#addorreplaceparametergroups) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Add Parameter Groups. Any item with the same ID will be overwritten |
-| [**AddOrReplaceParameters**](SolutionApi.md#addorreplaceparameters) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameters | Add Parameters. Any item with the same ID will be overwritten |
-| [**AddOrReplaceRunTemplates**](SolutionApi.md#addorreplaceruntemplates) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Add Run Templates. Any item with the same ID will be overwritten |
-| [**AddSolutionAccessControl**](SolutionApi.md#addsolutionaccesscontrol) | **POST** /organizations/{organization_id}/solutions/{solution_id}/security/access | Add a control access to the Solution |
-| [**CreateSolution**](SolutionApi.md#createsolution) | **POST** /organizations/{organization_id}/solutions | Register a new solution |
-| [**DeleteSolution**](SolutionApi.md#deletesolution) | **DELETE** /organizations/{organization_id}/solutions/{solution_id} | Delete a solution |
-| [**DeleteSolutionRunTemplate**](SolutionApi.md#deletesolutionruntemplate) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Remove the specified Solution Run Template |
-| [**DownloadRunTemplateHandler**](SolutionApi.md#downloadruntemplatehandler) | **GET** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download | Download a Run Template step handler zip file |
-| [**FindAllSolutions**](SolutionApi.md#findallsolutions) | **GET** /organizations/{organization_id}/solutions | List all Solutions |
-| [**FindSolutionById**](SolutionApi.md#findsolutionbyid) | **GET** /organizations/{organization_id}/solutions/{solution_id} | Get the details of a solution |
-| [**GetSolutionAccessControl**](SolutionApi.md#getsolutionaccesscontrol) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Get a control access for the Solution |
-| [**GetSolutionSecurity**](SolutionApi.md#getsolutionsecurity) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security | Get the Solution security information |
-| [**GetSolutionSecurityUsers**](SolutionApi.md#getsolutionsecurityusers) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/users | Get the Solution security users list |
-| [**RemoveAllRunTemplates**](SolutionApi.md#removeallruntemplates) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Remove all Run Templates from the Solution specified |
-| [**RemoveAllSolutionParameterGroups**](SolutionApi.md#removeallsolutionparametergroups) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Remove all Parameter Groups from the Solution specified |
-| [**RemoveAllSolutionParameters**](SolutionApi.md#removeallsolutionparameters) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameters | Remove all Parameters from the Solution specified |
-| [**RemoveSolutionAccessControl**](SolutionApi.md#removesolutionaccesscontrol) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Remove the specified access from the given Organization Solution |
-| [**SetSolutionDefaultSecurity**](SolutionApi.md#setsolutiondefaultsecurity) | **POST** /organizations/{organization_id}/solutions/{solution_id}/security/default | Set the Solution default security |
-| [**UpdateSolution**](SolutionApi.md#updatesolution) | **PATCH** /organizations/{organization_id}/solutions/{solution_id} | Update a solution |
-| [**UpdateSolutionAccessControl**](SolutionApi.md#updatesolutionaccesscontrol) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Update the specified access to User for a Solution |
-| [**UpdateSolutionRunTemplate**](SolutionApi.md#updatesolutionruntemplate) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Update the specified Solution Run Template |
-| [**UploadRunTemplateHandler**](SolutionApi.md#uploadruntemplatehandler) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload | Upload a Run Template step handler zip file |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**AddOrReplaceParameterGroups**](SolutionApi.md#addorreplaceparametergroups) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Add Parameter Groups. Any item with the same ID will be overwritten
+[**AddOrReplaceParameters**](SolutionApi.md#addorreplaceparameters) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameters | Add Parameters. Any item with the same ID will be overwritten
+[**AddOrReplaceRunTemplates**](SolutionApi.md#addorreplaceruntemplates) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Add Run Templates. Any item with the same ID will be overwritten
+[**AddSolutionAccessControl**](SolutionApi.md#addsolutionaccesscontrol) | **POST** /organizations/{organization_id}/solutions/{solution_id}/security/access | Add a control access to the Solution
+[**CreateSolution**](SolutionApi.md#createsolution) | **POST** /organizations/{organization_id}/solutions | Register a new solution
+[**DeleteSolution**](SolutionApi.md#deletesolution) | **DELETE** /organizations/{organization_id}/solutions/{solution_id} | Delete a solution
+[**DeleteSolutionRunTemplate**](SolutionApi.md#deletesolutionruntemplate) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Remove the specified Solution Run Template
+[**DownloadRunTemplateHandler**](SolutionApi.md#downloadruntemplatehandler) | **GET** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download | Download a Run Template step handler zip file
+[**FindAllSolutions**](SolutionApi.md#findallsolutions) | **GET** /organizations/{organization_id}/solutions | List all Solutions
+[**FindSolutionById**](SolutionApi.md#findsolutionbyid) | **GET** /organizations/{organization_id}/solutions/{solution_id} | Get the details of a solution
+[**GetSolutionAccessControl**](SolutionApi.md#getsolutionaccesscontrol) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Get a control access for the Solution
+[**GetSolutionSecurity**](SolutionApi.md#getsolutionsecurity) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security | Get the Solution security information
+[**GetSolutionSecurityUsers**](SolutionApi.md#getsolutionsecurityusers) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/users | Get the Solution security users list
+[**RemoveAllRunTemplates**](SolutionApi.md#removeallruntemplates) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Remove all Run Templates from the Solution specified
+[**RemoveAllSolutionParameterGroups**](SolutionApi.md#removeallsolutionparametergroups) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Remove all Parameter Groups from the Solution specified
+[**RemoveAllSolutionParameters**](SolutionApi.md#removeallsolutionparameters) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/parameters | Remove all Parameters from the Solution specified
+[**RemoveSolutionAccessControl**](SolutionApi.md#removesolutionaccesscontrol) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Remove the specified access from the given Organization Solution
+[**SetSolutionDefaultSecurity**](SolutionApi.md#setsolutiondefaultsecurity) | **POST** /organizations/{organization_id}/solutions/{solution_id}/security/default | Set the Solution default security
+[**UpdateSolution**](SolutionApi.md#updatesolution) | **PATCH** /organizations/{organization_id}/solutions/{solution_id} | Update a solution
+[**UpdateSolutionAccessControl**](SolutionApi.md#updatesolutionaccesscontrol) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Update the specified access to User for a Solution
+[**UpdateSolutionRunTemplate**](SolutionApi.md#updatesolutionruntemplate) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Update the specified Solution Run Template
+[**UploadRunTemplateHandler**](SolutionApi.md#uploadruntemplatehandler) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload | Upload a Run Template step handler zip file
 
-<a id="addorreplaceparametergroups"></a>
+
+<a name="addorreplaceparametergroups"></a>
 # **AddOrReplaceParameterGroups**
 > List&lt;RunTemplateParameterGroup&gt; AddOrReplaceParameterGroups (string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup)
 
@@ -65,8 +66,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.AddOrReplaceParameterGroups: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.AddOrReplaceParameterGroups: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -74,33 +75,13 @@ namespace Example
 }
 ```
 
-#### Using the AddOrReplaceParameterGroupsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Add Parameter Groups. Any item with the same ID will be overwritten
-    ApiResponse<List<RunTemplateParameterGroup>> response = apiInstance.AddOrReplaceParameterGroupsWithHttpInfo(organizationId, solutionId, runTemplateParameterGroup);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.AddOrReplaceParameterGroupsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **runTemplateParameterGroup** | [**List&lt;RunTemplateParameterGroup&gt;**](RunTemplateParameterGroup.md) | the Parameter Groups |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateParameterGroup** | [**List&lt;RunTemplateParameterGroup&gt;**](RunTemplateParameterGroup.md)| the Parameter Groups | 
 
 ### Return type
 
@@ -125,7 +106,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="addorreplaceparameters"></a>
+<a name="addorreplaceparameters"></a>
 # **AddOrReplaceParameters**
 > List&lt;RunTemplateParameter&gt; AddOrReplaceParameters (string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter)
 
@@ -163,8 +144,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.AddOrReplaceParameters: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.AddOrReplaceParameters: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -172,33 +153,13 @@ namespace Example
 }
 ```
 
-#### Using the AddOrReplaceParametersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Add Parameters. Any item with the same ID will be overwritten
-    ApiResponse<List<RunTemplateParameter>> response = apiInstance.AddOrReplaceParametersWithHttpInfo(organizationId, solutionId, runTemplateParameter);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.AddOrReplaceParametersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **runTemplateParameter** | [**List&lt;RunTemplateParameter&gt;**](RunTemplateParameter.md) | the Parameters |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateParameter** | [**List&lt;RunTemplateParameter&gt;**](RunTemplateParameter.md)| the Parameters | 
 
 ### Return type
 
@@ -223,7 +184,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="addorreplaceruntemplates"></a>
+<a name="addorreplaceruntemplates"></a>
 # **AddOrReplaceRunTemplates**
 > List&lt;RunTemplate&gt; AddOrReplaceRunTemplates (string organizationId, string solutionId, List<RunTemplate> runTemplate)
 
@@ -261,8 +222,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.AddOrReplaceRunTemplates: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.AddOrReplaceRunTemplates: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -270,33 +231,13 @@ namespace Example
 }
 ```
 
-#### Using the AddOrReplaceRunTemplatesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Add Run Templates. Any item with the same ID will be overwritten
-    ApiResponse<List<RunTemplate>> response = apiInstance.AddOrReplaceRunTemplatesWithHttpInfo(organizationId, solutionId, runTemplate);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.AddOrReplaceRunTemplatesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **runTemplate** | [**List&lt;RunTemplate&gt;**](RunTemplate.md) | the Run Templates |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplate** | [**List&lt;RunTemplate&gt;**](RunTemplate.md)| the Run Templates | 
 
 ### Return type
 
@@ -321,7 +262,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="addsolutionaccesscontrol"></a>
+<a name="addsolutionaccesscontrol"></a>
 # **AddSolutionAccessControl**
 > SolutionAccessControl AddSolutionAccessControl (string organizationId, string solutionId, SolutionAccessControl solutionAccessControl)
 
@@ -359,8 +300,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.AddSolutionAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.AddSolutionAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -368,33 +309,13 @@ namespace Example
 }
 ```
 
-#### Using the AddSolutionAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Add a control access to the Solution
-    ApiResponse<SolutionAccessControl> response = apiInstance.AddSolutionAccessControlWithHttpInfo(organizationId, solutionId, solutionAccessControl);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.AddSolutionAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **solutionAccessControl** | [**SolutionAccessControl**](SolutionAccessControl.md) | the new Solution security access to add. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **solutionAccessControl** | [**SolutionAccessControl**](SolutionAccessControl.md)| the new Solution security access to add. | 
 
 ### Return type
 
@@ -418,7 +339,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createsolution"></a>
+<a name="createsolution"></a>
 # **CreateSolution**
 > Solution CreateSolution (string organizationId, Solution solution)
 
@@ -455,8 +376,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.CreateSolution: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.CreateSolution: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -464,32 +385,12 @@ namespace Example
 }
 ```
 
-#### Using the CreateSolutionWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Register a new solution
-    ApiResponse<Solution> response = apiInstance.CreateSolutionWithHttpInfo(organizationId, solution);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.CreateSolutionWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solution** | [**Solution**](Solution.md) | the Solution to create |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solution** | [**Solution**](Solution.md)| the Solution to create | 
 
 ### Return type
 
@@ -513,7 +414,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletesolution"></a>
+<a name="deletesolution"></a>
 # **DeleteSolution**
 > void DeleteSolution (string organizationId, string solutionId)
 
@@ -549,8 +450,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.DeleteSolution: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.DeleteSolution: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -558,29 +459,12 @@ namespace Example
 }
 ```
 
-#### Using the DeleteSolutionWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Delete a solution
-    apiInstance.DeleteSolutionWithHttpInfo(organizationId, solutionId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.DeleteSolutionWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
 
 ### Return type
 
@@ -604,7 +488,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletesolutionruntemplate"></a>
+<a name="deletesolutionruntemplate"></a>
 # **DeleteSolutionRunTemplate**
 > void DeleteSolutionRunTemplate (string organizationId, string solutionId, string runTemplateId)
 
@@ -641,8 +525,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.DeleteSolutionRunTemplate: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.DeleteSolutionRunTemplate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -650,30 +534,13 @@ namespace Example
 }
 ```
 
-#### Using the DeleteSolutionRunTemplateWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Remove the specified Solution Run Template
-    apiInstance.DeleteSolutionRunTemplateWithHttpInfo(organizationId, solutionId, runTemplateId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.DeleteSolutionRunTemplateWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **runTemplateId** | **string** | the Run Template identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateId** | **string**| the Run Template identifier | 
 
 ### Return type
 
@@ -697,7 +564,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="downloadruntemplatehandler"></a>
+<a name="downloadruntemplatehandler"></a>
 # **DownloadRunTemplateHandler**
 > byte[] DownloadRunTemplateHandler (string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
 
@@ -726,7 +593,7 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var solutionId = "solutionId_example";  // string | the Solution identifier
             var runTemplateId = "runTemplateId_example";  // string | the Run Template identifier
-            var handlerId = new RunTemplateHandlerId(); // RunTemplateHandlerId | the Handler identifier
+            var handlerId = (RunTemplateHandlerId) "parameters_handler";  // RunTemplateHandlerId | the Handler identifier
 
             try
             {
@@ -736,8 +603,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.DownloadRunTemplateHandler: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.DownloadRunTemplateHandler: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -745,34 +612,14 @@ namespace Example
 }
 ```
 
-#### Using the DownloadRunTemplateHandlerWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Download a Run Template step handler zip file
-    ApiResponse<byte[]> response = apiInstance.DownloadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.DownloadRunTemplateHandlerWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **runTemplateId** | **string** | the Run Template identifier |  |
-| **handlerId** | [**RunTemplateHandlerId**](RunTemplateHandlerId.md) | the Handler identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateId** | **string**| the Run Template identifier | 
+ **handlerId** | **RunTemplateHandlerId**| the Handler identifier | 
 
 ### Return type
 
@@ -796,7 +643,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="findallsolutions"></a>
+<a name="findallsolutions"></a>
 # **FindAllSolutions**
 > List&lt;Solution&gt; FindAllSolutions (string organizationId, int? page = null, int? size = null)
 
@@ -834,8 +681,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.FindAllSolutions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.FindAllSolutions: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -843,33 +690,13 @@ namespace Example
 }
 ```
 
-#### Using the FindAllSolutionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // List all Solutions
-    ApiResponse<List<Solution>> response = apiInstance.FindAllSolutionsWithHttpInfo(organizationId, page, size);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.FindAllSolutionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **page** | **int?** | page number to query | [optional]  |
-| **size** | **int?** | amount of result by page | [optional]  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **page** | **int?**| page number to query | [optional] 
+ **size** | **int?**| amount of result by page | [optional] 
 
 ### Return type
 
@@ -892,7 +719,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="findsolutionbyid"></a>
+<a name="findsolutionbyid"></a>
 # **FindSolutionById**
 > Solution FindSolutionById (string organizationId, string solutionId)
 
@@ -929,8 +756,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.FindSolutionById: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.FindSolutionById: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -938,32 +765,12 @@ namespace Example
 }
 ```
 
-#### Using the FindSolutionByIdWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the details of a solution
-    ApiResponse<Solution> response = apiInstance.FindSolutionByIdWithHttpInfo(organizationId, solutionId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.FindSolutionByIdWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
 
 ### Return type
 
@@ -987,7 +794,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getsolutionaccesscontrol"></a>
+<a name="getsolutionaccesscontrol"></a>
 # **GetSolutionAccessControl**
 > SolutionAccessControl GetSolutionAccessControl (string organizationId, string solutionId, string identityId)
 
@@ -1025,8 +832,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.GetSolutionAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.GetSolutionAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1034,33 +841,13 @@ namespace Example
 }
 ```
 
-#### Using the GetSolutionAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get a control access for the Solution
-    ApiResponse<SolutionAccessControl> response = apiInstance.GetSolutionAccessControlWithHttpInfo(organizationId, solutionId, identityId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.GetSolutionAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **identityId** | **string** | the User identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **identityId** | **string**| the User identifier | 
 
 ### Return type
 
@@ -1084,7 +871,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getsolutionsecurity"></a>
+<a name="getsolutionsecurity"></a>
 # **GetSolutionSecurity**
 > SolutionSecurity GetSolutionSecurity (string organizationId, string solutionId)
 
@@ -1121,8 +908,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.GetSolutionSecurity: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.GetSolutionSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1130,32 +917,12 @@ namespace Example
 }
 ```
 
-#### Using the GetSolutionSecurityWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the Solution security information
-    ApiResponse<SolutionSecurity> response = apiInstance.GetSolutionSecurityWithHttpInfo(organizationId, solutionId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.GetSolutionSecurityWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
 
 ### Return type
 
@@ -1179,7 +946,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getsolutionsecurityusers"></a>
+<a name="getsolutionsecurityusers"></a>
 # **GetSolutionSecurityUsers**
 > List&lt;string&gt; GetSolutionSecurityUsers (string organizationId, string solutionId)
 
@@ -1216,8 +983,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.GetSolutionSecurityUsers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.GetSolutionSecurityUsers: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1225,32 +992,12 @@ namespace Example
 }
 ```
 
-#### Using the GetSolutionSecurityUsersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the Solution security users list
-    ApiResponse<List<string>> response = apiInstance.GetSolutionSecurityUsersWithHttpInfo(organizationId, solutionId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.GetSolutionSecurityUsersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
 
 ### Return type
 
@@ -1274,7 +1021,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="removeallruntemplates"></a>
+<a name="removeallruntemplates"></a>
 # **RemoveAllRunTemplates**
 > void RemoveAllRunTemplates (string organizationId, string solutionId)
 
@@ -1310,8 +1057,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.RemoveAllRunTemplates: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.RemoveAllRunTemplates: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1319,29 +1066,12 @@ namespace Example
 }
 ```
 
-#### Using the RemoveAllRunTemplatesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Remove all Run Templates from the Solution specified
-    apiInstance.RemoveAllRunTemplatesWithHttpInfo(organizationId, solutionId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.RemoveAllRunTemplatesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
 
 ### Return type
 
@@ -1365,7 +1095,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="removeallsolutionparametergroups"></a>
+<a name="removeallsolutionparametergroups"></a>
 # **RemoveAllSolutionParameterGroups**
 > void RemoveAllSolutionParameterGroups (string organizationId, string solutionId)
 
@@ -1401,8 +1131,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.RemoveAllSolutionParameterGroups: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.RemoveAllSolutionParameterGroups: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1410,29 +1140,12 @@ namespace Example
 }
 ```
 
-#### Using the RemoveAllSolutionParameterGroupsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Remove all Parameter Groups from the Solution specified
-    apiInstance.RemoveAllSolutionParameterGroupsWithHttpInfo(organizationId, solutionId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.RemoveAllSolutionParameterGroupsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
 
 ### Return type
 
@@ -1456,7 +1169,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="removeallsolutionparameters"></a>
+<a name="removeallsolutionparameters"></a>
 # **RemoveAllSolutionParameters**
 > void RemoveAllSolutionParameters (string organizationId, string solutionId)
 
@@ -1492,8 +1205,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.RemoveAllSolutionParameters: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.RemoveAllSolutionParameters: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1501,29 +1214,12 @@ namespace Example
 }
 ```
 
-#### Using the RemoveAllSolutionParametersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Remove all Parameters from the Solution specified
-    apiInstance.RemoveAllSolutionParametersWithHttpInfo(organizationId, solutionId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.RemoveAllSolutionParametersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
 
 ### Return type
 
@@ -1547,7 +1243,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="removesolutionaccesscontrol"></a>
+<a name="removesolutionaccesscontrol"></a>
 # **RemoveSolutionAccessControl**
 > void RemoveSolutionAccessControl (string organizationId, string solutionId, string identityId)
 
@@ -1584,8 +1280,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.RemoveSolutionAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.RemoveSolutionAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1593,30 +1289,13 @@ namespace Example
 }
 ```
 
-#### Using the RemoveSolutionAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Remove the specified access from the given Organization Solution
-    apiInstance.RemoveSolutionAccessControlWithHttpInfo(organizationId, solutionId, identityId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.RemoveSolutionAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **identityId** | **string** | the User identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **identityId** | **string**| the User identifier | 
 
 ### Return type
 
@@ -1640,7 +1319,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="setsolutiondefaultsecurity"></a>
+<a name="setsolutiondefaultsecurity"></a>
 # **SetSolutionDefaultSecurity**
 > SolutionSecurity SetSolutionDefaultSecurity (string organizationId, string solutionId, SolutionRole solutionRole)
 
@@ -1678,8 +1357,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.SetSolutionDefaultSecurity: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.SetSolutionDefaultSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1687,33 +1366,13 @@ namespace Example
 }
 ```
 
-#### Using the SetSolutionDefaultSecurityWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Set the Solution default security
-    ApiResponse<SolutionSecurity> response = apiInstance.SetSolutionDefaultSecurityWithHttpInfo(organizationId, solutionId, solutionRole);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.SetSolutionDefaultSecurityWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **solutionRole** | [**SolutionRole**](SolutionRole.md) | This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **solutionRole** | [**SolutionRole**](SolutionRole.md)| This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution. | 
 
 ### Return type
 
@@ -1737,7 +1396,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatesolution"></a>
+<a name="updatesolution"></a>
 # **UpdateSolution**
 > Solution UpdateSolution (string organizationId, string solutionId, Solution solution)
 
@@ -1775,8 +1434,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.UpdateSolution: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.UpdateSolution: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1784,33 +1443,13 @@ namespace Example
 }
 ```
 
-#### Using the UpdateSolutionWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update a solution
-    ApiResponse<Solution> response = apiInstance.UpdateSolutionWithHttpInfo(organizationId, solutionId, solution);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.UpdateSolutionWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **solution** | [**Solution**](Solution.md) | the new Solution details. This endpoint can&#39;t be used to update security |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **solution** | [**Solution**](Solution.md)| the new Solution details. This endpoint can&#39;t be used to update security | 
 
 ### Return type
 
@@ -1835,7 +1474,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatesolutionaccesscontrol"></a>
+<a name="updatesolutionaccesscontrol"></a>
 # **UpdateSolutionAccessControl**
 > SolutionAccessControl UpdateSolutionAccessControl (string organizationId, string solutionId, string identityId, SolutionRole solutionRole)
 
@@ -1874,8 +1513,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.UpdateSolutionAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.UpdateSolutionAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1883,34 +1522,14 @@ namespace Example
 }
 ```
 
-#### Using the UpdateSolutionAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update the specified access to User for a Solution
-    ApiResponse<SolutionAccessControl> response = apiInstance.UpdateSolutionAccessControlWithHttpInfo(organizationId, solutionId, identityId, solutionRole);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.UpdateSolutionAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **identityId** | **string** | the User identifier |  |
-| **solutionRole** | [**SolutionRole**](SolutionRole.md) | The new Solution Access Control |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **identityId** | **string**| the User identifier | 
+ **solutionRole** | [**SolutionRole**](SolutionRole.md)| The new Solution Access Control | 
 
 ### Return type
 
@@ -1934,7 +1553,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatesolutionruntemplate"></a>
+<a name="updatesolutionruntemplate"></a>
 # **UpdateSolutionRunTemplate**
 > List&lt;RunTemplate&gt; UpdateSolutionRunTemplate (string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate)
 
@@ -1973,8 +1592,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.UpdateSolutionRunTemplate: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.UpdateSolutionRunTemplate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1982,34 +1601,14 @@ namespace Example
 }
 ```
 
-#### Using the UpdateSolutionRunTemplateWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update the specified Solution Run Template
-    ApiResponse<List<RunTemplate>> response = apiInstance.UpdateSolutionRunTemplateWithHttpInfo(organizationId, solutionId, runTemplateId, runTemplate);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.UpdateSolutionRunTemplateWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **runTemplateId** | **string** | the Run Template identifier |  |
-| **runTemplate** | [**RunTemplate**](RunTemplate.md) | the Run Templates |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateId** | **string**| the Run Template identifier | 
+ **runTemplate** | [**RunTemplate**](RunTemplate.md)| the Run Templates | 
 
 ### Return type
 
@@ -2034,7 +1633,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="uploadruntemplatehandler"></a>
+<a name="uploadruntemplatehandler"></a>
 # **UploadRunTemplateHandler**
 > void UploadRunTemplateHandler (string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = null)
 
@@ -2063,7 +1662,7 @@ namespace Example
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var solutionId = "solutionId_example";  // string | the Solution identifier
             var runTemplateId = "runTemplateId_example";  // string | the Run Template identifier
-            var handlerId = new RunTemplateHandlerId(); // RunTemplateHandlerId | the Handler identifier
+            var handlerId = (RunTemplateHandlerId) "parameters_handler";  // RunTemplateHandlerId | the Handler identifier
             var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
             var overwrite = false;  // bool? | whether to overwrite any existing handler resource (optional)  (default to false)
 
@@ -2074,8 +1673,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling SolutionApi.UploadRunTemplateHandler: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling SolutionApi.UploadRunTemplateHandler: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2083,33 +1682,16 @@ namespace Example
 }
 ```
 
-#### Using the UploadRunTemplateHandlerWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Upload a Run Template step handler zip file
-    apiInstance.UploadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId, body, overwrite);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SolutionApi.UploadRunTemplateHandlerWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **solutionId** | **string** | the Solution identifier |  |
-| **runTemplateId** | **string** | the Run Template identifier |  |
-| **handlerId** | [**RunTemplateHandlerId**](RunTemplateHandlerId.md) | the Handler identifier |  |
-| **body** | **System.IO.Stream****System.IO.Stream** |  |  |
-| **overwrite** | **bool?** | whether to overwrite any existing handler resource | [optional] [default to false] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **solutionId** | **string**| the Solution identifier | 
+ **runTemplateId** | **string**| the Run Template identifier | 
+ **handlerId** | **RunTemplateHandlerId**| the Handler identifier | 
+ **body** | **System.IO.Stream****System.IO.Stream**|  | 
+ **overwrite** | **bool?**| whether to overwrite any existing handler resource | [optional] [default to false]
 
 ### Return type
 
