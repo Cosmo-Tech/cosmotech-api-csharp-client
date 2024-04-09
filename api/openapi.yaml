@@ -9,7 +9,7 @@ info:
     name: MIT License
     url: https://github.com/Cosmo-Tech/cosmotech-api/blob/main/LICENSE
   title: Cosmo Tech Platform API
-  version: 3.1.1-SNAPSHOT
+  version: 3.1.3
 servers:
 - description: Development
   url: https://dev.api.cosmotech.com
