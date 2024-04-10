@@ -56,6 +56,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         [EnumMember(Value = "platform")]
         Platform = 4
+
     }
 
 }

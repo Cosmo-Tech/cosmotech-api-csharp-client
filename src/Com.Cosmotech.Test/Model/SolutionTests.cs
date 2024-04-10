@@ -15,6 +15,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -55,6 +56,7 @@ namespace Com.Cosmotech.Test.Model
             //Assert.IsType<Solution>(instance);
         }
 
+
         /// <summary>
         /// Test the property 'Id'
         /// </summary>
@@ -63,7 +65,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Id'
         }
-
         /// <summary>
         /// Test the property 'OrganizationId'
         /// </summary>
@@ -72,7 +73,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'OrganizationId'
         }
-
         /// <summary>
         /// Test the property 'Key'
         /// </summary>
@@ -81,7 +81,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Key'
         }
-
         /// <summary>
         /// Test the property 'Name'
         /// </summary>
@@ -90,7 +89,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Name'
         }
-
         /// <summary>
         /// Test the property 'Description'
         /// </summary>
@@ -99,7 +97,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Description'
         }
-
         /// <summary>
         /// Test the property 'Repository'
         /// </summary>
@@ -108,7 +105,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Repository'
         }
-
         /// <summary>
         /// Test the property 'AlwaysPull'
         /// </summary>
@@ -117,7 +113,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'AlwaysPull'
         }
-
         /// <summary>
         /// Test the property 'CsmSimulator'
         /// </summary>
@@ -126,16 +121,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'CsmSimulator'
         }
-
         /// <summary>
-        /// Test the property 'VarVersion'
+        /// Test the property '_Version'
         /// </summary>
         [Fact]
-        public void VarVersionTest()
+        public void _VersionTest()
         {
-            // TODO unit test for the property 'VarVersion'
+            // TODO unit test for the property '_Version'
         }
-
         /// <summary>
         /// Test the property 'OwnerId'
         /// </summary>
@@ -144,7 +137,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'OwnerId'
         }
-
         /// <summary>
         /// Test the property 'SdkVersion'
         /// </summary>
@@ -153,7 +145,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'SdkVersion'
         }
-
         /// <summary>
         /// Test the property 'Url'
         /// </summary>
@@ -162,7 +153,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Url'
         }
-
         /// <summary>
         /// Test the property 'Tags'
         /// </summary>
@@ -171,7 +161,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Tags'
         }
-
         /// <summary>
         /// Test the property 'Parameters'
         /// </summary>
@@ -180,7 +169,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Parameters'
         }
-
         /// <summary>
         /// Test the property 'ParameterGroups'
         /// </summary>
@@ -189,7 +177,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'ParameterGroups'
         }
-
         /// <summary>
         /// Test the property 'RunTemplates'
         /// </summary>
@@ -198,7 +185,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'RunTemplates'
         }
-
         /// <summary>
         /// Test the property 'Security'
         /// </summary>
@@ -207,5 +193,7 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Security'
         }
+
     }
+
 }

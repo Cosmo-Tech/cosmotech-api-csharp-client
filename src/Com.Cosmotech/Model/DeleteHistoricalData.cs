@@ -30,7 +30,7 @@ namespace Com.Cosmotech.Model
     /// Configuration of scenario runs deletion automatic mecanism
     /// </summary>
     [DataContract(Name = "DeleteHistoricalData")]
-    public partial class DeleteHistoricalData : IValidatableObject
+    public partial class DeleteHistoricalData : IEquatable<DeleteHistoricalData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteHistoricalData" /> class.
@@ -96,11 +96,63 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as DeleteHistoricalData);
+        }
+
+        /// <summary>
+        /// Returns true if DeleteHistoricalData instances are equal
+        /// </summary>
+        /// <param name="input">Instance of DeleteHistoricalData to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(DeleteHistoricalData input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.Enable == input.Enable ||
+                    this.Enable.Equals(input.Enable)
+                ) && 
+                (
+                    this.PollFrequency == input.PollFrequency ||
+                    this.PollFrequency.Equals(input.PollFrequency)
+                ) && 
+                (
+                    this.TimeOut == input.TimeOut ||
+                    this.TimeOut.Equals(input.TimeOut)
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                hashCode = (hashCode * 59) + this.Enable.GetHashCode();
+                hashCode = (hashCode * 59) + this.PollFrequency.GetHashCode();
+                hashCode = (hashCode * 59) + this.TimeOut.GetHashCode();
+                return hashCode;
+            }
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

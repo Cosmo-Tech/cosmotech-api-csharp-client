@@ -30,7 +30,7 @@ namespace Com.Cosmotech.Model
     /// a version of a Solution
     /// </summary>
     [DataContract(Name = "Solution")]
-    public partial class Solution : IValidatableObject
+    public partial class Solution : IEquatable<Solution>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Solution" /> class.
@@ -41,7 +41,7 @@ namespace Com.Cosmotech.Model
         /// <param name="repository">the registry repository containing the image.</param>
         /// <param name="alwaysPull">set to true if the runtemplate wants to always pull the image (default to false).</param>
         /// <param name="csmSimulator">the main Cosmo Tech simulator name used in standard Run Template.</param>
-        /// <param name="varVersion">the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag.</param>
+        /// <param name="version">the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag.</param>
         /// <param name="sdkVersion">the MAJOR.MINOR version used to build this solution.</param>
         /// <param name="url">an optional URL link to solution page.</param>
         /// <param name="tags">the list of tags.</param>
@@ -49,7 +49,7 @@ namespace Com.Cosmotech.Model
         /// <param name="parameterGroups">the list of parameters groups for the Run Templates.</param>
         /// <param name="runTemplates">list of Run Template.</param>
         /// <param name="security">security.</param>
-        public Solution(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), bool alwaysPull = false, string csmSimulator = default(string), string varVersion = default(string), string sdkVersion = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplateParameter> parameters = default(List<RunTemplateParameter>), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>), List<RunTemplate> runTemplates = default(List<RunTemplate>), SolutionSecurity security = default(SolutionSecurity))
+        public Solution(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), bool alwaysPull = false, string csmSimulator = default(string), string version = default(string), string sdkVersion = default(string), string url = default(string), List<string> tags = default(List<string>), List<RunTemplateParameter> parameters = default(List<RunTemplateParameter>), List<RunTemplateParameterGroup> parameterGroups = default(List<RunTemplateParameterGroup>), List<RunTemplate> runTemplates = default(List<RunTemplate>), SolutionSecurity security = default(SolutionSecurity))
         {
             this.Key = key;
             this.Name = name;
@@ -57,7 +57,7 @@ namespace Com.Cosmotech.Model
             this.Repository = repository;
             this.AlwaysPull = alwaysPull;
             this.CsmSimulator = csmSimulator;
-            this.VarVersion = varVersion;
+            this._Version = version;
             this.SdkVersion = sdkVersion;
             this.Url = url;
             this.Tags = tags;
@@ -144,7 +144,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         /// <value>the Solution version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag</value>
         [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string VarVersion { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// the User id which own this Solution
@@ -206,7 +206,7 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Gets or Sets Security
         /// </summary>
-        [DataMember(Name = "security", EmitDefaultValue = false)]
+        [DataMember(Name = "security", EmitDefaultValue = true)]
         public SolutionSecurity Security { get; set; }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace Com.Cosmotech.Model
             sb.Append("  Repository: ").Append(Repository).Append("\n");
             sb.Append("  AlwaysPull: ").Append(AlwaysPull).Append("\n");
             sb.Append("  CsmSimulator: ").Append(CsmSimulator).Append("\n");
-            sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  SdkVersion: ").Append(SdkVersion).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
@@ -248,11 +248,201 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as Solution);
+        }
+
+        /// <summary>
+        /// Returns true if Solution instances are equal
+        /// </summary>
+        /// <param name="input">Instance of Solution to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(Solution input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
+                ) && 
+                (
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Repository == input.Repository ||
+                    (this.Repository != null &&
+                    this.Repository.Equals(input.Repository))
+                ) && 
+                (
+                    this.AlwaysPull == input.AlwaysPull ||
+                    this.AlwaysPull.Equals(input.AlwaysPull)
+                ) && 
+                (
+                    this.CsmSimulator == input.CsmSimulator ||
+                    (this.CsmSimulator != null &&
+                    this.CsmSimulator.Equals(input.CsmSimulator))
+                ) && 
+                (
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
+                ) && 
+                (
+                    this.OwnerId == input.OwnerId ||
+                    (this.OwnerId != null &&
+                    this.OwnerId.Equals(input.OwnerId))
+                ) && 
+                (
+                    this.SdkVersion == input.SdkVersion ||
+                    (this.SdkVersion != null &&
+                    this.SdkVersion.Equals(input.SdkVersion))
+                ) && 
+                (
+                    this.Url == input.Url ||
+                    (this.Url != null &&
+                    this.Url.Equals(input.Url))
+                ) && 
+                (
+                    this.Tags == input.Tags ||
+                    this.Tags != null &&
+                    input.Tags != null &&
+                    this.Tags.SequenceEqual(input.Tags)
+                ) && 
+                (
+                    this.Parameters == input.Parameters ||
+                    this.Parameters != null &&
+                    input.Parameters != null &&
+                    this.Parameters.SequenceEqual(input.Parameters)
+                ) && 
+                (
+                    this.ParameterGroups == input.ParameterGroups ||
+                    this.ParameterGroups != null &&
+                    input.ParameterGroups != null &&
+                    this.ParameterGroups.SequenceEqual(input.ParameterGroups)
+                ) && 
+                (
+                    this.RunTemplates == input.RunTemplates ||
+                    this.RunTemplates != null &&
+                    input.RunTemplates != null &&
+                    this.RunTemplates.SequenceEqual(input.RunTemplates)
+                ) && 
+                (
+                    this.Security == input.Security ||
+                    (this.Security != null &&
+                    this.Security.Equals(input.Security))
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.OrganizationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.OrganizationId.GetHashCode();
+                }
+                if (this.Key != null)
+                {
+                    hashCode = (hashCode * 59) + this.Key.GetHashCode();
+                }
+                if (this.Name != null)
+                {
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Description != null)
+                {
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.Repository != null)
+                {
+                    hashCode = (hashCode * 59) + this.Repository.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.AlwaysPull.GetHashCode();
+                if (this.CsmSimulator != null)
+                {
+                    hashCode = (hashCode * 59) + this.CsmSimulator.GetHashCode();
+                }
+                if (this._Version != null)
+                {
+                    hashCode = (hashCode * 59) + this._Version.GetHashCode();
+                }
+                if (this.OwnerId != null)
+                {
+                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                }
+                if (this.SdkVersion != null)
+                {
+                    hashCode = (hashCode * 59) + this.SdkVersion.GetHashCode();
+                }
+                if (this.Url != null)
+                {
+                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
+                }
+                if (this.Tags != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                }
+                if (this.Parameters != null)
+                {
+                    hashCode = (hashCode * 59) + this.Parameters.GetHashCode();
+                }
+                if (this.ParameterGroups != null)
+                {
+                    hashCode = (hashCode * 59) + this.ParameterGroups.GetHashCode();
+                }
+                if (this.RunTemplates != null)
+                {
+                    hashCode = (hashCode * 59) + this.RunTemplates.GetHashCode();
+                }
+                if (this.Security != null)
+                {
+                    hashCode = (hashCode * 59) + this.Security.GetHashCode();
+                }
+                return hashCode;
+            }
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

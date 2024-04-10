@@ -22,11 +22,11 @@ namespace Com.Cosmotech.Client
         /// <summary>
         /// Retry policy
         /// </summary>
-        public static Policy<RestResponse> RetryPolicy { get; set; }
+        public static Policy<IRestResponse> RetryPolicy { get; set; }
 
         /// <summary>
         /// Async retry policy
         /// </summary>
-        public static AsyncPolicy<RestResponse> AsyncRetryPolicy { get; set; }
+        public static AsyncPolicy<IRestResponse> AsyncRetryPolicy { get; set; }
     }
 }

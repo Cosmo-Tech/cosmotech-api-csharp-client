@@ -30,7 +30,7 @@ namespace Com.Cosmotech.Model
     /// a Dataset access control item
     /// </summary>
     [DataContract(Name = "DatasetAccessControl")]
-    public partial class DatasetAccessControl : IValidatableObject
+    public partial class DatasetAccessControl : IEquatable<DatasetAccessControl>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DatasetAccessControl" /> class.
@@ -45,14 +45,12 @@ namespace Com.Cosmotech.Model
         public DatasetAccessControl(string id = default(string), string role = default(string))
         {
             // to ensure "id" is required (not null)
-            if (id == null)
-            {
+            if (id == null) {
                 throw new ArgumentNullException("id is a required property for DatasetAccessControl and cannot be null");
             }
             this.Id = id;
             // to ensure "role" is required (not null)
-            if (role == null)
-            {
+            if (role == null) {
                 throw new ArgumentNullException("role is a required property for DatasetAccessControl and cannot be null");
             }
             this.Role = role;
@@ -62,14 +60,14 @@ namespace Com.Cosmotech.Model
         /// the identity id
         /// </summary>
         /// <value>the identity id</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// a role
         /// </summary>
         /// <value>a role</value>
-        [DataMember(Name = "role", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "role", IsRequired = true, EmitDefaultValue = false)]
         public string Role { get; set; }
 
         /// <summary>
@@ -96,11 +94,66 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as DatasetAccessControl);
+        }
+
+        /// <summary>
+        /// Returns true if DatasetAccessControl instances are equal
+        /// </summary>
+        /// <param name="input">Instance of DatasetAccessControl to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(DatasetAccessControl input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Role == input.Role ||
+                    (this.Role != null &&
+                    this.Role.Equals(input.Role))
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.Role != null)
+                {
+                    hashCode = (hashCode * 59) + this.Role.GetHashCode();
+                }
+                return hashCode;
+            }
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

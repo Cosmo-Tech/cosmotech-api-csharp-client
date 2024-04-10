@@ -15,6 +15,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -55,6 +56,7 @@ namespace Com.Cosmotech.Test.Model
             //Assert.IsType<SourceInfo>(instance);
         }
 
+
         /// <summary>
         /// Test the property 'Name'
         /// </summary>
@@ -63,7 +65,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Name'
         }
-
         /// <summary>
         /// Test the property 'Location'
         /// </summary>
@@ -72,7 +73,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Location'
         }
-
         /// <summary>
         /// Test the property 'Path'
         /// </summary>
@@ -81,7 +81,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Path'
         }
-
         /// <summary>
         /// Test the property 'JobId'
         /// </summary>
@@ -90,5 +89,7 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'JobId'
         }
+
     }
+
 }

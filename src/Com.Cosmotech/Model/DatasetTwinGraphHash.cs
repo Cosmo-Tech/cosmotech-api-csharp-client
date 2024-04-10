@@ -30,7 +30,7 @@ namespace Com.Cosmotech.Model
     /// a twin graph hash
     /// </summary>
     [DataContract(Name = "DatasetTwinGraphHash")]
-    public partial class DatasetTwinGraphHash : IValidatableObject
+    public partial class DatasetTwinGraphHash : IEquatable<DatasetTwinGraphHash>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DatasetTwinGraphHash" /> class.
@@ -71,11 +71,57 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as DatasetTwinGraphHash);
+        }
+
+        /// <summary>
+        /// Returns true if DatasetTwinGraphHash instances are equal
+        /// </summary>
+        /// <param name="input">Instance of DatasetTwinGraphHash to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(DatasetTwinGraphHash input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.Hash == input.Hash ||
+                    (this.Hash != null &&
+                    this.Hash.Equals(input.Hash))
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Hash != null)
+                {
+                    hashCode = (hashCode * 59) + this.Hash.GetHashCode();
+                }
+                return hashCode;
+            }
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -15,6 +15,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -55,6 +56,7 @@ namespace Com.Cosmotech.Test.Model
             //Assert.IsType<ContainerResourceSizeInfo>(instance);
         }
 
+
         /// <summary>
         /// Test the property 'Cpu'
         /// </summary>
@@ -63,7 +65,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Cpu'
         }
-
         /// <summary>
         /// Test the property 'Memory'
         /// </summary>
@@ -72,5 +73,7 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Memory'
         }
+
     }
+
 }

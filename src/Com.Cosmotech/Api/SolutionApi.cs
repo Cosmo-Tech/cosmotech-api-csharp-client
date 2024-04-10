@@ -16,7 +16,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using Com.Cosmotech.Client;
-using Com.Cosmotech.Client.Auth;
 using Com.Cosmotech.Model;
 
 namespace Com.Cosmotech.Api
@@ -35,9 +34,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;RunTemplateParameterGroup&gt;</returns>
-        List<RunTemplateParameterGroup> AddOrReplaceParameterGroups(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, int operationIndex = 0);
+        List<RunTemplateParameterGroup> AddOrReplaceParameterGroups(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup);
 
         /// <summary>
         /// Add Parameter Groups. Any item with the same ID will be overwritten
@@ -49,9 +47,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;RunTemplateParameterGroup&gt;</returns>
-        ApiResponse<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, int operationIndex = 0);
+        ApiResponse<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup);
         /// <summary>
         /// Add Parameters. Any item with the same ID will be overwritten
         /// </summary>
@@ -59,9 +56,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameter">the Parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;RunTemplateParameter&gt;</returns>
-        List<RunTemplateParameter> AddOrReplaceParameters(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, int operationIndex = 0);
+        List<RunTemplateParameter> AddOrReplaceParameters(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter);
 
         /// <summary>
         /// Add Parameters. Any item with the same ID will be overwritten
@@ -73,9 +69,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameter">the Parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;RunTemplateParameter&gt;</returns>
-        ApiResponse<List<RunTemplateParameter>> AddOrReplaceParametersWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, int operationIndex = 0);
+        ApiResponse<List<RunTemplateParameter>> AddOrReplaceParametersWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter);
         /// <summary>
         /// Add Run Templates. Any item with the same ID will be overwritten
         /// </summary>
@@ -83,9 +78,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;RunTemplate&gt;</returns>
-        List<RunTemplate> AddOrReplaceRunTemplates(string organizationId, string solutionId, List<RunTemplate> runTemplate, int operationIndex = 0);
+        List<RunTemplate> AddOrReplaceRunTemplates(string organizationId, string solutionId, List<RunTemplate> runTemplate);
 
         /// <summary>
         /// Add Run Templates. Any item with the same ID will be overwritten
@@ -97,9 +91,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;RunTemplate&gt;</returns>
-        ApiResponse<List<RunTemplate>> AddOrReplaceRunTemplatesWithHttpInfo(string organizationId, string solutionId, List<RunTemplate> runTemplate, int operationIndex = 0);
+        ApiResponse<List<RunTemplate>> AddOrReplaceRunTemplatesWithHttpInfo(string organizationId, string solutionId, List<RunTemplate> runTemplate);
         /// <summary>
         /// Add a control access to the Solution
         /// </summary>
@@ -107,9 +100,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionAccessControl">the new Solution security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionAccessControl</returns>
-        SolutionAccessControl AddSolutionAccessControl(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, int operationIndex = 0);
+        SolutionAccessControl AddSolutionAccessControl(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl);
 
         /// <summary>
         /// Add a control access to the Solution
@@ -121,18 +113,16 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionAccessControl">the new Solution security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionAccessControl</returns>
-        ApiResponse<SolutionAccessControl> AddSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, int operationIndex = 0);
+        ApiResponse<SolutionAccessControl> AddSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl);
         /// <summary>
         /// Register a new solution
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solution">the Solution to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Solution</returns>
-        Solution CreateSolution(string organizationId, Solution solution, int operationIndex = 0);
+        Solution CreateSolution(string organizationId, Solution solution);
 
         /// <summary>
         /// Register a new solution
@@ -143,18 +133,16 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solution">the Solution to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Solution</returns>
-        ApiResponse<Solution> CreateSolutionWithHttpInfo(string organizationId, Solution solution, int operationIndex = 0);
+        ApiResponse<Solution> CreateSolutionWithHttpInfo(string organizationId, Solution solution);
         /// <summary>
         /// Delete a solution
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteSolution(string organizationId, string solutionId, int operationIndex = 0);
+        void DeleteSolution(string organizationId, string solutionId);
 
         /// <summary>
         /// Delete a solution
@@ -165,9 +153,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteSolutionWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0);
+        ApiResponse<Object> DeleteSolutionWithHttpInfo(string organizationId, string solutionId);
         /// <summary>
         /// Remove the specified Solution Run Template
         /// </summary>
@@ -175,9 +162,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteSolutionRunTemplate(string organizationId, string solutionId, string runTemplateId, int operationIndex = 0);
+        void DeleteSolutionRunTemplate(string organizationId, string solutionId, string runTemplateId);
 
         /// <summary>
         /// Remove the specified Solution Run Template
@@ -189,9 +175,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteSolutionRunTemplateWithHttpInfo(string organizationId, string solutionId, string runTemplateId, int operationIndex = 0);
+        ApiResponse<Object> DeleteSolutionRunTemplateWithHttpInfo(string organizationId, string solutionId, string runTemplateId);
         /// <summary>
         /// Download a Run Template step handler zip file
         /// </summary>
@@ -200,9 +185,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>byte[]</returns>
-        byte[] DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, int operationIndex = 0);
+        byte[] DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId);
 
         /// <summary>
         /// Download a Run Template step handler zip file
@@ -215,9 +199,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of byte[]</returns>
-        ApiResponse<byte[]> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, int operationIndex = 0);
+        ApiResponse<byte[]> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId);
         /// <summary>
         /// List all Solutions
         /// </summary>
@@ -225,9 +208,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Solution&gt;</returns>
-        List<Solution> FindAllSolutions(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
+        List<Solution> FindAllSolutions(string organizationId, int? page = default(int?), int? size = default(int?));
 
         /// <summary>
         /// List all Solutions
@@ -239,18 +221,16 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Solution&gt;</returns>
-        ApiResponse<List<Solution>> FindAllSolutionsWithHttpInfo(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
+        ApiResponse<List<Solution>> FindAllSolutionsWithHttpInfo(string organizationId, int? page = default(int?), int? size = default(int?));
         /// <summary>
         /// Get the details of a solution
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Solution</returns>
-        Solution FindSolutionById(string organizationId, string solutionId, int operationIndex = 0);
+        Solution FindSolutionById(string organizationId, string solutionId);
 
         /// <summary>
         /// Get the details of a solution
@@ -261,9 +241,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Solution</returns>
-        ApiResponse<Solution> FindSolutionByIdWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0);
+        ApiResponse<Solution> FindSolutionByIdWithHttpInfo(string organizationId, string solutionId);
         /// <summary>
         /// Get a control access for the Solution
         /// </summary>
@@ -271,9 +250,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionAccessControl</returns>
-        SolutionAccessControl GetSolutionAccessControl(string organizationId, string solutionId, string identityId, int operationIndex = 0);
+        SolutionAccessControl GetSolutionAccessControl(string organizationId, string solutionId, string identityId);
 
         /// <summary>
         /// Get a control access for the Solution
@@ -285,18 +263,16 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionAccessControl</returns>
-        ApiResponse<SolutionAccessControl> GetSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId, int operationIndex = 0);
+        ApiResponse<SolutionAccessControl> GetSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId);
         /// <summary>
         /// Get the Solution security information
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionSecurity</returns>
-        SolutionSecurity GetSolutionSecurity(string organizationId, string solutionId, int operationIndex = 0);
+        SolutionSecurity GetSolutionSecurity(string organizationId, string solutionId);
 
         /// <summary>
         /// Get the Solution security information
@@ -307,18 +283,16 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionSecurity</returns>
-        ApiResponse<SolutionSecurity> GetSolutionSecurityWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0);
+        ApiResponse<SolutionSecurity> GetSolutionSecurityWithHttpInfo(string organizationId, string solutionId);
         /// <summary>
         /// Get the Solution security users list
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> GetSolutionSecurityUsers(string organizationId, string solutionId, int operationIndex = 0);
+        List<string> GetSolutionSecurityUsers(string organizationId, string solutionId);
 
         /// <summary>
         /// Get the Solution security users list
@@ -329,18 +303,16 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> GetSolutionSecurityUsersWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0);
+        ApiResponse<List<string>> GetSolutionSecurityUsersWithHttpInfo(string organizationId, string solutionId);
         /// <summary>
         /// Remove all Run Templates from the Solution specified
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RemoveAllRunTemplates(string organizationId, string solutionId, int operationIndex = 0);
+        void RemoveAllRunTemplates(string organizationId, string solutionId);
 
         /// <summary>
         /// Remove all Run Templates from the Solution specified
@@ -351,18 +323,16 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveAllRunTemplatesWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0);
+        ApiResponse<Object> RemoveAllRunTemplatesWithHttpInfo(string organizationId, string solutionId);
         /// <summary>
         /// Remove all Parameter Groups from the Solution specified
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RemoveAllSolutionParameterGroups(string organizationId, string solutionId, int operationIndex = 0);
+        void RemoveAllSolutionParameterGroups(string organizationId, string solutionId);
 
         /// <summary>
         /// Remove all Parameter Groups from the Solution specified
@@ -373,18 +343,16 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveAllSolutionParameterGroupsWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0);
+        ApiResponse<Object> RemoveAllSolutionParameterGroupsWithHttpInfo(string organizationId, string solutionId);
         /// <summary>
         /// Remove all Parameters from the Solution specified
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RemoveAllSolutionParameters(string organizationId, string solutionId, int operationIndex = 0);
+        void RemoveAllSolutionParameters(string organizationId, string solutionId);
 
         /// <summary>
         /// Remove all Parameters from the Solution specified
@@ -395,9 +363,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveAllSolutionParametersWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0);
+        ApiResponse<Object> RemoveAllSolutionParametersWithHttpInfo(string organizationId, string solutionId);
         /// <summary>
         /// Remove the specified access from the given Organization Solution
         /// </summary>
@@ -405,9 +372,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RemoveSolutionAccessControl(string organizationId, string solutionId, string identityId, int operationIndex = 0);
+        void RemoveSolutionAccessControl(string organizationId, string solutionId, string identityId);
 
         /// <summary>
         /// Remove the specified access from the given Organization Solution
@@ -419,9 +385,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId, int operationIndex = 0);
+        ApiResponse<Object> RemoveSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId);
         /// <summary>
         /// Set the Solution default security
         /// </summary>
@@ -429,9 +394,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionSecurity</returns>
-        SolutionSecurity SetSolutionDefaultSecurity(string organizationId, string solutionId, SolutionRole solutionRole, int operationIndex = 0);
+        SolutionSecurity SetSolutionDefaultSecurity(string organizationId, string solutionId, SolutionRole solutionRole);
 
         /// <summary>
         /// Set the Solution default security
@@ -443,9 +407,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionSecurity</returns>
-        ApiResponse<SolutionSecurity> SetSolutionDefaultSecurityWithHttpInfo(string organizationId, string solutionId, SolutionRole solutionRole, int operationIndex = 0);
+        ApiResponse<SolutionSecurity> SetSolutionDefaultSecurityWithHttpInfo(string organizationId, string solutionId, SolutionRole solutionRole);
         /// <summary>
         /// Update a solution
         /// </summary>
@@ -453,9 +416,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solution">the new Solution details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Solution</returns>
-        Solution UpdateSolution(string organizationId, string solutionId, Solution solution, int operationIndex = 0);
+        Solution UpdateSolution(string organizationId, string solutionId, Solution solution);
 
         /// <summary>
         /// Update a solution
@@ -467,9 +429,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solution">the new Solution details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Solution</returns>
-        ApiResponse<Solution> UpdateSolutionWithHttpInfo(string organizationId, string solutionId, Solution solution, int operationIndex = 0);
+        ApiResponse<Solution> UpdateSolutionWithHttpInfo(string organizationId, string solutionId, Solution solution);
         /// <summary>
         /// Update the specified access to User for a Solution
         /// </summary>
@@ -478,9 +439,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="solutionRole">The new Solution Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionAccessControl</returns>
-        SolutionAccessControl UpdateSolutionAccessControl(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, int operationIndex = 0);
+        SolutionAccessControl UpdateSolutionAccessControl(string organizationId, string solutionId, string identityId, SolutionRole solutionRole);
 
         /// <summary>
         /// Update the specified access to User for a Solution
@@ -493,9 +453,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="solutionRole">The new Solution Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionAccessControl</returns>
-        ApiResponse<SolutionAccessControl> UpdateSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, int operationIndex = 0);
+        ApiResponse<SolutionAccessControl> UpdateSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId, SolutionRole solutionRole);
         /// <summary>
         /// Update the specified Solution Run Template
         /// </summary>
@@ -504,9 +463,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;RunTemplate&gt;</returns>
-        List<RunTemplate> UpdateSolutionRunTemplate(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, int operationIndex = 0);
+        List<RunTemplate> UpdateSolutionRunTemplate(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate);
 
         /// <summary>
         /// Update the specified Solution Run Template
@@ -519,9 +477,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;RunTemplate&gt;</returns>
-        ApiResponse<List<RunTemplate>> UpdateSolutionRunTemplateWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, int operationIndex = 0);
+        ApiResponse<List<RunTemplate>> UpdateSolutionRunTemplateWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate);
         /// <summary>
         /// Upload a Run Template step handler zip file
         /// </summary>
@@ -532,9 +489,8 @@ namespace Com.Cosmotech.Api
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="body"></param>
         /// <param name="overwrite">whether to overwrite any existing handler resource (optional, default to false)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void UploadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), int operationIndex = 0);
+        void UploadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?));
 
         /// <summary>
         /// Upload a Run Template step handler zip file
@@ -549,9 +505,8 @@ namespace Com.Cosmotech.Api
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="body"></param>
         /// <param name="overwrite">whether to overwrite any existing handler resource (optional, default to false)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UploadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), int operationIndex = 0);
+        ApiResponse<Object> UploadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?));
         #endregion Synchronous Operations
     }
 
@@ -571,10 +526,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;RunTemplateParameterGroup&gt;</returns>
-        System.Threading.Tasks.Task<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add Parameter Groups. Any item with the same ID will be overwritten
@@ -586,10 +540,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;RunTemplateParameterGroup&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<RunTemplateParameterGroup>>> AddOrReplaceParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<RunTemplateParameterGroup>>> AddOrReplaceParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Add Parameters. Any item with the same ID will be overwritten
         /// </summary>
@@ -600,10 +553,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameter">the Parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;RunTemplateParameter&gt;</returns>
-        System.Threading.Tasks.Task<List<RunTemplateParameter>> AddOrReplaceParametersAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<RunTemplateParameter>> AddOrReplaceParametersAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add Parameters. Any item with the same ID will be overwritten
@@ -615,10 +567,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameter">the Parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;RunTemplateParameter&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<RunTemplateParameter>>> AddOrReplaceParametersWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<RunTemplateParameter>>> AddOrReplaceParametersWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Add Run Templates. Any item with the same ID will be overwritten
         /// </summary>
@@ -629,10 +580,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;RunTemplate&gt;</returns>
-        System.Threading.Tasks.Task<List<RunTemplate>> AddOrReplaceRunTemplatesAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<RunTemplate>> AddOrReplaceRunTemplatesAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add Run Templates. Any item with the same ID will be overwritten
@@ -644,10 +594,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;RunTemplate&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<RunTemplate>>> AddOrReplaceRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<RunTemplate>>> AddOrReplaceRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Add a control access to the Solution
         /// </summary>
@@ -658,10 +607,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionAccessControl">the new Solution security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionAccessControl</returns>
-        System.Threading.Tasks.Task<SolutionAccessControl> AddSolutionAccessControlAsync(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SolutionAccessControl> AddSolutionAccessControlAsync(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add a control access to the Solution
@@ -673,10 +621,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionAccessControl">the new Solution security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionAccessControl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SolutionAccessControl>> AddSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SolutionAccessControl>> AddSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Register a new solution
         /// </summary>
@@ -686,10 +633,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solution">the Solution to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Solution</returns>
-        System.Threading.Tasks.Task<Solution> CreateSolutionAsync(string organizationId, Solution solution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Solution> CreateSolutionAsync(string organizationId, Solution solution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Register a new solution
@@ -700,10 +646,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solution">the Solution to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Solution)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Solution>> CreateSolutionWithHttpInfoAsync(string organizationId, Solution solution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Solution>> CreateSolutionWithHttpInfoAsync(string organizationId, Solution solution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a solution
         /// </summary>
@@ -713,10 +658,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteSolutionAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteSolutionAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a solution
@@ -727,10 +671,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSolutionWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSolutionWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove the specified Solution Run Template
         /// </summary>
@@ -741,10 +684,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteSolutionRunTemplateAsync(string organizationId, string solutionId, string runTemplateId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteSolutionRunTemplateAsync(string organizationId, string solutionId, string runTemplateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Remove the specified Solution Run Template
@@ -756,10 +698,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSolutionRunTemplateWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSolutionRunTemplateWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Download a Run Template step handler zip file
         /// </summary>
@@ -771,10 +712,9 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of byte[]</returns>
-        System.Threading.Tasks.Task<byte[]> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<byte[]> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Download a Run Template step handler zip file
@@ -787,10 +727,9 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (byte[])</returns>
-        System.Threading.Tasks.Task<ApiResponse<byte[]>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Solutions
         /// </summary>
@@ -801,10 +740,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Solution&gt;</returns>
-        System.Threading.Tasks.Task<List<Solution>> FindAllSolutionsAsync(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Solution>> FindAllSolutionsAsync(string organizationId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all Solutions
@@ -816,10 +754,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Solution&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Solution>>> FindAllSolutionsWithHttpInfoAsync(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Solution>>> FindAllSolutionsWithHttpInfoAsync(string organizationId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the details of a solution
         /// </summary>
@@ -829,10 +766,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Solution</returns>
-        System.Threading.Tasks.Task<Solution> FindSolutionByIdAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Solution> FindSolutionByIdAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the details of a solution
@@ -843,10 +779,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Solution)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Solution>> FindSolutionByIdWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Solution>> FindSolutionByIdWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a control access for the Solution
         /// </summary>
@@ -857,10 +792,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionAccessControl</returns>
-        System.Threading.Tasks.Task<SolutionAccessControl> GetSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SolutionAccessControl> GetSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a control access for the Solution
@@ -872,10 +806,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionAccessControl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SolutionAccessControl>> GetSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SolutionAccessControl>> GetSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the Solution security information
         /// </summary>
@@ -885,10 +818,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionSecurity</returns>
-        System.Threading.Tasks.Task<SolutionSecurity> GetSolutionSecurityAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SolutionSecurity> GetSolutionSecurityAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the Solution security information
@@ -899,10 +831,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SolutionSecurity>> GetSolutionSecurityWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SolutionSecurity>> GetSolutionSecurityWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the Solution security users list
         /// </summary>
@@ -912,10 +843,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> GetSolutionSecurityUsersAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> GetSolutionSecurityUsersAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the Solution security users list
@@ -926,10 +856,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> GetSolutionSecurityUsersWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> GetSolutionSecurityUsersWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove all Run Templates from the Solution specified
         /// </summary>
@@ -939,10 +868,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveAllRunTemplatesAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RemoveAllRunTemplatesAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Remove all Run Templates from the Solution specified
@@ -953,10 +881,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove all Parameter Groups from the Solution specified
         /// </summary>
@@ -966,10 +893,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveAllSolutionParameterGroupsAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RemoveAllSolutionParameterGroupsAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Remove all Parameter Groups from the Solution specified
@@ -980,10 +906,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllSolutionParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllSolutionParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove all Parameters from the Solution specified
         /// </summary>
@@ -993,10 +918,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveAllSolutionParametersAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RemoveAllSolutionParametersAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Remove all Parameters from the Solution specified
@@ -1007,10 +931,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllSolutionParametersWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllSolutionParametersWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove the specified access from the given Organization Solution
         /// </summary>
@@ -1021,10 +944,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RemoveSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Remove the specified access from the given Organization Solution
@@ -1036,10 +958,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Set the Solution default security
         /// </summary>
@@ -1050,10 +971,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionSecurity</returns>
-        System.Threading.Tasks.Task<SolutionSecurity> SetSolutionDefaultSecurityAsync(string organizationId, string solutionId, SolutionRole solutionRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SolutionSecurity> SetSolutionDefaultSecurityAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Set the Solution default security
@@ -1065,10 +985,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SolutionSecurity>> SetSolutionDefaultSecurityWithHttpInfoAsync(string organizationId, string solutionId, SolutionRole solutionRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SolutionSecurity>> SetSolutionDefaultSecurityWithHttpInfoAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a solution
         /// </summary>
@@ -1079,10 +998,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solution">the new Solution details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Solution</returns>
-        System.Threading.Tasks.Task<Solution> UpdateSolutionAsync(string organizationId, string solutionId, Solution solution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Solution> UpdateSolutionAsync(string organizationId, string solutionId, Solution solution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update a solution
@@ -1094,10 +1012,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solution">the new Solution details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Solution)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Solution>> UpdateSolutionWithHttpInfoAsync(string organizationId, string solutionId, Solution solution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Solution>> UpdateSolutionWithHttpInfoAsync(string organizationId, string solutionId, Solution solution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update the specified access to User for a Solution
         /// </summary>
@@ -1109,10 +1026,9 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="solutionRole">The new Solution Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionAccessControl</returns>
-        System.Threading.Tasks.Task<SolutionAccessControl> UpdateSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SolutionAccessControl> UpdateSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update the specified access to User for a Solution
@@ -1125,10 +1041,9 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="solutionRole">The new Solution Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionAccessControl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SolutionAccessControl>> UpdateSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SolutionAccessControl>> UpdateSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update the specified Solution Run Template
         /// </summary>
@@ -1140,10 +1055,9 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;RunTemplate&gt;</returns>
-        System.Threading.Tasks.Task<List<RunTemplate>> UpdateSolutionRunTemplateAsync(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<RunTemplate>> UpdateSolutionRunTemplateAsync(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update the specified Solution Run Template
@@ -1156,10 +1070,9 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;RunTemplate&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<RunTemplate>>> UpdateSolutionRunTemplateWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<RunTemplate>>> UpdateSolutionRunTemplateWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Upload a Run Template step handler zip file
         /// </summary>
@@ -1173,10 +1086,9 @@ namespace Com.Cosmotech.Api
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="body"></param>
         /// <param name="overwrite">whether to overwrite any existing handler resource (optional, default to false)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UploadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UploadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Upload a Run Template step handler zip file
@@ -1191,10 +1103,9 @@ namespace Com.Cosmotech.Api
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="body"></param>
         /// <param name="overwrite">whether to overwrite any existing handler resource (optional, default to false)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UploadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UploadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1322,9 +1233,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;RunTemplateParameterGroup&gt;</returns>
-        public List<RunTemplateParameterGroup> AddOrReplaceParameterGroups(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, int operationIndex = 0)
+        public List<RunTemplateParameterGroup> AddOrReplaceParameterGroups(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup)
         {
             Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>> localVarResponse = AddOrReplaceParameterGroupsWithHttpInfo(organizationId, solutionId, runTemplateParameterGroup);
             return localVarResponse.Data;
@@ -1337,9 +1247,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;RunTemplateParameterGroup&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1386,24 +1295,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = runTemplateParameterGroup;
 
-            localVarRequestOptions.Operation = "SolutionApi.AddOrReplaceParameterGroups";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1427,12 +1323,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;RunTemplateParameterGroup&gt;</returns>
-        public async System.Threading.Tasks.Task<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<RunTemplateParameterGroup>> AddOrReplaceParameterGroupsAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>> localVarResponse = await AddOrReplaceParameterGroupsWithHttpInfoAsync(organizationId, solutionId, runTemplateParameterGroup, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>> localVarResponse = await AddOrReplaceParameterGroupsWithHttpInfoAsync(organizationId, solutionId, runTemplateParameterGroup, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1443,10 +1338,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameterGroup">the Parameter Groups</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;RunTemplateParameterGroup&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>>> AddOrReplaceParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameterGroup>>> AddOrReplaceParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameterGroup> runTemplateParameterGroup, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1494,24 +1388,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = runTemplateParameterGroup;
 
-            localVarRequestOptions.Operation = "SolutionApi.AddOrReplaceParameterGroups";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1536,9 +1417,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameter">the Parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;RunTemplateParameter&gt;</returns>
-        public List<RunTemplateParameter> AddOrReplaceParameters(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, int operationIndex = 0)
+        public List<RunTemplateParameter> AddOrReplaceParameters(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter)
         {
             Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>> localVarResponse = AddOrReplaceParametersWithHttpInfo(organizationId, solutionId, runTemplateParameter);
             return localVarResponse.Data;
@@ -1551,9 +1431,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameter">the Parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;RunTemplateParameter&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>> AddOrReplaceParametersWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>> AddOrReplaceParametersWithHttpInfo(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1600,24 +1479,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = runTemplateParameter;
 
-            localVarRequestOptions.Operation = "SolutionApi.AddOrReplaceParameters";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1641,12 +1507,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameter">the Parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;RunTemplateParameter&gt;</returns>
-        public async System.Threading.Tasks.Task<List<RunTemplateParameter>> AddOrReplaceParametersAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<RunTemplateParameter>> AddOrReplaceParametersAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>> localVarResponse = await AddOrReplaceParametersWithHttpInfoAsync(organizationId, solutionId, runTemplateParameter, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>> localVarResponse = await AddOrReplaceParametersWithHttpInfoAsync(organizationId, solutionId, runTemplateParameter, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1657,10 +1522,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateParameter">the Parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;RunTemplateParameter&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>>> AddOrReplaceParametersWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplateParameter>>> AddOrReplaceParametersWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplateParameter> runTemplateParameter, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1708,24 +1572,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = runTemplateParameter;
 
-            localVarRequestOptions.Operation = "SolutionApi.AddOrReplaceParameters";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1750,9 +1601,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;RunTemplate&gt;</returns>
-        public List<RunTemplate> AddOrReplaceRunTemplates(string organizationId, string solutionId, List<RunTemplate> runTemplate, int operationIndex = 0)
+        public List<RunTemplate> AddOrReplaceRunTemplates(string organizationId, string solutionId, List<RunTemplate> runTemplate)
         {
             Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> localVarResponse = AddOrReplaceRunTemplatesWithHttpInfo(organizationId, solutionId, runTemplate);
             return localVarResponse.Data;
@@ -1765,9 +1615,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;RunTemplate&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> AddOrReplaceRunTemplatesWithHttpInfo(string organizationId, string solutionId, List<RunTemplate> runTemplate, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> AddOrReplaceRunTemplatesWithHttpInfo(string organizationId, string solutionId, List<RunTemplate> runTemplate)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1814,24 +1663,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = runTemplate;
 
-            localVarRequestOptions.Operation = "SolutionApi.AddOrReplaceRunTemplates";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1855,12 +1691,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;RunTemplate&gt;</returns>
-        public async System.Threading.Tasks.Task<List<RunTemplate>> AddOrReplaceRunTemplatesAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<RunTemplate>> AddOrReplaceRunTemplatesAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> localVarResponse = await AddOrReplaceRunTemplatesWithHttpInfoAsync(organizationId, solutionId, runTemplate, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> localVarResponse = await AddOrReplaceRunTemplatesWithHttpInfoAsync(organizationId, solutionId, runTemplate, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1871,10 +1706,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;RunTemplate&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplate>>> AddOrReplaceRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplate>>> AddOrReplaceRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, List<RunTemplate> runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1922,24 +1756,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = runTemplate;
 
-            localVarRequestOptions.Operation = "SolutionApi.AddOrReplaceRunTemplates";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1964,9 +1785,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionAccessControl">the new Solution security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionAccessControl</returns>
-        public SolutionAccessControl AddSolutionAccessControl(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, int operationIndex = 0)
+        public SolutionAccessControl AddSolutionAccessControl(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl)
         {
             Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> localVarResponse = AddSolutionAccessControlWithHttpInfo(organizationId, solutionId, solutionAccessControl);
             return localVarResponse.Data;
@@ -1979,9 +1799,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionAccessControl">the new Solution security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionAccessControl</returns>
-        public Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> AddSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> AddSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2029,24 +1848,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = solutionAccessControl;
 
-            localVarRequestOptions.Operation = "SolutionApi.AddSolutionAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2070,12 +1876,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionAccessControl">the new Solution security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionAccessControl</returns>
-        public async System.Threading.Tasks.Task<SolutionAccessControl> AddSolutionAccessControlAsync(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SolutionAccessControl> AddSolutionAccessControlAsync(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> localVarResponse = await AddSolutionAccessControlWithHttpInfoAsync(organizationId, solutionId, solutionAccessControl, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> localVarResponse = await AddSolutionAccessControlWithHttpInfoAsync(organizationId, solutionId, solutionAccessControl, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2086,10 +1891,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionAccessControl">the new Solution security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionAccessControl)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionAccessControl>> AddSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionAccessControl>> AddSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, SolutionAccessControl solutionAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2138,24 +1942,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = solutionAccessControl;
 
-            localVarRequestOptions.Operation = "SolutionApi.AddSolutionAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2179,9 +1970,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solution">the Solution to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Solution</returns>
-        public Solution CreateSolution(string organizationId, Solution solution, int operationIndex = 0)
+        public Solution CreateSolution(string organizationId, Solution solution)
         {
             Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = CreateSolutionWithHttpInfo(organizationId, solution);
             return localVarResponse.Data;
@@ -2193,9 +1983,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solution">the Solution to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Solution</returns>
-        public Com.Cosmotech.Client.ApiResponse<Solution> CreateSolutionWithHttpInfo(string organizationId, Solution solution, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Solution> CreateSolutionWithHttpInfo(string organizationId, Solution solution)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2236,24 +2025,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = solution;
 
-            localVarRequestOptions.Operation = "SolutionApi.CreateSolution";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2276,12 +2052,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solution">the Solution to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Solution</returns>
-        public async System.Threading.Tasks.Task<Solution> CreateSolutionAsync(string organizationId, Solution solution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solution> CreateSolutionAsync(string organizationId, Solution solution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = await CreateSolutionWithHttpInfoAsync(organizationId, solution, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = await CreateSolutionWithHttpInfoAsync(organizationId, solution, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2291,10 +2066,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solution">the Solution to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Solution)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Solution>> CreateSolutionWithHttpInfoAsync(string organizationId, Solution solution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Solution>> CreateSolutionWithHttpInfoAsync(string organizationId, Solution solution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2336,24 +2110,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = solution;
 
-            localVarRequestOptions.Operation = "SolutionApi.CreateSolution";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2377,9 +2138,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteSolution(string organizationId, string solutionId, int operationIndex = 0)
+        public void DeleteSolution(string organizationId, string solutionId)
         {
             DeleteSolutionWithHttpInfo(organizationId, solutionId);
         }
@@ -2390,9 +2150,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> DeleteSolutionWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteSolutionWithHttpInfo(string organizationId, string solutionId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2430,24 +2189,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.DeleteSolution";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2470,12 +2216,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteSolutionAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteSolutionAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteSolutionWithHttpInfoAsync(organizationId, solutionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteSolutionWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2484,10 +2229,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteSolutionWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteSolutionWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2526,24 +2270,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.DeleteSolution";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2568,9 +2299,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteSolutionRunTemplate(string organizationId, string solutionId, string runTemplateId, int operationIndex = 0)
+        public void DeleteSolutionRunTemplate(string organizationId, string solutionId, string runTemplateId)
         {
             DeleteSolutionRunTemplateWithHttpInfo(organizationId, solutionId, runTemplateId);
         }
@@ -2582,9 +2312,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> DeleteSolutionRunTemplateWithHttpInfo(string organizationId, string solutionId, string runTemplateId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteSolutionRunTemplateWithHttpInfo(string organizationId, string solutionId, string runTemplateId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2629,24 +2358,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.DeleteSolutionRunTemplate";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2670,12 +2386,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteSolutionRunTemplateAsync(string organizationId, string solutionId, string runTemplateId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteSolutionRunTemplateAsync(string organizationId, string solutionId, string runTemplateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteSolutionRunTemplateWithHttpInfoAsync(organizationId, solutionId, runTemplateId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteSolutionRunTemplateWithHttpInfoAsync(organizationId, solutionId, runTemplateId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2685,10 +2400,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteSolutionRunTemplateWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteSolutionRunTemplateWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2734,24 +2448,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.DeleteSolutionRunTemplate";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2777,9 +2478,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>byte[]</returns>
-        public byte[] DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, int operationIndex = 0)
+        public byte[] DownloadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
         {
             Com.Cosmotech.Client.ApiResponse<byte[]> localVarResponse = DownloadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId);
             return localVarResponse.Data;
@@ -2793,9 +2493,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of byte[]</returns>
-        public Com.Cosmotech.Client.ApiResponse<byte[]> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<byte[]> DownloadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2813,12 +2512,6 @@ namespace Com.Cosmotech.Api
             if (runTemplateId == null)
             {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->DownloadRunTemplateHandler");
-            }
-
-            // verify the required parameter 'handlerId' is set
-            if (handlerId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'handlerId' when calling SolutionApi->DownloadRunTemplateHandler");
             }
 
             Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
@@ -2848,24 +2541,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
             localVarRequestOptions.PathParameters.Add("handler_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(handlerId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.DownloadRunTemplateHandler";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2890,12 +2570,11 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of byte[]</returns>
-        public async System.Threading.Tasks.Task<byte[]> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<byte[]> DownloadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<byte[]> localVarResponse = await DownloadRunTemplateHandlerWithHttpInfoAsync(organizationId, solutionId, runTemplateId, handlerId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<byte[]> localVarResponse = await DownloadRunTemplateHandlerWithHttpInfoAsync(organizationId, solutionId, runTemplateId, handlerId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2907,10 +2586,9 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="handlerId">the Handler identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (byte[])</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<byte[]>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<byte[]>> DownloadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2928,12 +2606,6 @@ namespace Com.Cosmotech.Api
             if (runTemplateId == null)
             {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->DownloadRunTemplateHandler");
-            }
-
-            // verify the required parameter 'handlerId' is set
-            if (handlerId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'handlerId' when calling SolutionApi->DownloadRunTemplateHandler");
             }
 
 
@@ -2964,24 +2636,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
             localVarRequestOptions.PathParameters.Add("handler_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(handlerId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.DownloadRunTemplateHandler";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3006,9 +2665,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Solution&gt;</returns>
-        public List<Solution> FindAllSolutions(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
+        public List<Solution> FindAllSolutions(string organizationId, int? page = default(int?), int? size = default(int?))
         {
             Com.Cosmotech.Client.ApiResponse<List<Solution>> localVarResponse = FindAllSolutionsWithHttpInfo(organizationId, page, size);
             return localVarResponse.Data;
@@ -3021,9 +2679,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Solution&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<Solution>> FindAllSolutionsWithHttpInfo(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<Solution>> FindAllSolutionsWithHttpInfo(string organizationId, int? page = default(int?), int? size = default(int?))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3063,24 +2720,11 @@ namespace Com.Cosmotech.Api
                 localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
             }
 
-            localVarRequestOptions.Operation = "SolutionApi.FindAllSolutions";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3104,12 +2748,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Solution&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Solution>> FindAllSolutionsAsync(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Solution>> FindAllSolutionsAsync(string organizationId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Solution>> localVarResponse = await FindAllSolutionsWithHttpInfoAsync(organizationId, page, size, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<Solution>> localVarResponse = await FindAllSolutionsWithHttpInfoAsync(organizationId, page, size, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3120,10 +2763,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Solution&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Solution>>> FindAllSolutionsWithHttpInfoAsync(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Solution>>> FindAllSolutionsWithHttpInfoAsync(string organizationId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3164,24 +2806,11 @@ namespace Com.Cosmotech.Api
                 localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
             }
 
-            localVarRequestOptions.Operation = "SolutionApi.FindAllSolutions";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3205,9 +2834,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Solution</returns>
-        public Solution FindSolutionById(string organizationId, string solutionId, int operationIndex = 0)
+        public Solution FindSolutionById(string organizationId, string solutionId)
         {
             Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = FindSolutionByIdWithHttpInfo(organizationId, solutionId);
             return localVarResponse.Data;
@@ -3219,9 +2847,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Solution</returns>
-        public Com.Cosmotech.Client.ApiResponse<Solution> FindSolutionByIdWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Solution> FindSolutionByIdWithHttpInfo(string organizationId, string solutionId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3260,24 +2887,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.FindSolutionById";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3300,12 +2914,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Solution</returns>
-        public async System.Threading.Tasks.Task<Solution> FindSolutionByIdAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solution> FindSolutionByIdAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = await FindSolutionByIdWithHttpInfoAsync(organizationId, solutionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = await FindSolutionByIdWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3315,10 +2928,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Solution)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Solution>> FindSolutionByIdWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Solution>> FindSolutionByIdWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3358,24 +2970,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.FindSolutionById";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3400,9 +2999,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionAccessControl</returns>
-        public SolutionAccessControl GetSolutionAccessControl(string organizationId, string solutionId, string identityId, int operationIndex = 0)
+        public SolutionAccessControl GetSolutionAccessControl(string organizationId, string solutionId, string identityId)
         {
             Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> localVarResponse = GetSolutionAccessControlWithHttpInfo(organizationId, solutionId, identityId);
             return localVarResponse.Data;
@@ -3415,9 +3013,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionAccessControl</returns>
-        public Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> GetSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> GetSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3463,24 +3060,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.GetSolutionAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3504,12 +3088,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionAccessControl</returns>
-        public async System.Threading.Tasks.Task<SolutionAccessControl> GetSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SolutionAccessControl> GetSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> localVarResponse = await GetSolutionAccessControlWithHttpInfoAsync(organizationId, solutionId, identityId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> localVarResponse = await GetSolutionAccessControlWithHttpInfoAsync(organizationId, solutionId, identityId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3520,10 +3103,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionAccessControl)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionAccessControl>> GetSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionAccessControl>> GetSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3570,24 +3152,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.GetSolutionAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3611,9 +3180,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionSecurity</returns>
-        public SolutionSecurity GetSolutionSecurity(string organizationId, string solutionId, int operationIndex = 0)
+        public SolutionSecurity GetSolutionSecurity(string organizationId, string solutionId)
         {
             Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = GetSolutionSecurityWithHttpInfo(organizationId, solutionId);
             return localVarResponse.Data;
@@ -3625,9 +3193,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionSecurity</returns>
-        public Com.Cosmotech.Client.ApiResponse<SolutionSecurity> GetSolutionSecurityWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<SolutionSecurity> GetSolutionSecurityWithHttpInfo(string organizationId, string solutionId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3666,24 +3233,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.GetSolutionSecurity";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3706,12 +3260,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionSecurity</returns>
-        public async System.Threading.Tasks.Task<SolutionSecurity> GetSolutionSecurityAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SolutionSecurity> GetSolutionSecurityAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = await GetSolutionSecurityWithHttpInfoAsync(organizationId, solutionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = await GetSolutionSecurityWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3721,10 +3274,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionSecurity>> GetSolutionSecurityWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionSecurity>> GetSolutionSecurityWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3764,24 +3316,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.GetSolutionSecurity";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3805,9 +3344,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> GetSolutionSecurityUsers(string organizationId, string solutionId, int operationIndex = 0)
+        public List<string> GetSolutionSecurityUsers(string organizationId, string solutionId)
         {
             Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = GetSolutionSecurityUsersWithHttpInfo(organizationId, solutionId);
             return localVarResponse.Data;
@@ -3819,9 +3357,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<string>> GetSolutionSecurityUsersWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<string>> GetSolutionSecurityUsersWithHttpInfo(string organizationId, string solutionId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3860,24 +3397,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.GetSolutionSecurityUsers";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3900,12 +3424,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> GetSolutionSecurityUsersAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> GetSolutionSecurityUsersAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = await GetSolutionSecurityUsersWithHttpInfoAsync(organizationId, solutionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = await GetSolutionSecurityUsersWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3915,10 +3438,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<string>>> GetSolutionSecurityUsersWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<string>>> GetSolutionSecurityUsersWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3958,24 +3480,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.GetSolutionSecurityUsers";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3999,9 +3508,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RemoveAllRunTemplates(string organizationId, string solutionId, int operationIndex = 0)
+        public void RemoveAllRunTemplates(string organizationId, string solutionId)
         {
             RemoveAllRunTemplatesWithHttpInfo(organizationId, solutionId);
         }
@@ -4012,9 +3520,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllRunTemplatesWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllRunTemplatesWithHttpInfo(string organizationId, string solutionId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4052,24 +3559,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.RemoveAllRunTemplates";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4092,12 +3586,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveAllRunTemplatesAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RemoveAllRunTemplatesAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RemoveAllRunTemplatesWithHttpInfoAsync(organizationId, solutionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await RemoveAllRunTemplatesWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4106,10 +3599,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllRunTemplatesWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4148,24 +3640,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.RemoveAllRunTemplates";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4189,9 +3668,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RemoveAllSolutionParameterGroups(string organizationId, string solutionId, int operationIndex = 0)
+        public void RemoveAllSolutionParameterGroups(string organizationId, string solutionId)
         {
             RemoveAllSolutionParameterGroupsWithHttpInfo(organizationId, solutionId);
         }
@@ -4202,9 +3680,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllSolutionParameterGroupsWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllSolutionParameterGroupsWithHttpInfo(string organizationId, string solutionId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4242,24 +3719,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.RemoveAllSolutionParameterGroups";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4282,12 +3746,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveAllSolutionParameterGroupsAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RemoveAllSolutionParameterGroupsAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RemoveAllSolutionParameterGroupsWithHttpInfoAsync(organizationId, solutionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await RemoveAllSolutionParameterGroupsWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4296,10 +3759,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllSolutionParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllSolutionParameterGroupsWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4338,24 +3800,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.RemoveAllSolutionParameterGroups";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4379,9 +3828,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RemoveAllSolutionParameters(string organizationId, string solutionId, int operationIndex = 0)
+        public void RemoveAllSolutionParameters(string organizationId, string solutionId)
         {
             RemoveAllSolutionParametersWithHttpInfo(organizationId, solutionId);
         }
@@ -4392,9 +3840,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllSolutionParametersWithHttpInfo(string organizationId, string solutionId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllSolutionParametersWithHttpInfo(string organizationId, string solutionId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4432,24 +3879,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.RemoveAllSolutionParameters";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4472,12 +3906,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveAllSolutionParametersAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RemoveAllSolutionParametersAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RemoveAllSolutionParametersWithHttpInfoAsync(organizationId, solutionId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await RemoveAllSolutionParametersWithHttpInfoAsync(organizationId, solutionId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4486,10 +3919,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllSolutionParametersWithHttpInfoAsync(string organizationId, string solutionId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllSolutionParametersWithHttpInfoAsync(string organizationId, string solutionId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4528,24 +3960,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.RemoveAllSolutionParameters";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4570,9 +3989,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RemoveSolutionAccessControl(string organizationId, string solutionId, string identityId, int operationIndex = 0)
+        public void RemoveSolutionAccessControl(string organizationId, string solutionId, string identityId)
         {
             RemoveSolutionAccessControlWithHttpInfo(organizationId, solutionId, identityId);
         }
@@ -4584,9 +4002,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> RemoveSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4631,24 +4048,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.RemoveSolutionAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4672,12 +4076,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RemoveSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RemoveSolutionAccessControlWithHttpInfoAsync(organizationId, solutionId, identityId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await RemoveSolutionAccessControlWithHttpInfoAsync(organizationId, solutionId, identityId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -4687,10 +4090,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4736,24 +4138,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
-            localVarRequestOptions.Operation = "SolutionApi.RemoveSolutionAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4778,9 +4167,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionSecurity</returns>
-        public SolutionSecurity SetSolutionDefaultSecurity(string organizationId, string solutionId, SolutionRole solutionRole, int operationIndex = 0)
+        public SolutionSecurity SetSolutionDefaultSecurity(string organizationId, string solutionId, SolutionRole solutionRole)
         {
             Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = SetSolutionDefaultSecurityWithHttpInfo(organizationId, solutionId, solutionRole);
             return localVarResponse.Data;
@@ -4793,9 +4181,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionSecurity</returns>
-        public Com.Cosmotech.Client.ApiResponse<SolutionSecurity> SetSolutionDefaultSecurityWithHttpInfo(string organizationId, string solutionId, SolutionRole solutionRole, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<SolutionSecurity> SetSolutionDefaultSecurityWithHttpInfo(string organizationId, string solutionId, SolutionRole solutionRole)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4843,24 +4230,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = solutionRole;
 
-            localVarRequestOptions.Operation = "SolutionApi.SetSolutionDefaultSecurity";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4884,12 +4258,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionSecurity</returns>
-        public async System.Threading.Tasks.Task<SolutionSecurity> SetSolutionDefaultSecurityAsync(string organizationId, string solutionId, SolutionRole solutionRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SolutionSecurity> SetSolutionDefaultSecurityAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = await SetSolutionDefaultSecurityWithHttpInfoAsync(organizationId, solutionId, solutionRole, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<SolutionSecurity> localVarResponse = await SetSolutionDefaultSecurityWithHttpInfoAsync(organizationId, solutionId, solutionRole, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4900,10 +4273,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solutionRole">This change the solution default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the solution.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionSecurity)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionSecurity>> SetSolutionDefaultSecurityWithHttpInfoAsync(string organizationId, string solutionId, SolutionRole solutionRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionSecurity>> SetSolutionDefaultSecurityWithHttpInfoAsync(string organizationId, string solutionId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4952,24 +4324,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = solutionRole;
 
-            localVarRequestOptions.Operation = "SolutionApi.SetSolutionDefaultSecurity";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4994,9 +4353,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solution">the new Solution details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Solution</returns>
-        public Solution UpdateSolution(string organizationId, string solutionId, Solution solution, int operationIndex = 0)
+        public Solution UpdateSolution(string organizationId, string solutionId, Solution solution)
         {
             Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = UpdateSolutionWithHttpInfo(organizationId, solutionId, solution);
             return localVarResponse.Data;
@@ -5009,9 +4367,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solution">the new Solution details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Solution</returns>
-        public Com.Cosmotech.Client.ApiResponse<Solution> UpdateSolutionWithHttpInfo(string organizationId, string solutionId, Solution solution, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Solution> UpdateSolutionWithHttpInfo(string organizationId, string solutionId, Solution solution)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5059,24 +4416,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = solution;
 
-            localVarRequestOptions.Operation = "SolutionApi.UpdateSolution";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5100,12 +4444,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solution">the new Solution details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Solution</returns>
-        public async System.Threading.Tasks.Task<Solution> UpdateSolutionAsync(string organizationId, string solutionId, Solution solution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Solution> UpdateSolutionAsync(string organizationId, string solutionId, Solution solution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = await UpdateSolutionWithHttpInfoAsync(organizationId, solutionId, solution, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Solution> localVarResponse = await UpdateSolutionWithHttpInfoAsync(organizationId, solutionId, solution, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5116,10 +4459,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="solution">the new Solution details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Solution)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Solution>> UpdateSolutionWithHttpInfoAsync(string organizationId, string solutionId, Solution solution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Solution>> UpdateSolutionWithHttpInfoAsync(string organizationId, string solutionId, Solution solution, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5168,24 +4510,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("solution_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(solutionId)); // path parameter
             localVarRequestOptions.Data = solution;
 
-            localVarRequestOptions.Operation = "SolutionApi.UpdateSolution";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5211,9 +4540,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="solutionRole">The new Solution Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SolutionAccessControl</returns>
-        public SolutionAccessControl UpdateSolutionAccessControl(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, int operationIndex = 0)
+        public SolutionAccessControl UpdateSolutionAccessControl(string organizationId, string solutionId, string identityId, SolutionRole solutionRole)
         {
             Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> localVarResponse = UpdateSolutionAccessControlWithHttpInfo(organizationId, solutionId, identityId, solutionRole);
             return localVarResponse.Data;
@@ -5227,9 +4555,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="solutionRole">The new Solution Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SolutionAccessControl</returns>
-        public Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> UpdateSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> UpdateSolutionAccessControlWithHttpInfo(string organizationId, string solutionId, string identityId, SolutionRole solutionRole)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5283,24 +4610,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
             localVarRequestOptions.Data = solutionRole;
 
-            localVarRequestOptions.Operation = "SolutionApi.UpdateSolutionAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5325,12 +4639,11 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="solutionRole">The new Solution Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SolutionAccessControl</returns>
-        public async System.Threading.Tasks.Task<SolutionAccessControl> UpdateSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SolutionAccessControl> UpdateSolutionAccessControlAsync(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> localVarResponse = await UpdateSolutionAccessControlWithHttpInfoAsync(organizationId, solutionId, identityId, solutionRole, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<SolutionAccessControl> localVarResponse = await UpdateSolutionAccessControlWithHttpInfoAsync(organizationId, solutionId, identityId, solutionRole, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5342,10 +4655,9 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="solutionRole">The new Solution Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SolutionAccessControl)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionAccessControl>> UpdateSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<SolutionAccessControl>> UpdateSolutionAccessControlWithHttpInfoAsync(string organizationId, string solutionId, string identityId, SolutionRole solutionRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5400,24 +4712,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
             localVarRequestOptions.Data = solutionRole;
 
-            localVarRequestOptions.Operation = "SolutionApi.UpdateSolutionAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5443,9 +4742,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;RunTemplate&gt;</returns>
-        public List<RunTemplate> UpdateSolutionRunTemplate(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, int operationIndex = 0)
+        public List<RunTemplate> UpdateSolutionRunTemplate(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate)
         {
             Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> localVarResponse = UpdateSolutionRunTemplateWithHttpInfo(organizationId, solutionId, runTemplateId, runTemplate);
             return localVarResponse.Data;
@@ -5459,9 +4757,8 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;RunTemplate&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> UpdateSolutionRunTemplateWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> UpdateSolutionRunTemplateWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5516,24 +4813,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
             localVarRequestOptions.Data = runTemplate;
 
-            localVarRequestOptions.Operation = "SolutionApi.UpdateSolutionRunTemplate";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5558,12 +4842,11 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;RunTemplate&gt;</returns>
-        public async System.Threading.Tasks.Task<List<RunTemplate>> UpdateSolutionRunTemplateAsync(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<RunTemplate>> UpdateSolutionRunTemplateAsync(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> localVarResponse = await UpdateSolutionRunTemplateWithHttpInfoAsync(organizationId, solutionId, runTemplateId, runTemplate, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<RunTemplate>> localVarResponse = await UpdateSolutionRunTemplateWithHttpInfoAsync(organizationId, solutionId, runTemplateId, runTemplate, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5575,10 +4858,9 @@ namespace Com.Cosmotech.Api
         /// <param name="solutionId">the Solution identifier</param>
         /// <param name="runTemplateId">the Run Template identifier</param>
         /// <param name="runTemplate">the Run Templates</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;RunTemplate&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplate>>> UpdateSolutionRunTemplateWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<RunTemplate>>> UpdateSolutionRunTemplateWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplate runTemplate, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5634,24 +4916,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("run_template_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runTemplateId)); // path parameter
             localVarRequestOptions.Data = runTemplate;
 
-            localVarRequestOptions.Operation = "SolutionApi.UpdateSolutionRunTemplate";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5679,9 +4948,8 @@ namespace Com.Cosmotech.Api
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="body"></param>
         /// <param name="overwrite">whether to overwrite any existing handler resource (optional, default to false)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void UploadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), int operationIndex = 0)
+        public void UploadRunTemplateHandler(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?))
         {
             UploadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId, body, overwrite);
         }
@@ -5696,9 +4964,8 @@ namespace Com.Cosmotech.Api
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="body"></param>
         /// <param name="overwrite">whether to overwrite any existing handler resource (optional, default to false)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> UploadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> UploadRunTemplateHandlerWithHttpInfo(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5716,12 +4983,6 @@ namespace Com.Cosmotech.Api
             if (runTemplateId == null)
             {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->UploadRunTemplateHandler");
-            }
-
-            // verify the required parameter 'handlerId' is set
-            if (handlerId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'handlerId' when calling SolutionApi->UploadRunTemplateHandler");
             }
 
             // verify the required parameter 'body' is set
@@ -5762,24 +5023,11 @@ namespace Com.Cosmotech.Api
             }
             localVarRequestOptions.Data = body;
 
-            localVarRequestOptions.Operation = "SolutionApi.UploadRunTemplateHandler";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5806,12 +5054,11 @@ namespace Com.Cosmotech.Api
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="body"></param>
         /// <param name="overwrite">whether to overwrite any existing handler resource (optional, default to false)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UploadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UploadRunTemplateHandlerAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await UploadRunTemplateHandlerWithHttpInfoAsync(organizationId, solutionId, runTemplateId, handlerId, body, overwrite, operationIndex, cancellationToken).ConfigureAwait(false);
+            await UploadRunTemplateHandlerWithHttpInfoAsync(organizationId, solutionId, runTemplateId, handlerId, body, overwrite, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -5824,10 +5071,9 @@ namespace Com.Cosmotech.Api
         /// <param name="handlerId">the Handler identifier</param>
         /// <param name="body"></param>
         /// <param name="overwrite">whether to overwrite any existing handler resource (optional, default to false)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> UploadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> UploadRunTemplateHandlerWithHttpInfoAsync(string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5845,12 +5091,6 @@ namespace Com.Cosmotech.Api
             if (runTemplateId == null)
             {
                 throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runTemplateId' when calling SolutionApi->UploadRunTemplateHandler");
-            }
-
-            // verify the required parameter 'handlerId' is set
-            if (handlerId == null)
-            {
-                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'handlerId' when calling SolutionApi->UploadRunTemplateHandler");
             }
 
             // verify the required parameter 'body' is set
@@ -5892,24 +5132,11 @@ namespace Com.Cosmotech.Api
             }
             localVarRequestOptions.Data = body;
 
-            localVarRequestOptions.Operation = "SolutionApi.UploadRunTemplateHandler";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request

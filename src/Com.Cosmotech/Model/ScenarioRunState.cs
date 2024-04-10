@@ -68,6 +68,7 @@ namespace Com.Cosmotech.Model
         /// </summary>
         [EnumMember(Value = "DataIngestionFailure")]
         DataIngestionFailure = 6
+
     }
 
 }

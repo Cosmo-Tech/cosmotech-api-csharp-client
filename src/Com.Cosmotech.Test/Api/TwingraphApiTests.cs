@@ -108,7 +108,7 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //string graphId = null;
-            //System.IO.Stream? body = null;
+            //System.IO.Stream body = null;
             //instance.CreateGraph(organizationId, graphId, body);
         }
 

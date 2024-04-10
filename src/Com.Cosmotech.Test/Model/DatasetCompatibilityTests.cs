@@ -15,6 +15,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -55,6 +56,7 @@ namespace Com.Cosmotech.Test.Model
             //Assert.IsType<DatasetCompatibility>(instance);
         }
 
+
         /// <summary>
         /// Test the property 'SolutionKey'
         /// </summary>
@@ -63,7 +65,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'SolutionKey'
         }
-
         /// <summary>
         /// Test the property 'MinimumVersion'
         /// </summary>
@@ -72,7 +73,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'MinimumVersion'
         }
-
         /// <summary>
         /// Test the property 'MaximumVersion'
         /// </summary>
@@ -81,5 +81,7 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'MaximumVersion'
         }
+
     }
+
 }

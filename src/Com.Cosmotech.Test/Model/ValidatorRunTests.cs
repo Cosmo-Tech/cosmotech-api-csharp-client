@@ -15,6 +15,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -55,6 +56,7 @@ namespace Com.Cosmotech.Test.Model
             //Assert.IsType<ValidatorRun>(instance);
         }
 
+
         /// <summary>
         /// Test the property 'Id'
         /// </summary>
@@ -63,7 +65,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Id'
         }
-
         /// <summary>
         /// Test the property 'ValidatorId'
         /// </summary>
@@ -72,7 +73,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'ValidatorId'
         }
-
         /// <summary>
         /// Test the property 'ValidatorName'
         /// </summary>
@@ -81,7 +81,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'ValidatorName'
         }
-
         /// <summary>
         /// Test the property 'DatasetId'
         /// </summary>
@@ -90,7 +89,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'DatasetId'
         }
-
         /// <summary>
         /// Test the property 'DatasetName'
         /// </summary>
@@ -99,7 +97,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'DatasetName'
         }
-
         /// <summary>
         /// Test the property 'State'
         /// </summary>
@@ -108,7 +105,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'State'
         }
-
         /// <summary>
         /// Test the property 'ContainerId'
         /// </summary>
@@ -117,7 +113,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'ContainerId'
         }
-
         /// <summary>
         /// Test the property 'Logs'
         /// </summary>
@@ -126,5 +121,7 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Logs'
         }
+
     }
+
 }

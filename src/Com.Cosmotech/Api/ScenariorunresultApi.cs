@@ -16,7 +16,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using Com.Cosmotech.Client;
-using Com.Cosmotech.Client.Auth;
 using Com.Cosmotech.Model;
 
 namespace Com.Cosmotech.Api
@@ -37,9 +36,8 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioRunResult</returns>
-        ScenarioRunResult GetScenarioRunResult(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, int operationIndex = 0);
+        ScenarioRunResult GetScenarioRunResult(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId);
 
         /// <summary>
         /// Get a ScenarioRunResult in the Organization
@@ -53,9 +51,8 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioRunResult</returns>
-        ApiResponse<ScenarioRunResult> GetScenarioRunResultWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, int operationIndex = 0);
+        ApiResponse<ScenarioRunResult> GetScenarioRunResultWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId);
         /// <summary>
         /// Create a new ScenarioRunResult in the Organization
         /// </summary>
@@ -66,9 +63,8 @@ namespace Com.Cosmotech.Api
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
         /// <param name="requestBody">the ScenarioRunResult to register</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioRunResult</returns>
-        ScenarioRunResult SendScenarioRunResult(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, int operationIndex = 0);
+        ScenarioRunResult SendScenarioRunResult(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody);
 
         /// <summary>
         /// Create a new ScenarioRunResult in the Organization
@@ -83,9 +79,8 @@ namespace Com.Cosmotech.Api
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
         /// <param name="requestBody">the ScenarioRunResult to register</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioRunResult</returns>
-        ApiResponse<ScenarioRunResult> SendScenarioRunResultWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, int operationIndex = 0);
+        ApiResponse<ScenarioRunResult> SendScenarioRunResultWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody);
         #endregion Synchronous Operations
     }
 
@@ -107,10 +102,9 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioRunResult</returns>
-        System.Threading.Tasks.Task<ScenarioRunResult> GetScenarioRunResultAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ScenarioRunResult> GetScenarioRunResultAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a ScenarioRunResult in the Organization
@@ -124,10 +118,9 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioRunResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ScenarioRunResult>> GetScenarioRunResultWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ScenarioRunResult>> GetScenarioRunResultWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a new ScenarioRunResult in the Organization
         /// </summary>
@@ -141,10 +134,9 @@ namespace Com.Cosmotech.Api
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
         /// <param name="requestBody">the ScenarioRunResult to register</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioRunResult</returns>
-        System.Threading.Tasks.Task<ScenarioRunResult> SendScenarioRunResultAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ScenarioRunResult> SendScenarioRunResultAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create a new ScenarioRunResult in the Organization
@@ -159,10 +151,9 @@ namespace Com.Cosmotech.Api
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
         /// <param name="requestBody">the ScenarioRunResult to register</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioRunResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ScenarioRunResult>> SendScenarioRunResultWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ScenarioRunResult>> SendScenarioRunResultWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -292,9 +283,8 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioRunResult</returns>
-        public ScenarioRunResult GetScenarioRunResult(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, int operationIndex = 0)
+        public ScenarioRunResult GetScenarioRunResult(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> localVarResponse = GetScenarioRunResultWithHttpInfo(organizationId, workspaceId, scenarioId, scenariorunId, probeId);
             return localVarResponse.Data;
@@ -309,9 +299,8 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioRunResult</returns>
-        public Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> GetScenarioRunResultWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> GetScenarioRunResultWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -371,24 +360,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("scenariorun_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenariorunId)); // path parameter
             localVarRequestOptions.PathParameters.Add("probe_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(probeId)); // path parameter
 
-            localVarRequestOptions.Operation = "ScenariorunresultApi.GetScenarioRunResult";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -414,12 +390,11 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioRunResult</returns>
-        public async System.Threading.Tasks.Task<ScenarioRunResult> GetScenarioRunResultAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ScenarioRunResult> GetScenarioRunResultAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> localVarResponse = await GetScenarioRunResultWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenariorunId, probeId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> localVarResponse = await GetScenarioRunResultWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenariorunId, probeId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -432,10 +407,9 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioRunResult)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioRunResult>> GetScenarioRunResultWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioRunResult>> GetScenarioRunResultWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -496,24 +470,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("scenariorun_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(scenariorunId)); // path parameter
             localVarRequestOptions.PathParameters.Add("probe_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(probeId)); // path parameter
 
-            localVarRequestOptions.Operation = "ScenariorunresultApi.GetScenarioRunResult";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -541,9 +502,8 @@ namespace Com.Cosmotech.Api
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
         /// <param name="requestBody">the ScenarioRunResult to register</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioRunResult</returns>
-        public ScenarioRunResult SendScenarioRunResult(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, int operationIndex = 0)
+        public ScenarioRunResult SendScenarioRunResult(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> localVarResponse = SendScenarioRunResultWithHttpInfo(organizationId, workspaceId, scenarioId, scenariorunId, probeId, requestBody);
             return localVarResponse.Data;
@@ -559,9 +519,8 @@ namespace Com.Cosmotech.Api
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
         /// <param name="requestBody">the ScenarioRunResult to register</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioRunResult</returns>
-        public Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> SendScenarioRunResultWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> SendScenarioRunResultWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -629,24 +588,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("probe_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(probeId)); // path parameter
             localVarRequestOptions.Data = requestBody;
 
-            localVarRequestOptions.Operation = "ScenariorunresultApi.SendScenarioRunResult";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -673,12 +619,11 @@ namespace Com.Cosmotech.Api
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
         /// <param name="requestBody">the ScenarioRunResult to register</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioRunResult</returns>
-        public async System.Threading.Tasks.Task<ScenarioRunResult> SendScenarioRunResultAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ScenarioRunResult> SendScenarioRunResultAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> localVarResponse = await SendScenarioRunResultWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenariorunId, probeId, requestBody, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<ScenarioRunResult> localVarResponse = await SendScenarioRunResultWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenariorunId, probeId, requestBody, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -692,10 +637,9 @@ namespace Com.Cosmotech.Api
         /// <param name="scenariorunId">the ScenarioRun identifier</param>
         /// <param name="probeId">the Probe identifier</param>
         /// <param name="requestBody">the ScenarioRunResult to register</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioRunResult)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioRunResult>> SendScenarioRunResultWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioRunResult>> SendScenarioRunResultWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -764,24 +708,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("probe_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(probeId)); // path parameter
             localVarRequestOptions.Data = requestBody;
 
-            localVarRequestOptions.Operation = "ScenariorunresultApi.SendScenarioRunResult";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request

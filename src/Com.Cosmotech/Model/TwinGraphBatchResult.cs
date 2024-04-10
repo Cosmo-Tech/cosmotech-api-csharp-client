@@ -30,7 +30,7 @@ namespace Com.Cosmotech.Model
     /// Processing result
     /// </summary>
     [DataContract(Name = "TwinGraphBatchResult")]
-    public partial class TwinGraphBatchResult : IValidatableObject
+    public partial class TwinGraphBatchResult : IEquatable<TwinGraphBatchResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TwinGraphBatchResult" /> class.
@@ -48,8 +48,7 @@ namespace Com.Cosmotech.Model
             this.TotalLines = totalLines;
             this.ProcessedLines = processedLines;
             // to ensure "errors" is required (not null)
-            if (errors == null)
-            {
+            if (errors == null) {
                 throw new ArgumentNullException("errors is a required property for TwinGraphBatchResult and cannot be null");
             }
             this.Errors = errors;
@@ -58,19 +57,19 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Gets or Sets TotalLines
         /// </summary>
-        [DataMember(Name = "totalLines", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "totalLines", IsRequired = true, EmitDefaultValue = false)]
         public int TotalLines { get; set; }
 
         /// <summary>
         /// Gets or Sets ProcessedLines
         /// </summary>
-        [DataMember(Name = "processedLines", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "processedLines", IsRequired = true, EmitDefaultValue = false)]
         public int ProcessedLines { get; set; }
 
         /// <summary>
         /// Gets or Sets Errors
         /// </summary>
-        [DataMember(Name = "errors", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "errors", IsRequired = true, EmitDefaultValue = false)]
         public List<string> Errors { get; set; }
 
         /// <summary>
@@ -98,11 +97,68 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as TwinGraphBatchResult);
+        }
+
+        /// <summary>
+        /// Returns true if TwinGraphBatchResult instances are equal
+        /// </summary>
+        /// <param name="input">Instance of TwinGraphBatchResult to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(TwinGraphBatchResult input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.TotalLines == input.TotalLines ||
+                    this.TotalLines.Equals(input.TotalLines)
+                ) && 
+                (
+                    this.ProcessedLines == input.ProcessedLines ||
+                    this.ProcessedLines.Equals(input.ProcessedLines)
+                ) && 
+                (
+                    this.Errors == input.Errors ||
+                    this.Errors != null &&
+                    input.Errors != null &&
+                    this.Errors.SequenceEqual(input.Errors)
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                hashCode = (hashCode * 59) + this.TotalLines.GetHashCode();
+                hashCode = (hashCode * 59) + this.ProcessedLines.GetHashCode();
+                if (this.Errors != null)
+                {
+                    hashCode = (hashCode * 59) + this.Errors.GetHashCode();
+                }
+                return hashCode;
+            }
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

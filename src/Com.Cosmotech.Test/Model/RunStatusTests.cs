@@ -15,6 +15,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -55,6 +56,7 @@ namespace Com.Cosmotech.Test.Model
             //Assert.IsType<RunStatus>(instance);
         }
 
+
         /// <summary>
         /// Test the property 'Id'
         /// </summary>
@@ -63,7 +65,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Id'
         }
-
         /// <summary>
         /// Test the property 'OrganizationId'
         /// </summary>
@@ -72,7 +73,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'OrganizationId'
         }
-
         /// <summary>
         /// Test the property 'WorkspaceId'
         /// </summary>
@@ -81,7 +81,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'WorkspaceId'
         }
-
         /// <summary>
         /// Test the property 'RunnerId'
         /// </summary>
@@ -90,7 +89,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'RunnerId'
         }
-
         /// <summary>
         /// Test the property 'WorkflowId'
         /// </summary>
@@ -99,7 +97,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'WorkflowId'
         }
-
         /// <summary>
         /// Test the property 'WorkflowName'
         /// </summary>
@@ -108,7 +105,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'WorkflowName'
         }
-
         /// <summary>
         /// Test the property 'StartTime'
         /// </summary>
@@ -117,7 +113,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'StartTime'
         }
-
         /// <summary>
         /// Test the property 'EndTime'
         /// </summary>
@@ -126,7 +121,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'EndTime'
         }
-
         /// <summary>
         /// Test the property 'Phase'
         /// </summary>
@@ -135,7 +129,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Phase'
         }
-
         /// <summary>
         /// Test the property 'Progress'
         /// </summary>
@@ -144,7 +137,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Progress'
         }
-
         /// <summary>
         /// Test the property 'Message'
         /// </summary>
@@ -153,7 +145,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Message'
         }
-
         /// <summary>
         /// Test the property 'EstimatedDuration'
         /// </summary>
@@ -162,7 +153,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'EstimatedDuration'
         }
-
         /// <summary>
         /// Test the property 'Nodes'
         /// </summary>
@@ -171,7 +161,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Nodes'
         }
-
         /// <summary>
         /// Test the property 'State'
         /// </summary>
@@ -180,5 +169,7 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'State'
         }
+
     }
+
 }

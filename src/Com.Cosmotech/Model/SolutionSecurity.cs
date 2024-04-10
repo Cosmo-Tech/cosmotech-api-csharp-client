@@ -30,7 +30,7 @@ namespace Com.Cosmotech.Model
     /// the Solution security information
     /// </summary>
     [DataContract(Name = "SolutionSecurity")]
-    public partial class SolutionSecurity : IValidatableObject
+    public partial class SolutionSecurity : IEquatable<SolutionSecurity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SolutionSecurity" /> class.
@@ -40,19 +40,17 @@ namespace Com.Cosmotech.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SolutionSecurity" /> class.
         /// </summary>
-        /// <param name="varDefault">the role by default (required).</param>
+        /// <param name="_default">the role by default (required).</param>
         /// <param name="accessControlList">the list which can access this Solution with detailed access control information (required).</param>
-        public SolutionSecurity(string varDefault = default(string), List<SolutionAccessControl> accessControlList = default(List<SolutionAccessControl>))
+        public SolutionSecurity(string _default = default(string), List<SolutionAccessControl> accessControlList = default(List<SolutionAccessControl>))
         {
-            // to ensure "varDefault" is required (not null)
-            if (varDefault == null)
-            {
-                throw new ArgumentNullException("varDefault is a required property for SolutionSecurity and cannot be null");
+            // to ensure "_default" is required (not null)
+            if (_default == null) {
+                throw new ArgumentNullException("_default is a required property for SolutionSecurity and cannot be null");
             }
-            this.VarDefault = varDefault;
+            this.Default = _default;
             // to ensure "accessControlList" is required (not null)
-            if (accessControlList == null)
-            {
+            if (accessControlList == null) {
                 throw new ArgumentNullException("accessControlList is a required property for SolutionSecurity and cannot be null");
             }
             this.AccessControlList = accessControlList;
@@ -62,14 +60,14 @@ namespace Com.Cosmotech.Model
         /// the role by default
         /// </summary>
         /// <value>the role by default</value>
-        [DataMember(Name = "default", IsRequired = true, EmitDefaultValue = true)]
-        public string VarDefault { get; set; }
+        [DataMember(Name = "default", IsRequired = true, EmitDefaultValue = false)]
+        public string Default { get; set; }
 
         /// <summary>
         /// the list which can access this Solution with detailed access control information
         /// </summary>
         /// <value>the list which can access this Solution with detailed access control information</value>
-        [DataMember(Name = "accessControlList", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "accessControlList", IsRequired = true, EmitDefaultValue = false)]
         public List<SolutionAccessControl> AccessControlList { get; set; }
 
         /// <summary>
@@ -80,7 +78,7 @@ namespace Com.Cosmotech.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SolutionSecurity {\n");
-            sb.Append("  VarDefault: ").Append(VarDefault).Append("\n");
+            sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  AccessControlList: ").Append(AccessControlList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -96,11 +94,67 @@ namespace Com.Cosmotech.Model
         }
 
         /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as SolutionSecurity);
+        }
+
+        /// <summary>
+        /// Returns true if SolutionSecurity instances are equal
+        /// </summary>
+        /// <param name="input">Instance of SolutionSecurity to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(SolutionSecurity input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.Default == input.Default ||
+                    (this.Default != null &&
+                    this.Default.Equals(input.Default))
+                ) && 
+                (
+                    this.AccessControlList == input.AccessControlList ||
+                    this.AccessControlList != null &&
+                    input.AccessControlList != null &&
+                    this.AccessControlList.SequenceEqual(input.AccessControlList)
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.Default != null)
+                {
+                    hashCode = (hashCode * 59) + this.Default.GetHashCode();
+                }
+                if (this.AccessControlList != null)
+                {
+                    hashCode = (hashCode * 59) + this.AccessControlList.GetHashCode();
+                }
+                return hashCode;
+            }
+        }
+
+        /// <summary>
         /// To validate all properties of the instance
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
             yield break;
         }

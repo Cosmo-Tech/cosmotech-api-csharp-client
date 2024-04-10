@@ -15,6 +15,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -55,6 +56,7 @@ namespace Com.Cosmotech.Test.Model
             //Assert.IsType<Workspace>(instance);
         }
 
+
         /// <summary>
         /// Test the property 'Id'
         /// </summary>
@@ -63,7 +65,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Id'
         }
-
         /// <summary>
         /// Test the property 'OrganizationId'
         /// </summary>
@@ -72,7 +73,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'OrganizationId'
         }
-
         /// <summary>
         /// Test the property 'Key'
         /// </summary>
@@ -81,7 +81,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Key'
         }
-
         /// <summary>
         /// Test the property 'Name'
         /// </summary>
@@ -90,7 +89,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Name'
         }
-
         /// <summary>
         /// Test the property 'Description'
         /// </summary>
@@ -99,7 +97,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Description'
         }
-
         /// <summary>
         /// Test the property 'LinkedDatasetIdList'
         /// </summary>
@@ -108,16 +105,14 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'LinkedDatasetIdList'
         }
-
         /// <summary>
-        /// Test the property 'VarVersion'
+        /// Test the property '_Version'
         /// </summary>
         [Fact]
-        public void VarVersionTest()
+        public void _VersionTest()
         {
-            // TODO unit test for the property 'VarVersion'
+            // TODO unit test for the property '_Version'
         }
-
         /// <summary>
         /// Test the property 'Tags'
         /// </summary>
@@ -126,7 +121,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Tags'
         }
-
         /// <summary>
         /// Test the property 'OwnerId'
         /// </summary>
@@ -135,7 +129,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'OwnerId'
         }
-
         /// <summary>
         /// Test the property 'Solution'
         /// </summary>
@@ -144,7 +137,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Solution'
         }
-
         /// <summary>
         /// Test the property 'WebApp'
         /// </summary>
@@ -153,7 +145,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'WebApp'
         }
-
         /// <summary>
         /// Test the property 'SendInputToDataWarehouse'
         /// </summary>
@@ -162,7 +153,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'SendInputToDataWarehouse'
         }
-
         /// <summary>
         /// Test the property 'UseDedicatedEventHubNamespace'
         /// </summary>
@@ -171,7 +161,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'UseDedicatedEventHubNamespace'
         }
-
         /// <summary>
         /// Test the property 'DedicatedEventHubSasKeyName'
         /// </summary>
@@ -180,7 +169,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'DedicatedEventHubSasKeyName'
         }
-
         /// <summary>
         /// Test the property 'DedicatedEventHubAuthenticationStrategy'
         /// </summary>
@@ -189,7 +177,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'DedicatedEventHubAuthenticationStrategy'
         }
-
         /// <summary>
         /// Test the property 'SendScenarioRunToEventHub'
         /// </summary>
@@ -198,7 +185,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'SendScenarioRunToEventHub'
         }
-
         /// <summary>
         /// Test the property 'SendScenarioMetadataToEventHub'
         /// </summary>
@@ -207,7 +193,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'SendScenarioMetadataToEventHub'
         }
-
         /// <summary>
         /// Test the property 'DatasetCopy'
         /// </summary>
@@ -216,7 +201,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'DatasetCopy'
         }
-
         /// <summary>
         /// Test the property 'Security'
         /// </summary>
@@ -225,5 +209,7 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'Security'
         }
+
     }
+
 }

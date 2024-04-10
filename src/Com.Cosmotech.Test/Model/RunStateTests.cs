@@ -15,6 +15,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -54,5 +55,9 @@ namespace Com.Cosmotech.Test.Model
             // TODO uncomment below to test "IsType" RunState
             //Assert.IsType<RunState>(instance);
         }
+
+
+
     }
+
 }

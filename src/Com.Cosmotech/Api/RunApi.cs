@@ -16,7 +16,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using Com.Cosmotech.Client;
-using Com.Cosmotech.Client.Auth;
 using Com.Cosmotech.Model;
 
 namespace Com.Cosmotech.Api
@@ -36,9 +35,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteRun(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0);
+        void DeleteRun(string organizationId, string workspaceId, string runnerId, string runId);
 
         /// <summary>
         /// Delete a run
@@ -51,9 +49,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteRunWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0);
+        ApiResponse<Object> DeleteRunWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId);
         /// <summary>
         /// Get the details of a run
         /// </summary>
@@ -62,9 +59,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Run</returns>
-        Run GetRun(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0);
+        Run GetRun(string organizationId, string workspaceId, string runnerId, string runId);
 
         /// <summary>
         /// Get the details of a run
@@ -77,9 +73,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Run</returns>
-        ApiResponse<Run> GetRunWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0);
+        ApiResponse<Run> GetRunWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId);
         /// <summary>
         /// get the logs for the Run
         /// </summary>
@@ -88,9 +83,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RunLogs</returns>
-        RunLogs GetRunLogs(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0);
+        RunLogs GetRunLogs(string organizationId, string workspaceId, string runnerId, string runId);
 
         /// <summary>
         /// get the logs for the Run
@@ -103,9 +97,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RunLogs</returns>
-        ApiResponse<RunLogs> GetRunLogsWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0);
+        ApiResponse<RunLogs> GetRunLogsWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId);
         /// <summary>
         /// get the status for the Run
         /// </summary>
@@ -114,9 +107,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RunStatus</returns>
-        RunStatus GetRunStatus(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0);
+        RunStatus GetRunStatus(string organizationId, string workspaceId, string runnerId, string runId);
 
         /// <summary>
         /// get the status for the Run
@@ -129,9 +121,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RunStatus</returns>
-        ApiResponse<RunStatus> GetRunStatusWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0);
+        ApiResponse<RunStatus> GetRunStatusWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId);
         /// <summary>
         /// get the list of Runs for the Runner
         /// </summary>
@@ -141,9 +132,8 @@ namespace Com.Cosmotech.Api
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Run&gt;</returns>
-        List<Run> ListRuns(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
+        List<Run> ListRuns(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?));
 
         /// <summary>
         /// get the list of Runs for the Runner
@@ -157,9 +147,8 @@ namespace Com.Cosmotech.Api
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Run&gt;</returns>
-        ApiResponse<List<Run>> ListRunsWithHttpInfo(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
+        ApiResponse<List<Run>> ListRunsWithHttpInfo(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?));
         #endregion Synchronous Operations
     }
 
@@ -180,10 +169,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteRunAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteRunAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a run
@@ -196,10 +184,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRunWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteRunWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the details of a run
         /// </summary>
@@ -211,10 +198,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Run</returns>
-        System.Threading.Tasks.Task<Run> GetRunAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Run> GetRunAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the details of a run
@@ -227,10 +213,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Run)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Run>> GetRunWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Run>> GetRunWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// get the logs for the Run
         /// </summary>
@@ -242,10 +227,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RunLogs</returns>
-        System.Threading.Tasks.Task<RunLogs> GetRunLogsAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RunLogs> GetRunLogsAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// get the logs for the Run
@@ -258,10 +242,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RunLogs)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RunLogs>> GetRunLogsWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RunLogs>> GetRunLogsWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// get the status for the Run
         /// </summary>
@@ -273,10 +256,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RunStatus</returns>
-        System.Threading.Tasks.Task<RunStatus> GetRunStatusAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RunStatus> GetRunStatusAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// get the status for the Run
@@ -289,10 +271,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RunStatus)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RunStatus>> GetRunStatusWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RunStatus>> GetRunStatusWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// get the list of Runs for the Runner
         /// </summary>
@@ -305,10 +286,9 @@ namespace Com.Cosmotech.Api
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Run&gt;</returns>
-        System.Threading.Tasks.Task<List<Run>> ListRunsAsync(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Run>> ListRunsAsync(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// get the list of Runs for the Runner
@@ -322,10 +302,9 @@ namespace Com.Cosmotech.Api
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Run&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Run>>> ListRunsWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Run>>> ListRunsWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -454,9 +433,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteRun(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0)
+        public void DeleteRun(string organizationId, string workspaceId, string runnerId, string runId)
         {
             DeleteRunWithHttpInfo(organizationId, workspaceId, runnerId, runId);
         }
@@ -469,9 +447,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> DeleteRunWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteRunWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -523,24 +500,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
 
-            localVarRequestOptions.Operation = "RunApi.DeleteRun";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -565,12 +529,11 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteRunAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteRunAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteRunWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteRunWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -581,10 +544,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteRunWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteRunWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -637,24 +599,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
 
-            localVarRequestOptions.Operation = "RunApi.DeleteRun";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -680,9 +629,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Run</returns>
-        public Run GetRun(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0)
+        public Run GetRun(string organizationId, string workspaceId, string runnerId, string runId)
         {
             Com.Cosmotech.Client.ApiResponse<Run> localVarResponse = GetRunWithHttpInfo(organizationId, workspaceId, runnerId, runId);
             return localVarResponse.Data;
@@ -696,9 +644,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Run</returns>
-        public Com.Cosmotech.Client.ApiResponse<Run> GetRunWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Run> GetRunWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -751,24 +698,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
 
-            localVarRequestOptions.Operation = "RunApi.GetRun";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -793,12 +727,11 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Run</returns>
-        public async System.Threading.Tasks.Task<Run> GetRunAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Run> GetRunAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Run> localVarResponse = await GetRunWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Run> localVarResponse = await GetRunWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -810,10 +743,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Run)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Run>> GetRunWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Run>> GetRunWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -867,24 +799,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
 
-            localVarRequestOptions.Operation = "RunApi.GetRun";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -910,9 +829,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RunLogs</returns>
-        public RunLogs GetRunLogs(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0)
+        public RunLogs GetRunLogs(string organizationId, string workspaceId, string runnerId, string runId)
         {
             Com.Cosmotech.Client.ApiResponse<RunLogs> localVarResponse = GetRunLogsWithHttpInfo(organizationId, workspaceId, runnerId, runId);
             return localVarResponse.Data;
@@ -926,9 +844,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RunLogs</returns>
-        public Com.Cosmotech.Client.ApiResponse<RunLogs> GetRunLogsWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<RunLogs> GetRunLogsWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -981,24 +898,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
 
-            localVarRequestOptions.Operation = "RunApi.GetRunLogs";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1023,12 +927,11 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RunLogs</returns>
-        public async System.Threading.Tasks.Task<RunLogs> GetRunLogsAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RunLogs> GetRunLogsAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<RunLogs> localVarResponse = await GetRunLogsWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<RunLogs> localVarResponse = await GetRunLogsWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1040,10 +943,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RunLogs)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<RunLogs>> GetRunLogsWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<RunLogs>> GetRunLogsWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1097,24 +999,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
 
-            localVarRequestOptions.Operation = "RunApi.GetRunLogs";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1140,9 +1029,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RunStatus</returns>
-        public RunStatus GetRunStatus(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0)
+        public RunStatus GetRunStatus(string organizationId, string workspaceId, string runnerId, string runId)
         {
             Com.Cosmotech.Client.ApiResponse<RunStatus> localVarResponse = GetRunStatusWithHttpInfo(organizationId, workspaceId, runnerId, runId);
             return localVarResponse.Data;
@@ -1156,9 +1044,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RunStatus</returns>
-        public Com.Cosmotech.Client.ApiResponse<RunStatus> GetRunStatusWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<RunStatus> GetRunStatusWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1211,24 +1098,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
 
-            localVarRequestOptions.Operation = "RunApi.GetRunStatus";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1253,12 +1127,11 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RunStatus</returns>
-        public async System.Threading.Tasks.Task<RunStatus> GetRunStatusAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RunStatus> GetRunStatusAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<RunStatus> localVarResponse = await GetRunStatusWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<RunStatus> localVarResponse = await GetRunStatusWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1270,10 +1143,9 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="runId">the Run identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RunStatus)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<RunStatus>> GetRunStatusWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<RunStatus>> GetRunStatusWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1327,24 +1199,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
             localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
 
-            localVarRequestOptions.Operation = "RunApi.GetRunStatus";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1371,9 +1230,8 @@ namespace Com.Cosmotech.Api
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Run&gt;</returns>
-        public List<Run> ListRuns(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
+        public List<Run> ListRuns(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?))
         {
             Com.Cosmotech.Client.ApiResponse<List<Run>> localVarResponse = ListRunsWithHttpInfo(organizationId, workspaceId, runnerId, page, size);
             return localVarResponse.Data;
@@ -1388,9 +1246,8 @@ namespace Com.Cosmotech.Api
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Run&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<Run>> ListRunsWithHttpInfo(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<Run>> ListRunsWithHttpInfo(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1444,24 +1301,11 @@ namespace Com.Cosmotech.Api
                 localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
             }
 
-            localVarRequestOptions.Operation = "RunApi.ListRuns";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1487,12 +1331,11 @@ namespace Com.Cosmotech.Api
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Run&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Run>> ListRunsAsync(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Run>> ListRunsAsync(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Run>> localVarResponse = await ListRunsWithHttpInfoAsync(organizationId, workspaceId, runnerId, page, size, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<Run>> localVarResponse = await ListRunsWithHttpInfoAsync(organizationId, workspaceId, runnerId, page, size, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1505,10 +1348,9 @@ namespace Com.Cosmotech.Api
         /// <param name="runnerId">the Runner identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Run&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Run>>> ListRunsWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Run>>> ListRunsWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1563,24 +1405,11 @@ namespace Com.Cosmotech.Api
                 localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
             }
 
-            localVarRequestOptions.Operation = "RunApi.ListRuns";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request

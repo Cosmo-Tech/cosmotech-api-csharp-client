@@ -15,6 +15,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Com.Cosmotech.Api;
 using Com.Cosmotech.Model;
 using Com.Cosmotech.Client;
 using System.Reflection;
@@ -55,6 +56,7 @@ namespace Com.Cosmotech.Test.Model
             //Assert.IsType<WorkspaceSolution>(instance);
         }
 
+
         /// <summary>
         /// Test the property 'SolutionId'
         /// </summary>
@@ -63,7 +65,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'SolutionId'
         }
-
         /// <summary>
         /// Test the property 'RunTemplateFilter'
         /// </summary>
@@ -72,7 +73,6 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'RunTemplateFilter'
         }
-
         /// <summary>
         /// Test the property 'DefaultRunTemplateDataset'
         /// </summary>
@@ -81,5 +81,7 @@ namespace Com.Cosmotech.Test.Model
         {
             // TODO unit test for the property 'DefaultRunTemplateDataset'
         }
+
     }
+
 }

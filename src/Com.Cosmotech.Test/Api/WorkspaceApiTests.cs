@@ -336,7 +336,7 @@ namespace Com.Cosmotech.Test.Api
             //string workspaceId = null;
             //System.IO.Stream file = null;
             //bool? overwrite = null;
-            //string? destination = null;
+            //string destination = null;
             //var response = instance.UploadWorkspaceFile(organizationId, workspaceId, file, overwrite, destination);
             //Assert.IsType<WorkspaceFile>(response);
         }

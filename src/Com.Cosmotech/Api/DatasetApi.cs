@@ -16,7 +16,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using Com.Cosmotech.Client;
-using Com.Cosmotech.Client.Auth;
 using Com.Cosmotech.Model;
 
 namespace Com.Cosmotech.Api
@@ -35,9 +34,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetAccessControl">the new Dataset security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetAccessControl</returns>
-        DatasetAccessControl AddDatasetAccessControl(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, int operationIndex = 0);
+        DatasetAccessControl AddDatasetAccessControl(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl);
 
         /// <summary>
         /// Add a control access to the Dataset
@@ -49,9 +47,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetAccessControl">the new Dataset security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetAccessControl</returns>
-        ApiResponse<DatasetAccessControl> AddDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, int operationIndex = 0);
+        ApiResponse<DatasetAccessControl> AddDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl);
         /// <summary>
         /// Add Dataset Compatibility elements.
         /// </summary>
@@ -59,9 +56,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetCompatibility">the Dataset Compatibility elements</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DatasetCompatibility&gt;</returns>
-        List<DatasetCompatibility> AddOrReplaceDatasetCompatibilityElements(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, int operationIndex = 0);
+        List<DatasetCompatibility> AddOrReplaceDatasetCompatibilityElements(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility);
 
         /// <summary>
         /// Add Dataset Compatibility elements.
@@ -73,9 +69,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetCompatibility">the Dataset Compatibility elements</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DatasetCompatibility&gt;</returns>
-        ApiResponse<List<DatasetCompatibility>> AddOrReplaceDatasetCompatibilityElementsWithHttpInfo(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, int operationIndex = 0);
+        ApiResponse<List<DatasetCompatibility>> AddOrReplaceDatasetCompatibilityElementsWithHttpInfo(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility);
         /// <summary>
         /// Copy a Dataset to another Dataset.
         /// </summary>
@@ -85,9 +80,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetCopyParameters</returns>
-        DatasetCopyParameters CopyDataset(string organizationId, DatasetCopyParameters datasetCopyParameters, int operationIndex = 0);
+        DatasetCopyParameters CopyDataset(string organizationId, DatasetCopyParameters datasetCopyParameters);
 
         /// <summary>
         /// Copy a Dataset to another Dataset.
@@ -98,18 +92,16 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetCopyParameters</returns>
-        ApiResponse<DatasetCopyParameters> CopyDatasetWithHttpInfo(string organizationId, DatasetCopyParameters datasetCopyParameters, int operationIndex = 0);
+        ApiResponse<DatasetCopyParameters> CopyDatasetWithHttpInfo(string organizationId, DatasetCopyParameters datasetCopyParameters);
         /// <summary>
         /// Create a new Dataset
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="dataset">the Dataset to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        Dataset CreateDataset(string organizationId, Dataset dataset, int operationIndex = 0);
+        Dataset CreateDataset(string organizationId, Dataset dataset);
 
         /// <summary>
         /// Create a new Dataset
@@ -120,9 +112,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="dataset">the Dataset to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        ApiResponse<Dataset> CreateDatasetWithHttpInfo(string organizationId, Dataset dataset, int operationIndex = 0);
+        ApiResponse<Dataset> CreateDatasetWithHttpInfo(string organizationId, Dataset dataset);
         /// <summary>
         /// Create a sub-dataset from the dataset in parameter
         /// </summary>
@@ -133,9 +124,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="subDatasetGraphQuery">the Cypher query to filter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        Dataset CreateSubDataset(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, int operationIndex = 0);
+        Dataset CreateSubDataset(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery);
 
         /// <summary>
         /// Create a sub-dataset from the dataset in parameter
@@ -147,9 +137,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="subDatasetGraphQuery">the Cypher query to filter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        ApiResponse<Dataset> CreateSubDatasetWithHttpInfo(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, int operationIndex = 0);
+        ApiResponse<Dataset> CreateSubDatasetWithHttpInfo(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery);
         /// <summary>
         /// Create new entities in a graph instance
         /// </summary>
@@ -161,9 +150,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string CreateTwingraphEntities(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0);
+        string CreateTwingraphEntities(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties);
 
         /// <summary>
         /// Create new entities in a graph instance
@@ -176,18 +164,16 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> CreateTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0);
+        ApiResponse<string> CreateTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties);
         /// <summary>
         /// Delete a dataset
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteDataset(string organizationId, string datasetId, int operationIndex = 0);
+        void DeleteDataset(string organizationId, string datasetId);
 
         /// <summary>
         /// Delete a dataset
@@ -198,9 +184,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteDatasetWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0);
+        ApiResponse<Object> DeleteDatasetWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
         /// Delete entities in a graph instance
         /// </summary>
@@ -212,9 +197,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void DeleteTwingraphEntities(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0);
+        void DeleteTwingraphEntities(string organizationId, string datasetId, string type, List<string> ids);
 
         /// <summary>
         /// Delete entities in a graph instance
@@ -227,9 +211,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0);
+        ApiResponse<Object> DeleteTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<string> ids);
         /// <summary>
         /// Download a graph as a zip file
         /// </summary>
@@ -239,9 +222,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream DownloadTwingraph(string organizationId, string hash, int operationIndex = 0);
+        System.IO.Stream DownloadTwingraph(string organizationId, string hash);
 
         /// <summary>
         /// Download a graph as a zip file
@@ -252,9 +234,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> DownloadTwingraphWithHttpInfo(string organizationId, string hash, int operationIndex = 0);
+        ApiResponse<System.IO.Stream> DownloadTwingraphWithHttpInfo(string organizationId, string hash);
         /// <summary>
         /// List all Datasets
         /// </summary>
@@ -262,9 +243,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Dataset&gt;</returns>
-        List<Dataset> FindAllDatasets(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
+        List<Dataset> FindAllDatasets(string organizationId, int? page = default(int?), int? size = default(int?));
 
         /// <summary>
         /// List all Datasets
@@ -276,18 +256,16 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Dataset&gt;</returns>
-        ApiResponse<List<Dataset>> FindAllDatasetsWithHttpInfo(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
+        ApiResponse<List<Dataset>> FindAllDatasetsWithHttpInfo(string organizationId, int? page = default(int?), int? size = default(int?));
         /// <summary>
         /// Get the details of a Dataset
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        Dataset FindDatasetById(string organizationId, string datasetId, int operationIndex = 0);
+        Dataset FindDatasetById(string organizationId, string datasetId);
 
         /// <summary>
         /// Get the details of a Dataset
@@ -298,9 +276,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        ApiResponse<Dataset> FindDatasetByIdWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0);
+        ApiResponse<Dataset> FindDatasetByIdWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
         /// Get a control access for the Dataset
         /// </summary>
@@ -308,9 +285,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetAccessControl</returns>
-        DatasetAccessControl GetDatasetAccessControl(string organizationId, string datasetId, string identityId, int operationIndex = 0);
+        DatasetAccessControl GetDatasetAccessControl(string organizationId, string datasetId, string identityId);
 
         /// <summary>
         /// Get a control access for the Dataset
@@ -322,18 +298,16 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetAccessControl</returns>
-        ApiResponse<DatasetAccessControl> GetDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId, int operationIndex = 0);
+        ApiResponse<DatasetAccessControl> GetDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId);
         /// <summary>
         /// Get the Dataset security information
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetSecurity</returns>
-        DatasetSecurity GetDatasetSecurity(string organizationId, string datasetId, int operationIndex = 0);
+        DatasetSecurity GetDatasetSecurity(string organizationId, string datasetId);
 
         /// <summary>
         /// Get the Dataset security information
@@ -344,18 +318,16 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetSecurity</returns>
-        ApiResponse<DatasetSecurity> GetDatasetSecurityWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0);
+        ApiResponse<DatasetSecurity> GetDatasetSecurityWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
         /// Get the Dataset security users list
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> GetDatasetSecurityUsers(string organizationId, string datasetId, int operationIndex = 0);
+        List<string> GetDatasetSecurityUsers(string organizationId, string datasetId);
 
         /// <summary>
         /// Get the Dataset security users list
@@ -366,9 +338,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> GetDatasetSecurityUsersWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0);
+        ApiResponse<List<string>> GetDatasetSecurityUsersWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
         /// Get the dataset&#39;s refresh job status
         /// </summary>
@@ -378,9 +349,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string GetDatasetTwingraphStatus(string organizationId, string datasetId, int operationIndex = 0);
+        string GetDatasetTwingraphStatus(string organizationId, string datasetId);
 
         /// <summary>
         /// Get the dataset&#39;s refresh job status
@@ -391,9 +361,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> GetDatasetTwingraphStatusWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0);
+        ApiResponse<string> GetDatasetTwingraphStatusWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
         /// Get entities in a graph instance
         /// </summary>
@@ -405,9 +374,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string GetTwingraphEntities(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0);
+        string GetTwingraphEntities(string organizationId, string datasetId, string type, List<string> ids);
 
         /// <summary>
         /// Get entities in a graph instance
@@ -420,9 +388,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> GetTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0);
+        ApiResponse<string> GetTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<string> ids);
         /// <summary>
         /// 
         /// </summary>
@@ -430,9 +397,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        Dataset LinkWorkspace(string organizationId, string datasetId, string workspaceId, int operationIndex = 0);
+        Dataset LinkWorkspace(string organizationId, string datasetId, string workspaceId);
 
         /// <summary>
         /// 
@@ -444,9 +410,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        ApiResponse<Dataset> LinkWorkspaceWithHttpInfo(string organizationId, string datasetId, string workspaceId, int operationIndex = 0);
+        ApiResponse<Dataset> LinkWorkspaceWithHttpInfo(string organizationId, string datasetId, string workspaceId);
         /// <summary>
         /// Refresh data on dataset from dataset&#39;s source
         /// </summary>
@@ -456,9 +421,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetTwinGraphInfo</returns>
-        DatasetTwinGraphInfo RefreshDataset(string organizationId, string datasetId, int operationIndex = 0);
+        DatasetTwinGraphInfo RefreshDataset(string organizationId, string datasetId);
 
         /// <summary>
         /// Refresh data on dataset from dataset&#39;s source
@@ -469,18 +433,16 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetTwinGraphInfo</returns>
-        ApiResponse<DatasetTwinGraphInfo> RefreshDatasetWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0);
+        ApiResponse<DatasetTwinGraphInfo> RefreshDatasetWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
         /// Remove all Dataset Compatibility elements from the Dataset specified
         /// </summary>
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RemoveAllDatasetCompatibilityElements(string organizationId, string datasetId, int operationIndex = 0);
+        void RemoveAllDatasetCompatibilityElements(string organizationId, string datasetId);
 
         /// <summary>
         /// Remove all Dataset Compatibility elements from the Dataset specified
@@ -491,9 +453,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveAllDatasetCompatibilityElementsWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0);
+        ApiResponse<Object> RemoveAllDatasetCompatibilityElementsWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
         /// Remove the specified access from the given Dataset
         /// </summary>
@@ -501,9 +462,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void RemoveDatasetAccessControl(string organizationId, string datasetId, string identityId, int operationIndex = 0);
+        void RemoveDatasetAccessControl(string organizationId, string datasetId, string identityId);
 
         /// <summary>
         /// Remove the specified access from the given Dataset
@@ -515,9 +475,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId, int operationIndex = 0);
+        ApiResponse<Object> RemoveDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId);
         /// <summary>
         /// Rollback the dataset after a failed refresh
         /// </summary>
@@ -527,9 +486,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string RollbackRefresh(string organizationId, string datasetId, int operationIndex = 0);
+        string RollbackRefresh(string organizationId, string datasetId);
 
         /// <summary>
         /// Rollback the dataset after a failed refresh
@@ -540,9 +498,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> RollbackRefreshWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0);
+        ApiResponse<string> RollbackRefreshWithHttpInfo(string organizationId, string datasetId);
         /// <summary>
         /// Search Datasets by tags
         /// </summary>
@@ -551,9 +508,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetSearch">the Dataset search parameters</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Dataset&gt;</returns>
-        List<Dataset> SearchDatasets(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
+        List<Dataset> SearchDatasets(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?));
 
         /// <summary>
         /// Search Datasets by tags
@@ -566,9 +522,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetSearch">the Dataset search parameters</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Dataset&gt;</returns>
-        ApiResponse<List<Dataset>> SearchDatasetsWithHttpInfo(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
+        ApiResponse<List<Dataset>> SearchDatasetsWithHttpInfo(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?));
         /// <summary>
         /// Set the Dataset default security
         /// </summary>
@@ -576,9 +531,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetSecurity</returns>
-        DatasetSecurity SetDatasetDefaultSecurity(string organizationId, string datasetId, DatasetRole datasetRole, int operationIndex = 0);
+        DatasetSecurity SetDatasetDefaultSecurity(string organizationId, string datasetId, DatasetRole datasetRole);
 
         /// <summary>
         /// Set the Dataset default security
@@ -590,9 +544,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetSecurity</returns>
-        ApiResponse<DatasetSecurity> SetDatasetDefaultSecurityWithHttpInfo(string organizationId, string datasetId, DatasetRole datasetRole, int operationIndex = 0);
+        ApiResponse<DatasetSecurity> SetDatasetDefaultSecurityWithHttpInfo(string organizationId, string datasetId, DatasetRole datasetRole);
         /// <summary>
         /// Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
@@ -603,9 +556,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Graph Identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetTwinGraphHash</returns>
-        DatasetTwinGraphHash TwingraphBatchQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0);
+        DatasetTwinGraphHash TwingraphBatchQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery);
 
         /// <summary>
         /// Run a query on a graph instance and return the result as a zip file in async mode
@@ -617,9 +569,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Graph Identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetTwinGraphHash</returns>
-        ApiResponse<DatasetTwinGraphHash> TwingraphBatchQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0);
+        ApiResponse<DatasetTwinGraphHash> TwingraphBatchQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery);
         /// <summary>
         /// Async batch update by loading a CSV file on a graph instance 
         /// </summary>
@@ -631,9 +582,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TwinGraphBatchResult</returns>
-        TwinGraphBatchResult TwingraphBatchUpdate(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, int operationIndex = 0);
+        TwinGraphBatchResult TwingraphBatchUpdate(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body);
 
         /// <summary>
         /// Async batch update by loading a CSV file on a graph instance 
@@ -646,9 +596,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TwinGraphBatchResult</returns>
-        ApiResponse<TwinGraphBatchResult> TwingraphBatchUpdateWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, int operationIndex = 0);
+        ApiResponse<TwinGraphBatchResult> TwingraphBatchUpdateWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body);
         /// <summary>
         /// Return the result of a query made on the graph instance as a json
         /// </summary>
@@ -659,9 +608,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string TwingraphQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0);
+        string TwingraphQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery);
 
         /// <summary>
         /// Return the result of a query made on the graph instance as a json
@@ -673,9 +621,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> TwingraphQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0);
+        ApiResponse<string> TwingraphQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery);
         /// <summary>
         /// 
         /// </summary>
@@ -683,9 +630,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        Dataset UnlinkWorkspace(string organizationId, string datasetId, string workspaceId, int operationIndex = 0);
+        Dataset UnlinkWorkspace(string organizationId, string datasetId, string workspaceId);
 
         /// <summary>
         /// 
@@ -697,9 +643,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        ApiResponse<Dataset> UnlinkWorkspaceWithHttpInfo(string organizationId, string datasetId, string workspaceId, int operationIndex = 0);
+        ApiResponse<Dataset> UnlinkWorkspaceWithHttpInfo(string organizationId, string datasetId, string workspaceId);
         /// <summary>
         /// Update a dataset
         /// </summary>
@@ -707,9 +652,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="dataset">the new Dataset details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        Dataset UpdateDataset(string organizationId, string datasetId, Dataset dataset, int operationIndex = 0);
+        Dataset UpdateDataset(string organizationId, string datasetId, Dataset dataset);
 
         /// <summary>
         /// Update a dataset
@@ -721,9 +665,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="dataset">the new Dataset details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        ApiResponse<Dataset> UpdateDatasetWithHttpInfo(string organizationId, string datasetId, Dataset dataset, int operationIndex = 0);
+        ApiResponse<Dataset> UpdateDatasetWithHttpInfo(string organizationId, string datasetId, Dataset dataset);
         /// <summary>
         /// Update the specified access to User for a Dataset
         /// </summary>
@@ -732,9 +675,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="datasetRole">The new Dataset Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetAccessControl</returns>
-        DatasetAccessControl UpdateDatasetAccessControl(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, int operationIndex = 0);
+        DatasetAccessControl UpdateDatasetAccessControl(string organizationId, string datasetId, string identityId, DatasetRole datasetRole);
 
         /// <summary>
         /// Update the specified access to User for a Dataset
@@ -747,9 +689,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="datasetRole">The new Dataset Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetAccessControl</returns>
-        ApiResponse<DatasetAccessControl> UpdateDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, int operationIndex = 0);
+        ApiResponse<DatasetAccessControl> UpdateDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId, DatasetRole datasetRole);
         /// <summary>
         /// Update entities in a graph instance
         /// </summary>
@@ -761,9 +702,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        string UpdateTwingraphEntities(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0);
+        string UpdateTwingraphEntities(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties);
 
         /// <summary>
         /// Update entities in a graph instance
@@ -776,9 +716,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> UpdateTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0);
+        ApiResponse<string> UpdateTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties);
         /// <summary>
         /// Upload data from zip file to dataset&#39;s twingraph
         /// </summary>
@@ -789,9 +728,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FileUploadValidation</returns>
-        FileUploadValidation UploadTwingraph(string organizationId, string datasetId, System.IO.Stream body, int operationIndex = 0);
+        FileUploadValidation UploadTwingraph(string organizationId, string datasetId, System.IO.Stream body);
 
         /// <summary>
         /// Upload data from zip file to dataset&#39;s twingraph
@@ -803,9 +741,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FileUploadValidation</returns>
-        ApiResponse<FileUploadValidation> UploadTwingraphWithHttpInfo(string organizationId, string datasetId, System.IO.Stream body, int operationIndex = 0);
+        ApiResponse<FileUploadValidation> UploadTwingraphWithHttpInfo(string organizationId, string datasetId, System.IO.Stream body);
         #endregion Synchronous Operations
     }
 
@@ -825,10 +762,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetAccessControl">the new Dataset security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetAccessControl</returns>
-        System.Threading.Tasks.Task<DatasetAccessControl> AddDatasetAccessControlAsync(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DatasetAccessControl> AddDatasetAccessControlAsync(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add a control access to the Dataset
@@ -840,10 +776,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetAccessControl">the new Dataset security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetAccessControl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DatasetAccessControl>> AddDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DatasetAccessControl>> AddDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Add Dataset Compatibility elements.
         /// </summary>
@@ -854,10 +789,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetCompatibility">the Dataset Compatibility elements</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DatasetCompatibility&gt;</returns>
-        System.Threading.Tasks.Task<List<DatasetCompatibility>> AddOrReplaceDatasetCompatibilityElementsAsync(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<DatasetCompatibility>> AddOrReplaceDatasetCompatibilityElementsAsync(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add Dataset Compatibility elements.
@@ -869,10 +803,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetCompatibility">the Dataset Compatibility elements</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DatasetCompatibility&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DatasetCompatibility>>> AddOrReplaceDatasetCompatibilityElementsWithHttpInfoAsync(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<DatasetCompatibility>>> AddOrReplaceDatasetCompatibilityElementsWithHttpInfoAsync(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Copy a Dataset to another Dataset.
         /// </summary>
@@ -882,10 +815,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetCopyParameters</returns>
-        System.Threading.Tasks.Task<DatasetCopyParameters> CopyDatasetAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DatasetCopyParameters> CopyDatasetAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Copy a Dataset to another Dataset.
@@ -896,10 +828,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetCopyParameters)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DatasetCopyParameters>> CopyDatasetWithHttpInfoAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DatasetCopyParameters>> CopyDatasetWithHttpInfoAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a new Dataset
         /// </summary>
@@ -909,10 +840,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="dataset">the Dataset to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        System.Threading.Tasks.Task<Dataset> CreateDatasetAsync(string organizationId, Dataset dataset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Dataset> CreateDatasetAsync(string organizationId, Dataset dataset, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create a new Dataset
@@ -923,10 +853,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="dataset">the Dataset to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dataset>> CreateDatasetWithHttpInfoAsync(string organizationId, Dataset dataset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Dataset>> CreateDatasetWithHttpInfoAsync(string organizationId, Dataset dataset, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a sub-dataset from the dataset in parameter
         /// </summary>
@@ -937,10 +866,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="subDatasetGraphQuery">the Cypher query to filter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        System.Threading.Tasks.Task<Dataset> CreateSubDatasetAsync(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Dataset> CreateSubDatasetAsync(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create a sub-dataset from the dataset in parameter
@@ -952,10 +880,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="subDatasetGraphQuery">the Cypher query to filter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dataset>> CreateSubDatasetWithHttpInfoAsync(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Dataset>> CreateSubDatasetWithHttpInfoAsync(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create new entities in a graph instance
         /// </summary>
@@ -967,10 +894,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> CreateTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> CreateTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create new entities in a graph instance
@@ -983,10 +909,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> CreateTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> CreateTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a dataset
         /// </summary>
@@ -996,10 +921,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteDatasetAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteDatasetAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a dataset
@@ -1010,10 +934,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDatasetWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDatasetWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete entities in a graph instance
         /// </summary>
@@ -1025,10 +948,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete entities in a graph instance
@@ -1041,10 +963,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Download a graph as a zip file
         /// </summary>
@@ -1054,10 +975,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> DownloadTwingraphAsync(string organizationId, string hash, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<System.IO.Stream> DownloadTwingraphAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Download a graph as a zip file
@@ -1068,10 +988,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadTwingraphWithHttpInfoAsync(string organizationId, string hash, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DownloadTwingraphWithHttpInfoAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Datasets
         /// </summary>
@@ -1082,10 +1001,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Dataset&gt;</returns>
-        System.Threading.Tasks.Task<List<Dataset>> FindAllDatasetsAsync(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Dataset>> FindAllDatasetsAsync(string organizationId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List all Datasets
@@ -1097,10 +1015,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Dataset&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Dataset>>> FindAllDatasetsWithHttpInfoAsync(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Dataset>>> FindAllDatasetsWithHttpInfoAsync(string organizationId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the details of a Dataset
         /// </summary>
@@ -1110,10 +1027,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        System.Threading.Tasks.Task<Dataset> FindDatasetByIdAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Dataset> FindDatasetByIdAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the details of a Dataset
@@ -1124,10 +1040,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dataset>> FindDatasetByIdWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Dataset>> FindDatasetByIdWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a control access for the Dataset
         /// </summary>
@@ -1138,10 +1053,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetAccessControl</returns>
-        System.Threading.Tasks.Task<DatasetAccessControl> GetDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DatasetAccessControl> GetDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get a control access for the Dataset
@@ -1153,10 +1067,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetAccessControl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DatasetAccessControl>> GetDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DatasetAccessControl>> GetDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the Dataset security information
         /// </summary>
@@ -1166,10 +1079,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetSecurity</returns>
-        System.Threading.Tasks.Task<DatasetSecurity> GetDatasetSecurityAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DatasetSecurity> GetDatasetSecurityAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the Dataset security information
@@ -1180,10 +1092,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DatasetSecurity>> GetDatasetSecurityWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DatasetSecurity>> GetDatasetSecurityWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the Dataset security users list
         /// </summary>
@@ -1193,10 +1104,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> GetDatasetSecurityUsersAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<string>> GetDatasetSecurityUsersAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the Dataset security users list
@@ -1207,10 +1117,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> GetDatasetSecurityUsersWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> GetDatasetSecurityUsersWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the dataset&#39;s refresh job status
         /// </summary>
@@ -1220,10 +1129,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> GetDatasetTwingraphStatusAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> GetDatasetTwingraphStatusAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get the dataset&#39;s refresh job status
@@ -1234,10 +1142,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> GetDatasetTwingraphStatusWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> GetDatasetTwingraphStatusWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get entities in a graph instance
         /// </summary>
@@ -1249,10 +1156,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> GetTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> GetTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get entities in a graph instance
@@ -1265,10 +1171,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> GetTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> GetTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1279,10 +1184,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        System.Threading.Tasks.Task<Dataset> LinkWorkspaceAsync(string organizationId, string datasetId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Dataset> LinkWorkspaceAsync(string organizationId, string datasetId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -1294,10 +1198,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dataset>> LinkWorkspaceWithHttpInfoAsync(string organizationId, string datasetId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Dataset>> LinkWorkspaceWithHttpInfoAsync(string organizationId, string datasetId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Refresh data on dataset from dataset&#39;s source
         /// </summary>
@@ -1307,10 +1210,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetTwinGraphInfo</returns>
-        System.Threading.Tasks.Task<DatasetTwinGraphInfo> RefreshDatasetAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DatasetTwinGraphInfo> RefreshDatasetAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Refresh data on dataset from dataset&#39;s source
@@ -1321,10 +1223,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetTwinGraphInfo)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DatasetTwinGraphInfo>> RefreshDatasetWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DatasetTwinGraphInfo>> RefreshDatasetWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove all Dataset Compatibility elements from the Dataset specified
         /// </summary>
@@ -1334,10 +1235,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveAllDatasetCompatibilityElementsAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RemoveAllDatasetCompatibilityElementsAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Remove all Dataset Compatibility elements from the Dataset specified
@@ -1348,10 +1248,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllDatasetCompatibilityElementsWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllDatasetCompatibilityElementsWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove the specified access from the given Dataset
         /// </summary>
@@ -1362,10 +1261,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RemoveDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Remove the specified access from the given Dataset
@@ -1377,10 +1275,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Rollback the dataset after a failed refresh
         /// </summary>
@@ -1390,10 +1287,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> RollbackRefreshAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> RollbackRefreshAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Rollback the dataset after a failed refresh
@@ -1404,10 +1300,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> RollbackRefreshWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> RollbackRefreshWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Search Datasets by tags
         /// </summary>
@@ -1419,10 +1314,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetSearch">the Dataset search parameters</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Dataset&gt;</returns>
-        System.Threading.Tasks.Task<List<Dataset>> SearchDatasetsAsync(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Dataset>> SearchDatasetsAsync(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search Datasets by tags
@@ -1435,10 +1329,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetSearch">the Dataset search parameters</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Dataset&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Dataset>>> SearchDatasetsWithHttpInfoAsync(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Dataset>>> SearchDatasetsWithHttpInfoAsync(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Set the Dataset default security
         /// </summary>
@@ -1449,10 +1342,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetSecurity</returns>
-        System.Threading.Tasks.Task<DatasetSecurity> SetDatasetDefaultSecurityAsync(string organizationId, string datasetId, DatasetRole datasetRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DatasetSecurity> SetDatasetDefaultSecurityAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Set the Dataset default security
@@ -1464,10 +1356,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DatasetSecurity>> SetDatasetDefaultSecurityWithHttpInfoAsync(string organizationId, string datasetId, DatasetRole datasetRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DatasetSecurity>> SetDatasetDefaultSecurityWithHttpInfoAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Run a query on a graph instance and return the result as a zip file in async mode
         /// </summary>
@@ -1478,10 +1369,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Graph Identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetTwinGraphHash</returns>
-        System.Threading.Tasks.Task<DatasetTwinGraphHash> TwingraphBatchQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DatasetTwinGraphHash> TwingraphBatchQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Run a query on a graph instance and return the result as a zip file in async mode
@@ -1493,10 +1383,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Graph Identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetTwinGraphHash)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DatasetTwinGraphHash>> TwingraphBatchQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DatasetTwinGraphHash>> TwingraphBatchQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Async batch update by loading a CSV file on a graph instance 
         /// </summary>
@@ -1508,10 +1397,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TwinGraphBatchResult</returns>
-        System.Threading.Tasks.Task<TwinGraphBatchResult> TwingraphBatchUpdateAsync(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TwinGraphBatchResult> TwingraphBatchUpdateAsync(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Async batch update by loading a CSV file on a graph instance 
@@ -1524,10 +1412,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TwinGraphBatchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TwinGraphBatchResult>> TwingraphBatchUpdateWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TwinGraphBatchResult>> TwingraphBatchUpdateWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Return the result of a query made on the graph instance as a json
         /// </summary>
@@ -1538,10 +1425,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> TwingraphQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> TwingraphQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Return the result of a query made on the graph instance as a json
@@ -1553,10 +1439,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> TwingraphQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> TwingraphQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1567,10 +1452,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        System.Threading.Tasks.Task<Dataset> UnlinkWorkspaceAsync(string organizationId, string datasetId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Dataset> UnlinkWorkspaceAsync(string organizationId, string datasetId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -1582,10 +1466,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dataset>> UnlinkWorkspaceWithHttpInfoAsync(string organizationId, string datasetId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Dataset>> UnlinkWorkspaceWithHttpInfoAsync(string organizationId, string datasetId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a dataset
         /// </summary>
@@ -1596,10 +1479,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="dataset">the new Dataset details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        System.Threading.Tasks.Task<Dataset> UpdateDatasetAsync(string organizationId, string datasetId, Dataset dataset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Dataset> UpdateDatasetAsync(string organizationId, string datasetId, Dataset dataset, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update a dataset
@@ -1611,10 +1493,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="dataset">the new Dataset details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dataset>> UpdateDatasetWithHttpInfoAsync(string organizationId, string datasetId, Dataset dataset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Dataset>> UpdateDatasetWithHttpInfoAsync(string organizationId, string datasetId, Dataset dataset, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update the specified access to User for a Dataset
         /// </summary>
@@ -1626,10 +1507,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="datasetRole">The new Dataset Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetAccessControl</returns>
-        System.Threading.Tasks.Task<DatasetAccessControl> UpdateDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DatasetAccessControl> UpdateDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update the specified access to User for a Dataset
@@ -1642,10 +1522,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="datasetRole">The new Dataset Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetAccessControl)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DatasetAccessControl>> UpdateDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DatasetAccessControl>> UpdateDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update entities in a graph instance
         /// </summary>
@@ -1657,10 +1536,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> UpdateTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> UpdateTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update entities in a graph instance
@@ -1673,10 +1551,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> UpdateTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> UpdateTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Upload data from zip file to dataset&#39;s twingraph
         /// </summary>
@@ -1687,10 +1564,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileUploadValidation</returns>
-        System.Threading.Tasks.Task<FileUploadValidation> UploadTwingraphAsync(string organizationId, string datasetId, System.IO.Stream body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FileUploadValidation> UploadTwingraphAsync(string organizationId, string datasetId, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Upload data from zip file to dataset&#39;s twingraph
@@ -1702,10 +1578,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileUploadValidation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FileUploadValidation>> UploadTwingraphWithHttpInfoAsync(string organizationId, string datasetId, System.IO.Stream body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FileUploadValidation>> UploadTwingraphWithHttpInfoAsync(string organizationId, string datasetId, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1833,9 +1708,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetAccessControl">the new Dataset security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetAccessControl</returns>
-        public DatasetAccessControl AddDatasetAccessControl(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, int operationIndex = 0)
+        public DatasetAccessControl AddDatasetAccessControl(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl)
         {
             Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> localVarResponse = AddDatasetAccessControlWithHttpInfo(organizationId, datasetId, datasetAccessControl);
             return localVarResponse.Data;
@@ -1848,9 +1722,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetAccessControl">the new Dataset security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetAccessControl</returns>
-        public Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> AddDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> AddDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -1898,24 +1771,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetAccessControl;
 
-            localVarRequestOptions.Operation = "DatasetApi.AddDatasetAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -1939,12 +1799,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetAccessControl">the new Dataset security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetAccessControl</returns>
-        public async System.Threading.Tasks.Task<DatasetAccessControl> AddDatasetAccessControlAsync(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DatasetAccessControl> AddDatasetAccessControlAsync(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> localVarResponse = await AddDatasetAccessControlWithHttpInfoAsync(organizationId, datasetId, datasetAccessControl, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> localVarResponse = await AddDatasetAccessControlWithHttpInfoAsync(organizationId, datasetId, datasetAccessControl, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1955,10 +1814,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetAccessControl">the new Dataset security access to add.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetAccessControl)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetAccessControl>> AddDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetAccessControl>> AddDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, DatasetAccessControl datasetAccessControl, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2007,24 +1865,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetAccessControl;
 
-            localVarRequestOptions.Operation = "DatasetApi.AddDatasetAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2049,9 +1894,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetCompatibility">the Dataset Compatibility elements</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;DatasetCompatibility&gt;</returns>
-        public List<DatasetCompatibility> AddOrReplaceDatasetCompatibilityElements(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, int operationIndex = 0)
+        public List<DatasetCompatibility> AddOrReplaceDatasetCompatibilityElements(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility)
         {
             Com.Cosmotech.Client.ApiResponse<List<DatasetCompatibility>> localVarResponse = AddOrReplaceDatasetCompatibilityElementsWithHttpInfo(organizationId, datasetId, datasetCompatibility);
             return localVarResponse.Data;
@@ -2064,9 +1908,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetCompatibility">the Dataset Compatibility elements</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;DatasetCompatibility&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<DatasetCompatibility>> AddOrReplaceDatasetCompatibilityElementsWithHttpInfo(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<DatasetCompatibility>> AddOrReplaceDatasetCompatibilityElementsWithHttpInfo(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2113,24 +1956,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetCompatibility;
 
-            localVarRequestOptions.Operation = "DatasetApi.AddOrReplaceDatasetCompatibilityElements";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2154,12 +1984,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetCompatibility">the Dataset Compatibility elements</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;DatasetCompatibility&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DatasetCompatibility>> AddOrReplaceDatasetCompatibilityElementsAsync(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<DatasetCompatibility>> AddOrReplaceDatasetCompatibilityElementsAsync(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<DatasetCompatibility>> localVarResponse = await AddOrReplaceDatasetCompatibilityElementsWithHttpInfoAsync(organizationId, datasetId, datasetCompatibility, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<DatasetCompatibility>> localVarResponse = await AddOrReplaceDatasetCompatibilityElementsWithHttpInfoAsync(organizationId, datasetId, datasetCompatibility, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2170,10 +1999,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetCompatibility">the Dataset Compatibility elements</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;DatasetCompatibility&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<DatasetCompatibility>>> AddOrReplaceDatasetCompatibilityElementsWithHttpInfoAsync(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<DatasetCompatibility>>> AddOrReplaceDatasetCompatibilityElementsWithHttpInfoAsync(string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2221,24 +2049,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetCompatibility;
 
-            localVarRequestOptions.Operation = "DatasetApi.AddOrReplaceDatasetCompatibilityElements";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2262,9 +2077,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetCopyParameters</returns>
-        public DatasetCopyParameters CopyDataset(string organizationId, DatasetCopyParameters datasetCopyParameters, int operationIndex = 0)
+        public DatasetCopyParameters CopyDataset(string organizationId, DatasetCopyParameters datasetCopyParameters)
         {
             Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters> localVarResponse = CopyDatasetWithHttpInfo(organizationId, datasetCopyParameters);
             return localVarResponse.Data;
@@ -2276,9 +2090,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetCopyParameters</returns>
-        public Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters> CopyDatasetWithHttpInfo(string organizationId, DatasetCopyParameters datasetCopyParameters, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters> CopyDatasetWithHttpInfo(string organizationId, DatasetCopyParameters datasetCopyParameters)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2319,24 +2132,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = datasetCopyParameters;
 
-            localVarRequestOptions.Operation = "DatasetApi.CopyDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2359,12 +2159,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetCopyParameters</returns>
-        public async System.Threading.Tasks.Task<DatasetCopyParameters> CopyDatasetAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DatasetCopyParameters> CopyDatasetAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters> localVarResponse = await CopyDatasetWithHttpInfoAsync(organizationId, datasetCopyParameters, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters> localVarResponse = await CopyDatasetWithHttpInfoAsync(organizationId, datasetCopyParameters, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2374,10 +2173,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetCopyParameters">the Dataset copy parameters</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetCopyParameters)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters>> CopyDatasetWithHttpInfoAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetCopyParameters>> CopyDatasetWithHttpInfoAsync(string organizationId, DatasetCopyParameters datasetCopyParameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2419,24 +2217,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = datasetCopyParameters;
 
-            localVarRequestOptions.Operation = "DatasetApi.CopyDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2460,9 +2245,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="dataset">the Dataset to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        public Dataset CreateDataset(string organizationId, Dataset dataset, int operationIndex = 0)
+        public Dataset CreateDataset(string organizationId, Dataset dataset)
         {
             Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = CreateDatasetWithHttpInfo(organizationId, dataset);
             return localVarResponse.Data;
@@ -2474,9 +2258,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="dataset">the Dataset to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        public Com.Cosmotech.Client.ApiResponse<Dataset> CreateDatasetWithHttpInfo(string organizationId, Dataset dataset, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Dataset> CreateDatasetWithHttpInfo(string organizationId, Dataset dataset)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2517,24 +2300,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = dataset;
 
-            localVarRequestOptions.Operation = "DatasetApi.CreateDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2557,12 +2327,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="dataset">the Dataset to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        public async System.Threading.Tasks.Task<Dataset> CreateDatasetAsync(string organizationId, Dataset dataset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dataset> CreateDatasetAsync(string organizationId, Dataset dataset, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await CreateDatasetWithHttpInfoAsync(organizationId, dataset, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await CreateDatasetWithHttpInfoAsync(organizationId, dataset, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2572,10 +2341,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="dataset">the Dataset to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> CreateDatasetWithHttpInfoAsync(string organizationId, Dataset dataset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> CreateDatasetWithHttpInfoAsync(string organizationId, Dataset dataset, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2617,24 +2385,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.Data = dataset;
 
-            localVarRequestOptions.Operation = "DatasetApi.CreateDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2659,9 +2414,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="subDatasetGraphQuery">the Cypher query to filter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        public Dataset CreateSubDataset(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, int operationIndex = 0)
+        public Dataset CreateSubDataset(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery)
         {
             Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = CreateSubDatasetWithHttpInfo(organizationId, datasetId, subDatasetGraphQuery);
             return localVarResponse.Data;
@@ -2674,9 +2428,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="subDatasetGraphQuery">the Cypher query to filter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        public Com.Cosmotech.Client.ApiResponse<Dataset> CreateSubDatasetWithHttpInfo(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Dataset> CreateSubDatasetWithHttpInfo(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2723,24 +2476,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = subDatasetGraphQuery;
 
-            localVarRequestOptions.Operation = "DatasetApi.CreateSubDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2764,12 +2504,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="subDatasetGraphQuery">the Cypher query to filter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        public async System.Threading.Tasks.Task<Dataset> CreateSubDatasetAsync(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dataset> CreateSubDatasetAsync(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await CreateSubDatasetWithHttpInfoAsync(organizationId, datasetId, subDatasetGraphQuery, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await CreateSubDatasetWithHttpInfoAsync(organizationId, datasetId, subDatasetGraphQuery, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2780,10 +2519,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="subDatasetGraphQuery">the Cypher query to filter</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> CreateSubDatasetWithHttpInfoAsync(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> CreateSubDatasetWithHttpInfoAsync(string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2831,24 +2569,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = subDatasetGraphQuery;
 
-            localVarRequestOptions.Operation = "DatasetApi.CreateSubDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2874,9 +2599,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string CreateTwingraphEntities(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0)
+        public string CreateTwingraphEntities(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = CreateTwingraphEntitiesWithHttpInfo(organizationId, datasetId, type, graphProperties);
             return localVarResponse.Data;
@@ -2890,9 +2614,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> CreateTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<string> CreateTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2946,24 +2669,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.Data = graphProperties;
 
-            localVarRequestOptions.Operation = "DatasetApi.CreateTwingraphEntities";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -2988,12 +2698,11 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> CreateTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> CreateTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await CreateTwingraphEntitiesWithHttpInfoAsync(organizationId, datasetId, type, graphProperties, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await CreateTwingraphEntitiesWithHttpInfoAsync(organizationId, datasetId, type, graphProperties, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3005,10 +2714,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to create</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> CreateTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> CreateTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3063,24 +2771,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.Data = graphProperties;
 
-            localVarRequestOptions.Operation = "DatasetApi.CreateTwingraphEntities";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3104,9 +2799,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteDataset(string organizationId, string datasetId, int operationIndex = 0)
+        public void DeleteDataset(string organizationId, string datasetId)
         {
             DeleteDatasetWithHttpInfo(organizationId, datasetId);
         }
@@ -3117,9 +2811,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> DeleteDatasetWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteDatasetWithHttpInfo(string organizationId, string datasetId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3157,24 +2850,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.DeleteDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3197,12 +2877,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteDatasetAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteDatasetAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteDatasetWithHttpInfoAsync(organizationId, datasetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteDatasetWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -3211,10 +2890,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteDatasetWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteDatasetWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3253,24 +2931,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.DeleteDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3296,9 +2961,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void DeleteTwingraphEntities(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0)
+        public void DeleteTwingraphEntities(string organizationId, string datasetId, string type, List<string> ids)
         {
             DeleteTwingraphEntitiesWithHttpInfo(organizationId, datasetId, type, ids);
         }
@@ -3311,9 +2975,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> DeleteTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<string> ids)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3365,24 +3028,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("multi", "ids", ids));
 
-            localVarRequestOptions.Operation = "DatasetApi.DeleteTwingraphEntities";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3407,12 +3057,11 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await DeleteTwingraphEntitiesWithHttpInfoAsync(organizationId, datasetId, type, ids, operationIndex, cancellationToken).ConfigureAwait(false);
+            await DeleteTwingraphEntitiesWithHttpInfoAsync(organizationId, datasetId, type, ids, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -3423,10 +3072,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to delete</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3479,24 +3127,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("multi", "ids", ids));
 
-            localVarRequestOptions.Operation = "DatasetApi.DeleteTwingraphEntities";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3520,9 +3155,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream DownloadTwingraph(string organizationId, string hash, int operationIndex = 0)
+        public System.IO.Stream DownloadTwingraph(string organizationId, string hash)
         {
             Com.Cosmotech.Client.ApiResponse<System.IO.Stream> localVarResponse = DownloadTwingraphWithHttpInfo(organizationId, hash);
             return localVarResponse.Data;
@@ -3534,9 +3168,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Com.Cosmotech.Client.ApiResponse<System.IO.Stream> DownloadTwingraphWithHttpInfo(string organizationId, string hash, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<System.IO.Stream> DownloadTwingraphWithHttpInfo(string organizationId, string hash)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3575,24 +3208,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("hash", Com.Cosmotech.Client.ClientUtils.ParameterToString(hash)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.DownloadTwingraph";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3615,12 +3235,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> DownloadTwingraphAsync(string organizationId, string hash, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<System.IO.Stream> DownloadTwingraphAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadTwingraphWithHttpInfoAsync(organizationId, hash, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<System.IO.Stream> localVarResponse = await DownloadTwingraphWithHttpInfoAsync(organizationId, hash, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3630,10 +3249,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="hash">the Graph download identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<System.IO.Stream>> DownloadTwingraphWithHttpInfoAsync(string organizationId, string hash, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<System.IO.Stream>> DownloadTwingraphWithHttpInfoAsync(string organizationId, string hash, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3673,24 +3291,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("hash", Com.Cosmotech.Client.ClientUtils.ParameterToString(hash)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.DownloadTwingraph";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3715,9 +3320,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Dataset&gt;</returns>
-        public List<Dataset> FindAllDatasets(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
+        public List<Dataset> FindAllDatasets(string organizationId, int? page = default(int?), int? size = default(int?))
         {
             Com.Cosmotech.Client.ApiResponse<List<Dataset>> localVarResponse = FindAllDatasetsWithHttpInfo(organizationId, page, size);
             return localVarResponse.Data;
@@ -3730,9 +3334,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Dataset&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<Dataset>> FindAllDatasetsWithHttpInfo(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<Dataset>> FindAllDatasetsWithHttpInfo(string organizationId, int? page = default(int?), int? size = default(int?))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3772,24 +3375,11 @@ namespace Com.Cosmotech.Api
                 localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
             }
 
-            localVarRequestOptions.Operation = "DatasetApi.FindAllDatasets";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3813,12 +3403,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Dataset&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Dataset>> FindAllDatasetsAsync(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Dataset>> FindAllDatasetsAsync(string organizationId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Dataset>> localVarResponse = await FindAllDatasetsWithHttpInfoAsync(organizationId, page, size, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<Dataset>> localVarResponse = await FindAllDatasetsWithHttpInfoAsync(organizationId, page, size, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3829,10 +3418,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Dataset&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Dataset>>> FindAllDatasetsWithHttpInfoAsync(string organizationId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Dataset>>> FindAllDatasetsWithHttpInfoAsync(string organizationId, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3873,24 +3461,11 @@ namespace Com.Cosmotech.Api
                 localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "size", size));
             }
 
-            localVarRequestOptions.Operation = "DatasetApi.FindAllDatasets";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -3914,9 +3489,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        public Dataset FindDatasetById(string organizationId, string datasetId, int operationIndex = 0)
+        public Dataset FindDatasetById(string organizationId, string datasetId)
         {
             Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = FindDatasetByIdWithHttpInfo(organizationId, datasetId);
             return localVarResponse.Data;
@@ -3928,9 +3502,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        public Com.Cosmotech.Client.ApiResponse<Dataset> FindDatasetByIdWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Dataset> FindDatasetByIdWithHttpInfo(string organizationId, string datasetId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -3969,24 +3542,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.FindDatasetById";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4009,12 +3569,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        public async System.Threading.Tasks.Task<Dataset> FindDatasetByIdAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dataset> FindDatasetByIdAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await FindDatasetByIdWithHttpInfoAsync(organizationId, datasetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await FindDatasetByIdWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4024,10 +3583,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> FindDatasetByIdWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> FindDatasetByIdWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4067,24 +3625,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.FindDatasetById";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4109,9 +3654,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetAccessControl</returns>
-        public DatasetAccessControl GetDatasetAccessControl(string organizationId, string datasetId, string identityId, int operationIndex = 0)
+        public DatasetAccessControl GetDatasetAccessControl(string organizationId, string datasetId, string identityId)
         {
             Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> localVarResponse = GetDatasetAccessControlWithHttpInfo(organizationId, datasetId, identityId);
             return localVarResponse.Data;
@@ -4124,9 +3668,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetAccessControl</returns>
-        public Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> GetDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> GetDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4172,24 +3715,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.GetDatasetAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4213,12 +3743,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetAccessControl</returns>
-        public async System.Threading.Tasks.Task<DatasetAccessControl> GetDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DatasetAccessControl> GetDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> localVarResponse = await GetDatasetAccessControlWithHttpInfoAsync(organizationId, datasetId, identityId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> localVarResponse = await GetDatasetAccessControlWithHttpInfoAsync(organizationId, datasetId, identityId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4229,10 +3758,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetAccessControl)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetAccessControl>> GetDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetAccessControl>> GetDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4279,24 +3807,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.GetDatasetAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4320,9 +3835,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetSecurity</returns>
-        public DatasetSecurity GetDatasetSecurity(string organizationId, string datasetId, int operationIndex = 0)
+        public DatasetSecurity GetDatasetSecurity(string organizationId, string datasetId)
         {
             Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = GetDatasetSecurityWithHttpInfo(organizationId, datasetId);
             return localVarResponse.Data;
@@ -4334,9 +3848,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetSecurity</returns>
-        public Com.Cosmotech.Client.ApiResponse<DatasetSecurity> GetDatasetSecurityWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<DatasetSecurity> GetDatasetSecurityWithHttpInfo(string organizationId, string datasetId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4375,24 +3888,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.GetDatasetSecurity";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4415,12 +3915,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetSecurity</returns>
-        public async System.Threading.Tasks.Task<DatasetSecurity> GetDatasetSecurityAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DatasetSecurity> GetDatasetSecurityAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = await GetDatasetSecurityWithHttpInfoAsync(organizationId, datasetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = await GetDatasetSecurityWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4430,10 +3929,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetSecurity>> GetDatasetSecurityWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetSecurity>> GetDatasetSecurityWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4473,24 +3971,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.GetDatasetSecurity";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4514,9 +3999,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> GetDatasetSecurityUsers(string organizationId, string datasetId, int operationIndex = 0)
+        public List<string> GetDatasetSecurityUsers(string organizationId, string datasetId)
         {
             Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = GetDatasetSecurityUsersWithHttpInfo(organizationId, datasetId);
             return localVarResponse.Data;
@@ -4528,9 +4012,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<string>> GetDatasetSecurityUsersWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<string>> GetDatasetSecurityUsersWithHttpInfo(string organizationId, string datasetId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4569,24 +4052,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.GetDatasetSecurityUsers";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4609,12 +4079,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> GetDatasetSecurityUsersAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<string>> GetDatasetSecurityUsersAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = await GetDatasetSecurityUsersWithHttpInfoAsync(organizationId, datasetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = await GetDatasetSecurityUsersWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4624,10 +4093,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<string>>> GetDatasetSecurityUsersWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<string>>> GetDatasetSecurityUsersWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4667,24 +4135,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.GetDatasetSecurityUsers";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4708,9 +4163,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string GetDatasetTwingraphStatus(string organizationId, string datasetId, int operationIndex = 0)
+        public string GetDatasetTwingraphStatus(string organizationId, string datasetId)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = GetDatasetTwingraphStatusWithHttpInfo(organizationId, datasetId);
             return localVarResponse.Data;
@@ -4722,9 +4176,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> GetDatasetTwingraphStatusWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<string> GetDatasetTwingraphStatusWithHttpInfo(string organizationId, string datasetId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4764,24 +4217,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.GetDatasetTwingraphStatus";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4804,12 +4244,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> GetDatasetTwingraphStatusAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> GetDatasetTwingraphStatusAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetDatasetTwingraphStatusWithHttpInfoAsync(organizationId, datasetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetDatasetTwingraphStatusWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4819,10 +4258,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetDatasetTwingraphStatusWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetDatasetTwingraphStatusWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4863,24 +4301,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.GetDatasetTwingraphStatus";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -4906,9 +4331,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string GetTwingraphEntities(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0)
+        public string GetTwingraphEntities(string organizationId, string datasetId, string type, List<string> ids)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = GetTwingraphEntitiesWithHttpInfo(organizationId, datasetId, type, ids);
             return localVarResponse.Data;
@@ -4922,9 +4346,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> GetTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<string> GetTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<string> ids)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -4977,24 +4400,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("multi", "ids", ids));
 
-            localVarRequestOptions.Operation = "DatasetApi.GetTwingraphEntities";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5019,12 +4429,11 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> GetTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> GetTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetTwingraphEntitiesWithHttpInfoAsync(organizationId, datasetId, type, ids, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await GetTwingraphEntitiesWithHttpInfoAsync(organizationId, datasetId, type, ids, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5036,10 +4445,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="ids">the entities to get</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<string> ids, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> GetTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<string> ids, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5093,24 +4501,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("multi", "ids", ids));
 
-            localVarRequestOptions.Operation = "DatasetApi.GetTwingraphEntities";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5135,9 +4530,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        public Dataset LinkWorkspace(string organizationId, string datasetId, string workspaceId, int operationIndex = 0)
+        public Dataset LinkWorkspace(string organizationId, string datasetId, string workspaceId)
         {
             Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = LinkWorkspaceWithHttpInfo(organizationId, datasetId, workspaceId);
             return localVarResponse.Data;
@@ -5150,9 +4544,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        public Com.Cosmotech.Client.ApiResponse<Dataset> LinkWorkspaceWithHttpInfo(string organizationId, string datasetId, string workspaceId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Dataset> LinkWorkspaceWithHttpInfo(string organizationId, string datasetId, string workspaceId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5198,24 +4591,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "workspaceId", workspaceId));
 
-            localVarRequestOptions.Operation = "DatasetApi.LinkWorkspace";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5239,12 +4619,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        public async System.Threading.Tasks.Task<Dataset> LinkWorkspaceAsync(string organizationId, string datasetId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dataset> LinkWorkspaceAsync(string organizationId, string datasetId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await LinkWorkspaceWithHttpInfoAsync(organizationId, datasetId, workspaceId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await LinkWorkspaceWithHttpInfoAsync(organizationId, datasetId, workspaceId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5255,10 +4634,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> LinkWorkspaceWithHttpInfoAsync(string organizationId, string datasetId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> LinkWorkspaceWithHttpInfoAsync(string organizationId, string datasetId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5305,24 +4683,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "workspaceId", workspaceId));
 
-            localVarRequestOptions.Operation = "DatasetApi.LinkWorkspace";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5346,9 +4711,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetTwinGraphInfo</returns>
-        public DatasetTwinGraphInfo RefreshDataset(string organizationId, string datasetId, int operationIndex = 0)
+        public DatasetTwinGraphInfo RefreshDataset(string organizationId, string datasetId)
         {
             Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphInfo> localVarResponse = RefreshDatasetWithHttpInfo(organizationId, datasetId);
             return localVarResponse.Data;
@@ -5360,9 +4724,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetTwinGraphInfo</returns>
-        public Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphInfo> RefreshDatasetWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphInfo> RefreshDatasetWithHttpInfo(string organizationId, string datasetId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5401,24 +4764,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.RefreshDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5441,12 +4791,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetTwinGraphInfo</returns>
-        public async System.Threading.Tasks.Task<DatasetTwinGraphInfo> RefreshDatasetAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DatasetTwinGraphInfo> RefreshDatasetAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphInfo> localVarResponse = await RefreshDatasetWithHttpInfoAsync(organizationId, datasetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphInfo> localVarResponse = await RefreshDatasetWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -5456,10 +4805,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetTwinGraphInfo)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphInfo>> RefreshDatasetWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphInfo>> RefreshDatasetWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5499,24 +4847,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.RefreshDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5540,9 +4875,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RemoveAllDatasetCompatibilityElements(string organizationId, string datasetId, int operationIndex = 0)
+        public void RemoveAllDatasetCompatibilityElements(string organizationId, string datasetId)
         {
             RemoveAllDatasetCompatibilityElementsWithHttpInfo(organizationId, datasetId);
         }
@@ -5553,9 +4887,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllDatasetCompatibilityElementsWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllDatasetCompatibilityElementsWithHttpInfo(string organizationId, string datasetId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5593,24 +4926,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.RemoveAllDatasetCompatibilityElements";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5633,12 +4953,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveAllDatasetCompatibilityElementsAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RemoveAllDatasetCompatibilityElementsAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RemoveAllDatasetCompatibilityElementsWithHttpInfoAsync(organizationId, datasetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await RemoveAllDatasetCompatibilityElementsWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -5647,10 +4966,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllDatasetCompatibilityElementsWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllDatasetCompatibilityElementsWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5689,24 +5007,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.RemoveAllDatasetCompatibilityElements";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5731,9 +5036,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void RemoveDatasetAccessControl(string organizationId, string datasetId, string identityId, int operationIndex = 0)
+        public void RemoveDatasetAccessControl(string organizationId, string datasetId, string identityId)
         {
             RemoveDatasetAccessControlWithHttpInfo(organizationId, datasetId, identityId);
         }
@@ -5745,9 +5049,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Cosmotech.Client.ApiResponse<Object> RemoveDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Object> RemoveDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5792,24 +5095,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.RemoveDatasetAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5833,12 +5123,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RemoveDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            await RemoveDatasetAccessControlWithHttpInfoAsync(organizationId, datasetId, identityId, operationIndex, cancellationToken).ConfigureAwait(false);
+            await RemoveDatasetAccessControlWithHttpInfoAsync(organizationId, datasetId, identityId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -5848,10 +5137,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5897,24 +5185,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.RemoveDatasetAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -5938,9 +5213,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string RollbackRefresh(string organizationId, string datasetId, int operationIndex = 0)
+        public string RollbackRefresh(string organizationId, string datasetId)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = RollbackRefreshWithHttpInfo(organizationId, datasetId);
             return localVarResponse.Data;
@@ -5952,9 +5226,8 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> RollbackRefreshWithHttpInfo(string organizationId, string datasetId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<string> RollbackRefreshWithHttpInfo(string organizationId, string datasetId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -5993,24 +5266,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.RollbackRefresh";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -6033,12 +5293,11 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> RollbackRefreshAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> RollbackRefreshAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await RollbackRefreshWithHttpInfoAsync(organizationId, datasetId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await RollbackRefreshWithHttpInfoAsync(organizationId, datasetId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -6048,10 +5307,9 @@ namespace Com.Cosmotech.Api
         /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> RollbackRefreshWithHttpInfoAsync(string organizationId, string datasetId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> RollbackRefreshWithHttpInfoAsync(string organizationId, string datasetId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -6091,24 +5349,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
 
-            localVarRequestOptions.Operation = "DatasetApi.RollbackRefresh";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -6134,9 +5379,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetSearch">the Dataset search parameters</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Dataset&gt;</returns>
-        public List<Dataset> SearchDatasets(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
+        public List<Dataset> SearchDatasets(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?))
         {
             Com.Cosmotech.Client.ApiResponse<List<Dataset>> localVarResponse = SearchDatasetsWithHttpInfo(organizationId, datasetSearch, page, size);
             return localVarResponse.Data;
@@ -6150,9 +5394,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetSearch">the Dataset search parameters</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Dataset&gt;</returns>
-        public Com.Cosmotech.Client.ApiResponse<List<Dataset>> SearchDatasetsWithHttpInfo(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<List<Dataset>> SearchDatasetsWithHttpInfo(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -6201,24 +5444,11 @@ namespace Com.Cosmotech.Api
             }
             localVarRequestOptions.Data = datasetSearch;
 
-            localVarRequestOptions.Operation = "DatasetApi.SearchDatasets";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -6243,12 +5473,11 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetSearch">the Dataset search parameters</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Dataset&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Dataset>> SearchDatasetsAsync(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Dataset>> SearchDatasetsAsync(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<List<Dataset>> localVarResponse = await SearchDatasetsWithHttpInfoAsync(organizationId, datasetSearch, page, size, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<Dataset>> localVarResponse = await SearchDatasetsWithHttpInfoAsync(organizationId, datasetSearch, page, size, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -6260,10 +5489,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetSearch">the Dataset search parameters</param>
         /// <param name="page">page number to query (optional)</param>
         /// <param name="size">amount of result by page (optional)</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Dataset&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Dataset>>> SearchDatasetsWithHttpInfoAsync(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Dataset>>> SearchDatasetsWithHttpInfoAsync(string organizationId, DatasetSearch datasetSearch, int? page = default(int?), int? size = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -6313,24 +5541,11 @@ namespace Com.Cosmotech.Api
             }
             localVarRequestOptions.Data = datasetSearch;
 
-            localVarRequestOptions.Operation = "DatasetApi.SearchDatasets";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -6355,9 +5570,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetSecurity</returns>
-        public DatasetSecurity SetDatasetDefaultSecurity(string organizationId, string datasetId, DatasetRole datasetRole, int operationIndex = 0)
+        public DatasetSecurity SetDatasetDefaultSecurity(string organizationId, string datasetId, DatasetRole datasetRole)
         {
             Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = SetDatasetDefaultSecurityWithHttpInfo(organizationId, datasetId, datasetRole);
             return localVarResponse.Data;
@@ -6370,9 +5584,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetSecurity</returns>
-        public Com.Cosmotech.Client.ApiResponse<DatasetSecurity> SetDatasetDefaultSecurityWithHttpInfo(string organizationId, string datasetId, DatasetRole datasetRole, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<DatasetSecurity> SetDatasetDefaultSecurityWithHttpInfo(string organizationId, string datasetId, DatasetRole datasetRole)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -6420,24 +5633,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetRole;
 
-            localVarRequestOptions.Operation = "DatasetApi.SetDatasetDefaultSecurity";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -6461,12 +5661,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetSecurity</returns>
-        public async System.Threading.Tasks.Task<DatasetSecurity> SetDatasetDefaultSecurityAsync(string organizationId, string datasetId, DatasetRole datasetRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DatasetSecurity> SetDatasetDefaultSecurityAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = await SetDatasetDefaultSecurityWithHttpInfoAsync(organizationId, datasetId, datasetRole, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<DatasetSecurity> localVarResponse = await SetDatasetDefaultSecurityWithHttpInfoAsync(organizationId, datasetId, datasetRole, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -6477,10 +5676,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetRole">This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset.</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetSecurity)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetSecurity>> SetDatasetDefaultSecurityWithHttpInfoAsync(string organizationId, string datasetId, DatasetRole datasetRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetSecurity>> SetDatasetDefaultSecurityWithHttpInfoAsync(string organizationId, string datasetId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -6529,24 +5727,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetRole;
 
-            localVarRequestOptions.Operation = "DatasetApi.SetDatasetDefaultSecurity";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -6571,9 +5756,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Graph Identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetTwinGraphHash</returns>
-        public DatasetTwinGraphHash TwingraphBatchQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0)
+        public DatasetTwinGraphHash TwingraphBatchQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
         {
             Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphHash> localVarResponse = TwingraphBatchQueryWithHttpInfo(organizationId, datasetId, datasetTwinGraphQuery);
             return localVarResponse.Data;
@@ -6586,9 +5770,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Graph Identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetTwinGraphHash</returns>
-        public Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphHash> TwingraphBatchQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphHash> TwingraphBatchQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -6635,24 +5818,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetTwinGraphQuery;
 
-            localVarRequestOptions.Operation = "DatasetApi.TwingraphBatchQuery";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -6676,12 +5846,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Graph Identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetTwinGraphHash</returns>
-        public async System.Threading.Tasks.Task<DatasetTwinGraphHash> TwingraphBatchQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DatasetTwinGraphHash> TwingraphBatchQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphHash> localVarResponse = await TwingraphBatchQueryWithHttpInfoAsync(organizationId, datasetId, datasetTwinGraphQuery, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphHash> localVarResponse = await TwingraphBatchQueryWithHttpInfoAsync(organizationId, datasetId, datasetTwinGraphQuery, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -6692,10 +5861,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Graph Identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetTwinGraphHash)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphHash>> TwingraphBatchQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetTwinGraphHash>> TwingraphBatchQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -6743,24 +5911,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetTwinGraphQuery;
 
-            localVarRequestOptions.Operation = "DatasetApi.TwingraphBatchQuery";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -6786,9 +5941,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>TwinGraphBatchResult</returns>
-        public TwinGraphBatchResult TwingraphBatchUpdate(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, int operationIndex = 0)
+        public TwinGraphBatchResult TwingraphBatchUpdate(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body)
         {
             Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult> localVarResponse = TwingraphBatchUpdateWithHttpInfo(organizationId, datasetId, twinGraphQuery, body);
             return localVarResponse.Data;
@@ -6802,9 +5956,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of TwinGraphBatchResult</returns>
-        public Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult> TwingraphBatchUpdateWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult> TwingraphBatchUpdateWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -6859,24 +6012,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "twinGraphQuery", twinGraphQuery));
             localVarRequestOptions.Data = body;
 
-            localVarRequestOptions.Operation = "DatasetApi.TwingraphBatchUpdate";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -6901,12 +6041,11 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TwinGraphBatchResult</returns>
-        public async System.Threading.Tasks.Task<TwinGraphBatchResult> TwingraphBatchUpdateAsync(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TwinGraphBatchResult> TwingraphBatchUpdateAsync(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult> localVarResponse = await TwingraphBatchUpdateWithHttpInfoAsync(organizationId, datasetId, twinGraphQuery, body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult> localVarResponse = await TwingraphBatchUpdateWithHttpInfoAsync(organizationId, datasetId, twinGraphQuery, body, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -6918,10 +6057,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="twinGraphQuery"></param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TwinGraphBatchResult)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult>> TwingraphBatchUpdateWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<TwinGraphBatchResult>> TwingraphBatchUpdateWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -6977,24 +6115,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "twinGraphQuery", twinGraphQuery));
             localVarRequestOptions.Data = body;
 
-            localVarRequestOptions.Operation = "DatasetApi.TwingraphBatchUpdate";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -7019,9 +6144,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string TwingraphQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0)
+        public string TwingraphQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = TwingraphQueryWithHttpInfo(organizationId, datasetId, datasetTwinGraphQuery);
             return localVarResponse.Data;
@@ -7034,9 +6158,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> TwingraphQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<string> TwingraphQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7083,24 +6206,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetTwinGraphQuery;
 
-            localVarRequestOptions.Operation = "DatasetApi.TwingraphQuery";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -7124,12 +6234,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> TwingraphQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> TwingraphQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await TwingraphQueryWithHttpInfoAsync(organizationId, datasetId, datasetTwinGraphQuery, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await TwingraphQueryWithHttpInfoAsync(organizationId, datasetId, datasetTwinGraphQuery, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7140,10 +6249,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> TwingraphQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> TwingraphQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7191,24 +6299,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = datasetTwinGraphQuery;
 
-            localVarRequestOptions.Operation = "DatasetApi.TwingraphQuery";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -7233,9 +6328,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        public Dataset UnlinkWorkspace(string organizationId, string datasetId, string workspaceId, int operationIndex = 0)
+        public Dataset UnlinkWorkspace(string organizationId, string datasetId, string workspaceId)
         {
             Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = UnlinkWorkspaceWithHttpInfo(organizationId, datasetId, workspaceId);
             return localVarResponse.Data;
@@ -7248,9 +6342,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        public Com.Cosmotech.Client.ApiResponse<Dataset> UnlinkWorkspaceWithHttpInfo(string organizationId, string datasetId, string workspaceId, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Dataset> UnlinkWorkspaceWithHttpInfo(string organizationId, string datasetId, string workspaceId)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7296,24 +6389,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "workspaceId", workspaceId));
 
-            localVarRequestOptions.Operation = "DatasetApi.UnlinkWorkspace";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -7337,12 +6417,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        public async System.Threading.Tasks.Task<Dataset> UnlinkWorkspaceAsync(string organizationId, string datasetId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dataset> UnlinkWorkspaceAsync(string organizationId, string datasetId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await UnlinkWorkspaceWithHttpInfoAsync(organizationId, datasetId, workspaceId, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await UnlinkWorkspaceWithHttpInfoAsync(organizationId, datasetId, workspaceId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7353,10 +6432,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="workspaceId">workspace id to be linked to</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> UnlinkWorkspaceWithHttpInfoAsync(string organizationId, string datasetId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> UnlinkWorkspaceWithHttpInfoAsync(string organizationId, string datasetId, string workspaceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7403,24 +6481,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Com.Cosmotech.Client.ClientUtils.ParameterToMultiMap("", "workspaceId", workspaceId));
 
-            localVarRequestOptions.Operation = "DatasetApi.UnlinkWorkspace";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -7445,9 +6510,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="dataset">the new Dataset details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dataset</returns>
-        public Dataset UpdateDataset(string organizationId, string datasetId, Dataset dataset, int operationIndex = 0)
+        public Dataset UpdateDataset(string organizationId, string datasetId, Dataset dataset)
         {
             Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = UpdateDatasetWithHttpInfo(organizationId, datasetId, dataset);
             return localVarResponse.Data;
@@ -7460,9 +6524,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="dataset">the new Dataset details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dataset</returns>
-        public Com.Cosmotech.Client.ApiResponse<Dataset> UpdateDatasetWithHttpInfo(string organizationId, string datasetId, Dataset dataset, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<Dataset> UpdateDatasetWithHttpInfo(string organizationId, string datasetId, Dataset dataset)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7510,24 +6573,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = dataset;
 
-            localVarRequestOptions.Operation = "DatasetApi.UpdateDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -7551,12 +6601,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="dataset">the new Dataset details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dataset</returns>
-        public async System.Threading.Tasks.Task<Dataset> UpdateDatasetAsync(string organizationId, string datasetId, Dataset dataset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dataset> UpdateDatasetAsync(string organizationId, string datasetId, Dataset dataset, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await UpdateDatasetWithHttpInfoAsync(organizationId, datasetId, dataset, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<Dataset> localVarResponse = await UpdateDatasetWithHttpInfoAsync(organizationId, datasetId, dataset, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7567,10 +6616,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="dataset">the new Dataset details. This endpoint can&#39;t be used to update security</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dataset)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> UpdateDatasetWithHttpInfoAsync(string organizationId, string datasetId, Dataset dataset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Dataset>> UpdateDatasetWithHttpInfoAsync(string organizationId, string datasetId, Dataset dataset, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7619,24 +6667,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = dataset;
 
-            localVarRequestOptions.Operation = "DatasetApi.UpdateDataset";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -7662,9 +6697,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="datasetRole">The new Dataset Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DatasetAccessControl</returns>
-        public DatasetAccessControl UpdateDatasetAccessControl(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, int operationIndex = 0)
+        public DatasetAccessControl UpdateDatasetAccessControl(string organizationId, string datasetId, string identityId, DatasetRole datasetRole)
         {
             Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> localVarResponse = UpdateDatasetAccessControlWithHttpInfo(organizationId, datasetId, identityId, datasetRole);
             return localVarResponse.Data;
@@ -7678,9 +6712,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="datasetRole">The new Dataset Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DatasetAccessControl</returns>
-        public Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> UpdateDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> UpdateDatasetAccessControlWithHttpInfo(string organizationId, string datasetId, string identityId, DatasetRole datasetRole)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7734,24 +6767,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
             localVarRequestOptions.Data = datasetRole;
 
-            localVarRequestOptions.Operation = "DatasetApi.UpdateDatasetAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -7776,12 +6796,11 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="datasetRole">The new Dataset Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DatasetAccessControl</returns>
-        public async System.Threading.Tasks.Task<DatasetAccessControl> UpdateDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DatasetAccessControl> UpdateDatasetAccessControlAsync(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> localVarResponse = await UpdateDatasetAccessControlWithHttpInfoAsync(organizationId, datasetId, identityId, datasetRole, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<DatasetAccessControl> localVarResponse = await UpdateDatasetAccessControlWithHttpInfoAsync(organizationId, datasetId, identityId, datasetRole, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7793,10 +6812,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="identityId">the User identifier</param>
         /// <param name="datasetRole">The new Dataset Access Control</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DatasetAccessControl)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetAccessControl>> UpdateDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<DatasetAccessControl>> UpdateDatasetAccessControlWithHttpInfoAsync(string organizationId, string datasetId, string identityId, DatasetRole datasetRole, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7851,24 +6869,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("identity_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(identityId)); // path parameter
             localVarRequestOptions.Data = datasetRole;
 
-            localVarRequestOptions.Operation = "DatasetApi.UpdateDatasetAccessControl";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -7894,9 +6899,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>string</returns>
-        public string UpdateTwingraphEntities(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0)
+        public string UpdateTwingraphEntities(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties)
         {
             Com.Cosmotech.Client.ApiResponse<string> localVarResponse = UpdateTwingraphEntitiesWithHttpInfo(organizationId, datasetId, type, graphProperties);
             return localVarResponse.Data;
@@ -7910,9 +6914,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> UpdateTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<string> UpdateTwingraphEntitiesWithHttpInfo(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7966,24 +6969,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.Data = graphProperties;
 
-            localVarRequestOptions.Operation = "DatasetApi.UpdateTwingraphEntities";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -8008,12 +6998,11 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> UpdateTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> UpdateTwingraphEntitiesAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await UpdateTwingraphEntitiesWithHttpInfoAsync(organizationId, datasetId, type, graphProperties, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await UpdateTwingraphEntitiesWithHttpInfoAsync(organizationId, datasetId, type, graphProperties, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -8025,10 +7014,9 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset Identifier</param>
         /// <param name="type">the entity model type</param>
         /// <param name="graphProperties">the entities to update</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> UpdateTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> UpdateTwingraphEntitiesWithHttpInfoAsync(string organizationId, string datasetId, string type, List<GraphProperties> graphProperties, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -8083,24 +7071,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("type", Com.Cosmotech.Client.ClientUtils.ParameterToString(type)); // path parameter
             localVarRequestOptions.Data = graphProperties;
 
-            localVarRequestOptions.Operation = "DatasetApi.UpdateTwingraphEntities";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -8125,9 +7100,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>FileUploadValidation</returns>
-        public FileUploadValidation UploadTwingraph(string organizationId, string datasetId, System.IO.Stream body, int operationIndex = 0)
+        public FileUploadValidation UploadTwingraph(string organizationId, string datasetId, System.IO.Stream body)
         {
             Com.Cosmotech.Client.ApiResponse<FileUploadValidation> localVarResponse = UploadTwingraphWithHttpInfo(organizationId, datasetId, body);
             return localVarResponse.Data;
@@ -8140,9 +7114,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of FileUploadValidation</returns>
-        public Com.Cosmotech.Client.ApiResponse<FileUploadValidation> UploadTwingraphWithHttpInfo(string organizationId, string datasetId, System.IO.Stream body, int operationIndex = 0)
+        public Com.Cosmotech.Client.ApiResponse<FileUploadValidation> UploadTwingraphWithHttpInfo(string organizationId, string datasetId, System.IO.Stream body)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -8189,24 +7162,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = body;
 
-            localVarRequestOptions.Operation = "DatasetApi.UploadTwingraph";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request
@@ -8230,12 +7190,11 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileUploadValidation</returns>
-        public async System.Threading.Tasks.Task<FileUploadValidation> UploadTwingraphAsync(string organizationId, string datasetId, System.IO.Stream body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FileUploadValidation> UploadTwingraphAsync(string organizationId, string datasetId, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<FileUploadValidation> localVarResponse = await UploadTwingraphWithHttpInfoAsync(organizationId, datasetId, body, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<FileUploadValidation> localVarResponse = await UploadTwingraphWithHttpInfoAsync(organizationId, datasetId, body, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -8246,10 +7205,9 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="body"></param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileUploadValidation)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<FileUploadValidation>> UploadTwingraphWithHttpInfoAsync(string organizationId, string datasetId, System.IO.Stream body, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<FileUploadValidation>> UploadTwingraphWithHttpInfoAsync(string organizationId, string datasetId, System.IO.Stream body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -8297,24 +7255,11 @@ namespace Com.Cosmotech.Api
             localVarRequestOptions.PathParameters.Add("dataset_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(datasetId)); // path parameter
             localVarRequestOptions.Data = body;
 
-            localVarRequestOptions.Operation = "DatasetApi.UploadTwingraph";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
             // authentication (oAuth2AuthCode) required
             // oauth required
-            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
             {
-                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
-                {
-                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-                }
-                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
-                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
-                         this.Configuration.OAuthFlow != null)
-                {
-                    localVarRequestOptions.OAuth = true;
-                }
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
             }
 
             // make the HTTP request

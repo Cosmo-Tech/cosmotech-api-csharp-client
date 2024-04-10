@@ -2,41 +2,42 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-| Method | HTTP request | Description |
-|--------|--------------|-------------|
-| [**AddDatasetAccessControl**](DatasetApi.md#adddatasetaccesscontrol) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/security/access | Add a control access to the Dataset |
-| [**AddOrReplaceDatasetCompatibilityElements**](DatasetApi.md#addorreplacedatasetcompatibilityelements) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Add Dataset Compatibility elements. |
-| [**CopyDataset**](DatasetApi.md#copydataset) | **POST** /organizations/{organization_id}/datasets/copy | Copy a Dataset to another Dataset. |
-| [**CreateDataset**](DatasetApi.md#createdataset) | **POST** /organizations/{organization_id}/datasets | Create a new Dataset |
-| [**CreateSubDataset**](DatasetApi.md#createsubdataset) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/subdataset | Create a sub-dataset from the dataset in parameter |
-| [**CreateTwingraphEntities**](DatasetApi.md#createtwingraphentities) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Create new entities in a graph instance |
-| [**DeleteDataset**](DatasetApi.md#deletedataset) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id} | Delete a dataset |
-| [**DeleteTwingraphEntities**](DatasetApi.md#deletetwingraphentities) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Delete entities in a graph instance |
-| [**DownloadTwingraph**](DatasetApi.md#downloadtwingraph) | **GET** /organizations/{organization_id}/datasets/twingraph/download/{hash} | Download a graph as a zip file |
-| [**FindAllDatasets**](DatasetApi.md#findalldatasets) | **GET** /organizations/{organization_id}/datasets | List all Datasets |
-| [**FindDatasetById**](DatasetApi.md#finddatasetbyid) | **GET** /organizations/{organization_id}/datasets/{dataset_id} | Get the details of a Dataset |
-| [**GetDatasetAccessControl**](DatasetApi.md#getdatasetaccesscontrol) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Get a control access for the Dataset |
-| [**GetDatasetSecurity**](DatasetApi.md#getdatasetsecurity) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security | Get the Dataset security information |
-| [**GetDatasetSecurityUsers**](DatasetApi.md#getdatasetsecurityusers) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/users | Get the Dataset security users list |
-| [**GetDatasetTwingraphStatus**](DatasetApi.md#getdatasettwingraphstatus) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/status | Get the dataset&#39;s refresh job status |
-| [**GetTwingraphEntities**](DatasetApi.md#gettwingraphentities) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Get entities in a graph instance |
-| [**LinkWorkspace**](DatasetApi.md#linkworkspace) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/link |  |
-| [**RefreshDataset**](DatasetApi.md#refreshdataset) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/refresh | Refresh data on dataset from dataset&#39;s source |
-| [**RemoveAllDatasetCompatibilityElements**](DatasetApi.md#removealldatasetcompatibilityelements) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Remove all Dataset Compatibility elements from the Dataset specified |
-| [**RemoveDatasetAccessControl**](DatasetApi.md#removedatasetaccesscontrol) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Remove the specified access from the given Dataset |
-| [**RollbackRefresh**](DatasetApi.md#rollbackrefresh) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/refresh/rollback | Rollback the dataset after a failed refresh |
-| [**SearchDatasets**](DatasetApi.md#searchdatasets) | **POST** /organizations/{organization_id}/datasets/search | Search Datasets by tags |
-| [**SetDatasetDefaultSecurity**](DatasetApi.md#setdatasetdefaultsecurity) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/security/default | Set the Dataset default security |
-| [**TwingraphBatchQuery**](DatasetApi.md#twingraphbatchquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode |
-| [**TwingraphBatchUpdate**](DatasetApi.md#twingraphbatchupdate) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch | Async batch update by loading a CSV file on a graph instance  |
-| [**TwingraphQuery**](DatasetApi.md#twingraphquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/twingraph | Return the result of a query made on the graph instance as a json |
-| [**UnlinkWorkspace**](DatasetApi.md#unlinkworkspace) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/unlink |  |
-| [**UpdateDataset**](DatasetApi.md#updatedataset) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id} | Update a dataset |
-| [**UpdateDatasetAccessControl**](DatasetApi.md#updatedatasetaccesscontrol) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Update the specified access to User for a Dataset |
-| [**UpdateTwingraphEntities**](DatasetApi.md#updatetwingraphentities) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Update entities in a graph instance |
-| [**UploadTwingraph**](DatasetApi.md#uploadtwingraph) | **POST** /organizations/{organization_id}/datasets/{dataset_id} | Upload data from zip file to dataset&#39;s twingraph |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**AddDatasetAccessControl**](DatasetApi.md#adddatasetaccesscontrol) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/security/access | Add a control access to the Dataset
+[**AddOrReplaceDatasetCompatibilityElements**](DatasetApi.md#addorreplacedatasetcompatibilityelements) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Add Dataset Compatibility elements.
+[**CopyDataset**](DatasetApi.md#copydataset) | **POST** /organizations/{organization_id}/datasets/copy | Copy a Dataset to another Dataset.
+[**CreateDataset**](DatasetApi.md#createdataset) | **POST** /organizations/{organization_id}/datasets | Create a new Dataset
+[**CreateSubDataset**](DatasetApi.md#createsubdataset) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/subdataset | Create a sub-dataset from the dataset in parameter
+[**CreateTwingraphEntities**](DatasetApi.md#createtwingraphentities) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Create new entities in a graph instance
+[**DeleteDataset**](DatasetApi.md#deletedataset) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id} | Delete a dataset
+[**DeleteTwingraphEntities**](DatasetApi.md#deletetwingraphentities) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Delete entities in a graph instance
+[**DownloadTwingraph**](DatasetApi.md#downloadtwingraph) | **GET** /organizations/{organization_id}/datasets/twingraph/download/{hash} | Download a graph as a zip file
+[**FindAllDatasets**](DatasetApi.md#findalldatasets) | **GET** /organizations/{organization_id}/datasets | List all Datasets
+[**FindDatasetById**](DatasetApi.md#finddatasetbyid) | **GET** /organizations/{organization_id}/datasets/{dataset_id} | Get the details of a Dataset
+[**GetDatasetAccessControl**](DatasetApi.md#getdatasetaccesscontrol) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Get a control access for the Dataset
+[**GetDatasetSecurity**](DatasetApi.md#getdatasetsecurity) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security | Get the Dataset security information
+[**GetDatasetSecurityUsers**](DatasetApi.md#getdatasetsecurityusers) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/security/users | Get the Dataset security users list
+[**GetDatasetTwingraphStatus**](DatasetApi.md#getdatasettwingraphstatus) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/status | Get the dataset&#39;s refresh job status
+[**GetTwingraphEntities**](DatasetApi.md#gettwingraphentities) | **GET** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Get entities in a graph instance
+[**LinkWorkspace**](DatasetApi.md#linkworkspace) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/link | 
+[**RefreshDataset**](DatasetApi.md#refreshdataset) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/refresh | Refresh data on dataset from dataset&#39;s source
+[**RemoveAllDatasetCompatibilityElements**](DatasetApi.md#removealldatasetcompatibilityelements) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/compatibility | Remove all Dataset Compatibility elements from the Dataset specified
+[**RemoveDatasetAccessControl**](DatasetApi.md#removedatasetaccesscontrol) | **DELETE** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Remove the specified access from the given Dataset
+[**RollbackRefresh**](DatasetApi.md#rollbackrefresh) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/refresh/rollback | Rollback the dataset after a failed refresh
+[**SearchDatasets**](DatasetApi.md#searchdatasets) | **POST** /organizations/{organization_id}/datasets/search | Search Datasets by tags
+[**SetDatasetDefaultSecurity**](DatasetApi.md#setdatasetdefaultsecurity) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/security/default | Set the Dataset default security
+[**TwingraphBatchQuery**](DatasetApi.md#twingraphbatchquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode
+[**TwingraphBatchUpdate**](DatasetApi.md#twingraphbatchupdate) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/batch | Async batch update by loading a CSV file on a graph instance 
+[**TwingraphQuery**](DatasetApi.md#twingraphquery) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/twingraph | Return the result of a query made on the graph instance as a json
+[**UnlinkWorkspace**](DatasetApi.md#unlinkworkspace) | **POST** /organizations/{organization_id}/datasets/{dataset_id}/unlink | 
+[**UpdateDataset**](DatasetApi.md#updatedataset) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id} | Update a dataset
+[**UpdateDatasetAccessControl**](DatasetApi.md#updatedatasetaccesscontrol) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id}/security/access/{identity_id} | Update the specified access to User for a Dataset
+[**UpdateTwingraphEntities**](DatasetApi.md#updatetwingraphentities) | **PATCH** /organizations/{organization_id}/datasets/{dataset_id}/twingraph/{type} | Update entities in a graph instance
+[**UploadTwingraph**](DatasetApi.md#uploadtwingraph) | **POST** /organizations/{organization_id}/datasets/{dataset_id} | Upload data from zip file to dataset&#39;s twingraph
 
-<a id="adddatasetaccesscontrol"></a>
+
+<a name="adddatasetaccesscontrol"></a>
 # **AddDatasetAccessControl**
 > DatasetAccessControl AddDatasetAccessControl (string organizationId, string datasetId, DatasetAccessControl datasetAccessControl)
 
@@ -74,8 +75,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.AddDatasetAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.AddDatasetAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -83,33 +84,13 @@ namespace Example
 }
 ```
 
-#### Using the AddDatasetAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Add a control access to the Dataset
-    ApiResponse<DatasetAccessControl> response = apiInstance.AddDatasetAccessControlWithHttpInfo(organizationId, datasetId, datasetAccessControl);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.AddDatasetAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **datasetAccessControl** | [**DatasetAccessControl**](DatasetAccessControl.md) | the new Dataset security access to add. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **datasetAccessControl** | [**DatasetAccessControl**](DatasetAccessControl.md)| the new Dataset security access to add. | 
 
 ### Return type
 
@@ -133,7 +114,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="addorreplacedatasetcompatibilityelements"></a>
+<a name="addorreplacedatasetcompatibilityelements"></a>
 # **AddOrReplaceDatasetCompatibilityElements**
 > List&lt;DatasetCompatibility&gt; AddOrReplaceDatasetCompatibilityElements (string organizationId, string datasetId, List<DatasetCompatibility> datasetCompatibility)
 
@@ -171,8 +152,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.AddOrReplaceDatasetCompatibilityElements: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.AddOrReplaceDatasetCompatibilityElements: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -180,33 +161,13 @@ namespace Example
 }
 ```
 
-#### Using the AddOrReplaceDatasetCompatibilityElementsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Add Dataset Compatibility elements.
-    ApiResponse<List<DatasetCompatibility>> response = apiInstance.AddOrReplaceDatasetCompatibilityElementsWithHttpInfo(organizationId, datasetId, datasetCompatibility);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.AddOrReplaceDatasetCompatibilityElementsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **datasetCompatibility** | [**List&lt;DatasetCompatibility&gt;**](DatasetCompatibility.md) | the Dataset Compatibility elements |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **datasetCompatibility** | [**List&lt;DatasetCompatibility&gt;**](DatasetCompatibility.md)| the Dataset Compatibility elements | 
 
 ### Return type
 
@@ -231,7 +192,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="copydataset"></a>
+<a name="copydataset"></a>
 # **CopyDataset**
 > DatasetCopyParameters CopyDataset (string organizationId, DatasetCopyParameters datasetCopyParameters)
 
@@ -270,8 +231,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.CopyDataset: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.CopyDataset: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -279,32 +240,12 @@ namespace Example
 }
 ```
 
-#### Using the CopyDatasetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Copy a Dataset to another Dataset.
-    ApiResponse<DatasetCopyParameters> response = apiInstance.CopyDatasetWithHttpInfo(organizationId, datasetCopyParameters);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.CopyDatasetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetCopyParameters** | [**DatasetCopyParameters**](DatasetCopyParameters.md) | the Dataset copy parameters |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetCopyParameters** | [**DatasetCopyParameters**](DatasetCopyParameters.md)| the Dataset copy parameters | 
 
 ### Return type
 
@@ -329,7 +270,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createdataset"></a>
+<a name="createdataset"></a>
 # **CreateDataset**
 > Dataset CreateDataset (string organizationId, Dataset dataset)
 
@@ -366,8 +307,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.CreateDataset: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.CreateDataset: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -375,32 +316,12 @@ namespace Example
 }
 ```
 
-#### Using the CreateDatasetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Create a new Dataset
-    ApiResponse<Dataset> response = apiInstance.CreateDatasetWithHttpInfo(organizationId, dataset);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.CreateDatasetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **dataset** | [**Dataset**](Dataset.md) | the Dataset to create |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **dataset** | [**Dataset**](Dataset.md)| the Dataset to create | 
 
 ### Return type
 
@@ -424,7 +345,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createsubdataset"></a>
+<a name="createsubdataset"></a>
 # **CreateSubDataset**
 > Dataset CreateSubDataset (string organizationId, string datasetId, SubDatasetGraphQuery subDatasetGraphQuery)
 
@@ -464,8 +385,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.CreateSubDataset: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.CreateSubDataset: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -473,33 +394,13 @@ namespace Example
 }
 ```
 
-#### Using the CreateSubDatasetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Create a sub-dataset from the dataset in parameter
-    ApiResponse<Dataset> response = apiInstance.CreateSubDatasetWithHttpInfo(organizationId, datasetId, subDatasetGraphQuery);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.CreateSubDatasetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **subDatasetGraphQuery** | [**SubDatasetGraphQuery**](SubDatasetGraphQuery.md) | the Cypher query to filter |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **subDatasetGraphQuery** | [**SubDatasetGraphQuery**](SubDatasetGraphQuery.md)| the Cypher query to filter | 
 
 ### Return type
 
@@ -522,7 +423,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createtwingraphentities"></a>
+<a name="createtwingraphentities"></a>
 # **CreateTwingraphEntities**
 > string CreateTwingraphEntities (string organizationId, string datasetId, string type, List<GraphProperties> graphProperties)
 
@@ -563,8 +464,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.CreateTwingraphEntities: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.CreateTwingraphEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -572,34 +473,14 @@ namespace Example
 }
 ```
 
-#### Using the CreateTwingraphEntitiesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Create new entities in a graph instance
-    ApiResponse<string> response = apiInstance.CreateTwingraphEntitiesWithHttpInfo(organizationId, datasetId, type, graphProperties);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.CreateTwingraphEntitiesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset Identifier |  |
-| **type** | **string** | the entity model type |  |
-| **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md) | the entities to create |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **type** | **string**| the entity model type | 
+ **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to create | 
 
 ### Return type
 
@@ -622,7 +503,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletedataset"></a>
+<a name="deletedataset"></a>
 # **DeleteDataset**
 > void DeleteDataset (string organizationId, string datasetId)
 
@@ -658,8 +539,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.DeleteDataset: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.DeleteDataset: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -667,29 +548,12 @@ namespace Example
 }
 ```
 
-#### Using the DeleteDatasetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Delete a dataset
-    apiInstance.DeleteDatasetWithHttpInfo(organizationId, datasetId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.DeleteDatasetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
 
 ### Return type
 
@@ -713,7 +577,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deletetwingraphentities"></a>
+<a name="deletetwingraphentities"></a>
 # **DeleteTwingraphEntities**
 > void DeleteTwingraphEntities (string organizationId, string datasetId, string type, List<string> ids)
 
@@ -753,8 +617,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.DeleteTwingraphEntities: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.DeleteTwingraphEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -762,31 +626,14 @@ namespace Example
 }
 ```
 
-#### Using the DeleteTwingraphEntitiesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Delete entities in a graph instance
-    apiInstance.DeleteTwingraphEntitiesWithHttpInfo(organizationId, datasetId, type, ids);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.DeleteTwingraphEntitiesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset Identifier |  |
-| **type** | **string** | the entity model type |  |
-| **ids** | [**List&lt;string&gt;**](string.md) | the entities to delete |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **type** | **string**| the entity model type | 
+ **ids** | [**List&lt;string&gt;**](string.md)| the entities to delete | 
 
 ### Return type
 
@@ -809,7 +656,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="downloadtwingraph"></a>
+<a name="downloadtwingraph"></a>
 # **DownloadTwingraph**
 > System.IO.Stream DownloadTwingraph (string organizationId, string hash)
 
@@ -848,8 +695,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.DownloadTwingraph: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.DownloadTwingraph: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -857,32 +704,12 @@ namespace Example
 }
 ```
 
-#### Using the DownloadTwingraphWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Download a graph as a zip file
-    ApiResponse<System.IO.Stream> response = apiInstance.DownloadTwingraphWithHttpInfo(organizationId, hash);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.DownloadTwingraphWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **hash** | **string** | the Graph download identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **hash** | **string**| the Graph download identifier | 
 
 ### Return type
 
@@ -905,7 +732,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="findalldatasets"></a>
+<a name="findalldatasets"></a>
 # **FindAllDatasets**
 > List&lt;Dataset&gt; FindAllDatasets (string organizationId, int? page = null, int? size = null)
 
@@ -943,8 +770,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.FindAllDatasets: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.FindAllDatasets: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -952,33 +779,13 @@ namespace Example
 }
 ```
 
-#### Using the FindAllDatasetsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // List all Datasets
-    ApiResponse<List<Dataset>> response = apiInstance.FindAllDatasetsWithHttpInfo(organizationId, page, size);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.FindAllDatasetsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **page** | **int?** | page number to query | [optional]  |
-| **size** | **int?** | amount of result by page | [optional]  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **page** | **int?**| page number to query | [optional] 
+ **size** | **int?**| amount of result by page | [optional] 
 
 ### Return type
 
@@ -1001,7 +808,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="finddatasetbyid"></a>
+<a name="finddatasetbyid"></a>
 # **FindDatasetById**
 > Dataset FindDatasetById (string organizationId, string datasetId)
 
@@ -1038,8 +845,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.FindDatasetById: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.FindDatasetById: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1047,32 +854,12 @@ namespace Example
 }
 ```
 
-#### Using the FindDatasetByIdWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the details of a Dataset
-    ApiResponse<Dataset> response = apiInstance.FindDatasetByIdWithHttpInfo(organizationId, datasetId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.FindDatasetByIdWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
 
 ### Return type
 
@@ -1096,7 +883,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getdatasetaccesscontrol"></a>
+<a name="getdatasetaccesscontrol"></a>
 # **GetDatasetAccessControl**
 > DatasetAccessControl GetDatasetAccessControl (string organizationId, string datasetId, string identityId)
 
@@ -1134,8 +921,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.GetDatasetAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.GetDatasetAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1143,33 +930,13 @@ namespace Example
 }
 ```
 
-#### Using the GetDatasetAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get a control access for the Dataset
-    ApiResponse<DatasetAccessControl> response = apiInstance.GetDatasetAccessControlWithHttpInfo(organizationId, datasetId, identityId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.GetDatasetAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **identityId** | **string** | the User identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **identityId** | **string**| the User identifier | 
 
 ### Return type
 
@@ -1193,7 +960,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getdatasetsecurity"></a>
+<a name="getdatasetsecurity"></a>
 # **GetDatasetSecurity**
 > DatasetSecurity GetDatasetSecurity (string organizationId, string datasetId)
 
@@ -1230,8 +997,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.GetDatasetSecurity: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.GetDatasetSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1239,32 +1006,12 @@ namespace Example
 }
 ```
 
-#### Using the GetDatasetSecurityWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the Dataset security information
-    ApiResponse<DatasetSecurity> response = apiInstance.GetDatasetSecurityWithHttpInfo(organizationId, datasetId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.GetDatasetSecurityWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
 
 ### Return type
 
@@ -1288,7 +1035,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getdatasetsecurityusers"></a>
+<a name="getdatasetsecurityusers"></a>
 # **GetDatasetSecurityUsers**
 > List&lt;string&gt; GetDatasetSecurityUsers (string organizationId, string datasetId)
 
@@ -1325,8 +1072,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.GetDatasetSecurityUsers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.GetDatasetSecurityUsers: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1334,32 +1081,12 @@ namespace Example
 }
 ```
 
-#### Using the GetDatasetSecurityUsersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the Dataset security users list
-    ApiResponse<List<string>> response = apiInstance.GetDatasetSecurityUsersWithHttpInfo(organizationId, datasetId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.GetDatasetSecurityUsersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
 
 ### Return type
 
@@ -1383,7 +1110,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getdatasettwingraphstatus"></a>
+<a name="getdatasettwingraphstatus"></a>
 # **GetDatasetTwingraphStatus**
 > string GetDatasetTwingraphStatus (string organizationId, string datasetId)
 
@@ -1422,8 +1149,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.GetDatasetTwingraphStatus: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.GetDatasetTwingraphStatus: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1431,32 +1158,12 @@ namespace Example
 }
 ```
 
-#### Using the GetDatasetTwingraphStatusWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the dataset's refresh job status
-    ApiResponse<string> response = apiInstance.GetDatasetTwingraphStatusWithHttpInfo(organizationId, datasetId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.GetDatasetTwingraphStatusWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the dataset identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the dataset identifier | 
 
 ### Return type
 
@@ -1479,7 +1186,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="gettwingraphentities"></a>
+<a name="gettwingraphentities"></a>
 # **GetTwingraphEntities**
 > string GetTwingraphEntities (string organizationId, string datasetId, string type, List<string> ids)
 
@@ -1520,8 +1227,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.GetTwingraphEntities: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.GetTwingraphEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1529,34 +1236,14 @@ namespace Example
 }
 ```
 
-#### Using the GetTwingraphEntitiesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get entities in a graph instance
-    ApiResponse<string> response = apiInstance.GetTwingraphEntitiesWithHttpInfo(organizationId, datasetId, type, ids);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.GetTwingraphEntitiesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset Identifier |  |
-| **type** | **string** | the entity model type |  |
-| **ids** | [**List&lt;string&gt;**](string.md) | the entities to get |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **type** | **string**| the entity model type | 
+ **ids** | [**List&lt;string&gt;**](string.md)| the entities to get | 
 
 ### Return type
 
@@ -1579,7 +1266,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="linkworkspace"></a>
+<a name="linkworkspace"></a>
 # **LinkWorkspace**
 > Dataset LinkWorkspace (string organizationId, string datasetId, string workspaceId)
 
@@ -1616,8 +1303,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.LinkWorkspace: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.LinkWorkspace: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1625,32 +1312,13 @@ namespace Example
 }
 ```
 
-#### Using the LinkWorkspaceWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<Dataset> response = apiInstance.LinkWorkspaceWithHttpInfo(organizationId, datasetId, workspaceId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.LinkWorkspaceWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **workspaceId** | **string** | workspace id to be linked to |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **workspaceId** | **string**| workspace id to be linked to | 
 
 ### Return type
 
@@ -1675,7 +1343,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="refreshdataset"></a>
+<a name="refreshdataset"></a>
 # **RefreshDataset**
 > DatasetTwinGraphInfo RefreshDataset (string organizationId, string datasetId)
 
@@ -1714,8 +1382,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.RefreshDataset: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.RefreshDataset: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1723,32 +1391,12 @@ namespace Example
 }
 ```
 
-#### Using the RefreshDatasetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Refresh data on dataset from dataset's source
-    ApiResponse<DatasetTwinGraphInfo> response = apiInstance.RefreshDatasetWithHttpInfo(organizationId, datasetId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.RefreshDatasetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
 
 ### Return type
 
@@ -1771,7 +1419,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="removealldatasetcompatibilityelements"></a>
+<a name="removealldatasetcompatibilityelements"></a>
 # **RemoveAllDatasetCompatibilityElements**
 > void RemoveAllDatasetCompatibilityElements (string organizationId, string datasetId)
 
@@ -1807,8 +1455,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.RemoveAllDatasetCompatibilityElements: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.RemoveAllDatasetCompatibilityElements: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1816,29 +1464,12 @@ namespace Example
 }
 ```
 
-#### Using the RemoveAllDatasetCompatibilityElementsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Remove all Dataset Compatibility elements from the Dataset specified
-    apiInstance.RemoveAllDatasetCompatibilityElementsWithHttpInfo(organizationId, datasetId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.RemoveAllDatasetCompatibilityElementsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
 
 ### Return type
 
@@ -1862,7 +1493,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="removedatasetaccesscontrol"></a>
+<a name="removedatasetaccesscontrol"></a>
 # **RemoveDatasetAccessControl**
 > void RemoveDatasetAccessControl (string organizationId, string datasetId, string identityId)
 
@@ -1899,8 +1530,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.RemoveDatasetAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.RemoveDatasetAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1908,30 +1539,13 @@ namespace Example
 }
 ```
 
-#### Using the RemoveDatasetAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Remove the specified access from the given Dataset
-    apiInstance.RemoveDatasetAccessControlWithHttpInfo(organizationId, datasetId, identityId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.RemoveDatasetAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **identityId** | **string** | the User identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **identityId** | **string**| the User identifier | 
 
 ### Return type
 
@@ -1955,7 +1569,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="rollbackrefresh"></a>
+<a name="rollbackrefresh"></a>
 # **RollbackRefresh**
 > string RollbackRefresh (string organizationId, string datasetId)
 
@@ -1994,8 +1608,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.RollbackRefresh: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.RollbackRefresh: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2003,32 +1617,12 @@ namespace Example
 }
 ```
 
-#### Using the RollbackRefreshWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Rollback the dataset after a failed refresh
-    ApiResponse<string> response = apiInstance.RollbackRefreshWithHttpInfo(organizationId, datasetId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.RollbackRefreshWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
 
 ### Return type
 
@@ -2051,7 +1645,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchdatasets"></a>
+<a name="searchdatasets"></a>
 # **SearchDatasets**
 > List&lt;Dataset&gt; SearchDatasets (string organizationId, DatasetSearch datasetSearch, int? page = null, int? size = null)
 
@@ -2090,8 +1684,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.SearchDatasets: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.SearchDatasets: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2099,34 +1693,14 @@ namespace Example
 }
 ```
 
-#### Using the SearchDatasetsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Search Datasets by tags
-    ApiResponse<List<Dataset>> response = apiInstance.SearchDatasetsWithHttpInfo(organizationId, datasetSearch, page, size);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.SearchDatasetsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetSearch** | [**DatasetSearch**](DatasetSearch.md) | the Dataset search parameters |  |
-| **page** | **int?** | page number to query | [optional]  |
-| **size** | **int?** | amount of result by page | [optional]  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetSearch** | [**DatasetSearch**](DatasetSearch.md)| the Dataset search parameters | 
+ **page** | **int?**| page number to query | [optional] 
+ **size** | **int?**| amount of result by page | [optional] 
 
 ### Return type
 
@@ -2149,7 +1723,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="setdatasetdefaultsecurity"></a>
+<a name="setdatasetdefaultsecurity"></a>
 # **SetDatasetDefaultSecurity**
 > DatasetSecurity SetDatasetDefaultSecurity (string organizationId, string datasetId, DatasetRole datasetRole)
 
@@ -2187,8 +1761,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.SetDatasetDefaultSecurity: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.SetDatasetDefaultSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2196,33 +1770,13 @@ namespace Example
 }
 ```
 
-#### Using the SetDatasetDefaultSecurityWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Set the Dataset default security
-    ApiResponse<DatasetSecurity> response = apiInstance.SetDatasetDefaultSecurityWithHttpInfo(organizationId, datasetId, datasetRole);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.SetDatasetDefaultSecurityWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **datasetRole** | [**DatasetRole**](DatasetRole.md) | This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **datasetRole** | [**DatasetRole**](DatasetRole.md)| This change the dataset default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the dataset. | 
 
 ### Return type
 
@@ -2246,7 +1800,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="twingraphbatchquery"></a>
+<a name="twingraphbatchquery"></a>
 # **TwingraphBatchQuery**
 > DatasetTwinGraphHash TwingraphBatchQuery (string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
 
@@ -2286,8 +1840,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.TwingraphBatchQuery: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.TwingraphBatchQuery: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2295,33 +1849,13 @@ namespace Example
 }
 ```
 
-#### Using the TwingraphBatchQueryWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Run a query on a graph instance and return the result as a zip file in async mode
-    ApiResponse<DatasetTwinGraphHash> response = apiInstance.TwingraphBatchQueryWithHttpInfo(organizationId, datasetId, datasetTwinGraphQuery);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.TwingraphBatchQueryWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Graph Identifier |  |
-| **datasetTwinGraphQuery** | [**DatasetTwinGraphQuery**](DatasetTwinGraphQuery.md) | the query to run |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Graph Identifier | 
+ **datasetTwinGraphQuery** | [**DatasetTwinGraphQuery**](DatasetTwinGraphQuery.md)| the query to run | 
 
 ### Return type
 
@@ -2344,7 +1878,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="twingraphbatchupdate"></a>
+<a name="twingraphbatchupdate"></a>
 # **TwingraphBatchUpdate**
 > TwinGraphBatchResult TwingraphBatchUpdate (string organizationId, string datasetId, DatasetTwinGraphQuery twinGraphQuery, System.IO.Stream body)
 
@@ -2388,8 +1922,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.TwingraphBatchUpdate: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.TwingraphBatchUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2397,34 +1931,14 @@ namespace Example
 }
 ```
 
-#### Using the TwingraphBatchUpdateWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Async batch update by loading a CSV file on a graph instance 
-    ApiResponse<TwinGraphBatchResult> response = apiInstance.TwingraphBatchUpdateWithHttpInfo(organizationId, datasetId, twinGraphQuery, body);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.TwingraphBatchUpdateWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset Identifier |  |
-| **twinGraphQuery** | [**DatasetTwinGraphQuery**](DatasetTwinGraphQuery.md) |  |  |
-| **body** | **System.IO.Stream****System.IO.Stream** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **twinGraphQuery** | [**DatasetTwinGraphQuery**](DatasetTwinGraphQuery.md)|  | 
+ **body** | **System.IO.Stream****System.IO.Stream**|  | 
 
 ### Return type
 
@@ -2448,7 +1962,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="twingraphquery"></a>
+<a name="twingraphquery"></a>
 # **TwingraphQuery**
 > string TwingraphQuery (string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
 
@@ -2488,8 +2002,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.TwingraphQuery: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.TwingraphQuery: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2497,33 +2011,13 @@ namespace Example
 }
 ```
 
-#### Using the TwingraphQueryWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Return the result of a query made on the graph instance as a json
-    ApiResponse<string> response = apiInstance.TwingraphQueryWithHttpInfo(organizationId, datasetId, datasetTwinGraphQuery);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.TwingraphQueryWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **datasetTwinGraphQuery** | [**DatasetTwinGraphQuery**](DatasetTwinGraphQuery.md) | the query to run |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **datasetTwinGraphQuery** | [**DatasetTwinGraphQuery**](DatasetTwinGraphQuery.md)| the query to run | 
 
 ### Return type
 
@@ -2546,7 +2040,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="unlinkworkspace"></a>
+<a name="unlinkworkspace"></a>
 # **UnlinkWorkspace**
 > Dataset UnlinkWorkspace (string organizationId, string datasetId, string workspaceId)
 
@@ -2583,8 +2077,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.UnlinkWorkspace: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.UnlinkWorkspace: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2592,32 +2086,13 @@ namespace Example
 }
 ```
 
-#### Using the UnlinkWorkspaceWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<Dataset> response = apiInstance.UnlinkWorkspaceWithHttpInfo(organizationId, datasetId, workspaceId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.UnlinkWorkspaceWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **workspaceId** | **string** | workspace id to be linked to |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **workspaceId** | **string**| workspace id to be linked to | 
 
 ### Return type
 
@@ -2642,7 +2117,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatedataset"></a>
+<a name="updatedataset"></a>
 # **UpdateDataset**
 > Dataset UpdateDataset (string organizationId, string datasetId, Dataset dataset)
 
@@ -2680,8 +2155,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.UpdateDataset: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.UpdateDataset: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2689,33 +2164,13 @@ namespace Example
 }
 ```
 
-#### Using the UpdateDatasetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update a dataset
-    ApiResponse<Dataset> response = apiInstance.UpdateDatasetWithHttpInfo(organizationId, datasetId, dataset);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.UpdateDatasetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **dataset** | [**Dataset**](Dataset.md) | the new Dataset details. This endpoint can&#39;t be used to update security |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **dataset** | [**Dataset**](Dataset.md)| the new Dataset details. This endpoint can&#39;t be used to update security | 
 
 ### Return type
 
@@ -2740,7 +2195,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatedatasetaccesscontrol"></a>
+<a name="updatedatasetaccesscontrol"></a>
 # **UpdateDatasetAccessControl**
 > DatasetAccessControl UpdateDatasetAccessControl (string organizationId, string datasetId, string identityId, DatasetRole datasetRole)
 
@@ -2779,8 +2234,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.UpdateDatasetAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.UpdateDatasetAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2788,34 +2243,14 @@ namespace Example
 }
 ```
 
-#### Using the UpdateDatasetAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update the specified access to User for a Dataset
-    ApiResponse<DatasetAccessControl> response = apiInstance.UpdateDatasetAccessControlWithHttpInfo(organizationId, datasetId, identityId, datasetRole);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.UpdateDatasetAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **identityId** | **string** | the User identifier |  |
-| **datasetRole** | [**DatasetRole**](DatasetRole.md) | The new Dataset Access Control |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **identityId** | **string**| the User identifier | 
+ **datasetRole** | [**DatasetRole**](DatasetRole.md)| The new Dataset Access Control | 
 
 ### Return type
 
@@ -2839,7 +2274,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updatetwingraphentities"></a>
+<a name="updatetwingraphentities"></a>
 # **UpdateTwingraphEntities**
 > string UpdateTwingraphEntities (string organizationId, string datasetId, string type, List<GraphProperties> graphProperties)
 
@@ -2880,8 +2315,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.UpdateTwingraphEntities: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.UpdateTwingraphEntities: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2889,34 +2324,14 @@ namespace Example
 }
 ```
 
-#### Using the UpdateTwingraphEntitiesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update entities in a graph instance
-    ApiResponse<string> response = apiInstance.UpdateTwingraphEntitiesWithHttpInfo(organizationId, datasetId, type, graphProperties);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.UpdateTwingraphEntitiesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset Identifier |  |
-| **type** | **string** | the entity model type |  |
-| **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md) | the entities to update |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset Identifier | 
+ **type** | **string**| the entity model type | 
+ **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to update | 
 
 ### Return type
 
@@ -2939,7 +2354,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="uploadtwingraph"></a>
+<a name="uploadtwingraph"></a>
 # **UploadTwingraph**
 > FileUploadValidation UploadTwingraph (string organizationId, string datasetId, System.IO.Stream body)
 
@@ -2979,8 +2394,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatasetApi.UploadTwingraph: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling DatasetApi.UploadTwingraph: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -2988,33 +2403,13 @@ namespace Example
 }
 ```
 
-#### Using the UploadTwingraphWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Upload data from zip file to dataset's twingraph
-    ApiResponse<FileUploadValidation> response = apiInstance.UploadTwingraphWithHttpInfo(organizationId, datasetId, body);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DatasetApi.UploadTwingraphWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **datasetId** | **string** | the Dataset identifier |  |
-| **body** | **System.IO.Stream****System.IO.Stream** |  |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **datasetId** | **string**| the Dataset identifier | 
+ **body** | **System.IO.Stream****System.IO.Stream**|  | 
 
 ### Return type
 
