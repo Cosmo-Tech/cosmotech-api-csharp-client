@@ -18,10 +18,9 @@ Method | HTTP request | Description
 [**GetWorkspacePermissions**](WorkspaceApi.md#getworkspacepermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/permissions/{role} | Get the Workspace permission by given role
 [**GetWorkspaceSecurity**](WorkspaceApi.md#getworkspacesecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security | Get the Workspace security information
 [**GetWorkspaceSecurityUsers**](WorkspaceApi.md#getworkspacesecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/users | Get the Workspace security users list
-[**LinkDataset**](WorkspaceApi.md#linkdataset) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/link | 
+[**ImportWorkspace**](WorkspaceApi.md#importworkspace) | **POST** /organizations/{organization_id}/workspaces/import | Import a workspace
 [**RemoveWorkspaceAccessControl**](WorkspaceApi.md#removeworkspaceaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Remove the specified access from the given Organization Workspace
 [**SetWorkspaceDefaultSecurity**](WorkspaceApi.md#setworkspacedefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/default | Set the Workspace default security
-[**UnlinkDataset**](WorkspaceApi.md#unlinkdataset) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/unlink | 
 [**UpdateWorkspace**](WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
 [**UpdateWorkspaceAccessControl**](WorkspaceApi.md#updateworkspaceaccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Update the specified access to User for a Workspace
 [**UploadWorkspaceFile**](WorkspaceApi.md#uploadworkspacefile) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/files | Upload a file for the Workspace
@@ -1087,11 +1086,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="linkdataset"></a>
-# **LinkDataset**
-> Workspace LinkDataset (string organizationId, string workspaceId, string datasetId)
+<a name="importworkspace"></a>
+# **ImportWorkspace**
+> Workspace ImportWorkspace (string organizationId, Workspace workspace)
 
-
+Import a workspace
 
 ### Example
 ```csharp
@@ -1103,7 +1102,7 @@ using Com.Cosmotech.Model;
 
 namespace Example
 {
-    public class LinkDatasetExample
+    public class ImportWorkspaceExample
     {
         public static void Main()
         {
@@ -1114,17 +1113,17 @@ namespace Example
 
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
-            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var datasetId = "datasetId_example";  // string | dataset id to be linked to
+            var workspace = new Workspace(); // Workspace | the Workspace to import
 
             try
             {
-                Workspace result = apiInstance.LinkDataset(organizationId, workspaceId, datasetId);
+                // Import a workspace
+                Workspace result = apiInstance.ImportWorkspace(organizationId, workspace);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.LinkDataset: " + e.Message );
+                Debug.Print("Exception when calling WorkspaceApi.ImportWorkspace: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1138,8 +1137,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **datasetId** | **string**| dataset id to be linked to | 
+ **workspace** | [**Workspace**](Workspace.md)| the Workspace to import | 
 
 ### Return type
 
@@ -1151,16 +1149,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, application/yaml
  - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the workspace details |  -  |
+| **201** | the workspace details |  -  |
 | **400** | Bad request |  -  |
-| **404** | the workspace specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1268,7 +1265,7 @@ namespace Example
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var workspaceRole = new WorkspaceRole(); // WorkspaceRole | This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace.
+            var workspaceRole = new WorkspaceRole(); // WorkspaceRole | the new Workspace default security.
 
             try
             {
@@ -1293,7 +1290,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
- **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md)| This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace. | 
+ **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md)| the new Workspace default security. | 
 
 ### Return type
 
@@ -1314,83 +1311,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **201** | The Workspace default visibility |  -  |
 | **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="unlinkdataset"></a>
-# **UnlinkDataset**
-> Workspace UnlinkDataset (string organizationId, string workspaceId, string datasetId)
-
-
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Com.Cosmotech.Api;
-using Com.Cosmotech.Client;
-using Com.Cosmotech.Model;
-
-namespace Example
-{
-    public class UnlinkDatasetExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://dev.api.cosmotech.com";
-            // Configure OAuth2 access token for authorization: oAuth2AuthCode
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new WorkspaceApi(config);
-            var organizationId = "organizationId_example";  // string | the Organization identifier
-            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var datasetId = "datasetId_example";  // string | dataset id to be linked to
-
-            try
-            {
-                Workspace result = apiInstance.UnlinkDataset(organizationId, workspaceId, datasetId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WorkspaceApi.UnlinkDataset: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **datasetId** | **string**| dataset id to be linked to | 
-
-### Return type
-
-[**Workspace**](Workspace.md)
-
-### Authorization
-
-[oAuth2AuthCode](../README.md#oAuth2AuthCode)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | the workspace details |  -  |
-| **400** | Bad request |  -  |
-| **404** | the Dataset specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1422,7 +1342,7 @@ namespace Example
             var apiInstance = new WorkspaceApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
-            var workspace = new Workspace(); // Workspace | The new Workspace details. This endpoint can't be used to update security
+            var workspace = new Workspace(); // Workspace | The new Workspace details.
 
             try
             {
@@ -1447,7 +1367,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| the Organization identifier | 
  **workspaceId** | **string**| the Workspace identifier | 
- **workspace** | [**Workspace**](Workspace.md)| The new Workspace details. This endpoint can&#39;t be used to update security | 
+ **workspace** | [**Workspace**](Workspace.md)| The new Workspace details. | 
 
 ### Return type
 
