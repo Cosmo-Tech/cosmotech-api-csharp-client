@@ -2,13 +2,12 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**GetScenarioRunResult**](ScenariorunresultApi.md#getscenariorunresult) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/{scenariorun_id}/probes/{probe_id} | Get a ScenarioRunResult in the Organization
-[**SendScenarioRunResult**](ScenariorunresultApi.md#sendscenariorunresult) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/{scenariorun_id}/probes/{probe_id} | Create a new ScenarioRunResult in the Organization
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**GetScenarioRunResult**](ScenariorunresultApi.md#getscenariorunresult) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/{scenariorun_id}/probes/{probe_id} | Get a ScenarioRunResult in the Organization |
+| [**SendScenarioRunResult**](ScenariorunresultApi.md#sendscenariorunresult) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/{scenariorun_id}/probes/{probe_id} | Create a new ScenarioRunResult in the Organization |
 
-
-<a name="getscenariorunresult"></a>
+<a id="getscenariorunresult"></a>
 # **GetScenarioRunResult**
 > ScenarioRunResult GetScenarioRunResult (string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId)
 
@@ -48,8 +47,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenariorunresultApi.GetScenarioRunResult: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenariorunresultApi.GetScenarioRunResult: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -57,15 +56,35 @@ namespace Example
 }
 ```
 
+#### Using the GetScenarioRunResultWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a ScenarioRunResult in the Organization
+    ApiResponse<ScenarioRunResult> response = apiInstance.GetScenarioRunResultWithHttpInfo(organizationId, workspaceId, scenarioId, scenariorunId, probeId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenariorunresultApi.GetScenarioRunResultWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **scenariorunId** | **string**| the ScenarioRun identifier | 
- **probeId** | **string**| the Probe identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **scenariorunId** | **string** | the ScenarioRun identifier |  |
+| **probeId** | **string** | the Probe identifier |  |
 
 ### Return type
 
@@ -89,7 +108,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sendscenariorunresult"></a>
+<a id="sendscenariorunresult"></a>
 # **SendScenarioRunResult**
 > ScenarioRunResult SendScenarioRunResult (string organizationId, string workspaceId, string scenarioId, string scenariorunId, string probeId, Dictionary<string, string> requestBody)
 
@@ -130,8 +149,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScenariorunresultApi.SendScenarioRunResult: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ScenariorunresultApi.SendScenarioRunResult: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -139,16 +158,36 @@ namespace Example
 }
 ```
 
+#### Using the SendScenarioRunResultWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a new ScenarioRunResult in the Organization
+    ApiResponse<ScenarioRunResult> response = apiInstance.SendScenarioRunResultWithHttpInfo(organizationId, workspaceId, scenarioId, scenariorunId, probeId, requestBody);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ScenariorunresultApi.SendScenarioRunResultWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **scenarioId** | **string**| the Scenario identifier | 
- **scenariorunId** | **string**| the ScenarioRun identifier | 
- **probeId** | **string**| the Probe identifier | 
- **requestBody** | [**Dictionary&lt;string, string&gt;**](string.md)| the ScenarioRunResult to register | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **scenarioId** | **string** | the Scenario identifier |  |
+| **scenariorunId** | **string** | the ScenarioRun identifier |  |
+| **probeId** | **string** | the Probe identifier |  |
+| **requestBody** | [**Dictionary&lt;string, string&gt;**](string.md) | the ScenarioRunResult to register |  |
 
 ### Return type
 
