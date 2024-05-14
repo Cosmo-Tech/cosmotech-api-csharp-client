@@ -129,5 +129,37 @@ namespace Com.Cosmotech.Test.Api
             //var response = instance.ListRuns(organizationId, workspaceId, runnerId, page, size);
             //Assert.IsType<List<Run>>(response);
         }
+
+        /// <summary>
+        /// Test QueryRunData
+        /// </summary>
+        [Fact]
+        public void QueryRunDataTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //string runnerId = null;
+            //string runId = null;
+            //RunDataQuery runDataQuery = null;
+            //var response = instance.QueryRunData(organizationId, workspaceId, runnerId, runId, runDataQuery);
+            //Assert.IsType<QueryResult>(response);
+        }
+
+        /// <summary>
+        /// Test SendRunData
+        /// </summary>
+        [Fact]
+        public void SendRunDataTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string organizationId = null;
+            //string workspaceId = null;
+            //string runnerId = null;
+            //string runId = null;
+            //SendRunDataRequest sendRunDataRequest = null;
+            //var response = instance.SendRunData(organizationId, workspaceId, runnerId, runId, sendRunDataRequest);
+            //Assert.IsType<RunData>(response);
+        }
     }
 }

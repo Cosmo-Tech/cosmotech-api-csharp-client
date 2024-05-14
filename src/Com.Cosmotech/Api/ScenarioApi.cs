@@ -38,6 +38,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        [Obsolete]
         List<ScenarioRunTemplateParameterValue> AddOrReplaceScenarioParameterValues(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, int operationIndex = 0);
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        [Obsolete]
         ApiResponse<List<ScenarioRunTemplateParameterValue>> AddOrReplaceScenarioParameterValuesWithHttpInfo(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, int operationIndex = 0);
         /// <summary>
         /// Add a control access to the Scenario
@@ -64,6 +66,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioAccessControl">the new Scenario security access to add.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioAccessControl</returns>
+        [Obsolete]
         ScenarioAccessControl AddScenarioAccessControl(string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl, int operationIndex = 0);
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioAccessControl">the new Scenario security access to add.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioAccessControl</returns>
+        [Obsolete]
         ApiResponse<ScenarioAccessControl> AddScenarioAccessControlWithHttpInfo(string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl, int operationIndex = 0);
         /// <summary>
         /// Compare the Scenario with another one and returns the difference for parameters values
@@ -90,6 +94,7 @@ namespace Com.Cosmotech.Api
         /// <param name="comparedScenarioId">the Scenario identifier to compare to</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioComparisonResult</returns>
+        [Obsolete]
         ScenarioComparisonResult CompareScenarios(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId, int operationIndex = 0);
 
         /// <summary>
@@ -105,6 +110,7 @@ namespace Com.Cosmotech.Api
         /// <param name="comparedScenarioId">the Scenario identifier to compare to</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioComparisonResult</returns>
+        [Obsolete]
         ApiResponse<ScenarioComparisonResult> CompareScenariosWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId, int operationIndex = 0);
         /// <summary>
         /// Create a new Scenario
@@ -115,6 +121,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenario">the Scenario to create</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Scenario</returns>
+        [Obsolete]
         Scenario CreateScenario(string organizationId, string workspaceId, Scenario scenario, int operationIndex = 0);
 
         /// <summary>
@@ -129,6 +136,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenario">the Scenario to create</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Scenario</returns>
+        [Obsolete]
         ApiResponse<Scenario> CreateScenarioWithHttpInfo(string organizationId, string workspaceId, Scenario scenario, int operationIndex = 0);
         /// <summary>
         /// Delete all Scenarios of the Workspace
@@ -138,6 +146,7 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
+        [Obsolete]
         void DeleteAllScenarios(string organizationId, string workspaceId, int operationIndex = 0);
 
         /// <summary>
@@ -151,6 +160,7 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> DeleteAllScenariosWithHttpInfo(string organizationId, string workspaceId, int operationIndex = 0);
         /// <summary>
         /// Delete a scenario
@@ -161,6 +171,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
+        [Obsolete]
         void DeleteScenario(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
 
         /// <summary>
@@ -175,6 +186,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
         /// <summary>
         /// Download Scenario data
@@ -185,6 +197,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioDataDownloadJob</returns>
+        [Obsolete]
         ScenarioDataDownloadJob DownloadScenarioData(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
 
         /// <summary>
@@ -199,6 +212,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioDataDownloadJob</returns>
+        [Obsolete]
         ApiResponse<ScenarioDataDownloadJob> DownloadScenarioDataWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
         /// <summary>
         /// List all Scenarios
@@ -210,6 +224,7 @@ namespace Com.Cosmotech.Api
         /// <param name="size">amount of result by page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Scenario&gt;</returns>
+        [Obsolete]
         List<Scenario> FindAllScenarios(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
 
         /// <summary>
@@ -225,6 +240,7 @@ namespace Com.Cosmotech.Api
         /// <param name="size">amount of result by page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         ApiResponse<List<Scenario>> FindAllScenariosWithHttpInfo(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
         /// <summary>
         /// List all Scenarios by validation status
@@ -237,6 +253,7 @@ namespace Com.Cosmotech.Api
         /// <param name="size">amount of result by page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Scenario&gt;</returns>
+        [Obsolete]
         List<Scenario> FindAllScenariosByValidationStatus(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
 
         /// <summary>
@@ -253,6 +270,7 @@ namespace Com.Cosmotech.Api
         /// <param name="size">amount of result by page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         ApiResponse<List<Scenario>> FindAllScenariosByValidationStatusWithHttpInfo(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
         /// <summary>
         /// Get the details of an scenario
@@ -263,6 +281,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Scenario</returns>
+        [Obsolete]
         Scenario FindScenarioById(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
 
         /// <summary>
@@ -277,6 +296,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Scenario</returns>
+        [Obsolete]
         ApiResponse<Scenario> FindScenarioByIdWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
         /// <summary>
         /// Get a control access for the Scenario
@@ -288,6 +308,7 @@ namespace Com.Cosmotech.Api
         /// <param name="identityId">the User identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioAccessControl</returns>
+        [Obsolete]
         ScenarioAccessControl GetScenarioAccessControl(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0);
 
         /// <summary>
@@ -303,6 +324,7 @@ namespace Com.Cosmotech.Api
         /// <param name="identityId">the User identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioAccessControl</returns>
+        [Obsolete]
         ApiResponse<ScenarioAccessControl> GetScenarioAccessControlWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0);
         /// <summary>
         /// Get Scenario data download URL
@@ -314,6 +336,7 @@ namespace Com.Cosmotech.Api
         /// <param name="downloadId">the Scenario Download identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioDataDownloadInfo</returns>
+        [Obsolete]
         ScenarioDataDownloadInfo GetScenarioDataDownloadJobInfo(string organizationId, string workspaceId, string scenarioId, string downloadId, int operationIndex = 0);
 
         /// <summary>
@@ -329,6 +352,7 @@ namespace Com.Cosmotech.Api
         /// <param name="downloadId">the Scenario Download identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioDataDownloadInfo</returns>
+        [Obsolete]
         ApiResponse<ScenarioDataDownloadInfo> GetScenarioDataDownloadJobInfoWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string downloadId, int operationIndex = 0);
         /// <summary>
         /// Get the Scenario permission by given role
@@ -340,6 +364,7 @@ namespace Com.Cosmotech.Api
         /// <param name="role">the Role</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
+        [Obsolete]
         List<string> GetScenarioPermissions(string organizationId, string workspaceId, string scenarioId, string role, int operationIndex = 0);
 
         /// <summary>
@@ -355,6 +380,7 @@ namespace Com.Cosmotech.Api
         /// <param name="role">the Role</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        [Obsolete]
         ApiResponse<List<string>> GetScenarioPermissionsWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string role, int operationIndex = 0);
         /// <summary>
         /// Get the Scenario security information
@@ -365,6 +391,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioSecurity</returns>
+        [Obsolete]
         ScenarioSecurity GetScenarioSecurity(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
 
         /// <summary>
@@ -379,6 +406,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioSecurity</returns>
+        [Obsolete]
         ApiResponse<ScenarioSecurity> GetScenarioSecurityWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
         /// <summary>
         /// Get the Scenario security users list
@@ -389,6 +417,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
+        [Obsolete]
         List<string> GetScenarioSecurityUsers(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
 
         /// <summary>
@@ -403,6 +432,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        [Obsolete]
         ApiResponse<List<string>> GetScenarioSecurityUsersWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
         /// <summary>
         /// Get the validation status of an scenario
@@ -413,6 +443,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioValidationStatus</returns>
+        [Obsolete]
         ScenarioValidationStatus GetScenarioValidationStatusById(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
 
         /// <summary>
@@ -427,6 +458,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioValidationStatus</returns>
+        [Obsolete]
         ApiResponse<ScenarioValidationStatus> GetScenarioValidationStatusByIdWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
         /// <summary>
         /// Get the Scenarios Tree
@@ -436,6 +468,7 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Scenario&gt;</returns>
+        [Obsolete]
         List<Scenario> GetScenariosTree(string organizationId, string workspaceId, int operationIndex = 0);
 
         /// <summary>
@@ -449,6 +482,7 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         ApiResponse<List<Scenario>> GetScenariosTreeWithHttpInfo(string organizationId, string workspaceId, int operationIndex = 0);
         /// <summary>
         /// Remove all Parameter Values from the Scenario specified
@@ -459,6 +493,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
+        [Obsolete]
         void RemoveAllScenarioParameterValues(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
 
         /// <summary>
@@ -473,6 +508,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> RemoveAllScenarioParameterValuesWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0);
         /// <summary>
         /// Remove the specified access from the given Organization Scenario
@@ -484,6 +520,7 @@ namespace Com.Cosmotech.Api
         /// <param name="identityId">the User identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
+        [Obsolete]
         void RemoveScenarioAccessControl(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0);
 
         /// <summary>
@@ -499,6 +536,7 @@ namespace Com.Cosmotech.Api
         /// <param name="identityId">the User identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> RemoveScenarioAccessControlWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0);
         /// <summary>
         /// Set the Scenario default security
@@ -510,6 +548,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioSecurity</returns>
+        [Obsolete]
         ScenarioSecurity SetScenarioDefaultSecurity(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, int operationIndex = 0);
 
         /// <summary>
@@ -525,6 +564,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioSecurity</returns>
+        [Obsolete]
         ApiResponse<ScenarioSecurity> SetScenarioDefaultSecurityWithHttpInfo(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, int operationIndex = 0);
         /// <summary>
         /// Update a scenario
@@ -536,6 +576,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenario">the new Scenario details. This endpoint can&#39;t be used to update security</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Scenario</returns>
+        [Obsolete]
         Scenario UpdateScenario(string organizationId, string workspaceId, string scenarioId, Scenario scenario, int operationIndex = 0);
 
         /// <summary>
@@ -551,6 +592,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenario">the new Scenario details. This endpoint can&#39;t be used to update security</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Scenario</returns>
+        [Obsolete]
         ApiResponse<Scenario> UpdateScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, Scenario scenario, int operationIndex = 0);
         /// <summary>
         /// Update the specified access to User for a Scenario
@@ -563,6 +605,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRole">The new Scenario Access Control</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioAccessControl</returns>
+        [Obsolete]
         ScenarioAccessControl UpdateScenarioAccessControl(string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole, int operationIndex = 0);
 
         /// <summary>
@@ -579,6 +622,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRole">The new Scenario Access Control</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioAccessControl</returns>
+        [Obsolete]
         ApiResponse<ScenarioAccessControl> UpdateScenarioAccessControlWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole, int operationIndex = 0);
         #endregion Synchronous Operations
     }
@@ -603,6 +647,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<ScenarioRunTemplateParameterValue>> AddOrReplaceScenarioParameterValuesAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -619,6 +664,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ScenarioRunTemplateParameterValue&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<ScenarioRunTemplateParameterValue>>> AddOrReplaceScenarioParameterValuesWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Add a control access to the Scenario
@@ -634,6 +680,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioAccessControl</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ScenarioAccessControl> AddScenarioAccessControlAsync(string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -650,6 +697,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioAccessControl)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ScenarioAccessControl>> AddScenarioAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Compare the Scenario with another one and returns the difference for parameters values
@@ -665,6 +713,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioComparisonResult</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ScenarioComparisonResult> CompareScenariosAsync(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -681,6 +730,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioComparisonResult)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ScenarioComparisonResult>> CompareScenariosWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create a new Scenario
@@ -695,6 +745,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Scenario</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<Scenario> CreateScenarioAsync(string organizationId, string workspaceId, Scenario scenario, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -710,6 +761,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Scenario)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Scenario>> CreateScenarioWithHttpInfoAsync(string organizationId, string workspaceId, Scenario scenario, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete all Scenarios of the Workspace
@@ -723,6 +775,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         System.Threading.Tasks.Task DeleteAllScenariosAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -737,6 +790,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAllScenariosWithHttpInfoAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a scenario
@@ -751,6 +805,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         System.Threading.Tasks.Task DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -766,6 +821,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Download Scenario data
@@ -780,6 +836,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioDataDownloadJob</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ScenarioDataDownloadJob> DownloadScenarioDataAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -795,6 +852,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioDataDownloadJob)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ScenarioDataDownloadJob>> DownloadScenarioDataWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Scenarios
@@ -810,6 +868,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosAsync(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -826,6 +885,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> FindAllScenariosWithHttpInfoAsync(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List all Scenarios by validation status
@@ -842,6 +902,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosByValidationStatusAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -859,6 +920,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> FindAllScenariosByValidationStatusWithHttpInfoAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the details of an scenario
@@ -873,6 +935,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Scenario</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<Scenario> FindScenarioByIdAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -888,6 +951,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Scenario)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Scenario>> FindScenarioByIdWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get a control access for the Scenario
@@ -903,6 +967,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioAccessControl</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ScenarioAccessControl> GetScenarioAccessControlAsync(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -919,6 +984,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioAccessControl)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ScenarioAccessControl>> GetScenarioAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Scenario data download URL
@@ -934,6 +1000,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioDataDownloadInfo</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ScenarioDataDownloadInfo> GetScenarioDataDownloadJobInfoAsync(string organizationId, string workspaceId, string scenarioId, string downloadId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -950,6 +1017,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioDataDownloadInfo)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ScenarioDataDownloadInfo>> GetScenarioDataDownloadJobInfoWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string downloadId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the Scenario permission by given role
@@ -965,6 +1033,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<string>> GetScenarioPermissionsAsync(string organizationId, string workspaceId, string scenarioId, string role, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -981,6 +1050,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<string>>> GetScenarioPermissionsWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string role, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the Scenario security information
@@ -995,6 +1065,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioSecurity</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ScenarioSecurity> GetScenarioSecurityAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1010,6 +1081,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioSecurity)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ScenarioSecurity>> GetScenarioSecurityWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the Scenario security users list
@@ -1024,6 +1096,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<string>> GetScenarioSecurityUsersAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1039,6 +1112,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<string>>> GetScenarioSecurityUsersWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the validation status of an scenario
@@ -1053,6 +1127,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioValidationStatus</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ScenarioValidationStatus> GetScenarioValidationStatusByIdAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1068,6 +1143,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioValidationStatus)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ScenarioValidationStatus>> GetScenarioValidationStatusByIdWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get the Scenarios Tree
@@ -1081,6 +1157,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<List<Scenario>> GetScenariosTreeAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1095,6 +1172,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<List<Scenario>>> GetScenariosTreeWithHttpInfoAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove all Parameter Values from the Scenario specified
@@ -1109,6 +1187,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         System.Threading.Tasks.Task RemoveAllScenarioParameterValuesAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1124,6 +1203,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveAllScenarioParameterValuesWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove the specified access from the given Organization Scenario
@@ -1139,6 +1219,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         System.Threading.Tasks.Task RemoveScenarioAccessControlAsync(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1155,6 +1236,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveScenarioAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Set the Scenario default security
@@ -1170,6 +1252,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioSecurity</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ScenarioSecurity> SetScenarioDefaultSecurityAsync(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1186,6 +1269,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioSecurity)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ScenarioSecurity>> SetScenarioDefaultSecurityWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update a scenario
@@ -1201,6 +1285,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Scenario</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<Scenario> UpdateScenarioAsync(string organizationId, string workspaceId, string scenarioId, Scenario scenario, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1217,6 +1302,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Scenario)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<Scenario>> UpdateScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, Scenario scenario, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update the specified access to User for a Scenario
@@ -1233,6 +1319,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioAccessControl</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ScenarioAccessControl> UpdateScenarioAccessControlAsync(string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
@@ -1250,6 +1337,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioAccessControl)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ScenarioAccessControl>> UpdateScenarioAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
@@ -1381,6 +1469,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        [Obsolete]
         public List<ScenarioRunTemplateParameterValue> AddOrReplaceScenarioParameterValues(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<List<ScenarioRunTemplateParameterValue>> localVarResponse = AddOrReplaceScenarioParameterValuesWithHttpInfo(organizationId, workspaceId, scenarioId, scenarioRunTemplateParameterValue);
@@ -1397,6 +1486,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRunTemplateParameterValue">the Parameter Value to add. Any Parameter Value with the same ID is overwritten</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<List<ScenarioRunTemplateParameterValue>> AddOrReplaceScenarioParameterValuesWithHttpInfo(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -1496,6 +1586,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ScenarioRunTemplateParameterValue&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<ScenarioRunTemplateParameterValue>> AddOrReplaceScenarioParameterValuesAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<List<ScenarioRunTemplateParameterValue>> localVarResponse = await AddOrReplaceScenarioParameterValuesWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenarioRunTemplateParameterValue, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -1513,6 +1604,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ScenarioRunTemplateParameterValue&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<ScenarioRunTemplateParameterValue>>> AddOrReplaceScenarioParameterValuesWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, List<ScenarioRunTemplateParameterValue> scenarioRunTemplateParameterValue, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -1613,6 +1705,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioAccessControl">the new Scenario security access to add.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioAccessControl</returns>
+        [Obsolete]
         public ScenarioAccessControl AddScenarioAccessControl(string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl> localVarResponse = AddScenarioAccessControlWithHttpInfo(organizationId, workspaceId, scenarioId, scenarioAccessControl);
@@ -1629,6 +1722,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioAccessControl">the new Scenario security access to add.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioAccessControl</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl> AddScenarioAccessControlWithHttpInfo(string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -1729,6 +1823,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioAccessControl</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ScenarioAccessControl> AddScenarioAccessControlAsync(string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl> localVarResponse = await AddScenarioAccessControlWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenarioAccessControl, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -1746,6 +1841,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioAccessControl)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl>> AddScenarioAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, ScenarioAccessControl scenarioAccessControl, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -1847,6 +1943,7 @@ namespace Com.Cosmotech.Api
         /// <param name="comparedScenarioId">the Scenario identifier to compare to</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioComparisonResult</returns>
+        [Obsolete]
         public ScenarioComparisonResult CompareScenarios(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioComparisonResult> localVarResponse = CompareScenariosWithHttpInfo(organizationId, workspaceId, scenarioId, comparedScenarioId);
@@ -1863,6 +1960,7 @@ namespace Com.Cosmotech.Api
         /// <param name="comparedScenarioId">the Scenario identifier to compare to</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioComparisonResult</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<ScenarioComparisonResult> CompareScenariosWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -1961,6 +2059,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioComparisonResult</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ScenarioComparisonResult> CompareScenariosAsync(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioComparisonResult> localVarResponse = await CompareScenariosWithHttpInfoAsync(organizationId, workspaceId, scenarioId, comparedScenarioId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -1978,6 +2077,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioComparisonResult)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioComparisonResult>> CompareScenariosWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string comparedScenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2076,6 +2176,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenario">the Scenario to create</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Scenario</returns>
+        [Obsolete]
         public Scenario CreateScenario(string organizationId, string workspaceId, Scenario scenario, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = CreateScenarioWithHttpInfo(organizationId, workspaceId, scenario);
@@ -2091,6 +2192,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenario">the Scenario to create</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Scenario</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Scenario> CreateScenarioWithHttpInfo(string organizationId, string workspaceId, Scenario scenario, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -2183,6 +2285,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Scenario</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Scenario> CreateScenarioAsync(string organizationId, string workspaceId, Scenario scenario, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = await CreateScenarioWithHttpInfoAsync(organizationId, workspaceId, scenario, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -2199,6 +2302,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Scenario)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Scenario>> CreateScenarioWithHttpInfoAsync(string organizationId, string workspaceId, Scenario scenario, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2291,6 +2395,7 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
+        [Obsolete]
         public void DeleteAllScenarios(string organizationId, string workspaceId, int operationIndex = 0)
         {
             DeleteAllScenariosWithHttpInfo(organizationId, workspaceId);
@@ -2304,6 +2409,7 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Object> DeleteAllScenariosWithHttpInfo(string organizationId, string workspaceId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -2385,6 +2491,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task DeleteAllScenariosAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await DeleteAllScenariosWithHttpInfoAsync(organizationId, workspaceId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -2399,6 +2506,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteAllScenariosWithHttpInfoAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2482,6 +2590,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
+        [Obsolete]
         public void DeleteScenario(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             DeleteScenarioWithHttpInfo(organizationId, workspaceId, scenarioId);
@@ -2496,6 +2605,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Object> DeleteScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -2585,6 +2695,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task DeleteScenarioAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await DeleteScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -2600,6 +2711,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2690,6 +2802,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioDataDownloadJob</returns>
+        [Obsolete]
         public ScenarioDataDownloadJob DownloadScenarioData(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadJob> localVarResponse = DownloadScenarioDataWithHttpInfo(organizationId, workspaceId, scenarioId);
@@ -2705,6 +2818,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioDataDownloadJob</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadJob> DownloadScenarioDataWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -2795,6 +2909,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioDataDownloadJob</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ScenarioDataDownloadJob> DownloadScenarioDataAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadJob> localVarResponse = await DownloadScenarioDataWithHttpInfoAsync(organizationId, workspaceId, scenarioId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -2811,6 +2926,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioDataDownloadJob)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadJob>> DownloadScenarioDataWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -2903,6 +3019,7 @@ namespace Com.Cosmotech.Api
         /// <param name="size">amount of result by page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Scenario&gt;</returns>
+        [Obsolete]
         public List<Scenario> FindAllScenarios(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = FindAllScenariosWithHttpInfo(organizationId, workspaceId, page, size);
@@ -2919,6 +3036,7 @@ namespace Com.Cosmotech.Api
         /// <param name="size">amount of result by page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<List<Scenario>> FindAllScenariosWithHttpInfo(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -3011,6 +3129,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosAsync(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = await FindAllScenariosWithHttpInfoAsync(organizationId, workspaceId, page, size, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -3028,6 +3147,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Scenario>>> FindAllScenariosWithHttpInfoAsync(string organizationId, string workspaceId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -3122,6 +3242,7 @@ namespace Com.Cosmotech.Api
         /// <param name="size">amount of result by page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Scenario&gt;</returns>
+        [Obsolete]
         public List<Scenario> FindAllScenariosByValidationStatus(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = FindAllScenariosByValidationStatusWithHttpInfo(organizationId, workspaceId, validationStatus, page, size);
@@ -3139,6 +3260,7 @@ namespace Com.Cosmotech.Api
         /// <param name="size">amount of result by page (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<List<Scenario>> FindAllScenariosByValidationStatusWithHttpInfo(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -3239,6 +3361,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<Scenario>> FindAllScenariosByValidationStatusAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = await FindAllScenariosByValidationStatusWithHttpInfoAsync(organizationId, workspaceId, validationStatus, page, size, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -3257,6 +3380,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Scenario>>> FindAllScenariosByValidationStatusWithHttpInfoAsync(string organizationId, string workspaceId, ScenarioValidationStatus validationStatus, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -3356,6 +3480,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Scenario</returns>
+        [Obsolete]
         public Scenario FindScenarioById(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = FindScenarioByIdWithHttpInfo(organizationId, workspaceId, scenarioId);
@@ -3371,6 +3496,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Scenario</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Scenario> FindScenarioByIdWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -3461,6 +3587,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Scenario</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Scenario> FindScenarioByIdAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = await FindScenarioByIdWithHttpInfoAsync(organizationId, workspaceId, scenarioId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -3477,6 +3604,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Scenario)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Scenario>> FindScenarioByIdWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -3569,6 +3697,7 @@ namespace Com.Cosmotech.Api
         /// <param name="identityId">the User identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioAccessControl</returns>
+        [Obsolete]
         public ScenarioAccessControl GetScenarioAccessControl(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl> localVarResponse = GetScenarioAccessControlWithHttpInfo(organizationId, workspaceId, scenarioId, identityId);
@@ -3585,6 +3714,7 @@ namespace Com.Cosmotech.Api
         /// <param name="identityId">the User identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioAccessControl</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl> GetScenarioAccessControlWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -3683,6 +3813,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioAccessControl</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ScenarioAccessControl> GetScenarioAccessControlAsync(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl> localVarResponse = await GetScenarioAccessControlWithHttpInfoAsync(organizationId, workspaceId, scenarioId, identityId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -3700,6 +3831,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioAccessControl)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl>> GetScenarioAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -3799,6 +3931,7 @@ namespace Com.Cosmotech.Api
         /// <param name="downloadId">the Scenario Download identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioDataDownloadInfo</returns>
+        [Obsolete]
         public ScenarioDataDownloadInfo GetScenarioDataDownloadJobInfo(string organizationId, string workspaceId, string scenarioId, string downloadId, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadInfo> localVarResponse = GetScenarioDataDownloadJobInfoWithHttpInfo(organizationId, workspaceId, scenarioId, downloadId);
@@ -3815,6 +3948,7 @@ namespace Com.Cosmotech.Api
         /// <param name="downloadId">the Scenario Download identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioDataDownloadInfo</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadInfo> GetScenarioDataDownloadJobInfoWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string downloadId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -3913,6 +4047,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioDataDownloadInfo</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ScenarioDataDownloadInfo> GetScenarioDataDownloadJobInfoAsync(string organizationId, string workspaceId, string scenarioId, string downloadId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadInfo> localVarResponse = await GetScenarioDataDownloadJobInfoWithHttpInfoAsync(organizationId, workspaceId, scenarioId, downloadId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -3930,6 +4065,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioDataDownloadInfo)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioDataDownloadInfo>> GetScenarioDataDownloadJobInfoWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string downloadId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -4029,6 +4165,7 @@ namespace Com.Cosmotech.Api
         /// <param name="role">the Role</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
+        [Obsolete]
         public List<string> GetScenarioPermissions(string organizationId, string workspaceId, string scenarioId, string role, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = GetScenarioPermissionsWithHttpInfo(organizationId, workspaceId, scenarioId, role);
@@ -4045,6 +4182,7 @@ namespace Com.Cosmotech.Api
         /// <param name="role">the Role</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<List<string>> GetScenarioPermissionsWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string role, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -4143,6 +4281,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<string>> GetScenarioPermissionsAsync(string organizationId, string workspaceId, string scenarioId, string role, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = await GetScenarioPermissionsWithHttpInfoAsync(organizationId, workspaceId, scenarioId, role, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -4160,6 +4299,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<string>>> GetScenarioPermissionsWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string role, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -4258,6 +4398,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioSecurity</returns>
+        [Obsolete]
         public ScenarioSecurity GetScenarioSecurity(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioSecurity> localVarResponse = GetScenarioSecurityWithHttpInfo(organizationId, workspaceId, scenarioId);
@@ -4273,6 +4414,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioSecurity</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<ScenarioSecurity> GetScenarioSecurityWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -4363,6 +4505,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioSecurity</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ScenarioSecurity> GetScenarioSecurityAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioSecurity> localVarResponse = await GetScenarioSecurityWithHttpInfoAsync(organizationId, workspaceId, scenarioId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -4379,6 +4522,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioSecurity)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioSecurity>> GetScenarioSecurityWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -4470,6 +4614,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;string&gt;</returns>
+        [Obsolete]
         public List<string> GetScenarioSecurityUsers(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = GetScenarioSecurityUsersWithHttpInfo(organizationId, workspaceId, scenarioId);
@@ -4485,6 +4630,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<List<string>> GetScenarioSecurityUsersWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -4575,6 +4721,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<string>> GetScenarioSecurityUsersAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<List<string>> localVarResponse = await GetScenarioSecurityUsersWithHttpInfoAsync(organizationId, workspaceId, scenarioId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -4591,6 +4738,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<string>>> GetScenarioSecurityUsersWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -4682,6 +4830,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioValidationStatus</returns>
+        [Obsolete]
         public ScenarioValidationStatus GetScenarioValidationStatusById(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioValidationStatus> localVarResponse = GetScenarioValidationStatusByIdWithHttpInfo(organizationId, workspaceId, scenarioId);
@@ -4697,6 +4846,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioValidationStatus</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<ScenarioValidationStatus> GetScenarioValidationStatusByIdWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -4787,6 +4937,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioValidationStatus</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ScenarioValidationStatus> GetScenarioValidationStatusByIdAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioValidationStatus> localVarResponse = await GetScenarioValidationStatusByIdWithHttpInfoAsync(organizationId, workspaceId, scenarioId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -4803,6 +4954,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioValidationStatus)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioValidationStatus>> GetScenarioValidationStatusByIdWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -4893,6 +5045,7 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Scenario&gt;</returns>
+        [Obsolete]
         public List<Scenario> GetScenariosTree(string organizationId, string workspaceId, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = GetScenariosTreeWithHttpInfo(organizationId, workspaceId);
@@ -4907,6 +5060,7 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<List<Scenario>> GetScenariosTreeWithHttpInfo(string organizationId, string workspaceId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -4989,6 +5143,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Scenario&gt;</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<List<Scenario>> GetScenariosTreeAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<List<Scenario>> localVarResponse = await GetScenariosTreeWithHttpInfoAsync(organizationId, workspaceId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -5004,6 +5159,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Scenario&gt;)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Scenario>>> GetScenariosTreeWithHttpInfoAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -5088,6 +5244,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
+        [Obsolete]
         public void RemoveAllScenarioParameterValues(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             RemoveAllScenarioParameterValuesWithHttpInfo(organizationId, workspaceId, scenarioId);
@@ -5102,6 +5259,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioId">the Scenario identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Object> RemoveAllScenarioParameterValuesWithHttpInfo(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -5191,6 +5349,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task RemoveAllScenarioParameterValuesAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await RemoveAllScenarioParameterValuesWithHttpInfoAsync(organizationId, workspaceId, scenarioId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -5206,6 +5365,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveAllScenarioParameterValuesWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -5297,6 +5457,7 @@ namespace Com.Cosmotech.Api
         /// <param name="identityId">the User identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
+        [Obsolete]
         public void RemoveScenarioAccessControl(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0)
         {
             RemoveScenarioAccessControlWithHttpInfo(organizationId, workspaceId, scenarioId, identityId);
@@ -5312,6 +5473,7 @@ namespace Com.Cosmotech.Api
         /// <param name="identityId">the User identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Object> RemoveScenarioAccessControlWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -5409,6 +5571,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task RemoveScenarioAccessControlAsync(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await RemoveScenarioAccessControlWithHttpInfoAsync(organizationId, workspaceId, scenarioId, identityId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -5425,6 +5588,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> RemoveScenarioAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string identityId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -5523,6 +5687,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioSecurity</returns>
+        [Obsolete]
         public ScenarioSecurity SetScenarioDefaultSecurity(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioSecurity> localVarResponse = SetScenarioDefaultSecurityWithHttpInfo(organizationId, workspaceId, scenarioId, scenarioRole);
@@ -5539,6 +5704,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRole">This change the scenario default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the scenario.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioSecurity</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<ScenarioSecurity> SetScenarioDefaultSecurityWithHttpInfo(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -5639,6 +5805,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioSecurity</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ScenarioSecurity> SetScenarioDefaultSecurityAsync(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioSecurity> localVarResponse = await SetScenarioDefaultSecurityWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenarioRole, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -5656,6 +5823,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioSecurity)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioSecurity>> SetScenarioDefaultSecurityWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, ScenarioRole scenarioRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -5757,6 +5925,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenario">the new Scenario details. This endpoint can&#39;t be used to update security</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Scenario</returns>
+        [Obsolete]
         public Scenario UpdateScenario(string organizationId, string workspaceId, string scenarioId, Scenario scenario, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = UpdateScenarioWithHttpInfo(organizationId, workspaceId, scenarioId, scenario);
@@ -5773,6 +5942,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenario">the new Scenario details. This endpoint can&#39;t be used to update security</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Scenario</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<Scenario> UpdateScenarioWithHttpInfo(string organizationId, string workspaceId, string scenarioId, Scenario scenario, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -5873,6 +6043,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Scenario</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Scenario> UpdateScenarioAsync(string organizationId, string workspaceId, string scenarioId, Scenario scenario, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<Scenario> localVarResponse = await UpdateScenarioWithHttpInfoAsync(organizationId, workspaceId, scenarioId, scenario, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -5890,6 +6061,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Scenario)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Scenario>> UpdateScenarioWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, Scenario scenario, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
@@ -5992,6 +6164,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRole">The new Scenario Access Control</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ScenarioAccessControl</returns>
+        [Obsolete]
         public ScenarioAccessControl UpdateScenarioAccessControl(string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole, int operationIndex = 0)
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl> localVarResponse = UpdateScenarioAccessControlWithHttpInfo(organizationId, workspaceId, scenarioId, identityId, scenarioRole);
@@ -6009,6 +6182,7 @@ namespace Com.Cosmotech.Api
         /// <param name="scenarioRole">The new Scenario Access Control</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ScenarioAccessControl</returns>
+        [Obsolete]
         public Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl> UpdateScenarioAccessControlWithHttpInfo(string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
@@ -6116,6 +6290,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ScenarioAccessControl</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ScenarioAccessControl> UpdateScenarioAccessControlAsync(string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl> localVarResponse = await UpdateScenarioAccessControlWithHttpInfoAsync(organizationId, workspaceId, scenarioId, identityId, scenarioRole, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -6134,6 +6309,7 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ScenarioAccessControl)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<ScenarioAccessControl>> UpdateScenarioAccessControlWithHttpInfoAsync(string organizationId, string workspaceId, string scenarioId, string identityId, ScenarioRole scenarioRole, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set

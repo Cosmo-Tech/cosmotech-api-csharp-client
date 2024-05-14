@@ -34,8 +34,6 @@ tags:
   name: scenario
 - description: ScenarioRun Management
   name: scenariorun
-- description: ScenarioRunResult Management
-  name: scenariorunresult
 - description: Solution Management
   name: solution
 - description: "Twin Graph Management | This service is deprecated, use Dataset Service\
@@ -606,358 +604,6 @@ paths:
       summary: Download a graph as a zip file
       tags:
       - dataset
-  /organizations/{organization_id}/datasets/validators:
-    get:
-      operationId: findAllValidators
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                Two:
-                  $ref: '#/components/examples/OneValidator'
-              schema:
-                items:
-                  $ref: '#/components/schemas/Validator'
-                type: array
-          description: the validator details
-      summary: List all Validators
-      tags:
-      - validator
-    post:
-      operationId: createValidator
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            examples:
-              BreweryADTValidator:
-                $ref: '#/components/examples/BreweryADTValidator'
-            schema:
-              $ref: '#/components/schemas/Validator'
-          application/yaml:
-            examples:
-              BreweryADTValidator:
-                $ref: '#/components/examples/BreweryADTValidator'
-            schema:
-              format: binary
-              type: string
-        description: the Validator to create
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              examples:
-                BreweryADTValidator:
-                  $ref: '#/components/examples/BreweryADTValidator'
-              schema:
-                $ref: '#/components/schemas/Validator'
-          description: the validator details
-        "400":
-          description: Bad request
-      summary: Register a new validator
-      tags:
-      - validator
-  /organizations/{organization_id}/datasets/validators/{validator_id}:
-    delete:
-      operationId: deleteValidator
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Validator identifier
-        explode: false
-        in: path
-        name: validator_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "204":
-          description: Request succeeded
-        "404":
-          description: the Validator specified is unknown or you don't have access
-            to it
-      summary: Delete a validator
-      tags:
-      - validator
-    get:
-      operationId: findValidatorById
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Validator identifier
-        explode: false
-        in: path
-        name: validator_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                BreweryADTValidator:
-                  $ref: '#/components/examples/BreweryADTValidator'
-              schema:
-                $ref: '#/components/schemas/Validator'
-          description: the Validator details
-        "404":
-          description: the Validator specified is unknown or you don't have access
-            to it
-      summary: Get the details of a validator
-      tags:
-      - validator
-  /organizations/{organization_id}/datasets/validators/{validator_id}/history:
-    get:
-      operationId: findAllValidatorRuns
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the ValidatorRun identifier
-        explode: false
-        in: path
-        name: validator_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                Two:
-                  $ref: '#/components/examples/ThreeValidatorRun'
-              schema:
-                items:
-                  $ref: '#/components/schemas/ValidatorRun'
-                type: array
-          description: the validator run details
-      summary: List all Validator Runs
-      tags:
-      - validator
-    post:
-      operationId: createValidatorRun
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the ValidatorRun identifier
-        explode: false
-        in: path
-        name: validator_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            examples:
-              BreweryADTValidatorRun:
-                $ref: '#/components/examples/BreweryADTValidatorRun'
-            schema:
-              $ref: '#/components/schemas/ValidatorRun'
-          application/yaml:
-            examples:
-              BreweryADTValidatorRun:
-                $ref: '#/components/examples/BreweryADTValidatorRun'
-            schema:
-              format: binary
-              type: string
-        description: the Validator Run to create
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              examples:
-                BreweryADTValidatorRun:
-                  $ref: '#/components/examples/BreweryADTValidatorRun'
-              schema:
-                $ref: '#/components/schemas/ValidatorRun'
-          description: the validator run details
-        "400":
-          description: Bad request
-      summary: Register a new validator run
-      tags:
-      - validator
-  /organizations/{organization_id}/datasets/validators/{validator_id}/history/{validatorrun_id}:
-    delete:
-      operationId: deleteValidatorRun
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Validator identifier
-        explode: false
-        in: path
-        name: validator_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Validator Run identifier
-        explode: false
-        in: path
-        name: validatorrun_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "204":
-          description: Request succeeded
-        "404":
-          description: the ValidatorRun specified is unknown or you don't have access
-            to it
-      summary: Delete a validator run
-      tags:
-      - validator
-    get:
-      operationId: findValidatorRunById
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Validator identifier
-        explode: false
-        in: path
-        name: validator_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Validator Run identifier
-        explode: false
-        in: path
-        name: validatorrun_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                BreweryADTValidatorRun:
-                  $ref: '#/components/examples/BreweryADTValidatorRun'
-              schema:
-                $ref: '#/components/schemas/ValidatorRun'
-          description: the Validator Run details
-        "404":
-          description: the ValidatorRun specified is unknown or you don't have access
-            to it
-      summary: Get the details of a validator run
-      tags:
-      - validator
-  /organizations/{organization_id}/datasets/validators/{validator_id}/run:
-    post:
-      operationId: runValidator
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the ValidatorRun identifier
-        explode: false
-        in: path
-        name: validator_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            examples:
-              BreweryADTRunValidator:
-                $ref: '#/components/examples/BreweryADTRunValidator'
-            schema:
-              $ref: '#/components/schemas/ValidatorRun'
-          application/yaml:
-            examples:
-              BreweryADTRunValidator:
-                $ref: '#/components/examples/BreweryADTRunValidator'
-            schema:
-              format: binary
-              type: string
-        description: the Validator to run
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              examples:
-                BreweryADTValidatorRun:
-                  $ref: '#/components/examples/BreweryADTValidatorRun'
-              schema:
-                $ref: '#/components/schemas/ValidatorRun'
-          description: the validator run details
-        "400":
-          description: Bad request
-      summary: Run a Validator
-      tags:
-      - validator
   /organizations/{organization_id}/datasets/{dataset_id}:
     delete:
       operationId: deleteDataset
@@ -2236,6 +1882,7 @@ paths:
       - organization
   /organizations/{organization_id}/scenarioruns/historicaldata:
     delete:
+      deprecated: true
       operationId: deleteHistoricalDataOrganization
       parameters:
       - description: the Organization identifier
@@ -2268,6 +1915,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/scenarioruns/search:
     post:
+      deprecated: true
       operationId: searchScenarioRuns
       parameters:
       - description: the Organization identifier
@@ -2328,6 +1976,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/scenarioruns/startcontainers:
     post:
+      deprecated: true
       operationId: startScenarioRunContainers
       parameters:
       - description: the Organization identifier
@@ -2375,6 +2024,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/scenarioruns/{scenariorun_id}:
     delete:
+      deprecated: true
       operationId: deleteScenarioRun
       parameters:
       - description: the Organization identifier
@@ -2405,6 +2055,7 @@ paths:
       tags:
       - scenariorun
     get:
+      deprecated: true
       operationId: findScenarioRunById
       parameters:
       - description: the Organization identifier
@@ -2441,6 +2092,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/scenarioruns/{scenariorun_id}/cumulatedlogs:
     get:
+      deprecated: true
       operationId: getScenarioRunCumulatedLogs
       parameters:
       - description: the Organization identifier
@@ -2476,6 +2128,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/scenarioruns/{scenariorun_id}/logs:
     get:
+      deprecated: true
       operationId: getScenarioRunLogs
       parameters:
       - description: the Organization identifier
@@ -2509,6 +2162,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/scenarioruns/{scenariorun_id}/status:
     get:
+      deprecated: true
       operationId: getScenarioRunStatus
       parameters:
       - description: the Organization identifier
@@ -2542,6 +2196,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/scenarioruns/{scenariorun_id}/stop:
     post:
+      deprecated: true
       operationId: stopScenarioRun
       parameters:
       - description: the Organization identifier
@@ -5522,6 +5177,123 @@ paths:
       summary: Get the details of a run
       tags:
       - run
+  /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/data/query:
+    post:
+      operationId: queryRunData
+      parameters:
+      - description: the Organization identifier
+        explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the Workspace identifier
+        explode: false
+        in: path
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the Runner identifier
+        explode: false
+        in: path
+        name: runner_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the Run identifier
+        explode: false
+        in: path
+        name: run_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            examples:
+              GetAllRunDataInTable:
+                $ref: '#/components/examples/RunDataQueryExample'
+            schema:
+              $ref: '#/components/schemas/RunDataQuery'
+        description: the query to run
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                MultipleResults:
+                  $ref: '#/components/examples/QueryResultExample'
+              schema:
+                $ref: '#/components/schemas/QueryResult'
+          description: the query response
+      summary: query the run data
+      tags:
+      - run
+  /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/data/send:
+    post:
+      operationId: sendRunData
+      parameters:
+      - description: the Organization identifier
+        explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the Workspace identifier
+        explode: false
+        in: path
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the Runner identifier
+        explode: false
+        in: path
+        name: runner_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the Run identifier
+        explode: false
+        in: path
+        name: run_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/sendRunData_request'
+        description: Custom data to register
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              examples:
+                Run:
+                  $ref: '#/components/examples/DefaultRunData'
+              schema:
+                $ref: '#/components/schemas/RunData'
+          description: Data stored
+        "400":
+          description: Data sent format is malformed
+      summary: Send data associated to a run
+      tags:
+      - run
   /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/logs:
     get:
       operationId: getRunLogs
@@ -6074,6 +5846,7 @@ paths:
       - runner
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarioruns:
     get:
+      deprecated: true
       operationId: getWorkspaceScenarioRuns
       parameters:
       - description: the Organization identifier
@@ -6125,6 +5898,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarioruns/historicaldata:
     delete:
+      deprecated: true
       operationId: deleteHistoricalDataWorkspace
       parameters:
       - description: the Organization identifier
@@ -6165,6 +5939,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios:
     delete:
+      deprecated: true
       operationId: deleteAllScenarios
       parameters:
       - description: the Organization identifier
@@ -6193,6 +5968,7 @@ paths:
       tags:
       - scenario
     get:
+      deprecated: true
       operationId: findAllScenarios
       parameters:
       - description: the Organization identifier
@@ -6243,6 +6019,7 @@ paths:
       tags:
       - scenario
     post:
+      deprecated: true
       operationId: createScenario
       parameters:
       - description: the Organization identifier
@@ -6299,6 +6076,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree:
     get:
+      deprecated: true
       operationId: getScenariosTree
       parameters:
       - description: the Organization identifier
@@ -6334,6 +6112,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}:
     delete:
+      deprecated: true
       operationId: deleteScenario
       parameters:
       - description: the Organization identifier
@@ -6370,6 +6149,7 @@ paths:
       tags:
       - scenario
     get:
+      deprecated: true
       operationId: findScenarioById
       parameters:
       - description: the Organization identifier
@@ -6413,6 +6193,7 @@ paths:
       tags:
       - scenario
     patch:
+      deprecated: true
       operationId: updateScenario
       parameters:
       - description: the Organization identifier
@@ -6477,6 +6258,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/ValidationStatus:
     get:
+      deprecated: true
       operationId: getScenarioValidationStatusById
       parameters:
       - description: the Organization identifier
@@ -6515,6 +6297,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/compare/{compared_scenario_id}:
     get:
+      deprecated: true
       operationId: compareScenarios
       parameters:
       - description: the Organization identifier
@@ -6568,6 +6351,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads:
     post:
+      deprecated: true
       operationId: downloadScenarioData
       parameters:
       - description: the Organization identifier
@@ -6612,6 +6396,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads/{download_id}:
     get:
+      deprecated: true
       operationId: getScenarioDataDownloadJobInfo
       parameters:
       - description: the Organization identifier
@@ -6666,6 +6451,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues:
     delete:
+      deprecated: true
       operationId: removeAllScenarioParameterValues
       parameters:
       - description: the Organization identifier
@@ -6702,6 +6488,7 @@ paths:
       tags:
       - scenario
     post:
+      deprecated: true
       operationId: addOrReplaceScenarioParameterValues
       parameters:
       - description: the Organization identifier
@@ -6763,6 +6550,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/permissions/{role}:
     get:
+      deprecated: true
       operationId: getScenarioPermissions
       parameters:
       - description: the Organization identifier
@@ -6815,6 +6603,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/run:
     post:
+      deprecated: true
       operationId: runScenario
       parameters:
       - description: the Organization identifier
@@ -6856,6 +6645,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns:
     get:
+      deprecated: true
       operationId: getScenarioRuns
       parameters:
       - description: the Organization identifier
@@ -6915,6 +6705,7 @@ paths:
       - scenariorun
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/historicaldata:
     delete:
+      deprecated: true
       operationId: deleteHistoricalDataScenario
       parameters:
       - description: the Organization identifier
@@ -6961,139 +6752,9 @@ paths:
       summary: Delete all historical ScenarioRuns in the Scenario
       tags:
       - scenariorun
-  ? /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/{scenariorun_id}/probes/{probe_id}
-  : get:
-      operationId: getScenarioRunResult
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Workspace identifier
-        explode: false
-        in: path
-        name: workspace_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Scenario identifier
-        explode: false
-        in: path
-        name: scenario_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the ScenarioRun identifier
-        explode: false
-        in: path
-        name: scenariorun_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Probe identifier
-        explode: false
-        in: path
-        name: probe_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                ScenarioRunResult:
-                  $ref: '#/components/examples/ScenarioRunResultExample'
-              schema:
-                $ref: '#/components/schemas/ScenarioRunResult'
-          description: the Organization details
-        "404":
-          description: the ScenarioRunResult specified is unknown or you don't have
-            access to it
-      summary: Get a ScenarioRunResult in the Organization
-      tags:
-      - scenariorunresult
-    post:
-      operationId: sendScenarioRunResult
-      parameters:
-      - description: the Organization identifier
-        explode: false
-        in: path
-        name: organization_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Workspace identifier
-        explode: false
-        in: path
-        name: workspace_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Scenario identifier
-        explode: false
-        in: path
-        name: scenario_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the ScenarioRun identifier
-        explode: false
-        in: path
-        name: scenariorun_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the Probe identifier
-        explode: false
-        in: path
-        name: probe_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            examples:
-              ScenarioRunResult:
-                $ref: '#/components/examples/ScenarioRunProbeResultExample'
-            schema:
-              additionalProperties:
-                type: string
-              type: object
-        description: the ScenarioRunResult to register
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                ScenarioRunResult:
-                  $ref: '#/components/examples/ScenarioRunResultExample'
-              schema:
-                $ref: '#/components/schemas/ScenarioRunResult'
-          description: the Organization details
-        "400":
-          description: the ScenarioRunResult specified is unknown or you don't have
-            access to it
-      summary: Create a new ScenarioRunResult in the Organization
-      tags:
-      - scenariorunresult
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security:
     get:
+      deprecated: true
       operationId: getScenarioSecurity
       parameters:
       - description: the Organization identifier
@@ -7138,6 +6799,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access:
     post:
+      deprecated: true
       operationId: addScenarioAccessControl
       parameters:
       - description: the Organization identifier
@@ -7199,6 +6861,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id}:
     delete:
+      deprecated: true
       operationId: removeScenarioAccessControl
       parameters:
       - description: the Organization identifier
@@ -7243,6 +6906,7 @@ paths:
       tags:
       - scenario
     get:
+      deprecated: true
       operationId: getScenarioAccessControl
       parameters:
       - description: the Organization identifier
@@ -7294,6 +6958,7 @@ paths:
       tags:
       - scenario
     patch:
+      deprecated: true
       operationId: updateScenarioAccessControl
       parameters:
       - description: the Organization identifier
@@ -7356,6 +7021,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/default:
     post:
+      deprecated: true
       operationId: setScenarioDefaultSecurity
       parameters:
       - description: the Organization identifier
@@ -7422,6 +7088,7 @@ paths:
       - scenario
   /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/users:
     get:
+      deprecated: true
       operationId: getScenarioSecurityUsers
       parameters:
       - description: the Organization identifier
@@ -7875,6 +7542,7 @@ paths:
       - workspace
   /organizations/{organization_id}/workspaces/{workspace_id}/{validationStatus}:
     get:
+      deprecated: true
       operationId: findAllScenariosByValidationStatus
       parameters:
       - description: the Organization identifier
@@ -9075,6 +8743,11 @@ components:
           name: my-storage-account-name
           location: my-container-name
           path: my-data-folder
+    DefaultRunData:
+      description: Run Data exemple
+      summary: Run Data exemple
+      value:
+        name: test
     GetAllNodes:
       description: Get all nodes query (be careful if you want to query large graph)
       summary: Get all nodes query
@@ -9341,6 +9014,20 @@ components:
         target: target-node-name
         name: entity-name
         params: "param1: 'value1', param2: 'value2'"
+    QueryResultExample:
+      description: Result of SQL Query
+      summary: Result of SQL Query
+      value:
+        result:
+        - key1: value1
+          key2: value2
+        - key1: value3
+          key2: value4
+    RunDataQueryExample:
+      description: Get all runData in a table
+      summary: Get all runData in a table
+      value:
+        query: SELECT * FROM "CD_myCustomData"
     RunnersTree:
       description: Runners Tree example with 1 master Runner and 2 children
       summary: Runners Tree example
@@ -9435,24 +9122,6 @@ components:
           accessControlList:
           - id: alice.doe@cosmotech.com
             role: admin
-    ScenarioRunProbeResultExample:
-      value:
-        name: StockProbe
-        run: 0
-        stockMeasure: 50
-    ScenarioRunResultExample:
-      value:
-        id: sr-mysrId_StockProbe
-        results:
-        - name: StockProbe
-          run: 0
-          stockMeasure: 50
-        - name: StockProbe
-          run: 1
-          stockMeasure: 100
-        - name: StockProbe
-          run: 2
-          stockMeasure: 150
     ScenariosTree:
       description: Scenarios Tree example with 1 master Scenario and 2 children
       summary: Scenarios Tree example
@@ -10776,6 +10445,20 @@ components:
         solutionsContainerRegistry:
           $ref: '#/components/schemas/OrganizationService'
       type: object
+    QueryResult:
+      description: the result of a SQL Query
+      example:
+        result:
+        - key: ""
+        - key: ""
+      properties:
+        result:
+          description: the list of results
+          items:
+            additionalProperties: true
+            type: object
+          type: array
+      type: object
     ResourceSizeInfo:
       description: define cpus and memory needs
       example:
@@ -11094,6 +10777,38 @@ components:
           description: the node logs in plain text
           readOnly: true
           type: string
+      type: object
+    RunData:
+      description: Run Data to send
+      example:
+        database_name: database_name
+        data:
+        - key: ""
+        - key: ""
+        table_name: table_name
+      properties:
+        database_name:
+          description: Database name
+          type: string
+        table_name:
+          description: Table name
+          type: string
+        data:
+          items:
+            additionalProperties: true
+            type: object
+          type: array
+      type: object
+    RunDataQuery:
+      description: a data result query in SQL
+      example:
+        query: query
+      properties:
+        query:
+          description: the query in SQL
+          type: string
+      required:
+      - query
       type: object
     RunLogs:
       description: the run logs returned by all containers
@@ -12715,25 +12430,6 @@ components:
           format: int64
           type: integer
       type: object
-    ScenarioRunResult:
-      description: a ScenarioRunProbeResult with all ScenarioRunResult
-      example:
-        id: id
-        results:
-        - key: results
-        - key: results
-      properties:
-        id:
-          type: string
-          x-field-extra-annotation: '@org.springframework.data.annotation.Id'
-        results:
-          items:
-            additionalProperties:
-              type: string
-            type: object
-          type: array
-      type: object
-      x-class-extra-annotation: '@com.redis.om.spring.annotations.Document'
     ScenarioRunSearch:
       description: the search options
       example:
@@ -13474,17 +13170,6 @@ components:
       type: object
     Validator:
       description: a Validator to validate a Dataset
-      example:
-        name: name
-        description: description
-        id: id
-        repository: repository
-        ownerId: ownerId
-        version: version
-        url: url
-        tags:
-        - tags
-        - tags
       properties:
         id:
           description: the Validator id
@@ -13523,15 +13208,6 @@ components:
       type: object
     ValidatorRun:
       description: a Validator Run
-      example:
-        validatorName: validatorName
-        datasetName: datasetName
-        validatorId: validatorId
-        datasetId: datasetId
-        id: id
-        state: Running
-        containerId: containerId
-        logs: logs
       properties:
         id:
           description: the Validator Run id
@@ -13841,6 +13517,15 @@ components:
       required:
       - file
       type: object
+    sendRunData_request:
+      properties:
+        id:
+          type: string
+        data:
+          items:
+            additionalProperties: true
+            type: object
+          type: array
     Dataset_connector:
       description: the Connector setup bound to a Dataset
       example:

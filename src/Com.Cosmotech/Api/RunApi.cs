@@ -160,6 +160,62 @@ namespace Com.Cosmotech.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Run&gt;</returns>
         ApiResponse<List<Run>> ListRunsWithHttpInfo(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0);
+        /// <summary>
+        /// query the run data
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="runDataQuery">the query to run</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>QueryResult</returns>
+        QueryResult QueryRunData(string organizationId, string workspaceId, string runnerId, string runId, RunDataQuery runDataQuery, int operationIndex = 0);
+
+        /// <summary>
+        /// query the run data
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="runDataQuery">the query to run</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of QueryResult</returns>
+        ApiResponse<QueryResult> QueryRunDataWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, RunDataQuery runDataQuery, int operationIndex = 0);
+        /// <summary>
+        /// Send data associated to a run
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="sendRunDataRequest">Custom data to register</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RunData</returns>
+        RunData SendRunData(string organizationId, string workspaceId, string runnerId, string runId, SendRunDataRequest sendRunDataRequest, int operationIndex = 0);
+
+        /// <summary>
+        /// Send data associated to a run
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="sendRunDataRequest">Custom data to register</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RunData</returns>
+        ApiResponse<RunData> SendRunDataWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, SendRunDataRequest sendRunDataRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -326,6 +382,72 @@ namespace Com.Cosmotech.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Run&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Run>>> ListRunsWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, int? page = default(int?), int? size = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// query the run data
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="runDataQuery">the query to run</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of QueryResult</returns>
+        System.Threading.Tasks.Task<QueryResult> QueryRunDataAsync(string organizationId, string workspaceId, string runnerId, string runId, RunDataQuery runDataQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// query the run data
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="runDataQuery">the query to run</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (QueryResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<QueryResult>> QueryRunDataWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, RunDataQuery runDataQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Send data associated to a run
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="sendRunDataRequest">Custom data to register</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RunData</returns>
+        System.Threading.Tasks.Task<RunData> SendRunDataAsync(string organizationId, string workspaceId, string runnerId, string runId, SendRunDataRequest sendRunDataRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Send data associated to a run
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="sendRunDataRequest">Custom data to register</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RunData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RunData>> SendRunDataWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, SendRunDataRequest sendRunDataRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1589,6 +1711,506 @@ namespace Com.Cosmotech.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListRuns", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// query the run data 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="runDataQuery">the query to run</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>QueryResult</returns>
+        public QueryResult QueryRunData(string organizationId, string workspaceId, string runnerId, string runId, RunDataQuery runDataQuery, int operationIndex = 0)
+        {
+            Com.Cosmotech.Client.ApiResponse<QueryResult> localVarResponse = QueryRunDataWithHttpInfo(organizationId, workspaceId, runnerId, runId, runDataQuery);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// query the run data 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="runDataQuery">the query to run</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of QueryResult</returns>
+        public Com.Cosmotech.Client.ApiResponse<QueryResult> QueryRunDataWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, RunDataQuery runDataQuery, int operationIndex = 0)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling RunApi->QueryRunData");
+            }
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling RunApi->QueryRunData");
+            }
+
+            // verify the required parameter 'runnerId' is set
+            if (runnerId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runnerId' when calling RunApi->QueryRunData");
+            }
+
+            // verify the required parameter 'runId' is set
+            if (runId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runId' when calling RunApi->QueryRunData");
+            }
+
+            // verify the required parameter 'runDataQuery' is set
+            if (runDataQuery == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runDataQuery' when calling RunApi->QueryRunData");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
+            localVarRequestOptions.Data = runDataQuery;
+
+            localVarRequestOptions.Operation = "RunApi.QueryRunData";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                }
+                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
+                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
+                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
+                         this.Configuration.OAuthFlow != null)
+                {
+                    localVarRequestOptions.OAuth = true;
+                }
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<QueryResult>("/organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/data/query", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("QueryRunData", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// query the run data 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="runDataQuery">the query to run</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of QueryResult</returns>
+        public async System.Threading.Tasks.Task<QueryResult> QueryRunDataAsync(string organizationId, string workspaceId, string runnerId, string runId, RunDataQuery runDataQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<QueryResult> localVarResponse = await QueryRunDataWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, runDataQuery, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// query the run data 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="runDataQuery">the query to run</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (QueryResult)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<QueryResult>> QueryRunDataWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, RunDataQuery runDataQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling RunApi->QueryRunData");
+            }
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling RunApi->QueryRunData");
+            }
+
+            // verify the required parameter 'runnerId' is set
+            if (runnerId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runnerId' when calling RunApi->QueryRunData");
+            }
+
+            // verify the required parameter 'runId' is set
+            if (runId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runId' when calling RunApi->QueryRunData");
+            }
+
+            // verify the required parameter 'runDataQuery' is set
+            if (runDataQuery == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runDataQuery' when calling RunApi->QueryRunData");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
+            localVarRequestOptions.Data = runDataQuery;
+
+            localVarRequestOptions.Operation = "RunApi.QueryRunData";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                }
+                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
+                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
+                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
+                         this.Configuration.OAuthFlow != null)
+                {
+                    localVarRequestOptions.OAuth = true;
+                }
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<QueryResult>("/organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/data/query", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("QueryRunData", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Send data associated to a run 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="sendRunDataRequest">Custom data to register</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>RunData</returns>
+        public RunData SendRunData(string organizationId, string workspaceId, string runnerId, string runId, SendRunDataRequest sendRunDataRequest, int operationIndex = 0)
+        {
+            Com.Cosmotech.Client.ApiResponse<RunData> localVarResponse = SendRunDataWithHttpInfo(organizationId, workspaceId, runnerId, runId, sendRunDataRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Send data associated to a run 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="sendRunDataRequest">Custom data to register</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of RunData</returns>
+        public Com.Cosmotech.Client.ApiResponse<RunData> SendRunDataWithHttpInfo(string organizationId, string workspaceId, string runnerId, string runId, SendRunDataRequest sendRunDataRequest, int operationIndex = 0)
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling RunApi->SendRunData");
+            }
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling RunApi->SendRunData");
+            }
+
+            // verify the required parameter 'runnerId' is set
+            if (runnerId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runnerId' when calling RunApi->SendRunData");
+            }
+
+            // verify the required parameter 'runId' is set
+            if (runId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runId' when calling RunApi->SendRunData");
+            }
+
+            // verify the required parameter 'sendRunDataRequest' is set
+            if (sendRunDataRequest == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'sendRunDataRequest' when calling RunApi->SendRunData");
+            }
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
+            localVarRequestOptions.Data = sendRunDataRequest;
+
+            localVarRequestOptions.Operation = "RunApi.SendRunData";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                }
+                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
+                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
+                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
+                         this.Configuration.OAuthFlow != null)
+                {
+                    localVarRequestOptions.OAuth = true;
+                }
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<RunData>("/organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/data/send", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SendRunData", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Send data associated to a run 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="sendRunDataRequest">Custom data to register</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of RunData</returns>
+        public async System.Threading.Tasks.Task<RunData> SendRunDataAsync(string organizationId, string workspaceId, string runnerId, string runId, SendRunDataRequest sendRunDataRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Com.Cosmotech.Client.ApiResponse<RunData> localVarResponse = await SendRunDataWithHttpInfoAsync(organizationId, workspaceId, runnerId, runId, sendRunDataRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Send data associated to a run 
+        /// </summary>
+        /// <exception cref="Com.Cosmotech.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">the Organization identifier</param>
+        /// <param name="workspaceId">the Workspace identifier</param>
+        /// <param name="runnerId">the Runner identifier</param>
+        /// <param name="runId">the Run identifier</param>
+        /// <param name="sendRunDataRequest">Custom data to register</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (RunData)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<RunData>> SendRunDataWithHttpInfoAsync(string organizationId, string workspaceId, string runnerId, string runId, SendRunDataRequest sendRunDataRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'organizationId' when calling RunApi->SendRunData");
+            }
+
+            // verify the required parameter 'workspaceId' is set
+            if (workspaceId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'workspaceId' when calling RunApi->SendRunData");
+            }
+
+            // verify the required parameter 'runnerId' is set
+            if (runnerId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runnerId' when calling RunApi->SendRunData");
+            }
+
+            // verify the required parameter 'runId' is set
+            if (runId == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'runId' when calling RunApi->SendRunData");
+            }
+
+            // verify the required parameter 'sendRunDataRequest' is set
+            if (sendRunDataRequest == null)
+            {
+                throw new Com.Cosmotech.Client.ApiException(400, "Missing required parameter 'sendRunDataRequest' when calling RunApi->SendRunData");
+            }
+
+
+            Com.Cosmotech.Client.RequestOptions localVarRequestOptions = new Com.Cosmotech.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Com.Cosmotech.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("organization_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(organizationId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("workspace_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(workspaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("runner_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runnerId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("run_id", Com.Cosmotech.Client.ClientUtils.ParameterToString(runId)); // path parameter
+            localVarRequestOptions.Data = sendRunDataRequest;
+
+            localVarRequestOptions.Operation = "RunApi.SendRunData";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (oAuth2AuthCode) required
+            // oauth required
+            if (!localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                if (!string.IsNullOrEmpty(this.Configuration.AccessToken))
+                {
+                    localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+                }
+                else if (!string.IsNullOrEmpty(this.Configuration.OAuthTokenUrl) &&
+                         !string.IsNullOrEmpty(this.Configuration.OAuthClientId) &&
+                         !string.IsNullOrEmpty(this.Configuration.OAuthClientSecret) &&
+                         this.Configuration.OAuthFlow != null)
+                {
+                    localVarRequestOptions.OAuth = true;
+                }
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<RunData>("/organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/data/send", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SendRunData", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

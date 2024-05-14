@@ -9,6 +9,8 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 | [**GetRunLogs**](RunApi.md#getrunlogs) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/logs | get the logs for the Run |
 | [**GetRunStatus**](RunApi.md#getrunstatus) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/status | get the status for the Run |
 | [**ListRuns**](RunApi.md#listruns) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs | get the list of Runs for the Runner |
+| [**QueryRunData**](RunApi.md#queryrundata) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/data/query | query the run data |
+| [**SendRunData**](RunApi.md#sendrundata) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/data/send | Send data associated to a run |
 
 <a id="deleterun"></a>
 # **DeleteRun**
@@ -498,6 +500,207 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | the run details list |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="queryrundata"></a>
+# **QueryRunData**
+> QueryResult QueryRunData (string organizationId, string workspaceId, string runnerId, string runId, RunDataQuery runDataQuery)
+
+query the run data
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class QueryRunDataExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new RunApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var runnerId = "runnerId_example";  // string | the Runner identifier
+            var runId = "runId_example";  // string | the Run identifier
+            var runDataQuery = new RunDataQuery(); // RunDataQuery | the query to run
+
+            try
+            {
+                // query the run data
+                QueryResult result = apiInstance.QueryRunData(organizationId, workspaceId, runnerId, runId, runDataQuery);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RunApi.QueryRunData: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the QueryRunDataWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // query the run data
+    ApiResponse<QueryResult> response = apiInstance.QueryRunDataWithHttpInfo(organizationId, workspaceId, runnerId, runId, runDataQuery);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RunApi.QueryRunDataWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **runnerId** | **string** | the Runner identifier |  |
+| **runId** | **string** | the Run identifier |  |
+| **runDataQuery** | [**RunDataQuery**](RunDataQuery.md) | the query to run |  |
+
+### Return type
+
+[**QueryResult**](QueryResult.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | the query response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="sendrundata"></a>
+# **SendRunData**
+> RunData SendRunData (string organizationId, string workspaceId, string runnerId, string runId, SendRunDataRequest sendRunDataRequest)
+
+Send data associated to a run
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class SendRunDataExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new RunApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var workspaceId = "workspaceId_example";  // string | the Workspace identifier
+            var runnerId = "runnerId_example";  // string | the Runner identifier
+            var runId = "runId_example";  // string | the Run identifier
+            var sendRunDataRequest = new SendRunDataRequest(); // SendRunDataRequest | Custom data to register
+
+            try
+            {
+                // Send data associated to a run
+                RunData result = apiInstance.SendRunData(organizationId, workspaceId, runnerId, runId, sendRunDataRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling RunApi.SendRunData: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SendRunDataWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Send data associated to a run
+    ApiResponse<RunData> response = apiInstance.SendRunDataWithHttpInfo(organizationId, workspaceId, runnerId, runId, sendRunDataRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling RunApi.SendRunDataWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **runnerId** | **string** | the Runner identifier |  |
+| **runId** | **string** | the Run identifier |  |
+| **sendRunDataRequest** | [**SendRunDataRequest**](SendRunDataRequest.md) | Custom data to register |  |
+
+### Return type
+
+[**RunData**](RunData.md)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Data stored |  -  |
+| **400** | Data sent format is malformed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
