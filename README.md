@@ -168,9 +168,6 @@ Class | Method | HTTP request | Description
 *OrganizationApi* | [**UnregisterOrganization**](docs/OrganizationApi.md#unregisterorganization) | **DELETE** /organizations/{organization_id} | Unregister an organization
 *OrganizationApi* | [**UpdateOrganization**](docs/OrganizationApi.md#updateorganization) | **PATCH** /organizations/{organization_id} | Update an Organization
 *OrganizationApi* | [**UpdateOrganizationAccessControl**](docs/OrganizationApi.md#updateorganizationaccesscontrol) | **PATCH** /organizations/{organization_id}/security/access/{identity_id} | Update the specified access to User for an Organization
-*OrganizationApi* | [**UpdateSolutionsContainerRegistryByOrganizationId**](docs/OrganizationApi.md#updatesolutionscontainerregistrybyorganizationid) | **PATCH** /organizations/{organization_id}/services/solutionsContainerRegistry | Update the solutions container registry configuration for the Organization specified
-*OrganizationApi* | [**UpdateStorageByOrganizationId**](docs/OrganizationApi.md#updatestoragebyorganizationid) | **PATCH** /organizations/{organization_id}/services/storage | Update storage configuration for the Organization specified
-*OrganizationApi* | [**UpdateTenantCredentialsByOrganizationId**](docs/OrganizationApi.md#updatetenantcredentialsbyorganizationid) | **PATCH** /organizations/{organization_id}/services/tenantCredentials | Update tenant credentials for the Organization specified
 *RunApi* | [**DeleteRun**](docs/RunApi.md#deleterun) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id} | Delete a run
 *RunApi* | [**GetRun**](docs/RunApi.md#getrun) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id} | Get the details of a run
 *RunApi* | [**GetRunLogs**](docs/RunApi.md#getrunlogs) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/runs/{run_id}/logs | get the logs for the Run
@@ -319,8 +316,6 @@ Class | Method | HTTP request | Description
  - [Model.OrganizationAccessControl](docs/OrganizationAccessControl.md)
  - [Model.OrganizationRole](docs/OrganizationRole.md)
  - [Model.OrganizationSecurity](docs/OrganizationSecurity.md)
- - [Model.OrganizationService](docs/OrganizationService.md)
- - [Model.OrganizationServices](docs/OrganizationServices.md)
  - [Model.QueryResult](docs/QueryResult.md)
  - [Model.ResourceSizeInfo](docs/ResourceSizeInfo.md)
  - [Model.Run](docs/Run.md)

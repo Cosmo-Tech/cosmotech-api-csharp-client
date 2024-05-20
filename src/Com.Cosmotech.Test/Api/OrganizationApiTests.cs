@@ -228,44 +228,5 @@ namespace Com.Cosmotech.Test.Api
             //var response = instance.UpdateOrganizationAccessControl(organizationId, identityId, organizationRole);
             //Assert.IsType<OrganizationAccessControl>(response);
         }
-
-        /// <summary>
-        /// Test UpdateSolutionsContainerRegistryByOrganizationId
-        /// </summary>
-        [Fact]
-        public void UpdateSolutionsContainerRegistryByOrganizationIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string organizationId = null;
-            //OrganizationService organizationService = null;
-            //var response = instance.UpdateSolutionsContainerRegistryByOrganizationId(organizationId, organizationService);
-            //Assert.IsType<OrganizationService>(response);
-        }
-
-        /// <summary>
-        /// Test UpdateStorageByOrganizationId
-        /// </summary>
-        [Fact]
-        public void UpdateStorageByOrganizationIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string organizationId = null;
-            //OrganizationService organizationService = null;
-            //var response = instance.UpdateStorageByOrganizationId(organizationId, organizationService);
-            //Assert.IsType<OrganizationService>(response);
-        }
-
-        /// <summary>
-        /// Test UpdateTenantCredentialsByOrganizationId
-        /// </summary>
-        [Fact]
-        public void UpdateTenantCredentialsByOrganizationIdTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string organizationId = null;
-            //Dictionary<string, Object> requestBody = null;
-            //var response = instance.UpdateTenantCredentialsByOrganizationId(organizationId, requestBody);
-            //Assert.IsType<Dictionary<string, Object>>(response);
-        }
     }
 }

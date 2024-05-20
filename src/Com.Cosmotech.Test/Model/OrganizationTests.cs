@@ -83,15 +83,6 @@ namespace Com.Cosmotech.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Services'
-        /// </summary>
-        [Fact]
-        public void ServicesTest()
-        {
-            // TODO unit test for the property 'Services'
-        }
-
-        /// <summary>
         /// Test the property 'Security'
         /// </summary>
         [Fact]
