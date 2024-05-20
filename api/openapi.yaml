@@ -9,7 +9,7 @@ info:
     name: MIT License
     url: https://github.com/Cosmo-Tech/cosmotech-api/blob/main/LICENSE
   title: Cosmo Tech Platform API
-  version: 3.2.0
+  version: 3.2.1-SNAPSHOT
 servers:
 - description: Development
   url: https://dev.api.cosmotech.com
@@ -9682,8 +9682,8 @@ components:
       description: a version of a Connector
       example:
         ioTypes:
-        - read
-        - read
+        - null
+        - null
         azureAuthenticationWithCustomerAppRegistration: true
         description: description
         repository: repository
@@ -9780,11 +9780,7 @@ components:
           type: boolean
         ioTypes:
           items:
-            description: The read and write capabilities of connector
-            enum:
-            - read
-            - write
-            type: string
+            $ref: '#/components/schemas/ioTypesEnum'
           type: array
         parameterGroups:
           description: the list of connector parameters groups
@@ -9907,7 +9903,7 @@ components:
       description: a Dataset
       example:
         refreshDate: 6
-        ingestionStatus: NONE
+        ingestionStatus: null
         description: description
         validatorId: validatorId
         main: true
@@ -9943,7 +9939,7 @@ components:
           version: version
         sourceType: null
         name: name
-        twincacheStatus: EMPTY
+        twincacheStatus: null
         id: id
         compatibility:
         - minimumVersion: minimumVersion
@@ -10007,21 +10003,9 @@ components:
         source:
           $ref: '#/components/schemas/SourceInfo'
         ingestionStatus:
-          description: the Dataset ingestion status
-          enum:
-          - NONE
-          - PENDING
-          - ERROR
-          - SUCCESS
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/IngestionStatusEnum'
         twincacheStatus:
-          description: the twincache data status
-          enum:
-          - EMPTY
-          - FULL
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/TwincacheStatusEnum'
         queries:
           description: the list of queries
           items:
@@ -10288,6 +10272,15 @@ components:
           description: the parameters of the graph data object
           type: string
       type: object
+    IngestionStatusEnum:
+      description: the Dataset ingestion status
+      enum:
+      - NONE
+      - PENDING
+      - ERROR
+      - SUCCESS
+      nullable: true
+      type: string
     Organization:
       description: an Organization
       example:
@@ -10865,19 +10858,7 @@ components:
           description: the Runner Id to search
           type: string
         state:
-          description: the state to search
-          enum:
-          - FetchingDatasets
-          - FetchingScenarioParameters
-          - ApplyingScenarioParameters
-          - ValidatingScenarioData
-          - SendingScenarioDataToDataWarehouse
-          - PreRun
-          - Running
-          - PostRun
-          - Success
-          - Failed
-          type: string
+          $ref: '#/components/schemas/RunSearchState'
         workflowId:
           description: the Cosmo Tech compute cluster Argo Workflow Id to search
           type: string
@@ -10888,6 +10869,20 @@ components:
           description: the owner Id to search
           type: string
       type: object
+    RunSearchState:
+      description: the state to search
+      enum:
+      - FetchingDatasets
+      - FetchingScenarioParameters
+      - ApplyingScenarioParameters
+      - ValidatingScenarioData
+      - SendingScenarioDataToDataWarehouse
+      - PreRun
+      - Running
+      - PostRun
+      - Success
+      - Failed
+      type: string
     RunStartContainers:
       description: the parameters to run directly containers
       properties:
@@ -12436,7 +12431,7 @@ components:
         runTemplateId: runTemplateId
         workflowName: workflowName
         solutionId: solutionId
-        state: FetchingDatasets
+        state: null
         ownerId: ownerId
         scenarioId: scenarioId
         workflowId: workflowId
@@ -12455,19 +12450,7 @@ components:
           description: the Scenario Id to search
           type: string
         state:
-          description: the state to search
-          enum:
-          - FetchingDatasets
-          - FetchingScenarioParameters
-          - ApplyingScenarioParameters
-          - ValidatingScenarioData
-          - SendingScenarioDataToDataWarehouse
-          - PreRun
-          - Running
-          - PostRun
-          - Success
-          - Failed
-          type: string
+          $ref: '#/components/schemas/ScenarioRunSearchState'
         workflowId:
           description: the Cosmo Tech compute cluster Argo Workflow Id to search
           type: string
@@ -12478,6 +12461,20 @@ components:
           description: the owner Id to search
           type: string
       type: object
+    ScenarioRunSearchState:
+      description: the state to search
+      enum:
+      - FetchingDatasets
+      - FetchingScenarioParameters
+      - ApplyingScenarioParameters
+      - ValidatingScenarioData
+      - SendingScenarioDataToDataWarehouse
+      - PreRun
+      - Running
+      - PostRun
+      - Success
+      - Failed
+      type: string
     ScenarioRunStartContainers:
       description: the parameters to run directly containers
       example:
@@ -13168,6 +13165,13 @@ components:
       required:
       - query
       type: object
+    TwincacheStatusEnum:
+      description: the twincache data status
+      enum:
+      - EMPTY
+      - FULL
+      nullable: true
+      type: string
     Validator:
       description: a Validator to validate a Dataset
       properties:
@@ -13205,47 +13209,6 @@ components:
       - name
       - repository
       - version
-      type: object
-    ValidatorRun:
-      description: a Validator Run
-      properties:
-        id:
-          description: the Validator Run id
-          readOnly: true
-          type: string
-        validatorId:
-          description: the Validator id
-          readOnly: true
-          type: string
-        validatorName:
-          description: the validator name
-          readOnly: true
-          type: string
-        datasetId:
-          description: the Dataset id to run the validator on
-          type: string
-        datasetName:
-          description: the Dataset name
-          readOnly: true
-          type: string
-        state:
-          description: the Validator Run state
-          enum:
-          - Running
-          - Finished
-          - OnError
-          readOnly: true
-          type: string
-        containerId:
-          description: the Validator Run container id
-          readOnly: true
-          type: string
-        logs:
-          description: the Validator Run logs
-          readOnly: true
-          type: string
-      required:
-      - datasetId
       type: object
     Workspace:
       description: a Workspace
@@ -13499,6 +13462,12 @@ components:
       required:
       - url
       type: object
+    ioTypesEnum:
+      description: The read and write capabilities of connector
+      enum:
+      - read
+      - write
+      type: string
     uploadWorkspaceFile_request:
       properties:
         overwrite:
