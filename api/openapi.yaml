@@ -9,7 +9,7 @@ info:
     name: MIT License
     url: https://github.com/Cosmo-Tech/cosmotech-api/blob/main/LICENSE
   title: Cosmo Tech Platform API
-  version: 3.2.2-SNAPSHOT
+  version: 3.2.2
 servers:
 - description: Development
   url: https://dev.api.cosmotech.com
@@ -2486,6 +2486,157 @@ paths:
           description: the Organization specified is unknown or you don't have access
             to it
       summary: Get the Organization security users list
+      tags:
+      - organization
+  /organizations/{organization_id}/services/solutionsContainerRegistry:
+    patch:
+      operationId: updateSolutionsContainerRegistryByOrganizationId
+      parameters:
+      - description: the Organization identifier
+        explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            examples:
+              OrganizationSolutionContainerRegistry:
+                value:
+                  baseUri: mysolutiontwinengines.azurecr.io
+            schema:
+              $ref: '#/components/schemas/OrganizationService'
+          application/yaml:
+            examples:
+              OrganizationSolutionContainerRegistry:
+                value:
+                  baseUri: mysolutiontwinengines.azurecr.io
+            schema:
+              format: binary
+              type: string
+        description: the new solutions container registry configuration to use
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                OrganizationSolutionContainerRegistry:
+                  value:
+                    cloudService: AzureStorage
+                    baseUri: mysolutiontwinengines.azurecr.io
+              schema:
+                $ref: '#/components/schemas/OrganizationService'
+          description: the Organization solutions container registry configuration
+        "404":
+          description: the Organization specified is unknown or you don't have access
+            to it
+      summary: Update the solutions container registry configuration for the Organization
+        specified
+      tags:
+      - organization
+  /organizations/{organization_id}/services/storage:
+    patch:
+      operationId: updateStorageByOrganizationId
+      parameters:
+      - description: the Organization identifier
+        explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            examples:
+              OrganizationTenantCredentials:
+                value:
+                  baseUri: https://csmphoenixcontainer.blob.core.windows.net
+            schema:
+              $ref: '#/components/schemas/OrganizationService'
+          application/yaml:
+            examples:
+              OrganizationTenantCredentials:
+                value:
+                  baseUri: https://csmphoenixcontainer.blob.core.windows.net
+            schema:
+              format: binary
+              type: string
+        description: the new Storage configuration to use
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                OrganizationTenantCredentials:
+                  value:
+                    platformService: storage
+                    cloudService: AzureStorage
+                    baseUri: https://csmphoenixcontainer.blob.core.windows.net
+                    resourceUri: organization-2/files
+              schema:
+                $ref: '#/components/schemas/OrganizationService'
+          description: the Organization Storage configuration
+        "404":
+          description: the Organization specified is unknown or you don't have access
+            to it
+      summary: Update storage configuration for the Organization specified
+      tags:
+      - organization
+  /organizations/{organization_id}/services/tenantCredentials:
+    patch:
+      operationId: updateTenantCredentialsByOrganizationId
+      parameters:
+      - description: the Organization identifier
+        explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            examples:
+              OrganizationTenantCredentials:
+                value:
+                  azureTenantId: <my_azure_tenant_id>
+                  azureClientId: <my_azure_client_id>
+                  azureClientSecret: <my_azure_client_secret>
+            schema:
+              additionalProperties: true
+              description: a freeform credentials object for the Organization tenant.
+                Structure depends on cloud provider
+              type: object
+        description: the new Tenant Credentials to use
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                OrganizationTenantCredentials:
+                  value:
+                    azureTenantId: <my_azure_tenant_id>
+                    azureClientId: <my_azure_client_id>
+                    azureClientSecret: <my_azure_client_secret>
+              schema:
+                additionalProperties: true
+                description: a freeform credentials object for the Organization tenant.
+                  Structure depends on cloud provider
+                type: object
+          description: the Organization Tenant Credentials
+        "404":
+          description: the Organization specified is unknown or you don't have access
+            to it
+      summary: Update tenant credentials for the Organization specified
       tags:
       - organization
   /organizations/{organization_id}/solutions:
@@ -10136,6 +10287,23 @@ components:
         security: ""
         name: name
         id: id
+        services:
+          solutionsContainerRegistry:
+            platformService: platformService
+            credentials:
+              key: ""
+            baseUri: baseUri
+            resourceUri: resourceUri
+            cloudService: cloudService
+          tenantCredentials:
+            key: ""
+          storage:
+            platformService: platformService
+            credentials:
+              key: ""
+            baseUri: baseUri
+            resourceUri: resourceUri
+            cloudService: cloudService
         ownerId: ownerId
       properties:
         id:
@@ -10151,6 +10319,8 @@ components:
           description: the Owner User Id
           readOnly: true
           type: string
+        services:
+          $ref: '#/components/schemas/OrganizationServices'
         security:
           allOf:
           - $ref: '#/components/schemas/OrganizationSecurity'
@@ -10210,6 +10380,63 @@ components:
       required:
       - accessControlList
       - default
+      type: object
+    OrganizationService:
+      description: a cloud service resource
+      example:
+        platformService: platformService
+        credentials:
+          key: ""
+        baseUri: baseUri
+        resourceUri: resourceUri
+        cloudService: cloudService
+      properties:
+        cloudService:
+          description: the cloud service name
+          type: string
+        baseUri:
+          description: the platform base uri for this service
+          type: string
+        platformService:
+          description: the Platform service associated to the resource
+          type: string
+        resourceUri:
+          description: the Organization specific uri for this service resource
+          type: string
+        credentials:
+          additionalProperties: true
+          description: a freeform credentials object. Structure depends on service
+          type: object
+      type: object
+    OrganizationServices:
+      description: the cloud service resources of the Organization
+      example:
+        solutionsContainerRegistry:
+          platformService: platformService
+          credentials:
+            key: ""
+          baseUri: baseUri
+          resourceUri: resourceUri
+          cloudService: cloudService
+        tenantCredentials:
+          key: ""
+        storage:
+          platformService: platformService
+          credentials:
+            key: ""
+          baseUri: baseUri
+          resourceUri: resourceUri
+          cloudService: cloudService
+      properties:
+        tenantCredentials:
+          additionalProperties: true
+          description: a freeform credentials object for the Organization tenant.
+            Structure depends on cloud provider
+          type: object
+        storage:
+          $ref: '#/components/schemas/OrganizationService'
+        solutionsContainerRegistry:
+          $ref: '#/components/schemas/OrganizationService'
       type: object
     QueryResult:
       description: the result of a SQL Query
