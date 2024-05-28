@@ -5,7 +5,7 @@ a twin graph query in cypher language
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VarVersion** | **string** | Twin graph version | [optional] 
+**_Version** | **string** | Twin graph version | [optional] 
 **Query** | **string** | the query in cypher language | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
