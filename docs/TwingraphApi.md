@@ -2,25 +2,24 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**BatchQuery**](TwingraphApi.md#batchquery) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode
-[**BatchUploadUpdate**](TwingraphApi.md#batchuploadupdate) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch | Async batch update by loading a CSV file on a graph instance 
-[**CreateEntities**](TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Create new entities in a graph instance
-[**CreateGraph**](TwingraphApi.md#creategraph) | **POST** /organizations/{organization_id}/twingraph/{graph_id} | Create a new graph
-[**Delete**](TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | Delete all versions of a graph and his metadatas
-[**DeleteEntities**](TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Delete entities in a graph instance
-[**DownloadGraph**](TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/download/{hash} | Download a graph compressed in a zip file
-[**FindAllTwingraphs**](TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | Return the list of all graphs stored in the organization
-[**GetEntities**](TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Get entities in a graph instance
-[**GetGraphMetaData**](TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Return the metaData of the specified graph
-[**JobStatus**](TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | Get the status of a job
-[**Query**](TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | Run a query on a graph instance
-[**UpdateEntities**](TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Update entities in a graph instance
-[**UpdateGraphMetaData**](TwingraphApi.md#updategraphmetadata) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Update the metaData of the specified graph
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**BatchQuery**](TwingraphApi.md#batchquery) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode |
+| [**BatchUploadUpdate**](TwingraphApi.md#batchuploadupdate) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch | Async batch update by loading a CSV file on a graph instance  |
+| [**CreateEntities**](TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Create new entities in a graph instance |
+| [**CreateGraph**](TwingraphApi.md#creategraph) | **POST** /organizations/{organization_id}/twingraph/{graph_id} | Create a new graph |
+| [**Delete**](TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | Delete all versions of a graph and his metadatas |
+| [**DeleteEntities**](TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Delete entities in a graph instance |
+| [**DownloadGraph**](TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/download/{hash} | Download a graph compressed in a zip file |
+| [**FindAllTwingraphs**](TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | Return the list of all graphs stored in the organization |
+| [**GetEntities**](TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Get entities in a graph instance |
+| [**GetGraphMetaData**](TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Return the metaData of the specified graph |
+| [**JobStatus**](TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | Get the status of a job |
+| [**Query**](TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | Run a query on a graph instance |
+| [**UpdateEntities**](TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Update entities in a graph instance |
+| [**UpdateGraphMetaData**](TwingraphApi.md#updategraphmetadata) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Update the metaData of the specified graph |
 
-
-<a name="batchquery"></a>
+<a id="batchquery"></a>
 # **BatchQuery**
 > TwinGraphHash BatchQuery (string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
 
@@ -60,8 +59,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.BatchQuery: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.BatchQuery: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -69,13 +68,33 @@ namespace Example
 }
 ```
 
+#### Using the BatchQueryWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Run a query on a graph instance and return the result as a zip file in async mode
+    ApiResponse<TwinGraphHash> response = apiInstance.BatchQueryWithHttpInfo(organizationId, graphId, twinGraphQuery);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.BatchQueryWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
- **twinGraphQuery** | [**TwinGraphQuery**](TwinGraphQuery.md)| the query to run | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
+| **twinGraphQuery** | [**TwinGraphQuery**](TwinGraphQuery.md) | the query to run |  |
 
 ### Return type
 
@@ -98,7 +117,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="batchuploadupdate"></a>
+<a id="batchuploadupdate"></a>
 # **BatchUploadUpdate**
 > TwinGraphBatchResult BatchUploadUpdate (string organizationId, string graphId, TwinGraphQuery twinGraphQuery, System.IO.Stream body)
 
@@ -142,8 +161,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.BatchUploadUpdate: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.BatchUploadUpdate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -151,14 +170,34 @@ namespace Example
 }
 ```
 
+#### Using the BatchUploadUpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Async batch update by loading a CSV file on a graph instance 
+    ApiResponse<TwinGraphBatchResult> response = apiInstance.BatchUploadUpdateWithHttpInfo(organizationId, graphId, twinGraphQuery, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.BatchUploadUpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
- **twinGraphQuery** | [**TwinGraphQuery**](TwinGraphQuery.md)|  | 
- **body** | **System.IO.Stream****System.IO.Stream**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
+| **twinGraphQuery** | [**TwinGraphQuery**](TwinGraphQuery.md) |  |  |
+| **body** | **System.IO.Stream****System.IO.Stream** |  |  |
 
 ### Return type
 
@@ -182,7 +221,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createentities"></a>
+<a id="createentities"></a>
 # **CreateEntities**
 > string CreateEntities (string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
 
@@ -223,8 +262,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.CreateEntities: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.CreateEntities: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -232,14 +271,34 @@ namespace Example
 }
 ```
 
+#### Using the CreateEntitiesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create new entities in a graph instance
+    ApiResponse<string> response = apiInstance.CreateEntitiesWithHttpInfo(organizationId, graphId, type, graphProperties);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.CreateEntitiesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
- **type** | **string**| the entity model type | 
- **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to create | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
+| **type** | **string** | the entity model type |  |
+| **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md) | the entities to create |  |
 
 ### Return type
 
@@ -262,9 +321,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="creategraph"></a>
+<a id="creategraph"></a>
 # **CreateGraph**
-> void CreateGraph (string organizationId, string graphId, System.IO.Stream body = null)
+> void CreateGraph (string organizationId, string graphId, System.IO.Stream? body = null)
 
 Create a new graph
 
@@ -292,7 +351,7 @@ namespace Example
             var apiInstance = new TwingraphApi(config);
             var organizationId = "organizationId_example";  // string | the Organization identifier
             var graphId = "graphId_example";  // string | the Graph Identifier
-            var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
+            var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream? |  (optional) 
 
             try
             {
@@ -301,8 +360,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.CreateGraph: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.CreateGraph: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -310,13 +369,30 @@ namespace Example
 }
 ```
 
+#### Using the CreateGraphWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a new graph
+    apiInstance.CreateGraphWithHttpInfo(organizationId, graphId, body);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.CreateGraphWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
- **body** | **System.IO.Stream****System.IO.Stream**|  | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
+| **body** | **System.IO.Stream?****System.IO.Stream?** |  | [optional]  |
 
 ### Return type
 
@@ -339,7 +415,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="delete"></a>
+<a id="delete"></a>
 # **Delete**
 > void Delete (string organizationId, string graphId)
 
@@ -377,8 +453,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -386,12 +462,29 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete all versions of a graph and his metadatas
+    apiInstance.DeleteWithHttpInfo(organizationId, graphId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
 
 ### Return type
 
@@ -414,7 +507,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteentities"></a>
+<a id="deleteentities"></a>
 # **DeleteEntities**
 > void DeleteEntities (string organizationId, string graphId, string type, List<string> ids)
 
@@ -454,8 +547,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.DeleteEntities: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.DeleteEntities: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -463,14 +556,31 @@ namespace Example
 }
 ```
 
+#### Using the DeleteEntitiesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete entities in a graph instance
+    apiInstance.DeleteEntitiesWithHttpInfo(organizationId, graphId, type, ids);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.DeleteEntitiesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
- **type** | **string**| the entity model type | 
- **ids** | [**List&lt;string&gt;**](string.md)| the entities to delete | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
+| **type** | **string** | the entity model type |  |
+| **ids** | [**List&lt;string&gt;**](string.md) | the entities to delete |  |
 
 ### Return type
 
@@ -493,7 +603,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="downloadgraph"></a>
+<a id="downloadgraph"></a>
 # **DownloadGraph**
 > System.IO.Stream DownloadGraph (string organizationId, string hash)
 
@@ -532,8 +642,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.DownloadGraph: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.DownloadGraph: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -541,12 +651,32 @@ namespace Example
 }
 ```
 
+#### Using the DownloadGraphWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Download a graph compressed in a zip file
+    ApiResponse<System.IO.Stream> response = apiInstance.DownloadGraphWithHttpInfo(organizationId, hash);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.DownloadGraphWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **hash** | **string**| the Graph download identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **hash** | **string** | the Graph download identifier |  |
 
 ### Return type
 
@@ -569,7 +699,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findalltwingraphs"></a>
+<a id="findalltwingraphs"></a>
 # **FindAllTwingraphs**
 > List&lt;string&gt; FindAllTwingraphs (string organizationId)
 
@@ -607,8 +737,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.FindAllTwingraphs: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.FindAllTwingraphs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -616,11 +746,31 @@ namespace Example
 }
 ```
 
+#### Using the FindAllTwingraphsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Return the list of all graphs stored in the organization
+    ApiResponse<List<string>> response = apiInstance.FindAllTwingraphsWithHttpInfo(organizationId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.FindAllTwingraphsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
 
 ### Return type
 
@@ -643,7 +793,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getentities"></a>
+<a id="getentities"></a>
 # **GetEntities**
 > string GetEntities (string organizationId, string graphId, string type, List<string> ids)
 
@@ -684,8 +834,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.GetEntities: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.GetEntities: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -693,14 +843,34 @@ namespace Example
 }
 ```
 
+#### Using the GetEntitiesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get entities in a graph instance
+    ApiResponse<string> response = apiInstance.GetEntitiesWithHttpInfo(organizationId, graphId, type, ids);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.GetEntitiesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
- **type** | **string**| the entity model type | 
- **ids** | [**List&lt;string&gt;**](string.md)| the entities to get | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
+| **type** | **string** | the entity model type |  |
+| **ids** | [**List&lt;string&gt;**](string.md) | the entities to get |  |
 
 ### Return type
 
@@ -723,7 +893,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getgraphmetadata"></a>
+<a id="getgraphmetadata"></a>
 # **GetGraphMetaData**
 > Object GetGraphMetaData (string organizationId, string graphId)
 
@@ -762,8 +932,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.GetGraphMetaData: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.GetGraphMetaData: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -771,12 +941,32 @@ namespace Example
 }
 ```
 
+#### Using the GetGraphMetaDataWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Return the metaData of the specified graph
+    ApiResponse<Object> response = apiInstance.GetGraphMetaDataWithHttpInfo(organizationId, graphId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.GetGraphMetaDataWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
 
 ### Return type
 
@@ -799,7 +989,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="jobstatus"></a>
+<a id="jobstatus"></a>
 # **JobStatus**
 > string JobStatus (string organizationId, string jobId)
 
@@ -838,8 +1028,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.JobStatus: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.JobStatus: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -847,12 +1037,32 @@ namespace Example
 }
 ```
 
+#### Using the JobStatusWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the status of a job
+    ApiResponse<string> response = apiInstance.JobStatusWithHttpInfo(organizationId, jobId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.JobStatusWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **jobId** | **string**| the job identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **jobId** | **string** | the job identifier |  |
 
 ### Return type
 
@@ -875,7 +1085,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="query"></a>
+<a id="query"></a>
 # **Query**
 > string Query (string organizationId, string graphId, TwinGraphQuery twinGraphQuery)
 
@@ -915,8 +1125,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.Query: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.Query: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -924,13 +1134,33 @@ namespace Example
 }
 ```
 
+#### Using the QueryWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Run a query on a graph instance
+    ApiResponse<string> response = apiInstance.QueryWithHttpInfo(organizationId, graphId, twinGraphQuery);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.QueryWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
- **twinGraphQuery** | [**TwinGraphQuery**](TwinGraphQuery.md)| the query to run | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
+| **twinGraphQuery** | [**TwinGraphQuery**](TwinGraphQuery.md) | the query to run |  |
 
 ### Return type
 
@@ -953,7 +1183,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateentities"></a>
+<a id="updateentities"></a>
 # **UpdateEntities**
 > string UpdateEntities (string organizationId, string graphId, string type, List<GraphProperties> graphProperties)
 
@@ -994,8 +1224,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.UpdateEntities: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.UpdateEntities: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1003,14 +1233,34 @@ namespace Example
 }
 ```
 
+#### Using the UpdateEntitiesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update entities in a graph instance
+    ApiResponse<string> response = apiInstance.UpdateEntitiesWithHttpInfo(organizationId, graphId, type, graphProperties);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.UpdateEntitiesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
- **type** | **string**| the entity model type | 
- **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md)| the entities to update | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
+| **type** | **string** | the entity model type |  |
+| **graphProperties** | [**List&lt;GraphProperties&gt;**](GraphProperties.md) | the entities to update |  |
 
 ### Return type
 
@@ -1033,7 +1283,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updategraphmetadata"></a>
+<a id="updategraphmetadata"></a>
 # **UpdateGraphMetaData**
 > Object UpdateGraphMetaData (string organizationId, string graphId, Dictionary<string, string> requestBody)
 
@@ -1073,8 +1323,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TwingraphApi.UpdateGraphMetaData: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TwingraphApi.UpdateGraphMetaData: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1082,13 +1332,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateGraphMetaDataWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update the metaData of the specified graph
+    ApiResponse<Object> response = apiInstance.UpdateGraphMetaDataWithHttpInfo(organizationId, graphId, requestBody);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TwingraphApi.UpdateGraphMetaDataWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **graphId** | **string**| the Graph Identifier | 
- **requestBody** | [**Dictionary&lt;string, string&gt;**](string.md)| the metaData to update | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **graphId** | **string** | the Graph Identifier |  |
+| **requestBody** | [**Dictionary&lt;string, string&gt;**](string.md) | the metaData to update |  |
 
 ### Return type
 
