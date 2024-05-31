@@ -5648,7 +5648,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RunnerLastRun'
+                type: string
           description: the Run id started
         "404":
           description: the Runner specified is unknown or you don't have access to
@@ -7960,11 +7960,7 @@ components:
         - parameterId: prefix
           varType: string
           value: ""
-        lastRun:
-          csmSimulationRun: ae8d1959-7a71-48ec-9f33-3fae53358cf1
-          runnerRunId: SR-V9EYbbOE0
-          workflowId: c7cd3f15-8a3b-4bcd-b3ca-62ee24c13d67
-          workflowName: workflow-s-dwpxbzmdxn-zkvd7
+        lastRunId: run-bDMr5lM9Vp
         security:
           default: viewer
           accessControlList:
@@ -8930,11 +8926,7 @@ components:
           varType: string
           value: ""
           inherited: true
-        lastRun:
-          csmSimulationRun: ae8d1959-7a71-48ec-9f33-3fae53358cf1
-          runnerRunId: SR-V9EYbbOE0
-          workflowId: c7cd3f15-8a3b-4bcd-b3ca-62ee24c13d67
-          workflowName: workflow-s-dwpxbzmdxn-zkvd7
+        lastRunId: run-bDMr5lM9Vp
         security:
           default: viewer
           accessControlList:
@@ -8961,11 +8953,7 @@ components:
           varType: string
           value: ""
           inherited: true
-        lastRun:
-          csmSimulationRun: ae8d1959-7a71-48ec-9f33-3fae53358cf1
-          runnerRunId: SR-V9EYbbOE0
-          workflowId: c7cd3f15-8a3b-4bcd-b3ca-62ee24c13d67
-          workflowName: workflow-s-dwpxbzmdxn-zkvd7
+        lastRunId: run-bDMr5lM9Vp
         security:
           default: viewer
           accessControlList:
@@ -9124,11 +9112,7 @@ components:
         - parameterId: prefix
           varType: string
           value: example
-        lastRun:
-          csmSimulationRun: ae8d1959-7a71-48ec-9f33-3fae53358cf1
-          runnerRunId: SR-V9EYbbOE0
-          workflowId: c7cd3f15-8a3b-4bcd-b3ca-62ee24c13d67
-          workflowName: workflow-s-dwpxbzmdxn-zkvd7
+        lastRunId: run-bDMr5lM9Vp
         security:
           default: viewer
           accessControlList:
@@ -9157,11 +9141,7 @@ components:
           varType: string
           value: ""
           inherited: true
-        lastRun:
-          csmSimulationRun: ae8d1959-7a71-48ec-9f33-3fae53358cf1
-          runnerRunId: SR-V9EYbbOE0
-          workflowId: c7cd3f15-8a3b-4bcd-b3ca-62ee24c13d67
-          workflowName: workflow-s-dwpxbzmdxn-zkvd7
+        lastRunId: run-bDMr5lM9Vp
         security:
           default: viewer
           accessControlList:
@@ -11167,13 +11147,15 @@ components:
       description: a Runner with base information
       example:
         rootId: rootId
-        parentLastRun:
-          csmSimulationRun: csmSimulationRun
-          workflowName: workflowName
-          workflowId: workflowId
-          runnerRunId: runnerRunId
+        solutionName: solutionName
         description: description
+        runTemplateName: runTemplateName
         ownerId: ownerId
+        creationDate: 0
+        parentId: parentId
+        tags:
+        - tags
+        - tags
         organizationId: organizationId
         security: ""
         parametersValues:
@@ -11186,6 +11168,10 @@ components:
           isInherited: true
           value: value
         ownerName: ownerName
+        lastUpdate: 6
+        name: name
+        runTemplateId: runTemplateId
+        lastRunId: lastRunId
         runSizing:
           requests:
             memory: memory
@@ -11194,33 +11180,12 @@ components:
             memory: memory
             cpu: cpu
         id: id
-        state: null
-        rootLastRun:
-          csmSimulationRun: csmSimulationRun
-          workflowName: workflowName
-          workflowId: workflowId
-          runnerRunId: runnerRunId
-        validationStatus: ""
-        workspaceId: workspaceId
-        lastRun:
-          csmSimulationRun: csmSimulationRun
-          workflowName: workflowName
-          workflowId: workflowId
-          runnerRunId: runnerRunId
-        solutionName: solutionName
-        runTemplateName: runTemplateName
-        creationDate: 0
-        parentId: parentId
-        tags:
-        - tags
-        - tags
-        lastUpdate: 6
-        name: name
-        runTemplateId: runTemplateId
         solutionId: solutionId
         datasetList:
         - datasetList
         - datasetList
+        validationStatus: ""
+        workspaceId: workspaceId
       properties:
         id:
           description: the Runner unique identifier
@@ -11270,8 +11235,6 @@ components:
           readOnly: true
           type: string
           x-field-extra-annotation: '@com.redis.om.spring.annotations.Indexed'
-        state:
-          $ref: '#/components/schemas/RunnerJobState'
         creationDate:
           description: the Runner creation date
           format: int64
@@ -11306,12 +11269,9 @@ components:
           items:
             $ref: '#/components/schemas/RunnerRunTemplateParameterValue'
           type: array
-        lastRun:
-          $ref: '#/components/schemas/Runner_lastRun'
-        parentLastRun:
-          $ref: '#/components/schemas/Runner_parentLastRun'
-        rootLastRun:
-          $ref: '#/components/schemas/Runner_rootLastRun'
+        lastRunId:
+          description: last run id from current runner
+          type: string
         validationStatus:
           allOf:
           - $ref: '#/components/schemas/RunnerValidationStatus'
@@ -11385,8 +11345,6 @@ components:
           description: the Runner Data Download URL
           readOnly: true
           type: string
-        state:
-          $ref: '#/components/schemas/RunnerJobState'
       type: object
     RunnerDataDownloadJob:
       description: Runner data download job
@@ -11394,37 +11352,6 @@ components:
         id:
           description: the Runner Data Download job identifier
           readOnly: true
-          type: string
-      type: object
-    RunnerJobState:
-      description: the Runner job state
-      enum:
-      - Created
-      - Running
-      - Successful
-      - Failed
-      - Unknown
-      - DataIngestionInProgress
-      readOnly: true
-      type: string
-    RunnerLastRun:
-      example:
-        csmSimulationRun: csmSimulationRun
-        workflowName: workflowName
-        workflowId: workflowId
-        runnerRunId: runnerRunId
-      properties:
-        runnerRunId:
-          description: the last Runner Run id
-          type: string
-        csmSimulationRun:
-          description: the last Cosmo Tech Simulation Run id
-          type: string
-        workflowId:
-          description: the last Workflow Id
-          type: string
-        workflowName:
-          description: the last Workflow name
           type: string
       type: object
     RunnerResourceSizing:
@@ -13294,36 +13221,6 @@ components:
           type: object
       type: object
       x-field-extra-annotation: '@com.redis.om.spring.annotations.Indexed'
-    Runner_lastRun:
-      allOf:
-      - $ref: '#/components/schemas/RunnerLastRun'
-      - description: the last Runner Run for this Runner
-        type: object
-      example:
-        csmSimulationRun: csmSimulationRun
-        workflowName: workflowName
-        workflowId: workflowId
-        runnerRunId: runnerRunId
-    Runner_parentLastRun:
-      allOf:
-      - $ref: '#/components/schemas/RunnerLastRun'
-      - description: the last Runner Run for the parent of this Runner
-        type: object
-      example:
-        csmSimulationRun: csmSimulationRun
-        workflowName: workflowName
-        workflowId: workflowId
-        runnerRunId: runnerRunId
-    Runner_rootLastRun:
-      allOf:
-      - $ref: '#/components/schemas/RunnerLastRun'
-      - description: the last Runner Run for the root (master) of Runner
-        type: object
-      example:
-        csmSimulationRun: csmSimulationRun
-        workflowName: workflowName
-        workflowId: workflowId
-        runnerRunId: runnerRunId
   securitySchemes:
     oAuth2AuthCode:
       description: OAuth2 authentication

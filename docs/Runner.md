@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **RunTemplateId** | **string** | the Solution Run Template Id associated with this Runner | [optional] 
 **OrganizationId** | **string** | the associated Organization Id | [optional] [readonly] 
 **WorkspaceId** | **string** | the associated Workspace Id | [optional] [readonly] 
-**State** | **RunnerJobState** |  | [optional] 
 **CreationDate** | **long** | the Runner creation date | [optional] [readonly] 
 **LastUpdate** | **long** | the last time a Runner was updated | [optional] [readonly] 
 **OwnerName** | **string** | the name of the owner | [optional] [readonly] 
@@ -25,9 +24,7 @@ Name | Type | Description | Notes
 **DatasetList** | **List&lt;string&gt;** | the list of Dataset Id associated to this Runner Run Template | [optional] 
 **RunSizing** | [**RunnerResourceSizing**](RunnerResourceSizing.md) |  | [optional] 
 **ParametersValues** | [**List&lt;RunnerRunTemplateParameterValue&gt;**](RunnerRunTemplateParameterValue.md) | the list of Solution Run Template parameters values | [optional] 
-**LastRun** | [**RunnerLastRun**](RunnerLastRun.md) |  | [optional] 
-**ParentLastRun** | [**RunnerLastRun**](RunnerLastRun.md) |  | [optional] 
-**RootLastRun** | [**RunnerLastRun**](RunnerLastRun.md) |  | [optional] 
+**LastRunId** | **string** | last run id from current runner | [optional] 
 **ValidationStatus** | **RunnerValidationStatus** |  | [optional] 
 **Security** | [**RunnerSecurity**](RunnerSecurity.md) |  | [optional] 
 

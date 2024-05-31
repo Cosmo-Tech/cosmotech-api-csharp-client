@@ -2,32 +2,31 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**AddWorkspaceAccessControl**](WorkspaceApi.md#addworkspaceaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/access | Add a control access to the Workspace
-[**CreateSecret**](WorkspaceApi.md#createsecret) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/secret | Create a secret for the Workspace
-[**CreateWorkspace**](WorkspaceApi.md#createworkspace) | **POST** /organizations/{organization_id}/workspaces | Create a new workspace
-[**DeleteAllWorkspaceFiles**](WorkspaceApi.md#deleteallworkspacefiles) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/files | Delete all Workspace files
-[**DeleteWorkspace**](WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace
-[**DeleteWorkspaceFile**](WorkspaceApi.md#deleteworkspacefile) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/files/delete | Delete a workspace file
-[**DownloadWorkspaceFile**](WorkspaceApi.md#downloadworkspacefile) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/files/download | Download the Workspace File specified
-[**FindAllWorkspaceFiles**](WorkspaceApi.md#findallworkspacefiles) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/files | List all Workspace files
-[**FindAllWorkspaces**](WorkspaceApi.md#findallworkspaces) | **GET** /organizations/{organization_id}/workspaces | List all Workspaces
-[**FindWorkspaceById**](WorkspaceApi.md#findworkspacebyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id} | Get the details of an workspace
-[**GetWorkspaceAccessControl**](WorkspaceApi.md#getworkspaceaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Get a control access for the Workspace
-[**GetWorkspacePermissions**](WorkspaceApi.md#getworkspacepermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/permissions/{role} | Get the Workspace permission by given role
-[**GetWorkspaceSecurity**](WorkspaceApi.md#getworkspacesecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security | Get the Workspace security information
-[**GetWorkspaceSecurityUsers**](WorkspaceApi.md#getworkspacesecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/users | Get the Workspace security users list
-[**LinkDataset**](WorkspaceApi.md#linkdataset) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/link | 
-[**RemoveWorkspaceAccessControl**](WorkspaceApi.md#removeworkspaceaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Remove the specified access from the given Organization Workspace
-[**SetWorkspaceDefaultSecurity**](WorkspaceApi.md#setworkspacedefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/default | Set the Workspace default security
-[**UnlinkDataset**](WorkspaceApi.md#unlinkdataset) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/unlink | 
-[**UpdateWorkspace**](WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace
-[**UpdateWorkspaceAccessControl**](WorkspaceApi.md#updateworkspaceaccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Update the specified access to User for a Workspace
-[**UploadWorkspaceFile**](WorkspaceApi.md#uploadworkspacefile) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/files | Upload a file for the Workspace
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**AddWorkspaceAccessControl**](WorkspaceApi.md#addworkspaceaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/access | Add a control access to the Workspace |
+| [**CreateSecret**](WorkspaceApi.md#createsecret) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/secret | Create a secret for the Workspace |
+| [**CreateWorkspace**](WorkspaceApi.md#createworkspace) | **POST** /organizations/{organization_id}/workspaces | Create a new workspace |
+| [**DeleteAllWorkspaceFiles**](WorkspaceApi.md#deleteallworkspacefiles) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/files | Delete all Workspace files |
+| [**DeleteWorkspace**](WorkspaceApi.md#deleteworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id} | Delete a workspace |
+| [**DeleteWorkspaceFile**](WorkspaceApi.md#deleteworkspacefile) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/files/delete | Delete a workspace file |
+| [**DownloadWorkspaceFile**](WorkspaceApi.md#downloadworkspacefile) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/files/download | Download the Workspace File specified |
+| [**FindAllWorkspaceFiles**](WorkspaceApi.md#findallworkspacefiles) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/files | List all Workspace files |
+| [**FindAllWorkspaces**](WorkspaceApi.md#findallworkspaces) | **GET** /organizations/{organization_id}/workspaces | List all Workspaces |
+| [**FindWorkspaceById**](WorkspaceApi.md#findworkspacebyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id} | Get the details of an workspace |
+| [**GetWorkspaceAccessControl**](WorkspaceApi.md#getworkspaceaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Get a control access for the Workspace |
+| [**GetWorkspacePermissions**](WorkspaceApi.md#getworkspacepermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/permissions/{role} | Get the Workspace permission by given role |
+| [**GetWorkspaceSecurity**](WorkspaceApi.md#getworkspacesecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security | Get the Workspace security information |
+| [**GetWorkspaceSecurityUsers**](WorkspaceApi.md#getworkspacesecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/security/users | Get the Workspace security users list |
+| [**LinkDataset**](WorkspaceApi.md#linkdataset) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/link |  |
+| [**RemoveWorkspaceAccessControl**](WorkspaceApi.md#removeworkspaceaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Remove the specified access from the given Organization Workspace |
+| [**SetWorkspaceDefaultSecurity**](WorkspaceApi.md#setworkspacedefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/default | Set the Workspace default security |
+| [**UnlinkDataset**](WorkspaceApi.md#unlinkdataset) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/unlink |  |
+| [**UpdateWorkspace**](WorkspaceApi.md#updateworkspace) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id} | Update a workspace |
+| [**UpdateWorkspaceAccessControl**](WorkspaceApi.md#updateworkspaceaccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/security/access/{identity_id} | Update the specified access to User for a Workspace |
+| [**UploadWorkspaceFile**](WorkspaceApi.md#uploadworkspacefile) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/files | Upload a file for the Workspace |
 
-
-<a name="addworkspaceaccesscontrol"></a>
+<a id="addworkspaceaccesscontrol"></a>
 # **AddWorkspaceAccessControl**
 > WorkspaceAccessControl AddWorkspaceAccessControl (string organizationId, string workspaceId, WorkspaceAccessControl workspaceAccessControl)
 
@@ -65,8 +64,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.AddWorkspaceAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.AddWorkspaceAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -74,13 +73,33 @@ namespace Example
 }
 ```
 
+#### Using the AddWorkspaceAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add a control access to the Workspace
+    ApiResponse<WorkspaceAccessControl> response = apiInstance.AddWorkspaceAccessControlWithHttpInfo(organizationId, workspaceId, workspaceAccessControl);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.AddWorkspaceAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **workspaceAccessControl** | [**WorkspaceAccessControl**](WorkspaceAccessControl.md)| the new Workspace security access to add. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **workspaceAccessControl** | [**WorkspaceAccessControl**](WorkspaceAccessControl.md) | the new Workspace security access to add. |  |
 
 ### Return type
 
@@ -104,7 +123,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createsecret"></a>
+<a id="createsecret"></a>
 # **CreateSecret**
 > void CreateSecret (string organizationId, string workspaceId, WorkspaceSecret workspaceSecret)
 
@@ -141,8 +160,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.CreateSecret: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.CreateSecret: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -150,13 +169,30 @@ namespace Example
 }
 ```
 
+#### Using the CreateSecretWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a secret for the Workspace
+    apiInstance.CreateSecretWithHttpInfo(organizationId, workspaceId, workspaceSecret);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.CreateSecretWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **workspaceSecret** | [**WorkspaceSecret**](WorkspaceSecret.md)| the definition of the secret | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **workspaceSecret** | [**WorkspaceSecret**](WorkspaceSecret.md) | the definition of the secret |  |
 
 ### Return type
 
@@ -180,7 +216,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="createworkspace"></a>
+<a id="createworkspace"></a>
 # **CreateWorkspace**
 > Workspace CreateWorkspace (string organizationId, Workspace workspace)
 
@@ -217,8 +253,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.CreateWorkspace: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.CreateWorkspace: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -226,12 +262,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateWorkspaceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a new workspace
+    ApiResponse<Workspace> response = apiInstance.CreateWorkspaceWithHttpInfo(organizationId, workspace);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.CreateWorkspaceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspace** | [**Workspace**](Workspace.md)| the Workspace to create | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspace** | [**Workspace**](Workspace.md) | the Workspace to create |  |
 
 ### Return type
 
@@ -255,7 +311,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteallworkspacefiles"></a>
+<a id="deleteallworkspacefiles"></a>
 # **DeleteAllWorkspaceFiles**
 > void DeleteAllWorkspaceFiles (string organizationId, string workspaceId)
 
@@ -291,8 +347,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.DeleteAllWorkspaceFiles: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.DeleteAllWorkspaceFiles: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -300,12 +356,29 @@ namespace Example
 }
 ```
 
+#### Using the DeleteAllWorkspaceFilesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete all Workspace files
+    apiInstance.DeleteAllWorkspaceFilesWithHttpInfo(organizationId, workspaceId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.DeleteAllWorkspaceFilesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
 
 ### Return type
 
@@ -329,7 +402,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteworkspace"></a>
+<a id="deleteworkspace"></a>
 # **DeleteWorkspace**
 > Workspace DeleteWorkspace (string organizationId, string workspaceId)
 
@@ -366,8 +439,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.DeleteWorkspace: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.DeleteWorkspace: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -375,12 +448,32 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWorkspaceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a workspace
+    ApiResponse<Workspace> response = apiInstance.DeleteWorkspaceWithHttpInfo(organizationId, workspaceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.DeleteWorkspaceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
 
 ### Return type
 
@@ -405,7 +498,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deleteworkspacefile"></a>
+<a id="deleteworkspacefile"></a>
 # **DeleteWorkspaceFile**
 > void DeleteWorkspaceFile (string organizationId, string workspaceId, string fileName)
 
@@ -442,8 +535,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.DeleteWorkspaceFile: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.DeleteWorkspaceFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -451,13 +544,30 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWorkspaceFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a workspace file
+    apiInstance.DeleteWorkspaceFileWithHttpInfo(organizationId, workspaceId, fileName);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.DeleteWorkspaceFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **fileName** | **string**| the file name | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **fileName** | **string** | the file name |  |
 
 ### Return type
 
@@ -481,7 +591,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="downloadworkspacefile"></a>
+<a id="downloadworkspacefile"></a>
 # **DownloadWorkspaceFile**
 > System.IO.Stream DownloadWorkspaceFile (string organizationId, string workspaceId, string fileName)
 
@@ -519,8 +629,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.DownloadWorkspaceFile: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.DownloadWorkspaceFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -528,13 +638,33 @@ namespace Example
 }
 ```
 
+#### Using the DownloadWorkspaceFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Download the Workspace File specified
+    ApiResponse<System.IO.Stream> response = apiInstance.DownloadWorkspaceFileWithHttpInfo(organizationId, workspaceId, fileName);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.DownloadWorkspaceFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **fileName** | **string**| the file name | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **fileName** | **string** | the file name |  |
 
 ### Return type
 
@@ -558,7 +688,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findallworkspacefiles"></a>
+<a id="findallworkspacefiles"></a>
 # **FindAllWorkspaceFiles**
 > List&lt;WorkspaceFile&gt; FindAllWorkspaceFiles (string organizationId, string workspaceId)
 
@@ -595,8 +725,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.FindAllWorkspaceFiles: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.FindAllWorkspaceFiles: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -604,12 +734,32 @@ namespace Example
 }
 ```
 
+#### Using the FindAllWorkspaceFilesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List all Workspace files
+    ApiResponse<List<WorkspaceFile>> response = apiInstance.FindAllWorkspaceFilesWithHttpInfo(organizationId, workspaceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.FindAllWorkspaceFilesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
 
 ### Return type
 
@@ -633,7 +783,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findallworkspaces"></a>
+<a id="findallworkspaces"></a>
 # **FindAllWorkspaces**
 > List&lt;Workspace&gt; FindAllWorkspaces (string organizationId, int? page = null, int? size = null)
 
@@ -671,8 +821,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.FindAllWorkspaces: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.FindAllWorkspaces: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -680,13 +830,33 @@ namespace Example
 }
 ```
 
+#### Using the FindAllWorkspacesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List all Workspaces
+    ApiResponse<List<Workspace>> response = apiInstance.FindAllWorkspacesWithHttpInfo(organizationId, page, size);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.FindAllWorkspacesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **page** | **int?**| page number to query | [optional] 
- **size** | **int?**| amount of result by page | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **page** | **int?** | page number to query | [optional]  |
+| **size** | **int?** | amount of result by page | [optional]  |
 
 ### Return type
 
@@ -709,7 +879,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findworkspacebyid"></a>
+<a id="findworkspacebyid"></a>
 # **FindWorkspaceById**
 > Workspace FindWorkspaceById (string organizationId, string workspaceId)
 
@@ -746,8 +916,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.FindWorkspaceById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.FindWorkspaceById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -755,12 +925,32 @@ namespace Example
 }
 ```
 
+#### Using the FindWorkspaceByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the details of an workspace
+    ApiResponse<Workspace> response = apiInstance.FindWorkspaceByIdWithHttpInfo(organizationId, workspaceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.FindWorkspaceByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
 
 ### Return type
 
@@ -784,7 +974,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkspaceaccesscontrol"></a>
+<a id="getworkspaceaccesscontrol"></a>
 # **GetWorkspaceAccessControl**
 > WorkspaceAccessControl GetWorkspaceAccessControl (string organizationId, string workspaceId, string identityId)
 
@@ -822,8 +1012,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -831,13 +1021,33 @@ namespace Example
 }
 ```
 
+#### Using the GetWorkspaceAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get a control access for the Workspace
+    ApiResponse<WorkspaceAccessControl> response = apiInstance.GetWorkspaceAccessControlWithHttpInfo(organizationId, workspaceId, identityId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **identityId** | **string**| the User identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **identityId** | **string** | the User identifier |  |
 
 ### Return type
 
@@ -861,7 +1071,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkspacepermissions"></a>
+<a id="getworkspacepermissions"></a>
 # **GetWorkspacePermissions**
 > List&lt;string&gt; GetWorkspacePermissions (string organizationId, string workspaceId, string role)
 
@@ -899,8 +1109,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.GetWorkspacePermissions: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.GetWorkspacePermissions: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -908,13 +1118,33 @@ namespace Example
 }
 ```
 
+#### Using the GetWorkspacePermissionsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Workspace permission by given role
+    ApiResponse<List<string>> response = apiInstance.GetWorkspacePermissionsWithHttpInfo(organizationId, workspaceId, role);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.GetWorkspacePermissionsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **role** | **string**| the Role | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **role** | **string** | the Role |  |
 
 ### Return type
 
@@ -937,7 +1167,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkspacesecurity"></a>
+<a id="getworkspacesecurity"></a>
 # **GetWorkspaceSecurity**
 > WorkspaceSecurity GetWorkspaceSecurity (string organizationId, string workspaceId)
 
@@ -974,8 +1204,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceSecurity: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceSecurity: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -983,12 +1213,32 @@ namespace Example
 }
 ```
 
+#### Using the GetWorkspaceSecurityWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Workspace security information
+    ApiResponse<WorkspaceSecurity> response = apiInstance.GetWorkspaceSecurityWithHttpInfo(organizationId, workspaceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceSecurityWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
 
 ### Return type
 
@@ -1012,7 +1262,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getworkspacesecurityusers"></a>
+<a id="getworkspacesecurityusers"></a>
 # **GetWorkspaceSecurityUsers**
 > List&lt;string&gt; GetWorkspaceSecurityUsers (string organizationId, string workspaceId)
 
@@ -1049,8 +1299,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceSecurityUsers: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceSecurityUsers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1058,12 +1308,32 @@ namespace Example
 }
 ```
 
+#### Using the GetWorkspaceSecurityUsersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the Workspace security users list
+    ApiResponse<List<string>> response = apiInstance.GetWorkspaceSecurityUsersWithHttpInfo(organizationId, workspaceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.GetWorkspaceSecurityUsersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
 
 ### Return type
 
@@ -1087,7 +1357,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="linkdataset"></a>
+<a id="linkdataset"></a>
 # **LinkDataset**
 > Workspace LinkDataset (string organizationId, string workspaceId, string datasetId)
 
@@ -1124,8 +1394,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.LinkDataset: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.LinkDataset: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1133,13 +1403,32 @@ namespace Example
 }
 ```
 
+#### Using the LinkDatasetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Workspace> response = apiInstance.LinkDatasetWithHttpInfo(organizationId, workspaceId, datasetId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.LinkDatasetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **datasetId** | **string**| dataset id to be linked to | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **datasetId** | **string** | dataset id to be linked to |  |
 
 ### Return type
 
@@ -1164,7 +1453,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="removeworkspaceaccesscontrol"></a>
+<a id="removeworkspaceaccesscontrol"></a>
 # **RemoveWorkspaceAccessControl**
 > void RemoveWorkspaceAccessControl (string organizationId, string workspaceId, string identityId)
 
@@ -1201,8 +1490,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.RemoveWorkspaceAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.RemoveWorkspaceAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1210,13 +1499,30 @@ namespace Example
 }
 ```
 
+#### Using the RemoveWorkspaceAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove the specified access from the given Organization Workspace
+    apiInstance.RemoveWorkspaceAccessControlWithHttpInfo(organizationId, workspaceId, identityId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.RemoveWorkspaceAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **identityId** | **string**| the User identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **identityId** | **string** | the User identifier |  |
 
 ### Return type
 
@@ -1240,7 +1546,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="setworkspacedefaultsecurity"></a>
+<a id="setworkspacedefaultsecurity"></a>
 # **SetWorkspaceDefaultSecurity**
 > WorkspaceSecurity SetWorkspaceDefaultSecurity (string organizationId, string workspaceId, WorkspaceRole workspaceRole)
 
@@ -1278,8 +1584,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.SetWorkspaceDefaultSecurity: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.SetWorkspaceDefaultSecurity: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1287,13 +1593,33 @@ namespace Example
 }
 ```
 
+#### Using the SetWorkspaceDefaultSecurityWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set the Workspace default security
+    ApiResponse<WorkspaceSecurity> response = apiInstance.SetWorkspaceDefaultSecurityWithHttpInfo(organizationId, workspaceId, workspaceRole);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.SetWorkspaceDefaultSecurityWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md)| This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md) | This change the workspace default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the workspace. |  |
 
 ### Return type
 
@@ -1317,7 +1643,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="unlinkdataset"></a>
+<a id="unlinkdataset"></a>
 # **UnlinkDataset**
 > Workspace UnlinkDataset (string organizationId, string workspaceId, string datasetId)
 
@@ -1354,8 +1680,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.UnlinkDataset: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.UnlinkDataset: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1363,13 +1689,32 @@ namespace Example
 }
 ```
 
+#### Using the UnlinkDatasetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Workspace> response = apiInstance.UnlinkDatasetWithHttpInfo(organizationId, workspaceId, datasetId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.UnlinkDatasetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **datasetId** | **string**| dataset id to be linked to | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **datasetId** | **string** | dataset id to be linked to |  |
 
 ### Return type
 
@@ -1394,7 +1739,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateworkspace"></a>
+<a id="updateworkspace"></a>
 # **UpdateWorkspace**
 > Workspace UpdateWorkspace (string organizationId, string workspaceId, Workspace workspace)
 
@@ -1432,8 +1777,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.UpdateWorkspace: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.UpdateWorkspace: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1441,13 +1786,33 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWorkspaceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update a workspace
+    ApiResponse<Workspace> response = apiInstance.UpdateWorkspaceWithHttpInfo(organizationId, workspaceId, workspace);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.UpdateWorkspaceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **workspace** | [**Workspace**](Workspace.md)| The new Workspace details. This endpoint can&#39;t be used to update security | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **workspace** | [**Workspace**](Workspace.md) | The new Workspace details. This endpoint can&#39;t be used to update security |  |
 
 ### Return type
 
@@ -1472,7 +1837,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateworkspaceaccesscontrol"></a>
+<a id="updateworkspaceaccesscontrol"></a>
 # **UpdateWorkspaceAccessControl**
 > WorkspaceAccessControl UpdateWorkspaceAccessControl (string organizationId, string workspaceId, string identityId, WorkspaceRole workspaceRole)
 
@@ -1511,8 +1876,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.UpdateWorkspaceAccessControl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.UpdateWorkspaceAccessControl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1520,14 +1885,34 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWorkspaceAccessControlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update the specified access to User for a Workspace
+    ApiResponse<WorkspaceAccessControl> response = apiInstance.UpdateWorkspaceAccessControlWithHttpInfo(organizationId, workspaceId, identityId, workspaceRole);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.UpdateWorkspaceAccessControlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **identityId** | **string**| the User identifier | 
- **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md)| The new Workspace Access Control | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **identityId** | **string** | the User identifier |  |
+| **workspaceRole** | [**WorkspaceRole**](WorkspaceRole.md) | The new Workspace Access Control |  |
 
 ### Return type
 
@@ -1551,9 +1936,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="uploadworkspacefile"></a>
+<a id="uploadworkspacefile"></a>
 # **UploadWorkspaceFile**
-> WorkspaceFile UploadWorkspaceFile (string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = null, string destination = null)
+> WorkspaceFile UploadWorkspaceFile (string organizationId, string workspaceId, System.IO.Stream file, bool? overwrite = null, string? destination = null)
 
 Upload a file for the Workspace
 
@@ -1581,7 +1966,7 @@ namespace Example
             var workspaceId = "workspaceId_example";  // string | the Workspace identifier
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
             var overwrite = false;  // bool? |  (optional)  (default to false)
-            var destination = "destination_example";  // string | Destination path. Must end with a '/' if specifying a folder. Note that paths may or may not start with a '/', but they are always treated as relative to the Workspace root location.  (optional) 
+            var destination = "destination_example";  // string? | Destination path. Must end with a '/' if specifying a folder. Note that paths may or may not start with a '/', but they are always treated as relative to the Workspace root location.  (optional) 
 
             try
             {
@@ -1591,8 +1976,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WorkspaceApi.UploadWorkspaceFile: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling WorkspaceApi.UploadWorkspaceFile: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1600,15 +1985,35 @@ namespace Example
 }
 ```
 
+#### Using the UploadWorkspaceFileWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Upload a file for the Workspace
+    ApiResponse<WorkspaceFile> response = apiInstance.UploadWorkspaceFileWithHttpInfo(organizationId, workspaceId, file, overwrite, destination);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkspaceApi.UploadWorkspaceFileWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| the Organization identifier | 
- **workspaceId** | **string**| the Workspace identifier | 
- **file** | **System.IO.Stream****System.IO.Stream**|  | 
- **overwrite** | **bool?**|  | [optional] [default to false]
- **destination** | **string**| Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **workspaceId** | **string** | the Workspace identifier |  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  |  |
+| **overwrite** | **bool?** |  | [optional] [default to false] |
+| **destination** | **string?** | Destination path. Must end with a &#39;/&#39; if specifying a folder. Note that paths may or may not start with a &#39;/&#39;, but they are always treated as relative to the Workspace root location.  | [optional]  |
 
 ### Return type
 

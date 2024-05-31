@@ -6,7 +6,6 @@ Runner data download job info
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Url** | **string** | the Runner Data Download URL | [optional] [readonly] 
-**State** | **RunnerJobState** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
