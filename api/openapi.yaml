@@ -7950,7 +7950,6 @@ components:
         solutionName: Brewery Solution
         runTemplateId: hundred
         runTemplateName: Full simulation 100 steps
-        state: Running
         ownerName: Bob
         creationDate: 2021-04-21T17:32:28Z
         lastUpdate: 2021-04-21T17:32:28Z
@@ -8043,7 +8042,6 @@ components:
         solutionName: Brewery Solution
         runTemplateId: hundred
         runTemplateName: Full simulation 100 steps
-        state: Created
         ownerName: Bob
         creationDate: 2021-04-21T17:32:28Z
         lastUpdate: 2021-04-21T17:32:28Z
@@ -8886,7 +8884,6 @@ components:
         - reference
         ownerId: "1"
         worskspaceId: "1"
-        state: Created
         creationDate: 2021-04-21T17:32:28Z
         lastUpdate: 2021-04-21T17:32:28Z
         ownerName: Alice
@@ -8913,7 +8910,6 @@ components:
         parentId: "1"
         ownerId: "1"
         worskspaceId: "1"
-        state: Running
         creationDate: 2021-04-21T17:32:28Z
         lastUpdate: 2021-04-21T17:32:28Z
         ownerName: Alice
@@ -8940,7 +8936,6 @@ components:
         parentId: "1"
         ownerId: "2"
         worskspaceId: "1"
-        state: Failed
         creationDate: 2021-04-21T17:32:28Z
         lastUpdate: 2021-04-21T17:32:28Z
         ownerName: Alice
@@ -9074,7 +9069,6 @@ components:
         solutionName: Brewery Solution
         runTemplateId: hundred
         runTemplateName: Full simulation 100 steps
-        state: Created
         ownerName: Bob
         creationDate: 2021-04-21T17:32:28Z
         lastUpdate: 2021-04-21T17:32:28Z
@@ -9102,7 +9096,6 @@ components:
         solutionName: Brewery Solution
         runTemplateId: hundred
         runTemplateName: Full simulation 100 steps
-        state: Running
         ownerName: Bob
         creationDate: 2021-04-21T17:32:28Z
         lastUpdate: 2021-04-21T17:32:28Z
@@ -9130,7 +9123,6 @@ components:
         solutionName: Brewery Solution
         runTemplateId: hundred
         runTemplateName: Full simulation 100 steps
-        state: Failed
         ownerName: Alice
         creationDate: 2021-04-21T17:32:28Z
         lastUpdate: 2021-04-21T17:32:28Z
