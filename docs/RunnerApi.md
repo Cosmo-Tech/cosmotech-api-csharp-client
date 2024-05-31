@@ -2,25 +2,26 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-| Method | HTTP request | Description |
-|--------|--------------|-------------|
-| [**AddRunnerAccessControl**](RunnerApi.md#addrunneraccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/access | Add a control access to the Runner |
-| [**CreateRunner**](RunnerApi.md#createrunner) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners | Create a new Runner |
-| [**DeleteRunner**](RunnerApi.md#deleterunner) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id} | Delete a runner |
-| [**GetRunner**](RunnerApi.md#getrunner) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id} | Get the details of an runner |
-| [**GetRunnerAccessControl**](RunnerApi.md#getrunneraccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/access/{identity_id} | Get a control access for the Runner |
-| [**GetRunnerPermissions**](RunnerApi.md#getrunnerpermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/permissions/{role} | Get the Runner permission by given role |
-| [**GetRunnerSecurity**](RunnerApi.md#getrunnersecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security | Get the Runner security information |
-| [**GetRunnerSecurityUsers**](RunnerApi.md#getrunnersecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/users | Get the Runner security users list |
-| [**ListRunners**](RunnerApi.md#listrunners) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners | List all Runners |
-| [**RemoveRunnerAccessControl**](RunnerApi.md#removerunneraccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/access/{identity_id} | Remove the specified access from the given Organization Runner |
-| [**SetRunnerDefaultSecurity**](RunnerApi.md#setrunnerdefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/default | Set the Runner default security |
-| [**StartRun**](RunnerApi.md#startrun) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/start | Start a run with runner parameters |
-| [**StopRun**](RunnerApi.md#stoprun) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/stop | Stop the last run |
-| [**UpdateRunner**](RunnerApi.md#updaterunner) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id} | Update a runner |
-| [**UpdateRunnerAccessControl**](RunnerApi.md#updaterunneraccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/access/{identity_id} | Update the specified access to User for a Runner |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**AddRunnerAccessControl**](RunnerApi.md#addrunneraccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/access | Add a control access to the Runner
+[**CreateRunner**](RunnerApi.md#createrunner) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners | Create a new Runner
+[**DeleteRunner**](RunnerApi.md#deleterunner) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id} | Delete a runner
+[**GetRunner**](RunnerApi.md#getrunner) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id} | Get the details of an runner
+[**GetRunnerAccessControl**](RunnerApi.md#getrunneraccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/access/{identity_id} | Get a control access for the Runner
+[**GetRunnerPermissions**](RunnerApi.md#getrunnerpermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/permissions/{role} | Get the Runner permission by given role
+[**GetRunnerSecurity**](RunnerApi.md#getrunnersecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security | Get the Runner security information
+[**GetRunnerSecurityUsers**](RunnerApi.md#getrunnersecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/users | Get the Runner security users list
+[**ListRunners**](RunnerApi.md#listrunners) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/runners | List all Runners
+[**RemoveRunnerAccessControl**](RunnerApi.md#removerunneraccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/access/{identity_id} | Remove the specified access from the given Organization Runner
+[**SetRunnerDefaultSecurity**](RunnerApi.md#setrunnerdefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/default | Set the Runner default security
+[**StartRun**](RunnerApi.md#startrun) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/start | Start a run with runner parameters
+[**StopRun**](RunnerApi.md#stoprun) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/stop | Stop the last run
+[**UpdateRunner**](RunnerApi.md#updaterunner) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id} | Update a runner
+[**UpdateRunnerAccessControl**](RunnerApi.md#updaterunneraccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/access/{identity_id} | Update the specified access to User for a Runner
 
-<a id="addrunneraccesscontrol"></a>
+
+<a name="addrunneraccesscontrol"></a>
 # **AddRunnerAccessControl**
 > RunnerAccessControl AddRunnerAccessControl (string organizationId, string workspaceId, string runnerId, RunnerAccessControl runnerAccessControl)
 
@@ -59,8 +60,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.AddRunnerAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.AddRunnerAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -68,34 +69,14 @@ namespace Example
 }
 ```
 
-#### Using the AddRunnerAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Add a control access to the Runner
-    ApiResponse<RunnerAccessControl> response = apiInstance.AddRunnerAccessControlWithHttpInfo(organizationId, workspaceId, runnerId, runnerAccessControl);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.AddRunnerAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
-| **runnerAccessControl** | [**RunnerAccessControl**](RunnerAccessControl.md) | the new Runner security access to add. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
+ **runnerAccessControl** | [**RunnerAccessControl**](RunnerAccessControl.md)| the new Runner security access to add. | 
 
 ### Return type
 
@@ -119,7 +100,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="createrunner"></a>
+<a name="createrunner"></a>
 # **CreateRunner**
 > Runner CreateRunner (string organizationId, string workspaceId, Runner runner)
 
@@ -157,8 +138,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.CreateRunner: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.CreateRunner: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -166,33 +147,13 @@ namespace Example
 }
 ```
 
-#### Using the CreateRunnerWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Create a new Runner
-    ApiResponse<Runner> response = apiInstance.CreateRunnerWithHttpInfo(organizationId, workspaceId, runner);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.CreateRunnerWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runner** | [**Runner**](Runner.md) | the Runner to create |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runner** | [**Runner**](Runner.md)| the Runner to create | 
 
 ### Return type
 
@@ -216,7 +177,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="deleterunner"></a>
+<a name="deleterunner"></a>
 # **DeleteRunner**
 > void DeleteRunner (string organizationId, string workspaceId, string runnerId)
 
@@ -253,8 +214,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.DeleteRunner: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.DeleteRunner: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -262,30 +223,13 @@ namespace Example
 }
 ```
 
-#### Using the DeleteRunnerWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Delete a runner
-    apiInstance.DeleteRunnerWithHttpInfo(organizationId, workspaceId, runnerId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.DeleteRunnerWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
 
 ### Return type
 
@@ -309,7 +253,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getrunner"></a>
+<a name="getrunner"></a>
 # **GetRunner**
 > Runner GetRunner (string organizationId, string workspaceId, string runnerId)
 
@@ -347,8 +291,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.GetRunner: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.GetRunner: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -356,33 +300,13 @@ namespace Example
 }
 ```
 
-#### Using the GetRunnerWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the details of an runner
-    ApiResponse<Runner> response = apiInstance.GetRunnerWithHttpInfo(organizationId, workspaceId, runnerId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.GetRunnerWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
 
 ### Return type
 
@@ -406,7 +330,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getrunneraccesscontrol"></a>
+<a name="getrunneraccesscontrol"></a>
 # **GetRunnerAccessControl**
 > RunnerAccessControl GetRunnerAccessControl (string organizationId, string workspaceId, string runnerId, string identityId)
 
@@ -445,8 +369,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.GetRunnerAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.GetRunnerAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -454,34 +378,14 @@ namespace Example
 }
 ```
 
-#### Using the GetRunnerAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get a control access for the Runner
-    ApiResponse<RunnerAccessControl> response = apiInstance.GetRunnerAccessControlWithHttpInfo(organizationId, workspaceId, runnerId, identityId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.GetRunnerAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
-| **identityId** | **string** | the User identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
+ **identityId** | **string**| the User identifier | 
 
 ### Return type
 
@@ -505,7 +409,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getrunnerpermissions"></a>
+<a name="getrunnerpermissions"></a>
 # **GetRunnerPermissions**
 > List&lt;string&gt; GetRunnerPermissions (string organizationId, string workspaceId, string runnerId, string role)
 
@@ -544,8 +448,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.GetRunnerPermissions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.GetRunnerPermissions: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -553,34 +457,14 @@ namespace Example
 }
 ```
 
-#### Using the GetRunnerPermissionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the Runner permission by given role
-    ApiResponse<List<string>> response = apiInstance.GetRunnerPermissionsWithHttpInfo(organizationId, workspaceId, runnerId, role);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.GetRunnerPermissionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
-| **role** | **string** | the Role |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
+ **role** | **string**| the Role | 
 
 ### Return type
 
@@ -603,7 +487,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getrunnersecurity"></a>
+<a name="getrunnersecurity"></a>
 # **GetRunnerSecurity**
 > RunnerSecurity GetRunnerSecurity (string organizationId, string workspaceId, string runnerId)
 
@@ -641,8 +525,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.GetRunnerSecurity: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.GetRunnerSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -650,33 +534,13 @@ namespace Example
 }
 ```
 
-#### Using the GetRunnerSecurityWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the Runner security information
-    ApiResponse<RunnerSecurity> response = apiInstance.GetRunnerSecurityWithHttpInfo(organizationId, workspaceId, runnerId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.GetRunnerSecurityWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
 
 ### Return type
 
@@ -700,7 +564,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getrunnersecurityusers"></a>
+<a name="getrunnersecurityusers"></a>
 # **GetRunnerSecurityUsers**
 > List&lt;string&gt; GetRunnerSecurityUsers (string organizationId, string workspaceId, string runnerId)
 
@@ -738,8 +602,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.GetRunnerSecurityUsers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.GetRunnerSecurityUsers: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -747,33 +611,13 @@ namespace Example
 }
 ```
 
-#### Using the GetRunnerSecurityUsersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get the Runner security users list
-    ApiResponse<List<string>> response = apiInstance.GetRunnerSecurityUsersWithHttpInfo(organizationId, workspaceId, runnerId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.GetRunnerSecurityUsersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
 
 ### Return type
 
@@ -797,7 +641,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="listrunners"></a>
+<a name="listrunners"></a>
 # **ListRunners**
 > List&lt;Runner&gt; ListRunners (string organizationId, string workspaceId, int? page = null, int? size = null)
 
@@ -836,8 +680,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.ListRunners: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.ListRunners: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -845,34 +689,14 @@ namespace Example
 }
 ```
 
-#### Using the ListRunnersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // List all Runners
-    ApiResponse<List<Runner>> response = apiInstance.ListRunnersWithHttpInfo(organizationId, workspaceId, page, size);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.ListRunnersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **page** | **int?** | page number to query | [optional]  |
-| **size** | **int?** | amount of result by page | [optional]  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **page** | **int?**| page number to query | [optional] 
+ **size** | **int?**| amount of result by page | [optional] 
 
 ### Return type
 
@@ -895,7 +719,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="removerunneraccesscontrol"></a>
+<a name="removerunneraccesscontrol"></a>
 # **RemoveRunnerAccessControl**
 > void RemoveRunnerAccessControl (string organizationId, string workspaceId, string runnerId, string identityId)
 
@@ -933,8 +757,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.RemoveRunnerAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.RemoveRunnerAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -942,31 +766,14 @@ namespace Example
 }
 ```
 
-#### Using the RemoveRunnerAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Remove the specified access from the given Organization Runner
-    apiInstance.RemoveRunnerAccessControlWithHttpInfo(organizationId, workspaceId, runnerId, identityId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.RemoveRunnerAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
-| **identityId** | **string** | the User identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
+ **identityId** | **string**| the User identifier | 
 
 ### Return type
 
@@ -990,7 +797,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="setrunnerdefaultsecurity"></a>
+<a name="setrunnerdefaultsecurity"></a>
 # **SetRunnerDefaultSecurity**
 > RunnerSecurity SetRunnerDefaultSecurity (string organizationId, string workspaceId, string runnerId, RunnerRole runnerRole)
 
@@ -1029,8 +836,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.SetRunnerDefaultSecurity: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.SetRunnerDefaultSecurity: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1038,34 +845,14 @@ namespace Example
 }
 ```
 
-#### Using the SetRunnerDefaultSecurityWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Set the Runner default security
-    ApiResponse<RunnerSecurity> response = apiInstance.SetRunnerDefaultSecurityWithHttpInfo(organizationId, workspaceId, runnerId, runnerRole);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.SetRunnerDefaultSecurityWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
-| **runnerRole** | [**RunnerRole**](RunnerRole.md) | This change the runner default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the runner. |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
+ **runnerRole** | [**RunnerRole**](RunnerRole.md)| This change the runner default security. The default security is the role assigned to any person not on the Access Control List. If the default security is None, then nobody outside of the ACL can access the runner. | 
 
 ### Return type
 
@@ -1089,7 +876,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="startrun"></a>
+<a name="startrun"></a>
 # **StartRun**
 > string StartRun (string organizationId, string workspaceId, string runnerId)
 
@@ -1127,8 +914,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.StartRun: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.StartRun: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1136,33 +923,13 @@ namespace Example
 }
 ```
 
-#### Using the StartRunWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Start a run with runner parameters
-    ApiResponse<string> response = apiInstance.StartRunWithHttpInfo(organizationId, workspaceId, runnerId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.StartRunWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
 
 ### Return type
 
@@ -1186,7 +953,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="stoprun"></a>
+<a name="stoprun"></a>
 # **StopRun**
 > void StopRun (string organizationId, string workspaceId, string runnerId)
 
@@ -1223,8 +990,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.StopRun: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.StopRun: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1232,30 +999,13 @@ namespace Example
 }
 ```
 
-#### Using the StopRunWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Stop the last run
-    apiInstance.StopRunWithHttpInfo(organizationId, workspaceId, runnerId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.StopRunWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
 
 ### Return type
 
@@ -1279,7 +1029,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updaterunner"></a>
+<a name="updaterunner"></a>
 # **UpdateRunner**
 > Runner UpdateRunner (string organizationId, string workspaceId, string runnerId, Runner runner)
 
@@ -1318,8 +1068,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.UpdateRunner: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.UpdateRunner: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1327,34 +1077,14 @@ namespace Example
 }
 ```
 
-#### Using the UpdateRunnerWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update a runner
-    ApiResponse<Runner> response = apiInstance.UpdateRunnerWithHttpInfo(organizationId, workspaceId, runnerId, runner);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.UpdateRunnerWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
-| **runner** | [**Runner**](Runner.md) | the new Runner details. This endpoint can&#39;t be used to update security |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
+ **runner** | [**Runner**](Runner.md)| the new Runner details. This endpoint can&#39;t be used to update security | 
 
 ### Return type
 
@@ -1379,7 +1109,7 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="updaterunneraccesscontrol"></a>
+<a name="updaterunneraccesscontrol"></a>
 # **UpdateRunnerAccessControl**
 > RunnerAccessControl UpdateRunnerAccessControl (string organizationId, string workspaceId, string runnerId, string identityId, RunnerRole runnerRole)
 
@@ -1419,8 +1149,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling RunnerApi.UpdateRunnerAccessControl: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print("Exception when calling RunnerApi.UpdateRunnerAccessControl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -1428,35 +1158,15 @@ namespace Example
 }
 ```
 
-#### Using the UpdateRunnerAccessControlWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update the specified access to User for a Runner
-    ApiResponse<RunnerAccessControl> response = apiInstance.UpdateRunnerAccessControlWithHttpInfo(organizationId, workspaceId, runnerId, identityId, runnerRole);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling RunnerApi.UpdateRunnerAccessControlWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organizationId** | **string** | the Organization identifier |  |
-| **workspaceId** | **string** | the Workspace identifier |  |
-| **runnerId** | **string** | the Runner identifier |  |
-| **identityId** | **string** | the User identifier |  |
-| **runnerRole** | [**RunnerRole**](RunnerRole.md) | The new Runner Access Control |  |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| the Organization identifier | 
+ **workspaceId** | **string**| the Workspace identifier | 
+ **runnerId** | **string**| the Runner identifier | 
+ **identityId** | **string**| the User identifier | 
+ **runnerRole** | [**RunnerRole**](RunnerRole.md)| The new Runner Access Control | 
 
 ### Return type
 
