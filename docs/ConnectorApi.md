@@ -2,16 +2,15 @@
 
 All URIs are relative to *https://dev.api.cosmotech.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**FindAllConnectors**](ConnectorApi.md#findallconnectors) | **GET** /connectors | List all Connectors
-[**FindConnectorById**](ConnectorApi.md#findconnectorbyid) | **GET** /connectors/{connector_id} | Get the details of a connector
-[**FindConnectorByName**](ConnectorApi.md#findconnectorbyname) | **GET** /connectors/name/{connector_name} | Get the details of a connector
-[**RegisterConnector**](ConnectorApi.md#registerconnector) | **POST** /connectors | Register a new connector
-[**UnregisterConnector**](ConnectorApi.md#unregisterconnector) | **DELETE** /connectors/{connector_id} | Unregister a connector
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**FindAllConnectors**](ConnectorApi.md#findallconnectors) | **GET** /connectors | List all Connectors |
+| [**FindConnectorById**](ConnectorApi.md#findconnectorbyid) | **GET** /connectors/{connector_id} | Get the details of a connector |
+| [**FindConnectorByName**](ConnectorApi.md#findconnectorbyname) | **GET** /connectors/name/{connector_name} | Get the details of a connector |
+| [**RegisterConnector**](ConnectorApi.md#registerconnector) | **POST** /connectors | Register a new connector |
+| [**UnregisterConnector**](ConnectorApi.md#unregisterconnector) | **DELETE** /connectors/{connector_id} | Unregister a connector |
 
-
-<a name="findallconnectors"></a>
+<a id="findallconnectors"></a>
 # **FindAllConnectors**
 > List&lt;Connector&gt; FindAllConnectors (int? page = null, int? size = null)
 
@@ -48,8 +47,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConnectorApi.FindAllConnectors: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ConnectorApi.FindAllConnectors: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -57,12 +56,32 @@ namespace Example
 }
 ```
 
+#### Using the FindAllConnectorsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List all Connectors
+    ApiResponse<List<Connector>> response = apiInstance.FindAllConnectorsWithHttpInfo(page, size);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConnectorApi.FindAllConnectorsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int?**| page number to query | [optional] 
- **size** | **int?**| amount of result by page | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **page** | **int?** | page number to query | [optional]  |
+| **size** | **int?** | amount of result by page | [optional]  |
 
 ### Return type
 
@@ -85,7 +104,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findconnectorbyid"></a>
+<a id="findconnectorbyid"></a>
 # **FindConnectorById**
 > Connector FindConnectorById (string connectorId)
 
@@ -121,8 +140,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConnectorApi.FindConnectorById: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ConnectorApi.FindConnectorById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -130,11 +149,31 @@ namespace Example
 }
 ```
 
+#### Using the FindConnectorByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the details of a connector
+    ApiResponse<Connector> response = apiInstance.FindConnectorByIdWithHttpInfo(connectorId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConnectorApi.FindConnectorByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connectorId** | **string**| the Connector identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **connectorId** | **string** | the Connector identifier |  |
 
 ### Return type
 
@@ -158,7 +197,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findconnectorbyname"></a>
+<a id="findconnectorbyname"></a>
 # **FindConnectorByName**
 > Connector FindConnectorByName (string connectorName)
 
@@ -194,8 +233,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConnectorApi.FindConnectorByName: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ConnectorApi.FindConnectorByName: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -203,11 +242,31 @@ namespace Example
 }
 ```
 
+#### Using the FindConnectorByNameWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get the details of a connector
+    ApiResponse<Connector> response = apiInstance.FindConnectorByNameWithHttpInfo(connectorName);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConnectorApi.FindConnectorByNameWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connectorName** | **string**| the Connector name | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **connectorName** | **string** | the Connector name |  |
 
 ### Return type
 
@@ -230,7 +289,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="registerconnector"></a>
+<a id="registerconnector"></a>
 # **RegisterConnector**
 > Connector RegisterConnector (Connector connector)
 
@@ -266,8 +325,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConnectorApi.RegisterConnector: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ConnectorApi.RegisterConnector: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -275,11 +334,31 @@ namespace Example
 }
 ```
 
+#### Using the RegisterConnectorWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Register a new connector
+    ApiResponse<Connector> response = apiInstance.RegisterConnectorWithHttpInfo(connector);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConnectorApi.RegisterConnectorWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connector** | [**Connector**](Connector.md)| the Connector to register | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **connector** | [**Connector**](Connector.md) | the Connector to register |  |
 
 ### Return type
 
@@ -303,7 +382,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="unregisterconnector"></a>
+<a id="unregisterconnector"></a>
 # **UnregisterConnector**
 > void UnregisterConnector (string connectorId)
 
@@ -338,8 +417,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ConnectorApi.UnregisterConnector: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ConnectorApi.UnregisterConnector: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -347,11 +426,28 @@ namespace Example
 }
 ```
 
+#### Using the UnregisterConnectorWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Unregister a connector
+    apiInstance.UnregisterConnectorWithHttpInfo(connectorId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConnectorApi.UnregisterConnectorWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connectorId** | **string**| the Connector identifier | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **connectorId** | **string** | the Connector identifier |  |
 
 ### Return type
 
