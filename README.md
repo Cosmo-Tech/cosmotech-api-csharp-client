@@ -190,42 +190,6 @@ Class | Method | HTTP request | Description
 *RunnerApi* | [**StopRun**](docs/RunnerApi.md#stoprun) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/stop | Stop the last run
 *RunnerApi* | [**UpdateRunner**](docs/RunnerApi.md#updaterunner) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id} | Update a runner
 *RunnerApi* | [**UpdateRunnerAccessControl**](docs/RunnerApi.md#updaterunneraccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/runners/{runner_id}/security/access/{identity_id} | Update the specified access to User for a Runner
-*ScenarioApi* | [**AddOrReplaceScenarioParameterValues**](docs/ScenarioApi.md#addorreplacescenarioparametervalues) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Add (or replace) Parameter Values for the Scenario specified
-*ScenarioApi* | [**AddScenarioAccessControl**](docs/ScenarioApi.md#addscenarioaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access | Add a control access to the Scenario
-*ScenarioApi* | [**CompareScenarios**](docs/ScenarioApi.md#comparescenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/compare/{compared_scenario_id} | Compare the Scenario with another one and returns the difference for parameters values
-*ScenarioApi* | [**CreateScenario**](docs/ScenarioApi.md#createscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Create a new Scenario
-*ScenarioApi* | [**DeleteAllScenarios**](docs/ScenarioApi.md#deleteallscenarios) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | Delete all Scenarios of the Workspace
-*ScenarioApi* | [**DeleteScenario**](docs/ScenarioApi.md#deletescenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Delete a scenario
-*ScenarioApi* | [**DownloadScenarioData**](docs/ScenarioApi.md#downloadscenariodata) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads | Download Scenario data
-*ScenarioApi* | [**FindAllScenarios**](docs/ScenarioApi.md#findallscenarios) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios | List all Scenarios
-*ScenarioApi* | [**FindAllScenariosByValidationStatus**](docs/ScenarioApi.md#findallscenariosbyvalidationstatus) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/{validationStatus} | List all Scenarios by validation status
-*ScenarioApi* | [**FindScenarioById**](docs/ScenarioApi.md#findscenariobyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Get the details of an scenario
-*ScenarioApi* | [**GetScenarioAccessControl**](docs/ScenarioApi.md#getscenarioaccesscontrol) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Get a control access for the Scenario
-*ScenarioApi* | [**GetScenarioDataDownloadJobInfo**](docs/ScenarioApi.md#getscenariodatadownloadjobinfo) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/downloads/{download_id} | Get Scenario data download URL
-*ScenarioApi* | [**GetScenarioPermissions**](docs/ScenarioApi.md#getscenariopermissions) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/permissions/{role} | Get the Scenario permission by given role
-*ScenarioApi* | [**GetScenarioSecurity**](docs/ScenarioApi.md#getscenariosecurity) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security | Get the Scenario security information
-*ScenarioApi* | [**GetScenarioSecurityUsers**](docs/ScenarioApi.md#getscenariosecurityusers) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/users | Get the Scenario security users list
-*ScenarioApi* | [**GetScenarioValidationStatusById**](docs/ScenarioApi.md#getscenariovalidationstatusbyid) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/ValidationStatus | Get the validation status of an scenario
-*ScenarioApi* | [**GetScenariosTree**](docs/ScenarioApi.md#getscenariostree) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/tree | Get the Scenarios Tree
-*ScenarioApi* | [**RemoveAllScenarioParameterValues**](docs/ScenarioApi.md#removeallscenarioparametervalues) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/parameterValues | Remove all Parameter Values from the Scenario specified
-*ScenarioApi* | [**RemoveScenarioAccessControl**](docs/ScenarioApi.md#removescenarioaccesscontrol) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Remove the specified access from the given Organization Scenario
-*ScenarioApi* | [**SetScenarioDefaultSecurity**](docs/ScenarioApi.md#setscenariodefaultsecurity) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/default | Set the Scenario default security
-*ScenarioApi* | [**UpdateScenario**](docs/ScenarioApi.md#updatescenario) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id} | Update a scenario
-*ScenarioApi* | [**UpdateScenarioAccessControl**](docs/ScenarioApi.md#updatescenarioaccesscontrol) | **PATCH** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/security/access/{identity_id} | Update the specified access to User for a Scenario
-*ScenariorunApi* | [**DeleteHistoricalDataOrganization**](docs/ScenariorunApi.md#deletehistoricaldataorganization) | **DELETE** /organizations/{organization_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Organization
-*ScenariorunApi* | [**DeleteHistoricalDataScenario**](docs/ScenariorunApi.md#deletehistoricaldatascenario) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Scenario
-*ScenariorunApi* | [**DeleteHistoricalDataWorkspace**](docs/ScenariorunApi.md#deletehistoricaldataworkspace) | **DELETE** /organizations/{organization_id}/workspaces/{workspace_id}/scenarioruns/historicaldata | Delete all historical ScenarioRuns in the Workspace
-*ScenariorunApi* | [**DeleteScenarioRun**](docs/ScenariorunApi.md#deletescenariorun) | **DELETE** /organizations/{organization_id}/scenarioruns/{scenariorun_id} | Delete a scenariorun
-*ScenariorunApi* | [**FindScenarioRunById**](docs/ScenariorunApi.md#findscenariorunbyid) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id} | Get the details of a scenariorun
-*ScenariorunApi* | [**GetScenarioRunCumulatedLogs**](docs/ScenariorunApi.md#getscenarioruncumulatedlogs) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id}/cumulatedlogs | Get the cumulated logs of a scenariorun
-*ScenariorunApi* | [**GetScenarioRunLogs**](docs/ScenariorunApi.md#getscenariorunlogs) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id}/logs | get the logs for the ScenarioRun
-*ScenariorunApi* | [**GetScenarioRunStatus**](docs/ScenariorunApi.md#getscenariorunstatus) | **GET** /organizations/{organization_id}/scenarioruns/{scenariorun_id}/status | get the status for the ScenarioRun
-*ScenariorunApi* | [**GetScenarioRuns**](docs/ScenariorunApi.md#getscenarioruns) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/scenarioruns | get the list of ScenarioRuns for the Scenario
-*ScenariorunApi* | [**GetWorkspaceScenarioRuns**](docs/ScenariorunApi.md#getworkspacescenarioruns) | **GET** /organizations/{organization_id}/workspaces/{workspace_id}/scenarioruns | get the list of ScenarioRuns for the Workspace
-*ScenariorunApi* | [**RunScenario**](docs/ScenariorunApi.md#runscenario) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/scenarios/{scenario_id}/run | run a ScenarioRun for the Scenario
-*ScenariorunApi* | [**SearchScenarioRuns**](docs/ScenariorunApi.md#searchscenarioruns) | **POST** /organizations/{organization_id}/scenarioruns/search | Search ScenarioRuns
-*ScenariorunApi* | [**StartScenarioRunContainers**](docs/ScenariorunApi.md#startscenarioruncontainers) | **POST** /organizations/{organization_id}/scenarioruns/startcontainers | Start a new scenariorun with raw containers definition
-*ScenariorunApi* | [**StopScenarioRun**](docs/ScenariorunApi.md#stopscenariorun) | **POST** /organizations/{organization_id}/scenarioruns/{scenariorun_id}/stop | stop a ScenarioRun for the Scenario
 *SolutionApi* | [**AddOrReplaceParameterGroups**](docs/SolutionApi.md#addorreplaceparametergroups) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameterGroups | Add Parameter Groups. Any item with the same ID will be overwritten
 *SolutionApi* | [**AddOrReplaceParameters**](docs/SolutionApi.md#addorreplaceparameters) | **POST** /organizations/{organization_id}/solutions/{solution_id}/parameters | Add Parameters. Any item with the same ID will be overwritten
 *SolutionApi* | [**AddOrReplaceRunTemplates**](docs/SolutionApi.md#addorreplaceruntemplates) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runTemplates | Add Run Templates. Any item with the same ID will be overwritten
@@ -248,20 +212,6 @@ Class | Method | HTTP request | Description
 *SolutionApi* | [**UpdateSolutionAccessControl**](docs/SolutionApi.md#updatesolutionaccesscontrol) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Update the specified access to User for a Solution
 *SolutionApi* | [**UpdateSolutionRunTemplate**](docs/SolutionApi.md#updatesolutionruntemplate) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Update the specified Solution Run Template
 *SolutionApi* | [**UploadRunTemplateHandler**](docs/SolutionApi.md#uploadruntemplatehandler) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload | Upload a Run Template step handler zip file
-*TwingraphApi* | [**BatchQuery**](docs/TwingraphApi.md#batchquery) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch-query | Run a query on a graph instance and return the result as a zip file in async mode
-*TwingraphApi* | [**BatchUploadUpdate**](docs/TwingraphApi.md#batchuploadupdate) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/batch | Async batch update by loading a CSV file on a graph instance 
-*TwingraphApi* | [**CreateEntities**](docs/TwingraphApi.md#createentities) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Create new entities in a graph instance
-*TwingraphApi* | [**CreateGraph**](docs/TwingraphApi.md#creategraph) | **POST** /organizations/{organization_id}/twingraph/{graph_id} | Create a new graph
-*TwingraphApi* | [**Delete**](docs/TwingraphApi.md#delete) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id} | Delete all versions of a graph and his metadatas
-*TwingraphApi* | [**DeleteEntities**](docs/TwingraphApi.md#deleteentities) | **DELETE** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Delete entities in a graph instance
-*TwingraphApi* | [**DownloadGraph**](docs/TwingraphApi.md#downloadgraph) | **GET** /organizations/{organization_id}/twingraph/download/{hash} | Download a graph compressed in a zip file
-*TwingraphApi* | [**FindAllTwingraphs**](docs/TwingraphApi.md#findalltwingraphs) | **GET** /organizations/{organization_id}/twingraphs | Return the list of all graphs stored in the organization
-*TwingraphApi* | [**GetEntities**](docs/TwingraphApi.md#getentities) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Get entities in a graph instance
-*TwingraphApi* | [**GetGraphMetaData**](docs/TwingraphApi.md#getgraphmetadata) | **GET** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Return the metaData of the specified graph
-*TwingraphApi* | [**JobStatus**](docs/TwingraphApi.md#jobstatus) | **GET** /organizations/{organization_id}/job/{job_id}/status | Get the status of a job
-*TwingraphApi* | [**Query**](docs/TwingraphApi.md#query) | **POST** /organizations/{organization_id}/twingraph/{graph_id}/query | Run a query on a graph instance
-*TwingraphApi* | [**UpdateEntities**](docs/TwingraphApi.md#updateentities) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/entity/{type} | Update entities in a graph instance
-*TwingraphApi* | [**UpdateGraphMetaData**](docs/TwingraphApi.md#updategraphmetadata) | **PATCH** /organizations/{organization_id}/twingraph/{graph_id}/metadata | Update the metaData of the specified graph
 *WorkspaceApi* | [**AddWorkspaceAccessControl**](docs/WorkspaceApi.md#addworkspaceaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/access | Add a control access to the Workspace
 *WorkspaceApi* | [**CreateSecret**](docs/WorkspaceApi.md#createsecret) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/secret | Create a secret for the Workspace
 *WorkspaceApi* | [**CreateWorkspace**](docs/WorkspaceApi.md#createworkspace) | **POST** /organizations/{organization_id}/workspaces | Create a new workspace
@@ -351,31 +301,6 @@ Class | Method | HTTP request | Description
  - [Model.RunnerRunTemplateParameterValue](docs/RunnerRunTemplateParameterValue.md)
  - [Model.RunnerSecurity](docs/RunnerSecurity.md)
  - [Model.RunnerValidationStatus](docs/RunnerValidationStatus.md)
- - [Model.Scenario](docs/Scenario.md)
- - [Model.ScenarioAccessControl](docs/ScenarioAccessControl.md)
- - [Model.ScenarioChangedParameterValue](docs/ScenarioChangedParameterValue.md)
- - [Model.ScenarioComparisonResult](docs/ScenarioComparisonResult.md)
- - [Model.ScenarioDataDownloadInfo](docs/ScenarioDataDownloadInfo.md)
- - [Model.ScenarioDataDownloadJob](docs/ScenarioDataDownloadJob.md)
- - [Model.ScenarioJobState](docs/ScenarioJobState.md)
- - [Model.ScenarioLastRun](docs/ScenarioLastRun.md)
- - [Model.ScenarioResourceSizing](docs/ScenarioResourceSizing.md)
- - [Model.ScenarioRole](docs/ScenarioRole.md)
- - [Model.ScenarioRun](docs/ScenarioRun.md)
- - [Model.ScenarioRunContainer](docs/ScenarioRunContainer.md)
- - [Model.ScenarioRunContainerArtifact](docs/ScenarioRunContainerArtifact.md)
- - [Model.ScenarioRunContainerLogs](docs/ScenarioRunContainerLogs.md)
- - [Model.ScenarioRunLogs](docs/ScenarioRunLogs.md)
- - [Model.ScenarioRunResourceRequested](docs/ScenarioRunResourceRequested.md)
- - [Model.ScenarioRunSearch](docs/ScenarioRunSearch.md)
- - [Model.ScenarioRunSearchState](docs/ScenarioRunSearchState.md)
- - [Model.ScenarioRunStartContainers](docs/ScenarioRunStartContainers.md)
- - [Model.ScenarioRunState](docs/ScenarioRunState.md)
- - [Model.ScenarioRunStatus](docs/ScenarioRunStatus.md)
- - [Model.ScenarioRunStatusNode](docs/ScenarioRunStatusNode.md)
- - [Model.ScenarioRunTemplateParameterValue](docs/ScenarioRunTemplateParameterValue.md)
- - [Model.ScenarioSecurity](docs/ScenarioSecurity.md)
- - [Model.ScenarioValidationStatus](docs/ScenarioValidationStatus.md)
  - [Model.SendRunDataRequest](docs/SendRunDataRequest.md)
  - [Model.Solution](docs/Solution.md)
  - [Model.SolutionAccessControl](docs/SolutionAccessControl.md)
@@ -384,8 +309,6 @@ Class | Method | HTTP request | Description
  - [Model.SourceInfo](docs/SourceInfo.md)
  - [Model.SubDatasetGraphQuery](docs/SubDatasetGraphQuery.md)
  - [Model.TwinGraphBatchResult](docs/TwinGraphBatchResult.md)
- - [Model.TwinGraphHash](docs/TwinGraphHash.md)
- - [Model.TwinGraphQuery](docs/TwinGraphQuery.md)
  - [Model.TwincacheStatusEnum](docs/TwincacheStatusEnum.md)
  - [Model.Validator](docs/Validator.md)
  - [Model.Workspace](docs/Workspace.md)
