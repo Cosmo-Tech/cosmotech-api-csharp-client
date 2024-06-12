@@ -197,7 +197,6 @@ Class | Method | HTTP request | Description
 *SolutionApi* | [**CreateSolution**](docs/SolutionApi.md#createsolution) | **POST** /organizations/{organization_id}/solutions | Register a new solution
 *SolutionApi* | [**DeleteSolution**](docs/SolutionApi.md#deletesolution) | **DELETE** /organizations/{organization_id}/solutions/{solution_id} | Delete a solution
 *SolutionApi* | [**DeleteSolutionRunTemplate**](docs/SolutionApi.md#deletesolutionruntemplate) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Remove the specified Solution Run Template
-*SolutionApi* | [**DownloadRunTemplateHandler**](docs/SolutionApi.md#downloadruntemplatehandler) | **GET** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download | Download a Run Template step handler zip file
 *SolutionApi* | [**FindAllSolutions**](docs/SolutionApi.md#findallsolutions) | **GET** /organizations/{organization_id}/solutions | List all Solutions
 *SolutionApi* | [**FindSolutionById**](docs/SolutionApi.md#findsolutionbyid) | **GET** /organizations/{organization_id}/solutions/{solution_id} | Get the details of a solution
 *SolutionApi* | [**GetSolutionAccessControl**](docs/SolutionApi.md#getsolutionaccesscontrol) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Get a control access for the Solution
@@ -211,7 +210,6 @@ Class | Method | HTTP request | Description
 *SolutionApi* | [**UpdateSolution**](docs/SolutionApi.md#updatesolution) | **PATCH** /organizations/{organization_id}/solutions/{solution_id} | Update a solution
 *SolutionApi* | [**UpdateSolutionAccessControl**](docs/SolutionApi.md#updatesolutionaccesscontrol) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Update the specified access to User for a Solution
 *SolutionApi* | [**UpdateSolutionRunTemplate**](docs/SolutionApi.md#updatesolutionruntemplate) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Update the specified Solution Run Template
-*SolutionApi* | [**UploadRunTemplateHandler**](docs/SolutionApi.md#uploadruntemplatehandler) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload | Upload a Run Template step handler zip file
 *WorkspaceApi* | [**AddWorkspaceAccessControl**](docs/WorkspaceApi.md#addworkspaceaccesscontrol) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/security/access | Add a control access to the Workspace
 *WorkspaceApi* | [**CreateSecret**](docs/WorkspaceApi.md#createsecret) | **POST** /organizations/{organization_id}/workspaces/{workspace_id}/secret | Create a secret for the Workspace
 *WorkspaceApi* | [**CreateWorkspace**](docs/WorkspaceApi.md#createworkspace) | **POST** /organizations/{organization_id}/workspaces | Create a new workspace
@@ -283,7 +281,6 @@ Class | Method | HTTP request | Description
  - [Model.RunStatus](docs/RunStatus.md)
  - [Model.RunStatusNode](docs/RunStatusNode.md)
  - [Model.RunTemplate](docs/RunTemplate.md)
- - [Model.RunTemplateHandlerId](docs/RunTemplateHandlerId.md)
  - [Model.RunTemplateOrchestrator](docs/RunTemplateOrchestrator.md)
  - [Model.RunTemplateParameter](docs/RunTemplateParameter.md)
  - [Model.RunTemplateParameterGroup](docs/RunTemplateParameterGroup.md)

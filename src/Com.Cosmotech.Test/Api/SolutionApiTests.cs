@@ -150,21 +150,6 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
-        /// Test DownloadRunTemplateHandler
-        /// </summary>
-        [Fact]
-        public void DownloadRunTemplateHandlerTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string organizationId = null;
-            //string solutionId = null;
-            //string runTemplateId = null;
-            //RunTemplateHandlerId handlerId = null;
-            //var response = instance.DownloadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId);
-            //Assert.IsType<byte[]>(response);
-        }
-
-        /// <summary>
         /// Test FindAllSolutions
         /// </summary>
         [Fact]
@@ -336,22 +321,6 @@ namespace Com.Cosmotech.Test.Api
             //RunTemplate runTemplate = null;
             //var response = instance.UpdateSolutionRunTemplate(organizationId, solutionId, runTemplateId, runTemplate);
             //Assert.IsType<List<RunTemplate>>(response);
-        }
-
-        /// <summary>
-        /// Test UploadRunTemplateHandler
-        /// </summary>
-        [Fact]
-        public void UploadRunTemplateHandlerTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string organizationId = null;
-            //string solutionId = null;
-            //string runTemplateId = null;
-            //RunTemplateHandlerId handlerId = null;
-            //System.IO.Stream body = null;
-            //bool? overwrite = null;
-            //instance.UploadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId, body, overwrite);
         }
     }
 }
