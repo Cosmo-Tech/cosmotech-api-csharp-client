@@ -2450,7 +2450,7 @@ catch (ApiException e)
 
 <a id="twingraphquery"></a>
 # **TwingraphQuery**
-> string TwingraphQuery (string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
+> List&lt;Object&gt; TwingraphQuery (string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery)
 
 Return the result of a query made on the graph instance as a json
 
@@ -2483,7 +2483,7 @@ namespace Example
             try
             {
                 // Return the result of a query made on the graph instance as a json
-                string result = apiInstance.TwingraphQuery(organizationId, datasetId, datasetTwinGraphQuery);
+                List<Object> result = apiInstance.TwingraphQuery(organizationId, datasetId, datasetTwinGraphQuery);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2504,7 +2504,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Return the result of a query made on the graph instance as a json
-    ApiResponse<string> response = apiInstance.TwingraphQueryWithHttpInfo(organizationId, datasetId, datasetTwinGraphQuery);
+    ApiResponse<List<Object>> response = apiInstance.TwingraphQueryWithHttpInfo(organizationId, datasetId, datasetTwinGraphQuery);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2527,7 +2527,7 @@ catch (ApiException e)
 
 ### Return type
 
-**string**
+**List<Object>**
 
 ### Authorization
 

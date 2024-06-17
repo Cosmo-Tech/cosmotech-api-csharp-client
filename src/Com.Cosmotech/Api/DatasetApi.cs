@@ -660,8 +660,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        string TwingraphQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0);
+        /// <returns>List&lt;Object&gt;</returns>
+        List<Object> TwingraphQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0);
 
         /// <summary>
         /// Return the result of a query made on the graph instance as a json
@@ -674,8 +674,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> TwingraphQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
+        ApiResponse<List<Object>> TwingraphQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -1540,8 +1540,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetTwinGraphQuery">the query to run</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> TwingraphQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;Object&gt;</returns>
+        System.Threading.Tasks.Task<List<Object>> TwingraphQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Return the result of a query made on the graph instance as a json
@@ -1555,8 +1555,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetTwinGraphQuery">the query to run</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> TwingraphQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Object>>> TwingraphQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -7020,10 +7020,10 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        public string TwingraphQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0)
+        /// <returns>List&lt;Object&gt;</returns>
+        public List<Object> TwingraphQuery(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0)
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = TwingraphQueryWithHttpInfo(organizationId, datasetId, datasetTwinGraphQuery);
+            Com.Cosmotech.Client.ApiResponse<List<Object>> localVarResponse = TwingraphQueryWithHttpInfo(organizationId, datasetId, datasetTwinGraphQuery);
             return localVarResponse.Data;
         }
 
@@ -7035,8 +7035,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetId">the Dataset identifier</param>
         /// <param name="datasetTwinGraphQuery">the query to run</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        public Com.Cosmotech.Client.ApiResponse<string> TwingraphQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;Object&gt;</returns>
+        public Com.Cosmotech.Client.ApiResponse<List<Object>> TwingraphQueryWithHttpInfo(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7104,7 +7104,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>("/organizations/{organization_id}/datasets/{dataset_id}/twingraph", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<Object>>("/organizations/{organization_id}/datasets/{dataset_id}/twingraph", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TwingraphQuery", localVarResponse);
@@ -7126,10 +7126,10 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetTwinGraphQuery">the query to run</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> TwingraphQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;Object&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Object>> TwingraphQueryAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<string> localVarResponse = await TwingraphQueryWithHttpInfoAsync(organizationId, datasetId, datasetTwinGraphQuery, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Cosmotech.Client.ApiResponse<List<Object>> localVarResponse = await TwingraphQueryWithHttpInfoAsync(organizationId, datasetId, datasetTwinGraphQuery, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7142,8 +7142,8 @@ namespace Com.Cosmotech.Api
         /// <param name="datasetTwinGraphQuery">the query to run</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<string>> TwingraphQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<List<Object>>> TwingraphQueryWithHttpInfoAsync(string organizationId, string datasetId, DatasetTwinGraphQuery datasetTwinGraphQuery, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -7212,7 +7212,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/organizations/{organization_id}/datasets/{dataset_id}/twingraph", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Object>>("/organizations/{organization_id}/datasets/{dataset_id}/twingraph", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

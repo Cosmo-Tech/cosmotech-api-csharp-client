@@ -406,7 +406,7 @@ namespace Com.Cosmotech.Test.Api
             //string datasetId = null;
             //DatasetTwinGraphQuery datasetTwinGraphQuery = null;
             //var response = instance.TwingraphQuery(organizationId, datasetId, datasetTwinGraphQuery);
-            //Assert.IsType<string>(response);
+            //Assert.IsType<List<Object>>(response);
         }
 
         /// <summary>
