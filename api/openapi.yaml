@@ -6096,7 +6096,7 @@ components:
       description: Get all runData in a table
       summary: Get all runData in a table
       value:
-        query: SELECT * FROM "CD_myCustomData"
+        query: SELECT * FROM cd_mycustomdata
     RunnersTree:
       description: Runners Tree example with 1 master Runner and 2 children
       summary: Runners Tree example
