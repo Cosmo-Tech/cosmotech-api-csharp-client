@@ -11,6 +11,7 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 | [**CreateSolution**](SolutionApi.md#createsolution) | **POST** /organizations/{organization_id}/solutions | Register a new solution |
 | [**DeleteSolution**](SolutionApi.md#deletesolution) | **DELETE** /organizations/{organization_id}/solutions/{solution_id} | Delete a solution |
 | [**DeleteSolutionRunTemplate**](SolutionApi.md#deletesolutionruntemplate) | **DELETE** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Remove the specified Solution Run Template |
+| [**DownloadRunTemplateHandler**](SolutionApi.md#downloadruntemplatehandler) | **GET** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/download | Download a Run Template step handler zip file |
 | [**FindAllSolutions**](SolutionApi.md#findallsolutions) | **GET** /organizations/{organization_id}/solutions | List all Solutions |
 | [**FindSolutionById**](SolutionApi.md#findsolutionbyid) | **GET** /organizations/{organization_id}/solutions/{solution_id} | Get the details of a solution |
 | [**GetSolutionAccessControl**](SolutionApi.md#getsolutionaccesscontrol) | **GET** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Get a control access for the Solution |
@@ -24,6 +25,7 @@ All URIs are relative to *https://dev.api.cosmotech.com*
 | [**UpdateSolution**](SolutionApi.md#updatesolution) | **PATCH** /organizations/{organization_id}/solutions/{solution_id} | Update a solution |
 | [**UpdateSolutionAccessControl**](SolutionApi.md#updatesolutionaccesscontrol) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/security/access/{identity_id} | Update the specified access to User for a Solution |
 | [**UpdateSolutionRunTemplate**](SolutionApi.md#updatesolutionruntemplate) | **PATCH** /organizations/{organization_id}/solutions/{solution_id}/runTemplates/{run_template_id} | Update the specified Solution Run Template |
+| [**UploadRunTemplateHandler**](SolutionApi.md#uploadruntemplatehandler) | **POST** /organizations/{organization_id}/solutions/{solution_id}/runtemplates/{run_template_id}/handlers/{handler_id}/upload | Upload a Run Template step handler zip file |
 
 <a id="addorreplaceparametergroups"></a>
 # **AddOrReplaceParameterGroups**
@@ -692,6 +694,105 @@ void (empty response body)
 |-------------|-------------|------------------|
 | **204** | the operation succeeded |  -  |
 | **404** | the Solution specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="downloadruntemplatehandler"></a>
+# **DownloadRunTemplateHandler**
+> byte[] DownloadRunTemplateHandler (string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId)
+
+Download a Run Template step handler zip file
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class DownloadRunTemplateHandlerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
+            var runTemplateId = "runTemplateId_example";  // string | the Run Template identifier
+            var handlerId = new RunTemplateHandlerId(); // RunTemplateHandlerId | the Handler identifier
+
+            try
+            {
+                // Download a Run Template step handler zip file
+                byte[] result = apiInstance.DownloadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.DownloadRunTemplateHandler: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DownloadRunTemplateHandlerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Download a Run Template step handler zip file
+    ApiResponse<byte[]> response = apiInstance.DownloadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SolutionApi.DownloadRunTemplateHandlerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **solutionId** | **string** | the Solution identifier |  |
+| **runTemplateId** | **string** | the Run Template identifier |  |
+| **handlerId** | [**RunTemplateHandlerId**](RunTemplateHandlerId.md) | the Handler identifier |  |
+
+### Return type
+
+**byte[]**
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | the run template handle file as a resource |  * Content-Disposition - Run Template step handler zip file <br>  |
+| **404** | the Run Template Handler file specified is unknown or you don&#39;t have access to it |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1930,6 +2031,105 @@ catch (ApiException e)
 | **200** | the Parameters |  -  |
 | **400** | Bad request |  -  |
 | **404** | the Solution or Run Template specified is unknown or you don&#39;t have access to it |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="uploadruntemplatehandler"></a>
+# **UploadRunTemplateHandler**
+> void UploadRunTemplateHandler (string organizationId, string solutionId, string runTemplateId, RunTemplateHandlerId handlerId, System.IO.Stream body, bool? overwrite = null)
+
+Upload a Run Template step handler zip file
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Cosmotech.Api;
+using Com.Cosmotech.Client;
+using Com.Cosmotech.Model;
+
+namespace Example
+{
+    public class UploadRunTemplateHandlerExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://dev.api.cosmotech.com";
+            // Configure OAuth2 access token for authorization: oAuth2AuthCode
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SolutionApi(config);
+            var organizationId = "organizationId_example";  // string | the Organization identifier
+            var solutionId = "solutionId_example";  // string | the Solution identifier
+            var runTemplateId = "runTemplateId_example";  // string | the Run Template identifier
+            var handlerId = new RunTemplateHandlerId(); // RunTemplateHandlerId | the Handler identifier
+            var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
+            var overwrite = false;  // bool? | whether to overwrite any existing handler resource (optional)  (default to false)
+
+            try
+            {
+                // Upload a Run Template step handler zip file
+                apiInstance.UploadRunTemplateHandler(organizationId, solutionId, runTemplateId, handlerId, body, overwrite);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SolutionApi.UploadRunTemplateHandler: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UploadRunTemplateHandlerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Upload a Run Template step handler zip file
+    apiInstance.UploadRunTemplateHandlerWithHttpInfo(organizationId, solutionId, runTemplateId, handlerId, body, overwrite);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SolutionApi.UploadRunTemplateHandlerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationId** | **string** | the Organization identifier |  |
+| **solutionId** | **string** | the Solution identifier |  |
+| **runTemplateId** | **string** | the Run Template identifier |  |
+| **handlerId** | [**RunTemplateHandlerId**](RunTemplateHandlerId.md) | the Handler identifier |  |
+| **body** | **System.IO.Stream****System.IO.Stream** |  |  |
+| **overwrite** | **bool?** | whether to overwrite any existing handler resource | [optional] [default to false] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oAuth2AuthCode](../README.md#oAuth2AuthCode)
+
+### HTTP request headers
+
+ - **Content-Type**: application/octet-stream
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | zip file uploaded |  -  |
+| **400** | Bad request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
