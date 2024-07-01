@@ -6501,10 +6501,11 @@ components:
           - id: bob.doe@cosmotech.com
             role: admin
     WorkspaceSecretExample:
-      description: a shared policy example
-      summary: a shared access policy
+      description: simple secret example
+      summary: simple secret
       value:
-        dedicatedEventHubKey: xxx
+        name: foo
+        value: bar
   schemas:
     ComponentRolePermissions:
       description: a RBAC by component
@@ -6527,19 +6528,6 @@ components:
     Connector:
       description: a version of a Connector
       example:
-        ioTypes:
-        - null
-        - null
-        azureAuthenticationWithCustomerAppRegistration: true
-        description: description
-        repository: repository
-        ownerId: ownerId
-        version: version
-        azureManagedIdentity: true
-        url: url
-        tags:
-        - tags
-        - tags
         parameterGroups:
         - id: id
           label: label
@@ -6579,9 +6567,20 @@ components:
             - options
             id: id
             label: label
+        ioTypes:
+        - null
+        - null
         name: name
+        description: description
         id: id
+        repository: repository
+        ownerId: ownerId
+        version: version
         key: key
+        url: url
+        tags:
+        - tags
+        - tags
       properties:
         id:
           description: the Connector version unique identifier
@@ -6617,13 +6616,6 @@ components:
         url:
           description: an optional URL link to connector page
           type: string
-        azureManagedIdentity:
-          description: whether or not the connector uses Azure Managed Identity
-          type: boolean
-        azureAuthenticationWithCustomerAppRegistration:
-          description: whether to authenticate against Azure using the app registration
-            credentials provided by the customer
-          type: boolean
         ioTypes:
           items:
             $ref: '#/components/schemas/ioTypesEnum'
@@ -9026,11 +9018,18 @@ components:
     WorkspaceSecret:
       description: the secret definition
       example:
-        dedicatedEventHubKey: dedicatedEventHubKey
+        name: name
+        value: value
       properties:
-        dedicatedEventHubKey:
-          description: the dedicated event hub shared access key
+        name:
+          description: the secret name
           type: string
+        value:
+          description: the secret value
+          type: string
+      required:
+      - name
+      - value
       type: object
     WorkspaceSecurity:
       description: the workspace security information

@@ -56,12 +56,21 @@ namespace Com.Cosmotech.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'DedicatedEventHubKey'
+        /// Test the property 'Name'
         /// </summary>
         [Fact]
-        public void DedicatedEventHubKeyTest()
+        public void NameTest()
         {
-            // TODO unit test for the property 'DedicatedEventHubKey'
+            // TODO unit test for the property 'Name'
+        }
+
+        /// <summary>
+        /// Test the property 'Value'
+        /// </summary>
+        [Fact]
+        public void ValueTest()
+        {
+            // TODO unit test for the property 'Value'
         }
     }
 }

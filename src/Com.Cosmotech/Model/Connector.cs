@@ -42,11 +42,9 @@ namespace Com.Cosmotech.Model
         /// <param name="varVersion">the Connector version MAJOR.MINOR.PATCH. Must be aligned with an existing repository tag.</param>
         /// <param name="tags">the list of tags.</param>
         /// <param name="url">an optional URL link to connector page.</param>
-        /// <param name="azureManagedIdentity">whether or not the connector uses Azure Managed Identity.</param>
-        /// <param name="azureAuthenticationWithCustomerAppRegistration">whether to authenticate against Azure using the app registration credentials provided by the customer.</param>
         /// <param name="ioTypes">ioTypes.</param>
         /// <param name="parameterGroups">the list of connector parameters groups.</param>
-        public Connector(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string varVersion = default(string), List<string> tags = default(List<string>), string url = default(string), bool azureManagedIdentity = default(bool), bool azureAuthenticationWithCustomerAppRegistration = default(bool), List<IoTypesEnum> ioTypes = default(List<IoTypesEnum>), List<ConnectorParameterGroup> parameterGroups = default(List<ConnectorParameterGroup>))
+        public Connector(string key = default(string), string name = default(string), string description = default(string), string repository = default(string), string varVersion = default(string), List<string> tags = default(List<string>), string url = default(string), List<IoTypesEnum> ioTypes = default(List<IoTypesEnum>), List<ConnectorParameterGroup> parameterGroups = default(List<ConnectorParameterGroup>))
         {
             this.Key = key;
             this.Name = name;
@@ -55,8 +53,6 @@ namespace Com.Cosmotech.Model
             this.VarVersion = varVersion;
             this.Tags = tags;
             this.Url = url;
-            this.AzureManagedIdentity = azureManagedIdentity;
-            this.AzureAuthenticationWithCustomerAppRegistration = azureAuthenticationWithCustomerAppRegistration;
             this.IoTypes = ioTypes;
             this.ParameterGroups = parameterGroups;
         }
@@ -141,20 +137,6 @@ namespace Com.Cosmotech.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// whether or not the connector uses Azure Managed Identity
-        /// </summary>
-        /// <value>whether or not the connector uses Azure Managed Identity</value>
-        [DataMember(Name = "azureManagedIdentity", EmitDefaultValue = true)]
-        public bool AzureManagedIdentity { get; set; }
-
-        /// <summary>
-        /// whether to authenticate against Azure using the app registration credentials provided by the customer
-        /// </summary>
-        /// <value>whether to authenticate against Azure using the app registration credentials provided by the customer</value>
-        [DataMember(Name = "azureAuthenticationWithCustomerAppRegistration", EmitDefaultValue = true)]
-        public bool AzureAuthenticationWithCustomerAppRegistration { get; set; }
-
-        /// <summary>
         /// Gets or Sets IoTypes
         /// </summary>
         [DataMember(Name = "ioTypes", EmitDefaultValue = false)]
@@ -184,8 +166,6 @@ namespace Com.Cosmotech.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
-            sb.Append("  AzureManagedIdentity: ").Append(AzureManagedIdentity).Append("\n");
-            sb.Append("  AzureAuthenticationWithCustomerAppRegistration: ").Append(AzureAuthenticationWithCustomerAppRegistration).Append("\n");
             sb.Append("  IoTypes: ").Append(IoTypes).Append("\n");
             sb.Append("  ParameterGroups: ").Append(ParameterGroups).Append("\n");
             sb.Append("}\n");
