@@ -9,7 +9,7 @@ info:
     name: MIT License
     url: https://github.com/Cosmo-Tech/cosmotech-api/blob/main/LICENSE
   title: Cosmo Tech Platform API
-  version: 4.0.1-onprem
+  version: 4.0.2-SNAPSHOT
 servers:
 - description: Development
   url: https://dev.api.cosmotech.com
@@ -7273,11 +7273,6 @@ components:
           dependencies:
           - dependencies
           - dependencies
-          artifacts:
-          - path: path
-            name: name
-          - path: path
-            name: name
         - image: image
           runArgs:
           - runArgs
@@ -7301,11 +7296,6 @@ components:
           dependencies:
           - dependencies
           - dependencies
-          artifacts:
-          - path: path
-            name: name
-          - path: path
-            name: name
         id: id
         state: ""
         solutionId: solutionId
@@ -7434,11 +7424,6 @@ components:
         dependencies:
         - dependencies
         - dependencies
-        artifacts:
-        - path: path
-          name: name
-        - path: path
-          name: name
       properties:
         id:
           description: the container Id
@@ -7482,27 +7467,9 @@ components:
           type: string
         runSizing:
           $ref: '#/components/schemas/ContainerResourceSizing'
-        artifacts:
-          description: the list of artifacts
-          items:
-            $ref: '#/components/schemas/RunContainerArtifact'
-          type: array
       required:
       - image
       - name
-      type: object
-    RunContainerArtifact:
-      description: a runner run container artifact
-      example:
-        path: path
-        name: name
-      properties:
-        name:
-          description: the artifact name
-          type: string
-        path:
-          description: the artifact path (relative to /var/csmoutput)
-          type: string
       type: object
     RunContainerLogs:
       description: logs for a given container
