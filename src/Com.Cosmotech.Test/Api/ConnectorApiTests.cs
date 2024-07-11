@@ -81,18 +81,6 @@ namespace Com.Cosmotech.Test.Api
         }
 
         /// <summary>
-        /// Test FindConnectorByName
-        /// </summary>
-        [Fact]
-        public void FindConnectorByNameTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string connectorName = null;
-            //var response = instance.FindConnectorByName(connectorName);
-            //Assert.IsType<Connector>(response);
-        }
-
-        /// <summary>
         /// Test RegisterConnector
         /// </summary>
         [Fact]

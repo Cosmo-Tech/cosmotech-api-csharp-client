@@ -104,31 +104,6 @@ paths:
       summary: Register a new connector
       tags:
       - connector
-  /connectors/name/{connector_name}:
-    get:
-      operationId: findConnectorByName
-      parameters:
-      - description: the Connector name
-        explode: false
-        in: path
-        name: connector_name
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                ADTConnector:
-                  $ref: '#/components/examples/ADTConnector'
-              schema:
-                $ref: '#/components/schemas/Connector'
-          description: the Connector details
-      summary: Get the details of a connector
-      tags:
-      - connector
   /connectors/{connector_id}:
     delete:
       operationId: unregisterConnector
