@@ -3471,7 +3471,7 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
+                "text/plain"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -3578,7 +3578,7 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
+                "text/plain"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);

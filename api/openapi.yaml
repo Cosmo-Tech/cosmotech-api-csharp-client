@@ -4495,8 +4495,9 @@ paths:
       responses:
         "202":
           content:
-            application/json:
+            text/plain:
               schema:
+                example: r-p75189n1m43k
                 type: string
           description: the Run id started
         "404":
