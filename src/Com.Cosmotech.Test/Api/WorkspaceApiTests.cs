@@ -116,8 +116,7 @@ namespace Com.Cosmotech.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string organizationId = null;
             //string workspaceId = null;
-            //var response = instance.DeleteWorkspace(organizationId, workspaceId);
-            //Assert.IsType<Workspace>(response);
+            //instance.DeleteWorkspace(organizationId, workspaceId);
         }
 
         /// <summary>

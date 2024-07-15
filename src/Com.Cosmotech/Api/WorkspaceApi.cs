@@ -127,8 +127,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Workspace</returns>
-        Workspace DeleteWorkspace(string organizationId, string workspaceId, int operationIndex = 0);
+        /// <returns></returns>
+        void DeleteWorkspace(string organizationId, string workspaceId, int operationIndex = 0);
 
         /// <summary>
         /// Delete a workspace
@@ -140,8 +140,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Workspace</returns>
-        ApiResponse<Workspace> DeleteWorkspaceWithHttpInfo(string organizationId, string workspaceId, int operationIndex = 0);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteWorkspaceWithHttpInfo(string organizationId, string workspaceId, int operationIndex = 0);
         /// <summary>
         /// Delete a workspace file
         /// </summary>
@@ -656,8 +656,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Workspace</returns>
-        System.Threading.Tasks.Task<Workspace> DeleteWorkspaceAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteWorkspaceAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete a workspace
@@ -670,8 +670,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Workspace)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Workspace>> DeleteWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete a workspace file
         /// </summary>
@@ -2077,11 +2077,10 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Workspace</returns>
-        public Workspace DeleteWorkspace(string organizationId, string workspaceId, int operationIndex = 0)
+        /// <returns></returns>
+        public void DeleteWorkspace(string organizationId, string workspaceId, int operationIndex = 0)
         {
-            Com.Cosmotech.Client.ApiResponse<Workspace> localVarResponse = DeleteWorkspaceWithHttpInfo(organizationId, workspaceId);
-            return localVarResponse.Data;
+            DeleteWorkspaceWithHttpInfo(organizationId, workspaceId);
         }
 
         /// <summary>
@@ -2091,8 +2090,8 @@ namespace Com.Cosmotech.Api
         /// <param name="organizationId">the Organization identifier</param>
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Workspace</returns>
-        public Com.Cosmotech.Client.ApiResponse<Workspace> DeleteWorkspaceWithHttpInfo(string organizationId, string workspaceId, int operationIndex = 0)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Com.Cosmotech.Client.ApiResponse<Object> DeleteWorkspaceWithHttpInfo(string organizationId, string workspaceId, int operationIndex = 0)
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2113,7 +2112,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2152,7 +2150,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Workspace>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteWorkspace", localVarResponse);
@@ -2173,11 +2171,10 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Workspace</returns>
-        public async System.Threading.Tasks.Task<Workspace> DeleteWorkspaceAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteWorkspaceAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Cosmotech.Client.ApiResponse<Workspace> localVarResponse = await DeleteWorkspaceWithHttpInfoAsync(organizationId, workspaceId, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
+            await DeleteWorkspaceWithHttpInfoAsync(organizationId, workspaceId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2188,8 +2185,8 @@ namespace Com.Cosmotech.Api
         /// <param name="workspaceId">the Workspace identifier</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Workspace)</returns>
-        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Workspace>> DeleteWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Com.Cosmotech.Client.ApiResponse<Object>> DeleteWorkspaceWithHttpInfoAsync(string organizationId, string workspaceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'organizationId' is set
             if (organizationId == null)
@@ -2211,7 +2208,6 @@ namespace Com.Cosmotech.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/json"
             };
 
             var localVarContentType = Com.Cosmotech.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2250,7 +2246,7 @@ namespace Com.Cosmotech.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Workspace>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/organizations/{organization_id}/workspaces/{workspace_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

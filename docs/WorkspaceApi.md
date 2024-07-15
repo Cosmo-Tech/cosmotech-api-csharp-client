@@ -404,7 +404,7 @@ void (empty response body)
 
 <a id="deleteworkspace"></a>
 # **DeleteWorkspace**
-> Workspace DeleteWorkspace (string organizationId, string workspaceId)
+> void DeleteWorkspace (string organizationId, string workspaceId)
 
 Delete a workspace
 
@@ -434,8 +434,7 @@ namespace Example
             try
             {
                 // Delete a workspace
-                Workspace result = apiInstance.DeleteWorkspace(organizationId, workspaceId);
-                Debug.WriteLine(result);
+                apiInstance.DeleteWorkspace(organizationId, workspaceId);
             }
             catch (ApiException  e)
             {
@@ -455,10 +454,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete a workspace
-    ApiResponse<Workspace> response = apiInstance.DeleteWorkspaceWithHttpInfo(organizationId, workspaceId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
+    apiInstance.DeleteWorkspaceWithHttpInfo(organizationId, workspaceId);
 }
 catch (ApiException e)
 {
@@ -477,7 +473,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**Workspace**](Workspace.md)
+void (empty response body)
 
 ### Authorization
 
@@ -486,13 +482,13 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the workspace details |  -  |
+| **204** | the workspace details |  -  |
 | **400** | Bad request |  -  |
 | **404** | the Workspace specified is unknown or you don&#39;t have access to it |  -  |
 

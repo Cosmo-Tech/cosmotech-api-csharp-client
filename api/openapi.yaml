@@ -1572,7 +1572,7 @@ paths:
           type: array
         style: form
       responses:
-        "200":
+        "204":
           description: Successful response
       summary: Delete entities in a graph instance
       tags:
@@ -3010,14 +3010,7 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                Workspace:
-                  $ref: '#/components/examples/BreweryWorkspace'
-              schema:
-                $ref: '#/components/schemas/Workspace'
+        "204":
           description: the workspace details
         "400":
           description: Bad request
