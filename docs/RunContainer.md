@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **SolutionContainer** | **bool** | whether or not this container is a Cosmo Tech solution container | [optional] [readonly] 
 **NodeLabel** | **string** | the node label request | [optional] 
 **RunSizing** | [**ContainerResourceSizing**](ContainerResourceSizing.md) |  | [optional] 
+**Artifacts** | [**List&lt;RunContainerArtifact&gt;**](RunContainerArtifact.md) | the list of artifacts | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
