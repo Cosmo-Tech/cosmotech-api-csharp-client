@@ -27,50 +27,36 @@ using OpenAPIDateConverter = Com.Cosmotech.Client.OpenAPIDateConverter;
 namespace Com.Cosmotech.Model
 {
     /// <summary>
-    /// define cpus and memory needs
+    /// single run log entry
     /// </summary>
-    [DataContract(Name = "ContainerResourceSizeInfo")]
-    public partial class ContainerResourceSizeInfo : IValidatableObject
+    [DataContract(Name = "RunLogsEntry")]
+    public partial class RunLogsEntry : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContainerResourceSizeInfo" /> class.
+        /// Initializes a new instance of the <see cref="RunLogsEntry" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ContainerResourceSizeInfo() { }
+        protected RunLogsEntry() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContainerResourceSizeInfo" /> class.
+        /// Initializes a new instance of the <see cref="RunLogsEntry" /> class.
         /// </summary>
-        /// <param name="cpu">define cpu needs (required).</param>
-        /// <param name="memory">define memory needs (required).</param>
-        public ContainerResourceSizeInfo(string cpu = default(string), string memory = default(string))
+        /// <param name="line">log line data (required).</param>
+        public RunLogsEntry(string line = default(string))
         {
-            // to ensure "cpu" is required (not null)
-            if (cpu == null)
+            // to ensure "line" is required (not null)
+            if (line == null)
             {
-                throw new ArgumentNullException("cpu is a required property for ContainerResourceSizeInfo and cannot be null");
+                throw new ArgumentNullException("line is a required property for RunLogsEntry and cannot be null");
             }
-            this.Cpu = cpu;
-            // to ensure "memory" is required (not null)
-            if (memory == null)
-            {
-                throw new ArgumentNullException("memory is a required property for ContainerResourceSizeInfo and cannot be null");
-            }
-            this.Memory = memory;
+            this.Line = line;
         }
 
         /// <summary>
-        /// define cpu needs
+        /// log line data
         /// </summary>
-        /// <value>define cpu needs</value>
-        [DataMember(Name = "cpu", IsRequired = true, EmitDefaultValue = true)]
-        public string Cpu { get; set; }
-
-        /// <summary>
-        /// define memory needs
-        /// </summary>
-        /// <value>define memory needs</value>
-        [DataMember(Name = "memory", IsRequired = true, EmitDefaultValue = true)]
-        public string Memory { get; set; }
+        /// <value>log line data</value>
+        [DataMember(Name = "line", IsRequired = true, EmitDefaultValue = true)]
+        public string Line { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,9 +65,8 @@ namespace Com.Cosmotech.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ContainerResourceSizeInfo {\n");
-            sb.Append("  Cpu: ").Append(Cpu).Append("\n");
-            sb.Append("  Memory: ").Append(Memory).Append("\n");
+            sb.Append("class RunLogsEntry {\n");
+            sb.Append("  Line: ").Append(Line).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

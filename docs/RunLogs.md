@@ -1,12 +1,12 @@
 # Com.Cosmotech.Model.RunLogs
-the run logs returned by all containers
+the output logs of a run
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RunId** | **string** | the Run Id | [optional] [readonly] 
-**Containers** | [**Dictionary&lt;string, RunContainerLogs&gt;**](RunContainerLogs.md) | the container map of logs | [optional] [readonly] 
+**RunId** | **string** | the Run Id | [readonly] 
+**Logs** | [**List&lt;RunLogsEntry&gt;**](RunLogsEntry.md) | run log entries in chronological order | [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
